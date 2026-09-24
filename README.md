@@ -32,6 +32,6 @@ Free data only. Rough bands over false precision. Every claim stays a hypothesis
 
 ## What this repository is not
 
-Public visibility is not a copyright waiver. The source files that were read do not declare an open-source license, so this repository does not add one. Third-party and paywalled documents are summarised and cited, not copied. The programme’s own write-ups are the text committed here.
+Public visibility is not a copyright waiver. The programme’s own write-ups are under Creative Commons Attribution 4.0 International (see LICENSE). Third-party and paywalled documents are summarised and cited, not copied. The programme’s own write-ups are the text committed here.
 
 There is no code runner in this slice. The upstream monitor is a TSV of free series plus a print calendar; [monitor/DATA.md](monitor/DATA.md) is the extract those claims depend on.
