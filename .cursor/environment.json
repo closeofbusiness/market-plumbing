@@ -1,0 +1,4 @@
+{
+  "name": "market-plumbing",
+  "install": "bash .cursor/install.sh"
+}

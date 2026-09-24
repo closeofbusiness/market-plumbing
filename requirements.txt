@@ -1,0 +1,16 @@
+# market-plumbing research environment
+# Pinned for reproducible Cloud Agent / local setup. Free data only.
+
+# Core data analysis
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+matplotlib==3.11.2
+
+# Free market data sources
+yfinance==1.7.0            # Yahoo Finance (equities, FX, rates proxies, commodities)
+pandas-datareader==0.11.1 # FRED, and other free macro/rates sources
+requests==2.34.2
+
+# Testing
+pytest==9.1.1
