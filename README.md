@@ -9,12 +9,12 @@ Equities are ahead of the other markets. Rates, FX, and commodities are in scope
 ## How to read it
 
 1. [CHARTER.md](CHARTER.md) — the three questions, the markets in scope, and the rules.
-2. [answer/LIVE.md](answer/LIVE.md) — the current answer. Every claim there is a hypothesis until a test says otherwise. Numbers point at a dossier or at the source note that owns them.
+2. [2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) — the current answer, and the authority for what we believe. Every claim there carries a grade; the default is hypothesis.
 3. [dossiers/](dossiers/) — one file per channel: hypothesis, status, evidence, what would change it, data used.
-4. [corrections/REGISTER.md](corrections/REGISTER.md) — closed designs, including the limit on turning “money was present” into a causal price impact.
-5. [monitor/DATA.md](monitor/DATA.md) — free series the live claims actually use, and when they print next.
+4. [CORRECTIONS.md](CORRECTIONS.md) — every claim the programme has killed, with machine-enforced bans on its phrasing. The designs that closed, including the limit on turning “money was present” into a causal price impact, are in the answer’s §4.
+5. [monitor/DATA.md](monitor/DATA.md) — free series the live claims actually use, and when they print next. It is an extract: the live sources are `data/series.tsv` and `CALENDAR.tsv`.
 
-The source programme’s own authority for “what we believe” is its 17 September 2026 answer note (updated through 23 September). This repository restates that answer in the update-cycle order below. It does not republish third-party papers or filings.
+Since 24 September 2026 the source programme’s full research record lives in this repository, and its answer note is the authority for “what we believe”. Third-party copyrighted or paywalled documents are summarised and cited, not copied; US federal public-domain documents are kept under `_research/primary_sources/` so the work can be reproduced.
 
 ## Update cycle
 
@@ -34,4 +34,4 @@ Free data only. Rough bands over false precision. Every claim stays a hypothesis
 
 Public visibility is not a copyright waiver. The programme’s own write-ups are under Creative Commons Attribution 4.0 International (see LICENSE). Third-party and paywalled documents are summarised and cited, not copied. The programme’s own write-ups are the text committed here.
 
-There is no code runner in this slice. The upstream monitor is a TSV of free series plus a print calendar; [monitor/DATA.md](monitor/DATA.md) is the extract those claims depend on.
+The scripts are in `bin/`, and the gate is `bash bin/check.sh --all`. The monitor is `data/series.tsv` plus `CALENDAR.tsv`; [monitor/DATA.md](monitor/DATA.md) is an extract. Keys and material that must not be public are kept outside this repository.

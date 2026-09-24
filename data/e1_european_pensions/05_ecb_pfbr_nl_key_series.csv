@@ -1,0 +1,38 @@
+time_period,item_code,item_name,value_eur_million,obs_status_A_actual_P_provisional
+2025-Q1,A00,Total assets,1866062,A
+2025-Q2,A00,Total assets,1885410,A
+2025-Q3,A00,Total assets,1919881,A
+2025-Q4,A00,Total assets,1938846,A
+2026-Q1,A00,Total assets,1960861,A
+2026-Q2,A00,Total assets,2067886,P
+2025-Q1,A30,Debt securities held,633644,A
+2025-Q2,A30,Debt securities held,637663,A
+2025-Q3,A30,Debt securities held,629166,A
+2025-Q4,A30,Debt securities held,632879,A
+2026-Q1,A30,Debt securities held,652847,A
+2026-Q2,A30,Debt securities held,682741,P
+2025-Q1,A50,Equity held,355949,A
+2025-Q2,A50,Equity held,408717,A
+2025-Q3,A50,Equity held,430010,A
+2025-Q4,A50,Equity held,425127,A
+2026-Q1,A50,Equity held,399999,A
+2026-Q2,A50,Equity held,455755,P
+2025-Q1,A70,Financial derivatives held,95700,A
+2025-Q2,A70,Financial derivatives held,99449,A
+2025-Q3,A70,Financial derivatives held,93841,A
+2025-Q4,A70,Financial derivatives held,104440,A
+2026-Q1,A70,Financial derivatives held,100860,A
+2026-Q2,A70,Financial derivatives held,95404,P
+2025-Q1,L43B,Pension entitlements - defined benefit schemes,1321865,A
+2025-Q2,L43B,Pension entitlements - defined benefit schemes,1298800,A
+2025-Q3,L43B,Pension entitlements - defined benefit schemes,1276386,A
+2025-Q4,L43B,Pension entitlements - defined benefit schemes,1235975,A
+2026-Q1,L43B,Pension entitlements - defined benefit schemes,856288,A
+2026-Q2,L43B,Pension entitlements - defined benefit schemes,849721,P
+2025-Q1,L43C,Pension entitlements - defined contribution schemes,58574,A
+2025-Q2,L43C,Pension entitlements - defined contribution schemes,63722,A
+2025-Q3,L43C,Pension entitlements - defined contribution schemes,70246,A
+2025-Q4,L43C,Pension entitlements - defined contribution schemes,80428,A
+2026-Q1,L43C,Pension entitlements - defined contribution schemes,605170,A
+2026-Q2,L43C,Pension entitlements - defined contribution schemes,659307,P
+,,SOURCE,,"ECB Data Portal, dataflow PFBR (current/active successor to the discontinued 'PFB' dataflow), series key pattern PFBR.Q.NL.S.S129.<ITEM>.T.1.W0.S1._T.EUR. Reporting sector S129 = ESA2010 'pension funds'. Fetched directly via the SDMX REST API in csvdata format: https://data-api.ecb.europa.eu/service/data/PFBR/Q.NL.S.S129.<ITEM>.T.1.W0.S1._T.EUR?format=csvdata"

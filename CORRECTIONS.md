@@ -1488,6 +1488,7 @@ are suppressed per-id in the `allow` block. Anything firing outside those files 
 propagation**, which is the only thing this check exists to catch.
 
 ```allow
+C-089	direct-money-creation.md	# dossiers/ -- states the correct position and names the dead claim to kill it. NB allow entries match the BASENAME only (check.sh: base=${f##*/}); a path-style entry never matches, silently.
 C-116	CORRECTIONS.md	# names the dead phrasing to kill it
 C-117	CORRECTIONS.md	# names the dead phrasing to kill it
 C-114	CORRECTIONS.md	# names the dead phrasing to kill it

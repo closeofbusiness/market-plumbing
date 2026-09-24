@@ -1,0 +1,11 @@
+date,us_share_pct_of_equity_actual_benchmark,usd_share_pct_of_fixedincome_actual_benchmark,frequency,source_url,notes
+2017-12-31,36.08,44.61,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2017-benchmark/,
+2018-12-31,38.07,44.91,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2018-benchmark/,
+2019-12-31,39.4,,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2019-benchmark/,USD share of the fixed-income actual benchmark was not found in this year's archived page (label/table format differs).
+2020-12-31,41.45,47.15,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2020-benchmark/,
+2021-12-31,44.88,49.7,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2021-benchmark/,
+2022-12-31,44.59,50.05,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2022-benchmark/,
+2023-12-31,48.81,50.37,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2023-benchmark/,
+2024-12-31,55.01,52.98,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2024-benchmark/,
+2025-12-31,54.08,52.34,annual,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2025-benchmark/,
+2026-06-30,53.8,52.94,"half-year(interim, not yet archived at year-end)",https://www.nbim.no/en/investments/benchmark-index/,Most recent published point; this is the second-hand figure given in the research brief -- CONFIRMED exactly against nbim.no.

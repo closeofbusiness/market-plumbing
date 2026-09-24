@@ -1,0 +1,20 @@
+reference_period,country_code,total_assets_eur_million,pct_of_EU_total
+2026 Q1,NL,1688063.8,59.28
+2026 Q1,SE,311270.8,10.93
+2026 Q1,DE,257109.1,9.03
+2026 Q1,FR,234160.5,8.22
+2026 Q1,IT,210435.9,7.39
+2026 Q1,BE,43960.8,1.54
+2026 Q1,NO,41639.5,"n/a (excluded from EU denominator: NO=non-EU, Other=unallocated)"
+2026 Q1,ES,41118.9,1.44
+2026 Q1,AT,31988.5,1.12
+2026 Q1,PT,16091.6,0.57
+2026 Q1,Other,6567.9,"n/a (excluded from EU denominator: NO=non-EU, Other=unallocated)"
+2026 Q1,SK,4902.3,0.17
+2026 Q1,FI,3191.9,0.11
+2026 Q1,SI,2326.0,0.08
+2026 Q1,LU,1924.2,0.07
+2026 Q1,EL,638.6,0.02
+2026 Q1,HR,287.3,0.01
+2026 Q1,"EU_TOTAL (EIOPA-reporting Member States, excl. NO and ""Other"")",2847470.1,100.0
+,,,"SOURCE/CAVEAT: EIOPA Occupational Pensions Statistics (IORP balance sheet only - PF_Q_BalanceSheet.csv). This is IORP-sector assets, not all occupational retirement provision: several large EU 2nd-pillar systems (e.g. Denmark) run mainly through insurance undertakings subject to Solvency II rather than the IORP framework and are NOT captured here, so 'EU total' understates true EU occupational pension assets and overstates NL's share of true EU occupational pensions (NL's true share of all EU occupational pension arrangements is lower than the 59% IORP-only share implies)."

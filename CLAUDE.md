@@ -14,6 +14,19 @@
 > find out where things stand; open a document only when you are about to work on what it covers.
 > `--handover` prints what is overdue, so the old standalone CALENDAR awk line is gone.
 >
+> ## WHERE THINGS LIVE — from 24 Sep 2026 (`THE_ASK.md` E-009 to E-011)
+>
+> - **This repository is the research record**: public and CC BY 4.0, at https://github.com/closeofbusiness/market-plumbing.
+>   Everything that can be public lives here, and it is authoritative.
+> - **Anything not for the public domain lives in the private Dropbox companion**,
+>   `~/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/`. That holds `keys/secrets.env` (`SEC_UA`, `FIA_KEY`;
+>   load with `set -a; source …; set +a`) and `private/`, kept at original repo-relative paths, where `private/MANIFEST.tsv` gives each
+>   file's reason (paywalled originals, correspondence, inbox-derived, personas, third-party data, files too big for git).
+> - **Before committing anything, ask whether it could be public.** Never commit personal data (scripts read the SEC contact string from
+>   `SEC_UA`), paywalled or copyrighted full text, correspondence, or simulations of named real people. Attributed synthesis is fine (E-010).
+> - **Commit only as the GitHub noreply identity, never a personal email.** This machine's default git email is personal, so set
+>   `user.email` in every clone.
+>
 > ## TWO AGENTS WORK THIS FOLDER — Claude and GrokBot (`THE_ASK.md` E-006, 15 Sep 2026)
 >
 > **Peers on research, never simultaneous, routed by the principal** according to which token
@@ -311,6 +324,12 @@ the improvised-channel problem. The extracted source text sits in
 | File | ~tok | Investigator | Verifier | Synthesist |
 |---|---:|:---:|:---:|:---:|
 | **`THE_ASK.md`** | **1k** | **always** | **always** | **always** |
+| **`README.md`** | 1k | public front page — how to read the repo; points at the authorities | — | ✓ |
+| **`CHARTER.md`** | 2k | public charter — the question, markets in scope, rules. It quotes the goal; the goal's authority is `THE_ASK.md` | — | ✓ |
+| `answer/` | — | POINTER to `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` (E-011) | — | — |
+| `corrections/` | — | POINTER to `CORRECTIONS.md` (E-011) | — | — |
+| `dossiers/` | 12 files | public per-channel summaries; each points at the findings doc that owns its numbers | — | ✓ |
+| `monitor/` | 1 file | public extract of `data/series.tsv` and `CALENDAR.tsv`; those win where they differ | — | — |
 | `data/series.tsv` · `bin/pull_series.py` | — | **query** | **query** | **query** |
 | `data/vintages/` (FINRA, ALFRED snapshots) · `Report/*.html` (outputs) | — | if vintage | if vintage | if presenting |
 | `CORRECTIONS.md` | **query only — never whole** (exceeds the Read cap; `bin/check.sh --latest` for the newest, `grep -n '^## C-0'` to locate one) | **always** | **always** | **always** |
@@ -338,7 +357,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-08-31-N2b-zk-The-Wholesale-Share.md`** | **4k** | **✓ READ §7 THEN §8 — §7 is the C-070 correction (v1 headline struck), §8 is the v2 perimeter test that settles the wholesale-share measurement on the widest perimeter, passed adversarial review, carried by N4 15 Sep** | ✓ | ✓ |
 | **`2026-08-31-N3v4-Singh-Reconciliation.md`** | **3k** | **✓ if Singh/velocity — his Figure-3 US panel rebuilt from the 2017 filings; numerator confirmed as the PERMITTED line; §2b carries the vintage rule (C-071) and the C-072/073 strikes** | ✓ | ✓ |
 | `2026-08-30-FERC-EL26-Informational-Reports.md` | 2k | if RTO/FERC or D9 demand-side | ✓ | ✓ |
-| `2026-08-30-Singh-Ask.md` | 1k | if contacting Singh (Martin's action; Q2 already answered) | — | — |
+| `2026-08-30-Singh-Ask.md` | — | **PRIVATE since 24 Sep (E-011)** — not in this repo; the Dropbox companion's `private/2026-08-30-Singh-Ask.md` | — | — |
 | `_research/D8b_D8c_conduit_sponsor_evidence_2026-08-24.md` | 1k | if re-checking a conduit sponsor | — | — |
 | **`2026-08-22-Nexus-Primary-Sources.md`** | **3k** | **always** | **always** | **always** |
 | **`2026-09-11-Green-Substack-And-Ep61-Synthesis.md`** | 9k | if channel (d), D-G or F1 — the entry point on Green | ✓ | ✓ |
@@ -410,7 +429,7 @@ the improvised-channel problem. The extracted source text sits in
 | **2026-08-21-Singh-And-The-Two-Circuits.md** | 6k | if circuit | ✓ | ✓ |
 | **2026-08-21-Safe-Asset-Share-Reexamined.md** | 7k | if safe assets | ✓ | ✓ |
 | **2026-08-21-Offshore-Dollar-And-Money-Like.md** | 11k | if offshore | ✓ | grep |
-| **2026-08-21-Inbox-Harvest-And-Research-Plan.md** | 7k | — | grep | ✓ |
+| `2026-08-21-Inbox-Harvest-And-Research-Plan.md` | — | **PRIVATE since 24 Sep (E-011)** — not in this repo; the Dropbox companion's `private/2026-08-21-Inbox-Harvest-And-Research-Plan.md` | — | — |
 | `Review_Prompt_For_Gemini.md` | 3k | — | — | if reviewing |
 | **`Review_Prompt_For_Gemini_Retrieval.md`** | 3k | **if retrieving** | — | if reviewing |
 | `Review_Prompt_For_Grok.md` | 3k | historical — superseded by the dated topic parcels below | — | — |
@@ -430,8 +449,8 @@ the improvised-channel problem. The extracted source text sits in
 | `Parcel_N2aR_Offshore_Review_For_Grok.md` | 2k | if N2a review | — | — |
 | `Parcel_N2bR_zk_Review_For_Grok.md` | 2k | if N2b/z_k review | — | — |
 | `Parcel_D10R_Reuse_Review_For_Grok.md` | 1k | if D10 review | — | — |
-| `Parcel_SB1_Briefing_Verify_For_Grok_Cursor.md` | 1k | if Singh briefing | — | — |
-| `Parcel_SB2_Briefing_Verify_For_Grok_Cursor.md` | 1k | if Singh briefing (v4 check) | — | — |
+| `Parcel_SB1_Briefing_Verify_For_Grok_Cursor.md` | — | **PRIVATE since 24 Sep (E-011)** — not in this repo; the Dropbox companion's `private/Parcel_SB1_Briefing_Verify_For_Grok_Cursor.md` | — | — |
+| `Parcel_SB2_Briefing_Verify_For_Grok_Cursor.md` | — | **PRIVATE since 24 Sep (E-011)** — not in this repo; the Dropbox companion's `private/Parcel_SB2_Briefing_Verify_For_Grok_Cursor.md` | — | — |
 | `Parcel_ATT1_Premium_Attack_For_Grok_Cursor.md` | 1k | if attacking the premium finding | — | — |
 | `Parcel_RET1_Retirement_Flows_For_Gemini_AGY.md` | 1k | if retirement flows (D-G remainder) | — | — |
 | `Parcel_ZK2_DoubleCount_Lens_For_Gemini_AGY.md` | 2k | if z_k/double-count | — | — |

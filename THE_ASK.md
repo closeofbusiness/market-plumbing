@@ -27,6 +27,49 @@ verbatim record, **do not rewrite it** — raise it with the principal and appen
 
 ---
 
+## E-011 · 24 September 2026 — three approvals: pull the private files, clean up, and which register is the authority
+
+Given in one message, answering three questions the supervisor put after verifying the migration: (1) pull the nine private
+files (the Singh correspondence and briefing drafts, and the inbox-derived plan) from the public repo and rewrite its history;
+(2) push one cleanup commit; (3) keep `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` and `CORRECTIONS.md` authoritative, with
+the programme's `answer/` and `corrections/` files as pointers to them.
+
+> *"1) Yes 2) Yes 3) Agreed"*
+
+**Record of what happened:** the files were removed from the current tree by a normal commit the same day. The history rewrite
+(amending commit `e2d0f8a`) was blocked by the agent's own safety check on rewriting published history, and was put back to the
+principal to run or to permit.
+
+---
+
+## E-010 · 24 September 2026 — what may be public, and what stays private
+
+Given in three messages during the migration.
+
+> *"On (2) we are allowed to publish synthesis for research as long as we attribute"*
+
+> *"The API key is free, there is no issue here, but it should be in the repo. You need to rework the Dropbox folder. Everything
+> that can live inside the repo should be in the repo. The Dropbox folder should retain any key or other information (original
+> research, FT articles, anything behind paywall etc...) and keys etc...."*
+
+> *"Thus Dropbox folder for anything we don't want in the public domain."*
+
+**As applied, 24 Sep.** Attributed synthesis of third-party sources is publishable; the four synthesis docs were checked (sources
+named, no quote over 15 words). The FIA key is free and may stay in the repo; it is also held in the Dropbox `keys/` file with the
+private SEC contact string. Everything else not for the public domain — paywalled and copyrighted originals, correspondence,
+inbox-derived material, persona simulations, third-party datasets — lives in the Dropbox companion's `private/`.
+
+---
+
+## E-009 · 24 September 2026 — the work moves to a public repository
+
+> *"We are switching our work to: https://github.com/closeofbusiness/market-plumbing, an agent is currently creating it"*
+
+The repository is public and licensed CC BY 4.0. The Dropbox vault was migrated into it at commit `e2d0f8a` the same day, and
+the Dropbox folder became the private companion (E-010).
+
+---
+
 ## E-008 · 23 September 2026 — the supervisor revises, checks and adjudicates a peer's draft
 
 Given in one message, answering the supervisor's question of who should revise W2 after its review found three defects

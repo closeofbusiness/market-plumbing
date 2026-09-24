@@ -71,7 +71,7 @@ orphan_check() {
       echo "  ✗ ORPHAN (folder): $base/ -- no row in the read table"
       hits=$((hits+1))
     fi
-  done <<< "$(find . -mindepth 1 -maxdepth 1 -type d | sort)"
+  done <<< "$(find . -mindepth 1 -maxdepth 1 -type d -not -name '.*' | sort)"
   [ "$hits" -eq 0 ] && echo "  ✓ no orphans -- every top-level doc and folder has a read-table row."
 }
 

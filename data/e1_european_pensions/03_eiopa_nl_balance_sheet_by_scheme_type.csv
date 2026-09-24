@@ -1,0 +1,92 @@
+reference_period,iorp_type_DB_or_DC,item_code,item_name,value_eur_million
+2024 Q2,DB,R0270,Total assets,1590351.326387
+2024 Q2,DB,R0010,Investments,1447210.570288
+2024 Q2,DB,R0030,Equities,341490.842783
+2024 Q2,DB,R0060,Bonds,586163.188125
+2024 Q2,DB,R0070,Government bonds,408677.838896
+2024 Q2,DB,R0080,Corporate bonds,162284.880935
+2024 Q2,DB,R0120,Collective investment undertaking,591764.779923
+2024 Q2,DB,R0190,Derivatives,-79383.848907
+2024 Q2,DB,R0250,Cash and cash equivalents,87961.446428
+2024 Q2,DC,R0270,Total assets,31700.510845
+2024 Q2,DC,R0010,Investments,31060.541115
+2024 Q2,DC,R0030,Equities,nan
+2024 Q2,DC,R0060,Bonds,615.454264
+2024 Q2,DC,R0070,Government bonds,615.454264
+2024 Q2,DC,R0080,Corporate bonds,nan
+2024 Q2,DC,R0120,Collective investment undertaking,30450.785013
+2024 Q2,DC,R0190,Derivatives,-5.698162
+2024 Q2,DC,R0250,Cash and cash equivalents,46.700721
+2024 Q4,DB,R0270,Total assets,1693372.851766
+2024 Q4,DB,R0010,Investments,1575152.129027
+2024 Q4,DB,R0030,Equities,373623.143415
+2024 Q4,DB,R0060,Bonds,626858.556846
+2024 Q4,DB,R0070,Government bonds,439553.571761
+2024 Q4,DB,R0080,Corporate bonds,170846.59861
+2024 Q4,DB,R0120,Collective investment undertaking,618509.365433
+2024 Q4,DB,R0190,Derivatives,-51311.106707
+2024 Q4,DB,R0250,Cash and cash equivalents,72467.034114
+2024 Q4,DC,R0270,Total assets,35402.133419
+2024 Q4,DC,R0010,Investments,34792.025712
+2024 Q4,DC,R0030,Equities,nan
+2024 Q4,DC,R0060,Bonds,nan
+2024 Q4,DC,R0070,Government bonds,nan
+2024 Q4,DC,R0080,Corporate bonds,nan
+2024 Q4,DC,R0120,Collective investment undertaking,34881.896662
+2024 Q4,DC,R0190,Derivatives,-89.87095
+2024 Q4,DC,R0250,Cash and cash equivalents,42.701089
+2025 Q2,DB,R0270,Total assets,1608831.252092
+2025 Q2,DB,R0010,Investments,1476620.699387
+2025 Q2,DB,R0030,Equities,386465.182285
+2025 Q2,DB,R0060,Bonds,595878.898591
+2025 Q2,DB,R0070,Government bonds,417963.466772
+2025 Q2,DB,R0080,Corporate bonds,163291.222166
+2025 Q2,DB,R0120,Collective investment undertaking,548632.411583
+2025 Q2,DB,R0190,Derivatives,-79547.704294
+2025 Q2,DB,R0250,Cash and cash equivalents,82650.846886
+2025 Q2,DC,R0270,Total assets,51902.957824
+2025 Q2,DC,R0010,Investments,50326.073268
+2025 Q2,DC,R0030,Equities,3922.18093
+2025 Q2,DC,R0060,Bonds,2239.394937
+2025 Q2,DC,R0070,Government bonds,1584.035635
+2025 Q2,DC,R0080,Corporate bonds,639.491045
+2025 Q2,DC,R0120,Collective investment undertaking,44790.341401
+2025 Q2,DC,R0190,Derivatives,-807.563296
+2025 Q2,DC,R0250,Cash and cash equivalents,454.841313
+2025 Q4,DB,R0270,Total assets,1621025.822844
+2025 Q4,DB,R0010,Investments,1451998.077218
+2025 Q4,DB,R0030,Equities,403108.13804
+2025 Q4,DB,R0060,Bonds,594319.843652
+2025 Q4,DB,R0070,Government bonds,409404.219696
+2025 Q4,DB,R0080,Corporate bonds,176499.81093
+2025 Q4,DB,R0120,Collective investment undertaking,549693.040419
+2025 Q4,DB,R0190,Derivatives,-121314.387747
+2025 Q4,DB,R0250,Cash and cash equivalents,93911.75266
+2025 Q4,DC,R0270,Total assets,63652.122739
+2025 Q4,DC,R0010,Investments,61278.765353
+2025 Q4,DC,R0030,Equities,4562.34787
+2025 Q4,DC,R0060,Bonds,3980.133845
+2025 Q4,DC,R0070,Government bonds,3095.342431
+2025 Q4,DC,R0080,Corporate bonds,868.376343
+2025 Q4,DC,R0120,Collective investment undertaking,53881.637258
+2025 Q4,DC,R0190,Derivatives,-1328.22525
+2025 Q4,DC,R0250,Cash and cash equivalents,600.755649
+2026 Q1,DB,R0270,Total assets,1085789.168442
+2026 Q1,DB,R0010,Investments,1026154.846254
+2026 Q1,DB,R0030,Equities,267560.32575
+2026 Q1,DB,R0060,Bonds,413116.715389
+2026 Q1,DB,R0070,Government bonds,293507.940117
+2026 Q1,DB,R0080,Corporate bonds,115115.32917
+2026 Q1,DB,R0120,Collective investment undertaking,366034.108429
+2026 Q1,DB,R0190,Derivatives,-64169.929334
+2026 Q1,DB,R0250,Cash and cash equivalents,29653.542471
+2026 Q1,DC,R0270,Total assets,602274.636779
+2026 Q1,DC,R0010,Investments,531487.085839
+2026 Q1,DC,R0030,Equities,127599.188217
+2026 Q1,DC,R0060,Bonds,215735.904926
+2026 Q1,DC,R0070,Government bonds,134205.899987
+2026 Q1,DC,R0080,Corporate bonds,80358.4894
+2026 Q1,DC,R0120,Collective investment undertaking,226324.456789
+2026 Q1,DC,R0190,Derivatives,-52293.545101
+2026 Q1,DC,R0250,Cash and cash equivalents,49249.347583
+,,,"SOURCE: EIOPA Occupational Pensions Statistics, quarterly balance sheet (PF_Q_BalanceSheet.csv), reporting country NL. IORP-type split ('DB'/'DC') is EIOPA's own classification as submitted by national supervisors (DNB for NL). Downloaded and aggregated directly from the raw CSV.",https://nexteuropa-multisites.s3.eu-west-1.amazonaws.com/www.eiopa.europa.eu/assets/occupational-pensions-statistics/PF_Q_BalanceSheet.csv

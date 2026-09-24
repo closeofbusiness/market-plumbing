@@ -1,0 +1,26 @@
+fiscal_label,as_of_date,calendar_quarter_start,calendar_quarter_end,aum_jpy_trn,aum_jpy_bn,source_url
+FY2020 1Q,2020-06-30,2020-04-01,2020-06-30,164.2453,164245.3,https://www.gpif.go.jp/en/performance/2020_1Q_0426_eg.pdf
+FY2020 2Q,2020-09-30,2020-07-01,2020-09-30,172.4996,172499.6,https://www.gpif.go.jp/en/performance/2020_2Q_0426_eg.pdf
+FY2020 3Q,2020-12-31,2020-10-01,2020-12-31,179.0754,179075.4,https://www.gpif.go.jp/en/performance/2020_3Q_0426_eg.pdf
+FY2020 4Q,2021-03-31,2021-01-01,2021-03-31,192.1473,192147.3,https://www.gpif.go.jp/en/performance/annual_report_fiscal_year_2020_en.pdf
+FY2021 1Q,2021-06-30,2021-04-01,2021-06-30,193.3358,193335.8,https://www.gpif.go.jp/en/performance/2021_1Q_1105_eg.pdf
+FY2021 2Q,2021-09-30,2021-07-01,2021-09-30,198.9489,198948.9,https://www.gpif.go.jp/en/performance/2021_2Q_1105_eg.pdf
+FY2021 3Q,2021-12-31,2021-10-01,2021-12-31,200.8295,200829.5,https://www.gpif.go.jp/en/performance/2021_3Q_0214_eg.pdf
+FY2021 4Q,2022-03-31,2022-01-01,2022-03-31,202.1977,202197.7,https://www.gpif.go.jp/en/performance/annual_report_fiscal_year_2021_2.pdf
+FY2022 1Q,2022-06-30,2022-04-01,2022-06-30,194.7251,194725.1,https://www.gpif.go.jp/en/performance/2022_1Q_0805_eg.pdf
+FY2022 2Q,2022-09-30,2022-07-01,2022-09-30,196.6835,196683.5,https://www.gpif.go.jp/en/performance/2022_2Q_1104_02_eg.pdf
+FY2022 3Q,2022-12-31,2022-10-01,2022-12-31,191.4807,191480.7,https://www.gpif.go.jp/en/performance/2022_3Q_0203_eg.pdf
+FY2022 4Q,2023-03-31,2023-01-01,2023-03-31,205.5048,205504.8,https://www.gpif.go.jp/en/performance/79328564gpif/annual_report_summary_2022_en.pdf
+FY2023 1Q,2023-06-30,2023-04-01,2023-06-30,220.7799,220779.9,https://www.gpif.go.jp/en/performance/28637954gpif/2023_1Q_0804_en.pdf
+FY2023 2Q,2023-09-30,2023-07-01,2023-09-30,223.8965,223896.5,https://www.gpif.go.jp/en/performance/36274589gpif/2023_2Q_1102_en.pdf
+FY2023 3Q,2023-12-31,2023-10-01,2023-12-31,226.4142,226414.2,https://www.gpif.go.jp/en/performance/53748269gpif/2023_3Q_0202_en.pdf
+FY2023 4Q,2024-03-31,2024-01-01,2024-03-31,252.9955,252995.5,https://www.gpif.go.jp/en/performance/65829801gpif/annual_report_summary_2023_en.pdf
+FY2024 1Q,2024-06-30,2024-04-01,2024-06-30,258.0072,258007.2,https://www.gpif.go.jp/operation/29880651gpif/2024_1Q_0802_en.pdf
+FY2024 2Q,2024-09-30,2024-07-01,2024-09-30,252.8623,252862.3,https://www.gpif.go.jp/en/performance/62590877gpif/2024_2Q_1101_en.pdf
+FY2024 3Q,2024-12-31,2024-10-01,2024-12-31,260.4273,260427.3,https://www.gpif.go.jp/en/performance/23713581gpif/2024_3Q_0207_en.pdf
+FY2024 4Q,2025-03-31,2025-01-01,2025-03-31,257.4176,257417.6,https://www.gpif.go.jp/en/performance/32821257gpif/annual_report_summary_2024_en.pdf
+FY2025 1Q,2025-06-30,2025-04-01,2025-06-30,263.7629,263762.9,https://www.gpif.go.jp/en/performance/2025_1Q_0801-en.pdf
+FY2025 2Q,2025-09-30,2025-07-01,2025-09-30,282.5357,282535.7,https://www.gpif.go.jp/en/performance/92011372gpif/2025_2Q_1107_en.pdf
+FY2025 3Q,2025-12-31,2025-10-01,2025-12-31,294.8371,294837.1,https://www.gpif.go.jp/en/performance/75943515gpif/2025_3Q_0206_en.pdf
+FY2025 4Q,2026-03-31,2026-01-01,2026-03-31,299.8254,299825.4,https://www.gpif.go.jp/en/performance/73509681gpif/annual_report_summary_2025_en.pdf
+FY2026 1Q,2026-06-30,2026-04-01,2026-06-30,320.3732,320373.2,https://www.gpif.go.jp/operation/38371785gpif/2026_1Q_0807_en.pdf

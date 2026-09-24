@@ -1,5 +1,7 @@
 # Data monitor
 
+> **An extract.** The live sources are `data/series.tsv` and `CALENDAR.tsv`; where this file and they differ, they win.
+
 Only series identified in the source and used by a claim this repository carries. Latest row is the last observation in `data/series.tsv` (parent of the `_research` folder; file modified 21 September 2026; 463 rows, 387 keys). Frequency is taken from that file’s note when it says so, otherwise from the release the source names. Next print is from `CALENDAR.tsv` when a row exists. If the next print is unknown, the cell says so.
 
 This is not the full monitor. The 11 September channel map counted 175 series and is stale against the file.

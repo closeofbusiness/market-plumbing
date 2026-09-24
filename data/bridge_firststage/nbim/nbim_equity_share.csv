@@ -1,0 +1,49 @@
+date,equity_share_pct,basis,frequency,fund_value_nok_bn,fund_value_usd_bn,source_url,notes
+1998-12-31,40.7,fund_total_market_value,annual,172,23,https://www.nbim.no/en/investments/the-funds-value/,
+1999-12-31,42.34,fund_total_market_value,annual,222,28,https://www.nbim.no/en/investments/the-funds-value/,
+2000-12-31,39.64,fund_total_market_value,annual,386,44,https://www.nbim.no/en/investments/the-funds-value/,
+2001-12-31,40.07,fund_total_market_value,annual,614,68,https://www.nbim.no/en/investments/the-funds-value/,
+2002-12-31,37.93,fund_total_market_value,annual,609,88,https://www.nbim.no/en/investments/the-funds-value/,
+2003-12-31,42.72,fund_total_market_value,annual,845,127,https://www.nbim.no/en/investments/the-funds-value/,
+2004-12-31,40.94,fund_total_market_value,annual,1016,168,https://www.nbim.no/en/investments/the-funds-value/,
+2005-12-31,41.6,fund_total_market_value,annual,1399,207,https://www.nbim.no/en/investments/the-funds-value/,
+2006-12-31,40.7,fund_total_market_value,annual,1784,286,https://www.nbim.no/en/investments/the-funds-value/,
+2007-12-31,47.45,fund_total_market_value,annual,2019,372,https://www.nbim.no/en/investments/the-funds-value/,
+2008-12-31,49.63,fund_total_market_value,annual,2275,325,https://www.nbim.no/en/investments/the-funds-value/,
+2009-12-31,62.27,fund_total_market_value,annual,2640,457,https://www.nbim.no/en/investments/the-funds-value/,
+2010-12-31,61.46,fund_total_market_value,annual,3077,529,https://www.nbim.no/en/investments/the-funds-value/,
+2011-12-31,58.73,fund_total_market_value,annual,3312,555,https://www.nbim.no/en/investments/the-funds-value/,
+2012-12-31,61.22,fund_total_market_value,annual,3816,686,https://www.nbim.no/en/investments/the-funds-value/,
+2013-12-31,61.67,fund_total_market_value,annual,5038,830,https://www.nbim.no/en/investments/the-funds-value/,
+2014-12-31,61.27,fund_total_market_value,annual,6431,858,https://www.nbim.no/en/investments/the-funds-value/,
+2015-12-31,61.16,fund_total_market_value,annual,7475,845,https://www.nbim.no/en/investments/the-funds-value/,
+2016-12-31,62.48,fund_total_market_value,annual,7510,873,https://www.nbim.no/en/investments/the-funds-value/,
+2017-12-31,66.6,fund_total_market_value,annual,8488,1038,https://www.nbim.no/en/investments/the-funds-value/,
+2018-12-31,66.34,fund_total_market_value,annual,8256,953,https://www.nbim.no/en/investments/the-funds-value/,
+2019-12-31,70.83,fund_total_market_value,annual,10088,1148,https://www.nbim.no/en/investments/the-funds-value/,
+2020-12-31,72.8,fund_total_market_value,annual,10914,1275,https://www.nbim.no/en/investments/the-funds-value/,
+2021-12-31,71.94,fund_total_market_value,annual,12340,1339,https://www.nbim.no/en/investments/the-funds-value/,"WARNING: USD figures for this date are internally inconsistent on NBIM's own chart (equity+FI+real estate+infrastructure sums to USD 1,400bn but the chart's own 'Total market value' series shows USD 1,339bn for the same date, a 61bn/4.6% gap not seen in any other year 1998-2026). NOK figures for 2021 are internally consistent (sum of parts = 12,339 vs total 12,340). Use the USD figure for 2021 with caution."
+2022-12-31,69.77,fund_total_market_value,annual,12429,1428,https://www.nbim.no/en/investments/the-funds-value/,
+2023-12-31,70.88,fund_total_market_value,annual,15765,1552,https://www.nbim.no/en/investments/the-funds-value/,
+2024-12-31,71.44,fund_total_market_value,annual,19755,1739,https://www.nbim.no/en/investments/the-funds-value/,
+2025-12-31,71.28,fund_total_market_value,annual,21286,2110,https://www.nbim.no/en/investments/the-funds-value/,
+2026-06-30,72.08,fund_total_market_value,half-year(interim),22695,2292,https://www.nbim.no/en/investments/the-funds-value/,"Chart's x-axis places this point at year-end 2026, but the values match the Half-year Report 2026 (30 June 2026) exactly -- this is an interim/current reading, not a real year-end figure; corrected here."
+2022-03-31,70.9,fund_total_market_value,quarterly,11657,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-1q-2022/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2022-09-30,68.3,fund_total_market_value,quarterly,12216,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-3q-2022/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2023-03-31,70.1,fund_total_market_value,quarterly,14294,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-1q-2023/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2023-09-30,70.6,fund_total_market_value,quarterly,14801,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-3q-2023/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2024-03-31,72.1,fund_total_market_value,quarterly,17719,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-1q-2024/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2024-09-30,71.4,fund_total_market_value,quarterly,18870,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-3q-2024/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2025-03-31,70.0,fund_total_market_value,quarterly,18524,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-1q-2025/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2025-09-30,71.2,fund_total_market_value,quarterly,20455,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-3q-2025/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2026-03-31,70.2,fund_total_market_value,quarterly,20004,,https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-1q-2026/,NOK figure is 'market value of investment portfolio' (gross) as stated in the press release; USD not published for this release.
+2017-12-31,67.05,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2017-benchmark/,"The 'strategic' comparator shown on this archived page is 70.00, but the true strategic weight at this date was still 62.5% under the pre-May-2019 regime (per NBIM's GIPS report) -- do not compute a deviation-from-strategic using 70.00 for this row."
+2018-12-31,67.28,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2018-benchmark/,"The 'strategic' comparator shown on this archived page is 70.00, but the true strategic weight at this date was still 62.5% under the pre-May-2019 regime (per NBIM's GIPS report) -- do not compute a deviation-from-strategic using 70.00 for this row."
+2019-12-31,71.1,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2019-benchmark/,
+2020-12-31,,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2020-benchmark/,"NOT PUBLISHED: NBIM's own 'historical benchmarks' archive page has a blank 'actual benchmark indices' cell for equity/fixed income at this year-end (confirmed via the live, JS-rendered page). See nbim_band_crossings.csv."
+2021-12-31,,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2021-benchmark/,"NOT PUBLISHED: NBIM's own 'historical benchmarks' archive page has a blank 'actual benchmark indices' cell for equity/fixed income at this year-end (confirmed via the live, JS-rendered page). See nbim_band_crossings.csv."
+2022-12-31,70.88,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2022-benchmark/,
+2023-12-31,71.83,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2023-benchmark/,
+2024-12-31,72.28,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2024-benchmark/,
+2025-12-31,72.2,actual_benchmark_index,annual,,,https://www.nbim.no/en/investments/benchmark-index/historical-benchmarks/2025-benchmark/,
+2026-06-30,72.93,actual_benchmark_index,"half-year(interim, not yet archived at year-end)",22695,2292,https://www.nbim.no/en/investments/benchmark-index/,Most recent published point on this basis; will be superseded once year-end 2026 data is archived.
