@@ -1,0 +1,2480 @@
+               Finance and Economics Discussion Series
+       Divisions of Research & Statistics and Monetary Affairs
+              Federal Reserve Board, Washington, D.C.
+
+
+
+
+ Introducing the Distributional Financial Accounts of the United
+                             States
+
+
+
+
+Michael Batty, Jesse Bricker, Joseph Briggs, Elizabeth Holmquist,
+Susan McIntosh, Kevin Moore, Eric Nielsen, Sarah Reber, Molly
+Shatto, Kamila Sommer, Tom Sweeney, and Alice Henriques Volz
+
+                                              2019-017
+
+
+
+       Please cite this paper as:
+       Batty, Michael, Jesse Bricker, Joseph Briggs, Elizabeth Holmquist, Susan McIntosh, Kevin
+       Moore, Eric Nielsen, Sarah Reber, Molly Shatto, Kamila Sommer, Tom Sweeney, and Alice
+       Henriques Volz (2019). “Introducing the Distributional Financial Accounts of the United
+       States,” Finance and Economics Discussion Series 2019-017. Washington: Board of Gover-
+       nors of the Federal Reserve System, https://doi.org/10.17016/FEDS.2019.017.
+
+   NOTE: Staff working papers in the Finance and Economics Discussion Series (FEDS) are preliminary
+materials circulated to stimulate discussion and critical comment. The analysis and conclusions set forth
+are those of the authors and do not indicate concurrence by other members of the research staff or the
+Board of Governors. References in publications to the Finance and Economics Discussion Series (other than
+acknowledgement) should be cleared with the author(s) to protect the tentative character of these papers.
+       Introducing the Distributional Financial
+            Accounts of the United States∗
+ Michael Batty, Jesse Bricker, Joseph Briggs†, Elizabeth Holmquist, Susan McIntosh, Kevin Moore,
+ Eric Nielsen, Sarah Reber, Molly Shatto, Kamila Sommer, Tom Sweeney, and Alice Henriques Volz
+
+
+                                              March 2019
+
+
+                                                Abstract
+
+       This paper describes the construction of the Distributional Financial Accounts (DFAs),
+       a new dataset containing quarterly estimates of the distribution of U.S. household
+       wealth since 1989, and provides the first look at the resulting data. The DFAs build on
+       two existing Federal Reserve Board statistical products — quarterly aggregate measures
+       of household wealth from the Financial Accounts of the United States and triennial
+       wealth distribution measures from the Survey of Consumer Finances — to incorporate
+       distributional information into a national accounting framework. The DFAs comple-
+       ment other existing sources of data on the wealth distribution by using a more com-
+       prehensive measure of household wealth and by providing quarterly data on a timely
+       basis. We encourage policymakers, researchers, and other interested parties to use the
+       DFAs to help understand issues related to the distribution of U.S. household wealth.
+       JEL Codes: E01, H31, H5, N3
+
+
+
+
+   ∗
+      The analysis and conclusions set forth here are those of the authors and do not indicate concurrence by
+other members of the research staff, the Board of Governors, or the Federal Reserve System. This project
+reflects the combined efforts of the Flow of Funds and Microeconomic Survey sections at the Federal Reserve
+Board. We are grateful to Marco Cagetti, Karen Pence, and Paul Smith for providing outstanding guidance
+and supervision of this project, as well as numerous edits to this paper’s text. We also thank Jeff Thompson
+for work in the early stages of this project. In addition, we also thank seminar participants at the Federal
+Reserve Board for their useful feedback and suggestions.
+    †
+      Corresponding author: joseph.s.briggs@frb.gov
+1       Introduction
+Wealth concentration is an important characteristic of the United States economy, with
+evidence mounting that concentration has increased over the last 30 years (Wolff et al. (2012),
+Piketty (2013), Bricker et al. (2016), Saez and Zucman (2016), Rios-Rull and Kuhn (2016)).
+This increase in concentration has important implications for a number of economic and
+social outcomes. For instance, studies have examined the relationship between the wealth
+distribution and economic growth (Banerjee and Duflo (2003)), monetary policy transmission
+(Auclert (2019), Gornemann et al. (2016), Kaplan et al. (2018)), aggregate saving rates
+(Fagereng et al. (2016)), optimal tax policy (Albanesi (2011), Shourideh (2012)), social
+mobility (Benhabib et al. (2017)), and even political engagement (Solt (2008)).
+    The explosion of interest in the wealth distribution has also highlighted several limitations
+of some of the existing data sources. For example, many of the existing measures of the
+household wealth distribution are not comprehensive in their concept of household wealth,
+are measured at a relatively low frequency, or are only available with a substantial lag.
+Separately, scholars who focus on national accounts have expressed interest in incorporating
+microeconomic heterogeneity into these frameworks.1
+    This paper describes the construction of the Distributional Financial Accounts (DFAs), a
+new initiative that provides quarterly, timely estimates of the wealth distribution based on a
+comprehensive measure of U.S. household wealth. The DFAs are constructed by integrating
+two statistical products produced by the Federal Reserve Board: the Financial Accounts of
+the United States and the Survey of Consumer Finances (SCF). The Financial Accounts are
+U.S. national accounts that provide quarterly measures of aggregate assets and liabilities for
+various economic sectors, including households, and the SCF collects detailed measures of
+a representative sample of household-level balance sheets (including of very wealthy house-
+holds) every three years. The DFAs combine the SCF’s distributional information with the
+Financial Accounts’ quarterly national accounting framework in a manner that is consistent
+with both data sets. The DFA project is part of the Enhanced Financial Accounts (EFAs)
+    1
+    For example, Carroll (2014) cites the need for distributional national statistics, while the Inter-Agency
+Group on Economic and Financial Statistics has called on G-20 nations to develop such statistics that are
+internationally comparable. Other efforts to construct distributional national measures in the United States
+include early work by King (1915), King (1927), King et al. (1930), Kuznets (1947), and Kuznets and Jenks
+(1953), more recent efforts by Piketty et al. (2017), and official measures currently in development at the
+Bureau of Economic Analysis (e.g., Furlong (2014), Fixler and Johnson (2014), Fixler et al. (2017)).
+
+
+                                                     1
+initiative, which seeks to expand the scope of the Financial Accounts by adding additional
+information from other data sources.2
+  We construct the DFAs in three steps: 1) we generate a balance sheet from the SCF
+that is conceptually consistent with the components of aggregate household net worth in
+the Financial Accounts, 2) we interpolate and forecast the reconciled SCF balance sheet for
+quarters where the SCF is not observed based on information in the Financial Accounts
+and other sources, and 3) we apply the distribution observed in the reconciled SCF to the
+Financial Accounts’ aggregates. This approach produces rich and reliable measures of the
+distribution of the Financial Accounts’ household-sector assets and liabilities for each quarter
+from 1989 to the present.
+  In this paper, in addition to detailing the construction of the data, we highlight three
+features of the DFAs that we believe will be particularly useful to analysts and researchers,
+with illustrative findings for each. First, the DFAs provide a comprehensive integration of
+disaggregated household-level wealth data with official aggregate wealth measures. As de-
+tailed below, the SCF directly measures nearly all household assets and liabilities accounted
+for in the Financial Accounts, and, for the few exceptions, we carefully impute the missing
+information. The incorporation of household-level asset and liability data reduces the need
+for strong assumptions to generate a distribution and results in a reliable and detailed mea-
+sure of the wealth distribution. We find a marked increase in wealth concentration over the
+last 30 years that is consistent with prior studies, but with somewhat lower overall wealth
+concentration than measured in other data sets.
+  A second key feature of the DFAs is the relatively high-frequency of the measures of
+the wealth distribution, making it suitable for studying the business cycle dynamics of the
+wealth distribution. For example, with complete balance sheets since 1989, the DFAs show
+quarterly movements in relative financial positions for each wealth group before, during, and
+after the dot-com era and the Great Recession. We find that the wealth share of the top 1%
+was strongly pro-cyclical over this period. In contrast, the wealth share of households in the
+90-99th percentiles of the wealth distribution varied counter-cyclically, while the share for
+households in the bottom 90% of the wealth distribution displayed little cyclical behavior
+over this period. These dynamics are typically difficult to observe in other data sets because
+   2
+     More information about the EFA initiative, and additional EFA projects, can be found at https:
+//www.federalreserve.gov/releases/efa/enhanced-financial-accounts.htm.
+
+
+
+                                                2
+peaks and troughs often fall between times of survey measurement.
+    A third important feature of the DFAs is timeliness. As part of the Financial Accounts,
+the DFAs will be published about ten or eleven weeks after the end of each quarter, making
+the DFAs a “near-real-time” measure that can be used for studying recent changes in the
+wealth distribution. This feature could be especially valuable during turning points or times
+of economic turmoil. As an example, we note that the long-term trend of increased wealth
+concentration continued through the 3rd quarter of 2018 but that this trend reversed with
+the large stock market decline in the 4th quarter of 2018. In addition, we test how the
+DFA methodology would have performed during the Great Recession and find that the DFA
+estimates correspond well to the actual data that was published much later.
+    The paper proceeds as follows. In Section 2, we document the reconciliation between the
+measurement concepts used in the Financial Accounts and the SCF. In Section 3, we describe
+how we interpolate and forecast the reconciled SCF-balance sheets to unobserved quarters.
+In Section 4, we describe a few high-level results and their implications for understanding
+the distribution of household wealth. In Section 5, we test the sensitivity of these findings
+to alternative reconciliation approaches and to the sampling variability inherent in the SCF.
+Finally, Section 6 summarizes the DFA’s key contributions and details future plans and
+extensions.
+
+
+
+2     Reconciling the Financial Accounts and the SCF
+The first step in constructing the DFAs is reconciling the measurement concepts used in the
+Financial Accounts and the SCF. To do so, we first organize the components of SCF net worth
+in a way that is as similar as possible to each line on Table B.101.h of the Financial Accounts,
+the balance sheet that reports the components of the aggregate wealth of U.S. households.
+Next, we generate SCF aggregates and compare the SCF and Financial Accounts aggregates
+over time. Naturally, this exercise has challenges, but overall reveals that the two datasets
+are broadly compatible. While we aim to construct close empirical and conceptual matches
+for each component, our primary goal is to understand the degree of potential bias from
+applying the SCF distribution to the Financial Accounts total when the match is less than
+perfect. For example, we are more interested in cases where the two measures differ because
+only one contains a component that likely skew towards one end of the wealth distribution,
+
+
+                                               3
+and we are less concerned with empirical level differences that are plausibly spread roughly
+proportionately across the wealth distribution. Based upon these criteria, we find that the
+two sources align quite well for most components of household net worth.
+   Comparing and reconciling the SCF and Financial Accounts has a long history, including
+Avery et al. (1987), Antoniewicz (1996), Maki et al. (2001), Henriques and Hsu (2014),
+and Dettling et al. (2015). Generally these studies find that the aggregated SCF “bulletin”
+measures of assets and liabilities align reasonably well, but not perfectly, across the two data
+sets.3 Our approach is similar in spirit to much of this prior work and extends it in several
+important ways. First, while prior work has reconciled the SCF (a household survey) with
+Financial Accounts Table B.101 (which includes nonprofit organizations), for the DFAs we
+are able to make use of the recently developed Financial Accounts Table B.101.h, which
+provides a less-detailed breakdown of wealth categories than B.101, but which excludes
+nonprofits.4
+   Second, while prior reconciliations have largely excluded assets and liabilities that are
+absent or difficult to measure in the SCF (e.g., defined benefit pensions, insurance reserves,
+and annuities), for the DFAs we distribute the Financial Accounts totals to SCF respondents
+using other available information. We describe the methodology that we use to distribute
+these parts of the household balance sheet in this section and demonstrate how these assets
+and liabilities affect our distributional results in Section 5.
+   Finally, we build upon prior reconciliations by looking closely at areas of potential discon-
+nect between the two datasets and developing solutions to bridge the gap when necessary.
+For example, as described in more detail below, we dig deeper into differences in values of
+non-corporate businesses, real estate, consumer durables, Individual Retirement Accounts
+(IRAs), and debt securities. In addition, while privacy concerns restrict the SCF from sam-
+pling households from the Forbes 400, we employ a weighting correction method to account
+for these households. This method adds the wealth and demographic characteristics of these
+households to the existing SCF data, providing a more complete distribution of wealth.5
+   3
+     The “bulletin” measures refer to the SCF statistics reported in the Federal Reserve Bulletin associated
+with each data release (for example, see Bricker et al. (2017)).
+   4
+     However, because it is calculated residually, it includes the holdings of sectors not captured else-
+where, the most significant of which is hedge funds. For more information about Table B.101.h,
+see “Household and Nonprofit Balance Sheets in the Financial Accounts of the U.S” (Holmquist
+(2019)). https://www.federalreserve.gov/econres/notes/feds-notes/household-and-nonprofit-
+balance-sheets-in-the-financial-accounts-of-the-us-20190104.htm
+   5
+     The weighting correction is described in Appendix F and based on Bricker et al. (2018). For details on
+
+
+                                                     4
+Overall, the DFAs contain the most rigorous reconciliation to date of the SCF and Financial
+Accounts concepts of household net worth.
+   In the remainder of this section, we detail how we reconstruct all nineteen balance sheet
+lines from Table B.101.h using SCF data. Following the B.101.h classification scheme, we
+begin with nonfinancial assets, then move to financial assets, and finally to liabilities. We
+include the level of the 2016Q3 B.101.h balance sheet measure, as well as the share of
+total assets or liabilities, in the header for the reader’s convenience.6 While the overall
+reconciliation between the two data sources is good, in some cases, the totals do not align
+particularly well, even when the concepts are quite similar. These differences are unlikely to
+affect our overall wealth distribution measures for two reasons. First, significant differences
+between B.101.h and reconciled SCF measures are generally confined to smaller asset and
+liability categories that have limited effects on the overall distribution of wealth. Second,
+our analyses do not suggest that these differences are skewed towards either end of the
+wealth distribution. We therefore expect that the differences in our reconciled measure do
+not significantly affect our key results. We explore these issues further in Section 5, where
+we test the sensitivity of our results to alternative assumptions regarding the conceptual
+alignment of the two data sets. In particular, we show that excluding the categories where
+the match between the two data sets is not as strong has modest effects on the distributional
+results.
+
+
+2.1        Reconciliation of Assets
+
+2.1.1      Nonfinancial assets
+
+Real estate ($22.6 trillion, or 22% of total assets in 2016Q3)
+Real estate is one of the largest components of household wealth. Aggregate real estate
+measures in the Financial Accounts and SCF align reasonably well until the mid-2000s,
+although the SCF measure has consistently exceeded the B.101.h values.7 The gap between
+the Forbes list of wealthiest families, see https://www.forbes.com/forbes-400/ .
+   6
+     We choose this quarter because it coincides with the most recent SCF data. Note that because total
+B.101.h assets are approximately $100 trillion in this quarter, the shares are easily inferred from the dollar
+values.
+   7
+     We also note that the reconciled SCF measure of residential real estate differs slightly from the typical
+“bulletin” SCF measure (Bricker et al. (2017)) in that it does not include income-producing residential real
+estate but does include real estate holdings of vacant land.
+
+
+
+                                                      5
+the two measures was around 10% before the mid-2000s, then increased considerably to
+50% by 2010, and has since declined somewhat to about 29%. Important methodological
+differences drive the divergence between the SCF and Financial Accounts measures of housing
+wealth measures during the mid-2000s housing cycle. Specifically, the SCF is based upon
+owner-reported values, whereas the Financial Accounts measure generally moves with a
+repeat-sales house-price index.8 Gallin et al. (2018) — and studies cited therein — show that
+owner self-reports and repeat-sales indexes can diverge notably during housing downturns
+due to known biases in both measures.9
+   The sizable, time-varying gap between the Financial Accounts and SCF measures of hous-
+ing wealth is notable, but, as mentioned above, the key question for our purposes is whether
+it causes bias when we apply the SCF distribution to the Financial Accounts measures. In
+Section 5, we assess the sensitivity of our results to a different aggregate housing wealth
+series recently developed by Board staff. This alternative series is derived from a large-scale
+automated-valuation model and roughly splits the difference between the Financial Accounts
+and SCF measures.10 Using this alternative measure, the resulting wealth shares are within
+0.4% of the baseline, suggesting that the methodological differences in measuring aggregate
+housing wealth are not driving a large bias in our resulting distributional measures.
+
+Consumer durable goods ($5.1 trillion, or 5% of total assets)
+This category, taken from the BEA’s stock of fixed assets and consumer durable goods,
+captures many durable assets: automobiles, trucks/motor vehicles, furniture, carpet/rugs,
+light fixtures, household appliances, audio/video/photo equipment, computers, boats, books,
+jewelry/watches, health and therapeutic equipment, and luggage, among others.
+   The SCF asks specifically about cars and other vehicles, which account for about 30% of
+B.101.h consumer durables. For the remaining assets, the SCF asks “Other than pension
+   8
+      In the Financial Accounts, housing wealth was benchmarked in 2005 to aggregated self-reported house
+values from the Census’s American Housing Survey. CoreLogic’s single family house price index and net fixed
+investment from the Bureau of Economic Analysis (BEA) are used to project the level of housing wealth
+since then.
+    9
+      Owner self-reported house valuations tend to lag the market during market turns and tend to be overly
+optimistic, while repeat-sales indexes can overstate the effect of housing downturns on aggregate wealth if
+transacting homes are not fully representative of all homes. A smaller methodological difference is that the
+AHS survey that benchmarks the B.101.h measure may have less complete coverage of second homes than
+the SCF. Stripping second homes from the SCF results in in an aggregate series that is quite close to the
+B.101.h measure before 2005 but does little to address the divergence since then.
+   10
+      The alternative measure is available as part of the Enhanced Financial Accounts at https://www.
+federalreserve.gov/releases/efa/alternative-measure-of-owner-occupied-real-estate.htm.
+
+
+
+                                                     6
+assets and other such retirement assets, do you (or anyone in your family living here) have
+any other substantial assets that I haven’t already recorded...?” If families indicate that
+they own any such assets, they are queried about the type of the asset and its value. We
+sum all nonfinancial assets included in responses to this question to obtain our reconciled
+SCF measure of consumer durable goods.
+   The SCF reports fewer consumer durables than the Financial Accounts, with the ratio
+typically around 60%. This occurs in large part because the BEA measure covers essentially
+any item that has resale value, whereas the SCF focuses on the most substantial assets.11
+To the extent that these significant assets are concentrated among the wealthy, and the
+regular household goods that the SCF may miss are more equally distributed, applying the
+SCF distribution to the Financial Accounts total may overstate concentration. To assess
+the significance of this potential bias, we group the SCF assets into the twenty-eight BEA
+consumer durable categories with an eye toward understanding how evenly distributed across
+the wealth distribution these assets might be. We find little systematic evidence that the SCF
+more severely underreports consumer durable goods that are likely more evenly distributed
+(such as “window covering” or “sporting equipment”) than it does for items that are more
+likely concentrated among the wealthy (such as “jewelry and watches” or “pleasure aircraft”).
+Thus, we conclude there is little reason to believe that consumer durables not reported in
+the SCF are distributed significantly differently from those that are reported in the SCF.
+
+
+2.1.2    Financial assets
+
+It is relatively straightforward to assign financial assets directly held by SCF households to
+the appropriate B.101.h categories (e.g., directly held stocks and mutual funds are assigned
+to the B.101.h category “corporate equity and mutual fund holdings”).12 However, we must
+make additional assumptions to assign financial assets that are held indirectly through IRAs,
+trusts, and managed investment accounts.13 For these types of investment vehicles, the SCF
+  11
+      While the SCF question offers examples of items that fall into many of the BEA categories, its prompt
+begins with a list geared towards items that may have considerable value, as opposed to typical household
+goods: “for example, artwork, precious metals, antiques, oil and gas leases, futures contracts, future proceeds
+from a lawsuit or estate that is being settled, royalties, or something else?”
+   12
+      One difference between the Financial Accounts and the SCF is that the Financial Accounts typically
+calculate household holdings of each financial asset category residually by subtracting the holdings of every
+other sector from the total outstanding (due to the lack of comprehensive aggregate data on household assets).
+In contrast, SCF households directly report the value of their financial assets in their survey responses.
+   13
+      Defined-contribution retirement accounts are included with pension plans, as described below.
+
+
+                                                      7
+asks what percentage of holdings are invested in equities versus interest-bearing assets. Using
+this percentage, we assign the share of these assets that are invested in equities to “corporate
+equity and mutual fund holdings.” For the non-equity share, since we do not directly observe
+the composition of the interest-bearing assets, we use the Investment Company Institute Fact
+Book (Collins (2018)) and IRA Database (Holden and Bass (2018)) for the relevant year to
+estimate the breakdown, assuming each SCF respondent holds a representative portfolio.
+Below we describe each financial asset category in detail.14
+
+Checkable deposits and currency ($970 billion, or 1.0% of total assets)
+This category includes checking accounts and physical cash. The SCF total is the sum of all
+checking accounts (excluding checkable money market-type accounts), cash held by families,
+the value of prepaid debit cards, and an estimate of deposits in foreign institutions. Although
+the two measures align well conceptually, they differ empirically, with the SCF consistently
+below B.101.h in the early years (by an average of 33%), and above B.101.h since 2001 (by
+an average of more than 155%).15
+
+Time deposits and short-term investments ($8.7 trillion, or 9% of total assets)
+This category includes savings accounts, certificates of deposit, money market accounts
+through banks, and a small amount of foreign deposits. The SCF measure is the sum of
+savings accounts held at financial institutions, assets held in certificates of deposit, assets
+held in money market accounts at depository institutions, and a share of assets held in IRA
+accounts, trusts or managed investment accounts. Again, the measures align well concep-
+tually, but differ empirically. The SCF measure is consistently below the B.101.h measure,
+historically ranging around 40-60% of the B.101.h total.
+
+Money market fund shares ($1.4 trillion, or 1.4% of total assets)
+The SCF captures direct holdings of money market mutual funds in both checkable and
+non-checkable accounts at non-depository institutions. The SCF measure of money mar-
+ket mutual funds that are held indirectly through IRAs, trusts, and managed investment
+accounts are estimated using the imputation approach described above. The relationship
+  14
+    Unless noted otherwise, each category below is calculated residually in the Financial Accounts.
+  15
+    In particular, there is a notable mismatch right before and after the financial crisis due to a significant
+drop in the B.101.h measure in 2007. We suspect this is due to measurement error in the Financial Accounts,
+but there also appears to be a long-term trend of checkable deposits and currency growing faster in the SCF
+than in B.101.h.
+
+
+
+                                                      8
+between the SCF and B.101.h measures varies across time, with the SCF as much as 50%
+larger to 27% lower across the years.
+
+US government and municipal securities ($3.4 trillion, or 3% of total assets)
+This category includes Treasury securities, agency- and GSE-backed securities (i.e., securities
+guaranteed by Ginnie Mae, Fannie Mae, or Freddie Mac), and municipal securities. The SCF
+records direct holdings of Treasury, GSE, and municipal securities, and we estimate those
+held indirectly through IRAs, trusts, and managed investment accounts as described above.
+The SCF total averages 72% of the B.101.h total, and has been fairly stable since 2004.
+
+Corporate and foreign bonds ($1 trillion, or 1% of total assets)
+This is one of the smallest categories of household assets. The SCF captures directly held
+corporate and foreign bonds through a variable called “other bonds.” This is a catch-all
+variable after recording government and municipal bonds earlier in the interview. We add
+these “other bonds” to an imputed measure of corporate and foreign bonds held indirectly
+through IRAs, trusts, and managed investment accounts (imputed using the approach de-
+scribed above). The SCF total is typically somewhat lower than the B.101.h total, averaging
+55%.
+
+Other loans and advances ($835 billion, or 0.9% of total assets)
+This small category includes cash accounts at brokers and dealers. To construct a coun-
+terpart in the SCF, we add call accounts to the SCF measure of other unclassified loans,
+excluding land and mortgage contracts. This reconciled SCF series is fairly close to the
+B.101.h measure, averaging about 102%.
+
+Mortgage assets ($114 billion, or 0.1% of total assets)
+This tiny category (the smallest of the household asset categories) includes mortgages is-
+sued by households (i.e., seller-financed mortgages, including land contracts), as opposed to
+mortgages owed by households, which are a liability. To construct a comparable measure in
+the SCF, we sum variables that measure mortgages and other land contracts owed to the
+respondent. Historically, this reconciled SCF measure averages 118% of the B.101.h measure.
+
+Corporate equities and mutual funds ($20 trillion, or 20% of total assets)
+This is a large asset category for households, behind only pension wealth and real estate
+
+
+
+
+                                              9
+among the B.101.h assets.16 The corresponding SCF measure comprises directly held stocks
+and mutual funds, and the portion of other investment vehicles that are invested in equi-
+ties (such as IRAs, trusts, managed investment accounts, 529 plans, and Health Savings
+Accounts). Historically, the SCF measure is quite close to the B.101.h measure, averaging
+about 106%, and is relatively consistent across years.
+
+Life insurance reserves ($1.6 trillion, or 1.5% of total assets)
+Since life insurance policies are not traded in a secondary market, insurance companies
+calculate their policy values using models. These estimates are known as life insurance
+reserves, and represent the amount insurers are required to hold for future payment of
+benefits.17 Because these reserves are generally not known by policyholders, the SCF does
+not contain a directly comparable measure. Instead, we use relevant information captured
+by the SCF to distribute the B.101.h total across SCF households, which means that the
+gap is zero by construction.
+   We distribute life insurance reserves as follows. There are two types of life insurance
+measured in the SCF: term and permanent policies. The SCF records the death benefit of
+term life insurance policies, and both the death benefit and the cash surrender value of per-
+manent life insurance policies.18 We assume that the death benefit and cash surrender value
+are generally proportional to the reserve, and that these relationships do not systematically
+vary across the wealth distribution.
+   The statutory financial statements (with which the B.101.h measure is constructed) report
+death benefits separately for permanent and term policies, but not the corresponding life
+insurance reserves. We perform reserve calculations for a set of sample insurance policies to
+estimate the mapping between death benefit and reserves (see Appendix A for a description
+of these calculations). We then distribute these two estimated B.101.h reserve totals to SCF
+households according to their SCF-reported death benefits for term policies and surrender
+values for permanent policies.
+  16
+      This category does not include equities and mutual fund shares owned through DC pensions, which are
+accounted for below in pension entitlements.
+   17
+      The Financial Accounts capture this information from insurers’ statutory financial statements.
+   18
+      Permanent life insurance policies pay the death benefit whenever the policyholder dies, whereas term
+insurance policies only pay the benefit if the policyholder dies within a predetermined period (often 5 to
+30 years). The death benefit is typically a large multiple of the reserve, whereas the cash surrender value
+is often significantly below the reserve (due to surrender penalties or other product features that are not
+immediately redeemable for cash).
+
+
+
+                                                    10
+Pension entitlements ($24.3 trillion, or 24% of total assets)
+Pension entitlements make up the largest B.101.h asset category, accounting for nearly a
+quarter of aggregate household assets. This category includes the balances of defined con-
+tribution (DC) pension plans (such as 401(k) and 403(b) plans), accrued benefits to be paid
+in the future from defined benefit (DB) plans (including those for which life insurance com-
+panies have assumed the payment obligation), and annuities sold by life insurers directly
+to individuals.19 These three asset classes account for about 30%, 60%, and 10% of total
+pension entitlements in the Financial Accounts, respectively.20
+   The SCF captures DC balances in a way that is compatible with the Financial Accounts.
+The DC aggregates between the two data sources are generally close, with a historical ratio
+of 97%. However, the SCF does not directly measure accrued DB benefits or annuities.
+   We utilize information the SCF captures about plan participation and anticipated benefits
+to distribute the DB component of the B.101.h aggregate across the SCF households. To
+proceed, we break the SCF households who are entitled to DB benefits into those currently
+receiving pension payments, those expecting future payments from a past job, and those
+expecting future payments from a current job. The SCF collects the benefit amount for
+those currently collecting a pension, and the expected timing and amount of future pension
+benefits from a past job for those who are entitled to a benefit but are not yet collecting
+benefits. We use this information to calculate the present discounted value of the future
+income stream for these two groups. Finally, we allocate the remaining B.101.h DB assets
+(obtained residually as the B.101.h DB total net of the present value of future income streams
+calculated above) to those SCF respondents who have a plan tied to their current job but
+are not yet receiving benefits.21 We use the respondents’ current wage, years in the plan,
+and age to determine the allocation.22
+  19
+     The annuities component also includes annuities held in IRAs. IRA investments in other instruments,
+such as mutual fund shares, are included in the other asset categories described above.
+  20
+     The defined-benefit component includes total accrued benefits from private-sector, state-and-local gov-
+ernment, and federal employment, whether fully funded or not. Notably, it does not include Social Security,
+which is not currently included in the Financial Accounts.
+  21
+     Benefits for workers with current job plans are calculated residually for two primary reasons. First,
+this allows direct mapping to the Financial Accounts aggregate, the best estimate of DB assets that belong
+to households. Second, the SCF does not capture the generosity of DB pension plans, which is a crucial
+parameter required to calculate accrued DB assets.
+  22
+     All DB estimates rely on differential mortality defined by age group, marital status, race, education,
+and income quantile. See Sabelhaus and Volz (2019) for a more detailed description of the DB imputation
+methodology.
+
+
+
+                                                    11
+   Measures of annuity reserves, like accrued DB pensions, are not directly collected by the
+SCF in a manner comparable to B.101.h. However, the SCF does report information that can
+be used to impute the value of annuities for SCF households. Specifically, the SCF reports
+the amount of income received from annuities that are in the payout phase, as well as the
+cash value of deferred annuities (which differs from the reserve due to surrender penalties and
+other policy benefits not immediately payable in cash).23 To reconcile the SCF and B.101.h
+annuity measures, we capitalize the payout annuity income reported by SCF households into
+a present value using a set of sample annuity policies (see Appendix A for details), and then
+distribute the B.101.h annuity reserves according to the sum of the cash value of deferred
+annuities and capitalized value of payout annuities reported in the SCF.
+
+Equity in noncorporate business ($11.5 trillion, or 11% of total assets)
+This category includes non-publicly traded businesses and real estate owned by households
+for renting out to others. There are substantial differences in its measurement between the
+SCF and Financial Accounts. The B.101.h measure is a hybrid of different accounting bases.
+Real estate (e.g., rental properties), which accounts for approximately 60% of this category,
+is recorded at market value. In contrast, other nonfinancial assets are recorded at cost basis,
+based on investment data collected by the BEA, while financial assets and liabilities are
+recorded at book value from tax data.
+   In the SCF, rental properties are reported at market value, as they are in the Financial
+Accounts. For other noncorporate business assets, the SCF captures owners’ self-reports of
+both the market value and the cost basis of their businesses. When we compare these two
+measures to B.101.h, we find (unsurprisingly) that the market-value SCF measure exceeds
+the B.101.h measure (with an average ratio of approximately 150%), while the cost-basis SCF
+measure falls below the B.101.h measure (with an average ratio of 70%).24 To reconcile the
+SCF and B.101.h, we use the average of the two SCF valuations, because it tracks the B.101.h
+measure quite well empirically, with an average ratio of 107%, and because, in certain ways,
+  23
+     In contrast to traditional annuities, deferred annuities are savings products offered by insurance compa-
+nies. The account balance of some of these products accumulate at a rate set by the insurer, usually subject
+to a minimum guarantee determined at the time of sale. Others offer equity market participation, often with
+some type of embedded return guarantee. These products are called annuities because the policyholder has
+the option to later annuitize the value of the policy into periodic payments, but exercising this option is not
+typical.
+  24
+     Despite the level differences between the B.101.h and the two SCF measures, all three series exhibit
+similar trends over time.
+
+
+
+                                                      12
+the B.101.h measure does blend the two SCF measures. In Section 5, we test the sensitivity
+of our results to this choice and find minimal distributional implications because the SCF
+market and cost basis measures are roughly proportional to each other across most of the
+wealth distribution.
+
+Miscellaneous assets ($1.1 trillion, or 1.1% of total assets)
+This small category includes receivables due from property-casualty insurance companies, the
+value of other policies from life insurance companies (excluding reserves for life insurance
+coverage and annuities — for which we already accounted above), and government-sponsored
+retiree health care fund reserves. None of these assets are observed in the SCF, so we
+distribute the B.101.h total to SCF households based upon related data that is captured by
+the SCF, as described below.
+   The largest miscellaneous category is receivables from property and casualty insurance
+(PC) policies, accounting for approximately 50% of miscellaneous assets. These assets arise
+because households pay in advance for the term of coverage, and can receive a prorated
+refund upon cancellation. Most PC policies owned by households cover either homes or
+automobiles. In order to distribute the B.101.h measure of PC insurance receivables across
+SCF households, we split the amount into auto and home insurance according to the rela-
+tive premium volume reported by insurers. We then distribute the auto insurance reserves
+in proportion to SCF reported value of automobiles, and the home insurance reserves in
+proportion to the SCF reported value of residential real estate.
+   The value of other life insurer policies includes reserves for accident and health insurance
+policies, which accounts for approximately 25-30% of miscellaneous assets. This covers a wide
+array of products, but major categories include long-term care and disability insurance (as
+opposed to what we more traditionally think of as health insurance). As with life insurance
+and annuities, the B.101.h values for this component are based upon net present value
+calculations performed by insurers and reported in statutory financial statements. The SCF
+contains very little information about ownership or the value of these types of insurance
+policies. Therefore, we utilize the relationship between ownership of these policies and
+income in the Health and Retirement Study (HRS) to assign a share of the B.101.h total to
+each income decile in the SCF.25
+  25
+   Specifically, we calculate the fraction of total long-term care insurance policies reported in the Health
+and Retirement Study (a representative panel of Americans over age 50) that are owned by each income
+
+
+
+                                                    13
+   Other miscellaneous assets arising from life insurers include life insurance claims that have
+been incurred but not yet paid, which we distribute in proportion to the SCF-reported death
+benefit of life insurance policies (either term or permanent), and the dividends that insurers
+owe holders of participating life policies, which we distribute according to the cash surrender
+value of permanent policies.26
+   The final component of miscellaneous assets are reserves for future retirement health
+benefits given to uniformed service members and postal workers. We distribute these B.101.h
+assets evenly among SCF respondents who are current and former members of the military
+or postal service.
+
+
+2.2     Reconciliation of Liabilities
+Home mortgages ($9.7 trillion, or 70% of total liabilities)
+Home mortgages represent the bulk of household liabilities. In the Financial Accounts, they
+are derived from measures of residential home mortgage loans as reported by lenders.27 In
+the SCF, households report the remaining balance on their mortgages. Historically, the SCF
+series tracks quite closely with the B.101.h measure, with an average ratio of 89%.28
+
+Consumer credit ($3.6 trillion, or 26% of total liabilities)
+Consumer credit, which makes up most of the rest of household liabilities, includes credit
+card, student loan, and vehicle loan balances, as well as other loans extended to consumers.
+In the Financial Accounts, the data come from the Federal Reserve’s G.19 statistical release.29
+These data measure outstanding credit extended to individuals for household, family, and
+other personal expenditures, excluding loans secured by real estate. The total outstanding
+balance as of the recording date is collected monthly from the holders of the debt.
+decile, and then distribute that same fraction of B.101.h accident and health insurance reserves equally
+across each SCF household within each income decile. The mismatch in age distribution between the SCF
+and HRS requires us to assume that the distribution of ownership by income percentiles is invariant to age.
+This assumption is untestable in existing data sources, but given the small size of this category, it will have
+negligible effects on our data set.
+   26
+      Participating policies are sold by mutual insurers (i.e. insurers that are owned by policyholders). Divi-
+dends are the mechanism by which these insurers return profits to the owners. Although we cannot observe
+in the SCF which life insurance policies are participating, we distribute the dividends over only permanent
+life policies because it is more common for them to be participating than it is for term policies.
+   27
+      Mortgages on rental properties are included in the calculation of equity in noncorporate businesses.
+   28
+      Note, the reconciled SCF measure used in the DFAs differs from the SCF bulletin measure because the
+former excludes rental properties.
+   29
+      See https://www.federalreserve.gov/releases/g19/current/default.htm for G.19 details.
+
+
+                                                      14
+   For student loans, vehicle loans, and other installment loans reported by households during
+the month of the survey, the SCF measure is conceptually similar to that in the Financial
+Accounts. In contrast, for credit cards (26% of the B.101.h measure of overall consumer
+credit in 2016Q3), the SCF measures the revolving balances (i.e., balances carried over to
+the next month), whereas the Financial Accounts measure includes these revolving balances
+in addition to “convenience use” that is paid off in full at the end of each month before it
+begins accruing interest. Convenience use is more common among wealthier households, and
+its inclusion in the Financial Accounts measure and not the SCF measure may affect our
+distributional results. However, convenience use accounts for only about 30% of credit card
+use (or about 7% of the overall B.101.h consumer credit measure) in 2016Q3, suggesting
+this conceptual difference is unlikely to have significant effect on the overall reconciliation of
+consumer credit measures across the two data sets.
+   Overall, the SCF measures are consistently below the B.101.h measures, averaging ap-
+proximately 50% for credit card debt, 65% for auto and student loans, and 59% overall.30
+The remaining household liability categories are relatively small, together making up about
+5% of B.101.h liabilities.
+
+Depository institution loans not elsewhere classified ($228 billion, or 1.6% of
+total liabilities)
+This small category includes all depository institution loans to individuals that are not cap-
+tured above, such as bank overdrafts. These loans are calculated from depository institution
+regulatory filings, after subtracting loans made to nonprofit organizations. We construct
+the corresponding measure in the SCF by totaling other lines of credit and loans issued by
+depository institutions (excluding home equity lines of credit and vehicle loans). The align-
+ment of these two series is generally poor and varies substantially across time, but given that
+depository loans reflect a small share of overall liabilities, this poor fit is unlikely to affect
+the wealth distribution overall.
+
+Other loans and advances ($448 billion, or 3.2% of total liabilities)
+Just under two-thirds of this category represents margin accounts at broker-dealers, with
+most of the rest made up of loans taken against the value of life insurance policies. A small
+  30
+    Some of the difference is due to known measurement differences between the Financial Accounts and
+SCF, such as the treatment of business credit cards and auto leases. For discussion of measurement of
+education loans in both the SCF and G.19, see Bricker et al. (2015).
+
+
+
+                                                 15
+amount represents loans to households from a variety of (mostly housing-related) government
+programs. The SCF reports the balance of both loans taken against insurance policies and
+margin loans at stock brokerages. The SCF does not contain information about the various
+government loans, so we distribute them according to mortgage balance (excluding home
+equity lines of credit).
+
+Deferred and unpaid life insurance premiums ($33 billion, or 0.2% of total lia-
+bilities)
+This tiny category represents amounts payable to insurance companies. Insurers typically
+allow a period between a premium’s due date and when the policy is canceled during which
+the policyholder keeps the insurance reserve as an asset, but now also has a liability for the
+premium owed. The SCF does not contain relevant information on unpaid premiums, so we
+distribute it in the same manner as life insurance reserves (described above).
+
+
+2.3     Comparing the Reconciled Balance Sheets
+Table 1 summarizes the results of the SCF-B.101.h reconciliation exercise described above by
+showing the ratio of the two measures for each line of Table B.101.h, for each wave of the SCF
+since 1989. A ratio of 100% would indicate that the two series match exactly, while lower
+(higher) percentages indicate that the reconciled SCF understates (overstates) the B.101.h
+total. As stated above, an exact ratio of 100% (and double asterisks) implies that the B.101.h
+total is distributed to SCF respondents using an asset- or liability-specific imputation rule
+and the B.101.h and reconciled SCF lines match by construction. For reference, the figure
+also shows the level of the B.101.h and SCF series in 2016 in billions of dollars.
+   Overall, we find that the topline numbers (assets, liabilities, and net worth) from our
+reconciled SCF balance sheet are quite similar to those from B.101.h. For example, in 2016,
+reconciled SCF assets aggregate to $110 trillion, compared with $103 trillion on B.101.h,
+and reconciled SCF liabilities aggregate to $12 trillion, versus $14 trillion on B.101.h. Av-
+eraging across SCF waves, aggregate SCF net worth is very close (at 102%) to B.101.h net
+worth.31 Looking deeper, we find the two data sets also align reasonably well for most of the
+underlying asset and liability categories. Most importantly, for large asset categories that
+disproportionately affect the distribution of wealth, differences between the reconciled SCF
+  31
+    While the match is reasonable in all years, the alignment further improves in recent years. For example,
+in 2016 the ratio of SCF to B.101.h assets, liabilities, and net worth are 100%, 84% and 102%.
+
+
+                                                    16
+and B.101.h balance sheets are quite small.
+    Still, there are several asset and liability categories where the match is worse than av-
+erage. Consumer durable goods (61%), time deposits (55%), and debt securities (68%) in
+the SCF are consistently well below B.101.h; checkable deposits and currency is high in the
+SCF in most years (206% on average); and money market fund shares have an inconsistent
+relationship across time. On the liability side, consumer credit is lower in the SCF but the
+relationship is quite consistent across years, and the very small category of other depository
+institution loans is the only category with a very poor match. In Section 5, we construct a
+wealth measure that excludes these assets and liabilities, and show that the wealth distri-
+bution when focusing only on the categories in which we are confident in the match is very
+similar to the baseline results.
+    Despite the matching issues for some of the asset and liability categories documented
+above, the fact that most categories match reasonably well implies that the reconciled SCF
+is a useful tool for distributing aggregate B.101.h measures of household wealth. We are
+able to construct SCF measures that are conceptually very similar to the vast majority
+of B.101.h assets and liabilities, and the aggregate levels, while not perfectly in sync, are
+generally reasonable. As noted above, more important than agreement in the aggregate levels
+is whether we suspect a mismatch that varies systematically across the wealth distribution.
+For categories that are more difficult to reconcile, we have no reason to believe that the
+disconnect is driven by one end of the wealth distribution.
+
+
+
+3     Constructing Quarterly Distributional Measures from
+      the Reconciled SCF Balance Sheets
+Having shown that the SCF can reasonably approximate B.101.h after appropriate adjust-
+ments, the second main challenge in constructing the DFAs is that the SCF is fielded tri-
+ennially, while the Financial Accounts Table B.101.h measures household wealth quarterly.
+Given that the DFAs aim to provide near real-time, quarterly measurement of assets and
+liabilities across various population groupings, we must impute and forecast the reconciled
+SCF balance sheets for quarters where SCF measures are not available. This “temporal dis-
+aggregation” problem of imputing higher-frequency data from lower-frequency observations
+
+
+
+                                              17
+                          Table 1: The Ratio of the Reconciled SCF Household Balance Sheet
+                                                     to B.101.h
+
+                                                                         Ratios in SCF Years                               Recent Levels ( $ billion)
+
+                                              1989 1992 1995      1998 2001     2004 2007    2010 2013 2016      Average   FA 2016Q3       SCF 2016
+
+     Total Assets                               96     90    87     94    107    103   103     108   101   107       100       102,622        110,028
+
+       Nonfinancial assets                     101     96    95    103    103    112   123     132   120   118       110        27,723         32,618
+        Real estate (1)                        113    110   107    116    113    122   136     151   134   129       123        22,603         29,241
+        Consumer durable goods (2)              60     48    58     59     64     67    63      62    63    66        61         5,121          3,377
+       Financial assets                         93     87    83     90    109     99    93      98    93   103        95        74,898         77,410
+        Checkable deposits                      70     49    54     93    151    210   842     268   162   160       206           970          1,548
+        and currency
+        Time deposits and                       59    62     58     63     64     57    49      53    40   47         55         8,741          4,146
+        short-term investments
+        Money market fund shares               100     90   82      73     92    125    95     103   150   147       106         1,442          2,122
+        U.S. government and                     69     53   55      52    102     90    79      66    72    87        72         3,373          2,935
+        municipal securities
+        Corporate and                           87    51     27     28     60     55    47      41   59     95        55         1,036           987
+        foreign bonds
+        Other loans and advances               333   123    187     63     62     43    35      53    72    54       102           835            450
+        Mortgages                              110    94     91     84     97     98   102      96   179   225       118           114            255
+        Corporate equities                      99    87     88    108    156    113    93     107    97   115       106        19,983         22,916
+        and mutual fund shares
+        Life insurance reserves**              100   100    100    100    100    100   100     100   100   100       100         1,574          1,574
+18      Pension entitlements (3)               101   100     96    100    100    100   100     100   100   100       100        24,252         24,304
+        Equity in noncorporate                 111   103     85     91    105     99   105     134   111   124       107        11,457         14,243
+        business (5)
+        Miscellaneous assets**                 101   101    100    101    102    100   100     100   101   101       101         1,121          1,126
+
+
+     Total Liabilities                          79     80    79     86    81      88   83      88     86    87        84         14013         12142
+
+        Home mortgages (5)                      81     84    85     93     89    94     87      93    94    94        89         9,728          9,175
+        Consumer credit                         59     57    55     60     52    59     66      69    59    68        60         3,577          2,413
+        Depository institution loans n.e.c.   1897   3133   278    210    470 -3153    216      89    95    36       327           228             82
+        Other loans and advances               100    100   100     97    100   100    100     100   100   100       100           448            448
+        Deferred and unpaid                    100    100   100    100    100   100    100     100   100   100       100            33             33
+        life insurance premiums
+
+     Net worth                                  98     91    89     95    112    106   107     113   103   111       102        88,609         97,887
+
+
+
+
+     Notes:
+     (1) All types of owner-occupied housing including farm houses and mobile homes, as well as second homes that are
+     not rented, vacant homes for sale, and vacant land. At market value.
+     (2) At replacement (current) cost.
+     (3) Includes public and private defined benefit and defined contribution pension plans and annuities, including those
+     in IRAs and at life insurance companies. Excludes social security.
+     (4) Net worth of nonfinancial noncorporate business and owners’ equity in unincorporated security brokers and dealers.
+     (5) Includes loans made under home equity lines of credit and home equity loans secured by junior liens.
+has been well-studied, beginning with the foundational paper Chow and Lin (1971). We
+apply the Chow-Lin approach (after applying several subsequent extensions) to interpolate
+and forecast quarterly data from the reconciled, triennial SCF to quarters where it is not
+observed. In particular, we use the empirical relationship between the SCF, the Financial
+Accounts, and other macroeconomic data when all three are observed to impute the SCF
+data in quarters when only the Financial Accounts and macroeconomic data are available.
+We apply this method to the reconciled SCF assets and liabilities described in the previous
+section for four wealth groups: the top 1% of the wealth distribution, the next 9% (i.e.,
+90th -99th percentile), the next 40% (50th -90th percentile), and the bottom 50%.32 As a final
+step in constructing the DFA data, we calculate the share of the reconciled SCF total held by
+each wealth group and multiply these shares by the B.101.h total for each asset and liability
+to produce our quarterly distributional measures in the DFA. The details of this final step
+are presented in Appendix C.
+   Section 3.1 and Appendix B present the mathematical details of this method. Section 3.2
+shows how we implement the Chow-Lin method, and Section 3.3 presents selected results
+from our imputations and forecasts that indicate our method captures fluctuations in assets
+and liabilities that one would intuitively expect.
+
+
+3.1     The Chow-Lin Method of Temporal Disaggregation
+The Chow-Lin method assumes that the target series Y (in our case, the level of each
+reconciled SCF balance sheet line) that requires imputation/forecasting comes from a higher-
+frequency underlying series X. Let B be the matrix which selects the observed elements Y
+from the underlying series X. In our application, Y is observed every 3 years, while X is
+  32
+    These wealth groups are chosen to provide a more detailed view of household balance sheets at the top
+of wealth distribution and to facilitate comparison to other data sources and studies.
+
+
+
+
+                                                   19
+quarterly.33
+                                                  Y = B0X                                                   (1)
+
+   The Chow-Lin method uses higher frequency indicator series, denoted here by Z, to
+impute/forecast the underlying series X. It does this by supposing that X and Z have a
+linear relationship34
+                                               X = β 0 Z + u,
+
+where the residual vector u is mean zero with covariance matrix V = E[uu0 ]. Linearity
+combined with Equation 1 implies that
+
+
+                                            Y = B 0 Z 0 β + B 0 u.                                          (2)
+
+
+The Chow-Lin method solves the multiple regression model specified by Equations 1 and 2
+to obtain an estimate X given observations Y and Z and covariance matrix V . Chow and
+Lin (1971) show that a linear unbiased estimate X is given by
+
+
+                           X̂ = Z β̂ + V B(B 0 V B)−1 [Y − B 0 Z β̂]                                        (3)
+                            β̂ = [Z 0 B(B 0 V B)−1 B 0 Z]−1 Z 0 B(B 0 V B)−1 Y.                             (4)
+
+
+Here, β̂ is a vector obtained from the generalized least squares regression specified in Equation
+2 with Y as the dependent variable, B 0 Z as the dependent variable, and residual covariance
+matrix (B 0 V B).
+   Equation 3 shows that the estimate X̂ can be expressed as the sum of two components.
+The first component, Z β̂, represents the predicted values of the higher-frequency target
+series X given the higher-frequency observations of Z, i.e., E [X|Z]. The second component,
+V B(B 0 V B)−1 [Y − B 0 Z β̂], reflects the estimate of the vector of higher-frequency residuals
+  33
+    Formally, we suppose that Y = [y1 , y2 , , ym ]0 is observed m times, with k − 1 unobserved periods between
+observations and e periods to extrapolate after the last observation of Y so that X = [x1 , x2 , , xn ]0 with
+observation ym of Y corresponding to observation x(m−1)k+1 of X. The n × m matrix B can thus be written
+as                                                                     
+                                                     ι      ... 0(m−1)k
+                                      B = 0(m−1)k ...              ι 
+                                                    0e      ...    0e
+where represents a k-dimensional column vector with one as the first element and zero elsewhere, and where
+0j denotes a j-dimensional column vector of zeros.
+  34
+     Z can be expressed as an n × q matrix Z = [Z1 , Z2 , , Zq ], where each Zi denotes a separate column vector
+Zi = [zi,1 , zi,2 , . . . , zi,n ]0 corresponding to the ith indicator series.
+
+
+                                                      20
+obtained by distributing the vector of lower-frequency residuals [Y − B 0 Z β̂] across periods
+where the target series is unobserved. The distributing matrix V B(B 0 V B)−1 is determined
+by the assumed covariance matrix V . Note that X̂ = Y by construction for the periods that
+Y is observed.
+  A key input into this method is the assumed error structure of the higher-frequency
+residuals, represented by V . This covariance matrix is not observed and must be estimated —
+any consistent estimate for V can then be used to obtain FGLS estimates β̂ and X̂. We assess
+three different versions of this FGLS procedure corresponding to different assumption on the
+higher-frequency residuals. Our first version follows Chow and Lin (1971) and produces
+estimates under the assumption that these residuals are first-order autocorrelated. Our
+second and third versions adopt the methods in Fernandez (1981) and Litterman (1983),
+who characterize solutions for error processes of the form
+
+
+                                      ut = ut−1 + vt
+                                      vt = ρvt−1 + ηt .
+
+
+In particular, Fernandez (1981) assumes a random walk (ρ = 0), while Litterman (1983)
+generalizes to a random walk, Markov model (0 < ρ < 1). Appendix B provides more detail
+on the estimation of V in the Chow-Lin, Fernandez, and Litterman methods. Appendix D
+compares several different possible variants of the Chow-Lin method and shows that they all
+perform relatively similarly out-of-sample. We therefore adopt the approach from Chow and
+Lin (1971) as we are unable to reject this method in favor of more sophisticated models.
+
+
+3.2    Implementation of the Chow-Lin Method
+A key decision in the implementation of this method is the choice of the indicator series Z that
+give information about the reconciled SCF assets and liabilities for each wealth group — the
+target series — in time periods when the SCF is not observed. Given the relatively few SCF
+years available for estimating the indicator-target relationships, we parsimoniously choose
+the indicator series that measure similar quantities to the target series, capture important
+developments in the overall economy, or predict changes in the distribution of assets and
+liabilities across economic groups. Specifically, we use the corresponding quarterly B.101.h
+series in every interpolation because these series and the aggregate reconciled SCF series are
+
+                                              21
+closely related by construction, and the B.101.h series is therefore likely to predict asset and
+liability levels for each wealth group we consider.35 We also include the S&P 500 stock index
+for almost all assets and liabilities, since this series is correlated with both financial assets
+and overall business cycle dynamics.36 Similarly, for financial assets whose values and flows
+are closely tied to interest rates, we include the federal funds rate as an indicator variable,
+and for assets and liabilities related to real estate holdings, we include the Federal Housing
+Finance Agency (FHFA) home price index. We also include the overall debt-to-income ratio
+from the Financial Accounts as an indicator series for all of the reconciled liability numbers,
+as this ratio likely correlates differentially with the liabilities of different wealth groups.
+   In addition, because changes in the distributions of assets and liabilities are often cor-
+related with an individual’s decision about whether to hold an asset or incur a liability,
+whenever possible we include indicators for participation in related markets. For example,
+for all housing-related assets and liabilities, we include the home ownership rate calculated
+from U.S. Census Current Population Survey (CPS). We also include the ratio of B.101.h
+defined-benefit assets to defined-contribution assets as indicator series for pensions and vehi-
+cle and student loans outstanding from the Federal Reserve’s G.19 data release as indicator
+series for depository loans and consumer credit, respectively. Appendix Table E.1 sum-
+marizes which indicator series are used for each asset and liability class on our reconciled
+household balance sheet.
+
+
+3.3     Predictions from the Chow-Lin Method
+In this section, we present selected imputation and forecast results to highlight the method’s
+ability to generate plausible estimates of unobserved movements in household balance sheets.
+To do so, for each asset and liability category in the B.101.h table, we impute and forecast
+the quarterly balance sheet levels for each of the four wealth groups we study. These wealth
+group estimates are key inputs in constructing the DFA dataset but cannot be validated
+or invalidated against any existing data. However, for each wealth and liability category,
+summing across these wealth groups yields an aggregate series which — although not targeted
+  35
+     Indeed, the B.101.h series are frequently the most important drivers of the interpolation/extrapolation
+estimates, although the small number of SCF years limits our power to compare the relative contributions
+of the different indicator series.
+  36
+     We exclude the S&P 500 as an indicator series when estimating corporate equities and mutual funds
+because it is too highly correlated with the B.101.h series.
+
+
+
+                                                    22
+or used directly in our estimation — is directly comparable to its corresponding aggregate
+B.101.h series.
+   To determine whether our imputation and forecasting method is credible, we check whether
+fluctuations in estimates of both the specific wealth group levels and their implied aggregates
+appear plausible. Specifically, we first check whether contours in the constructed aggregate
+reconciled SCF series match the contours in its aggregate B.101.h counterpart. Second,
+we check whether the specific wealth group levels fluctuate in manners that are intuitively
+plausible. Although our second check is informal, it is still quite informative. For example,
+different wealth groups’ asset and liability holdings will respond differentially to changes in
+indicator series, resulting in estimated fluctuations in asset and liabilities that vary across
+our four wealth groups. Confirming that the cross-sectional pattern of these fluctuations
+is consistent with our prior economic knowledge and intuition therefore provides a second
+metric against which we can validate or reject our imputation and forecast procedure.
+   Figure 1 presents the imputed and forecasted quarterly time series for levels of (a) cor-
+porate equities and mutual funds and (b) mortgages for each of the four wealth groups we
+study.37 Summing across these wealth groups yields the aggregate reconciled SCF level,
+which is directly comparable to the corresponding aggregate B.101.h series (presented as the
+black line for reference).
+   Panel (a) shows that both of our two validation criteria are satisfied for corporate equities
+and mutual funds. We find that the aggregate reconciled SCF measure of corporate equity
+and mutual funds closely tracks the aggregate B.101.h measure, including during the last two
+significant stock market boom and bust cycles.38 For example, during the Great Recession,
+our imputation method estimates that total household equity holdings dropped sharply in
+2008 before largely recovering by 2010 in a manner that closely mirrors the corresponding
+B.101.h series. Second, we observe amplified fluctuations for wealthier households, with
+capital gains and losses largest for the top 1% of households. Wealthier households hold
+  37
+     Corporate equities and mutual funds were chosen for this illustration because they are a large asset class
+that varies at a high-frequency relative to other asset classes, while mortgages were chosen because they are
+a large liability that varies at a lower frequency.
+  38
+     Although the B.101.h series is used as an indicator series in our imputation procedure for each asset
+and liability for each wealth group, the aggregate level is not targeted or matched by construction. Thus,
+our finding that our imputations and forecasts sum to produce aggregate reconciled SCF series that are
+consistent with patterns in corresponding B.101.h series, and that fluctuations across wealth groups differ in
+intuitively plausible ways, provides important evidence that our approach successfully imputes and forecasts
+the series outside and in-between the standard triennial SCF survey observations.
+
+
+
+                                                      23
+                               Trillions of nominal dollars                                         Trillions of nominal dollars
+                                                              30
+                                                                                                                                   12
+          Top 1%                                                               Top 1%
+          Next 9%                                             25               Next 9%
+          Next 40%                                                             Next 40%                                            10
+          Bottom 50%                                          20               Bottom 50%
+          Financial Accounts                                                   Financial Accounts                                  8
+
+                                                              15
+                                                                                                                                   6
+
+                                                              10                                                                   4
+
+
+                                                              5                                                                    2
+
+
+                                                              0                                                                    0
+
+  1990   1994   1998   2002    2006   2010   2014   2018               1990   1994   1998   2002    2006   2010   2014   2018
+
+
+     (a) Corporate Equities and Mutual Funds                                                (b) Mortgages
+           Figure 1: Predicted Measures of Corporate Equities/Mutual Funds
+                                   and Mortgages
+
+
+larger and riskier corporate equity and mutual fund portfolios, so our finding that their
+holdings are more responsive to aggregate fluctuations is credible.
+  Panel (b) similarly shows that our method predicts patterns in household mortgage lia-
+bilities that are consistent with the aggregate fluctuations and vary in credible ways across
+the wealth distribution. Our total measure of reconciled SCF mortgages slightly understates
+but otherwise closely tracks patterns in the B.101.h aggregate series. For example, both se-
+ries capture a rapid build-up of mortgage debt prior to the Great Recession and subsequent
+reduction from 2007 to 2013, with mortgage debt levels beginning to increase again in 2014.
+We also observe that much of the mortgage debt build-up prior to the Great Recession was
+driven by increased borrowing by households in the next 40% and bottom 50% of the wealth
+distribution, and the post-Great-Recession decrease in mortgage debt was steepest for the
+bottom 50% of households. These patterns are consistent with a number of studies on debt
+dynamics during the Great Recession (e.g., Bhutta (2015), Adelino et al. (2016)), suggest-
+ing again that our data captures credible patterns in household balance sheets. Finally,
+B.101.h mortgage debt exhibits less high-frequency fluctuation than corporate equities and
+mutual funds, so it is reassuring that both our aggregate reconciled SCF and specific wealth
+percentile group levels are relatively smooth and exhibit fewer short-term fluctuations.
+
+
+
+                                                                  24
+4      A First Look at the DFAs
+The calculations described in Sections 2 and 3 give rise to a new dataset that breaks down
+B.101.h into four wealth percentile groups (top 1%, next 9%, the next 40%, and the bottom
+50%) since 1989Q3. The DFA dataset also contains the share of each asset and liability class
+held by each wealth percentile group for each quarter.
+    Although we do not attempt to provide a comprehensive analysis of the dataset in this
+paper, we highlight some results that illustrate three new contributions made by the DFA.
+First, the DFAs provide a comprehensive measure of the distribution of household wealth
+built from both direct observations of household balance sheets and aggregate wealth mea-
+sures in a national accounting framework. Second, the DFAs’ quarterly observations allow
+for new insights into the cyclicality of the wealth distribution at higher frequencies. Finally,
+the DFAs provide near-real-time measures of the wealth distribution, as they are updated
+about ten or eleven weeks after the end of each quarter. In the rest of this section, we
+describe these contributions in more detail.
+
+
+4.1     Insights from a Comprehensive Integration of Household-level
+        and Aggregate Data
+By merging survey data with national accounting data, the DFAs provide a comprehensive
+new measure of the distribution of aggregate household wealth. Thus, the DFAs help over-
+come some of the challenges that have impeded past efforts to integrate microeconomic data
+with macroeconomic analysis.39 To illustrate this contribution, we briefly describe the trends
+in wealth concentration apparent in the DFAs and then highlight a few quantitative insights
+afforded by these data.
+    At the highest level, the DFAs show significant wealth concentration and a clear increase
+in wealth concentration since 1989.40 These findings are seen in Figure 2, Panels (a) and
+(b), which show the level and share of total net worth for each of the four selected wealth
+percentile groups measured in the DFAs. The top 10% of the wealth distribution — the
+purple and green areas together — hold a large and growing share of U.S. aggregate wealth,
+  39
+    See Carroll (2014) for a rich discussion of this issue.
+  40
+    This is broadly consistent with a number of recent studies, e.g., Wolff et al. (2012), Piketty (2013),
+Bricker et al. (2016), Saez and Zucman (2016), and Rios-Rull and Kuhn (2016).
+
+
+                                                   25
+                              Trillions of nominal dollars                                                Percent of aggregate
+                                                                        Top 1%        Next 9%        Next 40%      Bottom 50%
+                                                             100                                                                 100
+          Top 1%
+          Next 9%
+          Next 40%                                           80                                                                  80
+          Bottom 50%
+                                                             60
+                                                                                                                                 60
+
+                                                             40
+                                                                                                                                 40
+
+                                                             20
+                                                                                                                                 20
+
+                                                              0
+                                                                                                                                  0
+
+  1990   1994   1998   2002   2006   2010   2014   2018                1990   1994   1998   2002   2006    2010   2014   2018
+
+
+                         (a) Level                                                              (b) Share
+                         Figure 2: Net Worth by Wealth Percentile Group
+
+
+while the bottom half (the thin red area) hold a barely visible share. Looking at trends,
+while the total net worth of U.S. households has more than quadrupled in nominal terms
+since 1989 (Panel (a)), this increase has clearly accrued more to the top of the distribution
+than the bottom (Panel (b)). In 2018, the top 10% of U.S. households controlled 70 percent
+of total household wealth, up from 60 percent in 1989. The share of the top 1% of the wealth
+distribution increased from 23 percent to nearly 32 percent from 1989 to 2018. The increase
+in the wealth share of the top 10% came at the expense of households in the 50th to 90th
+percentiles of the wealth distribution (blue region), whose share decreased from 36 percent
+to 29 percent over this period. In addition, Panel (a) shows that the bottom 50% of the
+wealth distribution experienced virtually no increase in their nominal net worth over the last
+30 years, resulting in a fall in total wealth share from 4 percent in 1989 to just 1 percent in
+2018.
+  The rise in wealth concentration stems primarily from increased concentration of assets
+(Figure 3) rather than a decreased concentration in liabilities (Figure 4), with trends for
+assets largely mimicking those for overall wealth. The share of assets held by the top 10%
+of the wealth distribution rose from 55 percent to 64 percent since 1989, with asset shares
+increasing the most for the top 1% of households. These increases were mirrored by decreases
+for households in the 50-90th percentiles of the wealth distribution. Figure 4(b) shows that,
+
+
+                                                                  26
+in contrast to assets, the distribution of liabilities is both much more equitable than the
+distribution of assets and little changed, on net, since 1989.
+
+                               Trillions of nominal dollars                                                 Percent of aggregate
+
+                                                              120         Top 1%        Next 9%        Next 40%       Bottom 50%
+                                                                                                                                   100
+          Top 1%
+          Next 9%
+                                                              100
+          Next 40%                                                                                                                 80
+          Bottom 50%
+                                                              80
+                                                                                                                                   60
+                                                              60
+
+                                                              40                                                                   40
+
+
+                                                              20                                                                   20
+
+                                                               0
+                                                                                                                                    0
+
+  1990   1994   1998    2002   2006   2010   2014   2018                1990   1994   1998   2002    2006    2010   2014   2018
+
+
+                          (a) Level                                                               (b) Share
+                        Figure 3: Total Assets by Wealth Percentile Group
+
+
+
+
+                               Trillions of nominal dollars                                                 Percent of aggregate
+                                                              15         Top 1%        Next 9%        Next 40%       Bottom 50%
+                                                                                                                                   100
+          Top 1%
+          Next 9%
+          Next 40%                                                                                                                 80
+          Bottom 50%
+                                                              10
+                                                                                                                                   60
+
+
+                                                                                                                                   40
+                                                               5
+
+
+                                                                                                                                   20
+
+
+                                                               0
+                                                                                                                                    0
+
+  1990   1994   1998    2002   2006   2010   2014   2018                1990   1994   1998   2002    2006    2010   2014   2018
+
+
+                         (a) Level                                                               (b) Share
+                       Figure 4: Total Liabilities by Wealth Percentile Group
+
+
+  We next examine the four largest asset categories from the B.101.h table — real estate,
+pensions, corporate equity, and noncorporate business equity — in order from most to least
+
+
+                                                                   27
+equally distributed. Looking across the four panels of Figure 5, we see that real estate and
+pensions are somewhat more equally distributed than total assets (e.g., have larger red and
+blue areas), while noncorporate and corporate business equity are the most concentrated
+among the top 1%. Still, in Figure 5(a), we observe that the share of real estate held by
+the top 10% of the wealth distribution has increased by 5 percentage points from 39 percent
+to 44 percent, suggesting that increases in wealthy households’ share of real estate holdings
+have contributed to the increase in concentration. In Figure 5(b), we observe that pension
+wealth is heavily concentrated among the two “middle” categories, representing the 50th to
+99th percentiles of the wealth distribution. But again, we observe increasing concentration,
+evidenced by an increase in pension shares of households in the 90-99th percentiles of the
+wealth distribution from 39 percent in 1989 to 46 percent today.
+   Finally, Figure 5, Panels (c) and (d) suggest corporate and noncorporate business equity
+have been large drivers of wealth concentration. The distribution of these assets has long
+been skewed: in 1989, the richest 10% of households held 80 percent of corporate equity and
+78 percent of equity in noncorporate business. Since 1989, the top 10%’s share of corporate
+equity has increased, on net, from 80 percent to 87 percent, and their share of noncorporate
+business equity has increased, on net, from 78 percent to 86 percent. Furthermore, most
+of these increases in business equity holdings have been realized by the top 1%, whose
+corporate equity shares increased from 39 percent to 50 percent and noncorporate equity
+shares increased from 42 percent to 53 percent since 1989.
+   These patterns of high and increasing wealth concentration are broadly consistent with
+other studies; however, the DFAs contain some important differences from other studies in
+the level of and changes in the wealth distribution. To compare the quantitative findings of
+the DFAs to another study, Figure 6 shows measures of wealth concentration—the share of
+wealth held by different wealth percentiles and Gini coefficients—from the DFAs together
+with the corresponding measures from the World Inequality Database (WID), perhaps the
+most comparable data set.41
+   The DFAs show a somewhat more equitable distribution of wealth than the WID. Panel
+(a) presents the wealth shares of the top 1%, top 10%, 50-90%, and bottom 50% of households
+  41
+    The WID is a statistical database focused on measures of income and wealth concentration and funded
+by a consortium of public and nonprofit institutions. See https://wid.world/ for more information and
+Alvaredo et al. (2016) for details on methodology. The wealth shares available for download through the
+WID website use individual adults as the unit of observation.
+
+
+
+                                                  28
+                                   Percent of aggregate                                                Percent of aggregate
+ Top 1%        Next 9%       Next 40%       Bottom 50%               Top 1%        Next 9%       Next 40%       Bottom 50%
+                                                          100                                                                 100
+
+
+                                                          80                                                                  80
+
+
+                                                          60                                                                  60
+
+
+                                                          40                                                                  40
+
+
+                                                          20                                                                  20
+
+
+                                                           0                                                                   0
+
+1990   1994   1998   2002   2006    2010   2014   2018              1990   1994   1998   2002   2006    2010   2014   2018
+
+
+                     (a) Real Estate                                                     (b) Pensions
+
+                                   Percent of aggregate                                                Percent of aggregate
+ Top 1%        Next 9%       Next 40%       Bottom 50%               Top 1%        Next 9%       Next 40%       Bottom 50%
+                                                          100                                                                 100
+
+
+                                                          80                                                                  80
+
+
+                                                          60                                                                  60
+
+
+                                                          40                                                                  40
+
+
+                                                          20                                                                  20
+
+
+                                                           0                                                                   0
+
+1990   1994   1998   2002   2006    2010   2014   2018              1990   1994   1998   2002   2006    2010   2014   2018
+
+
+                (c) Corporate Equity                                        (d) Noncorporate Business Equity
+                  Figure 5: Pension, Real Estate, Corporate Equity, and
+                Noncorporate Business Equity by Wealth Percentile Group
+
+
+
+
+                                                               29
+                                                                                                                                  0.90
+           DFA Shares
+           WID Shares                   Top 10%              80
+
+                                                             70
+                                                                                                                                  0.85
+                                                             60
+
+                                                             50
+                       Next 40%                              40                                                                   0.80
+
+                                                             30
+                               Top 1%                        20
+                                                                                                                                  0.75
+         Bottom 50%                                          10                                                 WID Gini
+                                                                                                                DFA Gini
+                                                             0
+
+                                                                                                                                  0.70
+  1990   1994   1998    2002    2006    2010   2014   2018            1990   1994   1998   2002   2006   2010    2014      2018
+
+
+                   (a) Wealth Shares                                                  (b) Gini Coefficients
+            Figure 6: Wealth Concentration Measures from the DFAs and WID
+
+
+in the wealth distribution for these two data sets.42 We find that the wealth shares of the
+top 1% and top 10% are somewhat smaller in the DFAs than the WID (the solid lines are
+below the dashed lines) in particular, the share of the top 1% is around 31 percent in the
+DFAs, versus about 37 percent in the WID in 2014. At the same time, the wealth shares
+of the bottom 50% and 50-90th percentiles of households are higher in the DFAs than the
+WID. Looking at changes over time, the DFAs show a more gradual increase in the share of
+the top 1% after 2007. These differences can also be seen by comparing the Gini coefficient
+for the DFAs and WID (Panel (b)).43
+   There are several possible explanations for the differences between distributional mea-
+sures in the DFAs and the WID. The first is methodological. Unlike the DFAs, the WID
+does not directly observe wealth, but imputes it by capitalizing income measures from tax
+records. This method imposes assumptions about realized asset returns across the wealth
+distribution, and requires additional assumptions to impute assets and liabilities that do not
+generate taxable income. As shown in Bricker et al. (2017) and Bricker et al. (2018), these
+methodological differences account for most of the discrepancy in the concentration measures
+observed in the WID versus the SCF, and play a particularly large role in the WID’s sharper
+  42
+     Note that, to illustrate the comparison more clearly, the second category here is the top 10%, rather
+than the next 9%.
+  43
+     The Gini coefficient is a commonly used measure of the concentration of a distribution, with higher levels
+of the Gini coefficient representing greater concentration.
+
+
+                                                                 30
+increase in the top 1% wealth share in the years following the Great Recession. Further-
+more, certain asset classes like consumer durables and unfunded defined benefit pensions are
+omitted from the WID’s wealth measure.
+   A second explanation for the differences between the DFAs and the WID is that histor-
+ical data in the Financial Accounts are regularly updated to reflect new data availability
+and improved measurement. Recent historical revisions to Financial Accounts measures of
+pension reserves and interest-bearing assets could have an effect on wealth concentration
+estimates as both of these categories are key inputs into the WID calculation and have been
+substantially revised since the most recent WID release. Overall, the DFA results suggest
+that the level of wealth concentration among U.S. households is somewhat lower than that
+shown in the WID, though with a similar increasing trend.
+
+
+4.2     Insights from Quarterly Measures of the Wealth Distribution
+A second important contribution of the DFAs is to provide quarterly observations of the
+wealth distribution, thus making detailed household balance sheets for different segments of
+the wealth distribution available across business and credit cycles. Such insights about the
+evolution of the distribution over business cycles have been limited in existing data sets, as
+peaks and troughs of asset price and credit cycles often fall between measurements.
+   The quarterly fluctuations in the wealth distribution captured by the DFAs are clearly
+visible in Figure 7. This figure overlays the DFA levels (Panel (a)) and shares (Panel (b))
+(previously shown in Figure 2) with the triennial observations from the reconciled SCF
+(indicated with black dots). In Panel (a), we notice a sharp drop in net worth for all wealth
+percentile groups between 2007Q3 and 2009Q1, with outsized wealth losses for the top 1%
+of U.S. households (purple region), followed by a recovery that fairly quickly surpassed its
+2007 peak. Similar patterns are apparent for the other wealth groups, though with slower
+and more gradual recoveries. Looking at wealth shares, Panel (b) shows a decrease in the
+wealth share of the top 1% from 2007Q3 to 2009Q1, followed by a steady increase in wealth
+share over the subsequent years. These panels illustrate how the DFAs can be used to see
+higher-frequency detail than is available using the SCF waves.44 A second illustration of
+higher-frequency dynamics visible in the DFAs is the business cycle between 1998 and 2001.
+  44
+    The SCF fielded a panel re-interview survey in 2009 of 2007 SCF respondents in order to capture some
+of the wealth dynamics of the Great Recession. We do not use this data in constructing the DFAs.
+
+
+                                                  31
+                                                          Trillions of nominal dollars                                                                               Percent of aggregate
+
+                         Top 1%                                                                                                 Top 1%        Next 9%          Next 40%          Bottom 50%
+                                                                                                                  100       ●      ●     ●     ●    ●      ●     ●      ●    ●      ●         100
+                         Next 9%
+                                                                                                    ●
+                         Next 40%
+                         Bottom 50%                                                                               80                                                                          80
+                                                                                         ●                                  ●      ●
+                                                                                                                                                    ●
+                                                                                                                                         ●     ●           ●            ●
+                                                                                                                                                                 ●           ●
+                                                                   ●                                                                                                                ●
+                                                                                                    ●
+                                                                              ●                                   60
+                                                        ●                                ●
+                                                                                                                                                                                              60
+                                                                   ●
+                                             ●                                ●
+                                                        ●                                                         40
+                                  ●
+                                             ●
+                                                                                                                            ●      ●
+                                                                                                                                         ●     ●    ●
+                                                                                                                                                           ●
+                                                                                                                                                                                              40
+                        ●                                                                           ●
+                                  ●                                                                                                                              ●           ●
+             ●                                                                           ●                                                                              ●           ●
+                                                                   ●
+   ●
+             ●
+                        ●                               ●                     ●                                   20
+   ●                                         ●
+                                  ●
+             ●          ●                                                                                                                                                                     20
+   ●
+
+   ●         ●          ●         ●          ●          ●          ●                                ●
+                                                                              ●          ●                         0
+                                                                                                                            ●      ●     ●     ●    ●      ●     ●           ●      ●
+                                                                                                                                                                        ●                      0
+
+  1990        1994           1998           2002          2006           2010           2014          2018                  1990    1994     1998   2002   2006       2010   2014    2018
+
+
+                                                 (a) Levels                                                                                             (b) Shares
+                                   Figure 7: Wealth Levels and Shares in the DFAs and SCF
+
+Notes: Dots indicate reconciled SCF observations. Series shown through 2018Q4, the most recent
+Financial Accounts release.
+   ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+
+
+
+
+In this case, the net worth of the top 1% of households increased rapidly from 1998 to 1999
+but plateaued from 2000-2001 following the burst of the dot-com bubble, a pattern not seen
+among the other wealth groups.
+   The DFA data can also shed light on the cyclical variability of each wealth group’s share
+of the wealth distribution. For example, wealthier households have had historically greater
+exposure to highly cyclical assets like corporate and noncorporate business equity.45 These
+portfolio positions suggest that the net worth of the top 1% is likely to exhibit a larger
+fluctuation during economic cycles, with its share of total wealth rising during economic
+expansions and flattening or contracting during economic downturns. Indeed, Figure 8,
+which plots the four quarter moving averages of changes in wealth share for the top 1%
+(the purple line) and 90-99th percentiles (the green line), shows that the wealth shares of
+households in the top 1% have varied procyclically (e.g. fell during recessions) since 1989,
+while the share of the 90-99th percentiles have varied countercyclically (e.g. rising during
+recessions). Combined, these results suggest that wealth shares became temporarily less
+concentrated in the top 1% of the wealth distribution during these recessions, though not
+  45
+    Indeed, our discussion in Section 4.1 indicated changes in the share of business equity have been the key
+driver of increases in long-term concentration.
+
+
+                                                                                                                       32
+                                                                 Percentage Points
+                                                                                     1.0
+
+                                                                         Top 1%      0.8
+                                                                         Next 9%
+                                                                                     0.6
+
+                                                                                     0.4
+
+                                                                                     0.2
+
+                                                                                     0.0
+
+                                                                                     −0.2
+
+                                                                                     −0.4
+
+                                                                                     −0.6
+
+                                                                                     −0.8
+
+                                                                                     −1.0
+                             1990   1994   1998   2002   2006   2010   2014   2018
+
+
+             Figure 8: Annual Change in Net Worth Shares for the Top 1 and
+                                  90-99th Percentiles
+       Notes: Shaded areas represent NBER-defined recession quarters. Series shown are four-quarter
+       moving averages through 2018Q4, the most recent Financial Accounts release.
+
+
+necessarily less concentrated in the top 10%.46
+
+
+4.3      Insights from Timely Measures of the Wealth Distribution
+A third important new contribution of the DFAs is the timeliness of the data. Most survey-
+based data sets that measure the distribution of wealth require lags of at least a year to
+process the survey data, and measures using tax data (such as the WID) require even longer
+lags due to the time required to process and release tax data. These lags limit the ability of
+users to understand real-time changes in the wealth distribution and how they could relate
+to policy. By incorporating the most recent data from the Financial Accounts, the DFAs are
+updated and released relatively quickly, generally within about 10 or 11 weeks after the end
+of a quarter.
+   An example of “near-real-time” availability of DFA data is given in Figure 9, which shows
+cumulative changes in the wealth shares of each wealth group since 2014 (the last year the
+WID is available), with the dark shaded region indicating the time period after the fielding of
+the 2016 SCF. Through 2018Q3, the long-term trend of increased concentration continued,
+  46
+    The bottom 90% of the wealth distribution is omitted from Figure 9 (b) as it exhibits little cyclical
+variation. Linking the trends on an increase in the equity share by the wealthy households with the business
+cycle results, it is reasonable to expect that the top 1% share could be increasingly more cyclical over time,
+as the wealthiest households hold a higher share of these cyclical assets.
+
+
+                                                         33
+                                                             Percentage Points
+
+                                                                                 1.5
+
+                                                                                 1.0
+
+                                                                                 0.5
+
+                                                                                 0.0
+
+                                                                                 −0.5
+
+                                                                                 −1.0
+
+                                                                                 −1.5
+                                       Top 1%
+                                       Next 9%                                   −2.0
+                                       Next 40%
+                                                                                 −2.5
+                                       Bottom 50%
+                                                                                 −3.0
+
+                                2014      2015      2016    2017    2018
+
+
+                      Figure 9: Cumulative Wealth Shares, 2014-Present
+
+       Notes: Shaded area represents quarters after 2016, the most recent SCF year. Series shown
+       through 2018Q4, the most recent Financial Accounts release.
+
+
+with the wealth shares of the top 1% (purple line) rising by over 1 percentage point and
+the wealth share of households in the 50-90th percentiles (blue line) declining by over 1.7
+percentage points. This shift in wealth towards the top of the distribution largely reflects
+the increased value of business equity over this period.
+  These recent trends reversed with the large stock market decline in 2018Q4. Figure 9
+shows that the top 1% – whose portfolio is more concentrated in corporate and noncorporate
+business equity – experienced a sharp 0.8 percentage point decrease in their share of overall
+wealth. This was mirrored by a sharp increase in the wealth share of households in the
+50-90th percentiles, who (as shown in Figure 5, Panels (c) and (d)) are much less exposed to
+business equity risk. Provided that the rebound in equities seen thus far in 2019Q1 holds,
+we expect a substantial portion of the changes in 2018Q4 to reverse in the next DFA release.
+Thus, the DFA intuitively captures how near-real-time fluctuations in asset values affect the
+wealth distribution.
+  Timely DFA measures could be especially valuable in times of economic turmoil. For
+example, we know that elevated household leverage and illiquidity played an important role
+in the Great Recession, and having a near-real-time measure of the distribution of household
+wealth could be useful going forward.47
+ 47
+      As noted earlier, the 2009 panel re-interview of the 2007 SCF was commissioned to provide a glimpse of
+
+
+                                                       34
+   To test the predictive power of the DFAs during such times, we simulate how the DFAs
+would have evolved in real time during the Great Recession. To do so, we use data from
+the SCF only through 2007Q3 (i.e., the last available SCF prior to the Great Recession)
+and forecast household balance sheets through 2009Q1 using indicator series observations
+through this quarter (e.g., Financial Accounts data through 2009Q1). This provides a pseudo
+“real-time” forecast of household balance sheets at the trough of the S&P 500 during the
+Great Recession.
+   Figure 10 presents results from this exercise for each of our four wealth percentile groups
+in Panels (a)-(d). In each panel, the first bar illustrates the household balance sheets during
+the quarter of the last pre-recession SCF (2007Q3), the second bar presents our pseudo “real-
+time” forecast in 2009Q1 based on limited data observations, and the third bar presents the
+actual household balance sheets estimated from our full data set (i.e., all SCF and Financial
+Accounts data through 2018Q4). The regions of each bar above the x-axis indicate the level
+of assets (real estate, other nonfinancial assets, and financial assets), the regions below the
+bar indicate levels of liabilities (mortgages and other liabilities), and the black dots indicate
+net worth (assets minus liabilities).
+   For the top 1% of households in the wealth distribution, comparing the first and second bar
+in Figure 10, Panel (a) shows that our pseudo real-time DFA forecast predicts a significant
+fall in net worth during the Great Recession. Comparing the asset categories indicated on
+these two bars, we observe that this decrease in net worth was driven by both a fall in the
+value of real estate (light blue region) and in the value of financial assets (green region) due
+to drops in corporate and noncorporate business equity. In contrast, comparing the regions
+below the x-axis on the first and second bars indicates small changes in the level of liabilities.
+Comparing the second and third bars in Panel (a) provides a check on the accuracy of our
+forecast for the top 1%. Although there are some small differences (for example, our forecast
+underestimates the fall in net worth by about $1 trillion), the key changes in the household
+balance sheet of the top 1% are confirmed by comparing our pseudo real-time forecast with
+actual DFA data.
+   Panels (b)-(d) show that similar patterns hold for households in the next 9%, next 40%,
+and bottom 50% of the wealth distribution. In each panel, comparing the first and second
+bar shows that our pseudo real-time forecast predicts a drop in net worth (albeit smaller
+household balance sheets for this reason.
+
+
+                                               35
+                                      Trillions of Dollars                                               Trillions of Dollars
+
+           Fin Assets            Mortgages                   25              Fin Assets            Mortgages                    40
+           Other NonFin Assets   Other Liabilities                           Other NonFin Assets   Other Liabilities
+           Real Estate         ● Net Worth                                   Real Estate         ● Net Worth
+                                                             20
+       ●                                                                                                                        30
+                                                                         ●
+                           ●
+                                               ●
+                                                             15                                                   ●
+                                                                                             ●                                  20
+
+                                                             10
+                                                                                                                                10
+                                                              5
+
+                                                                                                                                 0
+                                                              0
+
+
+                                                             −5                                                                 −10
+
+     2007Q3        2009Q1 (Limited)      2009Q1 (Full)                 2007Q3        2009Q1 (Limited)       2009Q1 (Full)
+                        (a) Top 1                                                        (b) Next 9
+
+                                      Trillions of Dollars                                               Trillions of Dollars
+                                                             40
+           Fin Assets            Mortgages                                   Fin Assets            Mortgages
+           Other NonFin Assets   Other Liabilities                           Other NonFin Assets   Other Liabilities            10
+           Real Estate         ● Net Worth                   30              Real Estate         ● Net Worth
+
+
+
+
+       ●                                                     20                                                                  5
+                           ●
+                                               ●
+
+
+                                                                         ●
+                                                             10                              ●
+                                                                                                                   ●
+                                                                                                                                 0
+
+
+                                                              0
+                                                                                                                                −5
+
+                                                             −10
+                                                                                                                                −10
+
+     2007Q3        2009Q1 (Limited)      2009Q1 (Full)                 2007Q3         2009Q1 (Limited)       2009Q1 (Full)
+                       (c) Next 40                                                      (d) Bottom 50
+                   Figure 10: Household Balance Sheets Across the Wealth
+                          Distribution During the Financial Crisis
+
+Notes: The 2007Q3 columns show the DFA balance sheets for 2007Q3 estimated using SCF
+and Financial Accounts data only through that date. The 2009Q1 (Limited) columns show
+the extrapolated DFA balance sheets for 2009Q1 using SCF data only through 2007Q3 and
+Financial Accounts data through 2009Q1. The 2009Q1 columns show the actual DFA balance
+sheet estimates for 2009Q1 using all available SCF and Financial Accounts data. All panels use
+the (current) 2018Q4 vintage of the Financial Accounts.
+
+
+
+
+                                                                  36
+than for the top 1%) driven by a decrease in the value of real estate holdings. Comparing
+the second and third bar in each panel shows that our pseudo real-time forecast successfully
+predicts the qualitative patterns in the actual DFA data, although there are some notable
+quantitative differences. For example, our pseudo real time measures slightly overpredict the
+decrease in net worth for households in the next 9% and bottom 50% groups (Panels (b) and
+(d)), and underpredicts the fall in net worth for households in the next 40% group (Panel
+(c)).48
+    Overall, these exercises suggests that the interpolation model is robust to the selection of
+the estimation sample, and that the DFAs can provide accurate, real-time insights into the
+composition of wealth across the wealth distribution at economic turning points.
+
+
+
+5      Robustness and Sensitivity Analysis
+In this section, we test the effect on our results of a number of our assumptions regarding
+data and empirical strategy.49 In particular, we investigate two issues. First, as noted above,
+aggregates from the Financial Accounts and SCF do not always align, requiring us to make
+several assumptions to reconcile these two data sets. Second, we look at how sensitive the
+DFAs’ wealth shares are to sampling variability in the SCF.50
+    As noted in Section 2, a few conceptual and quantitative differences between the Financial
+Accounts and SCF persist, even after our attempts to reconcile them. Table 2 explores the
+robustness of our results to alternative reconciliation approaches highlighted in Section 2.
+We calculate the average share for each of our wealth groups during three different periods
+(1989-99, 2000-09, and 2010-18 under alternative reconciliation assumptions, as well as the
+baseline wealth shares in Column (1).
+    First, we present results from a “naive” reconciliation strategy that excludes all data items
+not directly measured by the SCF.51 As described in Section 2, these assets are included in
+  48
+      In Appendix Figure E.1, we show more disaggregated asset and liability categories on the bars, illustrat-
+ing that our pseudo-real time forecast also predicts changes in specific balance sheet lines with reasonable
+precision.
+   49
+      See Appendix D for a comparison of alternative imputation and forecasting procedures.
+   50
+      Sampling variability refers to the uncertainty in any sample statistic stemming from the fact that no
+sample perfectly represents the population from which it is drawn. Because sampling the entire population
+is infeasible, any survey-based measure will have some sampling variability. As noted above, the SCF
+intentionally over-samples high-wealth households in order to reduce sampling variability at this end of the
+distribution.
+   51
+      Specifically, we exclude life insurance reserves, pension entitlements, miscellaneous assets, and deferred
+
+
+                                                      37
+             Table 2: Sensitivity of Net Worth Shares to Alternative Balance
+                                     Sheet Definitions
+
+                                                             Alternative Wealth Definitions
+                                      Baseline           Naive Reconciliation Confident Wealth
+    Years        Wealth Group           (1)                      (2)                  (3)
+  1989-1999     Bottom 50               3.8                      3.1                  3.9
+                Next 40                35.0                     29.8                 35.4
+                Next 9                 35.3                     34.5                 35.8
+                Top 1                  26.0                     32.6                 24.9
+  2000-2009     Bottom 50               2.1                      1.1                  2.5
+                Next 40                33.2                     27.8                 33.3
+                Next 9                 37.3                     35.8                 37.8
+                Top 1                  27.4                     35.3                 26.5
+  2010-2018     Bottom 50               0.6                     -0.9                 1.3
+                Next 40                29.8                     23.0                 30.0
+                Next 9                 39.2                     37.8                 39.6
+                Top 1                  29.9                     40.1                 29.1
+
+
+                                    Real Estate                Non Corporate Business
+                                      AVM                   Market Value       Cost Basis
+    Years        Wealth Group           (4)                     (5)                (6)
+  1989-1999     Bottom 50               3.8                     3.8                3.7
+                Next 40                35.0                    34.9               35.0
+                Next 9                 35.3                    35.1               35.2
+                Top 1                  26.0                    26.2               26.1
+  2000-2009     Bottom 50               2.4                     2.1                2.1
+                Next 40                34.0                    33.3               33.1
+                Next 9                 38.0                    36.7               37.2
+                Top 1                  25.5                    27.8               27.6
+  2010-2018     Bottom 50               0.9                     0.6                0.6
+                Next 40                30.6                    29.7               29.7
+                Next 9                 40.2                    39.2               39.4
+                Top 1                  28.1                    30.4               30.2
+
+
+Notes: Table entries indicate the percent share of total wealth for the indicated groups averaged
+across all quarters in the indicated time periods. Column 2 excludes B101.h balance sheet lines
+not directly measured in SCF (i.e., life insurance reserves, pension entitlements, miscellaneous
+assets, and deferred and unpaid life insurance premiums). Column 3 excludes balance sheet
+lines for which the reconciled SCF and B101.h balance sheet lines differ by more than 25%
+historically (i.e., corporate and foreign bonds, time and saving deposits, consumer durables,
+consumer credit, and depository institution loans). Columns 4-6 substitute our baseline real
+estate and noncorporate business series for the series indicated in the column heading.
+
+
+
+
+                                                    38
+our benchmark household net worth concept (Financial Accounts Table B.101.h), and, in our
+baseline strategy, we impute these asset values to the SCF when constructing our reconciled
+SCF balance sheet. Column (2) shows that doing so has significant effects on the distribution
+of wealth. Excluding these imputed assets and liabilities raises the wealth share of the top
+1% by 6-10 percentage points, with an associated decrease in the wealth shares of the other
+wealth groups. Including these imputations decreases wealth concentration because most of
+the imputed components — especially DB pensions — are distributed more equitably across
+the population than other components. This analysis indicates that including these assets
+is important for understanding a fuller picture of the distribution of wealth.52
+   Next, we focus on several asset classes that are measured in the SCF but that do not
+align closely with B.101.h, including corporate and foreign bonds, time and saving deposits,
+and consumer durables. As noted in Section 2, an evenly distributed difference in levels is
+not as important for our purposes as would be differences that vary systematically across
+the wealth distribution. To get a sense of how much these level differences affect our results,
+we calculate an alternative measure, which we call “confident wealth,” that includes only
+the components for which the reconciled SCF balance sheet line is within 25 percent of its
+B.101.h counterpart.53 As shown in Column (3), the “confident wealth” measure results
+in wealth shares of the top 1% and next 9% wealth groups that are generally less than 1
+percentage point lower, with the other two wealth shares generally slightly higher. These
+relatively small shifts in wealth shares indicate a modest effect on our distributional results
+arising from wealth components with poor quantitative match, suggesting that the level
+differences between the data sets for these components are roughly proportional across the
+wealth distribution.
+   Our next robustness check considers alternative treatments of real estate. As noted in
+Section 2, the B.101.h and SCF series for aggregate real estate holdings diverge somewhat
+after the mid-2000s. To test whether this divergence has significant implications for our
+distributional results, we reconstruct the DFAs using an alternative measure of aggregate
+and unpaid life insurance premiums in this exercise.
+  52
+     Including certain other assets that are excluded from Table B.101.h, notably Social Security, would
+presumably have a similarly large effect on the distribution of wealth (see, for example, Feldstein (1974),
+Deaton et al. (2002), or Love et al. (2009))
+  53
+     Specifically, confident wealth excludes consumer durables, time deposits and short term investments,
+debt securities, and consumer credit.
+
+
+
+
+                                                    39
+real estate that is included in the Enhanced Financial Accounts.54 As shown in Column
+(4), using the alternative measure of aggregate housing wealth has minimal effects on the
+distribution, indicating that the difference in the level of housing wealth between the SCF
+and B.101.h is relatively evenly distributed across wealth groups.
+   Our last set of robustness checks focus on the treatment of noncorporate business eq-
+uity. As noted in Section 2, the Financial Accounts value household equity in noncorporate
+business with a blend of cost-basis, book value, and market value, while the SCF measures
+market and cost-basis, but not book, values of noncorporate businesses. Our baseline rec-
+onciled SCF balance sheet uses the average of the two SCF measures because this series
+has tracked the B.101.h measure reasonably closely historically. To test the effect of this
+assumption on the resulting distribution, Columns (5) and (6) report reconstructed DFAs
+using each SCF measure (market value and cost basis) separately. We find little divergence
+from our baseline when we use either the market or the cost-basis measures alone, suggesting
+the differences in the distribution between cost-basis and market value measures of business
+equity are not driving the distributional results.
+   Overall, with the exception of excluding imputed balance sheet items such as pensions,
+which reflect important components of household wealth, we find little evidence that our
+resulting distribution is sensitive to reasonable alternative definitions for our reconciled SCF
+balance sheet.
+
+
+5.1     Sampling Variability
+A second issue we investigate regarding our new data set is how sensitive the results might
+be to sampling variability in the SCF. Because the wealth distribution is known to be highly
+skewed, the SCF survey design goes to great lengths to oversample wealthy households in
+order to capture the top of the distribution with more precision.55 Nonetheless, as in any
+survey, sampling variability is present. To gauge the impact of sampling variability on the
+DFA estimates, we bootstrap the SCF balance sheet following the procedure described in
+Bricker et al. (2017).
+  54
+     The alternative measure is based on an automated valuation model from Zillow, and roughly splits
+the difference between the Financial Accounts and the SCF. For more information about this measure, see
+https://www.federalreserve.gov/releases/efa/alternative-measure-of-owner-occupied-real-estate.htm.
+  55
+     Pure random sampling would lead to relatively few observations at the top of the wealth distribution,
+which would, combined with increased rates of non-response among high wealth households, increase sam-
+pling variability.
+
+
+                                                   40
+    The results are shown in Table 3. While sampling variability is evident, its effects (as mea-
+sured by the standard errors) are generally modest. Even among the top 1% of households
+— where sampling concerns are most commonly raised — the standard errors are generally
+1% or less in years after 1989.56
+
+           Table 3: Average Net Worth Shares and Standard Errors from 999
+           Bootstrap Samples for Each Wealth Group in Selected SCF Years
+
+
+                                                         Wealth Groups
+
+             Year                   Top 1%      Next 9%       Next 40%        Bottom 50%
+                                      (1)         (2)            (3)              (4)
+
+            1989     Share (%)         23.2         37.4           35.6             3.7
+                       s.e.            1.7           2.1           2.5              0.4
+
+            1998     Share (%)         27.4         34.5           34.7             3.4
+                        s.e.           0.9           0.7           0.8              0.2
+
+            2007     Share (%)         29.3         38.4           30.8             1.4
+                        s.e.           0.9           0.7           0.6              0.2
+
+            2016     Share (%)         31.0         39.3           28.7             1.0
+                        s.e.           0.8           0.8           0.6              0.1
+
+
+
+
+6      Conclusion
+In this paper, we have introduced the Distributional Financial Accounts, a new data set that
+integrates microdata with a national accounting framework to provide quarterly, timely data
+on the distribution of U.S. household wealth. These data make several new contributions
+that we expect will support research on the wealth distribution. For example, the DFAs
+comprehensively integrate macroeconomic aggregates with direct observations of detailed
+household-level balance sheets. With this approach, we find that that wealth concentration
+has increased in a way that is broadly consistent with prior studies, though with a somewhat
+  56
+    Standard deviations of wealth shares and other balance sheet items are notably larger in 1989 than sub-
+sequent years because the 1989 oversample of wealthy households was only about 60% the size of subsequent
+surveys.
+
+
+                                                    41
+lower measure of the share of wealth held by the top 1% than in some other studies. Another
+important contribution of the DFAs is their ability to measure distributional changes at a
+quarterly frequency, which allows for study of the relationship between the wealth distribu-
+tion and business cycle fluctuations. Finally, the timeliness of the DFA updates provides
+an ability to look at near-real-time trends in the wealth distribution, which could be useful
+during times of economic turning points or volatility.
+  As part of the Financial Accounts of the U.S., the DFAs are intended to contribute to a
+global conversation about national statistics and the distribution of household wealth, and we
+hope the DFAs will become a valuable tool that furthers understanding of the wealth distribu-
+tion in the United States and around the world. We encourage policymakers, researchers, and
+other interested parties to explore and use the DFA data, which are now available at https:
+//www.federalreserve.gov/releases/efa/enhanced-financial-accounts.htm, where it
+will be updated on a quarterly basis going forward.
+
+
+
+
+                                             42
+References
+Adelino, M., Schoar, A., and Severino, F. (2016). Loan originations and defaults in the
+ mortgage crisis: The role of the middle class. The Review of Financial Studies, 29(7):1635–
+ 1670.
+
+Albanesi, S. (2011). Optimal taxation of entrepreneurial capital with private information.
+  Working Paper.
+
+Alvaredo, F., Atkinson, A., Chancel, L., Piketty, T., Saez, E., Zucman, G., et al. (2016).
+  Distributional National Accounts (DINA) guidelines: Concepts and methods used in WID.
+  world.
+
+Antoniewicz, R. L. (1996). A comparison of the household sector from the Flow of Funds
+ accounts and the Survey of Consumer Finances. Finance and Economics Discussion Series,
+ 96/26.
+
+Auclert, A. (2019). Monetary policy and the redistribution channel. American Economic
+ Review, Forthcoming.
+
+Avery, R. B., Elliehausen, G. E., and Kennickell, A. B. (1987). Changes in consumer in-
+  stallment debt: Evidence from the 1983 and 1986 surveys of consumer finances. Federal
+  Reserve Bulletin, 73:761.
+
+Banerjee, A. V. and Duflo, E. (2003). Inequality and growth: What can the data say?
+  Journal of Economic Growth, 8(3):267–299.
+
+Benhabib, J., Bisin, A., and Luo, M. (2017). Earnings inequality and other determinants of
+  wealth inequality. American Economic Review, 107(5):593–97.
+
+Bhutta, N. (2015). The ins and outs of mortgage debt during the housing boom and bust.
+  Journal of Monetary Economics, 76:284–298.
+
+Bricker, J., Brown, M., Pence, K. M., and Hannon, S. (2015). How much student debt is
+  out there? FEDS Note.
+
+Bricker, J., Dettling, L. J., Henriques, A., Hsu, J. W., Jacobs, L., Moore, K. B., Pack, S.,
+  Sabelhaus, J., Thompson, J., and Windle, R. A. (2017). Changes in us family finances
+  from 2013 to 2016: evidence from the Survey of Consumer Finances. Federal Reserve
+  Bulletin, 103:1.
+
+Bricker, J., Henriques, A., and Hansen, P. (2018). How much has wealth concentration grown
+  in the United states? A re-examination of data from 2001-2013. FEDS Note.
+
+Bricker, J., Henriques, A., Krimmel, J., and Sabelhaus, J. (2016). Measuring income and
+  wealth at the top using administrative and survey data. Brookings Papers on Economic
+  Activity, 47(1 (Spring)):261–331.
+
+
+
+                                            43
+Carroll, C. D. (2014). Representing consumption and saving without a representative con-
+  sumer. In Measuring Economic Sustainability and Progress, NBER Chapters, chapter 5,
+  pages 115–134. National Bureau of Economic Research, Inc.
+
+Chow, G. C. and Lin, A. (1971). Best linear unbiased interpolation, distribution, and ex-
+ trapolation of time series by related series. The Review of Economics and Statistics,
+ 53(4):372–375.
+
+Collins, S., editor (2018). 2018 Investment Company Fact Book. Investment Company
+  Institute, 58th edition.
+
+Deaton, A. S., Gourinchas, P.-O., and Paxson, C. (2002). Social security and inequality over
+  the life cycle. In The distributional aspects of Social Security and Social Security reform,
+  pages 115–148. University of Chicago Press.
+
+Dettling, L. J., Devlin-Foltz, S., Krimmel, J., Pack, S., and Thompson, J. P. (2015). Com-
+  paring micro and macro sources for household accounts in the United States: evidence
+  from the Survey of Consumer Finances.
+
+Fagereng, A., Guiso, L., Malacrino, D., and Pistaferri, L. (2016). Heterogeneity and persis-
+  tence in returns to wealth. Technical report, National Bureau of Economic Research.
+
+Feldstein, M. (1974). Social security, induced retirement, and aggregate capital accumulation.
+  Journal of Political Economy, 82(5):905–926.
+
+Fernandez, R. B. (1981). A methodological note on the estimation of time series. The Review
+  of Economics and Statistics, 63(3):471–476.
+
+Fixler, D., Johnson, D., Craig, A., and Furlong, K. (2017). A consistent data series to
+  evaluate growth and inequality in the National Accounts. Review of Income and Wealth,
+  63(s2):S437–S459.
+
+Fixler, D. and Johnson, D. S. (2014). Accounting for the Distribution of Income in the U.S.
+  National Accounts, pages 213–244. University of Chicago Press.
+
+Furlong, K. (2014). Distributional estimates in the U.S. National Accounts: Integrating
+  micro and macro data. Bureau of Economic Analysis.
+
+Gallin, J., Molloy, R., Nielsen, E. R., Smith, P. A., and Sommer, K. (2018). Measuring ag-
+ gregate housing wealth: New insights from an automated valuation model. FEDS Working
+ Paper.
+
+Gornemann, N., Kuester, K., and Nakajima, M. (2016). Doves for the rich, hawks for the
+ poor? distributional consequences of monetary policy. International Finance Discussion
+ Papers 1167, Board of Governors of the Federal Reserve System (U.S.).
+
+Henriques, A. M. and Hsu, J. W. (2014). Analysis of wealth using micro- and macrodata: A
+  comparison of the Survey of Consumer Finances and Flow of Funds accounts. In Measuring
+  Economic Sustainability and Progress, pages 245–274. University of Chicago Press.
+
+                                             44
+Holden, S. and Bass, S. (2018). The IRA investor profile: Traditional IRA investors activity,
+  2007-2016. ICI Research Report (September).
+
+Holmquist, E. B. (2019). Household and nonprofit balance sheets in the Financial Accounts
+  of the United States. FEDS Notes 2019-01-04, Board of Governors of the Federal Reserve
+  System (U.S.).
+
+Kaplan, G., Moll, B., and Violante, G. L. (2018). Monetary policy according to HANK.
+ American Economic Review, 108(3):697–743.
+
+Kennickell, A. (1999). Using income to predict wealth. Technical report, Board of Governors
+  of the Federal Reserve System (U.S.).
+
+Kennickell, A. and Woodburn, R. L. (1999). Consistent weight design for the 1989, 1992 and
+  1995 SCFs, and the distribution of wealth. The Review of Income and Wealth, 45(2):193–
+  215.
+
+King, W. I. (1915). The wealth and income of the people of the United States. Macmillan.
+
+King, W. I. (1927). Wealth distribution in the continental United States at the close of 1921.
+  Journal of the American Statistical Association, 22(158):135–153.
+
+King, W. I. et al. (1930). The national income and its purchasing power. NBER Books.
+
+Kuznets, S. (1947). National income and its composition: 1919-1938, volume 1. National
+ Bureau of Economic Research.
+
+Kuznets, S. and Jenks, E. (1953). Shares of upper income groups in savings. In Shares of
+ Upper Income Groups in Income and Savings, pages 171–218. NBER.
+
+Litterman, R. B. (1983). A random walk, Markov model for the distribution of time series.
+  Journal of Business & Economic Statistics, 1(2):169–173.
+
+Love, D. A., Palumbo, M. G., and Smith, P. A. (2009). The trajectory of wealth in retirement.
+  Journal of Public Economics, 93(1-2):191–208.
+
+Maki, D. M., Palumbo, M. G., et al. (2001). Disentangling the wealth effect: a cohort
+ analysis of household saving in the 1990s. FEDS Working Paper Series.
+
+OMuircheartaigh, C. and Pedlow, S. (2002). Cumlulating cases versus combing samples.
+ Technical report, Proceedings of the Joint Statistical Meetings, Survey Research Methods
+ Section.
+
+Piketty, T. (2013). Capital in the Twenty-First Century. Harvard University Press.
+
+Piketty, T., Saez, E., and Zucman, G. (2017). Distributional National Accounts: Methods
+  and estimates for the United States. The Quarterly Journal of Economics, 133(2):553–609.
+
+Rios-Rull, J.-V. and Kuhn, M. (2016). 2013 update on the U.S. earnings, income, and wealth
+  distributional facts: A view from macroeconomics. Quarterly Review, pages 1–75.
+
+                                             45
+Saez, E. and Zucman, G. (2016). Wealth Inequality in the United States since 1913: Evidence
+  from Capitalized Income Tax Data. The Quarterly Journal of Economics, 131(2):519–578.
+
+Shourideh, A. (2012). Optimal taxation of wealthy individuals. Working Paper.
+
+Solt, F. (2008). Economic inequality and democratic political engagement. American Journal
+  of Political Science, 52(1):48–60.
+
+Vermuelen, P. (2018). How fat is the top tail of the wealth distribution? The Review of
+  Income and Wealth, 64(2):357–387.
+
+Wolff, E. N., Zacharias, A., and Masterson, T. (2012). Trends in American living standards
+ and inequality, 1959-2007. Review of Income and Wealth, 58(2):197–232.
+
+
+
+
+                                            46
+A     Actuarial Calculations for Life Insurance and Pay-
+      out Annuities
+This appendix documents the actuarial calculations supporting the distribution methods for
+life insurance and individual annuity reserves described in Section 2.
+  For life insurance reserves, we use these calculations to estimate how the breakdown in
+total amount of permanent versus term insurance in force (as measured by death benefit
+and reported in the statutory financial statements) translates to the breakdown in reserve
+(for which the total is reported, but not the amount by product). To do so, we calculate
+the reserves by policy year for a set of hypothetical policies with a death benefit of $1.
+Permanent insurance is represented by whole life, and term is represented by 5, 10, 15,
+20, and 30-year level-premium products. We use the 2017 loaded Commissioner’s Standard
+Ordinary (CSO) gender-blended composite age-nearest-birthday (ANB) mortality table, and
+a valuation interest rate of 3.5%. The reserve in each year is the expected present value of
+future death benefits less the expected present value of future premiums. We calculate a net
+premium reserve, i.e. the premium rate is set so the reserve is 0 at issue. Figure A.1 shows
+the results of these calculations for policies issued to a 45 year-old. Products with longer
+durations build up much larger reserves because the level premiums are above the expected
+benefits in the early years, and then below them in the later years.
+  We then calculate a weighted average reserve over the life of each product, with the weight
+determined by probability the policy is in force each year (assuming the aforementioned
+mortality rates and a 4% annual surrender rate). We combine the various term insurance
+products by assuming the 5, 10, 15, 20, and 30-year products constitute 10%, 25%, 35%,
+20%, and 10% of the total, respectively. The resulting numbers for permanent and term
+insurance represent the relative reserve amounts if each product constituted 50% of the
+amount in force. We repeat this exercise for policies issued to individuals ages 25 to 65
+(at 5-year increments), giving more weight to mid to late middle age where we assume
+actual policy issuance is concentrated. These calculations imply that permanent insurance
+would account for approximately 90% of reserves if the in force amounts were split evenly.
+Finally, we use the actual breakdown of death benefit in force reported each year, which
+ranges from close to even in the early years of the DFAs to approximately 75% term more
+
+
+                                             47
+                                                    Reserve per dollar
+
+
+                                                        Whole Life
+                                                        30 Year Term     0.15
+                                                        20 Year Term
+                                                        15 Year Term
+                                                        10 Year Term
+                                                        5 Year Term
+                                                                         0.10
+
+
+
+
+                                                                         0.05
+
+
+
+
+                                                                         0.00
+
+                        40   50    60   70    80   90      100     110
+
+         Figure A.1: Life Insurance Reserve per Dollar of Death Benefit for
+                            Sample Policies, Issue Age 45
+
+
+recently. This results in reserve breakdown estimates that range from 90% permanent at the
+beginning of our sample to 75% permanent in 2018Q3. The actuarial calculations supporting
+the distribution of individual annuity reserves capitalize the SCF-reported periodic payment
+for payout annuities into an expected present value. We again use the 2017 loaded CSO
+gender-blended composite ANB mortality table and a valuation interest rate of 3.5%. For
+each age between 0 and 120, we calculate the present values of $1 received annually for the
+life of an individual, and $1 received annually for the life of the last surviving spouse. We
+then multiply the annual payout annuity benefits reported by each SCF household by the
+appropriate annuity factor based upon the age and marital status of the head of household.
+
+
+
+
+                                             48
+B      Estimating Covariance Matrices of the Error Pro-
+       cess in the Chow-Lin Methodology
+This appendix describes in greater detail how the higher-frequency covariance matrix V is
+identified in Chow and Lin (1971), Fernandez (1981), and Litterman (1983). Chow and Lin
+(1971) show how to recover this matrix under two different assumptions about the underlying
+error process: serial independence and first-order autocorrelation, which is the leading case
+we pursue in this paper. In particular, they show that if the residuals follow a simple AR(1)
+process such that
+
+
+                                         ut = aut−1 + t ,                                   (5)
+
+
+where the t are iid with constant variance σ 2 then
+                                                                
+                                         1       a a2 ... an−1
+                                                           
+                                   a
+                                          1 a ... an−2    
+                                                           
+                               V =    2                n−3 
+                                    a     a   1  ... a     
+                                   .                    .. 
+                                   ..    ... ... ...     . 
+                                                           
+                                     3n−1
+                                   a      ...     ...   1
+                                               σ2
+                                  =A×               .
+                                             1 − a2
+
+    Substituting Equation 5 into Equations 3 and 4 reveals that a feasible estimate of X̂
+requires an estimate of a but not σ 2 (the scalar factor σ 2 /(1 − a2 ) cancels in all of the ex-
+                                                                            h             i
+                                                                                     0
+pressions). To estimate a, note that the first order autocorrelation of Y − B Z β̂ is a3 .
+Iteratively using Equation 5 and Equation 3 and solving for a3 by calculating the autocor-
+                       h             i
+relation coefficient of [Y − B 0 Z β̂ until convergence therefore yields a consistent estimate
+of a, and, by extension, V .
+    This basic approach has been generalized and extended by several other studies. No-
+tably, Fernandez (1981) and Litterman (1983) characterize solutions for non-stationary error
+
+
+
+
+                                                  49
+processes of the form
+
+
+                                        ut = aut−1 + vt
+                                       vt = ρvt−1 + ηt .
+
+
+Fernandez (1981) assumes ρ = 0, while Litterman (1983) assumes 0 < ρ < 1. In each of these
+cases, the solution follows the familiar form specified in Equations 3 and 4 with covariance
+matrix V given by
+
+                                                      −1
+                                V = [∆0 H(ρ)0 H(ρ)∆]       × ση2 ,
+
+
+where ∆ is an n × n difference matrix with 1 on its diagonal, −1 on its subdiagonal, and zero
+elsewhere, H(ρ) is an n × n matrix with 1 on its diagonal, −ρ on its subdiagonal, and zero
+elsewhere, and ση2 is the variance of the innovations ηt . In particular, Litterman (1983) shows
+that autoregressive parameter ρ may be estimated by an iterative procedure similar to that
+proposed in Chow-Lin (1971) using Equations 3 and 4 and the first-order autocorrelation of
+                                     h           i
+                                            0
+the first difference of the residuals [Y − B Z β̂ .
+
+
+
+
+                                              50
+C       Constructing DFA Shares and Levels from Imputed
+        Reconciled SCF Balance Sheets
+Following the methodology described in Sections 2 and 3, we produce quarterly measures of
+the total value of SCF-reconciled assets, liabilities and net worth for households in the top
+1%, 90-99%, 50-90%, and bottom 50% of the wealth distribution for all quarters between
+1989-present. The final step in producing the DFAs is projecting the Financial Accounts
+data onto the reconciled SCF asset and liability shares. To do so, we define γtj,p as the level of
+the asset or liability indexed by balance sheet line j, for wealth quantile group p, in quarter
+t, and let Γjt denote the corresponding line from the B.101.h balance sheet. Define group p’s
+asset or liability share of balance sheet line j in quarter t as its share of the total reconciled
+SCF balance sheet line:
+
+                                                    γ j,p
+                                           ωtj,p = P t j,k
+                                                    k γt
+
+
+To construct the DFA’s measures of assets and liability levels for each quantile, we multiply
+these balance sheet shares by the total B.101.h balance sheet line:
+
+
+                                            γ̄tj,p = Γjt ωtj,p
+
+
+This ensures that the DFA levels of assets and liabilities aggregate to the Financial Accounts
+household balance sheet table.
+    For aggregated lines on the household balance sheet (e.g., total assets, total liabilities, net
+worth, etc.), we aggregate over the calculated DFA balance sheet lines. For example, letting
+A denote the set of asset lines on the household balance sheet,
+
+
+                                   γ̄tassets,p = σj∈A γ̄tj,p
+                                                   P        j,p
+                                                       j∈A γt
+                                   ωtassets,p   =   P P        j,k
+                                                     k   j∈A γt
+
+
+    Liabilities and liability shares are similarly defined. DFA net worth levels and shares are
+
+
+
+
+                                                    51
+defined as
+
+
+                           γ̄tN etW orth,p = γ̄tassets,p − γ̄tliabilities,p
+                                                 γ̄ N etW orth,p
+                           ωtN etW orth,p = P t N etW orth,k .
+                                                  k γ̄t
+
+
+Because aggregated balance sheet items are constructed from B.101.h balance sheet lines
+and not reconciled SCF balance sheet lines, the shares of aggregated balance sheet lines for
+each wealth quantile do not necessarily align with the shares from the SCF.
+
+
+
+
+                                                 52
+D     Selecting a Temporal Disaggregation Model
+Up to this point, we have introduced three distinct temporal disaggregation models based
+on three different assumptions on the error process: Chow Lin (1976), Fernandez (1981),
+and Litterman (1983). These three approaches yield qualitatively similar results, and the
+limited number of SCF waves complicates selecting the appropriate model from among this
+menu. Because there are only 10 observed SCF waves, coefficients for our indicator series
+as well as our target series estimates are unlikely to be statistically distinguishable across
+models. Nevertheless, below we employ objective criterion to select our baseline imputation
+and forecast model.
+  We construct several different measures of forecast accuracy, all of which are based on
+model predictions for the 2013 and 2016 SCF measures. First, we estimate the model
+using only the SCF observations from 1989-2010 and then calculate the sum of the squared
+differences (normalized by $1Trillion) between the 2013 model predictions and the 2013
+reconciled SCF measures of net worth. In other words, we pretend that our sample ends
+in 2010, use our method to forecast to 2013, and then compare our forecasts to the actual
+reconciled SCF totals. Second, we repeat this exercise by re-estimating the model on 1989-
+2013 SCF observations and examining predictions for the 2016 SCF. Third, we re-estimate
+the model on 1989-2010 and 2016 SCF observations, counterfactually assuming the 2013
+SCF is not observed, and compare the model-predicted 2013 SCF balance sheet to that
+which was actually observed. Finally, we repeat this exercise assuming that the 2010 SCF is
+not observed. We conduct these three exercises for the net worth levels and shares of each
+wealth group: top 1%, 90-99%, 50-90%, and bottom 50%. Table D.1 presents the total sum
+of squared errors from these exercises.
+  The predictions of each model are generally quite similar — the total-wealth and wealth-
+by-percentiles total squared errors (TSEs) rarely differ substantially. The 2013 forecast
+errors are very low — about $3-7 trillion for total wealth and $3-8 trillion for wealth by
+percentiles. The 2016 forecast errors are somewhat larger at $37-46 trillion for total wealth
+and about $17-18 trillion for wealth by percentiles. Finally, the 2013 and 2010 imputation
+errors are quite modest both for total wealth ($ 11-16 trillion) and wealth by percentiles
+($4-5 trillion). The Chow-Lin and Fernandez estimates are typically quite similar, and yield
+somewhat smaller errors than the Litterman method. Nonetheless, the TSEs differences
+
+
+                                             53
+         Table D.1: Comparison of Different Forecasting and Imputation
+                                   Models
+
+
+                   Total Squared Errors of Quarterly Imputation
+
+                                               Chow-Lin              Fernandez Litterman
+                                                   1                     2          3
+A. 2013 Forecast         Total Wealth             2.7                   3.2        7.7
+                         Wealth by Percentiles    5.7                   5.4        8.1
+
+B. 2016 Forecast         Total Wealth                     32.4           37.8           41.3
+                         Wealth by Percentiles            20.3           19.5           19.5
+
+C. 2010 Imputation       Total Wealth                     11.9           9.1            15.7
+                         Wealth by Percentiles             6.6           6.3             6.7
+
+D. 2013 Imputation       Total Wealth                     11.8           12.5           11.6
+                         Wealth by Percentiles             6.8           6.3            5.3
+
+
+  Notes: Each table entry shows the total sum of squared errors for reconciled balance sheet
+  interpolations/extrapolations that selectively exclude an SCF year. The 2013 Forecast rows
+  use SCF data through 2010 and Financial Accounts data through 2013Q3. The 2016 Forecast
+  rows use SCF data through 2013 and Financial Accounts data through 2016Q3. The 2010
+  Imputation rows use all available SCF and Financial Accounts data except the 2010 SCF. The
+  2013 Imputation rows use all available SCF and Financial Accounts data except the 2013 SCF.
+  All calculations use the 2018Q4 vintage of the Financial Accounts.
+
+
+
+
+                                              54
+between these three approaches are not very large. Therefore, we conclude that the choice of
+error process is not critical in our application, and we adopt the Chow-Lin method because
+it performs well and is simple to implement.
+
+
+
+
+                                               55
+E      Additional Tables and Figures
+
+
+                                     Percent of total assets                                          Percent of total assets
+
+       ●                                                       1.0     ●                                                        1.0
+                       ●                                                                ●
+                                                                                                        ●
+                                       ●
+
+
+                                                               0.5                                                              0.5
+
+
+                                                     ●
+                                                               0.0                                                    ●         0.0
+
+
+
+                                                               −0.5                                                             −0.5
+      Real Estate            Other Fin Assets                          Real Estate            Other Fin Assets
+      Con Durables           Mortgages                                 Con Durables           Mortgages
+      Stocks/MFS             Consumer Credit                   −1.0    Stocks/MFS             Consumer Credit                   −1.0
+      Pensions               Other Liabilities                         Pensions               Other Liabilities
+      NonCorp Equity       ● Net Worth                                 NonCorp Equity       ● Net Worth
+
+
+                                                               −1.5                                                             −1.5
+
+      Top 1       Next 9            Next 40      Bottom 50             Top 1       Next 9            Next 40      Bottom 50
+
+(a) Pseudo real-time estimate of 2009Q1 balance sheets                (b) DFAs measure of 2009Q1 balance sheets
+
+                  Figure E.1: Household Balance Sheets Across the Wealth
+                     Distribution During the Financial Crisis (Detailed)
+
+
+Notes: Panel (a) shows the extrapolated DFA balance sheets for 2009Q1 using SCF data only
+through 2007Q3 and Financial Accounts data through 2009Q1. Panel (b) shows the actual DFA
+balance sheet estimates for 2009Q1 using all available SCF and Financial Accounts data. All
+panels use the (current) 2018Q3 vintage of the Financial Accounts.
+
+
+
+
+                                                                 56
+                                                 Table E.1: Summary of Indicator Series Used in Interpolating and
+                                                              Forecasting Household Balance Sheets
+
+                                                  FA Series   S& P 500   FHFA Index   Home Ownership Rate   DB-DC Ratio   Fed Funds Rate   Vehicle Loans   Student Loans   DTI Ratio   NYSE Volume
+     Real Estate                                  X                          X                X
+     Consumer Durable Goods                       X              X                            X
+     Financial Assets                             X              X
+     Checkable Deposits and Currency              X              X                                                              X
+     Time Deposits                                X                                                                             X
+     Money Market Fund Shares                     X                                                                             X                                                           X
+     US Government and Municipal Securities       X              X                                                              X
+     Corporate and Foreign Bonds                  X              X                                                              X
+57   Loans                                        X              X
+     Other Loans and Advances                     X              X                                                              X
+     Mortgages                                    X              X                                                              X
+     Corporate Equities and Mutual Fund Shares    X                                                                             X
+     Life Insurance Reserves                      X              X                                                              X
+     Pension Entitlements                         X              X                                               X              X
+     Equity in Noncorporate Business              X              X                                                              X
+     Miscellaneous Assets                         X              X                                                              X                                                           X
+     Home Mortgages                               X                                            X                                                                               X
+     Consumer Credit                              X              X                                                                                               X             X
+     Depository Loans N.E.C.                      X              X                                                                               X
+     Other Loans and Advances                     X              X                                                                                                             X
+     Deferred and Unpaid Life Insurance Prem.     X              X                                                                                                             X
+     Net Worth                                    X              X           X                                                                                                 X
+F      Forbes Weights Correction
+Though the SCF is precluded from sampling from the Forbes 400, the wealth of some SCF
+households is greater than the wealth of some Forbes families. As described here, we develop
+weights to incorporate the wealth of these omitted families into the SCF wealth totals. Our
+preferred treatment of coverage error involves adjusting the SCF sample weights at the top
+and including a weighted version of the Forbes 400 wealth. We do so in a “combining
+samples” weighting approach by leveraging the overlap between the Forbes wealth and the
+wealth of some SCF respondents (OMuircheartaigh and Pedlow (2002)).57 The Forbes list
+relies, in part, on public knowledge of wealth (through public filings for publicly traded
+companies, or through voluntary disclosure). Privately held forms of wealth, for example,
+can evade such public knowledge.
+    We begin by creating four wealth bins—(1) the minimum Forbes wealth (Fmin ) in a given
+year to 1.5 ∗ Fmin , (2) 1.5 ∗ Fmin to 2.5 ∗ Fmin , (3) 2.5 ∗ Fmin to 5 ∗ Fmin , and (4) 5 ∗ Fmin or
+more—and counting the number of SCF and Forbes cases (weighted and unweighted) in the
+bins.58 In each bin (b), we find the relative frequency (RF ) of SCF and Forbes cases by the
+formula
+                   RFb,d = (nb,d /Nb,d )/[(nb,SCF /Nb,SCF ) + (nb,F orbes /Nb,F orbes )]                 (6)
+
+for d = {SCF, F orbes}, b the four wealth bins as defined above, where n is an unweighted
+count in bin b, N is a weighted count in bin b, and RFb,t is defined in [0,1].
+    The combined and adjusted weight is adjustedwgt = RFb,SCF ∗ SCFwgt + RFb,F orbes ∗
+F orbeswgt , where RF depends on b. With this weight we can use wealth information in the
+SCF and Forbes, weighted properly for the overlap in the two datasets.59
+
+
+
+
+  57
+      We do so in a similar way to how the AP and list sample weights are are woven together to create final
+weights for the SCF (Kennickell and Woodburn (1999)). See, for example, Vermuelen (2018) for a visual of
+the overlap in the 2010 SCF and the Forbes distribution, as well as Kennickell (1999). This overlap exists
+in every survey year used in this analysis.
+   58
+      We assume that Forbes families are self-representing with weight of one so the number of weighted cases
+is equal to the number of unweighted cases. We use the SCF survey weight when considering the SCF cases.
+   59
+      When SCF families with wealth greater than the minimum Forbes wealth have a sample weight greater
+than one, they represent not just themselves but other families with their wealth level. These are presumably
+families in the Forbes list. Thus, the SCF sample weights prior to this weight correction represent some of
+Forbes families.
+
+
+                                                     58
+

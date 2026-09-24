@@ -1,0 +1,11 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-18T05:55Z	eps_split_dlog_eps_shiller	2025-12-31	1.061257	log	P2a Shiller E factor 2.89	log(2.89)
+2026-09-18T05:55Z	eps_split_dlog_shares_w2015	2025-12-31	-0.172588	log	companyfacts diluted WASO split-adj 2015-mcap	2015→2025
+2026-09-18T05:55Z	eps_split_dlog_agg_earnings	2025-12-31	0.888669	log	identity: dlog_eps + dlog_shares	inferred
+2026-09-18T05:55Z	eps_split_profit_share_of_price	2025-12-31	0.689301	share	dlog_agg/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_accretion_share_of_price	2025-12-31	0.133869	share	-dlog_shares/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_pe_share_of_price	2025-12-31	0.176831	share	P2a residual dlog_pe/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_profit_share_of_eps	2025-12-31	0.837374	share	dlog_agg/dlog_eps	denominator Δlog Shiller E
+2026-09-18T05:55Z	eps_split_accretion_share_of_eps	2025-12-31	0.162626	share	-dlog_shares/dlog_eps	denominator Δlog Shiller E
+2026-09-18T05:55Z	eps_split_n_usable	2025-12-31	385	count	firms with 2015&2025 diluted WASO	of 500
+2026-09-18T05:55Z	eps_split_sbc_over_repurchase	2025-12-31	0.199586	ratio	SBC USD / repurchase USD 2015-2025 usable	dollar offset not shares

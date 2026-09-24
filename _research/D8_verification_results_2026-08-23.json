@@ -1,0 +1,659 @@
+{
+ "M1": {
+  "section": "M1 \u2014 SEC Treasury clearing rule and compliance date amendments (lines 13-29)",
+  "rows": [
+   {
+    "label": "Entry 1: Dec 13 2023 adopting release (Rel. 34-99149)",
+    "given_url": "https://www.sec.gov/rules/2023/12/standards-covered-clearing-agencies-us-treasury-securities",
+    "http_status": "404 (title seen: 'SEC.gov | Oops! Page Not Found.')",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL is dead (404). The real SEC rulemaking page is https://www.sec.gov/rules-regulations/2025/02/s7-23-22 (200; /rules-regulations/2023/12/s7-23-22 301-redirects there). Page <title>: 'SEC.gov | Standards for Covered Clearing Agencies for U.S. Treasury Securities and Application of the Broker-Dealer Customer Protection Rule With Respect to U.S. Treasury Securities'. It lists Final Rule 34-99149, SEC Issue Date Dec. 13, 2023, Federal Register Jan. 16, 2024 (89 FR 2829 cited), PDF /files/rules/final/2023/34-99149.pdf (200, 406 pp, 'Conformed to Federal Register version', 'Effective date: March, 18, 2024'). Part III of the PDF: CCA rule changes for risk mgmt/margin separation/access 'must be effective by March 31, 2025'; for 17ad-22(e)(18)(iv)(A)-(B) 'effective by December 31, 2025, for cash market transactions ... and by June 30, 2026, for repo transactions'; 'Compliance by the direct participants ... would not be required until December 31, 2025, and June 30, 2026, respectively, for cash and repo transactions.' Press release 2023-247 (200): 'SEC Adopts Rules to Improve Risk Management in Clearance and Settlement and Facilitate Additional Central Clearing for the U.S. Treasury Market', Dec. 13, 2023.",
+    "corrected_url": "https://www.sec.gov/rules-regulations/2025/02/s7-23-22 (page); https://www.sec.gov/files/rules/final/2023/34-99149.pdf (release PDF)",
+    "page_title_seen": "SEC.gov | Standards for Covered Clearing Agencies for U.S. Treasury Securities and Application of the Broker-Dealer Customer Protection Rule With Respect to U.S. Treasury Securities",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M1/34-99149.pdf (+ .txt, r2025.html, pr2023-247.html, e1.html)",
+    "notes": "Title, publisher, date (Dec 13 2023) and the original compliance dates (Mar 31 2025 / Dec 31 2025 cash / Jun 30 2026 repo) are all confirmed from the PDF. Only the URL was constructed."
+   },
+   {
+    "label": "Entry 2: Feb 25 2025 extension final rule (Rel. 34-102487)",
+    "given_url": "https://www.sec.gov/rules-regulations/2025/02/standards-covered-clearing-agencies-us-treasury-securities-extension",
+    "http_status": "404 (title seen: 'SEC.gov | Oops! Page Not Found.')",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL is dead (404). Real location: same rulemaking page https://www.sec.gov/rules-regulations/2025/02/s7-23-22 (anchor #34-102487final), PDF https://www.sec.gov/files/rules/final/2025/34-102487.pdf (200, 15 pp). PDF header: '[Release No. 34-102487; File No. S7-23-22] RIN 3235-AN09 / Extension of Compliance Dates for Standards for Covered Clearing Agencies for U.S. Treasury Securities and Application of the Broker-Dealer Customer Protection Rule With Respect to U.S. Treasury Securities / ACTION: Final rule; extension of compliance date.' DATES section verbatim: 'Effective date: The effective date for this release is March 4, 2025. ... Compliance dates: The compliance date for Rule 17ad-22(e)(18)(iv)(A) and (B), published January 16, 2024 at 89 FR 2829, is extended from December 31, 2025, to December 31, 2026, for eligible cash market transactions, and from June 30, 2026, to June 30, 2027, for eligible repo transactions.' Also: 'The Commission is not extending the compliance date for Rule 17ad-22(e)(18)(iv)(C) or Rule 15c3-3.' FR version: federalregister.gov 2025-03351 (Mar 4, 2025; cited elsewhere as 90 FR 11134). Press release 2025-43 (200, Feb. 25, 2025): 'SEC Extends Compliance Dates and Provides Temporary Exemption for Rule Related to Clearing of U.S. Treasury Securities'.",
+    "corrected_url": "https://www.sec.gov/files/rules/final/2025/34-102487.pdf (PDF); https://www.sec.gov/rules-regulations/2025/02/s7-23-22#34-102487final (page); https://www.sec.gov/newsroom/press-releases/2025-43 (press release)",
+    "page_title_seen": "SEC.gov | Standards for Covered Clearing Agencies for U.S. Treasury Securities and Application of the Broker-Dealer Customer Protection Rule With Respect to U.S. Treasury Securities (rulemaking page); PDF title: Extension of Compliance Dates for Standards for Covered Clearing Agencies for U.S. Treasury Securities and Application of the Broker-Dealer Customer Protection Rule With Respect to U.S. Treasury Securities",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M1/34-102487.pdf (+ .txt, pr2025-43.html, e2.html)",
+    "notes": "Claimed title, date and both extended dates (cash Dec 31 2026; repo Jun 30 2027) are exactly right. URL constructed. Claimed label 'Final Rule / Order' is half right: the date extension is a final rule; the margin-separation exemption is a separate order (next row)."
+   },
+   {
+    "label": "Margin-separation temporary exemptive relief to Sept 30 2025 (claimed as 'same SEC extension order above')",
+    "given_url": "(none separately given; return attributes it to the 34-102487 extension document)",
+    "http_status": "200",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "The relief is real but sits in a SEPARATE document: Release No. 34-102486 (Feb. 25, 2025), 'Order Granting Temporary Exemptive Relief, Pursuant to Sections 17A and 36(a) of the Securities Exchange Act of 1934, from Certain Aspects of Rule 17ad-22(e)(6)(i) and Section 19(g)(1) of the Securities Exchange Act of 1934', PDF https://www.sec.gov/files/rules/exorders/2025/34-102486.pdf (listed on the s7-23-22 page as 'Exemptive Rule (34-102486)'). Text confirms the Adopting Release set March 31, 2025 for the margin-separation rule changes and the order grants temporary relief 'until September 30, 2025' ('Date: February 25, 2025'). The 34-102487 final rule explicitly does NOT extend other dates.",
+    "corrected_url": "https://www.sec.gov/files/rules/exorders/2025/34-102486.pdf",
+    "page_title_seen": "Order Granting Temporary Exemptive Relief ... from Certain Aspects of Rule 17ad-22(e)(6)(i) and Section 19(g)(1) (PDF header)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M1/34-102486.pdf (+ .txt)",
+    "notes": "Date and substance right; document attribution wrong (exemptive order 34-102486, not the final rule 34-102487). I did not find any later order extending the Sept 30 2025 margin-separation relief in the searches run (not conclusive)."
+   },
+   {
+    "label": "Later SEC actions changing the dates (search result)",
+    "given_url": "(n/a \u2014 search task)",
+    "http_status": "200 for all pages consulted",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "NO later action changing the Dec 31 2026 / Jun 30 2027 dates found. Evidence: (a) SEC 'Treasury Clearing Implementation' featured-topic page https://www.sec.gov/featured-topics/treasury-clearing-implementation (Last Reviewed Aug. 10, 2026) states 'The Commission has extended the original compliance dates ... by one year to Dec. 31, 2026, for eligible cash market transactions and June 30, 2027, for eligible repo market transactions.' (b) Commissioner Uyeda statement Aug 7, 2026 ('Update on the SEC's Work Toward Treasury Clearing Implementation [August 2026]') refers to 'mandatory clearing for U.S. Treasury cash transactions at the end of the year and U.S. Treasury repo transactions by June 30, 2027' and cites 34-102487 as the operative extension. (c) Uyeda statement Sept. 30, 2025: 'At the present, the Commission does not intend to consider further extensions of the compliance dates.' (d) SEC Rulemaking Activity search 'Treasury securities' (all years/status): latest final-rule entry on S7-23-22 is Feb. 25, 2025 (34-102487); nothing later. (e) Other Commission Orders/Notices search '17ad-22' and 'Treasury': no date-changing order. Later RELIEF actions that exist but do not change dates: 34-104944 (Mar 6, 2026) notice of IIB exemption request re foreign-FI direct participants' non-U.S. clients; 34-105262 (Apr 17, 2026) notice of SIFMA inter-affiliate exemption request; 34-105736 (Jun 18, 2026) Order Granting Conditional Exemptive Relief ... from the Definition of an 'Eligible Secondary Market Transaction' (captive clearing subsidiaries of private funds) https://www.sec.gov/files/rules/other/2026/34-105736.pdf; 34-105980 (Jul 24, 2026) notice of SIFMA application re Note H to Rule 15c3-3a (comments to Aug 31, 2026); 34-106062 (Aug 7, 2026) reopening of comment periods on the IIB/SIFMA requests, floating a single combined exemption; also 34-104748 (Jan 30, 2026) FICC/CME cross-margining exemption application notice and 34-105193 (Apr 10, 2026) Note H notice re CME Securities Clearing margin.",
+    "corrected_url": "https://www.sec.gov/featured-topics/treasury-clearing-implementation",
+    "page_title_seen": "SEC.gov | Treasury Clearing Implementation",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M1/tci.html, uyeda-0807.html, uyeda-0930.html, rm-search.html, orders.html, orders2.html, 34-104944.pdf, 34-105262.pdf, 34-105736.pdf, 34-105980.pdf, 34-106062.pdf",
+    "notes": "Searches run: sec.gov rulemaking-activity?search=Treasury+securities; other-commission-orders-notices-information?search=17ad-22 and ?search=Treasury; featured-topics page and Uyeda statements. All via curl with the research UA (no bot-block from sec.gov)."
+   }
+  ],
+  "summary": "Both URLs in M1 are constructed (404 on sec.gov); the real home is the S7-23-22 rulemaking page https://www.sec.gov/rules-regulations/2025/02/s7-23-22 with PDFs 34-99149 (Dec 13 2023) and 34-102487 (Feb 25 2025). Substance is accurate: original dates Mar 31 2025 (CCA risk/margin rules), Dec 31 2025 (cash), Jun 30 2026 (repo) confirmed in the 2023 release; the Feb 25 2025 final rule extends to Dec 31 2026 (cash) and Jun 30 2027 (repo), effective Mar 4 2025. The Sept 30 2025 margin-separation relief is real but lives in a separate exemptive order (34-102486), not the extension rule. As of the SEC's Treasury Clearing Implementation page (updated Aug 10 2026) and Uyeda's Aug 7 2026 statement, no later action has changed those dates; 2026 actions are exemption notices/orders (34-104944, 34-105262, 34-105736 captive-sub relief granted Jun 18 2026, 34-105980, 34-106062) that do not move the compliance dates."
+ },
+ "M2": {
+  "section": "M2 \u2014 FICC indirect access models and separate agent clearing statistics (lines 31-52) + Section 5 items 2-3 (lines 210-222)",
+  "rows": [
+   {
+    "label": "M2 Entry 1 \u2014 Sponsored Service description",
+    "given_url": "https://www.dtcc.com/clearing-services/ficc-gov/sponsored-service",
+    "http_status": "curl 403 (Cloudflare); browser: 404 'Page not found' (title '404')",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL does not exist (DTCC 404 page). Real page found via FICC-GOV product menu: 'Sponsored Service - DVP & General Collateral | DTCC FICC/GSD' at https://www.dtcc.com/clearing-and-settlement-services/ficc-gov/sponsored-membership. Content: Overview (Netting Members 'Sponsoring Members' sponsor qualified legal entities 'Sponsored Members' into FICC/GSD; FICC interacts solely with Sponsoring Member), Benefits, accordions Member Eligibility / Current Service Offerings / What's New: Sponsored GC Service Expansion / Risk Management; side links: Sponsored Service FAQ PDF, Fact Sheet PDF, Approved FICC Jurisdictions PDF, 'Sponsored Membership Volumes' -> https://www.dtcc.com/charts/membership, '12 months volume for GSD' -> /charts/previous-12-months-volume-for-gsd, 'Access to central clearing - indirect participation' -> https://www.dtcc.com/ustclearing/indirect-participant. Gemini's field names ('Omnibused Margin Accounts', 'Novation and Settlement Guarantee') are not headings on the page \u2014 the accordion headings are as listed above.",
+    "page_title_seen": "404 (given URL); real page: Sponsored Service - DVP & General Collateral | DTCC FICC/GSD",
+    "corrected_url": "https://www.dtcc.com/clearing-and-settlement-services/ficc-gov/sponsored-membership",
+    "notes": "Used Claude browser (dtcc.com bot-blocks curl). Publisher right, URL constructed. Section path changed from /clearing-services/ to /clearing-and-settlement-services/; only the division root redirects, subpages 404."
+   },
+   {
+    "label": "M2 Entry 2 \u2014 Agent Clearing Service description",
+    "given_url": "https://www.dtcc.com/clearing-services/ficc-gov/agent-clearing-service",
+    "http_status": "curl 403 (Cloudflare); browser: 404 'Page not found'",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404. Real page: 'Agent Clearing Service | DTCC' at https://www.dtcc.com/clearing-and-settlement-services/ficc-gov/agent-clearing-service. Content observed: Overview (Netting Members 'Agent Clearing Members' act in agented capacity for 'Executing Firm Customers'); Benefits incl. 'Margin Efficiency' via net margining in non-segregated Agent Clearing Member Omnibus Account; Member Eligibility (full-service Netting Members; IDB Netting Members not eligible); Current Service Offerings: 'ACS DVP Service' (done-with and done-away trade models, Executing Firm 4/5-char identifier, netting, haircuts) and 'Proposed Agent Clearing Service (ACS) Tri-party Repo Service*' with generic CUSIP table and footnote '*Service availability is subject to SEC approval of a proposed rule change filing (SR-FICC-2025-021)' (page text appears stale vs the Dec-2025 SEC approval); Risk Management (FOS, Clearing Fund net vs gross for Segregated Indirect Participants Account, CCLF/loss allocation). Essentials PDFs: TC-FICC-GSD-Agent-Clearing-Service-Tri-party-Repo.pdf and FICC-GSD-Agent-Clearing-Service.pdf (under /-/media/Files/Downloads/Microsites/Treasury-Clearing/). No volume statistics and no member list on this page. Gemini's phrase 'FCM-style agency structure' is not on the page; the page does not name BNY.",
+    "page_title_seen": "404 (given); real: Agent Clearing Service | DTCC",
+    "corrected_url": "https://www.dtcc.com/clearing-and-settlement-services/ficc-gov/agent-clearing-service",
+    "notes": "Browser used. Definition content (done-with vs done-away, margin segregation, triparty) broadly matches the real page; URL constructed."
+   },
+   {
+    "label": "M2 Entry 3 \u2014 Cross-margining / done-away arrangements",
+    "given_url": "https://www.dtcc.com/clearing-services/ficc-gov/cross-margining",
+    "http_status": "curl 403 (Cloudflare); browser: 404 'Page not found'",
+    "verdict": "NOT_VERIFIED",
+    "what_is_actually_there": "Given URL 404. I found no dedicated DTCC HTML page or 'Joint FICC-CME Cross-Margining Guide' with the claimed fields. What exists: on https://www.dtcc.com/ustclearing/risk-management (title 'FICC GSD Risk Management - U.S. Treasury Clearing | DTCC') links 'FICC\u2013CME Cross\u2013Margining FAQs' (PDF .../Microsites/Treasury-Clearing/CME-FICC-Cross-Margining-FAQs.pdf) and 'FICC\u2013CME Cross\u2013Margining Deck' (.../FICC-CME-Cross-Margining-Deck-Sept-2023.pdf); the ustclearing hub links 'FICC-CME Cross-Margining' -> .../CME-Group-FICC%20Cross-Margining-Forum.pdf. SEC FICC rulemaking list shows SR-FICC-2025-025 'Amend and Restate the Second Amended and Restated Cross-Margining Agreement' with approval order 34-105249 dated Apr 15, 2026 (https://www.sec.gov/files/rules/sro/ficc/2026/34-105249.pdf) \u2014 not opened. DTCC's Jul 27 2026 release refers to 'the FICC-CME Cross-Margining Program'. The 'Done-Away Clearing Workflow' field Gemini attaches to cross-margining is a conflation: done-away belongs to ACS/Sponsored, not to cross-margining; I did not open the PDFs to verify their fields.",
+    "page_title_seen": "404",
+    "corrected_url": "https://www.dtcc.com/ustclearing/risk-management (links to the cross-margining FAQ/deck PDFs)",
+    "notes": "The underlying arrangement (FICC-CME enhanced cross-margining for common members, cash Treasuries vs CME interest-rate futures) is real per DTCC press language, but the cited page/guide/table is constructed."
+   },
+   {
+    "label": "M2 Entry 4 \u2014 Agent Clearing statistics via press releases / 'ustreasuryclearing' hub",
+    "given_url": "https://www.dtcc.com/ustreasuryclearing",
+    "http_status": "curl 403 (Cloudflare); browser: 404 'Page not found'",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404. Real hub: 'U.S. Treasury Clearing | DTCC' at https://www.dtcc.com/ustclearing. Stat tiles seen 2026-08-23: '2,850+ Sponsored Members', '65 Jurisdictions Approved by FICC for Sponsored Members', '$2.4 TRILLION Average Daily Volume of Sponsored Service', '$12 TRILLION Average Daily GSD Activity', '28% Year-Over-Year Increase in Sponsored Service Clearing Volume Growth'; countdown to Dec 31 2026 cash / Jun 30 2027 repo. No Agent Clearing Service tile, chart, CSV or member list on the hub. Market & Index Data links: Sponsored Volume (/charts/membership), Monthly GSD Volumes (/charts/previous-12-months-volume-for-gsd), GCF Repo Index, Treasury fails. DTCC site search 'agent clearing service' (2025-2026 news) returned: (1) 2025-01-14 'FICC Sponsored Service Volumes Exceeded USD$2 Trillion at the End of 2024, Marking a New Peak and an 83% Year-over-Year Increase' https://www.dtcc.com/news/2025/january/14/ficc-sponsored-service-volumes-exceeded-usd-2-trillion-at-the-end-of-2024; (2) 2025-03-25 'DTCC's FICC Now Live with New Treasury Clearing Capabilities as Volumes and Membership Continue to Grow' https://www.dtcc.com/news/2025/march/25/dtccs-ficc-now-live-with-new-treasury-clearing-capabilities \u2014 opened; only ACS figure: 'supporting over 1,500 Executing Firm customers'; also >$9T daily avg, Sponsored +85% YoY Feb 2025, 5,800+ Sponsored Member relationships, MMFs ~46% of covered repo cleared; (3) 2025-09-11 'DTCC Comments on SIFMA's Accounting Committee Working Group ACS Model Review' https://www.dtcc.com/news/2025/september/11/dtcc-comments-on-sifma-accounting-committee-working-group-acs-model-review (seen in search results, not opened); (4) 2025-09-23 'FICC Submits Proposed Rule Change Filing to the SEC to Offer New Agent Clearing (ACS) Triparty Service' https://www.dtcc.com/news/2025/september/23/ficc-submits-proposed-rule-change-filing-to-the-sec-to-offer-new-agent-clearing-acs-triparty-service \u2014 opened, no ACS volume figures; (5) 2026-01-07 'DTCC Receives SEC Approval to Launch New Agent Clearing (ACS) Triparty Service on BNY's Global Collateral Platform, as FICC's GSD Volumes Continue to Rise' https://www.dtcc.com/news/2026/january/07/dtcc-receives-sec-approval-to-launch-agent-clearing-triparty-service-on-bny-platform-b3p9i2aw \u2014 opened; figures: GSD peak $13.2T on Dec 1 2025; buyside peak $3.1T on Dec 31 2025 'across its Sponsored and Agent Clearing Services' (combined, not ACS-only); (6) 2026-07-27 'Market Participant Firms Making Significant Progress Toward U.S. Treasury Cash Clearing Deadline, According to Latest DTCC Survey' https://www.dtcc.com/news/2026/july/27/dtcc-survey-firms-progress-toward-us-treasury-clearing-deadline \u2014 opened; figures: >$1.2T daily Treasury cash cleared; $300-400B left; >$12T ADV, +165% since proposal; Sponsored 2,850+ members, 66 jurisdictions, >$2.5T ADV, +771% since Sept 2022; ACS mentioned only qualitatively ('Agent Clearing Tri-Party services'). Also DTCC Connection 2025-12-17 'U.S. Treasury Clearing: Recent Developments and Industry Impacts' (not opened). The claimed 'ACS volume growing 47 percent year-over-year in July 2026' appears in NONE of these; a web search for FICC 'Agent Clearing' '47%' 2026 found nothing. Conclusion consistent with Gemini's negative claim: DTCC publishes no standalone ACS volume/member series (the /charts/membership page and https://www.dtcc.com/data/SponsoredVolume.csv cover Sponsored DVP/GC only, last updated through Aug 20 2026, no 'agent clearing' mention).",
+    "page_title_seen": "404 (given); real: U.S. Treasury Clearing | DTCC",
+    "corrected_url": "https://www.dtcc.com/ustclearing",
+    "notes": "Gemini's 'Value seen' (~$2.5trn Sponsored ADV, >2,850 Sponsored Members, >$12trn GSD daily) matches the Jul 27 2026 press release (hub tile shows $2.4T). The '47% YoY ACS July 2026' figure is unsupported \u2014 treat as constructed. Browser used for all dtcc.com pages."
+   },
+   {
+    "label": "Section 5 item 2 \u2014 ACS Triparty Service SEC approval (claimed January 2026)",
+    "given_url": "https://www.dtcc.com/news",
+    "http_status": "SEC: 200 (curl); DTCC release: browser OK",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real documents: SEC Release No. 34-104492, File No. SR-FICC-2025-021, 'Self-Regulatory Organizations; Fixed Income Clearing Corporation; Order Approving Proposed Rule Change to Modify the GSD Rulebook Relating to a New Service Offering Called the ACS Triparty Service', dated December 22, 2025 \u2014 https://www.sec.gov/files/rules/sro/ficc/2025/34-104492.pdf (downloaded, 249,959 bytes; filed Sept 19 2025, notice 34-104084 Sept 26 2025, FR Sept 30 2025, longer period designated Nov 3 2025, no comments received). SEC FICC rulemaking list filtered by file number: https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/ficc?file_number=SR-FICC-2025-021. DTCC announcement: press release dated January 7, 2026 'DTCC Receives SEC Approval to Launch New Agent Clearing (ACS) Triparty Service on BNY's Global Collateral Platform, as FICC's GSD Volumes Continue to Rise' \u2014 https://www.dtcc.com/news/2026/january/07/dtcc-receives-sec-approval-to-launch-agent-clearing-triparty-service-on-bny-platform-b3p9i2aw \u2014 confirms BNY Global Collateral infrastructure, done-with and done-away. Correction: the SEC approval order is dated Dec 22, 2025; 'January 2026' is the DTCC announcement date.",
+    "page_title_seen": "DTCC Receives SEC Approval to Launch New Agent Clearing (ACS) Triparty Service | DTCC",
+    "corrected_url": "https://www.sec.gov/files/rules/sro/ficc/2025/34-104492.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M2/34-104492.pdf",
+    "notes": "Substance true; date slightly off (approval Dec 22 2025, announced Jan 7 2026). Note the DTCC ACS product page still labels the triparty service 'Proposed ... subject to SEC approval of SR-FICC-2025-021' \u2014 stale page text."
+   },
+   {
+    "label": "Section 5 item 3 \u2014 SIFMA Master Treasury Securities Clearing Agreement: Done-Away (claimed July 2026)",
+    "given_url": "https://www.sifma.org/resources/general/treasury-clearing-resource-center/",
+    "http_status": "404 (given URL); 200 for corrected pages and PDF",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404 on sifma.org. Real page: 'Treasury Clearing Documentation - SIFMA', Published on: July 30, 2026, https://www.sifma.org/resources/general/treasury-clearing-documentation (also reachable as /resources/market-practices-model-documentation/treasury-clearing-documentation). Lists 'Done-Away Model Documentation': '2026 SIFMA Master Treasury Securities Clearing Agreement \u2013 Done-Away' (PDF https://www.sifma.org/wp-content/uploads/2026/07/SIFMA-Master-Treasury-Securities-Clearing-Agreement-Done-Away.pdf \u2014 downloaded, 372,884 bytes, first page reads '2026 SIFMA MASTER TREASURY SECURITIES CLEARING AGREEMENT: DONE-AWAY ... Between Clearing Member and Customer'), 'Modules to the 2026 ... Done-Away' (PDF .../2026/07/Modules-to-SIFMA-Master-Treasury-Securities-Clearing-Agreement-Done-Away.pdf), 'Schedule ... Done-Away' (Word, .../2026/07/SIFMA-Master-Treasury-Securities-Clearing-Schedule-Done-Away-7.30.26.docx); plus Done-With 2026 (May/June 2026 uploads) and 2024 documents, and 'Industry Briefing: Done-Away (August 2026)' replay. The real SIFMA Treasury Clearing Resource Center is https://www.sifma.org/issues/financial-risk-management/treasury-clearing (200, title 'Treasury Clearing - SIFMA').",
+    "page_title_seen": "Treasury Clearing Documentation - SIFMA",
+    "corrected_url": "https://www.sifma.org/resources/general/treasury-clearing-documentation",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M2/SIFMA-MTSCA-Done-Away.pdf",
+    "notes": "Claim substantively true (July 2026 publication; date seen July 30, 2026); retrieval-path URL constructed (404)."
+   }
+  ],
+  "summary": "All four dtcc.com URLs in M2 are 404s (curl 403 via Cloudflare; confirmed 404 in the Claude browser). The real pages exist under different paths: Sponsored Service = /clearing-and-settlement-services/ficc-gov/sponsored-membership; Agent Clearing Service = /clearing-and-settlement-services/ficc-gov/agent-clearing-service; Treasury clearing hub = /ustclearing; there is no dedicated cross-margining HTML page (only FICC-CME cross-margining FAQ/deck PDFs linked from /ustclearing/risk-management). Service descriptions broadly match the real pages. On statistics: DTCC publishes Sponsored volumes daily (charts/membership, SponsoredVolume.csv through Aug 20 2026) and hub tiles (2,850+ Sponsored Members, 65-66 jurisdictions, $2.4-2.5T Sponsored ADV, $12T GSD ADV, 28% YoY Sponsored growth) but NO standalone ACS volume/member series; ACS figures in press releases are limited to 'over 1,500 Executing Firm customers' (Mar 25 2025) and a combined Sponsored+ACS buyside peak of $3.1T on Dec 31 2025 (Jan 7 2026). The claimed '47% YoY ACS growth July 2026' is not in any DTCC release found (Jul 27 2026 release has no ACS figure) nor in web search \u2014 treat as constructed. Section 5 item 2 is real but misdated: SEC approval order 34-104492 (SR-FICC-2025-021, ACS Triparty Service) is dated Dec 22 2025; DTCC announced it Jan 7 2026 (BNY Global Collateral platform confirmed). Section 5 item 3 is real: SIFMA's 'Treasury Clearing Documentation' page (published July 30 2026) carries the 2026 SIFMA Master Treasury Securities Clearing Agreement \u2013 Done-Away PDF, modules and schedule; Gemini's resource-center URL 404s (real: /issues/financial-risk-management/treasury-clearing). Files saved under /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/M2/."
+ },
+ "V1": {
+  "section": "V1 \u2014 CME Securities Clearing (CME Group), return lines 56-68",
+  "rows": [
+   {
+    "label": "Return URL 1: CME Securities Clearing page",
+    "given_url": "https://www.cmegroup.com/clearing/cme-securities-clearing.html",
+    "corrected_url": "https://www.cmegroup.com/solutions/clearing/cme-securities-clearing.html",
+    "http_status": "404 (browser; curl returned 000 \u2014 cmegroup.com bot-blocks curl)",
+    "page_title_seen": "404: Page Not Found - CME Group (given URL); 'CME Securities Clearing - CME Group' (corrected URL)",
+    "verdict": "CONSTRUCTED",
+    "what_is_actually_there": "Given path is a 404 on cmegroup.com. The real page lives at /solutions/clearing/cme-securities-clearing.html. That page (viewed 2026-08-23 in the Claude browser) says: 'New SEC rules will mandate central clearing ... compliance deadlines beginning December 31, 2026, for eligible U.S. Treasury transactions and June 30, 2027, for eligible Repo transactions ... we will launch securities clearing services through CME Securities Clearing Inc., an SEC-registered clearing agency' and has a 'Subscribe to receive updates ... as the launch date approaches' form \u2014 i.e. future tense, no launch date, no volume data. Links on it: 'View the plan overview' PDF (us-treasury-and-repo-clearing-services-overview.pdf, search-engine title 'CME Securities Clearing - Day 1 Offering - Q4 2025'), SEC CA-1 page, CMESC webinars (login-gated, dated 14 SEP 2025), CMESC Rulebook PDF, CMESC 2025 audited financials PDF. No volume/open-position figures anywhere on the page.",
+    "notes": "Wrong path in the return; no CME page gives a cash-vs-repo launch split or 'Q2/Q3 2026 (repo)'. Used Claude browser for all cmegroup.com pages."
+   },
+   {
+    "label": "Return URL 2: CME Volume & Open Interest page",
+    "given_url": "https://www.cmegroup.com/market-data/volume-open-interest.html",
+    "http_status": "200 (browser)",
+    "page_title_seen": "Volume & Open Interest Reports",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Page exists. It is CME Group's futures & options Daily VOI / monthly volume report hub (CME Group Daily Volume, Monthly Volume, CBOT/CME/NYMEX-COMEX exchange volume, DataMine, Daily Bulletin). Nothing about CME Securities Clearing, cash Treasury clearing or repo clearing \u2014 supports the return's negative claim that no CMESC cleared-volume series is published there.",
+    "notes": "Correct URL; used only as negative evidence."
+   },
+   {
+    "label": "(a) SEC Form CA-1 application page for CMESC",
+    "given_url": "https://www.sec.gov/rules-regulations/other-commission-orders-notices-information/cme-form-ca-1",
+    "http_status": "200 https://www.sec.gov/rules-regulations/other-commission-orders-notices-information/cme-form-ca-1",
+    "page_title_seen": "SEC.gov | CME Securities Clearing, Inc. \u2014 Form CA-1 Application and Exhibits",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Page header: 'CME Securities Clearing, Inc. \u2014 Form CA-1 Application and Exhibits \u2014 Jan. 15, 2025 (Release No. 34-102200; File No. 600-44) \u2014 Form CA-1, filed on January 15, 2025' followed by Exhibit A..R PDFs, all file-named ...-12-13-24.pdf (e.g. https://www.sec.gov/files/cmesc-ca-1-exhibit-narrative-12-13-24.pdf, Exhibit E-3 Rulebook, Exhibit N 'No Current Participants'). The SEC notice and order PDFs (next rows) state the Form CA-1 was filed December 13, 2024; Jan 15, 2025 is the date of the SEC notice of filing.",
+    "notes": "Return says 'filed Form CA-1 with the SEC in January 2025' \u2014 the filing date per the SEC's own notice and order is December 13, 2024; January 15, 2025 is the notice date (the SEC page's wording conflates them). Saved: .../d8verify/V1/sec_cme_ca1.html"
+   },
+   {
+    "label": "(a) SEC Notice of Filing of CMESC application (Release 34-102200)",
+    "given_url": "https://www.sec.gov/files/rules/other/2025/34-102200.pdf",
+    "http_status": "200 https://www.sec.gov/files/rules/other/2025/34-102200.pdf",
+    "page_title_seen": "PDF, 6 pp: 'CME Securities Clearing, Inc.; Notice of Filing of an Application for Registration as a Clearing Agency Under Section 17A of the Securities Exchange Act of 1934' (Release No. 34-102200; File No. 600-44), January 15, 2025",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Text: 'On December 13, 2024, CME Securities Clearing, Inc. (CMESC) filed with the Securities and Exchange Commission an application on Form CA-1 ... to provide central counterparty clearing services ... for their secondary cash market transactions in U.S. Treasury securities and transactions in repurchase and reverse repurchase agreements involving U.S. Treasury securities.' CMESC wholly owned by CME Group Inc. Federal Register publication Jan 22, 2025 (90 FR 7713).",
+    "notes": "Saved: .../d8verify/V1/34-102200.pdf"
+   },
+   {
+    "label": "(a) SEC Order Granting CMESC Registration (Release 34-104281)",
+    "given_url": "https://www.sec.gov/files/rules/other/2025/34-104281.pdf",
+    "http_status": "200 https://www.sec.gov/files/rules/other/2025/34-104281.pdf",
+    "page_title_seen": "PDF, 71 pp: 'CME Securities Clearing, Inc.; Order Granting an Application for Registration as a Clearing Agency under Section 17A of the Securities Exchange Act of 1934' [Release No. 34-104281; File No. 600-44], December 1, 2025",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Order dated December 1, 2025 granting CMESC registration as a clearing agency for CCP services in U.S. Treasury securities. Recites: CA-1 filed Dec 13, 2024; notice 34-102200 (Jan 15, 2025); OIP 34-102889 (Apr 18, 2025); longer period 34-103514 (Jul 21, 2025); CMESC agreed Sept 30, 2025 to extend review. States 'CMESC is not yet operating as a clearing agency' and that fees will be published 'when its clearing services are launched after filing a proposed rule change ... pursuant to Section 19(b)(3)(A)'. Federal Register publication of the order: Dec 4, 2025 (federalregister.gov doc 2025-21908, seen in search results only; FR API returned 503).",
+    "notes": "Return's 'The SEC approved the clearing framework' is true but undated; the approval is this order, Dec 1, 2025. Saved: .../d8verify/V1/34-104281.pdf"
+   },
+   {
+    "label": "(b) CME press release: regulatory approval / launch timing",
+    "given_url": "https://www.cmegroup.com/media-room/press-releases/2025/12/02/cme_group_announcesregulatoryapprovalofnewsecuritiesclearinghous.html",
+    "http_status": "200 (browser)",
+    "page_title_seen": "CME Group Announces Regulatory Approval of New Securities Clearing House - CME Group",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Press release, page date '01 DEC 2025', dateline 'CHICAGO, Dec. 2, 2025 /PRNewswire/'. Says SEC approved registration of CME Securities Clearing Inc.; 'With launch expected in Q2 2026, CME Group will operate CME Securities Clearing to help market participants comply with the SEC clearing mandate for U.S. Treasury transactions (as of December 31, 2026) and Repo transactions (as of June 30, 2027).' Quote from Terry Duffy about done-with and done-away clearing and FICC cross-margining. No separate cash vs repo launch dates, no volumes.",
+    "notes": "This is the only CME page found stating a launch timeline ('expected in Q2 2026'). The return's 'Q2/Q3 2026 (repo)' split is not on any CME page I found. Also on investor.cmegroup.com and prnewswire.com."
+   },
+   {
+    "label": "(b) Is CMESC live as of Aug 2026? \u2014 SEC SRO filings page for CMESC",
+    "given_url": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/cmesc",
+    "http_status": "200 https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/cmesc",
+    "page_title_seen": "SEC.gov | Self-Regulatory Organization Rulemaking (CMESC filter: 'Displaying 1 - 9 of 9')",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Nine 2026 CMESC filings: SR-CMESC-2026-001 (34-104784, Feb 9, 2026, rules/procedures, immediately effective); -002 (34-104955 Mar 9 notice; 34-105214 Apr 13 approval, bylaws/charters); -003 (34-105231 Apr 14 notice; 34-105561 May 27 approval, ERM framework); -004 (34-105605 Jun 3 notice; 34-105954 Jul 20 approval, Users); -005 (34-106037, Aug 4, 2026, Notice of Filing of Proposed Rule Change to Adopt CMESC Margin Policy, comments due Aug 28, 2026); -006 (34-106131, Aug 13, 2026, Stress Testing & Guaranty Fund Sizing Policy, comments due Sep 8, 2026). No fee-schedule filing (which the Dec 2025 order says precedes launch).",
+    "notes": "Saved: .../d8verify/V1/sec_cmesc_sro.html"
+   },
+   {
+    "label": "(b) SEC notice 34-106037 (Aug 4, 2026) and 34-106131 (Aug 13, 2026) \u2014 operational status",
+    "given_url": "https://www.sec.gov/files/rules/sro/cmesc/2026/34-106037.pdf",
+    "http_status": "200 (both: .../34-106037.pdf and .../34-106131.pdf)",
+    "page_title_seen": "PDF 18 pp: 'Self-Regulatory Organizations; CME Securities Clearing Inc.; Notice of Filing of Proposed Rule Change to Adopt CMESC Margin Policy', August 4, 2026 (filed by CMESC July 22, 2026); PDF: '...Notice of Filing of Proposed Amendments to the CMESC Stress Testing & Guaranty Fund Sizing Policy ... and Proposed Amendments to Rule 402(b)', August 13, 2026 (filed August 6, 2026)",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Both notices contain CMESC's own statement: 'CMESC currently does not have any Members or Users and has not received nor solicited any written comments from others related to this proposal.' The margin policy (SPAN 2 framework) is being adopted via a July 22, 2026 filing. This is direct primary-source evidence that CMESC had no clearing members or users as of Aug 6, 2026, i.e. neither cash Treasury nor repo clearing was live \u2014 the 'Q2 2026' launch expectation stated Dec 2025 has not been met, and I found no CME page announcing a new date.",
+    "notes": "The return says 'Service launch scheduled Q2 2026' as if still future; the correct statement as of 2026-08-23 is: expected Q2 2026 per Dec 2025 press release, not launched as of Aug 6, 2026 per CMESC's own SEC filings, no revised date found on cmegroup.com. Saved: .../d8verify/V1/34-106037.pdf, 34-106131.pdf"
+   },
+   {
+    "label": "(b) CME media-room press-release listing, 2026, search 'Securities Clearing'",
+    "given_url": "https://www.cmegroup.com/media-room/press-releases.html#search=Securities%20Clearing&pageNum=1",
+    "http_status": "200 (browser)",
+    "page_title_seen": "Press Releases",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Listing viewed 2026-08-23 (latest item Aug 13, 2026). Between Dec 2, 2025 and Aug 13, 2026 there is NO press release announcing launch, first cleared trades, or first members for CME Securities Clearing. Relevant 2026 items checked: 'CME Group Inc. Reports Strong Financial Results for Q2 2026' (Jul 22, 2026; Duffy quote lists 'U.S. Treasury clearing' among 'new tools' being innovated \u2014 no launch date or volume); 'CME Group to Launch Treasury Link...' (Jul 9, 2026; Q4 2026 launch of futures-cash spread trading; no CMESC mention); 'DTCC and CME Group Receive Regulatory Approvals to Launch Expanded U.S. Treasury Cross-Margining Arrangement for End-User Clients' (Apr 16, 2026; FICC-CME cross-margining from Apr 30; no CMESC mention).",
+    "notes": "Press-release URLs: .../2026/7/22/cme_group_inc_reportsstrongfinancialresultsforq22026.html ; .../2026/7/09/cme_group_to_launchtreasurylinkenhancingustreasuryspreadtradingb.html ; .../2026/4/16/dtcc_and_cme_groupreceiveregulatoryapprovalstolaunchexpandedustr.html"
+   },
+   {
+    "label": "(c) CME July 2026 monthly volume press release \u2014 any cleared Treasury/repo figures?",
+    "given_url": "https://www.cmegroup.com/media-room/press-releases/2026/8/04/cme_group_july_volumehitsnewrecordof27millioncontractsup23yearov.html",
+    "http_status": "200 (browser)",
+    "page_title_seen": "CME Group July Volume Hits New Record of 27 Million Contracts, Up 23% Year Over Year - CME Group",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Aug 4, 2026 release. Only futures/options ADV and BrokerTec TRADING platform notional: 'BrokerTec overall average daily notional value (ADNV) increased 15% to $1.056 trillion; U.S. Repo ADNV increased 9% to $393 billion; European Repo ADNV increased 20% to EUR356 billion; U.S. Treasury ADNV increased 13% to $91 billion' (July 2026). These are BrokerTec execution volumes, not CMESC cleared volumes. No CME Securities Clearing / cleared cash Treasury / cleared repo figure anywhere. Points to https://cmegroupinc.gcs-web.com/monthly-volume for detail.",
+    "notes": "Confirms the return's 'Value seen: none' for cleared CMESC volume; BrokerTec ADNV must not be mistaken for cleared volume."
+   },
+   {
+    "label": "(c) CME CPMI-IOSCO Public Quantitative Disclosures page",
+    "given_url": "https://www.cmegroup.com/solutions/clearing/cpmi-iosco-reporting.html",
+    "http_status": "200 (browser)",
+    "page_title_seen": "CPMI-IOSCO Quantitative Disclosure - CME Group",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Lists CME Clearing (the CFTC DCO) PQD data files only: CME_DataFile_2026Q1.zip (latest), CME_Data_File_2025Q4.zip, ... back to 2017Q1 (https://www.cmegroup.com/clearing/files/cpmi-iosco/CME_DataFile_2026Q1.zip). 46 links on page; none for CME Securities Clearing / CMESC. No CMESC PQD exists on the page as of 2026-08-23.",
+    "notes": "Negative evidence for (c)."
+   },
+   {
+    "label": "(a/b) SEC statement: Uyeda, 'Update on the SEC's Work Toward Treasury Clearing Implementation'",
+    "given_url": "https://www.sec.gov/newsroom/speeches-statements/uyeda-update-sec-work-toward-treasury-clearing-implementation-042026",
+    "http_status": "200",
+    "page_title_seen": "SEC.gov | Update on the SEC's Work Toward Treasury Clearing Implementation",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Statement dated April 20, 2026. Says 'The Commission has also approved new clearing agencies for Treasury securities [6]' with footnote 6 citing the CMESC order 34-104281 (Dec. 1, 2025) and ICE Clear Credit order 34-104762 (Jan. 30, 2026). Does not say CMESC is operating. Also cites SEC Apr 15, 2026 press release 2026-36 on customer cross-margining.",
+    "notes": "Context only; saved .../d8verify/V1/uyeda_042026.html. Treasury TBAC 'Central Clearing Implementation May 2026' deck (home.treasury.gov/system/files/221/TBACCharge1Q22026.pdf, 200) likewise says SEC 'approved applications from both CME and ICE' with no launch date."
+   },
+   {
+    "label": "(b) CME 'plan overview' / Day 1 Offering PDF",
+    "given_url": "https://www.cmegroup.com/trading/interest-rates/files/us-treasury-and-repo-clearing-services-overview.pdf",
+    "http_status": "WebFetch timeout (60s); browser navigation triggered a file-download dialog (not downloaded); curl 000",
+    "page_title_seen": "(search-engine title: 'CME Securities Clearing - Day 1 Offering - Q4 2025')",
+    "verdict": "BLOCKED",
+    "what_is_actually_there": "Could not read contents. Linked from the CME Securities Clearing page as 'View the plan overview'. Not downloaded (download requires permission; cmegroup.com blocks curl).",
+    "notes": "If the caller wants the Day-1 scope/timeline from this deck, it needs a manual download."
+   }
+  ],
+  "summary": "Section V1 verdict 'DOES NOT EXIST (as a published cleared Treasury volume series)' is CORRECT as a bottom line, but several details in the return are wrong or unsupported. (1) Return URL 1 (/clearing/cme-securities-clearing.html) is a 404; the real page is https://www.cmegroup.com/solutions/clearing/cme-securities-clearing.html. Return URL 2 (VOI reports) exists and is futures/options only. (2) Form CA-1 was filed December 13, 2024 (per SEC notice 34-102200 of Jan 15, 2025 and the order), not 'January 2025'. The SEC granted registration by order Release 34-104281 dated December 1, 2025 (https://www.sec.gov/files/rules/other/2025/34-104281.pdf); CME's Dec 2, 2025 press release 'CME Group Announces Regulatory Approval of New Securities Clearing House' says 'launch expected in Q2 2026' \u2014 no cash/repo split, so the return's 'Q2/Q3 2026 (repo)' is unsupported. (3) As of Aug 2026 CMESC is NOT live: CMESC's own SEC filings published Aug 4, 2026 (34-106037) and Aug 13, 2026 (34-106131, filed Aug 6) state 'CMESC currently does not have any Members or Users'; the margin policy was only filed July 22, 2026 and no fee schedule filing exists; CME's press-release listing through Aug 13, 2026 has no launch announcement and no revised date. (4) No CMESC cleared cash-Treasury or repo volume/open-position figure exists anywhere found: VOI page, monthly volume releases (which only give BrokerTec trading ADNV, e.g. July 2026 U.S. Repo $393bn, U.S. Treasury $91bn), and the CPMI-IOSCO PQD page (CME DCO files through 2026Q1 only). Day-1 offering PDF could not be read (blocked). Browser used for all cmegroup.com pages; downloads saved under .../scratchpad/d8verify/V1/."
+ },
+ "V2": {
+  "section": "V2 \u2014 ICE Clear Credit (Intercontinental Exchange), lines 70-81",
+  "rows": [
+   {
+    "label": "URL opened #1: theice.com/clear-credit",
+    "given_url": "https://www.theice.com/clear-credit",
+    "http_status": "200 (301 -> https://www.ice.com/clear-credit)",
+    "verdict": "VERIFIED",
+    "page_title_seen": "ICE Clear Credit",
+    "corrected_url": "https://www.ice.com/clear-credit",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V2/b4cf6176.html",
+    "what_is_actually_there": "ICE Clear Credit landing page (curl + Claude browser). Has a banner 'ICE launches U.S. Treasury clearing \u2014 ICE Clear Credit has launched a new clearing service ... Learn more' linking to /clear-credit/us-treasury-clearing. Live data tables on the page are CDS-ONLY: 'Index CDS Cleared / Single Name CDS Cleared / Index Options Cleared' with Open Interest 750,639,094,924 (CDX USD) / 475,180,586,959 (iTraxx EUR) / 20,639,815,985 (iTraxx USD), Volume 35,947,847,202 / 21,407,679,499 / 155,300,000, Number of Transactions 504/370/11, 'Clearing Date: 2026-08-21'. Participant list is headed 'CP Legal Name - CDS' (33 names). Reports menu: 'Daily volume & Open interest' -> /report/98, 'Settlement pricing'. No Treasury volume, OI, participant list or Treasury report link on this page.",
+    "notes": "Supports the return's negative claim: no Treasury volume series on the public clearing page."
+   },
+   {
+    "label": "URL opened #2: theice.com/market-data/reports",
+    "given_url": "https://www.theice.com/market-data/reports",
+    "http_status": "404 (301 -> https://www.ice.com/market-data/reports)",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page Not Found",
+    "corrected_url": "https://www.ice.com/report-center (Report Center) ; https://www.ice.com/report/98 (ICE Clear Credit Daily Volume and OI)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V2/b9e6141d.html",
+    "what_is_actually_there": "ICE 'Page Not Found'. The real report portal is /report-center; the ICC CDS daily volume/OI report is /report/98 (category 'Daily Volume and OI', market 'ICE Clear Credit'), which sits behind an ICE Report Center Terms & Conditions 'I ACCEPT' gate \u2014 I did NOT click accept, so I cannot say whether a Treasury tab exists inside it; ir.theice.com supplemental page labels report 98 'ICE Clear Credit CDS Daily Volumes'. Report Center categories listed: End of day, Indices, ICE Benchmark Administration, Commitments of Traders, Volumes & OI, Markers, Deliveries & settlements, Commodity reports, Other \u2014 no Treasury-clearing category visible.",
+    "notes": "URL in the return does not exist."
+   },
+   {
+    "label": "(a) SEC action approving ICC Treasury registration expansion",
+    "given_url": "(none given in return)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "SECURITIES AND EXCHANGE COMMISSION [Release No. 34-104762; File No. 600-45] ICE Clear Credit LLC; Order Granting an Application for Registration as a Clearing Agency under Section 17A of the Securities Exchange Act of 1934 \u2014 January 30, 2026",
+    "corrected_url": "https://www.sec.gov/files/rules/other/2026/34-104762.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V2/sec_34-104762.pdf",
+    "what_is_actually_there": "62-page SEC order dated January 30, 2026 (Release 34-104762, File No. 600-45). Application on Form CA-1 filed Aug 1, 2025 'to register as a clearing agency to provide CCP services for transactions involving U.S. Treasury securities (Treasury Business)'; notice 21 Aug 2025; proceedings instituted 18 Nov 2025; final para: 'IT IS HEREBY ORDERED that the application ... (File No. 600-45) ... be, and hereby is, APPROVED.' Scope covers both repo/reverse repo and cash purchases/sales (Section II.a). Corroborated by SEC Commissioner/Chairman Uyeda statement 'Update on the SEC's Work Toward Treasury Clearing Implementation' (April 20, 2026, https://www.sec.gov/newsroom/speeches-statements/uyeda-update-sec-work-toward-treasury-clearing-implementation-042026) citing Release 34-104762 (Jan. 30, 2026); Federal Register 2026-02333 (91 FR 5528, Feb 6, 2026). Later Treasury-rule approvals seen on https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/icc : 34-105986 (Jul 24, 2026, SR-ICC-2026-002, Treasury Clearing Rules / Treasury Ops Policies / LRMF; downloaded) and 34-105974 (Jul 23, 2026, SR-ICC-2026-005, Treasury IM model / Guaranty Fund / risk parameter policy).",
+    "notes": "Return's wording 'received SEC approval to expand its covered clearing agency registration' is correct in substance but it cited no title/date/URL. Note 34-105986 defines 'Treasury Clearing Market Share' using 'the publicly reported aggregate notional value of the Treasury products cleared by ICC' \u2014 implies intended public reporting, but none found."
+   },
+   {
+    "label": "(b) Cash Treasury clearing LIVE; repo later 2026 \u2014 ICE press release",
+    "given_url": "(none given in return)",
+    "http_status": "403 via curl (Cloudflare); fetched with Claude browser + WebFetch",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Intercontinental Exchange - ICE Clear Credit's Treasury Clearing Service Receives SEC Approval and is Now Operationally Live",
+    "corrected_url": "https://ir.theice.com/press/news-details/2026/ICE-Clear-Credits-Treasury-Clearing-Service-Receives-SEC-Approval-and-is-Now-Operationally-Live/default.aspx",
+    "downloaded_file": "",
+    "what_is_actually_there": "Press release dated FEB 03, 2026 (ATLANTA & NEW YORK, Business Wire), category Fixed Income and Data Services. Says SEC 'has approved its application and rulebook for ICE Clear Credit to expand its current registered Covered Clearing Agency (CCA) designation to add U.S. Treasury clearing'; 'ICE Clear Credit's U.S. Treasury clearing service is now fully operationally live'; Stan Ivanov quote: 'now operationally live and ready to clear cash transactions ... repos ... ready for testing and integration in the second half of the year, and is planned to go live in the fourth quarter.' Also: ICE webinar deck 24 Feb 2026 (https://www.ice.com/publicdocs/ICE_Clear_Credit_US_Treasury_Clearing_-_Webinar_February_2026.pdf, 12 pp, saved): 'ICC now has approval to clear cash and repo transactions. ICC is operationally live to clear cash products - Bills, Bonds, Notes, TIPS. Repo clearing is set to come in late 2026'. Scanned ICE Media Center (ice.com/media) press list Jan 20\u2013Aug 19, 2026: the Feb 3 release is the ONLY Treasury-clearing press release; no 'first trade cleared', participant, or repo go-live release as of Aug 23, 2026. The $400tn notional / $2tn OI / 685 single names figures in the release are CDS figures, not Treasury.",
+    "notes": "'Operationally live' is ICE's wording; I found no evidence of actual cleared Treasury volume. Repo status as of Aug 2026: still 'planned Q4 2026' per Feb release; no update found."
+   },
+   {
+    "label": "(c) Any published Treasury-clearing volume/OI figure",
+    "given_url": "(none given in return)",
+    "http_status": "200 (multiple)",
+    "verdict": "VERIFIED",
+    "page_title_seen": "U.S. Treasury Clearing (ice.com/clear-credit/us-treasury-clearing); Regulation | ICE Clear Credit; ICE Monthly Statistics Tracking xlsx; ICC PQD 2026Q1",
+    "corrected_url": "https://www.ice.com/clear-credit/us-treasury-clearing ; https://s2.q4cdn.com/154085107/files/doc_downloads/2026/07/2011-2026-Monthly-Stats-July-2026_vF.xlsx ; https://www.ice.com/publicdocs/iosco_reporting/quantitative_disclosures/icc/ICC_QuantitativeDisclosures_2026Q1.zip",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V2/ice_monthly_stats_july2026.xlsx ; .../ICC_PQD_2026Q1.zip ; .../9d000571.html",
+    "what_is_actually_there": "NO Treasury clearing volume or OI figure found anywhere public. (1) ice.com/clear-credit/us-treasury-clearing: descriptive only (mandate dates Dec 31 2026 cash / Jun 30 2027 repo; access models; IM VaR 2-day MPOR; GF min $10m, ICC SITG $100m; done-with/done-away; client IM 100/70/0%; link to Treasury Clearing Rules PDF /publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf); still written prospectively ('expects to provide'); no data. (2) ICE Monthly Statistics Tracking spreadsheet (July 2026 edition, 4 sheets: Derivs, US Equity Options, Cash Products, CDS Clearing): CDS Clearing sheet only \u2014 monthly CDS gross notional cleared Jan 2013\u2013Jul 2026 (Jul 2026 total $1,878bn; client $1,446bn; non-client $432bn), CDS clearing revenue by quarter (2Q26 $83m, 1Q26 $112m); NO Treasury row. (3) ICC CPMI-IOSCO PQD 2026Q1 (report date 2026-03-31): every row ReportLevelIdentifier = ICC_CDS; disclosure 23.x volumes are CDS Index/Single Names only; no Treasury service rows; latest PQD posted is 2026Q1. (4) Earnings releases 1Q26 (Apr 30, 2026) and 2Q26 (Jul 30, 2026): no 'Treasury clearing' mention at all (only 'CDS Clearing' revenue line, 1Q26 $112m); July 2026 statistics release (Aug 5, 2026): no mention. (5) Regulation page lists Treasury Clearing Service rule filings (UST 40.6 certs 2026-02-19, 05-07, 05-28, 06-05, 06-30) but no data.",
+    "notes": "Return's core verdict 'DOES NOT EXIST as a published standalone Treasury volume series' holds as of 2026-08-23. Caveat: ICE report/98 behind T&C gate not opened."
+   },
+   {
+    "label": "Claim: 'consolidated revenue figures appear in quarterly investor disclosures' (Treasury)",
+    "given_url": "(none)",
+    "http_status": "200",
+    "verdict": "NOT_VERIFIED",
+    "page_title_seen": "Intercontinental Exchange Reports Record First Quarter 2026 (APR 30, 2026); Intercontinental Exchange Reports Second Quarter 2026 (JUL 30, 2026)",
+    "corrected_url": "https://ir.theice.com/press/news-details/2026/Intercontinental-Exchange-Reports-Second-Quarter-2026/default.aspx",
+    "downloaded_file": "",
+    "what_is_actually_there": "Neither the 1Q26 nor 2Q26 earnings release mentions Treasury clearing qualitatively or quantitatively; the only clearing revenue line is 'CDS Clearing' ($112m 1Q26 vs $94m 1Q25). So the return's statement that Treasury clearing gets 'high-level qualitative mentions and consolidated revenue figures' in quarterly investor disclosures is not supported by the earnings releases (10-Q/earnings-call transcripts not checked).",
+    "notes": "Plausible filler."
+   },
+   {
+    "label": "Claim: ICC publishes daily volume/OI for CDS",
+    "given_url": "https://www.ice.com/report/98",
+    "http_status": "200 (T&C gate)",
+    "verdict": "VERIFIED",
+    "page_title_seen": "(Report Center: CATEGORY DAILY VOLUME AND OI / MARKET ICE CLEAR CREDIT)",
+    "corrected_url": "https://www.ice.com/report/98",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V2/c415daaa.html",
+    "what_is_actually_there": "Report 98 = ICE Clear Credit 'Daily Volume and OI' (ir.theice.com labels it 'ICE Clear Credit CDS Daily Volumes'); gated by Report Center terms acceptance which I did not accept. CDS OI/volume snapshot also shown on ice.com/clear-credit (Clearing Date 2026-08-21).",
+    "notes": ""
+   }
+  ],
+  "summary": "V2 publisher and core verdict are right; details partly constructed. Of the two URLs given, theice.com/clear-credit exists (redirects to ice.com/clear-credit; CDS-only tables, 'ICE launches U.S. Treasury clearing' banner) but theice.com/market-data/reports is a 404 (real portal: ice.com/report-center; ICC daily vol/OI = ice.com/report/98, behind a T&C gate I did not accept). Established from primary sources: (a) SEC Release 34-104762, File No. 600-45, 'ICE Clear Credit LLC; Order Granting an Application for Registration as a Clearing Agency under Section 17A', January 30, 2026, https://www.sec.gov/files/rules/other/2026/34-104762.pdf ('IT IS HEREBY ORDERED ... APPROVED'; covers cash and repo); later Treasury-rule approvals 34-105974 (Jul 23, 2026) and 34-105986 (Jul 24, 2026). (b) ICE press release Feb 3, 2026 'ICE Clear Credit's Treasury Clearing Service Receives SEC Approval and is Now Operationally Live' (ir.theice.com; fetched via browser because curl got 403): cash service 'fully operationally live', repo 'planned to go live in the fourth quarter' 2026; Feb 24, 2026 webinar deck says the same; no later Treasury press release Jan 20\u2013Aug 19, 2026. (c) No Treasury clearing volume/OI figure published anywhere I could reach: clear-credit page, US Treasury clearing page, Monthly Statistics Tracking xlsx (July 2026; CDS Clearing sheet only), PQD 2026Q1 (ICC_CDS only), 1Q26/2Q26 earnings releases and July 2026 stats release (no Treasury mention). The return's claim that quarterly investor disclosures carry Treasury 'consolidated revenue figures' is not supported. The ice.com/clear-credit 'U.S. Treasury' section is the /clear-credit/us-treasury-clearing page: descriptive service/model text (mandate dates, access models, IM/GF parameters, Treasury Clearing Rules PDF), no data."
+ },
+ "V3V4": {
+  "section": "V3V4 \u2014 lines 83-111: V3 Other clearing houses (SEC registration) and V4 FICC total cleared Treasury volumes beyond the sponsored CSV",
+  "rows": [
+   {
+    "label": "V3 URL 1 \u2014 sec.gov/rules/other",
+    "given_url": "https://www.sec.gov/rules/other",
+    "http_status": "404 (redirects to https://www.sec.gov/files/comments/rules/other/ which returns 404; 14-byte body, no <title>)",
+    "verdict": "NOT_VERIFIED",
+    "corrected_url": "https://www.sec.gov/rules-regulations/commission-orders-notices/other-commission-orders-notices-information",
+    "page_title_seen": "(none \u2014 404). Corrected page title: 'SEC.gov | Other Commission Orders, Notices, and Information'",
+    "what_is_actually_there": "The URL given in the return is dead. The live SEC page for Form CA-1 notices and clearing-agency orders is 'Other Commission Orders, Notices, and Information' (paginated, 103 pages, ~20-26 rows per page; page 0 runs Aug 21, 2026 back to June 26, 2026).",
+    "notes": "curl with research UA; the /rules/other path redirects to a 404. The legacy rules/other listing has moved to the corrected URL."
+   },
+   {
+    "label": "V3 URL 2 \u2014 sec.gov/rules-regulations/rule-rulemaking",
+    "given_url": "https://www.sec.gov/rules-regulations/rule-rulemaking",
+    "http_status": "404",
+    "verdict": "NOT_VERIFIED",
+    "corrected_url": "https://www.sec.gov/rules-regulations/rulemaking-activity",
+    "page_title_seen": "SEC.gov | Oops! Page Not Found.",
+    "what_is_actually_there": "404 page. The nearest live page is 'SEC.gov | Rulemaking Activity' (200) \u2014 a general rulemaking index, not a clearing-agency registration record.",
+    "notes": "Constructed-looking URL; neither given URL is a clearing-agency registration list."
+   },
+   {
+    "label": "V3 \u2014 SEC 'Clearing Agencies' list (Division of Trading and Markets): registered clearing agencies as of the page's last update",
+    "given_url": "(not in return \u2014 found by me)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.sec.gov/about/divisions-offices/division-trading-markets/clearing-agencies",
+    "page_title_seen": "SEC.gov | Clearing Agencies",
+    "what_is_actually_there": "Page 'Last Reviewed or Updated: Feb. 10, 2026'. Registered (active): DTC (34-20221), NSCC (34-20221), FICC (Order Granting FICC Permanent Registration, Release 34-69838, FR 2013-06-28), OCC (34-20221), ICE Clear Credit LLC (deemed registered 2011; 'Order Granting ICC Registration, Release 34-104762' \u2192 /files/rules/other/2026/34-104762.pdf), LCH SA (Order Approving Registration and Exemption, Release 34-79707, FR 2017-01-05), CME Securities Clearing, Inc. (CMESC) ('Order Granting CMESC Registration, Release 34-104281' \u2192 /files/rules/other/2025/34-104281.pdf). Dormant/withdrawn: BSECC, CME (withdrew, 34-76678), ICE Clear Europe (withdrew, 34-98902), SCCP. Exempt: Clearstream Banking S.A. (34-38328), DTCC ITP Matching US LLC (34-44188), Bloomberg STP LLC (34-76514; withdrawal letter Jan 28, 2026), SS&C Technologies (34-76514; withdrawal letter Aug 6, 2025), Euroclear Bank SA/NV (exemption 34-49643; modification 34-79577). Page links: 'Notices of applications filed on Form CA-1 ... are available on the SEC's website here' \u2192 the Other Commission Orders page. Also lists 'Standards for Covered Clearing Agencies for U.S. Treasury Securities... Final Rule, Release 34-99149 (January 16, 2024)' and the FICC/CME cross-margining exemption notice.",
+    "notes": "Note LCH SA (not LCH Ltd) IS an SEC-registered clearing agency (for security-based swaps/CDS, 2016 order) \u2014 the return's framing 'no other CCP is approved' is wrong for US Treasuries: CMESC and ICC are now registered for Treasury CCP services (see rows below). Euroclear Bank holds an SEC exemption (CSD/settlement), not a CCP registration \u2014 consistent with the return."
+   },
+   {
+    "label": "V3 \u2014 CME Securities Clearing, Inc. (CMESC) Form CA-1 \u2192 registration order (US Treasury CCP)",
+    "given_url": "(return mentions CME Securities Clearing Inc. without URL/date)",
+    "http_status": "200 (PDF 570,918 bytes)",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.sec.gov/files/rules/other/2025/34-104281.pdf",
+    "page_title_seen": "Release No. 34-104281; File No. 600-44 \u2014 'CME Securities Clearing, Inc.; Order Granting an Application for Registration as a Clearing Agency under Section 17A of the Securities Exchange Act of 1934', December 1, 2025",
+    "what_is_actually_there": "PDF text: CMESC filed Form CA-1 on December 13, 2024 'seeking to register as a clearing agency to provide central counterparty (CCP) services for transactions involving U.S. Treasury securities.' Notice published FR Jan 22, 2025 (Release 34-102200, Jan 15, 2025); OIP April 18, 2025 (34-102889); longer period July 21, 2025 (34-103514); order granting registration Dec 1, 2025. CA-1 exhibits page cited: https://www.sec.gov/rules-regulations/other-commission-orders-notices-information/cme-form-ca-1. Full docket trail seen on the Other Commission Orders listing (File 600-44).",
+    "notes": "Downloaded to /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V3V4/34-104281.pdf. The return's 'no additional CCP has been approved' is contradicted: CMESC was APPROVED Dec 1, 2025 (it appears on the SEC registered list)."
+   },
+   {
+    "label": "V3 \u2014 ICE Clear Credit LLC (ICC) Form CA-1 \u2192 registration order (US Treasury CCP 'Treasury Business')",
+    "given_url": "(return mentions ICE Clear Credit LLC without URL/date)",
+    "http_status": "200 (PDF 476,264 bytes)",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.sec.gov/files/rules/other/2026/34-104762.pdf",
+    "page_title_seen": "Release No. 34-104762; File No. 600-45 \u2014 'ICE Clear Credit LLC; Order Granting an Application for Registration as a Clearing Agency under Section 17A of the Securities Exchange Act of 1934', January 30, 2026",
+    "what_is_actually_there": "PDF text: ICC filed Form CA-1 on August 1, 2025 'seeking to register as a clearing agency to provide central counterparty (CCP) services for transactions involving U.S. Treasury securities, which ICC refers to as its Treasury Business.' Docket trail on the SEC listing: Notice 34-103727 (Aug 18, 2025; comments due Oct 6, 2025), OIP 34-104195 (Nov 18, 2025), Order granting 34-104762 (Jan 30, 2026). Also same day: 34-104748 (Jan 30, 2026, S7-2026-03) 'Notice of an Application of the Fixed Income Clearing Corporation and Chicago Mercantile Exchange Inc. for an Exemption Pursuant to Section 36 ... in Connection with the Cross-Margining of U[S Treasury...]'.",
+    "notes": "Downloaded to .../d8verify/V3V4/34-104762.pdf. Again contradicts the return's verdict: ICC was APPROVED for Treasury CCP services on Jan 30, 2026."
+   },
+   {
+    "label": "V3 \u2014 Paxos Securities Settlement Company, LLC (PSSC) Form CA-1 \u2192 temporary registration (CSD, not Treasury CCP)",
+    "given_url": "(return says 'Paxos Securities Settlement Company (equities)')",
+    "http_status": "200 (PDF 571,218 bytes)",
+    "verdict": "PARTLY_VERIFIED",
+    "corrected_url": "https://www.sec.gov/files/rules/other/2026/34-105562.pdf",
+    "page_title_seen": "Release No. 34-105562; File No. 600-39 \u2014 'Paxos Securities Settlement Company, LLC; Order Granting an Application for Temporary Registration as a Clearing Agency under Section 17A', May 27, 2026",
+    "what_is_actually_there": "PSSC filed Form CA-1 July 14, 2025 'to provide clearance and settlement services as a central securities depository (CSD) and securities settlement system' \u2014 a CSD, not a CCP. Trail: Notice 34-103624 (Aug 1, 2025), OIP 34-104174 (Nov 4, 2025), longer period 34-104757 (Jan 30, 2026), amendment notice 34-104977 (Mar 11, 2026), order granting temporary registration 34-105562 (May 27, 2026). The first 3 pages do not say 'equities' or 'Treasury'; eligible securities are discussed later in the order (not checked).",
+    "notes": "Return's 'Paxos (equities)' is an unsupported gloss; the SEC document characterises it as a CSD/settlement system."
+   },
+   {
+    "label": "V3 \u2014 NEW Form CA-1 applicant missed by the return: Cboe Clear U.S., LLC (CCUS) \u2014 binary options, not Treasuries",
+    "given_url": "(not in return \u2014 found by me)",
+    "http_status": "200 (PDF 323,394 bytes); exhibits page 200",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.sec.gov/files/rules/other/2026/34-105960.pdf ; exhibits: https://www.sec.gov/rules-regulations/other-commission-orders-notices-information/ccus-form-ca-1",
+    "page_title_seen": "Release No. 34-105960; File No. 600-47 \u2014 'Cboe Clear U.S., LLC; Notice of Filing of an Application, as Amended, for Temporary Registration as a Clearing Agency Under Section 17A', July 21, 2026 (comments due Sept 8, 2026). Exhibits page title: 'SEC.gov | Cboe Clear U.S., LLC (CCUS) \u2014 Form CA-1 Application and Exhibits'",
+    "what_is_actually_there": "CCUS filed Form CA-1 June 30, 2026 (amended July 7 and July 17, 2026) for temporary registration 'to provide central counterparty services for binary options that are securities.' Zero occurrences of 'Treasury'/'repo' in the first 4 pages. So it is a pending CA-1 application as of Aug 2026 but NOT for Treasury cash/repo.",
+    "notes": "The return's claim that 2024-2026 CA-1 filings comprise only CME, ICC and Paxos is incomplete (CCUS, File 600-47, is pending). Its narrower claim that no further entity has applied for Treasury clearing holds as far as the SEC listing (pages covering Aug 20, 2024 \u2192 Aug 21, 2026) shows."
+   },
+   {
+    "label": "V3 \u2014 LCH / Eurex / Euroclear: any SEC application or notice for US Treasury cash/repo clearing?",
+    "given_url": "(return asserts none)",
+    "http_status": "200 (SEC Other Commission Orders pages 0-8 scanned, covering Aug 20, 2024 \u2192 Aug 21, 2026; Clearing Agencies list page)",
+    "verdict": "PARTLY_VERIFIED",
+    "corrected_url": "https://www.sec.gov/rules-regulations/commission-orders-notices/other-commission-orders-notices-information?page=0 \u2026 ?page=8",
+    "page_title_seen": "SEC.gov | Other Commission Orders, Notices, and Information",
+    "what_is_actually_there": "Across all rows Aug 2024\u2013Aug 2026 matching clearing agency/CA-1/Treasury/LCH/Eurex/Euroclear: only CMESC (600-44), ICC (600-45), PSSC (600-39), CCUS (600-47) dockets plus the FICC/CME cross-margining exemption (S7-2026-03) and a 15c3-3a Treasury note (34-105193, Apr 10, 2026). No LCH (Ltd or SA), Eurex Clearing, or Euroclear CA-1 notice appears in that window. The SEC Clearing Agencies list shows LCH SA registered since 2016 (SBS/CDS) and Euroclear Bank exempt \u2014 neither for Treasury CCP services. Jan\u2013Aug 2024 rows (pages 9+) were NOT scanned (budget).",
+    "notes": "Absence-of-evidence over a 2-year window of the SEC listing, not a positive confirmation. The return's claim that LCH 'clears Treasury and SOFR futures traded on the FMX Futures Exchange' was not checked here (LCH/FMX not in scope of sec.gov)."
+   },
+   {
+    "label": "V4 URL 1 \u2014 dtcc.com/legal/policy-and-compliance",
+    "given_url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "http_status": "curl 403 (Cloudflare 'Attention Required!'); browser 200",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "page_title_seen": "Policy & Compliance - Legal & Regulatory | DTCC",
+    "what_is_actually_there": "Listing of quarterly disclosures (used the Claude browser). Items seen: 'CPMI IOSCO Quantitative Disclosure Results 2026 Q1' (posted May 28, 2026; 'Fixed Income Clearing Corporation and National Securities Clearing Corporation Public Quantitative Disclosures for Central Counterparties') \u2192 DTCC-PQD-026Q1.xlsx (337,431 bytes) and CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2026.pdf (1,250,310 bytes); 'CPMI IOSCO Quantitative Disclosure Results 2025 Q4' (posted Mar 09, 2026) \u2192 ...Q4-2025-excel.xlsx / .pdf; FICC/NSCC/DTC Disclosure Frameworks 2026 Q1 (Mar 31, 2026) and 2025 Q4. 10 pages of listings. I parsed the 2026 Q1 xlsx in-browser: sheets include DTCC_DataFile_6_1 (initial margin), DTCC_DataFile_23 and DTCC_DataFile_23_3 (Disclosure 23.1.1 'Average Daily Volumes by Asset Class...', 23.2.1 'Average Notional Value of trades cleared...', 23.3.x record peak); note in file: 'For GSD/MBSD and NSCC, average daily volume data is based on sides (as opposed to trades)'; 'FICC data provided with respect to GSD GCF Repo and non-GCF Repo CCP services and MBSD clearing services.'",
+    "notes": "Frequency (quarterly) and latest (2026 Q1) in the return are confirmed. BUT the return's field name 'Table 6.1 (Gross Notional Cleared / Average Daily Volume)' is mislabelled: in the PQD, 6.1 = initial margin required; ADV/notional/peak are disclosures 23.1/23.2/23.3. 'Q1 2016' as first date not checked. Values (ADV, IM) were not extracted."
+   },
+   {
+    "label": "V4 URL 2 \u2014 dtcc.com/about/businesses-and-subsidiaries/ficc",
+    "given_url": "https://www.dtcc.com/about/businesses-and-subsidiaries/ficc",
+    "http_status": "curl 403 (Cloudflare); browser 200",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/about/businesses-and-subsidiaries/ficc",
+    "page_title_seen": "Fixed Income Clearing Corporation - FICC | DTCC",
+    "what_is_actually_there": "Descriptive page only (GSD services: RTTM, Repurchase Agreements, Repo Collateral Substitution, Auction Take-Down, CCIT, GCF Repo, Netting and Settlement, Funds-Only Settlement; MBSD services). No volume figures, no data downloads.",
+    "notes": "Exists but carries no volume data; it is not a source for V4's quantities."
+   },
+   {
+    "label": "V4 \u2014 dtcc.com/charts index and inventory of all /charts/ pages",
+    "given_url": "https://www.dtcc.com/charts",
+    "http_status": "browser: /charts redirects to https://www.dtcc.com/ (homepage, 200); sitemap.xml 200",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/sitemap.xml (lists the /charts/ pages)",
+    "page_title_seen": "DTCC | Financial Market Infrastructure; Post-Trade Services Provider (homepage)",
+    "what_is_actually_there": "Sitemap /charts/ pages and what each carries (all visited in browser): (1) /charts/previous-12-months-volume-for-gsd \u2014 'Previous 12 Months Volume for Government Securities', monthly GSD bars 'Total Value Compared' and 'Dollar Value of Obligations Created from the Net' (USD trn), yearly archive ?id=2001\u20262025 (see next row). (2) /charts/previous-12-months-volume-for-mbs \u2014 same for MBSD (iframe /products/fi/mbs_volumegraphs_plain.php). (3) /charts/dtcc-gcf-repo-index \u2014 'DTCC GCF Repo Index Chart': daily Treasury and MBS GCF repo par value (USD bn) and weighted-average rate; CSV https://www.dtcc.com/data/gcfindex.csv (1 yr) + historical xlsx /-/media/Files/Downloads/Clearing-Services/FICC/GCF-Index-Graph.xlsx. (4) /charts/daily-total-us-treasury-trade-fails \u2014 'Daily Total US Treasury and Agency Fails', daily fails USD bn; CSV https://www.dtcc.com/data/failsdata.csv. (5) /charts/membership \u2014 'Sponsored Membership Volume': daily Sponsored DVP/GC and Repo/Reverse (USD bn), updated through Aug 20, 2026; CSVs https://www.dtcc.com/data/SponsoredVolume.csv and /data/historicdata.csv (pre-Apr 1, 2020). (6) /charts/exchange-traded-funds \u2014 ETF processing (iframe /products/cs/exchange_traded_funds_plain_new.php). (7) /charts/underwriting-data-report \u2014 'New Issuance Count and Amount Data Reports' (CSV via /products/uw/data_report_csv.php). Homepage 'Data & Statistics' also links Equities by the Numbers (/equity-trade-volume-insights), Repository OTC data, DDR real-time dissemination. No page titled 'Daily Total US Treasury volume' exists.",
+    "notes": "The return missed the GSD monthly volume chart and the GCF repo par-value CSV entirely."
+   },
+   {
+    "label": "V4 \u2014 FICC GSD monthly total volume time series (found; NOT mentioned in the return)",
+    "given_url": "(not in return)",
+    "http_status": "200 (page and iframe https://www.dtcc.com/products/fi/gsd_volumegraphs_plain.php; ?id=2001\u20262025 all 200)",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/charts/previous-12-months-volume-for-gsd (data iframe: https://www.dtcc.com/products/fi/gsd_volumegraphs_plain.php?id=YYYY)",
+    "page_title_seen": "Previous 12 Months Volume for Government Securities | DTCC",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V3V4/dtcc_gsd_monthly_volume_2001_2026.csv",
+    "what_is_actually_there": "Monthly series, '12-Month Volume Data (U.S. Dollars in Trillions)', two fields per month: 'Total Value Compared' (gross) and 'Dollar Value of Obligations Created from the Net'. Frequency monthly; first Jan-2001 (28.3 / 8.4); latest Jul-2026 (258.0 / 85.0). Latest 12 months: Aug-2025 222/79, Sep 234/82, Oct 249/87, Nov 214/74, Dec-2025 261/91, Jan-2026 237/79, Feb 226/75, Mar 269/87, Apr 246/80, May 240/78, Jun 252/83, Jul-2026 258/85; 12-month totals shown: $2,908 trn compared, $980 trn net obligations. Annual totals e.g. 2023 $1,492trn/$554trn; 2024 $1,961trn/$739trn; 2025 $2,602trn/$927trn. Format: HTML bar chart (no CSV offered); I scraped all 26 year-pages into a CSV with columns month,total_value_compared_usd_trn,net_obligations_created_usd_trn,source_url (307 rows, 2001-01 \u2192 2026-07).",
+    "notes": "This directly contradicts the return's 'continuous downloadable daily/monthly time series does not exist' \u2014 a monthly total-GSD series back to 2001 is published (as HTML, scrape-able). No daily total-GSD series was found; no breakdown DVP/GCF/Sponsored/ACS on this page."
+   },
+   {
+    "label": "V4 \u2014 GCF Repo Index daily par-value CSV (GSD component volume)",
+    "given_url": "(not in return)",
+    "http_status": "200 (in-browser fetch)",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/data/gcfindex.csv",
+    "page_title_seen": "DTCC GCF Repo Index Chart | Global Trade Repository",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V3V4/dtcc_gcfindex.csv",
+    "what_is_actually_there": "Columns: Date, MBS Total PAR Value, MBS Weighted Average, Treasury Total PAR Value, Treasury Weighted Average (+ TRAILER row). 250 daily rows, 08/21/2025 \u2192 08/21/2026. Latest (08/21/2026): MBS par 103,522,000,000 @ 3.690; Treasury par 51,580,000,000 @ 3.671. Per page FAQ: dealer-executed overnight GCF repo/reverse for the two most-traded CUSIPs only, excludes inter-dealer-broker leg and term trades \u2014 so NOT total GCF volume, let alone total GSD. Historical xlsx: https://www.dtcc.com/-/media/Files/Downloads/Clearing-Services/FICC/GCF-Index-Graph.xlsx (not downloaded).",
+    "notes": "Useful component series; not a substitute for total cleared volume."
+   },
+   {
+    "label": "V4 \u2014 Press releases with record-volume figures (dtcc.com)",
+    "given_url": "(return: 'occasional press releases exist', no URLs)",
+    "http_status": "200 / 200 / 200 (in-browser fetch)",
+    "verdict": "VERIFIED",
+    "corrected_url": "https://www.dtcc.com/news/2025/april/14/ficc-surpasses-usd11-trillion-in-daily-volume-amid-market-volatility ; https://www.dtcc.com/news/2025/july/02/ficc-successfully-processes ; https://www.dtcc.com/news/2026/july/27/dtcc-survey-firms-progress-toward-us-treasury-clearing-deadline",
+    "page_title_seen": "'FICC Surpasses USD$11 Trillion in Daily Volume Amid Market Volatility | DTCC'; 'FICC Successfully Processes USD$11.8 Trillion | DTCC'; 'DTCC Survey Shows Progress Toward Treasury Cash Clearing Deadline | DTCC'",
+    "what_is_actually_there": "(a) Apr 14, 2025: 'FICC Surpasses USD$11 Trillion in Daily Volume Amid Market Volatility, Underscoring Resiliency of Central Clearing' \u2014 all-time high of over USD$11 trn in U.S. Treasury cleared transactions on April 9, 2025. (b) Jul 2, 2025: 'FICC Successfully Processes USD$11.8 Trillion in Daily Volume, Marking New One-Day Record' \u2014 GSD peak USD$11.8 trn on June 30, 2025 (prior peak USD$11.4 trn on April 9); Sponsored peak USD$2.48 trn on June 30 vs USD$2.11 trn on April 30; USD$1.14 trn balance-sheet capacity. (c) Jul 27, 2026: 'Market Participant Firms Making Significant Progress Toward U.S. Treasury Cash Clearing Deadline, According to Latest DTCC Survey' \u2014 'Over $1.2 trillion in daily Treasury cash activity already centrally cleared by FICC'; 'FICC currently clears more than $12 trillion in average daily transactions, with activity levels increasing 165% since the SEC first proposed the Treasury clearing mandate'; compliance date Dec 31, 2026. Also seen via search: Mar 12, 2024 release 'DTCC's FICC Treasury Clearing Volumes Grow 31%, Now Represent USD$7 Trillion in Daily Average Activity' (not opened).",
+    "notes": "Press releases are ad hoc, not a series."
+   },
+   {
+    "label": "V4 \u2014 'Value seen': 'Total GSD daily average volume USD 9trn\u201313.2trn; peak single-day USD 13.2trn on December 1, 2025'",
+    "given_url": "(no URL in return)",
+    "http_status": "WebSearch + WebFetch of garp.org article 200",
+    "verdict": "PARTLY_VERIFIED",
+    "corrected_url": "https://www.garp.org/risk-intelligence/market/year-ahead-treasury-251212",
+    "page_title_seen": "'A Year Ahead of a Treasury Clearing Deadline, a Cross-Margining Enhancement Nears' (GARP, John Hintze, Dec 12, 2025)",
+    "what_is_actually_there": "The $13.2 trn on Dec 1, 2025 figure (topping $12.66 trn on Oct 30, 2025) is real but third-party-reported: GARP attributes it to Laura Klimpel's (DTCC) written testimony to the House Financial Services Committee hearing of Dec 2, 2025. No dtcc.com press release carrying '$13.2 trillion' was found via site-restricted search. The '9trn\u201313.2trn daily average' range is not a single published figure: DTCC's own Jul 27, 2026 release says '>$12 trillion in average daily transactions'; the 'FICC 5 things to know' infographic cited $9.079 trn ADV (undated). Peak day values also appear in PQD disclosure 23.3.",
+    "notes": "Figure plausible and sourced to DTCC testimony, not to a DTCC web page; the return should cite the testimony/GARP or the PQD 23.3 line rather than 'seen'."
+   },
+   {
+    "label": "V4 \u2014 Does a downloadable daily total-GSD cleared-volume series exist?",
+    "given_url": "(return: does not exist)",
+    "http_status": "n/a (conclusion from the inventory above)",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "No daily total-GSD series or CSV was found on dtcc.com. What exists: monthly total-GSD (compared vs netted) HTML series 2001-01\u21922026-07 (scraped to CSV); daily Sponsored CSVs; daily GCF repo index par-value CSV (partial GCF); daily Treasury fails CSV; quarterly PQD (ADV in sides, notional, peak) as xlsx/pdf per quarter; ad hoc press releases. No DVP/GCF/Sponsored/ACS decomposition of the monthly total.",
+    "notes": "Return's 'PARTIAL' verdict is directionally right but its reasoning is wrong in one material respect: a monthly time series DOES exist (back to 2001) and is trivially scrape-able."
+   }
+  ],
+  "summary": "V3: both sec.gov URLs in the return are dead (404) \u2014 the live pages are the Division of Trading and Markets 'Clearing Agencies' list (updated Feb 10, 2026) and the 'Other Commission Orders, Notices, and Information' CA-1 listing. The return's verdict 'no other CCP is approved or applying' is wrong: the SEC GRANTED registration to CME Securities Clearing, Inc. (Release 34-104281, Dec 1, 2025, File 600-44) and to ICE Clear Credit LLC for its US Treasury 'Treasury Business' (Release 34-104762, Jan 30, 2026, File 600-45); both now sit on the SEC registered-clearing-agency list alongside FICC. Paxos Securities Settlement Company got temporary registration as a CSD (34-105562, May 27, 2026) \u2014 not 'equities' as glossed. A further pending CA-1 the return missed: Cboe Clear U.S., LLC (34-105960, Jul 21, 2026, File 600-47) \u2014 for binary options, not Treasuries. No LCH, Eurex or Euroclear CA-1 notice appears on the SEC listing for Aug 2024\u2013Aug 2026 (LCH SA is SEC-registered since 2016 for SBS; Euroclear Bank is exempt) \u2014 Jan\u2013Aug 2024 pages not scanned. V4: both dtcc.com URLs exist (browser; curl is Cloudflare-403'd) \u2014 the policy page lists quarterly PQD (latest 2026 Q1, posted May 28, 2026; xlsx 337KB / pdf 1.25MB) but the return's 'Table 6.1' label is wrong (6.1 = initial margin; ADV/notional/peak are 23.1/23.2/23.3; ADV is in sides); the FICC subsidiary page has no data. /charts redirects to the homepage; the sitemap lists seven /charts/ pages. Key miss by the return: a monthly total-GSD volume series exists at /charts/previous-12-months-volume-for-gsd ('Total Value Compared' and 'Dollar Value of Obligations Created from the Net', USD trn, Jan 2001\u2192Jul 2026, e.g. Jul-2026 258/85, Dec-2025 261/91) \u2014 scraped all years into .../d8verify/V3V4/dtcc_gsd_monthly_volume_2001_2026.csv (307 rows). Also downloaded the daily GCF Repo Index par-value CSV (.../dtcc_gcfindex.csv, 250 rows 08/21/2025\u219208/21/2026, Treasury+MBS par and rates; partial GCF only). Sponsored CSVs (/data/SponsoredVolume.csv, /data/historicdata.csv) and fails CSV confirmed. No daily total-GSD series found. Record press releases verified: Apr 14, 2025 (>$11trn on Apr 9), Jul 2, 2025 ($11.8trn on Jun 30), Jul 27, 2026 ('>$12trn ADV'). The '$13.2trn on Dec 1, 2025' value is real but comes from Klimpel's Dec 2, 2025 House testimony (per GARP), not a dtcc.com page. Files saved under /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/V3V4/ (SEC PDFs 34-104281, 34-104762, 34-105562, 34-105960; two CSVs; SEC HTML pages). Used the Claude browser 'seed' tab for dtcc.com (tab cap reached; restored to FRED afterwards)."
+ },
+ "P1": {
+  "section": "P1 \u2014 Official sector publications 2025\u201326 (lines 115-144)",
+  "rows": [
+   {
+    "label": "P1.1 Liberty Street Economics \u2014 The Rise of Sponsored Service for Clearing Repo",
+    "given_url": "https://libertystreeteconomics.newyorkfed.org/2025/10/the-rise-of-sponsored-service-for-clearing-repo/",
+    "http_status": "200",
+    "page_title_seen": "The Rise of Sponsored Service for Clearing Repo - Liberty Street Economics",
+    "corrected_url": "https://libertystreeteconomics.newyorkfed.org/2025/10/the-rise-of-sponsored-service-for-clearing-repo/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/lse1.html",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real post. Title exact; published October 8, 2025 (article:published_time 2025-10-08; citation_publication_date 2025/10/08); authors Adam Copeland and R. Jay Kahn (not named in the claim). Summarises a NY Fed Staff Report on Sponsored Service. DATA ACTUALLY USED: confidential OFR centrally cleared repo data collection (Jan 2020\u2013Jun 2024; table: sponsored lending $244.3bn/15.9%, sponsored borrowing $209.3bn/13.6%, interdealer $1,086.1bn/70.5% avg daily). The claim's 'FICC sponsored repo daily activity, DTCC membership directory records, SEC Form MMF portfolio holdings' does NOT appear in the post.",
+    "notes": "Bibliographic record (publisher/title/date/URL) verified; 'Data used' field is constructed."
+   },
+   {
+    "label": "P1.2 FEDS Notes \u2014 Decomposing Hedge Funds' U.S. Treasury Exposures",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-us-treasury-exposures-20260615.html",
+    "http_status": "404 (given URL); 200 (corrected URL)",
+    "page_title_seen": "Given URL: 'Federal Reserve Board - Page not Found'. Corrected URL: 'The Fed - Decomposing Hedge Funds\u2019 U.S. Treasury Exposures'",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-20260622.html",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/feds_hf.html (plus feds2026.html index)",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real FEDS Note found via the 2026 FEDS Notes index. Title: 'Decomposing Hedge Funds\u2019 U.S. Treasury Exposures'; date June 22, 2026 (claim said June 2026 / slug 20260615); author Phillip J. Monin (sole author). Slug differs ('u-s' and 20260622). DATA ACTUALLY USED: SEC Form PF fund-level monthly data (plus Treasury Fiscal Service via FRED for outstanding Treasuries); no mention of CFTC Commitments of Traders or TIC anywhere in the note. Headline figures in claim are correct: gross Treasury exposures $4.0trn (long $2.4trn, short $1.6trn) as of Sept 2025; repo cash borrowing $3.0trn; basis trade ~$830bn (35%); swap spread arb ~$305bn. The note does NOT discuss cleared vs bilateral repo or sponsored repo (zero hits for 'bilateral', 'clear', 'sponsored').",
+    "notes": "Title/month right, URL and day wrong, data-used partly constructed (COT, TIC not used), relevance claim about cleared-vs-bilateral reliance not supported by the text."
+   },
+   {
+    "label": "P1.3 FEDS Notes \u2014 The $12 Trillion US Repo Market: Evidence from a Novel Panel of Intermediaries",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-12-trillion-us-repo-market-evidence-from-a-novel-panel-of-intermediaries-20250718.html",
+    "http_status": "404 (given URL); 200 (corrected URL)",
+    "page_title_seen": "Given URL: 'Federal Reserve Board - Page not Found'. Corrected URL: 'The Fed - The $12 Trillion US Repo Market: Evidence from a Novel Panel of Intermediaries'",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-12-trillion-u-s-repo-market-evidence-from-a-novel-panel-of-intermediaries-20250711.html",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/feds_repo.html (plus feds2025.html index)",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real FEDS Note found via the 2025 FEDS Notes index. Title: 'The $12 Trillion US Repo Market: Evidence from a Novel Panel of Intermediaries'; date July 11, 2025 (claim: July 2025 / slug 20250718); authors Sam Hempel, R. Jay Kahn, Julia Shephard. DATA ACTUALLY USED: scraped SEC Form X-17A-5 (FOCUS) annual reports of all SEC-registered broker-dealers (panel of 156 dealers, 2014\u20132024) plus SEC Form 10-K of large BHCs, OFR Cleared Repo Collection, Federal Reserve tri-party repo data. Finds gross US repo $11.9trn in 2024, ~38% ($4.6trn) NCCBR; dealers run matched books; no SLR-netting evidence. 'FR 2004 primary dealer reports' and 'confidential supervisory dealer panel data' are NOT mentioned (zero hits for 'FR 2004'/'2004').",
+    "notes": "Title/month right, URL and day wrong, data-used field constructed."
+   },
+   {
+    "label": "P1.4 TMPG \u2014 Non-Centrally Cleared Bilateral Repo and Indirect Clearing in the U.S. Treasury Market: Focus on Margining Practices",
+    "given_url": "https://www.newyorkfed.org/tmpg/best-practices",
+    "http_status": "200 after redirect to https://www.newyorkfed.org/errors/404 (i.e. 404 page); real PDF 200",
+    "page_title_seen": "Given URL: 'FEDERAL RESERVE BANK of NEW YORK' (generic 404 page). TMPG pages: 'TMPG | Treasury Market Practices Group'. PDF p.1: 'White Paper / Non-Centrally Cleared Bilateral Repo and Indirect Clearing in the U.S. Treasury Market: Focus on Margining Practices'",
+    "corrected_url": "https://www.newyorkfed.org/medialibrary/Microsites/tmpg/files/TMPG-White-Paper-05222025.pdf (landing page: https://www.newyorkfed.org/TMPG/Treasury-Repo-Risk-Management; consultative version Feb 26, 2025: https://www.newyorkfed.org/medialibrary/Microsites/tmpg/files/TMPG-Consultative-White-Paper.pdf)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/TMPG-White-Paper-05222025.pdf (287,463 bytes); tmpg_home.html, tmpg_rrm.html, tmpg_2025events.html, tmpg_2026events.html, tmpg_clearing.html",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real TMPG white paper, title exact. Timeline from TMPG Treasury-Repo-Risk-Management / 2025 news pages: Feb 26, 2025 consultative white paper + proposed best-practice updates + proposed FAQs (comments to Apr 30, 2025); May 22, 2025 final white paper + updated 'Best Practices for Treasury, Agency Debt, and Agency MBS Markets' (TMPG-best-practices-May-2025.pdf) incorporating Treasury repo risk management recommendations + final FAQs. So 'May 2025' is right (May 22, 2025). PDF sections: NCCBR overview; counterparty risk management; comparison of margining practices across segments (central clearing, tri-party, NCCBR); risk/resiliency issues; impact of the new OFR NCCBR collection; Appendix 1 table of dealer activity by repo segment; Appendix 2 NCCBR Working Group members. Evidence base stated: discussions with market participants, two OFR pilot surveys (2015, 2022) showing majority zero haircuts; it is a working-group paper, not a data study. No 'TMPG industry member survey' or 'primary dealer risk management benchmarking' is described. Other TMPG clearing items 2024-26 seen on the site: Clearing-and-settlement page lists Nov 9, 2022 consultative 'Clearing and Settlement in the Market for U.S. Treasury SFTs' + maps; 2026 news only has Feb 26 / Jun 25, 2026 agency MBS/GSE summary notes (nothing new on clearing in 2026).",
+    "notes": "Given URL is wrong (TMPG nav link is /TMPG/best_practices.html; the paper lives under /medialibrary/Microsites/tmpg/files/). Data-used field constructed."
+   },
+   {
+    "label": "ADDITIONAL-1 OFR blog \u2014 How the Treasury Clearing Rule for Repo Might Affect SOFR",
+    "given_url": "n/a (found by verifier)",
+    "http_status": "200",
+    "page_title_seen": "How the Treasury Clearing Rule for Repo Might Affect SOFR | Office of Financial Research",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/2025/04/22/how-the-treasury-clearing-rule-for-repo-might-affect-sofr/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/add3.html",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Ashlyn Cenicola and Corey Garriott, published April 22, 2025. States SEC repo clearing rule effective June 30, 2027, covering up to 85% of non-centrally cleared repos; shows SOFR not disturbed by inclusion of newly cleared repos.",
+    "notes": ""
+   },
+   {
+    "label": "ADDITIONAL-2 OFR blog \u2014 How Will Central Clearing Impact the Repo Market?",
+    "given_url": "n/a (found by verifier)",
+    "http_status": "200",
+    "page_title_seen": "How Will Central Clearing Impact the Repo Market? | Office of Financial Research",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/2026/01/29/central-clearing-impact-repo-market/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/add1.html",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Ashlyn Cenicola, John Heilbron, Robert Mann, Mark Paddrik, published January 29, 2026. Over $8trn Treasury-collateralised repo outstanding as of Aug 2025; clearing rule will substantively boost cleared share and may enhance dealer netting efficiencies.",
+    "notes": ""
+   },
+   {
+    "label": "ADDITIONAL-3 OFR blog \u2014 The Economic Drivers and Consequences of Client Clearing",
+    "given_url": "n/a (found by verifier)",
+    "http_status": "200",
+    "page_title_seen": "The Economic Drivers and Consequences of Client Clearing | Office of Financial Research",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/2026/02/19/economic-drivers-consequences-client-clearing/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/add2.html",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Salil Gadgil, Robin Lumsdaine, Mark Paddrik, published February 19, 2026. Client clearing reduces counterparty risk but clients' reliance on dealers for CCP access may limit clearing ability under stress (relevant to sponsored/indirect clearing access).",
+    "notes": ""
+   },
+   {
+    "label": "ADDITIONAL-4 OFR blog \u2014 Central Clearing in Treasury Repos Plateaued in Q1 2026",
+    "given_url": "n/a (found by verifier)",
+    "http_status": "200",
+    "page_title_seen": "Central Clearing in Treasury Repos Plateaued in Q1 2026 | Office of Financial Research",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/2026/08/20/central-clearing-treasury-repos-plateaued/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/add4.html",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Ashlyn Cenicola and Robert Mann, published August 20, 2026. Share of Treasury repo centrally cleared rose through 2025 to 71% at year-end, then stabilised at 62% in Q1 2026; cleared volumes rose since July 2025 relative to in-scope (non-affiliate) repos. NOTE: this may fall within the 'known OFR NCCBR blogs Aug 2025\u2013Aug 2026' exclusion \u2014 it likely uses the OFR NCCBR collection; also seen in the index but not fetched: 'OFR's MMF Monitor Shows Shift to Cleared Repo Lending' (Sep 11, 2025), 'Sizing the U.S. Repo Market' (Dec 4, 2025), 'Are Zero-Haircut Repos as Common as Advertised?' (Aug 12, 2025), 'Sizing the U.S. Cross-Border Repo Market' (Apr 9, 2026).",
+    "notes": "Flag possible overlap with the excluded NCCBR-blog set."
+   },
+   {
+    "label": "ADDITIONAL-5 FEDS Notes \u2014 Proportionate margining for repo transactions",
+    "given_url": "n/a (found by verifier)",
+    "http_status": "200",
+    "page_title_seen": "The Fed - Proportionate margining for repo transactions",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/proportionate-margining-for-repo-transactions-20250214.html",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P1/add5.html",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "R. Jay Kahn and Matthew McCormick, February 14, 2025. Discusses repo haircuts/margining given research showing low/zero haircuts on many Treasury repos \u2014 directly relevant to NCCBR margining and the TMPG recommendations. Other 2025 FEDS Notes seen in the index (not fetched individually): 'What Happens on Quarter-Ends in the Repo Market' (June 6, 2025); 'The Cross-Border Trail of the Treasury Basis Trade' (Oct 15, 2025). Liberty Street Economics site search for 'clearing repo', 'treasury repo', 'central clearing', 'sponsored' returned no other 2025-26 clearing-specific posts beyond P1.1.",
+    "notes": ""
+   }
+  ],
+  "summary": "All four P1 items correspond to real publications, but three of four URLs are wrong (two federalreserve.gov 404s with mis-slugged/mis-dated paths; TMPG /tmpg/best-practices is a 404) and every 'Data used' line is wholly or partly constructed. P1.1 (Liberty Street, Oct 8 2025, Copeland & Kahn) is exact on title/date/URL but uses OFR cleared-repo data, not FICC/DTCC/MMF filings. P1.2 is real: June 22 2026, Phillip J. Monin, Form PF only (no COT/TIC), figures $4.0trn gross/$3.0trn repo correct, but no cleared-vs-bilateral discussion. P1.3 is real: July 11 2025, Hempel/Kahn/Shephard, built from SEC X-17A-5 FOCUS + 10-K + OFR cleared repo + Fed tri-party data (not FR 2004). P1.4 TMPG white paper is real: consultative Feb 26 2025, final May 22 2025 (PDF TMPG-White-Paper-05222025.pdf), alongside updated Best Practices and FAQs on Treasury repo risk management; evidence base is OFR pilot surveys and working-group discussion, not a TMPG member survey. Five additional verified official items supplied (OFR blog Apr 22 2025, Jan 29 2026, Feb 19 2026, Aug 20 2026; FEDS Note Feb 14 2025), with further index-seen candidates noted. ~23 fetches, all via curl (no bot-blocking encountered); files under scratchpad/d8verify/P1/."
+ },
+ "P2P3": {
+  "section": "P2P3 (lines 146-173): P2 industry publications 2025-26 with data; P3 explicit address of 2026 decline/plateau in sponsored or cleared repo",
+  "rows": [
+   {
+    "label": "P2.1 Clarus Financial Technology \u2014 'CCP Initial Margin and Client Clearing Trends in US Treasury Markets' (claimed March 2026)",
+    "given_url": "https://www.clarusft.com/blog/",
+    "http_status": "200 (blog index); site searches ?s=treasury+clearing 200, ?s=FICC 200",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Blog - Clarus Financial Technology; You searched for treasury clearing - Clarus Financial Technology; You searched for FICC - Clarus Financial Technology",
+    "what_is_actually_there": "No post with the claimed title exists in the blog index or in site searches for 'treasury clearing' and 'FICC'. Blog index (Aug 2026) lists Q2 2026 volume posts and 'Record Q1 2026 CCP IM disclosures'. Nearest real item: 'Record Q1 2026 CCP IM disclosures' by Jon Skinner, published 2026-06-30, https://www.clarusft.com/record-q1-2026-ccp-im-disclosures/ \u2014 uses CPMI-IOSCO PQD via CCPView; notes DTCC GSD counterparty count up 34% YoY to 1,445 'perhaps driven by the expansion of Treasury clearing ahead of the Q2 2027 completion of the SEC mandate'; no FICC sponsored-repo volume analysis. Other real Clarus Treasury-clearing posts are older: 'SEC Clearing Mandate for US Treasuries', 'Central Clearing of US Treasuries', 'Clearing of US Treasuries \u2013 What Are People Saying?', 'What's new in CCP Disclosures \u2014 Q4 2025?'.",
+    "corrected_url": "https://www.clarusft.com/record-q1-2026-ccp-im-disclosures/ (nearest real item, 30 Jun 2026)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P2P3/clarus_blog.html; clarus_search.html; clarus_search2.html; clarus_q1im.html",
+    "notes": "Publisher plausible, title/date/content constructed. Given URL is just the blog index, not an article."
+   },
+   {
+    "label": "P2.2 SIFMA \u2014 'U.S. Treasury and Repo Clearing Done-Away Model Design Considerations and Market Readiness Survey' (claimed Dec 2025)",
+    "given_url": "https://www.sifma.org/resources/general/treasury-clearing-resource-center/",
+    "http_status": "404 (given URL); press release 200; report page 200; pulse survey page 200",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "SIFMA (404 page); 'SIFMA Publishes Done-Away Model Design Considerations - SIFMA'; 'Done-away Model Design Considerations - SIFMA'; 'US Treasury Central Clearing Pulse Survey - SIFMA'",
+    "what_is_actually_there": "The claimed title fuses two separate real SIFMA documents. (a) 'U.S. Treasury and Repo Clearing Done-Away Model Design Considerations' \u2014 SIFMA report with Ernst & Young LLP (EY US), published December 15, 2025 (press release 'SIFMA Publishes US Treasury and Repo Done-Away Model Design Considerations to Guide Industry Transition to Central Clearing', New York, Dec 15, 2025); report page https://www.sifma.org/resources/guides-playbooks/done-away-model-design-considerations ('Done-away Model Design Considerations For US Treasury and Repo Clearing', Published on: December 15, 2025); PDF https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-USTC-Done-Away-Model-Design-Considerations_Dec-2025.pdf. It is a framework/flows document, not a survey, and the co-author is EY, not BNY/Broadridge/DTCC. (b) 'US Treasury Central Clearing Pulse Survey' \u2014 SIFMA, BNY, Broadridge and DTCC in collaboration with The ValueExchange, published November 10, 2025 (survey fielded August 2025, 330 respondents); page https://www.sifma.org/research/white-papers/us-treasury-central-clearing-pulse-survey; PDF https://www.sifma.org/wp-content/uploads/2025/11/VX-2025-10-US-Treasury-Central-Clearing-Key-Findings.pdf. SIFMA's Treasury Clearing issue page is https://www.sifma.org/issues/financial-risk-management/treasury-clearing (200).",
+    "corrected_url": "https://www.sifma.org/resources/guides-playbooks/done-away-model-design-considerations (Dec 15, 2025) and https://www.sifma.org/research/white-papers/us-treasury-central-clearing-pulse-survey (Nov 10, 2025)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P2P3/sifma_pr_doneaway.html; sifma_doneaway_report.html; sifma_pulse.html; sifma_tc_archive.html",
+    "notes": "Publisher and month correct for the design-considerations report; the 'Market Readiness Survey' and 'co-authored with BNY, Broadridge, DTCC' belong to a different Nov 2025 document. Given URL 404."
+   },
+   {
+    "label": "P2.3 ISDA \u2014 'Cross-Margining and Capital Efficiencies in Cleared US Treasuries and Repos' (claimed May 2026)",
+    "given_url": "https://www.isda.org/research/",
+    "http_status": "404 (given URL); site search 200; tag page 200; ISDA-Actrix pages 200",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page not found \u2013 International Swaps and Derivatives Association; Search Results for \u201ccross-margining treasury\u201d \u2013 ISDA; Treasury Clearing \u2013 ISDA (tag page); ISDA Launches ISDA-Actrix US Treasury Repo Market Clearing Indicators \u2013 ISDA; ISDA-Actrix US Treasury Repo Market Clearing Indicators June 2026 \u2013 ISDA",
+    "what_is_actually_there": "No ISDA item with this title; ISDA's treasury-clearing tag shows no paper in May 2026 (only AGM Studio videos 5 and 8 May and a podcast 11 May). Nearest real items: derivatiViews 'A Critical Step to Efficient Treasury Clearing', January 26, 2026, https://www.isda.org/2026/01/26/a-critical-step-to-efficient-treasury-clearing/ (on extending FICC-CME cross-margining to clients); 'Cross-product Netting Under the US Regulatory Capital Framework' (ISDA/FIA/SIFMA, April 4, 2025) with cover note 'Economically Efficient Treasury Clearing: Client Cross-margining and Cross-product netting', PDF https://www.isda.org/a/zBYgE/Economically-Efficient-Treasury-Clearing.pdf; 'ISDA Treasury Forum: Scott O'Malia Opening Remarks' June 11, 2026. A real ISDA data publication the return missed: 'ISDA-Actrix US Treasury Repo Market Clearing Indicators', launched June 10, 2026 (monthly; April 2026 edition Jun 10, May 2026 edition Jun 25, June 2026 edition Jul 27, 2026; methodology Jun 9). June 2026 edition: total cleared repo ADV $6.5trn (+1.2% m/m), sponsored cleared repo $2.5trn = 38.6% of cleared, sponsored bilateral $1.7trn (+3.0%), sponsored triparty $0.8trn (+4.5%), direct cleared $4.0trn (-0.3%). Launch release: April 2026 sponsored $2.4trn (+249% since May 2023), 38% of cleared vs 22% in May 2023. Data: OFR Short-term Funding Monitor, DTCC disclosures, OFR MMF statistics, NY Fed primary dealer statistics. Interactive data page exists per ISDA.",
+    "corrected_url": "https://www.isda.org/2026/06/10/isda-launches-isda-actrix-us-treasury-repo-market-clearing-indicators/ ; https://www.isda.org/2026/07/27/isda-actrix-us-treasury-repo-market-clearing-indicators-june-2026/ (PDF https://www.isda.org/a/v00iE/ISDA-Actrix-US-Treasury-Repo-Market-Clearing-Indicators-June-2026.pdf); https://www.isda.org/2026/01/26/a-critical-step-to-efficient-treasury-clearing/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P2P3/isda_search.html; isda_tag_tc.html; isda_actrix_launch.html; isda_actrix_jun.html",
+    "notes": "Title, date and 'margin simulation models' content constructed; ISDA's real 2026 cross-margining content is commentary (derivatiViews), and its real data series is ISDA-Actrix (Jun 2026 onward), which the return does not cite."
+   },
+   {
+    "label": "P3 \u2014 OFR blog 'Central Clearing in Treasury Repos Plateaued in Q1 2026' (20 Aug 2026)",
+    "given_url": "(no URL given in section)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Central Clearing in Treasury Repos Plateaued in Q1 2026 | Office of Financial Research",
+    "what_is_actually_there": "By Ashlyn Cenicola and Robert Mann, Published: August 20, 2026, https://www.financialresearch.gov/the-ofr-blog/2026/08/20/central-clearing-treasury-repos-plateaued/. Three-sentence summary: (1) OFR finds the share of all Treasury repo centrally cleared peaked at ~53% (and 72% for the in-scope non-affiliate, fixed-term subset) around end-2025, then fell and stabilised at ~46% (62% in-scope) through April 2026, and attributes the Q1 2026 decline mainly to G-SIBs, whose cleared share spiked to 55% in December 2025 and fell back to 45% \u2014 consistent with year-end G-SIB-surcharge balance-sheet management (surcharge measured at year-end; clearing reduces it via netting/lower risk weights), while non-G-SIBs rose steadily from 40% to 55%. (2) It also says market participants 'may still prefer non-centrally cleared repos', money funds clear <50% (FICC's new Collateral-in-Lieu may help), and hedge-fund reverse repo clears far less than hedge-fund repo because of CCP margining practices (negative haircuts) and pre-netted relative-value packages (68% of HF reverse repo netted per OFR Brief 23-01). (3) Data: OFR's cleared repo and NCCBR collections plus Federal Reserve Bank of New York and Bank of New York Mellon (triparty) data, daily from July 1, 2025 to April 23, 2026 (holidays removed), i.e. shares of repo outstanding, not FICC sponsored CSV.",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/2026/08/20/central-clearing-treasury-repos-plateaued/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P2P3/ofr_blog_aug20.html",
+    "notes": "The blog measures cleared share of all Treasury repo (G-SIB driven), not a fall in the FICC sponsored CSV; the section's 'structural explanation' (dealer balance-sheet/spread incentives after SEC Feb 2025 extension; substitution to NCCBR/triparty) omits OFR's named driver \u2014 year-end G-SIB surcharge management."
+   },
+   {
+    "label": "P3 \u2014 Status claim 'DOES NOT EXIST BEYOND THE OFR BLOG' (no other Jan\u2013Aug 2026 publication on decline/plateau in sponsored or cleared repo or CCP migration)",
+    "given_url": "(no URL given)",
+    "http_status": "n/a (searches); TBAC PDF 200; NY Fed speech 200; Risk.net FICC page 200; fi-desk 200; ICE IR 403 (bot block, not pursued)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Central Clearing Implementation May 2026 (TBAC charge PDF); Repo Market Structure and Monetary Policy Implementation - FEDERAL RESERVE BANK of NEW YORK; Fixed Income Clearing Corporation (FICC) news and analysis articles - Risk.net; US Treasury clearing readiness assessed - The DESK",
+    "what_is_actually_there": "Searches run (WebSearch): 'OFR blog Central Clearing in Treasury Repos Plateaued 2026'; 'FICC sponsored repo volumes decline 2026'; 'sponsored repo plateau OR decline OR slowdown Treasury clearing 2026 Risk.net OR Bloomberg OR Reuters OR Finadium'; '\"sponsored repo\" 2026 \"year-end\" drop OR fell OR decline OR plateau FICC clearing G-SIB'; 'risk.net sponsored repo FICC 2026' (risk.net only); 'CME Securities Clearing Treasury repo cleared volumes 2026 ... ICE Clear Credit go-live'; '\"sponsored\" repo FICC volumes 2026 finadium OR securitiesfinancetimes OR bloomberg ... decline OR plateau'; plus clarusft/isda/sifma site searches above. Result: no publication other than the OFR 20 Aug 2026 blog explicitly framing a 2026 decline or plateau in FICC sponsored or cleared Treasury repo was found. What was found is growth-framed: Risk.net Risk Quantum 'FICC-cleared MMF reverse repos hit record high in June' (06 Aug 2026), 'MMF repo with US financials hits high in April' (04 Jun 2026), 'US MMFs clear record 37% of repos through FICC' (2026), 'Clearers face heavy lift on CME-FICC cross-margin service' (11 Jun 2026), 'CME-FICC cross-netting terms fuel clashes' (20 Mar 2026) \u2014 headlines only, paywalled; NY Fed Roberto Perli speech 'Repo Market Structure and Monetary Policy Implementation', July 9, 2026, https://www.newyorkfed.org/newsevents/speeches/2026/per260709 ('significant growth' in FICC Sponsored Service; MMF cleared repo >$1trn); TBAC Charge 1 'Central Clearing Implementation', May 2026, https://home.treasury.gov/system/files/221/TBACCharge1Q22026.pdf (sponsored DVP+GC $2.856trn on Dec 30, 2025, +150% in two years, per DTCC; no 2026 decline discussed; notes SEC approval of CME and ICE as Treasury CCAs and FICC-CME end-user cross-margining approval); ISDA-Actrix indicators (sponsored $2.4trn Apr 2026, $2.5trn Jun 2026, m/m increases; no decline framing); OFR blog 'How Will Central Clearing Impact the Repo Market?' Jan 29, 2026 (context, not a decline piece). On CCP migration: The DESK 'US Treasury clearing readiness assessed' (Aug 23, 2026, https://www.fi-desk.com/us-treasury-clearing-readiness-assessed/) and search results report ICE Clear Credit went live for cash Treasury clearing in Feb 2026 with repo clearing planned for Q4 2026, and CME Securities Clearing go-live slipped from Q2 to Q3 2026 \u2014 so no repo volume could yet have migrated; no publication reporting CCP-to-CCP migration was found.",
+    "corrected_url": "https://www.newyorkfed.org/newsevents/speeches/2026/per260709 ; https://home.treasury.gov/system/files/221/TBACCharge1Q22026.pdf ; https://www.risk.net/organisations/fixed-income-clearing-corporation-ficc ; https://www.fi-desk.com/us-treasury-clearing-readiness-assessed/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/d8verify/P2P3/tbac_charge1_q2_2026.pdf; nyfed_perli_260709.html; risknet_ficc.html; fidesk_readiness.html",
+    "notes": "The 'nothing beyond OFR' status is consistent with what I could find in ~8 searches, but is an absence claim and cannot be proven. Two corrections to the section's 'structural explanation': (i) the absence of competing-CCP volume is because ICE repo clearing and CME Securities Clearing were not yet live for repo (ICE repo Q4 2026; CME Q3 2026), not merely unpublished; (ii) the quoted sponsored figures mix series \u2014 TBAC/DTCC gives $2.856trn at 30 Dec 2025 (not 'USD 3.0trn'), and the $2.4\u20132.5trn mid-2026 figures match ISDA-Actrix sponsored ADV, which is a different measure from FICC's sponsored CSV; I did not verify the CSV series itself (outside this section)."
+   }
+  ],
+  "summary": "P2: of the three industry items, none exists as titled. Clarus item is CONSTRUCTED (no such post; nearest real is 'Record Q1 2026 CCP IM disclosures', Jon Skinner, 30 Jun 2026). SIFMA item is PARTLY_VERIFIED: it fuses the real 'U.S. Treasury and Repo Clearing Done-Away Model Design Considerations' (SIFMA+EY, 15 Dec 2025, guides-playbooks URL) with the separate 'US Treasury Central Clearing Pulse Survey' (SIFMA/BNY/Broadridge/DTCC via ValueExchange, 10 Nov 2025); the given resource-center URL is 404. ISDA item is CONSTRUCTED (no May 2026 paper; real nearest are the 26 Jan 2026 derivatiViews 'A Critical Step to Efficient Treasury Clearing' and the Apr 2025 cross-product netting paper); the return missed ISDA's genuine 2026 data series, the ISDA-Actrix US Treasury Repo Market Clearing Indicators (launched 10 Jun 2026, monthly; Jun 2026: sponsored $2.5trn = 38.6% of $6.5trn cleared ADV). P3: the OFR blog is VERIFIED (Cenicola & Mann, 20 Aug 2026): cleared share of Treasury repo peaked ~53% (72% in-scope) at end-2025, fell to ~46% (62%) in Q1 2026 and plateaued; the decline is concentrated in G-SIBs (55%\u219245%), consistent with year-end G-SIB-surcharge management, plus persistent preference for non-cleared repo (MMFs <50% cleared; HF reverse repo low due to margining/negative haircuts and pre-netted packages); data are OFR cleared/NCCBR collections, NY Fed and BNY Mellon, 1 Jul 2025\u201323 Apr 2026. Eight web searches plus Risk.net, NY Fed (Perli, 9 Jul 2026), TBAC (May 2026), The DESK (23 Aug 2026) and ISDA-Actrix found no other Jan\u2013Aug 2026 publication framing a sponsored/cleared repo decline or plateau \u2014 2026 coverage is growth-framed (Risk.net 'FICC-cleared MMF reverse repos hit record high in June', 6 Aug 2026) \u2014 so the 'does not exist beyond OFR' status holds as far as searched (PARTLY_VERIFIED, absence claim). Corrections: no CCP migration is possible yet because ICE Clear Credit repo clearing (Q4 2026) and CME Securities Clearing (Q3 2026) are not live for repo; the section's 'USD 3.0trn end-2025' vs TBAC/DTCC $2.856trn, and its $2.4\u20132.5trn mid-2026 figures match ISDA-Actrix sponsored ADV rather than FICC sponsored CSV; and the section's explanation omits OFR's named driver (G-SIB year-end surcharge)."
+ }
+}

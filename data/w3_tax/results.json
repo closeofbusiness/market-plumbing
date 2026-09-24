@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "pulled_at": "2026-09-21T06:21Z",
+    "dlog_eps": 1.0613,
+    "dlog_shares_c093": -0.1726,
+    "cik_overrides": {"XOM": "0000034088"}
+  },
+  "coverage": {
+    "n_ok_both_years": 412,
+    "n_of_500": "412/500",
+    "missing_megas": ["AVGO", "ORCL", "PG"],
+    "mcap2015_coverage_ok_over_weighted": 0.9414
+  },
+  "aggregate": {
+    "etr_2015_pct": 27.351253591587298,
+    "etr_2025_pct": 19.615160034310573,
+    "dlog_1m_etr": 0.10118946611559054,
+    "aftertax_multiplier_2015_to_2025": 1.1064862635589936,
+    "denominator_note": "ETR = sum_tax/sum_pretax over n=412 ok firms",
+    "sum_pretax_2015": 1069582800000.0,
+    "sum_tax_2015": 292544304000.0,
+    "sum_pretax_2025": 2528358816000.0,
+    "sum_tax_2025": 495941628000.0
+  },
+  "decomposition": {
+    "dlog_eps": 1.0613,
+    "dlog_1m_etr": 0.10118946611559054,
+    "dlog_shares": -0.1726,
+    "dlog_pretax": 0.7875105338844094,
+    "tax_pct_of_eps_growth": 9.534482814999581,
+    "sum_check": 1.0613
+  },
+  "restatement": {
+    "claim_eps_share_pct_actual": 82.32028574660876,
+    "claim_eps_share_pct_restated": 74.4714722488398
+  },
+  "sanity": {
+    "AAPL": {"etr_2015": 0.2637, "etr_2025": 0.1561, "aftertax_mult": 1.146},
+    "MSFT": {"etr_2015": 0.3412, "etr_2025": 0.1763, "aftertax_mult": 1.250}
+  },
+  "w1_rebalance": {
+    "ceiling_bn": 938.4,
+    "total_rebal_capped_bn": 680.5,
+    "rebal_share_of_ceiling": 0.725,
+    "residual_bn": 257.9
+  }
+}

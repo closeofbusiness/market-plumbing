@@ -1,0 +1,8 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-17T05:34Z	actrix_total_cleared_repo_adv_trn	2026-07	7.8	$trn ADV	ISDA-Actrix July 2026 (PDF + isda.org 2026-09-15 post); Methodology_Updated.pdf	revised methodology (Sponsored GC add); −2.5% m/m vs revised June
+2026-09-17T05:34Z	actrix_sponsored_cleared_repo_adv_trn	2026-07	2.4	$trn ADV	ISDA-Actrix July 2026 (bilateral 1.7 + triparty 0.8)	31.1% of total cleared; −3.1% m/m; plateau holds vs ~2.5 revised June
+2026-09-17T05:34Z	actrix_direct_cleared_repo_adv_trn	2026-07	5.4	$trn ADV	ISDA-Actrix July 2026 (typically dealers / direct CM)	−2.3% m/m vs revised June
+2026-09-17T05:34Z	actrix_sponsored_share_of_cleared_pct	2026-07	31.1	%	ISDA-Actrix July 2026	denominator = total cleared repo ADV; revised series
+2026-09-17T05:34Z	actrix_total_cleared_repo_adv_trn	2026-06	8.0	$trn ADV	ISDA-Actrix July 2026 page (implied from July 7.8 and −2.5% m/m); restated	SUPERSEDES 6.5 row (2026-08-23); methodology revision Sep 2026
+2026-09-17T05:34Z	actrix_sponsored_cleared_repo_adv_trn	2026-06	2.5	$trn ADV	ISDA-Actrix July 2026 page (implied from July 2.4 and −3.1% m/m); restated	~31% of revised total; absolute near prior 2.5 calendar print
+2026-09-17T05:34Z	actrix_direct_cleared_repo_adv_trn	2026-06	5.5	$trn ADV	ISDA-Actrix July 2026 page (implied from July 5.4 and −2.3% m/m); restated	SUPERSEDES 4.0 row (2026-08-23); methodology revision Sep 2026

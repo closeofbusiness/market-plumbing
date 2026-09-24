@@ -1,0 +1,52 @@
+{
+  "vintage": "2026-08-31",
+  "source_file": "data/vintages/nmfp3/nmfp3_ALL_positions_2026-08-31_pulled_2026-09-11.csv.gz",
+  "method": "aggregate issuer×category file — FLOOR vs D2 filing-by-filing census; does not capture repo-collateral name fields",
+  "grand_total_usd": 116393293.35,
+  "grand_total_bn": 0.116,
+  "labels": {
+    "AMAZON": {
+      "total": 99959300.0,
+      "by_category": {
+        "Non-Financial Company Commercial Paper": 99959300.0
+      }
+    },
+    "APPLE": {
+      "total": 12281070.3,
+      "by_category": {
+        "Non-Financial Company Commercial Paper": 12281070.3
+      }
+    },
+    "MICROSOFT": {
+      "total": 4152923.05,
+      "by_category": {
+        "Other Instrument": 4152923.05
+      }
+    }
+  },
+  "n_lines": 3,
+  "d2_comparison": {
+    "d2_direct_cp_bn": 0.26,
+    "d2_repo_collateral_bn": 4.0,
+    "note": "This aggregate refresh will undercount collateral-side names; do not replace D2 $4bn with this floor."
+  },
+  "names_searched_23sep": [
+    "Alphabet/Google",
+    "Amazon",
+    "Apple",
+    "Meta",
+    "Microsoft",
+    "NVIDIA",
+    "Oracle",
+    "CoreWeave",
+    "Broadcom",
+    "AMD",
+    "Tesla"
+  ],
+  "names_found": [
+    "Amazon",
+    "Apple",
+    "Microsoft"
+  ],
+  "cik_note": "The cik column is not the issuer's CIK: Amazon and Apple both carry 1352280, and two issuers cannot share one. Relabelled 23 Sep."
+}

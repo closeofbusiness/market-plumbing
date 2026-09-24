@@ -1,0 +1,153 @@
+period,sector,role,series_code,quarters_n,sum_flow_bn,start_level_bn,end_level_bn,delta_level_bn,sum_reval_bn,rank_buyer,net_seller
+2015-19,All sectors,total,FU893064105.Q,20,-396.339,37131.603,53325.518,16193.915,16590.254,,
+2015-19,Nonfinancial corporate business,issuer,FU103164105.Q,20,-2243.959,25317.731,35066.413,9748.682,11992.641,,
+2015-19,Domestic financial sectors,issuer,FU793164105.Q,20,1167.492,6337.905,10179.294,3841.389,2673.897,,
+2015-19,U.S.-chartered depository institutions,issuer_detail,FU763164105.Q,20,0.798,67.517,125.869,58.352,57.554,,
+2015-19,Property-casualty insurance companies,issuer_detail,FU513164105.Q,20,-66.559,638.056,896.564,258.508,325.067,,
+2015-19,"Life insurance companies, general accounts",issuer_detail,FU543164175.Q,20,-63.288,210.584,211.664,1.08,64.368,,
+2015-19,Closed-end funds,issuer_detail,FU554090005.Q,20,11.117,291.613,278.674,-12.939,-24.056,,
+2015-19,Exchange-traded funds,issuer_detail,FU564090005.Q,20,1619.603,1974.551,4396.207,2421.656,802.053,,
+2015-19,Government-sponsored enterprises,issuer_detail,FU403164105.Q,20,4.021,102.154,116.91,14.756,10.735,,
+2015-19,Mortgage real estate investment trusts,issuer_detail,FU643164105.Q,20,5.448,76.383,90.094,13.711,8.263,,
+2015-19,Business development companies,issuer_detail,FU453164105.Q,20,27.982,48.607,64.553,15.946,-12.036,,
+2015-19,Interval funds and tender offer funds,issuer_detail,FU463164105.Q,20,0.0,0.0,0.0,0.0,0.0,,
+2015-19,Security brokers and dealers,issuer_detail,FU663164105.Q,20,29.04,87.502,99.709,12.207,-16.833,,
+2015-19,Holding companies,issuer_detail,FU733164105.Q,20,-379.711,2158.173,2600.01,441.837,821.548,,
+2015-19,Other financial business,issuer_detail,FU503164105.Q,20,-20.959,682.765,1299.04,616.275,637.234,,
+2015-19,Rest of the world,issuer,FU263164105.Q,20,680.128,5475.967,8079.811,2603.844,1923.716,,
+2015-19,Households and nonprofit organizations,holder,FU153064105.Q,20,216.475,13269.181,19536.497,6267.316,6050.841,2,False
+2015-19,Nonfinancial corporate business,holder,FU103064103.Q,20,-95.506,1553.751,2317.738,763.987,859.493,18,True
+2015-19,Federal government,holder,FU313064105.Q,20,2.781,99.506,110.751,11.245,8.464,7,False
+2015-19,State and local governments,holder,FU213064103.Q,20,-35.149,102.064,120.392,18.328,53.477,14,True
+2015-19,Central bank,holder,FU713064103.Q,20,0.0,0.0,0.0,0.0,0.0,8,False
+2015-19,U.S.-chartered depository institutions,holder,FU763064103.Q,20,-3.603,37.995,43.521,5.526,9.129,12,True
+2015-19,Foreign banking offices in the U.S.,holder,FU753064103.Q,20,-0.003,0.003,0.0,-0.003,0.0,11,True
+2015-19,Property-casualty insurance companies,holder,FU513064105.Q,20,29.494,341.932,493.89,151.958,122.464,4,False
+2015-19,Life insurance companies,holder,FU543064105.Q,20,-51.243,571.447,682.855,111.408,162.651,15,True
+2015-19,"Private pension funds, including 403(b) plans",holder,FU573064105.Q,20,-357.752,2034.072,2669.072,635.0,992.752,20,True
+2015-19,Federal government pension funds,holder,FU343064105.Q,20,-25.734,240.154,370.695,130.541,156.275,13,True
+2015-19,State and local government employee defined benefit pension funds,holder,FU223064145.Q,20,-136.354,1926.387,2555.232,628.845,765.199,19,True
+2015-19,Mutual funds,holder,FU653064100.Q,20,-527.455,8799.214,11934.519,3135.305,3662.76,22,True
+2015-19,Closed-end funds,holder,FU553064103.Q,20,2.998,119.384,107.181,-12.203,-15.201,6,False
+2015-19,Exchange-traded funds,holder,FU563064100.Q,20,1076.594,1619.032,3476.225,1857.193,780.599,1,False
+2015-19,Business development companies,holder,FU453064103.Q,20,4.101,9.196,11.89,2.694,-1.407,5,False
+2015-19,Interval funds and tender offer funds,holder,FU463064105.Q,20,0.0,0.0,0.0,0.0,0.0,9,False
+2015-19,Hedge funds (domestic),holder,FU623064105.Q,20,-66.995,440.186,591.295,151.109,218.104,17,True
+2015-19,Private debt funds,holder,FU443064100.Q,20,30.88,38.812,64.469,25.657,-5.223,3,False
+2015-19,Security brokers and dealers,holder,FU663064105.Q,20,-66.484,132.928,110.277,-22.651,43.833,16,True
+2015-19,Other financial business,holder,FU503064105.Q,20,0.0,0.0,0.0,0.0,0.0,10,False
+2015-19,Rest of the world,holder,FU263064105.Q,20,-393.384,5796.359,8129.019,2332.66,2726.044,21,True
+2020-21,All sectors,total,FU893064105.Q,8,1700.77,53325.518,79604.376,26278.858,24578.088,,
+2020-21,Nonfinancial corporate business,issuer,FU103164105.Q,8,-128.218,35066.413,54276.033,19209.62,19337.838,,
+2020-21,Domestic financial sectors,issuer,FU793164105.Q,8,1309.162,10179.294,15053.863,4874.569,3565.407,,
+2020-21,U.S.-chartered depository institutions,issuer_detail,FU763164105.Q,8,4.19,125.869,172.35,46.481,42.291,,
+2020-21,Property-casualty insurance companies,issuer_detail,FU513164105.Q,8,-13.115,896.564,1024.238,127.674,140.789,,
+2020-21,"Life insurance companies, general accounts",issuer_detail,FU543164175.Q,8,-40.551,211.664,239.296,27.632,68.183,,
+2020-21,Closed-end funds,issuer_detail,FU554090005.Q,8,19.79,278.674,303.861,25.187,5.397,,
+2020-21,Exchange-traded funds,issuer_detail,FU564090005.Q,8,1436.365,4396.207,7190.515,2794.308,1357.943,,
+2020-21,Government-sponsored enterprises,issuer_detail,FU403164105.Q,8,0.256,116.91,224.185,107.275,107.019,,
+2020-21,Mortgage real estate investment trusts,issuer_detail,FU643164105.Q,8,-1.31,90.094,83.35,-6.744,-5.434,,
+2020-21,Business development companies,issuer_detail,FU453164105.Q,8,32.452,64.553,98.268,33.715,1.263,,
+2020-21,Interval funds and tender offer funds,issuer_detail,FU463164105.Q,8,0.0,0.0,84.201,84.201,84.201,,
+2020-21,Security brokers and dealers,issuer_detail,FU663164105.Q,8,10.82,99.709,123.785,24.076,13.256,,
+2020-21,Holding companies,issuer_detail,FU733164105.Q,8,-128.272,2600.01,3065.085,465.075,593.347,,
+2020-21,Other financial business,issuer_detail,FU503164105.Q,8,-11.463,1299.04,2444.729,1145.689,1157.152,,
+2020-21,Rest of the world,issuer,FU263164105.Q,8,519.826,8079.811,10274.48,2194.669,1674.843,,
+2020-21,Households and nonprofit organizations,holder,FU153064105.Q,8,2033.367,19536.497,30966.438,11429.941,9396.574,1,False
+2020-21,Nonfinancial corporate business,holder,FU103064103.Q,8,-237.364,2317.738,3144.897,827.159,1064.523,20,True
+2020-21,Federal government,holder,FU313064105.Q,8,0.0,110.751,221.452,110.701,110.701,8,False
+2020-21,State and local governments,holder,FU213064103.Q,8,-53.188,120.392,123.036,2.644,55.832,15,True
+2020-21,Central bank,holder,FU713064103.Q,8,0.0,0.0,0.0,0.0,0.0,9,False
+2020-21,U.S.-chartered depository institutions,holder,FU763064103.Q,8,5.335,43.521,60.401,16.88,11.545,7,False
+2020-21,Foreign banking offices in the U.S.,holder,FU753064103.Q,8,0.0,0.0,0.0,0.0,0.0,10,False
+2020-21,Property-casualty insurance companies,holder,FU513064105.Q,8,-20.102,493.89,641.877,147.987,168.089,14,True
+2020-21,Life insurance companies,holder,FU543064105.Q,8,-79.966,682.855,809.307,126.452,206.418,16,True
+2020-21,"Private pension funds, including 403(b) plans",holder,FU573064105.Q,8,-301.058,2669.072,3551.317,882.245,1183.303,21,True
+2020-21,Federal government pension funds,holder,FU343064105.Q,8,-13.661,370.695,524.006,153.311,166.972,13,True
+2020-21,State and local government employee defined benefit pension funds,holder,FU223064145.Q,8,-214.857,2555.232,3362.679,807.447,1022.304,19,True
+2020-21,Mutual funds,holder,FU653064100.Q,8,-795.926,11934.519,15533.811,3599.292,4395.218,22,True
+2020-21,Closed-end funds,holder,FU553064103.Q,8,9.672,107.181,122.695,15.514,5.842,5,False
+2020-21,Exchange-traded funds,holder,FU563064100.Q,8,991.812,3476.225,5803.329,2327.104,1335.292,2,False
+2020-21,Business development companies,holder,FU453064103.Q,8,6.912,11.89,21.451,9.561,2.649,6,False
+2020-21,Interval funds and tender offer funds,holder,FU463064105.Q,8,0.0,0.0,42.288,42.288,42.288,11,False
+2020-21,Hedge funds (domestic),holder,FU623064105.Q,8,-101.281,591.295,760.352,169.057,270.338,18,True
+2020-21,Private debt funds,holder,FU443064100.Q,8,32.361,64.469,111.254,46.785,14.424,4,False
+2020-21,Security brokers and dealers,holder,FU663064105.Q,8,-99.148,110.277,105.598,-4.679,94.469,17,True
+2020-21,Other financial business,holder,FU503064105.Q,8,-0.0,0.0,0.0,0.0,0.0,12,True
+2020-21,Rest of the world,holder,FU263064105.Q,8,537.862,8129.019,13698.188,5569.169,5031.307,3,False
+2022-23,All sectors,total,FU893064105.Q,8,269.492,79604.376,76767.801,-2836.575,-3106.067,,
+2022-23,Nonfinancial corporate business,issuer,FU103164105.Q,8,-1155.666,54276.033,51751.514,-2524.519,-1368.853,,
+2022-23,Domestic financial sectors,issuer,FU793164105.Q,8,1084.653,15053.863,15434.636,380.773,-703.88,,
+2022-23,U.S.-chartered depository institutions,issuer_detail,FU763164105.Q,8,8.795,172.35,98.743,-73.607,-82.402,,
+2022-23,Property-casualty insurance companies,issuer_detail,FU513164105.Q,8,-27.945,1024.238,1153.421,129.183,157.128,,
+2022-23,"Life insurance companies, general accounts",issuer_detail,FU543164175.Q,8,-54.338,239.296,255.013,15.717,70.055,,
+2022-23,Closed-end funds,issuer_detail,FU554090005.Q,8,-1.406,303.861,250.271,-53.59,-52.184,,
+2022-23,Exchange-traded funds,issuer_detail,FU564090005.Q,8,1206.782,7190.515,8085.698,895.183,-311.599,,
+2022-23,Government-sponsored enterprises,issuer_detail,FU403164105.Q,8,0.0,224.185,258.904,34.719,34.719,,
+2022-23,Mortgage real estate investment trusts,issuer_detail,FU643164105.Q,8,-6.399,83.35,66.24,-17.11,-10.711,,
+2022-23,Business development companies,issuer_detail,FU453164105.Q,8,66.519,98.268,162.505,64.237,-2.282,,
+2022-23,Interval funds and tender offer funds,issuer_detail,FU463164105.Q,8,43.166,84.201,131.738,47.537,4.371,,
+2022-23,Security brokers and dealers,issuer_detail,FU663164105.Q,8,5.512,123.785,105.347,-18.438,-23.95,,
+2022-23,Holding companies,issuer_detail,FU733164105.Q,8,-150.194,3065.085,2626.572,-438.513,-288.319,,
+2022-23,Other financial business,issuer_detail,FU503164105.Q,8,-5.839,2444.729,2240.184,-204.545,-198.706,,
+2022-23,Rest of the world,issuer,FU263164105.Q,8,340.505,10274.48,9581.651,-692.829,-1033.334,,
+2022-23,Households and nonprofit organizations,holder,FU153064105.Q,8,1044.298,30966.438,30370.239,-596.199,-1640.497,1,False
+2022-23,Nonfinancial corporate business,holder,FU103064103.Q,8,-223.338,3144.897,2913.842,-231.055,-7.717,20,True
+2022-23,Federal government,holder,FU313064105.Q,8,0.0,221.452,255.208,33.756,33.756,11,False
+2022-23,State and local governments,holder,FU213064103.Q,8,7.68,123.036,134.43,11.394,3.714,7,False
+2022-23,Central bank,holder,FU713064103.Q,8,0.0,0.0,0.0,0.0,0.0,12,False
+2022-23,U.S.-chartered depository institutions,holder,FU763064103.Q,8,0.653,60.401,59.717,-0.684,-1.337,9,False
+2022-23,Foreign banking offices in the U.S.,holder,FU753064103.Q,8,0.0,0.0,0.0,0.0,0.0,13,False
+2022-23,Property-casualty insurance companies,holder,FU513064105.Q,8,-66.148,641.877,596.349,-45.528,20.62,15,True
+2022-23,Life insurance companies,holder,FU543064105.Q,8,-105.225,809.307,695.948,-113.359,-8.134,18,True
+2022-23,"Private pension funds, including 403(b) plans",holder,FU573064105.Q,8,-88.16,3551.317,3410.205,-141.112,-52.952,17,True
+2022-23,Federal government pension funds,holder,FU343064105.Q,8,5.78,524.006,534.457,10.451,4.671,8,False
+2022-23,State and local government employee defined benefit pension funds,holder,FU223064145.Q,8,-275.049,3362.679,3223.029,-139.65,135.399,21,True
+2022-23,Mutual funds,holder,FU653064100.Q,8,-705.823,15533.811,13882.105,-1651.706,-945.883,22,True
+2022-23,Closed-end funds,holder,FU553064103.Q,8,0.185,122.695,99.77,-22.925,-23.11,10,False
+2022-23,Exchange-traded funds,holder,FU563064100.Q,8,816.237,5803.329,6433.413,630.084,-186.153,2,False
+2022-23,Business development companies,holder,FU453064103.Q,8,9.187,21.451,30.309,8.858,-0.329,6,False
+2022-23,Interval funds and tender offer funds,holder,FU463064105.Q,8,12.881,42.288,60.612,18.324,5.443,4,False
+2022-23,Hedge funds (domestic),holder,FU623064105.Q,8,-118.236,760.352,622.921,-137.431,-19.195,19,True
+2022-23,Private debt funds,holder,FU443064100.Q,8,18.912,111.254,128.243,16.989,-1.923,3,False
+2022-23,Security brokers and dealers,holder,FU663064105.Q,8,11.487,105.598,116.104,10.506,-0.981,5,False
+2022-23,Other financial business,holder,FU503064105.Q,8,0.0,0.0,0.0,0.0,0.0,14,False
+2022-23,Rest of the world,holder,FU263064105.Q,8,-75.829,13698.188,13200.9,-497.288,-421.459,16,True
+2024-latest,All sectors,total,FU893064105.Q,10,3243.113,76767.801,123687.233,46919.432,43676.319,,
+2024-latest,Nonfinancial corporate business,issuer,FU103164105.Q,10,-540.713,51751.514,83050.847,31299.333,31840.046,,
+2024-latest,Domestic financial sectors,issuer,FU793164105.Q,10,3401.586,15434.636,26193.848,10759.212,7357.626,,
+2024-latest,U.S.-chartered depository institutions,issuer_detail,FU763164105.Q,10,-14.884,98.743,133.029,34.286,49.17,,
+2024-latest,Property-casualty insurance companies,issuer_detail,FU513164105.Q,10,-35.081,1153.421,1584.325,430.904,465.985,,
+2024-latest,"Life insurance companies, general accounts",issuer_detail,FU543164175.Q,10,-68.785,255.013,299.582,44.569,113.354,,
+2024-latest,Closed-end funds,issuer_detail,FU554090005.Q,10,-0.741,250.271,266.715,16.444,17.185,,
+2024-latest,Exchange-traded funds,issuer_detail,FU564090005.Q,10,3603.814,8085.698,15702.34,7616.642,4012.828,,
+2024-latest,Government-sponsored enterprises,issuer_detail,FU403164105.Q,10,0.119,258.904,456.788,197.884,197.765,,
+2024-latest,Mortgage real estate investment trusts,issuer_detail,FU643164105.Q,10,9.948,66.24,78.864,12.624,2.676,,
+2024-latest,Business development companies,issuer_detail,FU453164105.Q,10,133.885,162.505,283.819,121.314,-12.571,,
+2024-latest,Interval funds and tender offer funds,issuer_detail,FU463164105.Q,10,90.776,131.738,264.362,132.624,41.848,,
+2024-latest,Security brokers and dealers,issuer_detail,FU663164105.Q,10,-4.034,105.347,235.084,129.737,133.771,,
+2024-latest,Holding companies,issuer_detail,FU733164105.Q,10,-343.768,2626.572,4457.227,1830.655,2174.423,,
+2024-latest,Other financial business,issuer_detail,FU503164105.Q,10,30.337,2240.184,2431.713,191.529,161.192,,
+2024-latest,Rest of the world,issuer,FU263164105.Q,10,382.24,9581.651,14442.538,4860.887,4478.647,,
+2024-latest,Households and nonprofit organizations,holder,FU153064105.Q,10,3069.407,30370.239,52119.174,21748.935,18679.528,1,False
+2024-latest,Nonfinancial corporate business,holder,FU103064103.Q,10,-582.724,2913.842,3866.853,953.011,1535.735,21,True
+2024-latest,Federal government,holder,FU313064105.Q,10,16.597,255.208,512.682,257.474,240.877,6,False
+2024-latest,State and local governments,holder,FU213064103.Q,10,-52.371,134.43,149.447,15.017,67.388,16,True
+2024-latest,Central bank,holder,FU713064103.Q,10,0.0,0.0,0.0,0.0,0.0,9,False
+2024-latest,U.S.-chartered depository institutions,holder,FU763064103.Q,10,14.243,59.717,102.471,42.754,28.511,8,False
+2024-latest,Foreign banking offices in the U.S.,holder,FU753064103.Q,10,0.0,0.0,0.0,0.0,0.0,10,False
+2024-latest,Property-casualty insurance companies,holder,FU513064105.Q,10,-185.036,596.349,682.849,86.5,271.536,18,True
+2024-latest,Life insurance companies,holder,FU543064105.Q,10,-193.992,695.948,861.396,165.448,359.44,19,True
+2024-latest,"Private pension funds, including 403(b) plans",holder,FU573064105.Q,10,-27.702,3410.205,5333.402,1923.197,1950.899,14,True
+2024-latest,Federal government pension funds,holder,FU343064105.Q,10,-67.787,534.457,780.298,245.841,313.628,17,True
+2024-latest,State and local government employee defined benefit pension funds,holder,FU223064145.Q,10,-463.892,3223.029,4065.798,842.769,1306.661,20,True
+2024-latest,Mutual funds,holder,FU653064100.Q,10,-2008.957,13882.105,18621.486,4739.381,6748.338,22,True
+2024-latest,Closed-end funds,holder,FU553064103.Q,10,-0.502,99.77,122.775,23.005,23.507,12,True
+2024-latest,Exchange-traded funds,holder,FU563064100.Q,10,2460.875,6433.413,12797.403,6363.99,3903.115,2,False
+2024-latest,Business development companies,holder,FU453064103.Q,10,15.717,30.309,46.084,15.775,0.058,7,False
+2024-latest,Interval funds and tender offer funds,holder,FU463064105.Q,10,47.102,60.612,149.217,88.605,41.503,5,False
+2024-latest,Hedge funds (domestic),holder,FU623064105.Q,10,-51.152,622.921,906.166,283.245,334.397,15,True
+2024-latest,Private debt funds,holder,FU443064100.Q,10,48.947,128.243,177.619,49.376,0.429,4,False
+2024-latest,Security brokers and dealers,holder,FU663064105.Q,10,-9.544,116.104,181.446,65.342,74.886,13,True
+2024-latest,Other financial business,holder,FU503064105.Q,10,0.0,0.0,0.0,0.0,0.0,11,False
+2024-latest,Rest of the world,holder,FU263064105.Q,10,1213.884,13200.9,22210.667,9009.767,7795.883,3,False

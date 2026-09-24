@@ -1,0 +1,1749 @@
+quarter,sector,role,flow_bn,level_bn,reval_bn,series_code
+2015:Q1,All sectors,total,132.54,37714.14,449.997,FU893064105.Q
+2015:Q1,Nonfinancial corporate business,issuer,-120.778,25491.764,294.811,FU103164105.Q
+2015:Q1,Domestic financial sectors,issuer,63.704,6377.964,-23.645,FU793164105.Q
+2015:Q1,U.S.-chartered depository institutions,issuer_detail,3.023,70.045,-0.495,FU763164105.Q
+2015:Q1,Property-casualty insurance companies,issuer_detail,-4.005,625.963,-8.088,FU513164105.Q
+2015:Q1,"Life insurance companies, general accounts",issuer_detail,-5.386,192.974,-12.224,FU543164175.Q
+2015:Q1,Closed-end funds,issuer_detail,0.849,291.885,-0.577,FU554090005.Q
+2015:Q1,Exchange-traded funds,issuer_detail,55.565,2063.204,33.088,FU564090005.Q
+2015:Q1,Government-sponsored enterprises,issuer_detail,0.0,105.167,3.013,FU403164105.Q
+2015:Q1,Mortgage real estate investment trusts,issuer_detail,-0.454,76.873,0.944,FU643164105.Q
+2015:Q1,Business development companies,issuer_detail,2.683,51.073,-0.217,FU453164105.Q
+2015:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2015:Q1,Security brokers and dealers,issuer_detail,0.908,91.722,3.312,FU663164105.Q
+2015:Q1,Holding companies,issuer_detail,12.244,2062.507,-107.91,FU733164105.Q
+2015:Q1,Other financial business,issuer_detail,-1.723,746.551,65.509,FU503164105.Q
+2015:Q1,Rest of the world,issuer,189.614,5844.412,178.831,FU263164105.Q
+2015:Q1,Households and nonprofit organizations,holder,66.914,13414.958,78.863,FU153064105.Q
+2015:Q1,Nonfinancial corporate business,holder,-10.756,1549.779,6.784,FU103064103.Q
+2015:Q1,Federal government,holder,-0.553,101.529,2.576,FU313064105.Q
+2015:Q1,State and local governments,holder,2.259,105.671,1.348,FU213064103.Q
+2015:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2015:Q1,U.S.-chartered depository institutions,holder,-0.439,37.766,0.21,FU763064103.Q
+2015:Q1,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2015:Q1,Property-casualty insurance companies,holder,-0.115,336.835,-4.982,FU513064105.Q
+2015:Q1,Life insurance companies,holder,-5.782,570.862,5.197,FU543064105.Q
+2015:Q1,"Private pension funds, including 403(b) plans",holder,-24.405,2036.534,26.867,FU573064105.Q
+2015:Q1,Federal government pension funds,holder,1.324,247.891,6.413,FU343064105.Q
+2015:Q1,State and local government employee defined benefit pension funds,holder,10.761,1973.364,36.216,FU223064145.Q
+2015:Q1,Mutual funds,holder,50.642,9061.589,211.733,FU653064100.Q
+2015:Q1,Closed-end funds,holder,0.355,118.659,-1.08,FU553064103.Q
+2015:Q1,Exchange-traded funds,holder,32.014,1682.805,31.759,FU563064100.Q
+2015:Q1,Business development companies,holder,0.261,9.641,0.184,FU453064103.Q
+2015:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2015:Q1,Hedge funds (domestic),holder,25.062,471.062,5.814,FU623064105.Q
+2015:Q1,Private debt funds,holder,0.821,40.41,0.777,FU443064100.Q
+2015:Q1,Security brokers and dealers,holder,-30.576,104.107,1.755,FU663064105.Q
+2015:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2015:Q1,Rest of the world,holder,14.753,5850.675,39.563,FU263064105.Q
+2015:Q2,All sectors,total,31.359,37707.648,-37.851,FU893064105.Q
+2015:Q2,Nonfinancial corporate business,issuer,-102.237,25183.247,-206.28,FU103164105.Q
+2015:Q2,Domestic financial sectors,issuer,41.148,6541.744,122.632,FU793164105.Q
+2015:Q2,U.S.-chartered depository institutions,issuer_detail,0.523,75.8,5.232,FU763164105.Q
+2015:Q2,Property-casualty insurance companies,issuer_detail,-4.6,598.492,-22.871,FU513164105.Q
+2015:Q2,"Life insurance companies, general accounts",issuer_detail,-0.95,203.675,11.651,FU543164175.Q
+2015:Q2,Closed-end funds,issuer_detail,0.897,285.683,-7.099,FU554090005.Q
+2015:Q2,Exchange-traded funds,issuer_detail,41.485,2083.14,-21.549,FU564090005.Q
+2015:Q2,Government-sponsored enterprises,issuer_detail,0.0,107.777,2.61,FU403164105.Q
+2015:Q2,Mortgage real estate investment trusts,issuer_detail,3.747,73.537,-7.083,FU643164105.Q
+2015:Q2,Business development companies,issuer_detail,1.953,52.713,-0.313,FU453164105.Q
+2015:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2015:Q2,Security brokers and dealers,issuer_detail,-1.418,91.555,1.251,FU663164105.Q
+2015:Q2,Holding companies,issuer_detail,0.503,2199.224,136.214,FU733164105.Q
+2015:Q2,Other financial business,issuer_detail,-0.992,770.148,24.589,FU503164105.Q
+2015:Q2,Rest of the world,issuer,92.448,5982.657,45.797,FU263164105.Q
+2015:Q2,Households and nonprofit organizations,holder,4.942,13464.209,44.309,FU153064105.Q
+2015:Q2,Nonfinancial corporate business,holder,-10.731,1535.465,-3.583,FU103064103.Q
+2015:Q2,Federal government,holder,-0.515,103.678,2.664,FU313064105.Q
+2015:Q2,State and local governments,holder,-2.259,103.039,-0.373,FU213064103.Q
+2015:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2015:Q2,U.S.-chartered depository institutions,holder,0.774,38.214,-0.326,FU763064103.Q
+2015:Q2,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2015:Q2,Property-casualty insurance companies,holder,-0.799,333.691,-2.345,FU513064105.Q
+2015:Q2,Life insurance companies,holder,-3.459,568.769,1.366,FU543064105.Q
+2015:Q2,"Private pension funds, including 403(b) plans",holder,-9.582,2019.759,-7.193,FU573064105.Q
+2015:Q2,Federal government pension funds,holder,-1.282,247.362,0.753,FU343064105.Q
+2015:Q2,State and local government employee defined benefit pension funds,holder,7.455,1973.195,-7.624,FU223064145.Q
+2015:Q2,Mutual funds,holder,57.66,9118.14,-1.109,FU653064100.Q
+2015:Q2,Closed-end funds,holder,0.668,115.978,-3.349,FU553064103.Q
+2015:Q2,Exchange-traded funds,holder,40.955,1708.049,-15.711,FU563064100.Q
+2015:Q2,Business development companies,holder,0.314,10.088,0.133,FU453064103.Q
+2015:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2015:Q2,Hedge funds (domestic),holder,-9.681,459.717,-1.664,FU623064105.Q
+2015:Q2,Private debt funds,holder,-1.043,39.924,0.557,FU443064100.Q
+2015:Q2,Security brokers and dealers,holder,-1.469,102.27,-0.368,FU663064105.Q
+2015:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2015:Q2,Rest of the world,holder,-40.589,5766.098,-43.988,FU263064105.Q
+2015:Q3,All sectors,total,-191.235,34576.68,-2939.733,FU893064105.Q
+2015:Q3,Nonfinancial corporate business,issuer,-155.776,23279.205,-1748.266,FU103164105.Q
+2015:Q3,Domestic financial sectors,issuer,23.529,6044.021,-521.252,FU793164105.Q
+2015:Q3,U.S.-chartered depository institutions,issuer_detail,0.526,72.633,-3.693,FU763164105.Q
+2015:Q3,Property-casualty insurance companies,issuer_detail,-6.431,581.705,-10.356,FU513164105.Q
+2015:Q3,"Life insurance companies, general accounts",issuer_detail,-2.042,178.407,-23.226,FU543164175.Q
+2015:Q3,Closed-end funds,issuer_detail,0.58,267.016,-19.247,FU554090005.Q
+2015:Q3,Exchange-traded funds,issuer_detail,43.163,1955.834,-170.469,FU564090005.Q
+2015:Q3,Government-sponsored enterprises,issuer_detail,0.0,110.426,2.649,FU403164105.Q
+2015:Q3,Mortgage real estate investment trusts,issuer_detail,-1.696,70.698,-1.143,FU643164105.Q
+2015:Q3,Business development companies,issuer_detail,1.208,52.244,-1.677,FU453164105.Q
+2015:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2015:Q3,Security brokers and dealers,issuer_detail,1.129,75.897,-16.787,FU663164105.Q
+2015:Q3,Holding companies,issuer_detail,-12.6,1981.784,-204.84,FU733164105.Q
+2015:Q3,Other financial business,issuer_detail,-0.308,697.377,-72.463,FU503164105.Q
+2015:Q3,Rest of the world,issuer,-58.988,5253.454,-670.215,FU263164105.Q
+2015:Q3,Households and nonprofit organizations,holder,-227.337,12373.134,-863.738,FU153064105.Q
+2015:Q3,Nonfinancial corporate business,holder,-9.987,1418.991,-106.487,FU103064103.Q
+2015:Q3,Federal government,holder,-0.024,106.426,2.772,FU313064105.Q
+2015:Q3,State and local governments,holder,6.777,101.854,-7.962,FU213064103.Q
+2015:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2015:Q3,U.S.-chartered depository institutions,holder,0.816,35.474,-3.556,FU763064103.Q
+2015:Q3,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2015:Q3,Property-casualty insurance companies,holder,2.623,319.433,-16.881,FU513064105.Q
+2015:Q3,Life insurance companies,holder,26.533,556.672,-38.63,FU543064105.Q
+2015:Q3,"Private pension funds, including 403(b) plans",holder,-20.277,1843.399,-156.083,FU573064105.Q
+2015:Q3,Federal government pension funds,holder,0.115,227.651,-19.826,FU343064105.Q
+2015:Q3,State and local government employee defined benefit pension funds,holder,47.558,1847.391,-173.362,FU223064145.Q
+2015:Q3,Mutual funds,holder,9.407,8282.557,-844.99,FU653064100.Q
+2015:Q3,Closed-end funds,holder,0.416,101.407,-14.987,FU553064103.Q
+2015:Q3,Exchange-traded funds,holder,21.849,1566.838,-163.06,FU563064100.Q
+2015:Q3,Business development companies,holder,0.28,9.768,-0.6,FU453064103.Q
+2015:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2015:Q3,Hedge funds (domestic),holder,-7.835,416.356,-35.526,FU623064105.Q
+2015:Q3,Private debt funds,holder,1.465,39.014,-2.375,FU443064100.Q
+2015:Q3,Security brokers and dealers,holder,-24.367,70.0,-7.903,FU663064105.Q
+2015:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2015:Q3,Rest of the world,holder,-19.247,5260.312,-486.539,FU263064105.Q
+2015:Q4,All sectors,total,-67.632,36088.148,1579.1,FU893064105.Q
+2015:Q4,Nonfinancial corporate business,issuer,-127.388,24346.537,1194.72,FU103164105.Q
+2015:Q4,Domestic financial sectors,issuer,76.821,6275.201,154.359,FU793164105.Q
+2015:Q4,U.S.-chartered depository institutions,issuer_detail,2.732,76.509,1.144,FU763164105.Q
+2015:Q4,Property-casualty insurance companies,issuer_detail,-6.218,588.256,12.769,FU513164105.Q
+2015:Q4,"Life insurance companies, general accounts",issuer_detail,-2.063,182.201,5.857,FU543164175.Q
+2015:Q4,Closed-end funds,issuer_detail,-0.467,262.99,-3.559,FU554090005.Q
+2015:Q4,Exchange-traded funds,issuer_detail,90.777,2100.68,54.069,FU564090005.Q
+2015:Q4,Government-sponsored enterprises,issuer_detail,0.0,109.953,-0.473,FU403164105.Q
+2015:Q4,Mortgage real estate investment trusts,issuer_detail,-2.58,67.035,-1.083,FU643164105.Q
+2015:Q4,Business development companies,issuer_detail,0.944,50.553,-2.635,FU453164105.Q
+2015:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2015:Q4,Security brokers and dealers,issuer_detail,0.609,77.113,0.607,FU663164105.Q
+2015:Q4,Holding companies,issuer_detail,-6.599,2040.749,65.564,FU733164105.Q
+2015:Q4,Other financial business,issuer_detail,-0.314,719.162,22.099,FU503164105.Q
+2015:Q4,Rest of the world,issuer,-17.065,5466.41,230.021,FU263164105.Q
+2015:Q4,Households and nonprofit organizations,holder,73.657,12931.673,484.882,FU153064105.Q
+2015:Q4,Nonfinancial corporate business,holder,-10.631,1499.935,91.575,FU103064103.Q
+2015:Q4,Federal government,holder,-0.005,106.928,0.507,FU313064105.Q
+2015:Q4,State and local governments,holder,-2.903,104.777,5.826,FU213064103.Q
+2015:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2015:Q4,U.S.-chartered depository institutions,holder,0.861,37.579,1.244,FU763064103.Q
+2015:Q4,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2015:Q4,Property-casualty insurance companies,holder,-3.196,333.955,17.718,FU513064105.Q
+2015:Q4,Life insurance companies,holder,10.668,578.703,11.363,FU543064105.Q
+2015:Q4,"Private pension funds, including 403(b) plans",holder,8.734,1957.57,105.437,FU573064105.Q
+2015:Q4,Federal government pension funds,holder,-0.119,240.348,12.816,FU343064105.Q
+2015:Q4,State and local government employee defined benefit pension funds,holder,-39.077,1901.52,93.206,FU223064145.Q
+2015:Q4,Mutual funds,holder,-59.832,8625.329,402.604,FU653064100.Q
+2015:Q4,Closed-end funds,holder,-0.174,99.794,-1.439,FU553064103.Q
+2015:Q4,Exchange-traded funds,holder,78.783,1708.67,63.049,FU563064100.Q
+2015:Q4,Business development companies,holder,0.35,9.816,-0.302,FU453064103.Q
+2015:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2015:Q4,Hedge funds (domestic),holder,-22.162,418.008,23.814,FU623064105.Q
+2015:Q4,Private debt funds,holder,1.475,39.283,-1.206,FU443064100.Q
+2015:Q4,Security brokers and dealers,holder,34.208,108.212,4.004,FU663064105.Q
+2015:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2015:Q4,Rest of the world,holder,-138.269,5386.045,264.002,FU263064105.Q
+2016:Q1,All sectors,total,-152.961,36229.725,294.538,FU893064105.Q
+2016:Q1,Nonfinancial corporate business,issuer,-124.58,24758.34,536.383,FU103164105.Q
+2016:Q1,Domestic financial sectors,issuer,12.357,6056.696,-230.862,FU793164105.Q
+2016:Q1,U.S.-chartered depository institutions,issuer_detail,-8.648,74.115,6.254,FU763164105.Q
+2016:Q1,Property-casualty insurance companies,issuer_detail,-5.901,591.417,9.062,FU513164105.Q
+2016:Q1,"Life insurance companies, general accounts",issuer_detail,-2.138,162.023,-18.04,FU543164175.Q
+2016:Q1,Closed-end funds,issuer_detail,0.316,261.904,-1.402,FU554090005.Q
+2016:Q1,Exchange-traded funds,issuer_detail,34.625,2154.998,19.693,FU564090005.Q
+2016:Q1,Government-sponsored enterprises,issuer_detail,0.0,110.14,0.187,FU403164105.Q
+2016:Q1,Mortgage real estate investment trusts,issuer_detail,-2.08,67.205,2.25,FU643164105.Q
+2016:Q1,Business development companies,issuer_detail,0.345,49.811,-1.087,FU453164105.Q
+2016:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2016:Q1,Security brokers and dealers,issuer_detail,0.016,73.166,-3.963,FU663164105.Q
+2016:Q1,Holding companies,issuer_detail,-3.962,1791.031,-245.756,FU733164105.Q
+2016:Q1,Other financial business,issuer_detail,-0.216,720.886,1.94,FU503164105.Q
+2016:Q1,Rest of the world,issuer,-40.738,5414.689,-10.983,FU263164105.Q
+2016:Q1,Households and nonprofit organizations,holder,42.15,13285.851,312.028,FU153064105.Q
+2016:Q1,Nonfinancial corporate business,holder,16.097,1527.627,11.595,FU103064103.Q
+2016:Q1,Federal government,holder,0.0,107.504,0.576,FU313064105.Q
+2016:Q1,State and local governments,holder,0.041,105.208,0.39,FU213064103.Q
+2016:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2016:Q1,U.S.-chartered depository institutions,holder,-7.372,30.444,0.237,FU763064103.Q
+2016:Q1,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2016:Q1,Property-casualty insurance companies,holder,3.304,330.612,-6.647,FU513064105.Q
+2016:Q1,Life insurance companies,holder,-8.743,574.471,4.511,FU543064105.Q
+2016:Q1,"Private pension funds, including 403(b) plans",holder,-19.938,1944.913,7.281,FU573064105.Q
+2016:Q1,Federal government pension funds,holder,-2.687,238.051,0.39,FU343064105.Q
+2016:Q1,State and local government employee defined benefit pension funds,holder,16.624,1907.131,-11.013,FU223064145.Q
+2016:Q1,Mutual funds,holder,-2.702,8555.73,-66.897,FU653064100.Q
+2016:Q1,Closed-end funds,holder,-0.028,97.809,-1.957,FU553064103.Q
+2016:Q1,Exchange-traded funds,holder,-7.349,1708.406,7.085,FU563064100.Q
+2016:Q1,Business development companies,holder,0.648,10.318,-0.146,FU453064103.Q
+2016:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2016:Q1,Hedge funds (domestic),holder,-18.967,400.596,1.555,FU623064105.Q
+2016:Q1,Private debt funds,holder,-0.454,38.245,-0.584,FU443064100.Q
+2016:Q1,Security brokers and dealers,holder,-41.543,67.072,0.403,FU663064105.Q
+2016:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2016:Q1,Rest of the world,holder,-122.042,5299.734,35.731,FU263064105.Q
+2016:Q2,All sectors,total,73.001,36921.515,618.789,FU893064105.Q
+2016:Q2,Nonfinancial corporate business,issuer,-125.548,25246.633,613.841,FU103164105.Q
+2016:Q2,Domestic financial sectors,issuer,18.119,6195.59,120.775,FU793164105.Q
+2016:Q2,U.S.-chartered depository institutions,issuer_detail,1.171,74.556,-0.73,FU763164105.Q
+2016:Q2,Property-casualty insurance companies,issuer_detail,-4.715,605.035,18.333,FU513164105.Q
+2016:Q2,"Life insurance companies, general accounts",issuer_detail,-1.549,159.819,-0.655,FU543164175.Q
+2016:Q2,Closed-end funds,issuer_detail,0.033,268.587,6.65,FU554090005.Q
+2016:Q2,Exchange-traded funds,issuer_detail,30.829,2229.526,43.699,FU564090005.Q
+2016:Q2,Government-sponsored enterprises,issuer_detail,0.0,111.663,1.523,FU403164105.Q
+2016:Q2,Mortgage real estate investment trusts,issuer_detail,-1.805,69.676,4.276,FU643164105.Q
+2016:Q2,Business development companies,issuer_detail,1.202,51.805,0.792,FU453164105.Q
+2016:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2016:Q2,Security brokers and dealers,issuer_detail,-0.252,73.925,1.011,FU663164105.Q
+2016:Q2,Holding companies,issuer_detail,-6.005,1784.991,-0.035,FU733164105.Q
+2016:Q2,Other financial business,issuer_detail,-0.79,766.007,45.911,FU503164105.Q
+2016:Q2,Rest of the world,issuer,180.43,5479.292,-115.827,FU263164105.Q
+2016:Q2,Households and nonprofit organizations,holder,165.279,13730.108,278.978,FU153064105.Q
+2016:Q2,Nonfinancial corporate business,holder,16.403,1573.044,29.014,FU103064103.Q
+2016:Q2,Federal government,holder,-0.015,108.063,0.574,FU313064105.Q
+2016:Q2,State and local governments,holder,-1.493,105.911,2.196,FU213064103.Q
+2016:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2016:Q2,U.S.-chartered depository institutions,holder,-0.47,30.816,0.842,FU763064103.Q
+2016:Q2,Foreign banking offices in the U.S.,holder,0.0,0.003,0.0,FU753064103.Q
+2016:Q2,Property-casualty insurance companies,holder,-3.658,329.401,2.447,FU513064105.Q
+2016:Q2,Life insurance companies,holder,-6.241,579.133,10.903,FU543064105.Q
+2016:Q2,"Private pension funds, including 403(b) plans",holder,-26.668,1958.839,40.594,FU573064105.Q
+2016:Q2,Federal government pension funds,holder,-2.179,240.754,4.882,FU343064105.Q
+2016:Q2,State and local government employee defined benefit pension funds,holder,-26.196,1894.725,13.79,FU223064145.Q
+2016:Q2,Mutual funds,holder,-17.423,8649.293,110.986,FU653064100.Q
+2016:Q2,Closed-end funds,holder,-0.053,101.728,3.972,FU553064103.Q
+2016:Q2,Exchange-traded funds,holder,9.423,1748.639,30.81,FU563064100.Q
+2016:Q2,Business development companies,holder,0.292,10.24,-0.37,FU453064103.Q
+2016:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2016:Q2,Hedge funds (domestic),holder,0.369,409.326,8.361,FU623064105.Q
+2016:Q2,Private debt funds,holder,1.295,38.169,-1.371,FU443064100.Q
+2016:Q2,Security brokers and dealers,holder,8.373,76.845,1.4,FU663064105.Q
+2016:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2016:Q2,Rest of the world,holder,-44.037,5336.478,80.781,FU263064105.Q
+2016:Q3,All sectors,total,-8.099,38278.765,1365.349,FU893064105.Q
+2016:Q3,Nonfinancial corporate business,issuer,-108.219,25838.959,700.545,FU103164105.Q
+2016:Q3,Domestic financial sectors,issuer,103.973,6561.257,261.694,FU793164105.Q
+2016:Q3,U.S.-chartered depository institutions,issuer_detail,0.787,81.889,6.546,FU763164105.Q
+2016:Q3,Property-casualty insurance companies,issuer_detail,-3.442,600.346,-1.247,FU513164105.Q
+2016:Q3,"Life insurance companies, general accounts",issuer_detail,-1.129,173.483,14.793,FU543164175.Q
+2016:Q3,Closed-end funds,issuer_detail,1.031,272.275,2.657,FU554090005.Q
+2016:Q3,Exchange-traded funds,issuer_detail,91.364,2387.532,66.642,FU564090005.Q
+2016:Q3,Government-sponsored enterprises,issuer_detail,0.0,111.847,0.184,FU403164105.Q
+2016:Q3,Mortgage real estate investment trusts,issuer_detail,24.936,92.285,-2.327,FU643164105.Q
+2016:Q3,Business development companies,issuer_detail,1.616,53.666,0.245,FU453164105.Q
+2016:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2016:Q3,Security brokers and dealers,issuer_detail,0.96,80.518,5.633,FU663164105.Q
+2016:Q3,Holding companies,issuer_detail,-11.181,1918.694,144.884,FU733164105.Q
+2016:Q3,Other financial business,issuer_detail,-0.969,788.722,23.684,FU503164105.Q
+2016:Q3,Rest of the world,issuer,-3.853,5878.549,403.11,FU263164105.Q
+2016:Q3,Households and nonprofit organizations,holder,-80.806,14112.064,462.762,FU153064105.Q
+2016:Q3,Nonfinancial corporate business,holder,16.945,1642.01,52.021,FU103064103.Q
+2016:Q3,Federal government,holder,-0.01,108.696,0.643,FU313064105.Q
+2016:Q3,State and local governments,holder,-0.037,110.024,4.15,FU213064103.Q
+2016:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2016:Q3,U.S.-chartered depository institutions,holder,0.206,31.703,0.681,FU763064103.Q
+2016:Q3,Foreign banking offices in the U.S.,holder,-0.003,0.0,0.0,FU753064103.Q
+2016:Q3,Property-casualty insurance companies,holder,-3.561,329.807,3.967,FU513064105.Q
+2016:Q3,Life insurance companies,holder,-6.878,590.971,18.716,FU543064105.Q
+2016:Q3,"Private pension funds, including 403(b) plans",holder,-25.926,2009.66,76.747,FU573064105.Q
+2016:Q3,Federal government pension funds,holder,-2.292,250.524,12.062,FU343064105.Q
+2016:Q3,State and local government employee defined benefit pension funds,holder,-37.012,1942.199,84.486,FU223064145.Q
+2016:Q3,Mutual funds,holder,-47.461,9007.479,405.647,FU653064100.Q
+2016:Q3,Closed-end funds,holder,0.105,103.561,1.728,FU553064103.Q
+2016:Q3,Exchange-traded funds,holder,62.23,1877.255,66.386,FU563064100.Q
+2016:Q3,Business development companies,holder,-0.274,9.598,-0.368,FU453064103.Q
+2016:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2016:Q3,Hedge funds (domestic),holder,3.987,429.35,16.037,FU623064105.Q
+2016:Q3,Private debt funds,holder,3.066,39.863,-1.372,FU443064100.Q
+2016:Q3,Security brokers and dealers,holder,11.89,91.746,3.011,FU663064105.Q
+2016:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2016:Q3,Rest of the world,holder,97.732,5592.255,158.045,FU263064105.Q
+2016:Q4,All sectors,total,-19.711,39068.244,809.19,FU893064105.Q
+2016:Q4,Nonfinancial corporate business,issuer,-83.364,25851.542,95.947,FU103164105.Q
+2016:Q4,Domestic financial sectors,issuer,107.566,7336.62,667.797,FU793164105.Q
+2016:Q4,U.S.-chartered depository institutions,issuer_detail,1.728,102.199,18.582,FU763164105.Q
+2016:Q4,Property-casualty insurance companies,issuer_detail,-4.392,644.761,48.807,FU513164105.Q
+2016:Q4,"Life insurance companies, general accounts",issuer_detail,-1.711,211.947,40.175,FU543164175.Q
+2016:Q4,Closed-end funds,issuer_detail,-0.55,264.802,-6.923,FU554090005.Q
+2016:Q4,Exchange-traded funds,issuer_detail,127.231,2524.541,9.778,FU564090005.Q
+2016:Q4,Government-sponsored enterprises,issuer_detail,0.0,110.738,-1.109,FU403164105.Q
+2016:Q4,Mortgage real estate investment trusts,issuer_detail,-1.172,93.401,2.288,FU643164105.Q
+2016:Q4,Business development companies,issuer_detail,-2.565,50.824,-0.277,FU453164105.Q
+2016:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2016:Q4,Security brokers and dealers,issuer_detail,-2.028,83.632,5.142,FU663164105.Q
+2016:Q4,Holding companies,issuer_detail,-12.37,2419.012,512.688,FU733164105.Q
+2016:Q4,Other financial business,issuer_detail,3.395,830.763,38.646,FU503164105.Q
+2016:Q4,Rest of the world,issuer,-43.913,5880.082,45.446,FU263164105.Q
+2016:Q4,Households and nonprofit organizations,holder,23.869,14409.232,273.299,FU153064105.Q
+2016:Q4,Nonfinancial corporate business,holder,17.497,1712.941,53.434,FU103064103.Q
+2016:Q4,Federal government,holder,-0.005,103.623,-5.068,FU313064105.Q
+2016:Q4,State and local governments,holder,-5.005,108.976,3.957,FU213064103.Q
+2016:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2016:Q4,U.S.-chartered depository institutions,holder,0.694,33.388,0.991,FU763064103.Q
+2016:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2016:Q4,Property-casualty insurance companies,holder,6.796,354.315,17.712,FU513064105.Q
+2016:Q4,Life insurance companies,holder,-5.192,586.93,1.151,FU543064105.Q
+2016:Q4,"Private pension funds, including 403(b) plans",holder,-20.108,2061.835,72.283,FU573064105.Q
+2016:Q4,Federal government pension funds,holder,1.525,260.768,8.719,FU343064105.Q
+2016:Q4,State and local government employee defined benefit pension funds,holder,-20.161,1964.762,42.724,FU223064145.Q
+2016:Q4,Mutual funds,holder,-43.949,9069.933,106.403,FU653064100.Q
+2016:Q4,Closed-end funds,holder,0.034,101.804,-1.791,FU553064103.Q
+2016:Q4,Exchange-traded funds,holder,121.743,2029.285,30.287,FU563064100.Q
+2016:Q4,Business development companies,holder,0.278,9.615,-0.261,FU453064103.Q
+2016:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2016:Q4,Hedge funds (domestic),holder,-10.073,434.72,15.443,FU623064105.Q
+2016:Q4,Private debt funds,holder,3.76,42.539,-1.084,FU443064100.Q
+2016:Q4,Security brokers and dealers,holder,29.113,124.159,3.3,FU663064105.Q
+2016:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2016:Q4,Rest of the world,holder,-120.527,5659.419,187.691,FU263064105.Q
+2017:Q1,All sectors,total,58.937,41356.627,2229.446,FU893064105.Q
+2017:Q1,Nonfinancial corporate business,issuer,-80.027,27256.145,1484.63,FU103164105.Q
+2017:Q1,Domestic financial sectors,issuer,104.769,7687.465,246.076,FU793164105.Q
+2017:Q1,U.S.-chartered depository institutions,issuer_detail,-1.964,102.311,2.076,FU763164105.Q
+2017:Q1,Property-casualty insurance companies,issuer_detail,-5.306,668.602,29.147,FU513164105.Q
+2017:Q1,"Life insurance companies, general accounts",issuer_detail,-4.293,208.896,1.242,FU543164175.Q
+2017:Q1,Closed-end funds,issuer_detail,0.717,271.252,5.733,FU554090005.Q
+2017:Q1,Exchange-traded funds,issuer_detail,133.97,2774.752,116.241,FU564090005.Q
+2017:Q1,Government-sponsored enterprises,issuer_detail,0.0,104.165,-6.573,FU403164105.Q
+2017:Q1,Mortgage real estate investment trusts,issuer_detail,-3.588,96.972,7.159,FU643164105.Q
+2017:Q1,Business development companies,issuer_detail,3.573,53.987,-0.41,FU453164105.Q
+2017:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2017:Q1,Security brokers and dealers,issuer_detail,0.757,81.98,-2.409,FU663164105.Q
+2017:Q1,Holding companies,issuer_detail,-16.281,2412.427,9.696,FU733164105.Q
+2017:Q1,Other financial business,issuer_detail,-2.816,912.121,84.174,FU503164105.Q
+2017:Q1,Rest of the world,issuer,34.195,6413.017,498.74,FU263164105.Q
+2017:Q1,Households and nonprofit organizations,holder,-5.57,15219.766,816.104,FU153064105.Q
+2017:Q1,Nonfinancial corporate business,holder,-21.277,1786.453,94.789,FU103064103.Q
+2017:Q1,Federal government,holder,0.0,99.263,-4.36,FU313064105.Q
+2017:Q1,State and local governments,holder,-3.944,110.798,5.766,FU213064103.Q
+2017:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2017:Q1,U.S.-chartered depository institutions,holder,-0.947,33.757,1.316,FU763064103.Q
+2017:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2017:Q1,Property-casualty insurance companies,holder,5.332,364.0,4.353,FU513064105.Q
+2017:Q1,Life insurance companies,holder,-1.142,608.481,22.693,FU543064105.Q
+2017:Q1,"Private pension funds, including 403(b) plans",holder,-6.987,2163.942,109.094,FU573064105.Q
+2017:Q1,Federal government pension funds,holder,0.759,277.059,15.532,FU343064105.Q
+2017:Q1,State and local government employee defined benefit pension funds,holder,-26.474,2047.151,108.863,FU223064145.Q
+2017:Q1,Mutual funds,holder,-30.433,9604.948,565.448,FU653064100.Q
+2017:Q1,Closed-end funds,holder,0.094,105.522,3.624,FU553064103.Q
+2017:Q1,Exchange-traded funds,holder,97.207,2236.763,110.271,FU563064100.Q
+2017:Q1,Business development companies,holder,-0.469,9.325,0.179,FU453064103.Q
+2017:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2017:Q1,Hedge funds (domestic),holder,11.337,469.058,23.001,FU623064105.Q
+2017:Q1,Private debt funds,holder,3.551,46.882,0.792,FU443064100.Q
+2017:Q1,Security brokers and dealers,holder,-25.0,105.728,6.569,FU663064105.Q
+2017:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2017:Q1,Rest of the world,holder,62.9,6067.731,345.412,FU263064105.Q
+2017:Q2,All sectors,total,124.899,42611.085,1129.559,FU893064105.Q
+2017:Q2,Nonfinancial corporate business,issuer,-61.783,27692.72,498.358,FU103164105.Q
+2017:Q2,Domestic financial sectors,issuer,95.638,8021.631,238.528,FU793164105.Q
+2017:Q2,U.S.-chartered depository institutions,issuer_detail,0.614,112.365,9.44,FU763164105.Q
+2017:Q2,Property-casualty insurance companies,issuer_detail,-4.067,743.25,78.715,FU513164105.Q
+2017:Q2,"Life insurance companies, general accounts",issuer_detail,-3.373,214.531,9.008,FU543164175.Q
+2017:Q2,Closed-end funds,issuer_detail,-0.455,274.174,3.377,FU554090005.Q
+2017:Q2,Exchange-traded funds,issuer_detail,112.009,2944.343,57.582,FU564090005.Q
+2017:Q2,Government-sponsored enterprises,issuer_detail,0.0,100.153,-4.012,FU403164105.Q
+2017:Q2,Mortgage real estate investment trusts,issuer_detail,4.409,102.28,0.899,FU643164105.Q
+2017:Q2,Business development companies,issuer_detail,2.029,55.327,-0.689,FU453164105.Q
+2017:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2017:Q2,Security brokers and dealers,issuer_detail,0.781,97.17,14.409,FU663164105.Q
+2017:Q2,Holding companies,issuer_detail,-14.439,2388.352,-9.636,FU733164105.Q
+2017:Q2,Other financial business,issuer_detail,-1.87,989.686,79.435,FU503164105.Q
+2017:Q2,Rest of the world,issuer,91.044,6896.734,392.673,FU263164105.Q
+2017:Q2,Households and nonprofit organizations,holder,73.967,15697.968,404.235,FU153064105.Q
+2017:Q2,Nonfinancial corporate business,holder,-21.823,1810.517,45.887,FU103064103.Q
+2017:Q2,Federal government,holder,-0.063,95.563,-3.637,FU313064105.Q
+2017:Q2,State and local governments,holder,-1.593,111.992,2.787,FU213064103.Q
+2017:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2017:Q2,U.S.-chartered depository institutions,holder,0.036,34.583,0.79,FU763064103.Q
+2017:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2017:Q2,Property-casualty insurance companies,holder,4.009,369.742,1.733,FU513064105.Q
+2017:Q2,Life insurance companies,holder,0.141,624.094,15.472,FU543064105.Q
+2017:Q2,"Private pension funds, including 403(b) plans",holder,-11.499,2206.889,54.446,FU573064105.Q
+2017:Q2,Federal government pension funds,holder,1.201,288.076,9.816,FU343064105.Q
+2017:Q2,State and local government employee defined benefit pension funds,holder,6.486,2119.668,66.031,FU223064145.Q
+2017:Q2,Mutual funds,holder,-1.971,9923.346,320.369,FU653064100.Q
+2017:Q2,Closed-end funds,holder,-0.822,106.018,1.318,FU553064103.Q
+2017:Q2,Exchange-traded funds,holder,76.291,2369.562,56.508,FU563064100.Q
+2017:Q2,Business development companies,holder,0.469,9.737,-0.057,FU453064103.Q
+2017:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2017:Q2,Hedge funds (domestic),holder,6.878,487.738,11.802,FU623064105.Q
+2017:Q2,Private debt funds,holder,-3.039,43.556,-0.287,FU443064100.Q
+2017:Q2,Security brokers and dealers,holder,17.856,126.244,2.66,FU663064105.Q
+2017:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2017:Q2,Rest of the world,holder,-21.625,6185.792,139.686,FU263064105.Q
+2017:Q3,All sectors,total,20.436,44278.975,1647.454,FU893064105.Q
+2017:Q3,Nonfinancial corporate business,issuer,-114.467,28455.488,877.235,FU103164105.Q
+2017:Q3,Domestic financial sectors,issuer,64.278,8431.445,345.536,FU793164105.Q
+2017:Q3,U.S.-chartered depository institutions,issuer_detail,0.75,116.187,3.072,FU763164105.Q
+2017:Q3,Property-casualty insurance companies,issuer_detail,-1.666,783.235,41.651,FU513164105.Q
+2017:Q3,"Life insurance companies, general accounts",issuer_detail,-3.762,223.13,12.361,FU543164175.Q
+2017:Q3,Closed-end funds,issuer_detail,0.376,277.056,2.506,FU554090005.Q
+2017:Q3,Exchange-traded funds,issuer_detail,87.288,3137.55,105.919,FU564090005.Q
+2017:Q3,Government-sponsored enterprises,issuer_detail,0.0,98.434,-1.719,FU403164105.Q
+2017:Q3,Mortgage real estate investment trusts,issuer_detail,3.906,105.95,-0.236,FU643164105.Q
+2017:Q3,Business development companies,issuer_detail,0.975,55.667,-0.635,FU453164105.Q
+2017:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2017:Q3,Security brokers and dealers,issuer_detail,4.441,103.135,1.524,FU663164105.Q
+2017:Q3,Holding companies,issuer_detail,-27.449,2489.05,128.147,FU733164105.Q
+2017:Q3,Other financial business,issuer_detail,-0.581,1042.051,52.946,FU503164105.Q
+2017:Q3,Rest of the world,issuer,70.625,7392.042,424.683,FU263164105.Q
+2017:Q3,Households and nonprofit organizations,holder,-74.87,16123.241,500.143,FU153064105.Q
+2017:Q3,Nonfinancial corporate business,holder,-22.687,1859.513,71.683,FU103064103.Q
+2017:Q3,Federal government,holder,-0.005,92.623,-2.935,FU313064105.Q
+2017:Q3,State and local governments,holder,-3.815,112.74,4.563,FU213064103.Q
+2017:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2017:Q3,U.S.-chartered depository institutions,holder,-1.219,34.68,1.316,FU763064103.Q
+2017:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2017:Q3,Property-casualty insurance companies,holder,-0.484,383.438,14.18,FU513064105.Q
+2017:Q3,Life insurance companies,holder,-1.909,644.924,22.739,FU543064105.Q
+2017:Q3,"Private pension funds, including 403(b) plans",holder,-6.748,2290.049,89.908,FU573064105.Q
+2017:Q3,Federal government pension funds,holder,-1.506,300.372,13.802,FU343064105.Q
+2017:Q3,State and local government employee defined benefit pension funds,holder,-4.251,2208.762,93.345,FU223064145.Q
+2017:Q3,Mutual funds,holder,-31.695,10351.331,459.68,FU653064100.Q
+2017:Q3,Closed-end funds,holder,0.421,108.579,2.14,FU553064103.Q
+2017:Q3,Exchange-traded funds,holder,54.792,2526.556,102.202,FU563064100.Q
+2017:Q3,Business development companies,holder,0.145,9.955,0.073,FU453064103.Q
+2017:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2017:Q3,Hedge funds (domestic),holder,6.027,513.636,19.871,FU623064105.Q
+2017:Q3,Private debt funds,holder,1.795,45.678,0.327,FU443064100.Q
+2017:Q3,Security brokers and dealers,holder,2.735,134.122,5.143,FU663064105.Q
+2017:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2017:Q3,Rest of the world,holder,103.71,6538.776,249.274,FU263064105.Q
+2017:Q4,All sectors,total,12.275,46787.771,2496.521,FU893064105.Q
+2017:Q4,Nonfinancial corporate business,issuer,-71.71,30021.359,1637.581,FU103164105.Q
+2017:Q4,Domestic financial sectors,issuer,117.604,9005.255,456.206,FU793164105.Q
+2017:Q4,U.S.-chartered depository institutions,issuer_detail,3.433,118.726,-0.894,FU763164105.Q
+2017:Q4,Property-casualty insurance companies,issuer_detail,-1.659,835.778,54.202,FU513164105.Q
+2017:Q4,"Life insurance companies, general accounts",issuer_detail,-4.77,230.614,12.254,FU543164175.Q
+2017:Q4,Closed-end funds,issuer_detail,0.04,277.3,0.204,FU554090005.Q
+2017:Q4,Exchange-traded funds,issuer_detail,137.694,3401.019,125.775,FU564090005.Q
+2017:Q4,Government-sponsored enterprises,issuer_detail,0.0,101.696,3.262,FU403164105.Q
+2017:Q4,Mortgage real estate investment trusts,issuer_detail,-0.709,104.803,-0.438,FU643164105.Q
+2017:Q4,Business development companies,issuer_detail,1.074,56.241,-0.5,FU453164105.Q
+2017:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2017:Q4,Security brokers and dealers,issuer_detail,3.302,103.382,-3.055,FU663164105.Q
+2017:Q4,Holding companies,issuer_detail,-20.45,2665.91,197.31,FU733164105.Q
+2017:Q4,Other financial business,issuer_detail,-0.351,1109.786,68.086,FU503164105.Q
+2017:Q4,Rest of the world,issuer,-33.619,7761.157,402.734,FU263164105.Q
+2017:Q4,Households and nonprofit organizations,holder,41.019,17149.217,984.957,FU153064105.Q
+2017:Q4,Nonfinancial corporate business,holder,-24.076,1949.283,113.846,FU103064103.Q
+2017:Q4,Federal government,holder,0.0,96.434,3.811,FU313064105.Q
+2017:Q4,State and local governments,holder,-2.509,116.805,6.574,FU213064103.Q
+2017:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2017:Q4,U.S.-chartered depository institutions,holder,0.138,36.521,1.703,FU763064103.Q
+2017:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2017:Q4,Property-casualty insurance companies,holder,0.926,410.585,26.221,FU513064105.Q
+2017:Q4,Life insurance companies,holder,-2.55,660.82,18.446,FU543064105.Q
+2017:Q4,"Private pension funds, including 403(b) plans",holder,-10.007,2413.569,133.527,FU573064105.Q
+2017:Q4,Federal government pension funds,holder,6.022,324.207,17.813,FU343064105.Q
+2017:Q4,State and local government employee defined benefit pension funds,holder,-22.383,2299.549,113.17,FU223064145.Q
+2017:Q4,Mutual funds,holder,-69.466,10819.639,537.774,FU653064100.Q
+2017:Q4,Closed-end funds,holder,-0.24,109.298,0.959,FU553064103.Q
+2017:Q4,Exchange-traded funds,holder,118.413,2771.577,126.608,FU563064100.Q
+2017:Q4,Business development companies,holder,0.467,10.561,0.139,FU453064103.Q
+2017:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2017:Q4,Hedge funds (domestic),holder,23.881,567.466,29.949,FU623064105.Q
+2017:Q4,Private debt funds,holder,2.231,48.547,0.638,FU443064100.Q
+2017:Q4,Security brokers and dealers,holder,-18.068,123.874,7.82,FU663064105.Q
+2017:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2017:Q4,Rest of the world,holder,-31.523,6879.819,372.566,FU263064105.Q
+2018:Q1,All sectors,total,129.451,46445.59,-471.632,FU893064105.Q
+2018:Q1,Nonfinancial corporate business,issuer,-112.903,29744.422,-164.034,FU103164105.Q
+2018:Q1,Domestic financial sectors,issuer,47.972,8930.788,-122.439,FU793164105.Q
+2018:Q1,U.S.-chartered depository institutions,issuer_detail,-6.948,119.869,8.091,FU763164105.Q
+2018:Q1,Property-casualty insurance companies,issuer_detail,-0.921,833.335,-1.522,FU513164105.Q
+2018:Q1,"Life insurance companies, general accounts",issuer_detail,-5.007,212.782,-12.825,FU543164175.Q
+2018:Q1,Closed-end funds,issuer_detail,-0.055,268.739,-8.506,FU554090005.Q
+2018:Q1,Exchange-traded funds,issuer_detail,62.872,3411.6,-52.291,FU564090005.Q
+2018:Q1,Government-sponsored enterprises,issuer_detail,3.999,104.493,-1.202,FU403164105.Q
+2018:Q1,Mortgage real estate investment trusts,issuer_detail,1.625,101.163,-5.265,FU643164105.Q
+2018:Q1,Business development companies,issuer_detail,0.506,56.336,-0.411,FU453164105.Q
+2018:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2018:Q1,Security brokers and dealers,issuer_detail,-2.953,105.741,5.312,FU663164105.Q
+2018:Q1,Holding companies,issuer_detail,-4.793,2598.967,-62.15,FU733164105.Q
+2018:Q1,Other financial business,issuer_detail,-0.353,1117.763,8.33,FU503164105.Q
+2018:Q1,Rest of the world,issuer,194.382,7770.38,-185.159,FU263164105.Q
+2018:Q1,Households and nonprofit organizations,holder,-15.168,16997.34,-136.709,FU153064105.Q
+2018:Q1,Nonfinancial corporate business,holder,-9.964,1915.449,-23.87,FU103064103.Q
+2018:Q1,Federal government,holder,3.994,101.228,0.8,FU313064105.Q
+2018:Q1,State and local governments,holder,-2.631,112.949,-1.225,FU213064103.Q
+2018:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2018:Q1,U.S.-chartered depository institutions,holder,2.902,38.406,-1.017,FU763064103.Q
+2018:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2018:Q1,Property-casualty insurance companies,holder,6.543,407.419,-9.709,FU513064105.Q
+2018:Q1,Life insurance companies,holder,-10.878,641.13,-8.812,FU543064105.Q
+2018:Q1,"Private pension funds, including 403(b) plans",holder,-25.921,2362.339,-25.309,FU573064105.Q
+2018:Q1,Federal government pension funds,holder,-0.292,322.057,-1.858,FU343064105.Q
+2018:Q1,State and local government employee defined benefit pension funds,holder,-1.825,2259.836,-37.888,FU223064145.Q
+2018:Q1,Mutual funds,holder,1.979,10761.948,-59.67,FU653064100.Q
+2018:Q1,Closed-end funds,holder,-0.017,103.379,-5.902,FU553064103.Q
+2018:Q1,Exchange-traded funds,holder,43.303,2771.359,-43.521,FU563064100.Q
+2018:Q1,Business development companies,holder,0.409,10.824,-0.146,FU453064103.Q
+2018:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2018:Q1,Hedge funds (domestic),holder,-7.647,553.868,-5.951,FU623064105.Q
+2018:Q1,Private debt funds,holder,-0.252,47.624,-0.671,FU443064100.Q
+2018:Q1,Security brokers and dealers,holder,0.518,123.093,-1.299,FU663064105.Q
+2018:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2018:Q1,Rest of the world,holder,144.398,6915.342,-108.875,FU263064105.Q
+2018:Q2,All sectors,total,-263.753,47248.785,1066.948,FU893064105.Q
+2018:Q2,Nonfinancial corporate business,issuer,-229.937,30842.997,1328.512,FU103164105.Q
+2018:Q2,Domestic financial sectors,issuer,30.634,8942.452,-18.97,FU793164105.Q
+2018:Q2,U.S.-chartered depository institutions,issuer_detail,0.941,122.482,1.672,FU763164105.Q
+2018:Q2,Property-casualty insurance companies,issuer_detail,-2.153,788.515,-42.667,FU513164105.Q
+2018:Q2,"Life insurance companies, general accounts",issuer_detail,-0.132,208.301,-4.349,FU543164175.Q
+2018:Q2,Closed-end funds,issuer_detail,1.889,271.416,0.788,FU554090005.Q
+2018:Q2,Exchange-traded funds,issuer_detail,55.866,3497.885,30.419,FU564090005.Q
+2018:Q2,Government-sponsored enterprises,issuer_detail,0.0,110.418,5.925,FU403164105.Q
+2018:Q2,Mortgage real estate investment trusts,issuer_detail,0.843,103.513,1.507,FU643164105.Q
+2018:Q2,Business development companies,issuer_detail,-0.04,56.124,-0.172,FU453164105.Q
+2018:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2018:Q2,Security brokers and dealers,issuer_detail,-0.59,98.353,-6.798,FU663164105.Q
+2018:Q2,Holding companies,issuer_detail,-25.125,2536.378,-37.464,FU733164105.Q
+2018:Q2,Other financial business,issuer_detail,-0.865,1149.067,32.169,FU503164105.Q
+2018:Q2,Rest of the world,issuer,-64.45,7463.336,-242.594,FU263164105.Q
+2018:Q2,Households and nonprofit organizations,holder,-159.885,17240.077,402.622,FU153064105.Q
+2018:Q2,Nonfinancial corporate business,holder,-10.256,1961.404,56.211,FU103064103.Q
+2018:Q2,Federal government,holder,0.0,106.961,5.733,FU313064105.Q
+2018:Q2,State and local governments,holder,-0.737,116.051,3.839,FU213064103.Q
+2018:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2018:Q2,U.S.-chartered depository institutions,holder,-0.468,38.099,0.161,FU763064103.Q
+2018:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2018:Q2,Property-casualty insurance companies,holder,1.275,409.744,1.05,FU513064105.Q
+2018:Q2,Life insurance companies,holder,-10.659,641.342,10.871,FU543064105.Q
+2018:Q2,"Private pension funds, including 403(b) plans",holder,-5.929,2436.707,80.297,FU573064105.Q
+2018:Q2,Federal government pension funds,holder,-1.303,330.805,10.051,FU343064105.Q
+2018:Q2,State and local government employee defined benefit pension funds,holder,-6.027,2303.516,49.707,FU223064145.Q
+2018:Q2,Mutual funds,holder,-22.597,10930.539,191.188,FU653064100.Q
+2018:Q2,Closed-end funds,holder,-0.403,104.415,1.439,FU553064103.Q
+2018:Q2,Exchange-traded funds,holder,25.08,2834.369,37.93,FU563064100.Q
+2018:Q2,Business development companies,holder,0.466,11.526,0.236,FU453064103.Q
+2018:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2018:Q2,Hedge funds (domestic),holder,-15.332,557.363,18.827,FU623064105.Q
+2018:Q2,Private debt funds,holder,0.468,49.13,1.038,FU443064100.Q
+2018:Q2,Security brokers and dealers,holder,4.946,132.223,4.184,FU663064105.Q
+2018:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2018:Q2,Rest of the world,holder,-62.392,7044.514,191.564,FU263064105.Q
+2018:Q3,All sectors,total,23.009,49481.637,2209.843,FU893064105.Q
+2018:Q3,Nonfinancial corporate business,issuer,-67.057,32558.901,1782.961,FU103164105.Q
+2018:Q3,Domestic financial sectors,issuer,49.012,9324.842,333.378,FU793164105.Q
+2018:Q3,U.S.-chartered depository institutions,issuer_detail,0.668,127.973,4.823,FU763164105.Q
+2018:Q3,Property-casualty insurance companies,issuer_detail,-2.725,878.129,92.339,FU513164105.Q
+2018:Q3,"Life insurance companies, general accounts",issuer_detail,-1.7,221.074,14.473,FU543164175.Q
+2018:Q3,Closed-end funds,issuer_detail,-0.23,272.377,1.191,FU554090005.Q
+2018:Q3,Exchange-traded funds,issuer_detail,87.268,3700.859,115.706,FU564090005.Q
+2018:Q3,Government-sponsored enterprises,issuer_detail,0.0,116.398,5.98,FU403164105.Q
+2018:Q3,Mortgage real estate investment trusts,issuer_detail,2.796,106.261,-0.048,FU643164105.Q
+2018:Q3,Business development companies,issuer_detail,1.779,57.654,-0.249,FU453164105.Q
+2018:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2018:Q3,Security brokers and dealers,issuer_detail,-0.382,93.463,-4.508,FU663164105.Q
+2018:Q3,Holding companies,issuer_detail,-37.232,2538.849,39.703,FU733164105.Q
+2018:Q3,Other financial business,issuer_detail,-1.23,1211.805,63.968,FU503164105.Q
+2018:Q3,Rest of the world,issuer,41.054,7597.894,93.504,FU263164105.Q
+2018:Q3,Households and nonprofit organizations,holder,99.743,17996.161,656.341,FU153064105.Q
+2018:Q3,Nonfinancial corporate business,holder,-10.995,2091.549,141.14,FU103064103.Q
+2018:Q3,Federal government,holder,-0.018,113.2,6.257,FU313064105.Q
+2018:Q3,State and local governments,holder,-5.607,118.133,7.689,FU213064103.Q
+2018:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2018:Q3,U.S.-chartered depository institutions,holder,-1.141,38.72,1.762,FU763064103.Q
+2018:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2018:Q3,Property-casualty insurance companies,holder,9.557,434.263,14.962,FU513064105.Q
+2018:Q3,Life insurance companies,holder,-13.418,650.703,22.779,FU543064105.Q
+2018:Q3,"Private pension funds, including 403(b) plans",holder,-2.726,2595.417,161.436,FU573064105.Q
+2018:Q3,Federal government pension funds,holder,-1.491,348.599,19.285,FU343064105.Q
+2018:Q3,State and local government employee defined benefit pension funds,holder,-26.764,2366.57,89.818,FU223064145.Q
+2018:Q3,Mutual funds,holder,-35.609,11367.339,472.409,FU653064100.Q
+2018:Q3,Closed-end funds,holder,0.048,105.826,1.363,FU553064103.Q
+2018:Q3,Exchange-traded funds,holder,61.354,3016.061,120.338,FU563064100.Q
+2018:Q3,Business development companies,holder,-0.378,11.378,0.23,FU453064103.Q
+2018:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2018:Q3,Hedge funds (domestic),holder,-14.692,579.598,36.927,FU623064105.Q
+2018:Q3,Private debt funds,holder,2.091,52.201,0.98,FU443064100.Q
+2018:Q3,Security brokers and dealers,holder,17.961,158.944,8.76,FU663064105.Q
+2018:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2018:Q3,Rest of the world,holder,-54.906,7436.975,447.367,FU263064105.Q
+2018:Q4,All sectors,total,-105.196,42760.862,-6615.579,FU893064105.Q
+2018:Q4,Nonfinancial corporate business,issuer,-217.888,27926.917,-4414.096,FU103164105.Q
+2018:Q4,Domestic financial sectors,issuer,53.217,8205.904,-1172.155,FU793164105.Q
+2018:Q4,U.S.-chartered depository institutions,issuer_detail,0.111,104.906,-23.178,FU763164105.Q
+2018:Q4,Property-casualty insurance companies,issuer_detail,-2.904,810.402,-64.823,FU513164105.Q
+2018:Q4,"Life insurance companies, general accounts",issuer_detail,-5.706,188.471,-26.897,FU543164175.Q
+2018:Q4,Closed-end funds,issuer_detail,0.264,252.205,-20.436,FU554090005.Q
+2018:Q4,Exchange-traded funds,issuer_detail,105.04,3371.154,-434.745,FU564090005.Q
+2018:Q4,Government-sponsored enterprises,issuer_detail,0.0,114.13,-2.268,FU403164105.Q
+2018:Q4,Mortgage real estate investment trusts,issuer_detail,-1.854,105.4,0.993,FU643164105.Q
+2018:Q4,Business development companies,issuer_detail,0.84,57.682,-0.812,FU453164105.Q
+2018:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2018:Q4,Security brokers and dealers,issuer_detail,1.663,80.927,-14.199,FU663164105.Q
+2018:Q4,Holding companies,issuer_detail,-44.171,2077.972,-416.706,FU733164105.Q
+2018:Q4,Other financial business,issuer_detail,-0.066,1042.655,-169.084,FU503164105.Q
+2018:Q4,Rest of the world,issuer,59.475,6628.041,-1029.328,FU263164105.Q
+2018:Q4,Households and nonprofit organizations,holder,-126.785,15636.734,-2232.642,FU153064105.Q
+2018:Q4,Nonfinancial corporate business,holder,-9.458,1789.868,-292.223,FU103064103.Q
+2018:Q4,Federal government,holder,0.0,111.68,-1.52,FU313064105.Q
+2018:Q4,State and local governments,holder,17.064,117.725,-17.472,FU213064103.Q
+2018:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2018:Q4,U.S.-chartered depository institutions,holder,1.229,34.893,-5.056,FU763064103.Q
+2018:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2018:Q4,Property-casualty insurance companies,holder,2.728,392.117,-44.874,FU513064105.Q
+2018:Q4,Life insurance companies,holder,-9.286,573.169,-68.248,FU543064105.Q
+2018:Q4,"Private pension funds, including 403(b) plans",holder,-47.493,2164.058,-383.866,FU573064105.Q
+2018:Q4,Federal government pension funds,holder,-18.553,292.063,-37.983,FU343064105.Q
+2018:Q4,State and local government employee defined benefit pension funds,holder,21.637,2087.904,-300.303,FU223064145.Q
+2018:Q4,Mutual funds,holder,-64.582,9657.45,-1645.307,FU653064100.Q
+2018:Q4,Closed-end funds,holder,-0.039,91.2,-14.587,FU553064103.Q
+2018:Q4,Exchange-traded funds,holder,74.488,2659.009,-431.54,FU563064100.Q
+2018:Q4,Business development companies,holder,0.081,10.884,-0.575,FU453064103.Q
+2018:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2018:Q4,Hedge funds (domestic),holder,-1.031,492.843,-85.724,FU623064105.Q
+2018:Q4,Private debt funds,holder,6.643,56.206,-2.638,FU443064100.Q
+2018:Q4,Security brokers and dealers,holder,-38.963,96.473,-23.508,FU663064105.Q
+2018:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2018:Q4,Rest of the world,holder,87.124,6496.586,-1027.513,FU263064105.Q
+2019:Q1,All sectors,total,-172.454,48078.226,5489.818,FU893064105.Q
+2019:Q1,Nonfinancial corporate business,issuer,-152.854,31841.98,4067.917,FU103164105.Q
+2019:Q1,Domestic financial sectors,issuer,14.851,8897.23,676.475,FU793164105.Q
+2019:Q1,U.S.-chartered depository institutions,issuer_detail,-1.689,112.582,9.365,FU763164105.Q
+2019:Q1,Property-casualty insurance companies,issuer_detail,-0.548,848.612,38.758,FU513164105.Q
+2019:Q1,"Life insurance companies, general accounts",issuer_detail,-5.915,201.706,19.15,FU543164175.Q
+2019:Q1,Closed-end funds,issuer_detail,1.413,268.599,14.981,FU554090005.Q
+2019:Q1,Exchange-traded funds,issuer_detail,45.742,3771.298,354.402,FU564090005.Q
+2019:Q1,Government-sponsored enterprises,issuer_detail,0.0,116.605,2.475,FU403164105.Q
+2019:Q1,Mortgage real estate investment trusts,issuer_detail,5.983,116.218,4.835,FU643164105.Q
+2019:Q1,Business development companies,issuer_detail,2.276,60.105,0.147,FU453164105.Q
+2019:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2019:Q1,Security brokers and dealers,issuer_detail,2.16,85.659,2.572,FU663164105.Q
+2019:Q1,Holding companies,issuer_detail,-32.745,2218.842,173.615,FU733164105.Q
+2019:Q1,Other financial business,issuer_detail,-1.826,1097.004,56.175,FU503164105.Q
+2019:Q1,Rest of the world,issuer,-34.451,7339.016,745.426,FU263164105.Q
+2019:Q1,Households and nonprofit organizations,holder,176.388,17821.09,2007.968,FU153064105.Q
+2019:Q1,Nonfinancial corporate business,holder,2.411,2026.146,233.867,FU103064103.Q
+2019:Q1,Federal government,holder,0.0,111.104,-0.576,FU313064105.Q
+2019:Q1,State and local governments,holder,-13.079,120.524,15.878,FU213064103.Q
+2019:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2019:Q1,U.S.-chartered depository institutions,holder,0.61,39.56,4.057,FU763064103.Q
+2019:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2019:Q1,Property-casualty insurance companies,holder,-2.459,417.468,27.81,FU513064105.Q
+2019:Q1,Life insurance companies,holder,-7.135,621.526,55.492,FU543064105.Q
+2019:Q1,"Private pension funds, including 403(b) plans",holder,-9.576,2446.342,291.86,FU573064105.Q
+2019:Q1,Federal government pension funds,holder,-0.015,331.025,38.977,FU343064105.Q
+2019:Q1,State and local government employee defined benefit pension funds,holder,-27.923,2343.613,283.632,FU223064145.Q
+2019:Q1,Mutual funds,holder,-29.57,10880.165,1252.285,FU653064100.Q
+2019:Q1,Closed-end funds,holder,0.136,101.888,10.552,FU553064103.Q
+2019:Q1,Exchange-traded funds,holder,10.998,3000.124,330.117,FU563064100.Q
+2019:Q1,Business development companies,holder,0.373,11.602,0.345,FU453064103.Q
+2019:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2019:Q1,Hedge funds (domestic),holder,-17.392,541.919,66.468,FU623064105.Q
+2019:Q1,Private debt funds,holder,2.588,60.576,1.782,FU443064100.Q
+2019:Q1,Security brokers and dealers,holder,-9.291,100.193,13.011,FU663064105.Q
+2019:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2019:Q1,Rest of the world,holder,-249.518,7103.361,856.293,FU263064105.Q
+2019:Q2,All sectors,total,21.024,49525.325,1426.075,FU893064105.Q
+2019:Q2,Nonfinancial corporate business,issuer,-7.704,32627.54,793.264,FU103164105.Q
+2019:Q2,Domestic financial sectors,issuer,50.42,9376.093,428.443,FU793164105.Q
+2019:Q2,U.S.-chartered depository institutions,issuer_detail,0.327,110.963,-1.946,FU763164105.Q
+2019:Q2,Property-casualty insurance companies,issuer_detail,-1.204,913.627,66.219,FU513164105.Q
+2019:Q2,"Life insurance companies, general accounts",issuer_detail,-3.542,218.74,20.576,FU543164175.Q
+2019:Q2,Closed-end funds,issuer_detail,1.717,272.984,2.668,FU554090005.Q
+2019:Q2,Exchange-traded funds,issuer_detail,65.444,3933.355,96.613,FU564090005.Q
+2019:Q2,Government-sponsored enterprises,issuer_detail,0.022,117.011,0.384,FU403164105.Q
+2019:Q2,Mortgage real estate investment trusts,issuer_detail,0.741,115.509,-1.45,FU643164105.Q
+2019:Q2,Business development companies,issuer_detail,3.196,62.782,-0.519,FU453164105.Q
+2019:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2019:Q2,Security brokers and dealers,issuer_detail,16.166,89.03,-12.795,FU663164105.Q
+2019:Q2,Holding companies,issuer_detail,-29.949,2342.281,153.388,FU733164105.Q
+2019:Q2,Other financial business,issuer_detail,-2.498,1199.811,105.305,FU503164105.Q
+2019:Q2,Rest of the world,issuer,-21.692,7521.692,204.368,FU263164105.Q
+2019:Q2,Households and nonprofit organizations,holder,-37.171,18252.537,468.618,FU153064105.Q
+2019:Q2,Nonfinancial corporate business,holder,2.502,2105.393,76.745,FU103064103.Q
+2019:Q2,Federal government,holder,0.0,111.676,0.572,FU313064105.Q
+2019:Q2,State and local governments,holder,-1.212,123.647,4.335,FU213064103.Q
+2019:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2019:Q2,U.S.-chartered depository institutions,holder,0.485,41.144,1.099,FU763064103.Q
+2019:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2019:Q2,Property-casualty insurance companies,holder,-1.349,436.805,20.686,FU513064105.Q
+2019:Q2,Life insurance companies,holder,0.354,641.963,20.083,FU543064105.Q
+2019:Q2,"Private pension funds, including 403(b) plans",holder,-36.682,2497.64,87.98,FU573064105.Q
+2019:Q2,Federal government pension funds,holder,-2.479,341.35,12.804,FU343064105.Q
+2019:Q2,State and local government employee defined benefit pension funds,holder,-31.273,2376.353,64.013,FU223064145.Q
+2019:Q2,Mutual funds,holder,-32.576,11183.989,336.4,FU653064100.Q
+2019:Q2,Closed-end funds,holder,1.331,103.629,0.41,FU553064103.Q
+2019:Q2,Exchange-traded funds,holder,24.122,3103.378,79.132,FU563064100.Q
+2019:Q2,Business development companies,holder,-0.181,11.455,0.034,FU453064103.Q
+2019:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2019:Q2,Hedge funds (domestic),holder,-18.773,542.636,19.49,FU623064105.Q
+2019:Q2,Private debt funds,holder,-1.015,59.739,0.178,FU443064100.Q
+2019:Q2,Security brokers and dealers,holder,11.92,115.716,3.603,FU663064105.Q
+2019:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2019:Q2,Rest of the world,holder,143.021,7476.275,229.893,FU263064105.Q
+2019:Q3,All sectors,total,-34.103,49535.754,44.532,FU893064105.Q
+2019:Q3,Nonfinancial corporate business,issuer,-96.886,32782.644,251.99,FU103164105.Q
+2019:Q3,Domestic financial sectors,issuer,42.941,9388.024,-31.01,FU793164105.Q
+2019:Q3,U.S.-chartered depository institutions,issuer_detail,1.726,116.881,4.192,FU763164105.Q
+2019:Q3,Property-casualty insurance companies,issuer_detail,-0.412,865.155,-48.06,FU513164105.Q
+2019:Q3,"Life insurance companies, general accounts",issuer_detail,-5.152,204.155,-9.433,FU543164175.Q
+2019:Q3,Closed-end funds,issuer_detail,1.606,274.228,-0.362,FU554090005.Q
+2019:Q3,Exchange-traded funds,issuer_detail,84.838,4024.327,6.134,FU564090005.Q
+2019:Q3,Government-sponsored enterprises,issuer_detail,0.0,119.354,2.343,FU403164105.Q
+2019:Q3,Mortgage real estate investment trusts,issuer_detail,1.163,116.76,0.088,FU643164105.Q
+2019:Q3,Business development companies,issuer_detail,2.213,63.753,-1.242,FU453164105.Q
+2019:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2019:Q3,Security brokers and dealers,issuer_detail,0.652,90.294,0.612,FU663164105.Q
+2019:Q3,Holding companies,issuer_detail,-41.055,2347.339,46.113,FU733164105.Q
+2019:Q3,Other financial business,issuer_detail,-2.638,1165.778,-31.395,FU503164105.Q
+2019:Q3,Rest of the world,issuer,19.842,7365.086,-176.448,FU263164105.Q
+2019:Q3,Households and nonprofit organizations,holder,4.378,18190.448,-66.467,FU153064105.Q
+2019:Q3,Nonfinancial corporate business,holder,2.532,2132.96,25.035,FU103064103.Q
+2019:Q3,Federal government,holder,0.0,112.1,0.424,FU313064105.Q
+2019:Q3,State and local governments,holder,-2.368,122.088,0.809,FU213064103.Q
+2019:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2019:Q3,U.S.-chartered depository institutions,holder,-0.665,40.337,-0.142,FU763064103.Q
+2019:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2019:Q3,Property-casualty insurance companies,holder,6.096,457.118,14.217,FU513064105.Q
+2019:Q3,Life insurance companies,holder,2.868,647.391,2.56,FU543064105.Q
+2019:Q3,"Private pension funds, including 403(b) plans",holder,-36.261,2477.726,16.347,FU573064105.Q
+2019:Q3,Federal government pension funds,holder,-3.606,339.426,1.682,FU343064105.Q
+2019:Q3,State and local government employee defined benefit pension funds,holder,69.796,2451.077,4.928,FU223064145.Q
+2019:Q3,Mutual funds,holder,-54.842,11073.533,-55.614,FU653064100.Q
+2019:Q3,Closed-end funds,holder,-0.004,103.065,-0.56,FU553064103.Q
+2019:Q3,Exchange-traded funds,holder,40.775,3139.209,-4.944,FU563064100.Q
+2019:Q3,Business development companies,holder,0.342,11.66,-0.137,FU453064103.Q
+2019:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2019:Q3,Hedge funds (domestic),holder,-5.574,540.613,3.551,FU623064105.Q
+2019:Q3,Private debt funds,holder,1.977,61.002,-0.714,FU443064100.Q
+2019:Q3,Security brokers and dealers,holder,7.112,123.586,0.758,FU663064105.Q
+2019:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2019:Q3,Rest of the world,holder,-66.659,7512.415,102.799,FU263064105.Q
+2019:Q4,All sectors,total,-8.126,53325.518,3797.89,FU893064105.Q
+2019:Q4,Nonfinancial corporate business,issuer,-82.853,35066.413,2366.622,FU103164105.Q
+2019:Q4,Domestic financial sectors,issuer,48.939,10179.294,742.331,FU793164105.Q
+2019:Q4,U.S.-chartered depository institutions,issuer_detail,0.987,125.869,8.001,FU763164105.Q
+2019:Q4,Property-casualty insurance companies,issuer_detail,-3.29,896.564,34.699,FU513164105.Q
+2019:Q4,"Life insurance companies, general accounts",issuer_detail,-2.968,211.664,10.477,FU543164175.Q
+2019:Q4,Closed-end funds,issuer_detail,1.146,278.674,3.3,FU554090005.Q
+2019:Q4,Exchange-traded funds,issuer_detail,126.533,4396.207,245.347,FU564090005.Q
+2019:Q4,Government-sponsored enterprises,issuer_detail,0.0,116.91,-2.444,FU403164105.Q
+2019:Q4,Mortgage real estate investment trusts,issuer_detail,-28.763,90.094,2.097,FU643164105.Q
+2019:Q4,Business development companies,issuer_detail,2.175,64.553,-1.375,FU453164105.Q
+2019:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2019:Q4,Security brokers and dealers,issuer_detail,3.119,99.709,6.296,FU663164105.Q
+2019:Q4,Holding companies,issuer_detail,-46.052,2600.01,298.723,FU733164105.Q
+2019:Q4,Other financial business,issuer_detail,-3.948,1299.04,137.21,FU503164105.Q
+2019:Q4,Rest of the world,issuer,25.788,8079.811,688.937,FU263164105.Q
+2019:Q4,Households and nonprofit organizations,holder,171.761,19536.497,1174.288,FU153064105.Q
+2019:Q4,Nonfinancial corporate business,holder,2.748,2317.738,182.03,FU103064103.Q
+2019:Q4,Federal government,holder,0.0,110.751,-1.349,FU313064105.Q
+2019:Q4,State and local governments,holder,-12.098,120.392,10.402,FU213064103.Q
+2019:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2019:Q4,U.S.-chartered depository institutions,holder,0.367,43.521,2.817,FU763064103.Q
+2019:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2019:Q4,Property-casualty insurance companies,holder,-4.074,493.89,40.846,FU513064105.Q
+2019:Q4,Life insurance companies,holder,1.465,682.855,33.999,FU543064105.Q
+2019:Q4,"Private pension funds, including 403(b) plans",holder,-19.753,2669.072,211.099,FU573064105.Q
+2019:Q4,Federal government pension funds,holder,1.124,370.695,30.145,FU343064105.Q
+2019:Q4,State and local government employee defined benefit pension funds,holder,-47.305,2555.232,151.46,FU223064145.Q
+2019:Q4,Mutual funds,holder,-102.435,11934.519,963.421,FU653064100.Q
+2019:Q4,Closed-end funds,holder,1.17,107.181,2.946,FU553064103.Q
+2019:Q4,Exchange-traded funds,holder,90.123,3476.225,246.893,FU563064100.Q
+2019:Q4,Business development companies,holder,0.228,11.89,0.002,FU453064103.Q
+2019:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2019:Q4,Hedge funds (domestic),holder,4.623,591.295,46.059,FU623064105.Q
+2019:Q4,Private debt funds,holder,3.457,64.469,0.01,FU443064100.Q
+2019:Q4,Security brokers and dealers,holder,-23.839,110.277,10.53,FU663064105.Q
+2019:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2019:Q4,Rest of the world,holder,-75.688,8129.019,692.292,FU263064105.Q
+2020:Q1,All sectors,total,202.707,41819.101,-11709.124,FU893064105.Q
+2020:Q1,Nonfinancial corporate business,issuer,-74.483,28007.005,-6984.925,FU103164105.Q
+2020:Q1,Domestic financial sectors,issuer,20.134,7641.547,-2557.881,FU793164105.Q
+2020:Q1,U.S.-chartered depository institutions,issuer_detail,-2.372,77.296,-46.201,FU763164105.Q
+2020:Q1,Property-casualty insurance companies,issuer_detail,-3.473,690.819,-202.272,FU513164105.Q
+2020:Q1,"Life insurance companies, general accounts",issuer_detail,-5.899,125.691,-80.074,FU543164175.Q
+2020:Q1,Closed-end funds,issuer_detail,2.818,231.312,-50.18,FU554090005.Q
+2020:Q1,Exchange-traded funds,issuer_detail,72.471,3639.718,-828.96,FU564090005.Q
+2020:Q1,Government-sponsored enterprises,issuer_detail,0.0,113.144,-3.766,FU403164105.Q
+2020:Q1,Mortgage real estate investment trusts,issuer_detail,-17.449,39.297,-33.348,FU643164105.Q
+2020:Q1,Business development companies,issuer_detail,2.548,58.252,-8.849,FU453164105.Q
+2020:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2020:Q1,Security brokers and dealers,issuer_detail,7.882,71.431,-36.16,FU663164105.Q
+2020:Q1,Holding companies,issuer_detail,-34.854,1527.331,-1037.825,FU733164105.Q
+2020:Q1,Other financial business,issuer_detail,-1.538,1067.256,-230.246,FU503164105.Q
+2020:Q1,Rest of the world,issuer,257.056,6170.549,-2166.318,FU263164105.Q
+2020:Q1,Households and nonprofit organizations,holder,47.354,14915.297,-4668.554,FU153064105.Q
+2020:Q1,Nonfinancial corporate business,holder,-27.454,1832.349,-457.935,FU103064103.Q
+2020:Q1,Federal government,holder,0.0,109.954,-0.797,FU313064105.Q
+2020:Q1,State and local governments,holder,22.161,116.858,-25.695,FU213064103.Q
+2020:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2020:Q1,U.S.-chartered depository institutions,holder,1.14,33.365,-11.296,FU763064103.Q
+2020:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2020:Q1,Property-casualty insurance companies,holder,-2.675,395.228,-95.987,FU513064105.Q
+2020:Q1,Life insurance companies,holder,-2.974,587.555,-92.326,FU543064105.Q
+2020:Q1,"Private pension funds, including 403(b) plans",holder,-61.384,2038.036,-569.652,FU573064105.Q
+2020:Q1,Federal government pension funds,holder,-12.208,277.938,-80.549,FU343064105.Q
+2020:Q1,State and local government employee defined benefit pension funds,holder,13.379,2178.736,-389.875,FU223064145.Q
+2020:Q1,Mutual funds,holder,-63.143,9203.756,-2667.62,FU653064100.Q
+2020:Q1,Closed-end funds,holder,1.93,79.652,-29.459,FU553064103.Q
+2020:Q1,Exchange-traded funds,holder,49.334,2704.388,-821.171,FU563064100.Q
+2020:Q1,Business development companies,holder,0.377,10.378,-1.889,FU453064103.Q
+2020:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2020:Q1,Hedge funds (domestic),holder,18.267,483.364,-126.198,FU623064105.Q
+2020:Q1,Private debt funds,holder,5.094,59.321,-10.242,FU443064100.Q
+2020:Q1,Security brokers and dealers,holder,-7.543,79.198,-23.536,FU663064105.Q
+2020:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2020:Q1,Rest of the world,holder,221.052,6713.728,-1636.343,FU263064105.Q
+2020:Q2,All sectors,total,115.937,50578.492,8643.454,FU893064105.Q
+2020:Q2,Nonfinancial corporate business,issuer,-6.819,34551.843,6551.657,FU103164105.Q
+2020:Q2,Domestic financial sectors,issuer,143.749,8841.133,1055.837,FU793164105.Q
+2020:Q2,U.S.-chartered depository institutions,issuer_detail,0.745,90.473,12.432,FU763164105.Q
+2020:Q2,Property-casualty insurance companies,issuer_detail,0.469,701.974,10.686,FU513164105.Q
+2020:Q2,"Life insurance companies, general accounts",issuer_detail,0.958,142.239,15.59,FU543164175.Q
+2020:Q2,Closed-end funds,issuer_detail,-0.163,250.627,19.478,FU554090005.Q
+2020:Q2,Exchange-traded funds,issuer_detail,133.589,4355.705,582.398,FU564090005.Q
+2020:Q2,Government-sponsored enterprises,issuer_detail,0.077,114.089,0.868,FU403164105.Q
+2020:Q2,Mortgage real estate investment trusts,issuer_detail,3.516,53.899,11.086,FU643164105.Q
+2020:Q2,Business development companies,issuer_detail,2.031,61.52,1.237,FU453164105.Q
+2020:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2020:Q2,Security brokers and dealers,issuer_detail,-5.43,99.345,33.344,FU663164105.Q
+2020:Q2,Holding companies,issuer_detail,9.373,1719.273,182.569,FU733164105.Q
+2020:Q2,Other financial business,issuer_detail,-1.416,1251.989,186.149,FU503164105.Q
+2020:Q2,Rest of the world,issuer,-20.993,7185.516,1035.96,FU263164105.Q
+2020:Q2,Households and nonprofit organizations,holder,237.106,18459.189,3306.786,FU153064105.Q
+2020:Q2,Nonfinancial corporate business,holder,-32.932,2165.023,365.606,FU103064103.Q
+2020:Q2,Federal government,holder,0.0,109.676,-0.278,FU313064105.Q
+2020:Q2,State and local governments,holder,-15.107,126.9,25.149,FU213064103.Q
+2020:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2020:Q2,U.S.-chartered depository institutions,holder,0.348,38.869,5.156,FU763064103.Q
+2020:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2020:Q2,Property-casualty insurance companies,holder,-15.709,429.753,50.234,FU513064105.Q
+2020:Q2,Life insurance companies,holder,-5.486,658.694,76.625,FU543064105.Q
+2020:Q2,"Private pension funds, including 403(b) plans",holder,5.255,2481.885,438.594,FU573064105.Q
+2020:Q2,Federal government pension funds,holder,4.734,342.54,59.868,FU343064105.Q
+2020:Q2,State and local government employee defined benefit pension funds,holder,-48.184,2385.604,255.052,FU223064145.Q
+2020:Q2,Mutual funds,holder,-66.674,11129.401,1992.319,FU653064100.Q
+2020:Q2,Closed-end funds,holder,0.008,92.042,12.382,FU553064103.Q
+2020:Q2,Exchange-traded funds,holder,26.997,3275.349,543.964,FU563064100.Q
+2020:Q2,Business development companies,holder,0.143,10.818,0.297,FU453064103.Q
+2020:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2020:Q2,Hedge funds (domestic),holder,-31.035,556.352,104.023,FU623064105.Q
+2020:Q2,Private debt funds,holder,-0.39,60.629,1.698,FU443064100.Q
+2020:Q2,Security brokers and dealers,holder,12.913,109.155,17.044,FU663064105.Q
+2020:Q2,Other financial business,holder,7.974,7.974,0.0,FU503064105.Q
+2020:Q2,Rest of the world,holder,35.976,8138.639,1388.935,FU263064105.Q
+2020:Q3,All sectors,total,255.114,55146.902,4313.296,FU893064105.Q
+2020:Q3,Nonfinancial corporate business,issuer,22.375,38115.187,3540.969,FU103164105.Q
+2020:Q3,Domestic financial sectors,issuer,114.536,9350.464,394.795,FU793164105.Q
+2020:Q3,U.S.-chartered depository institutions,issuer_detail,1.233,83.127,-8.579,FU763164105.Q
+2020:Q3,Property-casualty insurance companies,issuer_detail,-0.301,790.128,88.455,FU513164105.Q
+2020:Q3,"Life insurance companies, general accounts",issuer_detail,-2.059,144.619,4.439,FU543164175.Q
+2020:Q3,Closed-end funds,issuer_detail,-0.048,258.132,7.553,FU554090005.Q
+2020:Q3,Exchange-traded funds,issuer_detail,112.264,4725.232,257.263,FU564090005.Q
+2020:Q3,Government-sponsored enterprises,issuer_detail,0.058,112.968,-1.179,FU403164105.Q
+2020:Q3,Mortgage real estate investment trusts,issuer_detail,2.111,56.497,0.487,FU643164105.Q
+2020:Q3,Business development companies,issuer_detail,-0.301,62.673,1.454,FU453164105.Q
+2020:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2020:Q3,Security brokers and dealers,issuer_detail,0.186,100.985,1.454,FU663164105.Q
+2020:Q3,Holding companies,issuer_detail,1.715,1705.001,-15.987,FU733164105.Q
+2020:Q3,Other financial business,issuer_detail,-0.322,1311.102,59.435,FU503164105.Q
+2020:Q3,Rest of the world,issuer,118.203,7681.251,377.532,FU263164105.Q
+2020:Q3,Households and nonprofit organizations,holder,248.466,20434.697,1727.042,FU153064105.Q
+2020:Q3,Nonfinancial corporate business,holder,-35.723,2312.758,183.458,FU103064103.Q
+2020:Q3,Federal government,holder,0.0,108.9,-0.776,FU313064105.Q
+2020:Q3,State and local governments,holder,-9.462,128.405,10.967,FU213064103.Q
+2020:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2020:Q3,U.S.-chartered depository institutions,holder,0.564,42.074,2.641,FU763064103.Q
+2020:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2020:Q3,Property-casualty insurance companies,holder,-7.607,462.099,39.953,FU513064105.Q
+2020:Q3,Life insurance companies,holder,-1.752,695.395,38.453,FU543064105.Q
+2020:Q3,"Private pension funds, including 403(b) plans",holder,-14.218,2682.161,214.494,FU573064105.Q
+2020:Q3,Federal government pension funds,holder,-5.858,366.003,29.321,FU343064105.Q
+2020:Q3,State and local government employee defined benefit pension funds,holder,62.907,2593.238,144.727,FU223064145.Q
+2020:Q3,Mutual funds,holder,-170.429,11843.423,884.451,FU653064100.Q
+2020:Q3,Closed-end funds,holder,0.006,95.573,3.525,FU553064103.Q
+2020:Q3,Exchange-traded funds,holder,46.817,3562.703,240.537,FU563064100.Q
+2020:Q3,Business development companies,holder,0.016,11.594,0.76,FU453064103.Q
+2020:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2020:Q3,Hedge funds (domestic),holder,-2.131,602.303,48.082,FU623064105.Q
+2020:Q3,Private debt funds,holder,-1.924,62.964,4.259,FU443064100.Q
+2020:Q3,Security brokers and dealers,holder,21.564,140.153,9.434,FU663064105.Q
+2020:Q3,Other financial business,holder,0.644,8.618,0.0,FU503064105.Q
+2020:Q3,Rest of the world,holder,123.234,8993.841,731.968,FU263064105.Q
+2020:Q4,All sectors,total,206.755,63935.76,8582.103,FU893064105.Q
+2020:Q4,Nonfinancial corporate business,issuer,-14.831,43788.352,5687.996,FU103164105.Q
+2020:Q4,Domestic financial sectors,issuer,199.343,11131.446,1581.639,FU793164105.Q
+2020:Q4,U.S.-chartered depository institutions,issuer_detail,2.285,119.277,33.865,FU763164105.Q
+2020:Q4,Property-casualty insurance companies,issuer_detail,-0.186,870.743,80.801,FU513164105.Q
+2020:Q4,"Life insurance companies, general accounts",issuer_detail,-7.813,177.373,40.567,FU543164175.Q
+2020:Q4,Closed-end funds,issuer_detail,0.207,278.548,20.209,FU554090005.Q
+2020:Q4,Exchange-traded funds,issuer_detail,182.566,5449.361,541.563,FU564090005.Q
+2020:Q4,Government-sponsored enterprises,issuer_detail,0.0,133.019,20.051,FU403164105.Q
+2020:Q4,Mortgage real estate investment trusts,issuer_detail,3.542,69.942,9.903,FU643164105.Q
+2020:Q4,Business development companies,issuer_detail,2.411,66.963,1.879,FU453164105.Q
+2020:Q4,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2020:Q4,Security brokers and dealers,issuer_detail,12.966,105.786,-8.165,FU663164105.Q
+2020:Q4,Holding companies,issuer_detail,5.548,2309.272,598.723,FU733164105.Q
+2020:Q4,Other financial business,issuer_detail,-2.183,1551.162,242.243,FU503164105.Q
+2020:Q4,Rest of the world,issuer,22.243,9015.962,1312.468,FU263164105.Q
+2020:Q4,Households and nonprofit organizations,holder,125.089,24265.405,3705.619,FU153064105.Q
+2020:Q4,Nonfinancial corporate business,holder,-39.898,2543.177,270.317,FU103064103.Q
+2020:Q4,Federal government,holder,0.0,128.173,19.273,FU313064105.Q
+2020:Q4,State and local governments,holder,-15.638,131.159,18.392,FU213064103.Q
+2020:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2020:Q4,U.S.-chartered depository institutions,holder,0.896,49.008,6.038,FU763064103.Q
+2020:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2020:Q4,Property-casualty insurance companies,holder,3.652,518.09,52.339,FU513064105.Q
+2020:Q4,Life insurance companies,holder,8.753,769.765,65.617,FU543064105.Q
+2020:Q4,"Private pension funds, including 403(b) plans",holder,-1.048,3065.296,384.183,FU573064105.Q
+2020:Q4,Federal government pension funds,holder,-10.54,418.582,63.119,FU343064105.Q
+2020:Q4,State and local government employee defined benefit pension funds,holder,-74.702,2908.572,390.036,FU223064145.Q
+2020:Q4,Mutual funds,holder,-181.194,13391.07,1728.841,FU653064100.Q
+2020:Q4,Closed-end funds,holder,-0.043,105.865,10.335,FU553064103.Q
+2020:Q4,Exchange-traded funds,holder,137.022,4229.44,529.715,FU563064100.Q
+2020:Q4,Business development companies,holder,0.906,13.269,0.769,FU453064103.Q
+2020:Q4,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2020:Q4,Hedge funds (domestic),holder,-19.591,668.983,86.271,FU623064105.Q
+2020:Q4,Private debt funds,holder,3.835,70.975,4.176,FU443064100.Q
+2020:Q4,Security brokers and dealers,holder,-22.728,137.5,20.075,FU663064105.Q
+2020:Q4,Other financial business,holder,0.158,8.776,0.0,FU503064105.Q
+2020:Q4,Rest of the world,holder,291.826,10512.655,1226.988,FU263064105.Q
+2021:Q1,All sectors,total,399.69,68585.549,4250.099,FU893064105.Q
+2021:Q1,Nonfinancial corporate business,issuer,56.505,46708.637,2863.78,FU103164105.Q
+2021:Q1,Domestic financial sectors,issuer,238.405,12403.501,1033.65,FU793164105.Q
+2021:Q1,U.S.-chartered depository institutions,issuer_detail,-0.339,153.555,34.617,FU763164105.Q
+2021:Q1,Property-casualty insurance companies,issuer_detail,-0.467,934.068,63.792,FU513164105.Q
+2021:Q1,"Life insurance companies, general accounts",issuer_detail,-5.981,223.739,52.347,FU543164175.Q
+2021:Q1,Closed-end funds,issuer_detail,6.788,289.67,4.334,FU554090005.Q
+2021:Q1,Exchange-traded funds,issuer_detail,247.915,5909.739,212.463,FU564090005.Q
+2021:Q1,Government-sponsored enterprises,issuer_detail,0.0,157.211,24.192,FU403164105.Q
+2021:Q1,Mortgage real estate investment trusts,issuer_detail,0.945,77.63,6.743,FU643164105.Q
+2021:Q1,Business development companies,issuer_detail,3.917,72.372,1.492,FU453164105.Q
+2021:Q1,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2021:Q1,Security brokers and dealers,issuer_detail,1.008,100.795,-5.999,FU663164105.Q
+2021:Q1,Holding companies,issuer_detail,-14.316,2827.142,532.186,FU733164105.Q
+2021:Q1,Other financial business,issuer_detail,-1.065,1657.58,107.483,FU503164105.Q
+2021:Q1,Rest of the world,issuer,104.78,9473.411,352.669,FU263164105.Q
+2021:Q1,Households and nonprofit organizations,holder,395.244,26626.117,1965.468,FU153064105.Q
+2021:Q1,Nonfinancial corporate business,holder,-23.217,2691.108,171.148,FU103064103.Q
+2021:Q1,Federal government,holder,0.0,152.616,24.443,FU313064105.Q
+2021:Q1,State and local governments,holder,-25.285,113.843,7.969,FU213064103.Q
+2021:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2021:Q1,U.S.-chartered depository institutions,holder,1.024,53.666,3.634,FU763064103.Q
+2021:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2021:Q1,Property-casualty insurance companies,holder,0.701,546.314,27.523,FU513064105.Q
+2021:Q1,Life insurance companies,holder,-7.308,791.557,29.1,FU543064105.Q
+2021:Q1,"Private pension funds, including 403(b) plans",holder,-54.741,3196.806,186.251,FU573064105.Q
+2021:Q1,Federal government pension funds,holder,4.59,449.244,26.072,FU343064105.Q
+2021:Q1,State and local government employee defined benefit pension funds,holder,-76.917,2972.636,140.981,FU223064145.Q
+2021:Q1,Mutual funds,holder,-119.268,13977.907,706.105,FU653064100.Q
+2021:Q1,Closed-end funds,holder,4.182,114.866,4.819,FU553064103.Q
+2021:Q1,Exchange-traded funds,holder,209.418,4692.646,253.788,FU563064100.Q
+2021:Q1,Business development companies,holder,0.602,14.664,0.793,FU453064103.Q
+2021:Q1,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2021:Q1,Hedge funds (domestic),holder,4.144,713.775,40.648,FU623064105.Q
+2021:Q1,Private debt funds,holder,4.038,79.255,4.242,FU443064100.Q
+2021:Q1,Security brokers and dealers,holder,0.66,146.514,8.354,FU663064105.Q
+2021:Q1,Other financial business,holder,-0.269,8.507,0.0,FU503064105.Q
+2021:Q1,Rest of the world,holder,82.092,11243.508,648.761,FU263064105.Q
+2021:Q2,All sectors,total,332.241,74116.092,5198.302,FU893064105.Q
+2021:Q2,Nonfinancial corporate business,issuer,17.097,50527.398,3801.664,FU103164105.Q
+2021:Q2,Domestic financial sectors,issuer,225.821,13481.681,852.359,FU793164105.Q
+2021:Q2,U.S.-chartered depository institutions,issuer_detail,1.607,150.358,-4.804,FU763164105.Q
+2021:Q2,Property-casualty insurance companies,issuer_detail,-1.391,987.799,55.122,FU513164105.Q
+2021:Q2,"Life insurance companies, general accounts",issuer_detail,-5.574,227.69,9.525,FU543164175.Q
+2021:Q2,Closed-end funds,issuer_detail,3.888,300.285,6.727,FU554090005.Q
+2021:Q2,Exchange-traded funds,issuer_detail,247.947,6491.253,333.567,FU564090005.Q
+2021:Q2,Government-sponsored enterprises,issuer_detail,0.121,186.944,29.612,FU403164105.Q
+2021:Q2,Mortgage real estate investment trusts,issuer_detail,0.807,82.792,4.355,FU643164105.Q
+2021:Q2,Business development companies,issuer_detail,4.314,79.567,2.881,FU453164105.Q
+2021:Q2,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2021:Q2,Security brokers and dealers,issuer_detail,0.186,104.98,3.999,FU663164105.Q
+2021:Q2,Holding companies,issuer_detail,-25.971,2996.997,195.826,FU733164105.Q
+2021:Q2,Other financial business,issuer_detail,-0.113,1873.016,215.549,FU503164105.Q
+2021:Q2,Rest of the world,issuer,89.323,10107.013,544.279,FU263164105.Q
+2021:Q2,Households and nonprofit organizations,holder,466.51,29099.726,2007.099,FU153064105.Q
+2021:Q2,Nonfinancial corporate business,holder,-25.114,2885.874,219.88,FU103064103.Q
+2021:Q2,Federal government,holder,0.0,183.308,30.692,FU313064105.Q
+2021:Q2,State and local governments,holder,-8.051,114.827,9.035,FU213064103.Q
+2021:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2021:Q2,U.S.-chartered depository institutions,holder,0.962,57.908,3.28,FU763064103.Q
+2021:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2021:Q2,Property-casualty insurance companies,holder,1.837,584.9,36.749,FU513064105.Q
+2021:Q2,Life insurance companies,holder,-38.5,814.452,61.395,FU543064105.Q
+2021:Q2,"Private pension funds, including 403(b) plans",holder,-53.443,3397.068,253.705,FU573064105.Q
+2021:Q2,Federal government pension funds,holder,3.395,487.596,34.957,FU343064105.Q
+2021:Q2,State and local government employee defined benefit pension funds,holder,-46.336,3113.341,187.041,FU223064145.Q
+2021:Q2,Mutual funds,holder,-33.631,14919.355,975.079,FU653064100.Q
+2021:Q2,Closed-end funds,holder,1.878,121.056,4.312,FU553064103.Q
+2021:Q2,Exchange-traded funds,holder,179.324,5184.637,312.667,FU563064100.Q
+2021:Q2,Business development companies,holder,1.275,17.011,1.072,FU453064103.Q
+2021:Q2,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2021:Q2,Hedge funds (domestic),holder,-35.88,734.542,56.647,FU623064105.Q
+2021:Q2,Private debt funds,holder,5.01,90.059,5.794,FU443064100.Q
+2021:Q2,Security brokers and dealers,holder,-12.552,145.59,11.628,FU663064105.Q
+2021:Q2,Other financial business,holder,-7.445,1.062,0.0,FU503064105.Q
+2021:Q2,Rest of the world,holder,-66.998,12163.78,987.27,FU263064105.Q
+2021:Q3,All sectors,total,161.184,74327.472,50.196,FU893064105.Q
+2021:Q3,Nonfinancial corporate business,issuer,-62.536,50558.128,93.266,FU103164105.Q
+2021:Q3,Domestic financial sectors,issuer,144.112,13735.607,109.814,FU793164105.Q
+2021:Q3,U.S.-chartered depository institutions,issuer_detail,3.769,160.159,6.032,FU763164105.Q
+2021:Q3,Property-casualty insurance companies,issuer_detail,-3.308,968.224,-16.267,FU513164105.Q
+2021:Q3,"Life insurance companies, general accounts",issuer_detail,-7.579,229.699,9.588,FU543164175.Q
+2021:Q3,Closed-end funds,issuer_detail,3.146,302.547,-0.884,FU554090005.Q
+2021:Q3,Exchange-traded funds,issuer_detail,180.369,6580.569,-91.053,FU564090005.Q
+2021:Q3,Government-sponsored enterprises,issuer_detail,0.0,223.464,36.52,FU403164105.Q
+2021:Q3,Mortgage real estate investment trusts,issuer_detail,1.877,80.434,-4.235,FU643164105.Q
+2021:Q3,Business development companies,issuer_detail,7.304,87.68,0.809,FU453164105.Q
+2021:Q3,Interval funds and tender offer funds,issuer_detail,0.0,0.0,0.0,FU463164105.Q
+2021:Q3,Security brokers and dealers,issuer_detail,-0.534,132.232,27.786,FU663164105.Q
+2021:Q3,Holding companies,issuer_detail,-38.867,3074.305,116.175,FU733164105.Q
+2021:Q3,Other financial business,issuer_detail,-2.065,1896.294,25.343,FU503164105.Q
+2021:Q3,Rest of the world,issuer,79.608,10033.737,-152.884,FU263164105.Q
+2021:Q3,Households and nonprofit organizations,holder,109.633,29577.628,368.269,FU153064105.Q
+2021:Q3,Nonfinancial corporate business,holder,-25.173,2867.443,6.742,FU103064103.Q
+2021:Q3,Federal government,holder,0.0,220.9,37.592,FU313064105.Q
+2021:Q3,State and local governments,holder,5.43,119.749,-0.508,FU213064103.Q
+2021:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2021:Q3,U.S.-chartered depository institutions,holder,-0.591,55.881,-1.436,FU763064103.Q
+2021:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2021:Q3,Property-casualty insurance companies,holder,0.574,589.515,4.041,FU513064105.Q
+2021:Q3,Life insurance companies,holder,-15.57,802.86,3.978,FU543064105.Q
+2021:Q3,"Private pension funds, including 403(b) plans",holder,-73.401,3308.648,-15.019,FU573064105.Q
+2021:Q3,Federal government pension funds,holder,-2.385,483.793,-1.418,FU343064105.Q
+2021:Q3,State and local government employee defined benefit pension funds,holder,-6.918,3072.552,-33.871,FU223064145.Q
+2021:Q3,Mutual funds,holder,-28.892,14716.362,-174.101,FU653064100.Q
+2021:Q3,Closed-end funds,holder,0.553,121.324,-0.285,FU553064103.Q
+2021:Q3,Exchange-traded funds,holder,133.319,5234.459,-83.497,FU563064100.Q
+2021:Q3,Business development companies,holder,0.962,18.387,0.414,FU453064103.Q
+2021:Q3,Interval funds and tender offer funds,holder,0.0,0.0,0.0,FU463064105.Q
+2021:Q3,Hedge funds (domestic),holder,-1.702,729.592,-3.248,FU623064105.Q
+2021:Q3,Private debt funds,holder,5.636,97.887,2.192,FU443064100.Q
+2021:Q3,Security brokers and dealers,holder,-29.852,115.094,-0.644,FU663064105.Q
+2021:Q3,Other financial business,holder,-1.062,0.0,0.0,FU503064105.Q
+2021:Q3,Rest of the world,holder,90.623,12195.398,-59.005,FU263064105.Q
+2021:Q4,All sectors,total,27.142,79604.376,5249.762,FU893064105.Q
+2021:Q4,Nonfinancial corporate business,issuer,-65.526,54276.033,3783.431,FU103164105.Q
+2021:Q4,Domestic financial sectors,issuer,223.062,15053.863,1095.194,FU793164105.Q
+2021:Q4,U.S.-chartered depository institutions,issuer_detail,-2.738,172.35,14.929,FU763164105.Q
+2021:Q4,Property-casualty insurance companies,issuer_detail,-4.458,1024.238,60.472,FU513164105.Q
+2021:Q4,"Life insurance companies, general accounts",issuer_detail,-6.604,239.296,16.201,FU543164175.Q
+2021:Q4,Closed-end funds,issuer_detail,3.154,303.861,-1.84,FU554090005.Q
+2021:Q4,Exchange-traded funds,issuer_detail,259.244,7190.515,350.702,FU564090005.Q
+2021:Q4,Government-sponsored enterprises,issuer_detail,0.0,224.185,0.721,FU403164105.Q
+2021:Q4,Mortgage real estate investment trusts,issuer_detail,3.341,83.35,-0.425,FU643164105.Q
+2021:Q4,Business development companies,issuer_detail,10.228,98.268,0.36,FU453164105.Q
+2021:Q4,Interval funds and tender offer funds,issuer_detail,0.0,84.201,84.201,FU463164105.Q
+2021:Q4,Security brokers and dealers,issuer_detail,-5.444,123.785,-3.003,FU663164105.Q
+2021:Q4,Holding companies,issuer_detail,-30.9,3065.085,21.68,FU733164105.Q
+2021:Q4,Other financial business,issuer_detail,-2.761,2444.729,551.196,FU503164105.Q
+2021:Q4,Rest of the world,issuer,-130.394,10274.48,371.137,FU263164105.Q
+2021:Q4,Households and nonprofit organizations,holder,403.965,30966.438,984.845,FU153064105.Q
+2021:Q4,Nonfinancial corporate business,holder,-27.853,3144.897,305.307,FU103064103.Q
+2021:Q4,Federal government,holder,0.0,221.452,0.552,FU313064105.Q
+2021:Q4,State and local governments,holder,-7.236,123.036,10.523,FU213064103.Q
+2021:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2021:Q4,U.S.-chartered depository institutions,holder,0.992,60.401,3.528,FU763064103.Q
+2021:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2021:Q4,Property-casualty insurance companies,holder,-0.875,641.877,53.237,FU513064105.Q
+2021:Q4,Life insurance companies,holder,-17.129,809.307,23.576,FU543064105.Q
+2021:Q4,"Private pension funds, including 403(b) plans",holder,-48.078,3551.317,290.747,FU573064105.Q
+2021:Q4,Federal government pension funds,holder,4.611,524.006,35.602,FU343064105.Q
+2021:Q4,State and local government employee defined benefit pension funds,holder,-38.086,3362.679,328.213,FU223064145.Q
+2021:Q4,Mutual funds,holder,-132.695,15533.811,950.144,FU653064100.Q
+2021:Q4,Closed-end funds,holder,1.158,122.695,0.213,FU553064103.Q
+2021:Q4,Exchange-traded funds,holder,209.581,5803.329,359.289,FU563064100.Q
+2021:Q4,Business development companies,holder,2.631,21.451,0.433,FU453064103.Q
+2021:Q4,Interval funds and tender offer funds,holder,0.0,42.288,42.288,FU463064105.Q
+2021:Q4,Hedge funds (domestic),holder,-33.353,760.352,64.113,FU623064105.Q
+2021:Q4,Private debt funds,holder,11.062,111.254,2.305,FU443064100.Q
+2021:Q4,Security brokers and dealers,holder,-61.61,105.598,52.114,FU663064105.Q
+2021:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2021:Q4,Rest of the world,holder,-239.943,13698.188,1742.733,FU263064105.Q
+2022:Q1,All sectors,total,19.692,75553.418,-4070.65,FU893064105.Q
+2022:Q1,Nonfinancial corporate business,issuer,-132.938,51244.259,-2898.836,FU103164105.Q
+2022:Q1,Domestic financial sectors,issuer,138.431,14674.873,-517.421,FU793164105.Q
+2022:Q1,U.S.-chartered depository institutions,issuer_detail,-6.657,157.784,-7.909,FU763164105.Q
+2022:Q1,Property-casualty insurance companies,issuer_detail,-4.211,1159.488,139.461,FU513164105.Q
+2022:Q1,"Life insurance companies, general accounts",issuer_detail,-9.014,252.117,21.835,FU543164175.Q
+2022:Q1,Closed-end funds,issuer_detail,0.263,284.849,-19.275,FU554090005.Q
+2022:Q1,Exchange-traded funds,issuer_detail,196.261,7014.506,-372.27,FU564090005.Q
+2022:Q1,Government-sponsored enterprises,issuer_detail,0.0,224.62,0.435,FU403164105.Q
+2022:Q1,Mortgage real estate investment trusts,issuer_detail,-2.076,79.357,-1.917,FU643164105.Q
+2022:Q1,Business development companies,issuer_detail,12.612,110.535,-0.345,FU453164105.Q
+2022:Q1,Interval funds and tender offer funds,issuer_detail,18.208,101.564,-0.845,FU463164105.Q
+2022:Q1,Security brokers and dealers,issuer_detail,-7.173,101.63,-14.982,FU663164105.Q
+2022:Q1,Holding companies,issuer_detail,-58.558,2856.675,-149.852,FU733164105.Q
+2022:Q1,Other financial business,issuer_detail,-1.224,2331.748,-111.757,FU503164105.Q
+2022:Q1,Rest of the world,issuer,14.199,9634.286,-654.393,FU263164105.Q
+2022:Q1,Households and nonprofit organizations,holder,287.445,29889.661,-1364.222,FU153064105.Q
+2022:Q1,Nonfinancial corporate business,holder,-39.192,2946.674,-159.031,FU103064103.Q
+2022:Q1,Federal government,holder,0.0,222.106,0.654,FU313064105.Q
+2022:Q1,State and local governments,holder,2.337,118.323,-7.05,FU213064103.Q
+2022:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2022:Q1,U.S.-chartered depository institutions,holder,0.578,59.243,-1.736,FU763064103.Q
+2022:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2022:Q1,Property-casualty insurance companies,holder,36.58,673.6,-4.857,FU513064105.Q
+2022:Q1,Life insurance companies,holder,-0.549,770.277,-38.481,FU543064105.Q
+2022:Q1,"Private pension funds, including 403(b) plans",holder,-21.498,3326.309,-203.51,FU573064105.Q
+2022:Q1,Federal government pension funds,holder,-7.961,485.522,-30.523,FU343064105.Q
+2022:Q1,State and local government employee defined benefit pension funds,holder,-47.177,3244.031,-71.471,FU223064145.Q
+2022:Q1,Mutual funds,holder,-101.481,14328.619,-1103.711,FU653064100.Q
+2022:Q1,Closed-end funds,holder,0.288,115.523,-7.46,FU553064103.Q
+2022:Q1,Exchange-traded funds,holder,154.605,5633.518,-324.416,FU563064100.Q
+2022:Q1,Business development companies,holder,1.517,23.18,0.212,FU453064103.Q
+2022:Q1,Interval funds and tender offer funds,holder,4.706,47.21,0.216,FU463064105.Q
+2022:Q1,Hedge funds (domestic),holder,-33.449,683.331,-43.572,FU623064105.Q
+2022:Q1,Private debt funds,holder,-0.397,111.957,1.1,FU443064100.Q
+2022:Q1,Security brokers and dealers,holder,-23.932,75.615,-6.051,FU663064105.Q
+2022:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2022:Q1,Rest of the world,holder,-192.728,12798.719,-706.741,FU263064105.Q
+2022:Q2,All sectors,total,238.035,63370.664,-12420.789,FU893064105.Q
+2022:Q2,Nonfinancial corporate business,issuer,-132.624,42361.788,-8749.847,FU103164105.Q
+2022:Q2,Domestic financial sectors,issuer,111.111,12678.115,-2107.869,FU793164105.Q
+2022:Q2,U.S.-chartered depository institutions,issuer_detail,2.257,129.048,-30.993,FU763164105.Q
+2022:Q2,Property-casualty insurance companies,issuer_detail,-4.661,951.775,-203.052,FU513164105.Q
+2022:Q2,"Life insurance companies, general accounts",issuer_detail,-7.401,212.304,-32.412,FU543164175.Q
+2022:Q2,Closed-end funds,issuer_detail,0.547,254.741,-30.655,FU554090005.Q
+2022:Q2,Exchange-traded funds,issuer_detail,117.049,6156.505,-975.05,FU564090005.Q
+2022:Q2,Government-sponsored enterprises,issuer_detail,0.0,224.656,0.036,FU403164105.Q
+2022:Q2,Mortgage real estate investment trusts,issuer_detail,-2.483,66.728,-10.146,FU643164105.Q
+2022:Q2,Business development companies,issuer_detail,11.889,118.58,-3.844,FU453164105.Q
+2022:Q2,Interval funds and tender offer funds,issuer_detail,5.524,103.454,-3.634,FU463164105.Q
+2022:Q2,Security brokers and dealers,issuer_detail,0.032,84.594,-17.068,FU663164105.Q
+2022:Q2,Holding companies,issuer_detail,-10.953,2331.765,-513.957,FU733164105.Q
+2022:Q2,Other financial business,issuer_detail,-0.689,2043.965,-287.094,FU503164105.Q
+2022:Q2,Rest of the world,issuer,259.548,8330.761,-1563.073,FU263164105.Q
+2022:Q2,Households and nonprofit organizations,holder,98.693,24862.1,-5126.254,FU153064105.Q
+2022:Q2,Nonfinancial corporate business,holder,-32.747,2429.344,-484.583,FU103064103.Q
+2022:Q2,Federal government,holder,0.0,222.892,0.786,FU313064105.Q
+2022:Q2,State and local governments,holder,26.472,124.482,-20.313,FU213064103.Q
+2022:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2022:Q2,U.S.-chartered depository institutions,holder,-1.938,49.546,-7.759,FU763064103.Q
+2022:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2022:Q2,Property-casualty insurance companies,holder,2.932,595.397,-81.135,FU513064105.Q
+2022:Q2,Life insurance companies,holder,5.037,673.937,-101.377,FU543064105.Q
+2022:Q2,"Private pension funds, including 403(b) plans",holder,23.269,2778.538,-571.04,FU573064105.Q
+2022:Q2,Federal government pension funds,holder,4.379,410.083,-79.818,FU343064105.Q
+2022:Q2,State and local government employee defined benefit pension funds,holder,-87.899,2928.257,-227.875,FU223064145.Q
+2022:Q2,Mutual funds,holder,-66.814,11894.395,-2367.41,FU653064100.Q
+2022:Q2,Closed-end funds,holder,0.402,99.752,-16.173,FU553064103.Q
+2022:Q2,Exchange-traded funds,holder,71.96,4802.233,-903.245,FU563064100.Q
+2022:Q2,Business development companies,holder,1.376,23.699,-0.857,FU453064103.Q
+2022:Q2,Interval funds and tender offer funds,holder,0.155,45.364,-2.001,FU463064105.Q
+2022:Q2,Hedge funds (domestic),holder,32.587,598.608,-117.31,FU623064105.Q
+2022:Q2,Private debt funds,holder,-1.803,106.015,-4.139,FU443064100.Q
+2022:Q2,Security brokers and dealers,holder,-54.621,8.013,-12.981,FU663064105.Q
+2022:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2022:Q2,Rest of the world,holder,216.595,10718.009,-2297.305,FU263064105.Q
+2022:Q3,All sectors,total,123.663,60124.328,-3369.999,FU893064105.Q
+2022:Q3,Nonfinancial corporate business,issuer,-149.244,40367.31,-1845.234,FU103164105.Q
+2022:Q3,Domestic financial sectors,issuer,91.898,12212.318,-557.695,FU793164105.Q
+2022:Q3,U.S.-chartered depository institutions,issuer_detail,0.986,126.38,-3.654,FU763164105.Q
+2022:Q3,Property-casualty insurance companies,issuer_detail,-4.267,913.65,-33.858,FU513164105.Q
+2022:Q3,"Life insurance companies, general accounts",issuer_detail,-8.021,213.718,9.435,FU543164175.Q
+2022:Q3,Closed-end funds,issuer_detail,-0.526,239.019,-15.196,FU554090005.Q
+2022:Q3,Exchange-traded funds,issuer_detail,100.797,5892.048,-365.254,FU564090005.Q
+2022:Q3,Government-sponsored enterprises,issuer_detail,0.0,225.646,0.99,FU403164105.Q
+2022:Q3,Mortgage real estate investment trusts,issuer_detail,-2.556,54.365,-9.807,FU643164105.Q
+2022:Q3,Business development companies,issuer_detail,7.091,124.442,-1.229,FU453164105.Q
+2022:Q3,Interval funds and tender offer funds,issuer_detail,4.064,107.138,-0.38,FU463164105.Q
+2022:Q3,Security brokers and dealers,issuer_detail,0.9,80.855,-4.639,FU663164105.Q
+2022:Q3,Holding companies,issuer_detail,-5.874,2272.999,-52.892,FU733164105.Q
+2022:Q3,Other financial business,issuer_detail,-0.696,1962.058,-81.211,FU503164105.Q
+2022:Q3,Rest of the world,issuer,181.009,7544.7,-967.07,FU263164105.Q
+2022:Q3,Households and nonprofit organizations,holder,184.813,23845.847,-1201.066,FU153064105.Q
+2022:Q3,Nonfinancial corporate business,holder,-31.019,2270.125,-128.2,FU103064103.Q
+2022:Q3,Federal government,holder,0.0,223.7,0.808,FU313064105.Q
+2022:Q3,State and local governments,holder,4.714,123.038,-6.158,FU213064103.Q
+2022:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2022:Q3,U.S.-chartered depository institutions,holder,-0.227,45.846,-3.473,FU763064103.Q
+2022:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2022:Q3,Property-casualty insurance companies,holder,-55.867,507.9,-31.63,FU513064105.Q
+2022:Q3,Life insurance companies,holder,-8.082,630.052,-35.803,FU543064105.Q
+2022:Q3,"Private pension funds, including 403(b) plans",holder,23.137,2664.233,-137.442,FU573064105.Q
+2022:Q3,Federal government pension funds,holder,-3.4,384.859,-21.824,FU343064105.Q
+2022:Q3,State and local government employee defined benefit pension funds,holder,-15.671,2784.235,-128.351,FU223064145.Q
+2022:Q3,Mutual funds,holder,-65.863,11077.427,-751.105,FU653064100.Q
+2022:Q3,Closed-end funds,holder,-0.002,92.849,-6.901,FU553064103.Q
+2022:Q3,Exchange-traded funds,holder,55.361,4552.096,-305.498,FU563064100.Q
+2022:Q3,Business development companies,holder,3.019,26.336,-0.382,FU453064103.Q
+2022:Q3,Interval funds and tender offer funds,holder,0.654,46.826,0.808,FU463064105.Q
+2022:Q3,Hedge funds (domestic),holder,-0.511,568.487,-29.61,FU623064105.Q
+2022:Q3,Private debt funds,holder,4.116,108.422,-1.709,FU443064100.Q
+2022:Q3,Security brokers and dealers,holder,40.109,47.726,-0.396,FU663064105.Q
+2022:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2022:Q3,Rest of the world,holder,-11.618,10124.324,-582.067,FU263064105.Q
+2022:Q4,All sectors,total,-145.408,63879.184,3900.264,FU893064105.Q
+2022:Q4,Nonfinancial corporate business,issuer,-138.006,42064.546,1835.242,FU103164105.Q
+2022:Q4,Domestic financial sectors,issuer,209.73,13290.593,868.545,FU793164105.Q
+2022:Q4,U.S.-chartered depository institutions,issuer_detail,20.72,124.154,-22.946,FU763164105.Q
+2022:Q4,Property-casualty insurance companies,issuer_detail,-3.183,1029.91,119.443,FU513164105.Q
+2022:Q4,"Life insurance companies, general accounts",issuer_detail,-5.889,246.958,39.129,FU543164175.Q
+2022:Q4,Closed-end funds,issuer_detail,-0.808,247.906,9.695,FU554090005.Q
+2022:Q4,Exchange-traded funds,issuer_detail,195.162,6476.913,389.703,FU564090005.Q
+2022:Q4,Government-sponsored enterprises,issuer_detail,0.0,229.331,3.685,FU403164105.Q
+2022:Q4,Mortgage real estate investment trusts,issuer_detail,1.007,60.433,5.061,FU643164105.Q
+2022:Q4,Business development companies,issuer_detail,3.614,127.322,-0.734,FU453164105.Q
+2022:Q4,Interval funds and tender offer funds,issuer_detail,2.285,109.819,0.396,FU463164105.Q
+2022:Q4,Security brokers and dealers,issuer_detail,-0.677,91.449,11.271,FU663164105.Q
+2022:Q4,Holding companies,issuer_detail,-2.135,2488.601,217.737,FU733164105.Q
+2022:Q4,Other financial business,issuer_detail,-0.366,2057.797,96.105,FU503164105.Q
+2022:Q4,Rest of the world,issuer,-217.132,8524.045,1196.477,FU263164105.Q
+2022:Q4,Households and nonprofit organizations,holder,24.628,25140.293,1269.818,FU153064105.Q
+2022:Q4,Nonfinancial corporate business,holder,-33.215,2397.646,160.736,FU103064103.Q
+2022:Q4,Federal government,holder,0.0,227.558,3.858,FU313064105.Q
+2022:Q4,State and local governments,holder,-6.959,124.336,8.257,FU213064103.Q
+2022:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2022:Q4,U.S.-chartered depository institutions,holder,-0.296,51.376,5.826,FU763064103.Q
+2022:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2022:Q4,Property-casualty insurance companies,holder,-8.025,532.945,33.07,FU513064105.Q
+2022:Q4,Life insurance companies,holder,-12.574,658.501,41.023,FU543064105.Q
+2022:Q4,"Private pension funds, including 403(b) plans",holder,55.528,2898.562,178.801,FU573064105.Q
+2022:Q4,Federal government pension funds,holder,0.799,418.678,33.02,FU343064105.Q
+2022:Q4,State and local government employee defined benefit pension funds,holder,18.796,2980.796,177.765,FU223064145.Q
+2022:Q4,Mutual funds,holder,-152.334,11867.026,941.933,FU653064100.Q
+2022:Q4,Closed-end funds,holder,-0.554,98.518,6.223,FU553064103.Q
+2022:Q4,Exchange-traded funds,holder,134.137,5059.184,372.951,FU563064100.Q
+2022:Q4,Business development companies,holder,1.281,27.663,0.046,FU453064103.Q
+2022:Q4,Interval funds and tender offer funds,holder,3.05,49.378,-0.498,FU463064105.Q
+2022:Q4,Hedge funds (domestic),holder,-34.968,571.671,38.152,FU623064105.Q
+2022:Q4,Private debt funds,holder,6.783,115.394,0.189,FU443064100.Q
+2022:Q4,Security brokers and dealers,holder,-3.294,47.635,3.203,FU663064105.Q
+2022:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2022:Q4,Rest of the world,holder,-138.191,10612.024,625.891,FU263064105.Q
+2023:Q1,All sectors,total,-90.699,67705.836,3917.351,FU893064105.Q
+2023:Q1,Nonfinancial corporate business,issuer,-97.893,45418.097,3451.444,FU103164105.Q
+2023:Q1,Domestic financial sectors,issuer,47.018,13266.763,-70.848,FU793164105.Q
+2023:Q1,U.S.-chartered depository institutions,issuer_detail,-10.256,84.585,-29.313,FU763164105.Q
+2023:Q1,Property-casualty insurance companies,issuer_detail,-3.254,1011.363,-15.293,FU513164105.Q
+2023:Q1,"Life insurance companies, general accounts",issuer_detail,-5.516,216.416,-25.026,FU543164175.Q
+2023:Q1,Closed-end funds,issuer_detail,0.325,247.704,-0.527,FU554090005.Q
+2023:Q1,Exchange-traded funds,issuer_detail,84.09,6882.604,321.601,FU564090005.Q
+2023:Q1,Government-sponsored enterprises,issuer_detail,0.0,233.697,4.366,FU403164105.Q
+2023:Q1,Mortgage real estate investment trusts,issuer_detail,0.593,58.498,-2.528,FU643164105.Q
+2023:Q1,Business development companies,issuer_detail,4.571,132.562,0.669,FU453164105.Q
+2023:Q1,Interval funds and tender offer funds,issuer_detail,2.521,115.013,2.673,FU463164105.Q
+2023:Q1,Security brokers and dealers,issuer_detail,2.764,96.206,1.993,FU663164105.Q
+2023:Q1,Holding companies,issuer_detail,-28.332,2224.653,-235.616,FU733164105.Q
+2023:Q1,Other financial business,issuer_detail,-0.488,1963.462,-93.847,FU503164105.Q
+2023:Q1,Rest of the world,issuer,-39.824,9020.976,536.755,FU263164105.Q
+2023:Q1,Households and nonprofit organizations,holder,-34.356,26794.272,1688.335,FU153064105.Q
+2023:Q1,Nonfinancial corporate business,holder,-20.331,2571.331,194.016,FU103064103.Q
+2023:Q1,Federal government,holder,0.0,231.606,4.048,FU313064105.Q
+2023:Q1,State and local governments,holder,-1.477,131.302,8.443,FU213064103.Q
+2023:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2023:Q1,U.S.-chartered depository institutions,holder,-0.33,51.691,0.645,FU763064103.Q
+2023:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2023:Q1,Property-casualty insurance companies,holder,11.462,576.382,31.975,FU513064105.Q
+2023:Q1,Life insurance companies,holder,-20.191,677.816,39.506,FU543064105.Q
+2023:Q1,"Private pension funds, including 403(b) plans",holder,-42.911,3052.494,196.843,FU573064105.Q
+2023:Q1,Federal government pension funds,holder,-0.174,448.833,30.329,FU343064105.Q
+2023:Q1,State and local government employee defined benefit pension funds,holder,-83.673,2961.559,64.436,FU223064145.Q
+2023:Q1,Mutual funds,holder,-41.366,12537.122,711.462,FU653064100.Q
+2023:Q1,Closed-end funds,holder,0.017,98.387,-0.148,FU553064103.Q
+2023:Q1,Exchange-traded funds,holder,29.269,5376.461,288.008,FU563064100.Q
+2023:Q1,Business development companies,holder,-1.685,26.159,0.181,FU453064103.Q
+2023:Q1,Interval funds and tender offer funds,holder,1.423,52.738,1.937,FU463064105.Q
+2023:Q1,Hedge funds (domestic),holder,-25.281,585.212,38.822,FU623064105.Q
+2023:Q1,Private debt funds,holder,-8.847,107.302,0.755,FU443064100.Q
+2023:Q1,Security brokers and dealers,holder,25.225,76.095,3.235,FU663064105.Q
+2023:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2023:Q1,Rest of the world,holder,122.527,11349.074,614.523,FU263064105.Q
+2023:Q2,All sectors,total,90.055,72083.715,4287.824,FU893064105.Q
+2023:Q2,Nonfinancial corporate business,issuer,-105.655,48933.431,3620.989,FU103164105.Q
+2023:Q2,Domestic financial sectors,issuer,113.218,13896.623,516.642,FU793164105.Q
+2023:Q2,U.S.-chartered depository institutions,issuer_detail,0.141,80.947,-3.779,FU763164105.Q
+2023:Q2,Property-casualty insurance companies,issuer_detail,-2.974,1078.452,70.063,FU513164105.Q
+2023:Q2,"Life insurance companies, general accounts",issuer_detail,-7.097,223.873,14.554,FU543164175.Q
+2023:Q2,Closed-end funds,issuer_detail,0.101,248.603,0.798,FU554090005.Q
+2023:Q2,Exchange-traded funds,issuer_detail,134.931,7299.65,282.115,FU564090005.Q
+2023:Q2,Government-sponsored enterprises,issuer_detail,0.0,238.095,4.398,FU403164105.Q
+2023:Q2,Mortgage real estate investment trusts,issuer_detail,0.127,62.974,4.349,FU643164105.Q
+2023:Q2,Business development companies,issuer_detail,7.251,140.526,0.713,FU453164105.Q
+2023:Q2,Interval funds and tender offer funds,issuer_detail,2.257,119.032,1.762,FU463164105.Q
+2023:Q2,Security brokers and dealers,issuer_detail,5.429,93.585,-8.05,FU663164105.Q
+2023:Q2,Holding companies,issuer_detail,-26.311,2265.188,66.846,FU733164105.Q
+2023:Q2,Other financial business,issuer_detail,-0.637,2045.698,82.873,FU503164105.Q
+2023:Q2,Rest of the world,issuer,82.492,9253.661,150.193,FU263164105.Q
+2023:Q2,Households and nonprofit organizations,holder,122.437,28516.656,1599.947,FU153064105.Q
+2023:Q2,Nonfinancial corporate business,holder,-22.019,2762.731,213.419,FU103064103.Q
+2023:Q2,Federal government,holder,0.0,235.851,4.245,FU313064105.Q
+2023:Q2,State and local governments,holder,-9.645,132.11,10.453,FU213064103.Q
+2023:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2023:Q2,U.S.-chartered depository institutions,holder,1.311,54.686,1.684,FU763064103.Q
+2023:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2023:Q2,Property-casualty insurance companies,holder,-7.724,605.232,36.574,FU513064105.Q
+2023:Q2,Life insurance companies,holder,-33.167,687.659,43.01,FU543064105.Q
+2023:Q2,"Private pension funds, including 403(b) plans",holder,-35.504,3260.003,243.013,FU573064105.Q
+2023:Q2,Federal government pension funds,holder,3.404,485.144,32.907,FU343064105.Q
+2023:Q2,State and local government employee defined benefit pension funds,holder,15.898,3123.455,145.998,FU223064145.Q
+2023:Q2,Mutual funds,holder,-78.089,13229.677,770.644,FU653064100.Q
+2023:Q2,Closed-end funds,holder,0.094,101.018,2.537,FU553064103.Q
+2023:Q2,Exchange-traded funds,holder,87.148,5766.227,302.618,FU563064100.Q
+2023:Q2,Business development companies,holder,2.677,29.053,0.217,FU453064103.Q
+2023:Q2,Interval funds and tender offer funds,holder,-0.422,54.194,1.878,FU463064105.Q
+2023:Q2,Hedge funds (domestic),holder,-24.336,607.465,46.589,FU623064105.Q
+2023:Q2,Private debt funds,holder,1.793,109.985,0.89,FU443064100.Q
+2023:Q2,Security brokers and dealers,holder,25.692,107.845,6.058,FU663064105.Q
+2023:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2023:Q2,Rest of the world,holder,40.507,12214.724,825.143,FU263064105.Q
+2023:Q3,All sectors,total,42.978,69548.214,-2578.479,FU893064105.Q
+2023:Q3,Nonfinancial corporate business,issuer,-104.524,46927.839,-1901.068,FU103164105.Q
+2023:Q3,Domestic financial sectors,issuer,109.397,13698.121,-307.899,FU793164105.Q
+2023:Q3,U.S.-chartered depository institutions,issuer_detail,0.917,82.768,0.904,FU763164105.Q
+2023:Q3,Property-casualty insurance companies,issuer_detail,-2.599,1102.664,26.811,FU513164105.Q
+2023:Q3,"Life insurance companies, general accounts",issuer_detail,-5.678,237.214,19.019,FU543164175.Q
+2023:Q3,Closed-end funds,issuer_detail,-0.348,237.053,-11.202,FU554090005.Q
+2023:Q3,Exchange-traded funds,issuer_detail,108.856,7134.461,-274.045,FU564090005.Q
+2023:Q3,Government-sponsored enterprises,issuer_detail,0.0,243.057,4.962,FU403164105.Q
+2023:Q3,Mortgage real estate investment trusts,issuer_detail,-2.346,60.951,0.323,FU643164105.Q
+2023:Q3,Business development companies,issuer_detail,9.932,152.138,1.68,FU453164105.Q
+2023:Q3,Interval funds and tender offer funds,issuer_detail,3.808,123.813,0.973,FU463164105.Q
+2023:Q3,Security brokers and dealers,issuer_detail,4.254,92.215,-5.624,FU663164105.Q
+2023:Q3,Holding companies,issuer_detail,-6.617,2168.186,-90.385,FU733164105.Q
+2023:Q3,Other financial business,issuer_detail,-0.782,2063.601,18.685,FU503164105.Q
+2023:Q3,Rest of the world,issuer,38.105,8922.254,-369.512,FU263164105.Q
+2023:Q3,Households and nonprofit organizations,holder,222.137,27618.822,-1119.971,FU153064105.Q
+2023:Q3,Nonfinancial corporate business,holder,-21.216,2640.743,-100.772,FU103064103.Q
+2023:Q3,Federal government,holder,0.0,240.4,4.549,FU313064105.Q
+2023:Q3,State and local governments,holder,0.345,127.627,-4.828,FU213064103.Q
+2023:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2023:Q3,U.S.-chartered depository institutions,holder,1.167,54.208,-1.645,FU763064103.Q
+2023:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2023:Q3,Property-casualty insurance companies,holder,-26.36,557.117,-21.755,FU513064105.Q
+2023:Q3,Life insurance companies,holder,-7.259,655.682,-24.718,FU543064105.Q
+2023:Q3,"Private pension funds, including 403(b) plans",holder,-63.607,3077.276,-119.12,FU573064105.Q
+2023:Q3,Federal government pension funds,holder,5.721,474.013,-16.852,FU343064105.Q
+2023:Q3,State and local government employee defined benefit pension funds,holder,-21.184,3027.279,-74.992,FU223064145.Q
+2023:Q3,Mutual funds,holder,-73.973,12605.474,-550.23,FU653064100.Q
+2023:Q3,Closed-end funds,holder,-0.01,95.482,-5.526,FU553064103.Q
+2023:Q3,Exchange-traded funds,holder,72.406,5608.241,-230.392,FU563064100.Q
+2023:Q3,Business development companies,holder,0.796,29.904,0.055,FU453064103.Q
+2023:Q3,Interval funds and tender offer funds,holder,0.358,56.259,1.707,FU463064105.Q
+2023:Q3,Hedge funds (domestic),holder,13.33,598.598,-22.197,FU623064105.Q
+2023:Q3,Private debt funds,holder,7.487,117.68,0.208,FU443064100.Q
+2023:Q3,Security brokers and dealers,holder,-19.244,84.661,-3.94,FU663064105.Q
+2023:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2023:Q3,Rest of the world,holder,-47.916,11878.748,-288.06,FU263064105.Q
+2023:Q4,All sectors,total,-8.824,76767.801,7228.411,FU893064105.Q
+2023:Q4,Nonfinancial corporate business,issuer,-294.782,51751.514,5118.457,FU103164105.Q
+2023:Q4,Domestic financial sectors,issuer,263.85,15434.636,1472.665,FU793164105.Q
+2023:Q4,U.S.-chartered depository institutions,issuer_detail,0.687,98.743,15.288,FU763164105.Q
+2023:Q4,Property-casualty insurance companies,issuer_detail,-2.796,1153.421,53.553,FU513164105.Q
+2023:Q4,"Life insurance companies, general accounts",issuer_detail,-5.722,255.013,23.521,FU543164175.Q
+2023:Q4,Closed-end funds,issuer_detail,-0.96,250.271,14.178,FU554090005.Q
+2023:Q4,Exchange-traded funds,issuer_detail,269.636,8085.698,681.601,FU564090005.Q
+2023:Q4,Government-sponsored enterprises,issuer_detail,0.0,258.904,15.847,FU403164105.Q
+2023:Q4,Mortgage real estate investment trusts,issuer_detail,1.335,66.24,3.954,FU643164105.Q
+2023:Q4,Business development companies,issuer_detail,9.559,162.505,0.808,FU453164105.Q
+2023:Q4,Interval funds and tender offer funds,issuer_detail,4.499,131.738,3.426,FU463164105.Q
+2023:Q4,Security brokers and dealers,issuer_detail,-0.017,105.347,13.149,FU663164105.Q
+2023:Q4,Holding companies,issuer_detail,-11.414,2626.572,469.8,FU733164105.Q
+2023:Q4,Other financial business,issuer_detail,-0.957,2240.184,177.54,FU503164105.Q
+2023:Q4,Rest of the world,issuer,22.108,9581.651,637.289,FU263164105.Q
+2023:Q4,Households and nonprofit organizations,holder,138.501,30370.239,2612.916,FU153064105.Q
+2023:Q4,Nonfinancial corporate business,holder,-23.599,2913.842,296.698,FU103064103.Q
+2023:Q4,Federal government,holder,0.0,255.208,14.808,FU313064105.Q
+2023:Q4,State and local governments,holder,-8.107,134.43,14.91,FU213064103.Q
+2023:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2023:Q4,U.S.-chartered depository institutions,holder,0.388,59.717,5.121,FU763064103.Q
+2023:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2023:Q4,Property-casualty insurance companies,holder,-19.146,596.349,58.378,FU513064105.Q
+2023:Q4,Life insurance companies,holder,-28.44,695.948,68.706,FU543064105.Q
+2023:Q4,"Private pension funds, including 403(b) plans",holder,-26.574,3410.205,359.503,FU573064105.Q
+2023:Q4,Federal government pension funds,holder,3.012,534.457,57.432,FU343064105.Q
+2023:Q4,State and local government employee defined benefit pension funds,holder,-54.139,3223.029,249.889,FU223064145.Q
+2023:Q4,Mutual funds,holder,-125.903,13882.105,1402.534,FU653064100.Q
+2023:Q4,Closed-end funds,holder,-0.05,99.77,4.338,FU553064103.Q
+2023:Q4,Exchange-traded funds,holder,211.351,6433.413,613.821,FU563064100.Q
+2023:Q4,Business development companies,holder,0.206,30.309,0.199,FU453064103.Q
+2023:Q4,Interval funds and tender offer funds,holder,2.957,60.612,1.396,FU463064105.Q
+2023:Q4,Hedge funds (domestic),holder,-45.608,622.921,69.931,FU623064105.Q
+2023:Q4,Private debt funds,holder,9.78,128.243,0.783,FU443064100.Q
+2023:Q4,Security brokers and dealers,holder,21.552,116.104,9.891,FU663064105.Q
+2023:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2023:Q4,Rest of the world,holder,-65.005,13200.9,1387.157,FU263064105.Q
+2024:Q1,All sectors,total,96.3,83576.208,6712.107,FU893064105.Q
+2024:Q1,Nonfinancial corporate business,issuer,-159.078,56650.78,5058.344,FU103164105.Q
+2024:Q1,Domestic financial sectors,issuer,191.883,16825.144,1198.625,FU793164105.Q
+2024:Q1,U.S.-chartered depository institutions,issuer_detail,-16.541,97.62,15.418,FU763164105.Q
+2024:Q1,Property-casualty insurance companies,issuer_detail,-4.73,1364.548,215.857,FU513164105.Q
+2024:Q1,"Life insurance companies, general accounts",issuer_detail,-11.177,278.695,34.859,FU543164175.Q
+2024:Q1,Closed-end funds,issuer_detail,0.071,255.509,5.167,FU554090005.Q
+2024:Q1,Exchange-traded funds,issuer_detail,226.474,8842.771,530.599,FU564090005.Q
+2024:Q1,Government-sponsored enterprises,issuer_detail,0.0,275.616,16.712,FU403164105.Q
+2024:Q1,Mortgage real estate investment trusts,issuer_detail,-0.032,64.993,-1.215,FU643164105.Q
+2024:Q1,Business development companies,issuer_detail,15.419,179.035,1.111,FU453164105.Q
+2024:Q1,Interval funds and tender offer funds,issuer_detail,5.974,142.14,4.428,FU463164105.Q
+2024:Q1,Security brokers and dealers,issuer_detail,-5.775,118.799,19.227,FU663164105.Q
+2024:Q1,Holding companies,issuer_detail,-16.434,2882.929,272.791,FU733164105.Q
+2024:Q1,Other financial business,issuer_detail,-1.366,2322.489,83.671,FU503164105.Q
+2024:Q1,Rest of the world,issuer,63.495,10100.284,455.138,FU263164105.Q
+2024:Q1,Households and nonprofit organizations,holder,377.72,32855.102,2107.143,FU153064105.Q
+2024:Q1,Nonfinancial corporate business,holder,-76.194,3141.341,303.693,FU103064103.Q
+2024:Q1,Federal government,holder,0.0,270.995,15.787,FU313064105.Q
+2024:Q1,State and local governments,holder,-12.249,135.165,12.984,FU213064103.Q
+2024:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2024:Q1,U.S.-chartered depository institutions,holder,10.929,75.819,5.173,FU763064103.Q
+2024:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2024:Q1,Property-casualty insurance companies,holder,-48.736,599.463,51.85,FU513064105.Q
+2024:Q1,Life insurance companies,holder,-15.962,740.496,60.51,FU543064105.Q
+2024:Q1,"Private pension funds, including 403(b) plans",holder,-78.856,3966.523,635.174,FU573064105.Q
+2024:Q1,Federal government pension funds,holder,2.562,585.631,48.612,FU343064105.Q
+2024:Q1,State and local government employee defined benefit pension funds,holder,-48.164,3395.836,220.971,FU223064145.Q
+2024:Q1,Mutual funds,holder,-123.037,14994.58,1235.512,FU653064100.Q
+2024:Q1,Closed-end funds,holder,0.0,104.205,4.435,FU553064103.Q
+2024:Q1,Exchange-traded funds,holder,180.517,7148.856,534.926,FU563064100.Q
+2024:Q1,Business development companies,holder,1.27,31.698,0.119,FU453064103.Q
+2024:Q1,Interval funds and tender offer funds,holder,0.529,65.5,4.359,FU463064105.Q
+2024:Q1,Hedge funds (domestic),holder,-6.803,676.281,60.163,FU623064105.Q
+2024:Q1,Private debt funds,holder,0.972,129.719,0.504,FU443064100.Q
+2024:Q1,Security brokers and dealers,holder,-10.521,116.797,11.214,FU663064105.Q
+2024:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2024:Q1,Rest of the world,holder,-57.677,14542.201,1398.978,FU263064105.Q
+2024:Q2,All sectors,total,104.152,85511.741,1831.381,FU893064105.Q
+2024:Q2,Nonfinancial corporate business,issuer,-125.873,58193.424,1668.517,FU103164105.Q
+2024:Q2,Domestic financial sectors,issuer,167.846,17185.237,192.247,FU793164105.Q
+2024:Q2,U.S.-chartered depository institutions,issuer_detail,0.685,91.894,-6.411,FU763164105.Q
+2024:Q2,Property-casualty insurance companies,issuer_detail,-4.136,1310.481,-49.931,FU513164105.Q
+2024:Q2,"Life insurance companies, general accounts",issuer_detail,-5.058,265.758,-7.879,FU543164175.Q
+2024:Q2,Closed-end funds,issuer_detail,-0.264,252.908,-2.337,FU554090005.Q
+2024:Q2,Exchange-traded funds,issuer_detail,197.305,9143.098,103.022,FU564090005.Q
+2024:Q2,Government-sponsored enterprises,issuer_detail,0.0,292.139,16.523,FU403164105.Q
+2024:Q2,Mortgage real estate investment trusts,issuer_detail,-0.628,63.195,-1.17,FU643164105.Q
+2024:Q2,Business development companies,issuer_detail,16.784,195.673,-0.146,FU453164105.Q
+2024:Q2,Interval funds and tender offer funds,issuer_detail,5.974,150.913,2.799,FU463164105.Q
+2024:Q2,Security brokers and dealers,issuer_detail,-7.974,128.303,17.478,FU663164105.Q
+2024:Q2,Holding companies,issuer_detail,-32.095,2894.433,43.599,FU733164105.Q
+2024:Q2,Other financial business,issuer_detail,-2.747,2396.442,76.7,FU503164105.Q
+2024:Q2,Rest of the world,issuer,62.179,10133.08,-29.383,FU263164105.Q
+2024:Q2,Households and nonprofit organizations,holder,389.122,33741.266,497.042,FU153064105.Q
+2024:Q2,Nonfinancial corporate business,holder,-79.183,3185.393,123.235,FU103064103.Q
+2024:Q2,Federal government,holder,0.0,287.849,16.854,FU313064105.Q
+2024:Q2,State and local governments,holder,-1.281,137.786,3.902,FU213064103.Q
+2024:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2024:Q2,U.S.-chartered depository institutions,holder,0.412,75.046,-1.185,FU763064103.Q
+2024:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2024:Q2,Property-casualty insurance companies,holder,-62.232,550.207,12.976,FU513064105.Q
+2024:Q2,Life insurance companies,holder,8.47,764.994,16.028,FU543064105.Q
+2024:Q2,"Private pension funds, including 403(b) plans",holder,-78.856,4002.177,114.51,FU573064105.Q
+2024:Q2,Federal government pension funds,holder,3.025,601.743,13.087,FU343064105.Q
+2024:Q2,State and local government employee defined benefit pension funds,holder,-60.37,3375.476,40.01,FU223064145.Q
+2024:Q2,Mutual funds,holder,-103.568,15149.634,258.622,FU653064100.Q
+2024:Q2,Closed-end funds,holder,-0.061,102.843,-1.301,FU553064103.Q
+2024:Q2,Exchange-traded funds,holder,125.532,7380.913,106.525,FU563064100.Q
+2024:Q2,Business development companies,holder,0.024,31.562,-0.16,FU453064103.Q
+2024:Q2,Interval funds and tender offer funds,holder,0.32,68.666,2.846,FU463064105.Q
+2024:Q2,Hedge funds (domestic),holder,-24.61,671.195,19.524,FU623064105.Q
+2024:Q2,Private debt funds,holder,6.521,135.585,-0.655,FU443064100.Q
+2024:Q2,Security brokers and dealers,holder,11.156,131.325,3.372,FU663064105.Q
+2024:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2024:Q2,Rest of the world,holder,-30.269,15118.081,606.149,FU263064105.Q
+2024:Q3,All sectors,total,277.895,90896.753,5107.117,FU893064105.Q
+2024:Q3,Nonfinancial corporate business,issuer,-87.235,61380.061,3273.872,FU103164105.Q
+2024:Q3,Domestic financial sectors,issuer,304.807,18688.814,1198.77,FU793164105.Q
+2024:Q3,U.S.-chartered depository institutions,issuer_detail,0.822,98.856,6.14,FU763164105.Q
+2024:Q3,Property-casualty insurance companies,issuer_detail,-3.158,1483.331,176.008,FU513164105.Q
+2024:Q3,"Life insurance companies, general accounts",issuer_detail,-5.867,295.481,35.59,FU543164175.Q
+2024:Q3,Closed-end funds,issuer_detail,-0.463,260.612,8.167,FU554090005.Q
+2024:Q3,Exchange-traded funds,issuer_detail,299.589,9968.601,525.914,FU564090005.Q
+2024:Q3,Government-sponsored enterprises,issuer_detail,-0.075,309.765,17.701,FU403164105.Q
+2024:Q3,Mortgage real estate investment trusts,issuer_detail,2.843,70.358,4.32,FU643164105.Q
+2024:Q3,Business development companies,issuer_detail,14.466,210.27,0.131,FU453164105.Q
+2024:Q3,Interval funds and tender offer funds,issuer_detail,6.254,161.123,3.956,FU463164105.Q
+2024:Q3,Security brokers and dealers,issuer_detail,13.309,138.618,-2.994,FU663164105.Q
+2024:Q3,Holding companies,issuer_detail,-21.943,3053.521,181.031,FU733164105.Q
+2024:Q3,Other financial business,issuer_detail,-0.97,2638.278,242.806,FU503164105.Q
+2024:Q3,Rest of the world,issuer,60.323,10827.878,634.475,FU263164105.Q
+2024:Q3,Households and nonprofit organizations,holder,295.855,36245.908,2208.787,FU153064105.Q
+2024:Q3,Nonfinancial corporate business,holder,-83.563,3278.004,176.174,FU103064103.Q
+2024:Q3,Federal government,holder,0.0,305.8,17.951,FU313064105.Q
+2024:Q3,State and local governments,holder,-1.552,144.235,8.001,FU213064103.Q
+2024:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2024:Q3,U.S.-chartered depository institutions,holder,0.769,82.017,6.202,FU763064103.Q
+2024:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2024:Q3,Property-casualty insurance companies,holder,-38.084,545.129,33.006,FU513064105.Q
+2024:Q3,Life insurance companies,holder,-4.829,806.054,45.889,FU543064105.Q
+2024:Q3,"Private pension funds, including 403(b) plans",holder,-78.856,4155.716,232.395,FU573064105.Q
+2024:Q3,Federal government pension funds,holder,-4.465,635.459,38.181,FU343064105.Q
+2024:Q3,State and local government employee defined benefit pension funds,holder,-60.201,3487.613,172.338,FU223064145.Q
+2024:Q3,Mutual funds,holder,-141.401,15905.702,897.469,FU653064100.Q
+2024:Q3,Closed-end funds,holder,-0.185,107.841,5.183,FU553064103.Q
+2024:Q3,Exchange-traded funds,holder,191.861,8030.639,457.865,FU563064100.Q
+2024:Q3,Business development companies,holder,0.868,32.418,-0.012,FU453064103.Q
+2024:Q3,Interval funds and tender offer funds,holder,3.712,74.472,2.094,FU463064105.Q
+2024:Q3,Hedge funds (domestic),holder,3.213,713.383,38.975,FU623064105.Q
+2024:Q3,Private debt funds,holder,13.017,148.55,-0.052,FU443064100.Q
+2024:Q3,Security brokers and dealers,holder,17.402,156.353,7.626,FU663064105.Q
+2024:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2024:Q3,Rest of the world,holder,164.334,16041.46,759.045,FU263064105.Q
+2024:Q4,All sectors,total,426.648,92360.33,1036.929,FU893064105.Q
+2024:Q4,Nonfinancial corporate business,issuer,-24.842,62768.04,1412.821,FU103164105.Q
+2024:Q4,Domestic financial sectors,issuer,411.954,19417.151,316.383,FU793164105.Q
+2024:Q4,U.S.-chartered depository institutions,issuer_detail,2.491,105.779,4.432,FU763164105.Q
+2024:Q4,Property-casualty insurance companies,issuer_detail,3.808,1462.397,-24.742,FU513164105.Q
+2024:Q4,"Life insurance companies, general accounts",issuer_detail,-12.013,288.74,5.272,FU543164175.Q
+2024:Q4,Closed-end funds,issuer_detail,-0.832,251.133,-8.647,FU554090005.Q
+2024:Q4,Exchange-traded funds,issuer_detail,421.475,10305.396,-84.68,FU564090005.Q
+2024:Q4,Government-sponsored enterprises,issuer_detail,0.0,330.714,20.949,FU403164105.Q
+2024:Q4,Mortgage real estate investment trusts,issuer_detail,-0.726,64.622,-5.01,FU643164105.Q
+2024:Q4,Business development companies,issuer_detail,15.05,225.357,0.037,FU453164105.Q
+2024:Q4,Interval funds and tender offer funds,issuer_detail,7.822,171.731,2.786,FU463164105.Q
+2024:Q4,Security brokers and dealers,issuer_detail,-3.773,169.647,34.802,FU663164105.Q
+2024:Q4,Holding companies,issuer_detail,-22.098,3409.773,378.35,FU733164105.Q
+2024:Q4,Other financial business,issuer_detail,0.75,2631.862,-7.166,FU503164105.Q
+2024:Q4,Rest of the world,issuer,39.536,10175.139,-692.275,FU263164105.Q
+2024:Q4,Households and nonprofit organizations,holder,342.168,36999.3,411.224,FU153064105.Q
+2024:Q4,Nonfinancial corporate business,holder,-85.291,3260.492,67.779,FU103064103.Q
+2024:Q4,Federal government,holder,0.0,322.975,17.175,FU313064105.Q
+2024:Q4,State and local governments,holder,-6.879,140.777,3.421,FU213064103.Q
+2024:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2024:Q4,U.S.-chartered depository institutions,holder,-0.412,79.844,-1.761,FU763064103.Q
+2024:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2024:Q4,Property-casualty insurance companies,holder,-5.147,545.945,5.963,FU513064105.Q
+2024:Q4,Life insurance companies,holder,-14.338,800.533,8.817,FU543064105.Q
+2024:Q4,"Private pension funds, including 403(b) plans",holder,-78.856,4192.553,115.693,FU573064105.Q
+2024:Q4,Federal government pension funds,holder,7.482,650.72,7.779,FU343064105.Q
+2024:Q4,State and local government employee defined benefit pension funds,holder,-45.754,3434.521,-7.338,FU223064145.Q
+2024:Q4,Mutual funds,holder,-146.614,15646.125,-112.963,FU653064100.Q
+2024:Q4,Closed-end funds,holder,0.083,104.086,-3.838,FU553064103.Q
+2024:Q4,Exchange-traded funds,holder,342.442,8352.9,-20.181,FU563064100.Q
+2024:Q4,Business development companies,holder,1.419,34.126,0.289,FU453064103.Q
+2024:Q4,Interval funds and tender offer funds,holder,4.164,82.608,3.972,FU463064105.Q
+2024:Q4,Hedge funds (domestic),holder,26.861,757.162,16.918,FU623064105.Q
+2024:Q4,Private debt funds,holder,-0.15,149.724,1.324,FU443064100.Q
+2024:Q4,Security brokers and dealers,holder,-16.849,143.212,3.708,FU663064105.Q
+2024:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2024:Q4,Rest of the world,holder,102.319,16662.727,518.948,FU263064105.Q
+2025:Q1,All sectors,total,209.243,89638.467,-2931.106,FU893064105.Q
+2025:Q1,Nonfinancial corporate business,issuer,-81.039,59428.546,-3258.455,FU103164105.Q
+2025:Q1,Domestic financial sectors,issuer,271.486,19632.949,-55.688,FU793164105.Q
+2025:Q1,U.S.-chartered depository institutions,issuer_detail,-3.335,97.009,-5.435,FU763164105.Q
+2025:Q1,Property-casualty insurance companies,issuer_detail,-5.257,1688.836,231.696,FU513164105.Q
+2025:Q1,"Life insurance companies, general accounts",issuer_detail,-8.98,291.38,11.62,FU543164175.Q
+2025:Q1,Closed-end funds,issuer_detail,-0.118,248.096,-2.919,FU554090005.Q
+2025:Q1,Exchange-traded funds,issuer_detail,298.511,10369.126,-234.781,FU564090005.Q
+2025:Q1,Government-sponsored enterprises,issuer_detail,0.0,352.46,21.746,FU403164105.Q
+2025:Q1,Mortgage real estate investment trusts,issuer_detail,1.31,69.105,3.173,FU643164105.Q
+2025:Q1,Business development companies,issuer_detail,22.259,246.087,-1.529,FU453164105.Q
+2025:Q1,Interval funds and tender offer funds,issuer_detail,16.044,189.628,1.853,FU463164105.Q
+2025:Q1,Security brokers and dealers,issuer_detail,0.229,164.045,-5.831,FU663164105.Q
+2025:Q1,Holding companies,issuer_detail,-41.893,3288.115,-79.765,FU733164105.Q
+2025:Q1,Other financial business,issuer_detail,-7.284,2629.062,4.484,FU503164105.Q
+2025:Q1,Rest of the world,issuer,18.796,10576.972,383.037,FU263164105.Q
+2025:Q1,Households and nonprofit organizations,holder,197.328,36522.174,-674.454,FU153064105.Q
+2025:Q1,Nonfinancial corporate business,holder,-38.148,3077.324,-145.02,FU103064103.Q
+2025:Q1,Federal government,holder,0.025,340.175,17.175,FU313064105.Q
+2025:Q1,State and local governments,holder,8.803,142.29,-7.29,FU213064103.Q
+2025:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2025:Q1,U.S.-chartered depository institutions,holder,0.117,81.21,1.249,FU763064103.Q
+2025:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2025:Q1,Property-casualty insurance companies,holder,9.759,538.065,-17.639,FU513064105.Q
+2025:Q1,Life insurance companies,holder,8.157,782.825,-25.865,FU543064105.Q
+2025:Q1,"Private pension funds, including 403(b) plans",holder,23.183,3733.977,-481.759,FU573064105.Q
+2025:Q1,Federal government pension funds,holder,-27.007,599.579,-24.134,FU343064105.Q
+2025:Q1,State and local government employee defined benefit pension funds,holder,40.066,3384.451,-90.136,FU223064145.Q
+2025:Q1,Mutual funds,holder,-191.74,14991.816,-462.569,FU653064100.Q
+2025:Q1,Closed-end funds,holder,-0.002,102.669,-1.415,FU553064103.Q
+2025:Q1,Exchange-traded funds,holder,181.965,8249.22,-285.645,FU563064100.Q
+2025:Q1,Business development companies,holder,0.891,35.033,0.016,FU453064103.Q
+2025:Q1,Interval funds and tender offer funds,holder,13.101,97.161,1.452,FU463064105.Q
+2025:Q1,Hedge funds (domestic),holder,-10.524,707.427,-39.211,FU623064105.Q
+2025:Q1,Private debt funds,holder,-1.471,148.323,0.07,FU443064100.Q
+2025:Q1,Security brokers and dealers,holder,12.878,148.673,-7.417,FU663064105.Q
+2025:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2025:Q1,Rest of the world,holder,-18.138,15956.075,-688.514,FU263064105.Q
+2025:Q2,All sectors,total,168.969,98239.696,8432.26,FU893064105.Q
+2025:Q2,Nonfinancial corporate business,issuer,-93.163,65333.338,5997.955,FU103164105.Q
+2025:Q2,Domestic financial sectors,issuer,221.203,21148.08,1293.928,FU793164105.Q
+2025:Q2,U.S.-chartered depository institutions,issuer_detail,0.558,98.553,0.986,FU763164105.Q
+2025:Q2,Property-casualty insurance companies,issuer_detail,-0.802,1578.664,-109.37,FU513164105.Q
+2025:Q2,"Life insurance companies, general accounts",issuer_detail,-6.712,286.921,2.253,FU543164175.Q
+2025:Q2,Closed-end funds,issuer_detail,0.459,251.452,2.897,FU554090005.Q
+2025:Q2,Exchange-traded funds,issuer_detail,244.143,11492.136,878.867,FU564090005.Q
+2025:Q2,Government-sponsored enterprises,issuer_detail,0.0,375.093,22.633,FU403164105.Q
+2025:Q2,Mortgage real estate investment trusts,issuer_detail,-0.123,67.159,-1.823,FU643164105.Q
+2025:Q2,Business development companies,issuer_detail,15.036,260.371,-0.752,FU453164105.Q
+2025:Q2,Interval funds and tender offer funds,issuer_detail,6.475,203.046,6.943,FU463164105.Q
+2025:Q2,Security brokers and dealers,issuer_detail,-2.734,226.648,65.337,FU663164105.Q
+2025:Q2,Holding companies,issuer_detail,-35.115,3762.43,509.43,FU733164105.Q
+2025:Q2,Other financial business,issuer_detail,0.018,2545.607,-83.473,FU503164105.Q
+2025:Q2,Rest of the world,issuer,40.929,11758.278,1140.377,FU263164105.Q
+2025:Q2,Households and nonprofit organizations,holder,-56.397,39641.419,3175.642,FU153064105.Q
+2025:Q2,Nonfinancial corporate business,holder,-42.18,3360.377,325.233,FU103064103.Q
+2025:Q2,Federal government,holder,0.075,357.425,17.175,FU313064105.Q
+2025:Q2,State and local governments,holder,-11.249,146.29,15.249,FU213064103.Q
+2025:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2025:Q2,U.S.-chartered depository institutions,holder,-0.56,84.978,4.328,FU763064103.Q
+2025:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2025:Q2,Property-casualty insurance companies,holder,-11.469,576.762,50.166,FU513064105.Q
+2025:Q2,Life insurance companies,holder,-25.606,830.206,72.987,FU543064105.Q
+2025:Q2,"Private pension funds, including 403(b) plans",holder,64.396,4198.547,400.174,FU573064105.Q
+2025:Q2,Federal government pension funds,holder,-3.022,664.456,67.899,FU343064105.Q
+2025:Q2,State and local government employee defined benefit pension funds,holder,-87.085,3641.111,343.745,FU223064145.Q
+2025:Q2,Mutual funds,holder,-139.004,16442.965,1590.153,FU653064100.Q
+2025:Q2,Closed-end funds,holder,-0.09,107.073,4.494,FU553064103.Q
+2025:Q2,Exchange-traded funds,holder,150.106,9262.389,863.063,FU563064100.Q
+2025:Q2,Business development companies,holder,1.063,36.13,0.034,FU453064103.Q
+2025:Q2,Interval funds and tender offer funds,holder,1.929,105.527,6.437,FU463064105.Q
+2025:Q2,Hedge funds (domestic),holder,-13.167,770.075,75.815,FU623064105.Q
+2025:Q2,Private debt funds,holder,7.387,155.854,0.144,FU443064100.Q
+2025:Q2,Security brokers and dealers,holder,17.426,182.032,15.933,FU663064105.Q
+2025:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2025:Q2,Rest of the world,holder,316.416,17676.08,1403.589,FU263064105.Q
+2025:Q3,All sectors,total,308.475,105694.835,7146.664,FU893064105.Q
+2025:Q3,Nonfinancial corporate business,issuer,-107.867,70397.225,5171.754,FU103164105.Q
+2025:Q3,Domestic financial sectors,issuer,353.071,22731.18,1230.029,FU793164105.Q
+2025:Q3,U.S.-chartered depository institutions,issuer_detail,0.679,102.931,3.699,FU763164105.Q
+2025:Q3,Property-casualty insurance companies,issuer_detail,-3.745,1603.393,28.474,FU513164105.Q
+2025:Q3,"Life insurance companies, general accounts",issuer_detail,-5.107,296.846,15.032,FU543164175.Q
+2025:Q3,Closed-end funds,issuer_detail,-0.809,257.26,6.617,FU554090005.Q
+2025:Q3,Exchange-traded funds,issuer_detail,366.028,12635.11,776.946,FU564090005.Q
+2025:Q3,Government-sponsored enterprises,issuer_detail,0.097,397.033,21.843,FU403164105.Q
+2025:Q3,Mortgage real estate investment trusts,issuer_detail,4.772,71.99,0.059,FU643164105.Q
+2025:Q3,Business development companies,issuer_detail,16.303,276.261,-0.413,FU453164105.Q
+2025:Q3,Interval funds and tender offer funds,issuer_detail,14.642,223.335,5.647,FU463164105.Q
+2025:Q3,Security brokers and dealers,issuer_detail,-1.148,272.788,47.288,FU663164105.Q
+2025:Q3,Holding companies,issuer_detail,-38.502,4034.455,310.527,FU733164105.Q
+2025:Q3,Other financial business,issuer_detail,-0.139,2559.778,14.31,FU503164105.Q
+2025:Q3,Rest of the world,issuer,63.271,12566.43,744.881,FU263164105.Q
+2025:Q3,Households and nonprofit organizations,holder,419.639,42969.749,2908.691,FU153064105.Q
+2025:Q3,Nonfinancial corporate business,holder,-45.467,3576.762,261.852,FU103064103.Q
+2025:Q3,Federal government,holder,9.336,389.576,22.815,FU313064105.Q
+2025:Q3,State and local governments,holder,-7.617,150.212,11.539,FU213064103.Q
+2025:Q3,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2025:Q3,U.S.-chartered depository institutions,holder,1.364,91.062,4.72,FU763064103.Q
+2025:Q3,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2025:Q3,Property-casualty insurance companies,holder,-24.196,594.248,41.682,FU513064105.Q
+2025:Q3,Life insurance companies,holder,-40.523,849.682,59.999,FU543064105.Q
+2025:Q3,"Private pension funds, including 403(b) plans",holder,221.257,4750.991,331.187,FU573064105.Q
+2025:Q3,Federal government pension funds,holder,2.057,718.48,51.967,FU343064105.Q
+2025:Q3,State and local government employee defined benefit pension funds,holder,-59.009,3797.069,214.967,FU223064145.Q
+2025:Q3,Mutual funds,holder,-521.522,17029.997,1108.554,FU653064100.Q
+2025:Q3,Closed-end funds,holder,-0.667,111.863,5.457,FU553064103.Q
+2025:Q3,Exchange-traded funds,holder,223.856,10207.887,721.642,FU563064100.Q
+2025:Q3,Business development companies,holder,2.237,38.711,0.344,FU453064103.Q
+2025:Q3,Interval funds and tender offer funds,holder,5.881,116.531,5.123,FU463064105.Q
+2025:Q3,Hedge funds (domestic),holder,-9.666,821.154,60.745,FU623064105.Q
+2025:Q3,Private debt funds,holder,6.994,164.332,1.484,FU443064100.Q
+2025:Q3,Security brokers and dealers,holder,-27.044,169.347,14.359,FU663064105.Q
+2025:Q3,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2025:Q3,Rest of the world,holder,151.565,19147.182,1319.537,FU263064105.Q
+2025:Q4,All sectors,total,477.135,108715.751,2543.781,FU893064105.Q
+2025:Q4,Nonfinancial corporate business,issuer,-66.092,71994.893,1663.76,FU103164105.Q
+2025:Q4,Domestic financial sectors,issuer,539.054,23648.82,378.586,FU793164105.Q
+2025:Q4,U.S.-chartered depository institutions,issuer_detail,1.495,112.862,8.436,FU763164105.Q
+2025:Q4,Property-casualty insurance companies,issuer_detail,-4.193,1596.84,-2.36,FU513164105.Q
+2025:Q4,"Life insurance companies, general accounts",issuer_detail,-3.927,293.832,0.913,FU543164175.Q
+2025:Q4,Closed-end funds,issuer_detail,0.619,256.707,-1.172,FU554090005.Q
+2025:Q4,Exchange-traded funds,issuer_detail,559.268,13372.957,178.579,FU564090005.Q
+2025:Q4,Government-sponsored enterprises,issuer_detail,0.0,416.32,19.287,FU403164105.Q
+2025:Q4,Mortgage real estate investment trusts,issuer_detail,2.768,75.459,0.701,FU643164105.Q
+2025:Q4,Business development companies,issuer_detail,12.227,286.704,-1.784,FU453164105.Q
+2025:Q4,Interval funds and tender offer funds,issuer_detail,8.853,236.798,4.61,FU463164105.Q
+2025:Q4,Security brokers and dealers,issuer_detail,4.657,244.452,-32.993,FU663164105.Q
+2025:Q4,Holding companies,issuer_detail,-43.34,4259.316,268.201,FU733164105.Q
+2025:Q4,Other financial business,issuer_detail,0.627,2496.573,-63.832,FU503164105.Q
+2025:Q4,Rest of the world,issuer,4.173,13072.038,501.435,FU263164105.Q
+2025:Q4,Households and nonprofit organizations,holder,263.464,44322.838,1089.625,FU153064105.Q
+2025:Q4,Nonfinancial corporate business,holder,-46.534,3614.207,83.979,FU103064103.Q
+2025:Q4,Federal government,holder,1.027,414.183,23.58,FU313064105.Q
+2025:Q4,State and local governments,holder,-4.408,148.883,3.079,FU213064103.Q
+2025:Q4,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2025:Q4,U.S.-chartered depository institutions,holder,3.293,96.211,1.856,FU763064103.Q
+2025:Q4,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2025:Q4,Property-casualty insurance companies,holder,5.123,613.251,13.88,FU513064105.Q
+2025:Q4,Life insurance companies,holder,-44.997,824.53,19.845,FU543064105.Q
+2025:Q4,"Private pension funds, including 403(b) plans",holder,27.285,4875.66,97.384,FU573064105.Q
+2025:Q4,Federal government pension funds,holder,-4.482,733.64,19.642,FU343064105.Q
+2025:Q4,State and local government employee defined benefit pension funds,holder,-107.554,3855.219,165.704,FU223064145.Q
+2025:Q4,Mutual funds,holder,-221.555,17115.647,307.205,FU653064100.Q
+2025:Q4,Closed-end funds,holder,0.243,112.175,0.069,FU553064103.Q
+2025:Q4,Exchange-traded funds,holder,402.491,10760.928,150.55,FU563064100.Q
+2025:Q4,Business development companies,holder,3.394,41.84,-0.265,FU453064103.Q
+2025:Q4,Interval funds and tender offer funds,holder,7.635,128.886,4.72,FU463064105.Q
+2025:Q4,Hedge funds (domestic),holder,18.23,856.215,16.831,FU623064105.Q
+2025:Q4,Private debt funds,holder,9.604,172.811,-1.125,FU443064100.Q
+2025:Q4,Security brokers and dealers,holder,-31.966,140.852,3.471,FU663064105.Q
+2025:Q4,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2025:Q4,Rest of the world,holder,196.842,19887.775,543.751,FU263064105.Q
+2026:Q1,All sectors,total,443.748,106042.859,-3116.64,FU893064105.Q
+2026:Q1,Nonfinancial corporate business,issuer,51.267,70018.384,-2027.776,FU103164105.Q
+2026:Q1,Domestic financial sectors,issuer,397.839,23019.672,-1026.987,FU793164105.Q
+2026:Q1,U.S.-chartered depository institutions,issuer_detail,-2.822,116.035,5.995,FU763164105.Q
+2026:Q1,Property-casualty insurance companies,issuer_detail,-6.502,1505.51,-84.828,FU513164105.Q
+2026:Q1,"Life insurance companies, general accounts",issuer_detail,-5.161,267.955,-20.716,FU543164175.Q
+2026:Q1,Closed-end funds,issuer_detail,0.516,253.294,-3.929,FU554090005.Q
+2026:Q1,Exchange-traded funds,issuer_detail,447.613,13552.294,-268.276,FU564090005.Q
+2026:Q1,Government-sponsored enterprises,issuer_detail,0.0,434.441,18.121,FU403164105.Q
+2026:Q1,Mortgage real estate investment trusts,issuer_detail,-0.347,75.532,0.42,FU643164105.Q
+2026:Q1,Business development companies,issuer_detail,5.299,285.554,-6.449,FU453164105.Q
+2026:Q1,Interval funds and tender offer funds,issuer_detail,8.107,247.714,2.809,FU463164105.Q
+2026:Q1,Security brokers and dealers,issuer_detail,-3.554,198.353,-42.545,FU663164105.Q
+2026:Q1,Holding companies,issuer_detail,-45.908,3893.656,-319.752,FU733164105.Q
+2026:Q1,Other financial business,issuer_detail,0.598,2189.334,-307.837,FU503164105.Q
+2026:Q1,Rest of the world,issuer,-5.358,13004.803,-61.877,FU263164105.Q
+2026:Q1,Households and nonprofit organizations,holder,490.021,44007.836,-805.023,FU153064105.Q
+2026:Q1,Nonfinancial corporate business,holder,-43.082,3403.77,-167.355,FU103064103.Q
+2026:Q1,Federal government,holder,1.534,443.386,27.669,FU313064105.Q
+2026:Q1,State and local governments,holder,6.115,148.626,-6.372,FU213064103.Q
+2026:Q1,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2026:Q1,U.S.-chartered depository institutions,holder,-0.94,95.645,0.374,FU763064103.Q
+2026:Q1,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2026:Q1,Property-casualty insurance companies,holder,17.095,612.616,-17.73,FU513064105.Q
+2026:Q1,Life insurance companies,holder,-13.894,786.797,-23.839,FU543064105.Q
+2026:Q1,"Private pension funds, including 403(b) plans",holder,-22.643,4644.353,-208.664,FU573064105.Q
+2026:Q1,Federal government pension funds,holder,-9.944,703.894,-19.802,FU343064105.Q
+2026:Q1,State and local government employee defined benefit pension funds,holder,-58.456,3657.228,-139.535,FU223064145.Q
+2026:Q1,Mutual funds,holder,-197.553,16407.961,-510.133,FU653064100.Q
+2026:Q1,Closed-end funds,holder,0.088,112.024,-0.239,FU553064103.Q
+2026:Q1,Exchange-traded funds,holder,268.973,10753.431,-276.47,FU563064100.Q
+2026:Q1,Business development companies,holder,0.49,41.859,-0.471,FU453064103.Q
+2026:Q1,Interval funds and tender offer funds,holder,5.363,138.573,4.324,FU463064105.Q
+2026:Q1,Hedge funds (domestic),holder,-31.573,787.999,-36.643,FU623064105.Q
+2026:Q1,Private debt funds,holder,2.633,173.499,-1.945,FU443064100.Q
+2026:Q1,Security brokers and dealers,holder,51.265,186.095,-6.022,FU663064105.Q
+2026:Q1,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2026:Q1,Rest of the world,holder,-21.744,18937.267,-928.764,FU263064105.Q
+2026:Q2,All sectors,total,730.548,123687.233,16913.826,FU893064105.Q
+2026:Q2,Nonfinancial corporate business,issuer,153.209,83050.847,12879.254,FU103164105.Q
+2026:Q2,Domestic financial sectors,issuer,542.443,26193.848,2631.733,FU793164105.Q
+2026:Q2,U.S.-chartered depository institutions,issuer_detail,1.084,133.029,15.91,FU763164105.Q
+2026:Q2,Property-casualty insurance companies,issuer_detail,-6.366,1584.325,85.181,FU513164105.Q
+2026:Q2,"Life insurance companies, general accounts",issuer_detail,-4.783,299.582,36.41,FU543164175.Q
+2026:Q2,Closed-end funds,issuer_detail,0.08,266.715,13.341,FU554090005.Q
+2026:Q2,Exchange-traded funds,issuer_detail,543.408,15702.34,1606.638,FU564090005.Q
+2026:Q2,Government-sponsored enterprises,issuer_detail,0.097,456.788,22.25,FU403164105.Q
+2026:Q2,Mortgage real estate investment trusts,issuer_detail,0.111,78.864,3.221,FU643164105.Q
+2026:Q2,Business development companies,issuer_detail,1.042,283.819,-2.777,FU453164105.Q
+2026:Q2,Interval funds and tender offer funds,issuer_detail,10.631,264.362,6.017,FU463164105.Q
+2026:Q2,Security brokers and dealers,issuer_detail,2.729,235.084,34.002,FU663164105.Q
+2026:Q2,Holding companies,issuer_detail,-46.44,4457.227,610.011,FU733164105.Q
+2026:Q2,Other financial business,issuer_detail,40.85,2431.713,201.529,FU503164105.Q
+2026:Q2,Rest of the world,issuer,34.896,14442.538,1402.839,FU263164105.Q
+2026:Q2,Households and nonprofit organizations,holder,350.487,52119.174,7760.851,FU153064105.Q
+2026:Q2,Nonfinancial corporate business,holder,-43.082,3866.853,506.165,FU103064103.Q
+2026:Q2,Federal government,holder,4.6,512.682,64.696,FU313064105.Q
+2026:Q2,State and local governments,holder,-22.054,149.447,22.875,FU213064103.Q
+2026:Q2,Central bank,holder,0.0,0.0,0.0,FU713064103.Q
+2026:Q2,U.S.-chartered depository institutions,holder,-0.729,102.471,7.555,FU763064103.Q
+2026:Q2,Foreign banking offices in the U.S.,holder,0.0,0.0,0.0,FU753064103.Q
+2026:Q2,Property-casualty insurance companies,holder,-27.149,682.849,97.382,FU513064105.Q
+2026:Q2,Life insurance companies,holder,-50.47,861.396,125.069,FU543064105.Q
+2026:Q2,"Private pension funds, including 403(b) plans",holder,-25.756,5333.402,714.805,FU573064105.Q
+2026:Q2,Federal government pension funds,holder,-33.993,780.298,110.397,FU343064105.Q
+2026:Q2,State and local government employee defined benefit pension funds,holder,22.635,4065.798,385.935,FU223064145.Q
+2026:Q2,Mutual funds,holder,-222.963,18621.486,2436.488,FU653064100.Q
+2026:Q2,Closed-end funds,holder,0.089,122.775,10.662,FU553064103.Q
+2026:Q2,Exchange-traded funds,holder,393.132,12797.403,1650.84,FU563064100.Q
+2026:Q2,Business development companies,holder,4.061,46.084,0.164,FU453064103.Q
+2026:Q2,Interval funds and tender offer funds,holder,4.468,149.217,6.176,FU463064105.Q
+2026:Q2,Hedge funds (domestic),holder,-3.113,906.166,121.28,FU623064105.Q
+2026:Q2,Private debt funds,holder,3.44,177.619,0.68,FU443064100.Q
+2026:Q2,Security brokers and dealers,holder,-33.291,181.446,28.642,FU663064105.Q
+2026:Q2,Other financial business,holder,0.0,0.0,0.0,FU503064105.Q
+2026:Q2,Rest of the world,holder,410.236,22210.667,2863.164,FU263064105.Q

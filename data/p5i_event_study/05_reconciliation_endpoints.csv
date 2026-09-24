@@ -1,0 +1,8 @@
+check,2023-12_value,2024-12_value,note
+P2c monthly-average price,4685.0515000000005,6010.908571428571,from _research/2026-09-12-P2c-monthly_series.csv (this project's already-vetted P2c output)
+my monthly-average price (mean of daily closes in that month),4685.051489257812,6010.908551897322,"n=20 and n=21 trading days resp.; matches P2c to ~3e-7 pct -- same underlying series, confirms 'right series'"
+my last-trading-day daily close,4769.830078125,5881.6298828125,2023-12-29 and 2024-12-31 resp.
+price gap: daily close vs P2c monthly avg (pct),1.8095548816272244,-2.1507345699877507,expected and explained: Dec-2023 rallied into year end (daily close > month avg); Dec-2024 sold off after the Dec-18 FOMC (daily close < month avg)
+P2c PE_trailing (monthly-avg-price basis),24.34678324585564,28.60022158932565,reported in frame doc as 24.3468 / 28.6002
+"my PE_trailing (daily-close basis, same E)",24.787351650600222,27.98510673651092,
+PE gap: daily-close basis minus P2c (points),0.4405684047445817,-0.6151148528147274,"+0.44pt (+1.81%) and -0.62pt (-2.15%) resp.; both fully explained by the averaging-convention difference above, not a data-source error"

@@ -1,0 +1,28 @@
+year,definition,ipo_count,gross_proceeds_usd_bn,spac_count,spac_proceeds_usd_bn,as_of_date,source,notes
+2015,net (Ritter Table 1: operating companies; offer price >= USD5; excludes ADR/unit/SPAC/REIT/CEF/LP/bank & S&L/no-CRSP-listing),118,22.00,19,3.62,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2015,gross (Ritter Table 15: all offerings incl SPACs/REITs/CEFs/units/penny stock/LPs/banks/ADRs),183,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,gross proceeds not tabulated by Ritter under the gross definition
+2016,net,75,12.52,13,3.22,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2016,gross,113,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2017,net,106,22.98,34,9.00,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2017,gross,202,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2018,net,134,33.47,46,9.94,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2018,gross,243,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2019,net,113,39.28,59,12.12,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,Table 15 lists net=112 for 2019 (vs 113 in Table 1); Ritter notes his tables are not always fully reconciled across updates
+2019,gross,228,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2020,net,165,61.86,248,75.34,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2020,gross,465,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2021,net,311,119.36,613,144.53,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,2021 SPAC proceeds (USD144.5bn) exceed the entire net-IPO proceeds total of any other single year in this series
+2021,gross,1033,,,,2025-12-26,Ritter IPO-Statistics.pdf Table 15,
+2022,net,38,6.99,86,12.08,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2022,gross,175,,,,2026-01-14,Ritter IPO-Statistics.pdf Table 15a,Table 15 (Dec-2025 vintage) shows gross=182 for 2022; Table 15a (Jan-2026 vintage) shows 175 -- small revision between Ritter's own updates
+2023,net,54,11.92,31,3.19,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2023,gross,153,,,,2026-01-14,Ritter IPO-Statistics.pdf Table 15a,
+2024,net,72,20.49,57,8.67,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,
+2024,gross,221,,,,2026-01-14,Ritter IPO-Statistics.pdf Table 15a,
+2025,net,90,38.97,144,26.86,2026-03-16,Ritter IPO-Statistics.pdf Table 1; Table 15b,"Ritter's own text: at least 352 offerings of all types in 2025 vs 90 'net' operating-company IPOs -- roughly a 4x gap, driven mostly by 144 SPACs and 109 sub-USD5 penny stocks"
+2025,gross,352,,144,26.86,2026-01-14,Ritter IPO-Statistics.pdf Table 15a / p.2 text,
+2026 YTD,Ritter net -- NOT YET PUBLISHED,,,,,,Ritter IPOALL.xlsx (monthly) ends December 2025; Table 1 / Table 15 carry no 2026 column as of this document's July 7 2026 vintage,Ritter has not issued a 2026 annual figure in any file this agent downloaded. Do not infer one.
+2026 YTD,"secondary-source operating-company count (Renaissance Capital methodology, net-like)",106,,,,approx. early Sept 2026,WebSearch of renaissancecapital.com commentary (not independently re-fetched as a dated snapshot by this agent),'through early September 2026' per Renaissance Capital commentary as relayed by search
+2026 YTD,"secondary-source broad count (stockanalysis.com methodology, gross-like, includes SPACs)",237,,,,2026-09-10,stockanalysis.com/ipos/2026/ (fetched directly by this agent),"stockanalysis.com shows 2025 full-year count of 347, close to Ritter's gross 352 -- the two methodologies appear broadly comparable"
+2026 YTD,verified floor: sum of the 3 largest 2026 deals only (SpaceX incl. exercised greenshoe + SK hynix + Cerebras),3,117.757,,,2026-09-11,This agent's own sum of company/press-sourced figures (see ipo_top10.csv),"NOT a total-market figure -- only 3 mega-deals; roughly 100-230 smaller 2026 IPOs (per the two count rows above) are excluded from this sum. Uses SpaceX's confirmed post-greenshoe total of $85.7bn (85.7+26.507+5.55=117.757)"
+2026 YTD,"secondary-source full-market total (Renaissance Capital, via press)",,146.0,,,approx. early Sept 2026,WebSearch summary citing renaissancecapital.com commentary (relayed via coindesk/cryptobriefing),"Not independently verified by this agent against Renaissance's own page. Consistent order of magnitude with the USD107bn 3-deal floor above plus roughly 100-230 smaller deals. A separate, lower-quality cluster of sources (marketwise.com, valueaddvc.com) claimed approximately USD251bn 'through late July' -- NOT used here; flagged as low-confidence in the final report"

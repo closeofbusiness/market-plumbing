@@ -1,0 +1,3302 @@
+                                                                              14-­‐04	  |	  July	  2,	  2014	  
+
+
+	  
+
+	  
+
+Shadow	  Banking:	  The	  Money	  View	  
+	  
+Zoltan	  Pozsar	  
+Office  of  Financial  Research  
+Zoltan.Pozsar@treasury.gov  
+	  
+
+
+
+
+The Office of Financial Research (OFR) Working Paper Series allows staff and their co-authors to
+disseminate preliminary research findings in a format intended to generate discussion and critical
+comments. Papers in the OFR Working Paper Series are works in progress and subject to revision.
+
+Views and opinions expressed are those of the authors and do not necessarily represent official OFR or
+Treasury positions or policy. Comments are welcome as are suggestions for improvements, and should
+be directed to the authors. OFR Working Papers may be quoted without additional permission.
+                                                  Shadow Banking:
+
+                                                   The Money View
+
+
+
+
+                                                  By Zoltan Pozsar1
+
+                                            Office of Financial Research
+
+
+
+
+1 Senior advisor, Office of Financial Research, U.S. Treasury. Email: zoltan.pozsar@treasury.gov. This paper benefited from
+
+discussions with James Aitken, George Akerlof, Viktoria Baklanova, Stijn Claessens, John Eatwell, Greg Feldberg, Song
+Han, Julia Kiraly, Elena Liapkova-Pozsar, Paul McCulley, Perry Mehrling, Dan Neilson, Bill Nichols, Cleopatra Nikolau,
+Phil Prince, Matt Rutherford, James Sweeney, Bruce Tuckman, Adair Turner, Eric van Wetering, Jonathan Wilmot, Peter
+Zimmerman, participants at INET’s Central banking perspectives on market-based credit meeting in Berlin and seminar
+participants at the International Monetary Fund, U.S. Treasury, the Bank of England, the Federal Reserve Board, the ECB
+and ESRB.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                	   2	  
+www.treasury.gov/OFR	                                                                                                 	  
+                                                Abstract
+
+This paper presents an accounting framework for measuring the sources and uses of short-term
+funding in the global financial ecosystem. We introduce a dynamic map of global funding flows to
+show how dealer banks emerged as intermediaries between two types of asset managers: cash pools
+searching for safety via collateralized cash investments and levered portfolio managers searching for
+yield via funded securities portfolios and derivatives. We argue that the monetary aggregates (M0, M1,
+M2, etc.) and the Financial Accounts of the United States (formerly the Flow of Funds) do not
+adequately reflect the institutional realities of the modern financial ecosystem, and should be updated to
+allow policymakers to better analyze and monitor the shadow banking system and its potential
+contributions to financial instability. The monetary aggregates, used mainly to inform the aggregate
+demand management aspects of monetary policy, do not include the instruments that asset managers
+use as money, particularly repos. Asset managers’ money demand is not driven by transaction needs in
+the real economy but in the financial economy: in this sense, repo-based money dealing activities in the
+shadow banking system are about the provision of working capital for asset managers, much like real
+bills provided working capital for merchants and manufacturers in Bagehot’s world over 150 years ago.
+These developments should be systematically captured in a new set of Flow of Collateral, Flow of Risk
+and Flow of Eurodollar satellite accounts to supplement the Financial Accounts. The accounting
+framework presented with this paper also explains how the Federal Reserve’s reverse repo facility helps
+reduce interconnections within the financial system and how they could evolve into minimum liquidity
+requirements for shadow banks and a tool to control market-based credit cycles. The global macro
+drivers behind the secular rise of cash pools and leveraged portfolio managers in the asset management
+complex are identical with the real economy drivers behind the idea of secular stagnation. As such, one
+way to interpret shadow banking is as the financial economy reflection of real economy imbalances
+caused by excess global savings, slowing potential growth, and the rising share of corporate profits
+relative to wages in national income.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                               	   3	  
+www.treasury.gov/OFR	                                                                                	  
+INTRODUCTION
+
+             The aim of this paper is to develop an accounting framework to track the sources and uses of
+short-term funding in the modern financial ecosystem. Given the inherent difficulty of presenting and
+discussing the workings of an entire system, the paper is accompanied by a map that tracks short-term
+funding flows from their ultimate sources to their ultimate uses, and across the hierarchy of short-term
+instruments issued by the sovereign, banks, and shadow banks globally.
+
+             Unlike earlier exercises in mapping the shadow banking system (see Pozsar, 2008 and Pozsar
+et al, 2010), the map accompanying this paper is dynamic, walking the reader through the ecosystem
+one balance sheet at a time. As such, the map is long rather than poster-size and is meant to be read
+either as a stand-alone document or a page-by-page reference guide to this paper.2
+
+             The paper has three conclusions. First, there is a strong case for the introduction of a new set
+of monetary aggregates that track the supply of money and money-like claims held not for real
+economy but for financial economy transactions. The Federal Reserve’s M2 aggregate measures the
+money demand of households and has been used to analyze growth dynamics and threats to price
+stability. Because the bulk of money claims included in M2 are insured, it was built following a
+hierarchy based on transactional liquidity. But for institutional cash pools, money begins where M2
+ends, and as the crisis has shown, intra-system holdings of uninsured money market instruments can
+pose threats to financial stability. Institutional cash pools hold money claims mostly for portfolio
+management reasons and because they are too large to be eligible for deposit insurance, their focus is
+on money claims’ safety – that is, proximity to the government – first, and transactional liquidity
+second. The design of a new set of monetary aggregates in this paper is also guided by this principle.
+According to these aggregates, the volume of money and money-like claims issued by the shadow
+banking system has shrunk from a peak of $8 trillion in 2008 to $5 trillion as of the end of 2013.
+
+             Second, parallel to the development of a new set of monetary aggregates, there is a strong
+case for the development of a set of Flow of Collateral, Flow of Risk, and Flow of Eurodollar satellite
+accounts to supplement the Flow of Funds accounts.3 The Flow of Funds accounts were designed to
+
+
+2 The map of the financial ecosystem that accompanies this paper is more than 160 pages and is best viewed on a computer
+
+(not an iPad), one click at a time.
+3 The Flow of Funds accounts of the United States were recently re-named the Financial Accounts of the United States.
+
+This paper refers to the accounts by their old name to stress the parallels between funds, collateral and risk flows.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                             	   4	  
+www.treasury.gov/OFR	                                                                                              	  
+track who borrows and who lends in the real economy and through what type of securities (see
+“Tracking Money Flows in the Unites States Economy” by Copeland, 1947). Similar to M2, this
+perspective is useful to track growth and inflation dynamics, but is less useful to monitor risks to
+financial stability in an ecosystem where the securities connecting real economy borrowers and lenders
+have an increasingly active second act in life as collateral, and where securities financing transactions
+such as repurchase agreements (repos) and securities lending have grown dramatically to enable
+shorting and levered fixed income investing for asset managers, as well as to enable the manufacture of
+credit-safe, short-term assets for cash pools. Moreover, the Flow of Funds accounts end where
+derivatives and Eurodollar markets begin. Derivatives separate the flow of risks (foreign exchange,
+duration and credit risks via corresponding swaps) from the flow of funds, and hence looking at
+investors’ exposure to bonds without looking at accompanying derivatives or offshore dollar funding
+needs makes the usefulness of the Flow of Funds accounts for financial stability monitoring purposes
+somewhat limited. The map presented with this paper shows how flows of short-term funding link up
+with the flows of collateral, the flows of risks (via swaps) and the flows of Eurodollars, with an ultimate
+aim to develop a set of Flow of Collateral, Flow of Risk, and Flow of Eurodollar accounts to augment
+the Flow of Funds accounts (see Pozsar, 2014, forthcoming).
+
+             Third, discussions regarding dealer banks’ balance sheet dynamics mostly take into account
+micro-drivers (such as dealers’ pursuit to maximize return on equity subject to VaR constraints, see
+Adrian and Shin, 2010), but not the secular changes in the global financial ecosystem that banks inhabit.
+However, understanding the ecosystem that banks operate in is imperative, as it can influence the types
+of lending activities they engage in, and the types of liabilities they issue. Indeed, the secular rise of the
+volume of securities financing transactions such as repos and securities lending, and the related increase
+in the size of dealer balance sheets is closely related to the proliferation of institutional cash pools and
+balance sheets with structural asset-liability mismatches since 2000. The latter include the balance sheets
+of reserve managers (due to sterilization costs), underfunded pensions and more broadly, fixed income
+return expectations that failed to adjust to the secular down-drift in interest rates since the 1980s. These
+mismatches are the drivers behind both the “low bang for the buck” lending of large volumes of long-
+term Treasury and agency securities for the manufacture of safe, short-term assets for institutional cash
+pools via dealers’ repo liabilities, and allocations to “high bang for the buck” leveraged investments
+such as hedge funds, separate accounts and absolute return bond funds that are significant consumers
+of dealers’ reverse repo assets. Securities financing transactions are crucial in setting the price of
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                   	   5	  
+www.treasury.gov/OFR	                                                                                    	  
+financial assets and in particular the Treasury term premium, which affects the real economy through
+borrowing costs indirectly. Efforts to measure the collateral value of Treasury securities and the extent
+to which levered bids for Treasuries affect the term premium and credit spreads, respectively should be
+high on the research agenda. The accounting framework presented in this paper is a first step toward
+framing and understanding these questions better.
+
+             The paper has six parts as follows. Part one discusses the hierarchy of money in the modern
+financial system through various money claims’ proximity to the government. It classifies money and
+money-like claims into four categories from a credit risk perspective. Such classification can be helpful
+in the design of a new set of monetary aggregates used not for the purposes of monitoring price
+stability but for the purposes of monitoring financial stability. Part one also explains how the Federal
+Reserve’s reverse repo facility (RRP) helps streamline the plumbing of the financial system and reduce
+interconnections by giving dealers and money funds at the core of the shadow banking system access to
+reserve accounts for the very first time in the monetary history of the United States.
+
+             Part two discusses the hierarchy of access — the type of money claims institutional cash
+pools have access to. For cash pools, money begins where M2 ends and because of a systemic shortage
+of safe, short-term, public assets, the bulk of cash pools are constrained to be invested in private money
+claims with some degree of credit risk — not out of choice, but for a lack of better alternatives. Part
+two also explains how RRP balances could potentially evolve into becoming minimum liquidity
+requirements for shadow banks, much like reserves are the basis of liquidity requirements for banks.
+
+             Part three discusses the hierarchy of the uses of cash. It classifies the activities of core
+financial intermediaries and the buyside into three categories: money creation and loan-based lending,
+money dealing, and money market funding of capital market lending. The aim of the section is to
+highlight the unique role of dealers as intermediaries between institutional cash pools and levered fixed
+income investors, and to highlight data gaps in measuring the volume of repo funding raised by such
+investors as well as the volume of short-term Eurodollar funding and foreign exchange (FX) swaps
+used to fund dollar-denominated portfolios by non-U.S. banks globally. Part three also explains how
+RRPs will allow the Federal Reserve to set minimum haircuts on safe assets, and hence have much
+more control over market-based credit cycles than in the past when competition drove haircuts on safe
+assets to bare-bone minimums. Combined with the potential use of RRPs as reserve requirements for
+shadow banks, the control of haircuts across the system via RRPs could be viewed as the stick for the
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   6	  
+www.treasury.gov/OFR	                                                                                 	  
+ultimate carrot of the Federal Reserve’s evolution to become a dealer of last resort in Bagehot’s 21st
+century sense (see Mehrling, 2010, Mehrling et al, 2013, Carney, 2013 and Bank of England, 2013).
+
+             Part four sketches an accounting framework of the ecosystem of cash and risk portfolio
+managers that exists around dealers. This accounting framework depicts and measures the very core of
+the shadow banking system. The aim is to highlight that, for the most part, dealers are matched book
+intermediaries whether one looks at their securities financing or swaps books. Dealers intermediate,
+rather than transform, credit, maturity, FX, and liquidity risks.
+
+             Part five explains the global macro drivers behind the secular rise of the shadow banking
+system — in particular, the secular rise in the volume of securities financing and swaps transactions
+intermediated through dealers’ balance sheets. The main message is that it is not possible to understand
+and regulate the shadow banking system without paying attention to the rise of global imbalances and
+their drivers. Many of these drivers are closely related to the drivers of “secular stagnation” (see
+Summers, 2014). Consequently, one way to interpret the phenomenon of shadow banking is as the
+financial economy reflection of real economy imbalances such as excess savings, slowing potential
+growth, and the rising share of corporate profits relative to wages in GDP. Finally, part six concludes
+the paper.
+
+PART I — THE HIERARCHY OF MONEY
+
+             Money is usually defined from a functional perspective as a “unit of account, store of value
+and medium of exchange.” However, this definition does not take into account the quintessential
+attribute of money — that money always trades at par on demand — and the institutional arrangements
+that underpin this attribute.
+
+             Money claims are also hierarchical (see Mehrling, 2012), in the sense that not all money claims
+are equally strong in their par on demand promise in all states of the world, and that always and
+everywhere money is something different for central banks, banks, shadow banks and all other
+participants in the financial ecosystem.
+
+             For example, under the gold standard, gold was money between central banks, reserves were
+money between banks, and deposits were money between participants in the real economy. At each
+level of the hierarchy, net payments were settled using the claims of entities at the next higher level of
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                 	   7	  
+www.treasury.gov/OFR	                                                                                  	  
+the hierarchy. In normal times, participants in the real economy settled using bank deposits, banks
+settled using reserves and central banks settled using gold as international reserves. In crisis times,
+deposits were convertible into currency, currency into gold, and gold into foreign currency all at par on
+demand due to conversion rates and FX rates fixed in terms of gold.
+
+             The hierarchy of money is more complex in today’s financial system but can be demonstrated
+through various money claims’ proximity to the government, which is a function of the official liquidity
+and credit puts that may back them directly, indirectly or not at all.
+
+             There are four core institutions engaged in the issuance of money claims in the modern
+financial ecosystem: the central bank, banks (small and large), dealer banks and money market funds.
+
+             These institutions issue four core types of money claims. The central bank issues reserves.
+Banks issue deposits. Dealer banks issue repos. Money funds issue constant net asset value (NAV)
+shares.4
+
+             Each of these money claims is backed by assets and we can categorize money claims first
+according to whether the assets backing them are public or private. Public assets are U.S. Treasury bills
+and notes, and more broadly, agency debt and residential mortgage-backed securities (RMBS). Private
+assets are dollar-denominated bills, bonds, asset-backed securities (ABS), and loans issued globally.5
+
+             Money claims backed by public assets include: (1) currency and reserves, which are liabilities
+of the central bank backed by Treasury notes and agency debt and RMBS; (2) government repos, which
+are liabilities issued by dealers’ government bond trading desks collateralized by public assets; and (3)
+constant NAV shares issued by government-only money funds, backed by Treasury bills and other
+short-term assets.
+
+             Money claims backed by private assets include: (1) deposits, which are liabilities of banks
+backed by loans; (2) private repos, which are liabilities issued by dealers’ credit trading desks
+
+
+4 More precisely, constant net asset value shares, or shares that are meant to trade at stable transaction prices, are issued not
+
+only by money market funds but also by short-term investment funds and local government investment pools. We omit
+these investment pools from our discussion to concentrate the reader’s mind only on the largest, core issuers of such shares:
+2a-7 money market funds.
+5 The paper and accompanying map omit the details of agency debt and RMBS to concentrate the reader’s mind on the
+
+extreme ends of the money/credit spectrum.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                      	   8	  
+www.treasury.gov/OFR	                                                                                                       	  
+collateralized by private assets, such as corporate bonds, ABS and private-label RMBS; and (3) constant
+NAV shares issued by prime funds, backed by private bills, such as commercial paper, and other assets.
+
+             These instruments have one common attribute, which is that they promise to trade at par on
+demand. This makes them money.
+
+             But not all money claims are created equal. One area where money claims differ is in
+functionality, that is, whether they can be used for transactions, that is, for settlement purposes.
+
+             The net payments of dealers and money funds, and those of all other actors in the broader
+financial ecosystem, are settled using demand deposits, and net deposit flows between banks are settled
+via transfers of reserves between banks’ reserve accounts maintained at the central bank. In this sense,
+banks and demand deposits are special among core institutions and core money claims because of their
+unique role in forming the backbone of the payments system and facilitating the payments of all entities
+lower in the system-hierarchy.6
+
+             Overnight repos and constant NAV shares are different. Unlike demand deposits, they
+cannot be used for settlement pruposes. But they are still considered money because they can be traded
+for a demand deposit at par on demand. In other words, they are convertible into payments system
+money, that is, cash, in the form of a demand deposit, which can then be used for settlement purposes.
+From the perspective of the holders of repos and constant NAV money fund shares the plumbing
+behind how these claims are converted into cash for settlement and transaction purposes does not
+matter as much as the price (par) at which they get converted into cash relative to par.
+
+             Money claims with stated maturities longer than overnight but less than a year are money-like
+claims. Money-like claims offer par at maturity (in the near-term) but not on demand, and in case one
+needs to convert them into payment systems money before maturity, they are breakable at a penalty or
+negotiable at prices normally very close to par. For example, negotiable time deposits issued by banks
+
+
+
+
+6 In the case of demand deposits, moneyness is a property that derives from the function of the institutions (banks as
+
+backbones of the payments system) around them. Similarly, gold is money only when there are institutions ensuring its
+liquidity and the stability of its value (the FX rate) vis-à-vis paper money.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                           	   9	  
+www.treasury.gov/OFR	                                                                                            	  
+and term repos issued by dealers are both money-like claims, as are U.S. Treasury bills and U.S.
+Treasury notes maturing within one year.7
+
+             In reality, the demarcation between money and money-like claims is not firm — money exists
+along a spectrum. Money-like claims with one, two, or three days or just a week left to maturity
+practically trade at par on demand because they have minimal price risk. That said, they are not quite as
+money-like as money claims proper, but are much more money-like than claims with for example one
+month to maturity (see Greenwood, Hanson and Stein, 2010 and Pozsar, 2011).
+
+             Another area where money and money-like claims differ is in the strength of their promise of
+par on demand and par at maturity, respectively, in all states of the world. The strength of these
+promises depends on the type and quantity of liquidity reserves, and the type and mix of liquidity and
+credit puts backing them. Each will be discussed later in this paper, and unless precise terms are
+needed, the rest of the paper will refer to money and money-like claims simply as money.
+
+             Except for the central bank, all core institutions engaged in the issuance of money need to
+hold money assets which are the money liabilities of institutions higher up in the hierarchy. For banks,
+money is reserves at the central bank. For dealers, money is overnight government repos with
+wholesale banks (a subset of banks to be discussed in Part III) and other dealers.8 For government-only
+money funds, money is overnight government repos issued by dealers’ government trading desks. And
+for prime money funds, money is overnight private repos issued by dealers’ credit trading desks (note
+that these relationships are currently in flux with the introduction of the Federal Reserve’s reverse repo
+facility, which effectively grants dealers and money funds access to reserve accounts; the macro
+implications of the facility is discussed at the end of Part I).9
+
+
+7 Treasury bills and negotiable certificates of deposit are negotiable subject to market risk. Time deposits and term repos are
+
+breakable subject to penalties.
+8 We are concerned with the question of what money is for primary dealers. The U.S. Flow of Funds accounts show broker-
+
+dealers holding $117 billion in cash in checkable deposits at banks. This number, however, is skewed by the cash balances of
+thousands of smaller broker-dealers that are not primary dealers. Primary dealers minimize their exposure to unsecured bank
+deposits and keep their cash in the form of Treasury bills and reverse repos with a broad range of counterparties. Goldman,
+Sachs & Co., Goldman’s U.S. broker-dealer subsidiary is a case in point. As of the third quarter of 2013 the consolidated
+entity held a total of $57.9 billion in overnight cash deposits. Of this, bank subsidiaries held $57.2 billion ($48.9 billion held
+as reserves at central banks). This leaves only $0.7 billion in overnight cash deposits between the holding company and the
+major broker-dealer subsidiaries. This number, however is dwarfed by the $86.3 billion in U.S. government obligations
+owned by the broker-dealer, an undisclosed portion of which is held as collateral against reverse repo agreements (see
+Goldman’s 10-Q, 2013Q3, pp. 167-8).
+9 Prime funds also keep overnight government repos as part of their money balance, but only prime funds hold overnight
+
+private repo not government funds.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                       	   10	  
+www.treasury.gov/OFR	                                                                                                        	  
+             Importantly, these are not examples of money as a settlement medium for each institution
+(which has been discussed above) but how net payment surpluses accumulated for liquidity reasons are
+stored.
+
+             Net payment surpluses in the form of payments system money (deposits for dealers, money
+funds and other nonbanks) are never left uninvested, especially in wholesale amounts, for two reasons.
+
+             First, payment system money is noninterest bearing and on wholesale amounts pennies and
+basis points add up to millions quickly.
+
+             Second, payments system money in wholesale amounts is uninsured and represents credit
+exposure to the bank where they are deposited.
+
+             The credit-risky, yet noninterest bearing nature of wholesale deposits is the fundamental
+reason why large cash balances are always redeployed in the money market into claims that from a
+credit-risk perspective are superior to demand deposits and also pay interest.10
+
+             Banks, dealers, and money funds all issue liabilities that are safer, shorter-term and more
+liquid than their asset portfolio.
+
+             Borrowing short and lending long(er) on net is the essence of any form of banking and the
+source of intermediaries’ interest margin, or carry. But running a maturity mismatch (that is, being in
+the maturity transformation business) involves rollover risks, and in case of a panic, survival depends
+on one’s stock of overnight money assets (that is, liquidity) and access to emergency funding, which is
+not the same for all — this is the hierarchy of liquidity puts.
+
+             At the bottom of the hierarchy are money funds, which can raise only limited amounts of
+additional liquidity either by lending securities or via committed or uncommitted credit lines from
+banks.11
+
+
+
+
+10 Another reason is that banks have a 10 percent reserve requirement on large transaction accounts (those greater than $89
+
+million, see Federal Reserve, 2014), but this isn’t an incentive for depositors but banks to swap liabilities.
+11 Borrowings cannot exceed 30 percent of a money fund’s assets under management. While money funds maturity
+
+mismatch is small relative to other intermediaries, in a panic they have less room to get access to liquidity on scale than
+banks.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                	   11	  
+www.treasury.gov/OFR	                                                                                                 	  
+             Dealers are next in the hierarchy. They have more room to borrow against assets, but still
+have only limited access to liquidity in a panic. If no private counterparty is willing to lend, money
+funds and dealers must sell, which will likely end in a fire sale.
+
+             Raising liquidity by borrowing against and selling assets is access to funding and market
+liquidity, respectively. Funding and market liquidity are private liquidity puts because both depend on
+private market participants (banks and dealers) for execution.
+
+             Retail and wholesale banks can borrow against assets or on a last resort basis put them to the
+central bank. As a result, banks rarely have to sell assets in a fire sale. These options represent access to
+funding and lender of last resort liquidity, respectively.
+
+             Finally, the sovereign has a monetary backstop. This option is typically used during times of
+war, and more recently during financial crises (see McCulley and Pozsar, 2012 and Ferguson et al,
+2014).
+
+             Lender of last resort access and monetary backstops are public liquidity puts because they are
+administered by the central bank.
+
+             But lender of last resort access is of value only if one has the capital to put up the haircut at
+the central bank to raise liquidity. If capital is short, solvency is the key risk, and credit risk becomes
+paramount. Different money claims have different levels of credit protection — this is the hierarchy of
+credit puts.
+
+             At the top of the hierarchy are Treasury bills which are backed by the government’s full faith
+and credit and authority to tax.
+
+             One level down in the hierarchy are insured deposits issued by retail banks, which are insured
+by the government (the Federal Deposit Insurance Corporation) up to $250,000.
+
+             Government guarantees and deposit insurance are public credit puts, because they are both
+administered by the official sector.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                   	   12	  
+www.treasury.gov/OFR	                                                                                    	  
+             Next in the hierarchy are repos, which are secured claims. Repos can be tiered depending on
+the type and creditworthiness of counterparties, which may be wholesale banks or dealers, and the type
+of collateral involved, which may be public or private securities.
+
+             Repos are followed by money funds. Money funds invest in two types of assets: secured (such
+as repos, see above) and unsecured. In terms of unsecured investments, government-only funds invest
+only in government-guaranteed (and hence credit-safe) Treasury bills, while prime funds also invest in
+unguaranteed (and hence credit-risky) private bills, the risks of which they aim to minimize via
+diversification.12
+
+             In addition, money funds may also have reputational puts to their sponsors. However, these
+puts are fairly weak, because they are not contractual and depend on sponsors’ strength (see McCabe,
+2010).
+
+             Collateral, diversification, and reputational puts are private credit puts. They represent
+recourse to collateral and private resources in the form of issuers’ or sponsors’ capital (or net worth).
+
+             At the bottom of the hierarchy are uninsured bank deposits, those bigger than $250,000.
+Uninsured deposits are nothing more than unsecured and undiversified private credit claims (essentially,
+private bills) that in some states of the world may be worse credits than repos (which are secured
+claims) or prime money funds (which are backed by diversified portfolios of unsecured claims). In sum,
+without government insurance, deposits fall from the very top to the very bottom of the hierarchy of
+money.13
+
+             The types of assets and direct and indirect liquidity and credit puts behind various
+instruments yield four categories of money. These are purely public, private-public, public-private, and
+
+12 A more precise ranking of repos and money funds would go from government repos on top, government-only and prime
+
+money funds next, and private repo last.
+13 Counterarguments are that (1) failing banks usually merge into healthier ones so that depositors do not lose access to their
+
+deposits exceeding the amount of the Federal Deposit Insurance Corporation’s (FDIC) deposit insurance cap; and (2) in the
+few instances of bank failures, uninsured depositors have been reimbursed expeditiously through depositor payouts (see
+Tarullo, 2013). However, these arguments downplay the fact that regulators always retain discretion in resolving banks. With
+very large holdings of uninsured deposits these may include taking into account the political economy dimensions of
+payouts being skewed toward large depositors at the expense of smaller uninsured depositors, and the sovereign’s fiscal
+capacity and willingness to provide blanket guarantees on the uninsured deposits of the largest banks (see for example
+Cyprus in 2013 where large uninsured depositors suffered). The factors determining how banks will be resolved and how
+expeditiously uninsured depositors will be paid out are unnecessary risks to take if one has the option to go for repos, which
+are bankruptcy remote and offer same-day access to funds.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                    	   13	  
+www.treasury.gov/OFR	                                                                                                     	  
+purely private money, with a decreasing strength to their promise of par on demand and par at maturity,
+during all phases of an interest rate or credit cycle — this is the hierarchy of money (see Figure 1).
+
+             In the upper-left corner of the Money Matrix in Figure 1 are purely public monies. These are
+currency and reserves issued by the central bank and Treasury bills issued by the government. These are
+the safest of safe assets in the financial ecosystem. The remainder of the paper will refer to these
+instruments as “public money.”
+
+             In the lower-left corner of the matrix are private-public monies. These are insured bank
+deposits.14 Insured deposits are private-public money because they are backed mostly by private loans
+and are explicitly backstopped by both public liquidity and credit puts in the form of discount window
+access and deposit insurance. The emphasis here is on the explicit and public nature of backstops. The
+rest of the paper will refer to these instruments as “insured money.”
+
+             In the upper-right corner of the matrix are public-private monies. These are government
+repos (repos collateralized by credit-safe public securities issued by dealers’ government bond trading
+desks) and the constant NAV shares of government-only money funds.
+
+
+
+
+14 Demand and time deposits are just conceptual goal posts. In reality, demand deposits are called transaction accounts,
+
+negotioable order of withdrawal (NOW) accounts, money market deposit accounts (MMDAs) or savings accounts. In turn,
+time deposits may be small or large and if large, breakable or negotiable.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                             	   14	  
+www.treasury.gov/OFR	                                                                                              	  
+Figure 1: The Money Matrix15
+
+
+
+                                           Central Bank                        Dealer Banks
+                                        (Federal Reserve)                   (government desk)
+                                       T-Notes      Currency                T-Repos       T-Repos
+                                                    Reserves                 (o/n)    <    (o/n)
+                                                                              …             …
+
+
+
+
+                      Public Assets
+                                                                            T-Notes       T-Repos
+                                                                                          (term)
+
+                                            Sovereign                          Money Funds
+                                         (U.S. Treasury)                    (government-only)
+                                       Reserves                             T-Repos       T-CNAVs
+                                                    T-Bills
+                                         (o/n)                               (o/n)    <    (o/n)
+                                                                              …
+                                                     Public                 T-Bills       Public
+                                                      money                  (term)       shadow
+
+             Assets
+                                               Banks                          Dealer Banks
+                                             (retail)                         (credit desk)
+                                       Reserves   Deposits                  P-Repos       P-Repos
+                                         (o/n)  <                            (o/n)    <    (o/n)
+                                         …         Insured                    …             …
+
+
+
+
+                      Private Assets
+                                        P-Loans     money                   P-Notes       P-Repos
+                                                                                          (term)
+
+                                              Banks                            Money Funds
+                                           (wholesale)                           (prime)
+                                       Reserves     T-Repos                 P-Repos       P-CNAVs
+                                         (o/n)  <    (o/n)                   (o/n)    <    (o/n)
+                                         …              …                     …
+                                       P-Loans      Deposits                P-Bills       Private
+                                                     (term)                  (term)       sha dow
+
+                                        Public Backstops                    Private Backstops
+                                                              Liabilities
+
+Source: Pozsar (2014)
+
+
+
+
+15 The money matrix does not show bank equity and notions of leverage as the aim is to categorize money claims’ according
+
+to their proximity to the government.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                              	   15	  
+www.treasury.gov/OFR	                                                                                               	  
+             Public-private money claims are backed by public assets but are not backed by public liquidity
+and credit puts explicitly. They are private promises to pay par on demand and par at maturity.
+However, because of the public nature of the collateral and assets backing them, public-private claims
+effectively have implicit access to both public liquidity and credit puts, because public assets are open
+market operation eligible and have no credit risk.16 The emphasis here is on the implicit and public
+nature of backstops. The remainder of the paper will refer to these instruments as “public shadow
+money.”
+
+             In the lower-right corner of the matrix are purely private monies. These are private repos
+(repos collateralized by credit-risky private securities, such as corporate bonds, issued by dealers’ credit
+trading desks) and the constant NAV shares of prime funds.
+
+             Purely private money claims are backed by private assets and, similar to public-private money
+claims, are not backed by public liquidity and credit puts explicitly. They too are private promises to pay
+par on demand or at maturity. However, private money lacks even indirect access to public liquidity and
+credit puts, because private assets are not open market operation eligible and have plenty of credit risk,
+which makes purely private claims relatively risky, peripheral forms of money. The emphasis here is on
+the lack of even implicit forms of public backstops. The remainder of the paper will refer to these
+instruments as “private shadow money.”
+
+             Uninsured bank deposits are also private shadow money. Although the wholesale banks that
+issue these do have access to official liquidity puts, if the central bank is unwilling to lend to a bank
+during a panic — perhaps because it deems the bank insolvent — the absence of an explicit public
+credit put effectively makes uninsured deposits credit-risky private bills. Post-crisis limitations on the
+Federal Reserve’s lender of last resort authority and the Federal Deposit Insurance Corporation’s ability
+to guarantee banks’ unsecured debt (such as uninsured deposits) make this point even starker (see
+Geithner, 2014).
+
+             Note that the Money Matrix in Figure 1 displays only the core institutions and instruments of
+the onshore U.S. dollar money market, institutions and instruments that are cornerstones in the
+
+
+16 For example, Goldman Sachs uses open market operations eligibility as justification for holding its liquidity in Treasuries
+
+and agencies (either outright or as collateral in reverse repos, 10-Q, 2013Q3, pp. 167-168). That said, Treasuries are truly
+credit risk free only if one ignores political risks around debt ceiling negotiations, but even with those political risks, the lack
+of cross default provision makes Treasuries the safest of safe assets around.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                         	   16	  
+www.treasury.gov/OFR	                                                                                                          	  
+provision of a specific subset of safe assets, namely safe, short-term assets that carry no or only minimal
+credit and duration risks.17
+
+             Eurodollar (that is, offshore) money market instruments, to be discussed in Part III of this
+paper, and private bills other than uninsured deposits, are not displayed in the matrix, because from the
+perspective of onshore investors, they are secondary in the hierarchy of safe assets.18 These instruments
+are more a means to enhance yield by taking on credit risk rather than cornerstone safe assets.
+
+             The Money Matrix is also useful to demonstrate where the shadow banking system sits within
+the broader ecosystem (see Figure 2).
+
+             The shadow banking system (see McCulley, 2007) and its core institutions, dealers, and
+money funds, are on the right-hand side of the matrix and can be divided into two subsystems: a
+public-private and a purely private shadow banking subsystem, which in turn issue public shadow
+monies and private shadow monies, respectively.19
+
+             The public-private subsystem is built around public assets such as Treasuries, and agency debt
+and RMBS. It conducts maturity and liquidity transformation but no credit transformation because
+public securities have no credit risk.20 Here maturity and liquidity transformation mean turning
+predominantly long-term public securities into short-term, par at maturity (that is, money-like) claims
+via term repos, and overnight, par on demand (that is, money) claims via overnight repos and constant
+NAV money fund shares, respectively.
+
+             The purely private subsystem is built around private assets, such as corporate bonds, asset-
+backed securities, and private-label RMBS. It also conducts maturity and liquidity transformation, as
+well as credit transformation via tranching and haircuts higher than on private repos because private
+
+
+
+
+17 The term safe asset is meant to imply safety from a credit risk perspective but credit-safe assets can still be risky from a
+
+duration or FX risk perspective.
+18 Conceptually, Eurodollar instruments and private bills such as commercial paper should be somewhere on the margins of
+
+the bottom quadrants of the matrix.
+19 We do not classify the now defunct structured investment vehicles and conduits as core intermediaries of the shadow
+
+banking system. Even at their peak, their sizes were dwarfed by the size of both dealers’ and money funds’ balance sheets.
+20 Assuming a fiat money system, that debts are denominated in national currency, and that central banks are willing to print
+
+when markets are unwilling to fund.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                    	   17	  
+www.treasury.gov/OFR	                                                                                                     	  
+Figure 2: Placing Shadow Banking Within the Broader Ecosystem
+
+
+
+                                           Central Bank                        Dealer Banks
+                                        (Federal Reserve)                   (government desk)
+                                       T-Notes      Currency                T-Repos       T-Repos
+                                                    Reserves                 (o/n)    <    (o/n)
+                                                                              …             …
+
+
+
+
+                      Public Assets
+                                                                            T-Notes       T-Repos
+                                                                                          (term)
+
+                                            Sovereign                          Money Funds
+                                         (U.S. Treasury)                    (government-only)
+                                       Reserves                             T-Repos       T-CNAVs
+                                                    T-Bills
+                                         (o/n)                               (o/n)    <    (o/n)
+                                                                              …
+                                                     Public                 T-Bills       Public
+                                                      money                  (term)       shadow
+
+             Assets
+                                               Banks                          Dealer Banks
+                                             (retail)                         (credit desk)
+                                       Reserves   Deposits                  P-Repos       P-Repos
+                                         (o/n)  <                            (o/n)    <    (o/n)
+                                         …         Insured                    …             …
+
+
+
+
+                      Private Assets
+                                        P-Loans     money                   P-Notes       P-Repos
+                                                                                          (term)
+
+                                              Banks                            Money Funds
+                                           (wholesale)                           (prime)
+                                       Reserves     T-Repos                 P-Repos       P-CNAVs
+                                         (o/n)  <    (o/n)                   (o/n)    <    (o/n)
+                                         …              …                     …
+                                       P-Loans      Deposits                P-Bills       Private
+                                                     (term)                  (term)       sha dow
+
+                                        Public Backstops                    Private Backstops
+                                                              Liabilities
+
+                                                                       Shadow Banking System
+
+Source: Pozsar (2014)
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                             	   18	  
+www.treasury.gov/OFR	                                                                              	  
+securities collateral are credit-risky. It were the securitization and funding flows of this subsystem that
+were mapped and described by Pozsar, 2008 and Pozsar et al, 2010.
+
+             In terms of measurement, Chart 1 shows that at the end of 2013 the largest category of par
+on demand money claims was private shadow money comprised of uninsured demand deposits issued
+by banks, overnight private repos issued by dealers’ credit desks, and the constant NAV shares of prime
+money funds at a total of $3.2 trillion.21
+
+             The second largest category was public money issued by the Federal Reserve at just under
+$2.5 trillion (excluding currency) and Treasury securities with a remaining maturity of less than seven
+days at more than $100 billion for a combined total of about $2.6 trillion.
+
+Chart 1: Par on Demand Money Claims by Type, $ billion
+ 3,500
+
+
+
+
+ 3,000
+
+
+
+
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+     0
+                 Public Money                    Insured Money            Private Shadow Money           Public Shadow Money
+                                                                  Q3-13
+
+           Reserves     Reverse Repos       T-Bills   Demand Deposits     Dealer Repos [o/n]     Securities Loaned   CNAVs
+
+
+
+Sources: Haver, Federal Reserve Board, Federal Reserve Bank of New York, FDIC
+
+21 The term demand deposits refers to the portion of uninsured, noninterest-bearing transactions accounts in excess of
+
+$250,000 as measured by the FDIC.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                        	   19	  
+www.treasury.gov/OFR	                                                                                                         	  
+             The third largest category was public shadow money comprised of overnight government
+repos backed by Treasuries and agency debt and RMBS and issued by dealers’ government trading
+desks, and the constant NAV shares of government-only money funds at $2.3 trillion.
+
+             Finally, the smallest category was insured money claims comprised of insured demand
+deposits issued by banks at $1.4 trillion.
+
+             Chart 2 plots a similar ranking of par at maturity money-like claims. The largest category was
+insured money-like claims in the form of banks’ insured savings and small time deposits at $6 trillion.
+
+Chart 2: Par at Maturity Money Claims by Type, $ billion22
+ 6,000
+
+
+
+
+ 5,000
+
+
+
+
+ 4,000
+
+
+
+
+ 3,000
+
+
+
+
+ 2,000
+
+
+
+
+ 1,000
+
+
+
+
+     0
+                   Insured Money                 Public Money                Private Shadow Money         Public Shadow Money
+                                                                   Q3-13
+
+         T-Bills    T-Notes w/ RM < 1 yr.   Small TDs and savings deposits   Large TDs   Dealer Repos [term]   Securities Loaned
+
+
+
+Sources: Haver, Federal Reserve Board, Federal Reserve Bank of New York, U.S. Treasury
+
+
+
+
+22 Netted for large time deposits, term repos and Treasuries held by money funds. Small time and savings deposits are
+
+insured, large time deposits are uninsured.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                            	   20	  
+www.treasury.gov/OFR	                                                                                                             	  
+             The second largest category was public money-like claims comprised of Treasury bills and
+notes with a remaining maturity of more than seven days but less than one year at more than $2.3
+trillion.
+
+             The third largest category was private shadow money-like claims comprised mostly of banks’
+large deposits at more than $1.2 trillion.
+
+             Finally, the smallest category was public shadow money-like claims comprised of term
+government repos backed by Treasuries and agencies issued by dealers’ government desks at around
+$800 billion.
+
+             Importantly, what these rankings show is that as of the third quarter of 2013, the shadow
+banking system, at more than $3.8 trillion, issued $800 billion more in par on demand money claims
+than retail and wholesale banks with $3 trillion in demand deposits.
+
+             By contrast, when it comes the provision of par at maturity money-like claims over the same
+period, the U.S. Treasury was a more important supplier than the shadow banking system, but both
+were dwarfed by savings and small and large time deposits issued by banks.
+
+             Altogether, the size of the core of the shadow banking system was just under $5 trillion as of
+the third quarter of 2013, down from a peak of over $8 trillion as of the second quarter of 2008.
+
+             These figures are lower than earlier measures of the system (see Pozsar et al, 2010) because
+they are narrower in focus: the estimates measure the net supply of money and money-like claims
+issued by dealers and money funds at the core of the system and disregards all forms of capital market
+lending not funded in the money market.
+
+             Initial measures of the system were gross, not netting for holdings between intermediaries,
+and included all forms of securitized credit regardless of whether they were funded in the money
+market or not, which inflated aggregate measures further.
+
+             Banks do more than just lending. They also issue money claims. By extension, if lending
+without money creation does not qualify as banking, neither should capital market lending without
+money market funding qualify as shadow banking (see for example the works of Mehrling et al, 2013,
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   21	  
+www.treasury.gov/OFR	                                                                                 	  
+Claessens et al, 2013 and OFR, 2013). Measures of shadow banking should be designed to reflect this
+perspective.
+
+             Importantly, the Federal Reserve’s monetary aggregates for the United States measure only
+the tip of the monetary system discussed above. The Federal Reserve’s M0, M1 and M2 aggregates
+measure mostly the insured money supply (insured bank deposits) and only parts of the public money
+supply (currency and reserves, but not RRPs and Treasury bills) and the shadow money supply (retail
+class money fund shares, but not institutional-class shares and repo liabilities).
+
+             The categories of money described above could serve as a template to expand the scope of
+the Federal Reserve’s money supply measures to the complexities of the modern financial ecosystem in
+a way that also takes into account the hierarchical nature of money.
+
+             One way to go about doing this would be to track the supply of both money and money-like
+claims across four categories ranging from purely public, private-public, public-private and purely
+private, denoted by PD0, PD1, PD2 and PD3 for Par on Demand money claims and PM0, PM1, PM2 and
+PM3 for Par at Maturity money claims, respectively.
+
+             Finally, how does the Federal Reserve’s reverse repo facility fit into the money matrix? If
+permanent, the facility would effectively help reduce interconnections between banks, dealers and
+money funds — and thereby simplify the system — by eliminating the hierarchical relationships
+whereby money for dealers is government repos with wholesale banks, and money for money funds is
+repos with dealers (see page 10 and 11 above, and slides 22 – 25 in the accompanying map).
+
+             Reverse repos effectively grant shadow banks — dealers and money funds — a checking
+account at the Federal Reserve for the very first time in U.S. monetary history, similar to how reserves
+held at the central bank function as a checking account for traditional banks. Instead of having to keep
+cash with other counterparties, shadow banks will be able to hold cash with the Federal Reserve
+directly.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                             	   22	  
+www.treasury.gov/OFR	                                                                              	  
+Figure 3: How Reverse Repos Simplify the Plumbing
+
+
+
+                                           Central Bank                        Dealer Banks
+                                        (Federal Reserve)                   (government desk)
+                                       T-Notes        RRP                     RRPs        T-Repos
+                                                     (o/n)                   (o/n)    <    (o/n)
+                                                                              …             …
+
+
+
+
+                      Public Assets
+                                                    Currency                T-Notes       T-Repos
+                                                    Reserves                               (term)
+
+                                            Sovereign                          Money Funds
+                                         (U.S. Treasury)                    (government-only)
+                                       Reserves                               RRPs        T-CNAVs
+                                                    T-Bills
+                                         (o/n)                               (o/n)    <    (o/n)
+                                                                              …
+                                                     Public                 T-Bills       Public
+                                                      money                  (term)       shadow
+
+             Assets
+                                               Banks                           Dealer Banks
+                                             (retail)                         (credit desk)
+                                       Reserves   Deposits                    RRPs        P-Repos
+                                         (o/n)  <                            (o/n)    <    (o/n)
+                                         …         Insured                    …             …
+
+
+
+
+                      Private Assets
+                                        P-Loans     money                   P-Notes       P-Repos
+                                                                                           (term)
+
+                                              Banks                            Money Funds
+                                           (wholesale)                           (prime)
+                                       Reserves     T-Repos                   RRPs        P-CNAVs
+                                         (o/n)  <    (o/n)                   (o/n)    <    (o/n)
+                                         …              …                     …
+                                       P-Loans      Deposits                P-Bills       Private
+                                                     (term)                  (term)       sha dow
+
+                                        Public Backstops                    Private Backstops
+                                                              Liabilities
+
+                                                                       Shadow Banking System
+
+Source: Pozsar (2014)
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                             	   23	  
+www.treasury.gov/OFR	                                                                              	  
+PART II — THE HIERARCHY OF ACCESS
+
+             Having covered the hierarchy of money, we now turn to the hierarchy of access — that is, the
+difference between the types of money that different classes of cash investors have access to.
+
+             There are two classes of non-intermediary cash investors in the financial ecosystem: retail and
+institutional.23
+
+             Retail cash investors are “mom and pop” depositors who keep cash balances mostly in the
+form of currency and insured bank deposits, that is, in M0, M1, and M2-types of money.24
+
+             Institutional cash investors are institutional cash pools (see Pozsar, 2011). There are four
+categories of institutional cash pools: (1) the liquidity tranche of FX reserves; (2) the cash balances of
+global corporations; (3) the centrally managed cash balances of institutional investors and the largest
+asset managers; and (4) the cash collateral reinvestment accounts of securities lenders.25
+
+             In the aggregate, cash pools had at least $6 trillion in cash under management at the end of
+2013 (see Chart 3 and OFR, 2013), with average cash balances of about $10 billion and a minimum
+threshold to qualify as a cash pool of $1 billion (see Pozsar, 2011).
+
+             Unlike retail cash investors, who hold cash mostly for real economy transactions, cash pools
+hold cash balances mostly for financial economy transactions — for the daily fixing of FX pegs; for the
+safe-keeping of corporate cash balances; and for supporting the liquidity needs of the modern asset
+management complex, partly stemming from the increased use of derivatives-based investments (such
+as derivative-overlay investments) and securities lending.
+
+             Institutional cash pools are managed by cash portfolio managers (cash PMs) whose mandate
+is “do not lose.” This mandate limits cash PMs to invest net payment surpluses in safe assets, or more
+
+
+
+
+23 Non-intermediary cash investors are cash investors outside the system. They aren’t directly involved in funding between
+
+banks, dealers, and money funds.
+24 M2 also includes retail-class money market funds. However, retail holdings of money market fund shares are dwarfed by
+
+demand deposits and savings accounts.
+25 Institutional investors may manage cash in a principal or an agent role. Institutional investors in a principal role include
+
+for example pension funds, insurance companies and local governments, and in an agent role, asset managers.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                    	   24	  
+www.treasury.gov/OFR	                                                                                                     	  
+precisely, safe, short-term assets with maturities ranging from overnight up to a year (that is, money and
+money-like claims) but usually not beyond.26
+
+Chart 3: Institutional Cash Pools by Type, $ billion
+
+ 6,000
+
+
+
+
+ 5,000
+
+
+
+
+ 4,000
+
+
+
+
+ 3,000
+
+
+
+
+ 2,000
+
+
+
+
+ 1,000
+
+
+
+
+      0
+                      1997                         2000                     07Q2                        13Q3
+
+                   Reserve managers         Corporations   Institutional Investors      Securities lenders
+
+Sources: Haver, Federal Reserve Board, ICI, BIS
+
+             However, unlike retail cash investors, cash PMs have no or only limited access to M0, M1 and
+M2-types of money for three reasons.
+
+             First, it would be physically impossible to handle billions in cash in the form of currency.
+Second, they have no access to reserve accounts at the Federal Reserve. Third, because of their sizes,
+which are well in excess of $250,000 (the current deposit insurance limit in the United States), they have
+no access to insured bank deposits.
+
+
+
+26 The term safe asset is meant to imply safety from a credit risk perspective but credit-safe assets can still be risky from a
+
+duration or FX risk perspective.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                    	   25	  
+www.treasury.gov/OFR	                                                                                                     	  
+             If cash PMs were to invest their pools in an uninsured deposit at a single bank, they would
+assume an unsecured and undiversified counterparty credit risk in relation to that bank, which is
+imprudent and would not get any risk manager’s approval (also see Part I on why cash pools are never
+left behind uninvested in the payments system).
+
+             This is also true at the macro level as cash pools have grown ever bigger while options to
+diversify unsecured bank exposures have been shrinking because of consolidation among wholesale
+banks that are best able to absorb large pools of cash (see Pozsar, 2011).
+
+             This problem has been exacerbated by the fact that the same wholesale banks may also have
+served as providers of credit lines and derivatives and trading counterparties to cash pools, or more
+precisely, the larger entities they belonged to. This was a further constraint for cash PMs to keep cash in
+deposits on an unsecured basis, as that would only have added to wrong-way counterparty risks.
+
+             With public and insured money claims off limits, cash PMs are limited to choose mostly from
+a menu of mainly public and private shadow money claims, where allocations follow a hierarchical
+order. This is the hierarchy of access — or cash pools’ access to money.
+
+             For overnight cash investments the safest possible options for cash pools are Treasury bills
+with only days left to maturity.
+
+             Overnight government repos with dealers’ government trading desks come next, followed by
+government-only money funds. Money funds rank below repos because repos allow control over one’s
+choice of counterparties and the exact issues of public securities accepted as collateral, whereas through
+money funds one is subject to the counterparty and collateral rules of fund managers. As an analogy
+think of bespoke versus off the rack suits: both fit the purpose but the former fits better and leaves no
+room (or margin) for error.
+
+             Prime money funds come next. The diversification they provide over private repos or
+unsecured exposures that uninsured deposits represent — the last allocation options — is of value to
+cash PMs.
+
+             Chart 4 shows that public money claims are only accessible for cash pools in the form of very
+short-term Treasuries in the amount of about $100 billion in recent years. Compared to Chart 1, Chart
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   26	  
+www.treasury.gov/OFR	                                                                                 	  
+4 underscores that currency, reserves, and reverse repos issued by the Federal Reserve are inaccessible
+for all institutional cash pools.
+
+             It also shows that in the third quarter of 2013, public shadow money claims in the form of
+the constant NAV shares issued by government-only money funds and overnight government repos
+issued by dealers’ government bond trading desks absorbed more than $2 trillion in overnight money
+demand from institutional cash pools.
+
+             Private shadow money claims in the form of the constant NAV shares issued by prime funds
+and private repos issued by dealers’ credit trading desks absorbed another $1 trillion in overnight
+money demand. And private shadow money claims in the form of uninsured demand deposits issued by
+banks absorbed nearly $1.5 trillion.
+
+             Importantly, not all of these uninsured deposits are held by cash pools. What is safe to
+assume about the data in Chart 4 is that repos, overnight Treasury bills, and institutional-class money
+fund shares are all held by institutional cash pools — retail investors do not invest in these instruments.
+However, this is not the case with uninsured deposits which may be held by both retail and institutional
+investors. The volume of uninsured deposits in Chart 4 refers to uninsured deposits at banks with
+assets of at least $50 billion, and according to the FDIC, it is the aggregate of thousands of accounts
+with an average size of between $2 and $3 million.
+
+             As such, the volume of uninsured deposits in Chart 4 reflects a mix of holdings by cash pools
+(balances well above the $250,000 deposit insurance limit) as well as retail investors (balances marginally
+above the insurance limit). However, drawing a more precise line between these two types of uninsured
+depositors is not possible with the granularity of the presently available data.
+
+             Similar to the case of money claims, cash PMs also face limited access to public money-like
+claims. Although Treasury bills are a perfectly safe public money claim for cash PMs to invest in, supply
+is insufficient for all cash PMs to invest in them on scale (this shortage of Treasury bills was
+documented in detail by Pozsar, 2011 and Claessens et al, 2012 and through an analysis of the liquidity
+premium of Treasury bills by Greenwood, Hanson and Stein, 2010).
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   27	  
+www.treasury.gov/OFR	                                                                                 	  
+Chart 4: Cash Pools’ Access to Par on Demand Money Claims, $ billion27
+
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+     0
+             Private Shadow Money            Public Shadow Money              Insured Money               Public Money
+                                                                   Q3-13
+
+             Demand Deposits        Dealer Repos [o/n]    Securities Loaned     CNAVs [Institutional Class]   T-Bills
+
+
+
+
+Sources: Haver, Federal Reserve Board, Federal Reserve Bank of New York, ICI
+
+             Term cash balances can be invested in volume only in term repos collateralized by public or
+private securities and (depending on cash PMs’ appetite for safety versus yield) unsecured credit
+instruments such as uninsured certificates of deposit (CDs) and commercial paper (CP).
+
+             Chart 5 shows that in the third quarter of 2013, public money-like (that is, par at maturity)
+claims in the form of short-term Treasuries absorbed about $2.3 trillion in term money demand from
+cash PMs. Public shadow money-like claims in the form of term government repos issued by dealers’
+government trading desks absorbed close to $900 billion. Insured money-like claims in the form of
+insured small deposits (which cash PMs obtain by dividing cash balances into insured portions and
+
+
+27 Chart 4 is derived by subtracting retail-class money fund shares and insured demand deposits held by households from the
+
+first, third, and fourth columns of Chart 1, respectively, and subtracting reserves and RRPs from the second column.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                  	   28	  
+www.treasury.gov/OFR	                                                                                                   	  
+spreading it among banks) absorbed $140 billion. And private shadow money-like claims, in the form
+of large, uninsured time deposits, absorbed more than $1.2 trillion.
+
+             Similar to uninsured demand deposits in Chart 4, data gaps do not allow for a more precise
+breakdown of uninsured time deposits held by institutional versus retail cash investors in Chart 5.
+
+Chart 5: Cash Pools’ Access to Par at Maturity Claims, $ billion28
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+     0
+                 Purely Public                 Purely Private               Public-Private                 Private-Public
+                                                                 Q3-13
+
+           T-Bills     T-Notes w/ RM < 1 yr.    Savings and Small TDs    Large TDs   Dealer Repos [term]      Secs. Loaned
+
+
+
+Sources: Federal Reserve Z.1 and H.8, FR 2004 via Haver
+
+             The above charts show that cash pools, unlike retail cash investors, do not have access to M0,
+M1 or M2 types of money. That is, for institutional cash pools money begins where M2 ends.
+
+             The fact that institutional cash pools are constrained to holding mainly public-private and
+purely private shadow money claims means that they always face some counterparty and collateral-
+
+
+28 Short-term Treasury securities and large time-deposits have been netted for money funds’ holdings of these instruments.
+
+Cash pools’ access to small time deposits is achieved by splitting cash pools into insured amounts across banks.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                      	   29	  
+www.treasury.gov/OFR	                                                                                                       	  
+related risks in cash portfolios. This is the fundamental reason behind the fickle and finicky nature of
+the wholesale funding market today, which is not as much an interbank (see Shin, 2010a) but rather an
+institutional cash pools to wholesale banks and dealers market.
+
+             It follows that, a financial ecosystem increasingly funded by a relatively low number of well
+informed, very large and uninsured institutional cash pools is bound to be much less stable than one
+funded by a very large number of uninformed, small and insured depositors. This makes the rise of
+institutional cash pools a most fundamental, yet underappreciated source of systemic risk today.
+
+             What this analysis also implies is that any discussion of “core” versus “noncore” (that is,
+deposit versus nondeposit) liabilities (see Shin, 2011) should be context dependent.
+
+             The core versus noncore characterization of liabilities has been shaped by analyzing
+peripheral cases — Northern Rock in the U.K. (see Shin, 2010a) and South Korean banks’ noncore
+liabilities which have historically been dominated by U.S. dollar borrowings (see Shin, 2010b).
+
+             However, the picture looks completely different at the core of the dollar-based global
+financial system (see for example Mehrling, 2011 and Mehrling et al, 2013), where certain types of core
+intermediaries such as dealers fund balance sheets almost exclusively using noncore repos, and where
+cash PMs — as an increasingly dominant group of funding providers in the ecosystem — prefer to
+invest their cash in noncore liabilities that put them in a legally senior position relative to uninsured
+core liabilities such as deposits (see Pozsar, 2011).
+
+             In particular, what are usually referred to as intermediaries’ core par on demand liabilities
+(demand deposits) are typically marginal assets in institutional cash portfolios because of insurance
+limits, and what are referred to as intermediaries’ noncore par on demand liabilities (overnight dealer
+repos and money fund shares) are the dominant assets in institutional cash portfolios (see Chart 6).
+
+
+
+
+Chart 6: “Core” versus “Noncore” Overnight Money Claims, $ billion
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   30	  
+www.treasury.gov/OFR	                                                                                 	  
+ 4,000
+
+
+
+
+ 3,500
+
+
+
+
+ 3,000
+
+
+
+
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+     0
+            Shadow Banks             Banks            Sovereign        Shadow Banks          Banks               Sovereign
+            ["Non-Core"]            ["Core"]         ["Non-Core"]      ["Non-Core"]         ["Core"]            ["Non-Core"]
+                                     Q2-07                                                   Q3-13
+
+           T-Bills w/ RM < 7 days       Dealer Repos [o/n]   Demand Deposits [un-insured]   Securities Loaned      CNAVs
+
+
+
+
+Sources: Haver, Federal Reserve Board, Federal Reserve Bank of New York, FDIC, U.S. Treasury
+
+             Similarly, intermediaries’ core par at maturity liabilities (time deposits and negotiable CDs) are
+less prominent in institutional cash portfolios due to deposit insurance limits relative to the sum of
+noncore money-like claims (term dealer repos and short-term Treasuries, respectively), which are the
+dominant term assets in institutional cash portfolios (see Chart 7).
+
+             Finally, what does the Federal Reserve’s reverse repo facility mean from the perspective of
+institutional cash pools?
+
+             Unlike retail cash investors, for whom public money is available in the form of currency,
+institutional cash pools still do not have direct access to public money, as reverse repos are available
+only to shadow banks, not cash pools. That said, reverse repos mean that the shadow money claims
+
+Chart 7: “Core” versus “Noncore” Term Money Claims, $ billion
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                        	   31	  
+www.treasury.gov/OFR	                                                                                                         	  
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+     0
+                Banks             Shadow Banks        Sovereign            Sovereign             Banks            Shadow Banks
+              ["Core"]            ["Non-Core"]       ["Non-Core"]         ["Non-Core"]          ["Core"]          ["Non-Core"]
+                                     Q2-07                                                       Q3-13
+
+         T-Bills    T-Notes w/ RM < 1 yr.    Small TDs [insured]    Large TDs [un-insured]   Dealer Repos   Securities Loaned
+
+
+
+
+Sources: Haver, Federal Reserve Board, Federal Reserve Bank of New York, FDIC, U.S. Treasury
+
+that cash pools keep the bulk of their cash balances in are now backed — at least in part — by
+something of much higher quality than anything that was available before: the gradual increase in the
+size of the Federal Reserve’s reverse repo facility with individual shadow bank counterparties means a
+gradual increase in the share of shadow money claims backed by the safest of safe assets — the
+liabilities of the Federal Reserve.
+
+             It is also worth emphasizing that reverse repos, if permanent, could become the basis of a
+liquidity-requirement regime for shadow banks. Much like banks have a minimum reserve requirement
+against the demand deposits they issue, minimum reverse repo balances could become the equivalent of
+minimum reserve requirements for shadow banks against the overnight repo and constant NAV
+liabilities they issue.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                          	   32	  
+www.treasury.gov/OFR	                                                                                                           	  
+             Were such minimum reverse repo requirements to become the norm, the safety of shadow
+money claims would increase for two reasons: there would be more explicit official liquidity buffers
+backing them, and, operationally, shadow banks would have a standing account relationship with the
+Federal Reserve. Potential liquidity requirements for shadow banks, coupled with enhanced supervisory
+powers over shadow banks, could potentially be an important step along the Federal Reserve’s
+evolution toward becoming a “dealer of last resort” in Bagehot’s 21st century sense (see Mehrling, 2010
+as well as Mehrling et al, 2014).
+
+PART III — THE HIERARCHY OF USES
+
+          Once cash PMs have invested their cash balances with wholesale banks, dealers, and money
+funds, their cash will be used toward different ends. Some will be used to redistribute dollar liquidity
+between intermediaries in the financial ecosystem globally, and some to fund large portfolios of capital
+market bonds, also globally. This section of the paper discusses the hierarchy of the uses of cash —
+hierarchy because some forms of intermediation get cash to the economy directly, some less directly,
+and some even less directly by setting the price of securities (and hence risk premia) in secondary
+markets.
+
+          One way to rank the uses of cash within the ecosystem is to start with the lending and money
+creation function of banks on top. The vast majority of credit and money claims in the ecosystem begin
+life as a loan and the creation of a demand deposit in equal amounts (see Turner, 2013, Bank of
+England, 2014 and Kumhof and Jakab, 2014).
+
+          Some loans are retained by banks and some are securitized, but what is certain is that once a
+loan and corresponding demand deposit account have been made, the borrower will draw on that
+account and spend the cash in it. When the account is drawn, the loan remains on the bank’s balance
+sheet and the bank will have to find funding for it, and will turn to money dealers in the money market
+to do so.
+
+          Money dealing (see Mehrling et al, 2013) is next in the hierarchy. Money dealing is market
+making both within and across onshore and offshore (Eurodollar), and secured and unsecured money
+markets between wholesale banks, dealers, and money funds globally. It involves the borrowing and
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                             	   33	  
+www.treasury.gov/OFR	                                                                              	  
+lending of cash both on a short-term basis — using money market funding to fund money market
+lending.
+
+          Money market funding of capital market lending, or the running of global portfolios of dollar-
+denominated capital market claims with funding raised in secured and unsecured dollar money markets
+globally is third in line in the hierarchy of the uses of cash. Money market funding of capital market
+lending is different from money dealing in that the latter uses short-term funding exclusively for short-
+term lending in the money market whereas the former uses short-term funding for the funding of
+portfolios of long-term, capital market claims.
+
+          These three uses of cash — loan-based lending, money dealing, and money market funding of
+capital market lending — can be found on the balance sheets of banks, dealers, money funds, and other
+investors to varying degrees. Banks do all three, dealers do both money dealing and money market
+funding of capital market lending, money funds do exclusively money dealing while other investors do
+exclusively money market funding of capital market lending. The remainder of this section will discuss
+various types of money dealing and money market funding of capital market lending and provide
+examples of each (charts showing the volume of each will follow at the end of this section).
+
+III.1 — MONEY DEALING
+
+          There are five basic forms of money dealing. Four of them support the redistribution of
+liquidity within the U.S. financial ecosystem and one supports the redistribution of dollar liquidity
+globally.
+
+     1. Interbank money dealing, whereby wholesale banks borrow money in the federal funds market
+          from banks with a net surplus of reserves and relend it to banks with a net shortage of reserves.
+     2. Interoffice money dealing, whereby the New York branches of foreign banks borrow money by
+          selling Yankee CDs and CP to prime funds and relend it to headquarters to fund global dollar
+          lending.
+     3. Interdealer money dealing, whereby dealer banks borrow money among themselves via inter-
+          dealer brokers in the general collateral financing (GCF) repo market using public securities.
+     4. “Interlinked” money dealing, whereby both government-only and prime funds borrow money
+          from cash PMs and relend it to dealers and wholesale banks via the tri-party (TRP) repo market.
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                   	   34	  
+www.treasury.gov/OFR	                                                                                    	  
+     5. Client-driven money dealing, whereby dealers borrow money from money market funds as well
+          as from cash PMs directly and relend it to buyside customers via the bilateral (DvP) repo
+          market.
+
+          Being at the center of money dealing in both the secured and unsecured money markets makes
+wholesale banks (which include the clearing banks and the New York branches of foreign banking
+organizations), dealers and money market funds money dealers.
+
+          As dealers they quote a two-sided market and absorb the resulting order flow on their balance
+sheets. Some of this order flow results in matched books, but a money dealer who insisted on matched
+book at every point in time would not, strictly speaking, be supplying market liquidity at all. If
+customers are able to buy and sell quickly, in volume, and without moving the price of money, it is
+because a money dealer is willing to take the other side of that trade without taking the time to look for
+an offsetting customer trade. The result is inventories, sometimes long and sometimes short, depending
+on the direction of the imbalance in order flows (see Mehrling et al, 2013).
+
+          Long inventories refer to overnight funding of term money market loans, short inventories
+refer to term funding of overnight money market loans, and the idealized (an relatively low-in-volume)
+matched books refer to matching overnight to overnight and term-to-term books.
+
+          Money dealing in the domestic federal funds, GCF, and triparty repo markets is well researched
+(see Afonso et al, 2013 and Copeland et al, 2012, respectively), as is money dealing in the global dollar
+funding market (see Mehrling, 2011 and Mehrling et al, 2013 on FX swaps and Eurodollars and Shin,
+2011 on interoffice lending).29
+
+          The fifth category of money dealing — buyside-driven money dealing in the bilateral repo
+market — is under-researched and relatively poorly understood, primarily because of a lack of data.
+
+          Efforts to collect data on the bilateral repo market tend to focus on the quantitative aspects of
+repo (such as volumes, rates, haircuts and the collateral involved) and less on the qualitative aspects of
+repo (such as why particular repo transactions take place).
+
+
+
+29 FX swaps as risk transfer instruments will be discussed later in this section. FX swaps as a source of funding are not
+
+discussed in this paper. For the use of FX swaps in funding, see Mehrling, 2013, Stein, 2012 and McGuire and von Peter.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                   	   35	  
+www.treasury.gov/OFR	                                                                                                    	  
+          Even without actual data, however, a basic review of why dealers’ buyside customers engage in
+repos can help enhance our understanding of the role that repo plays in the modern financial
+ecosystem.
+
+          We can collectively think of buyside customers that use repo as risk portfolio managers (or risk
+PMs). Risk PMs come in many shapes and forms, and their unifying mandate is to “beat the
+benchmark”.
+
+          What sets risk PMs apart from traditional, long-only investment managers (such as mutual
+funds) is their ability to use leverage. Risk PMs may be hedge funds or any investment vehicle (such as
+an absolute return bond fund or unconstrained bond fund) or separate account with a mandate that
+allows the use of at least some leverage.
+
+          Investors that place funds with risk PMs understand that there are both upside and downside
+risks to their investment. In contrast, when they place funds with cash PMs — whose mandate is “do
+not lose” — the assumption is that there are no downsides, just modest returns.
+
+          Beating benchmarks is possible either with or without the use of leverage. The latter involves
+skilled market timing and security selection and the former — leverage — involves the use of borrowed
+cash for three ends: funding, shorting, and derivatives margining.30
+
+          In the case of funding, risk PMs need cash for funding levered fixed income positions. In the
+case of shorting, risk PMs need cash as collateral for shorting securities expected to go down in value.
+In the case of derivatives, risk PMs need cash for margining purposes.
+
+          Bilateral repos and dealers play a role in facilitating all of these forms of leverage. The following
+sections provide examples of each, with the emphasis in each example on the use of cash in various
+kinds of investment management strategies and how dealers’ money dealing function helps facilitate the
+implementation of these strategies (to remind, this section is about the hierarchy of the uses of cash,
+and in specific the function of money dealing).
+
+III.1.a — MONEY DEALING - BILATERAL REPOS: CASH FOR FUNDING
+
+
+30 Benchmark beating returns can come in two basic forms: pure alpha (through smart portfolio selection, market timing and
+
+hedges) and alpha masquerading as levered beta (through the use of funding, securities lending and derivatives).
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                               	   36	  
+www.treasury.gov/OFR	                                                                                                	  
+          First, consider the case of cash for funding. A risk PM — for example a mortgage REIT (or M-
+REIT) — decides to go long a portfolio of agency RMBS with 10 percent equity down and the rest of
+the position funded. The equity is the M-REIT’s assets under management, and the M-REIT’s goal is
+to beat its benchmark using leverage through funding.
+
+          To construct this portfolio, the M-REIT pledges the agency RMBS it wants to buy as collateral
+in a repo transaction and receives the cash from the government trading desk of a dealer to pay for this
+investment. In turn, to fund its cash (or reverse repo) loan to the M-REIT, the dealer repledges the
+agency RMBS to a cash PM for a cash loan also in the form of repo, completing a matched book
+transaction.
+
+III.1.b — MONEY DEALING - BILATERAL REPOS: CASH FOR SHORTING
+
+          Second. consider the the case of cash for shorting. Every time a security gets shorted, a risk PM
+— a short seller — a dealer and a securities lender (in either an agent or a principal role) are involved.
+Once a compelling investment thesis to short a specific security is identified, the short-seller posts cash
+as collateral (so-called initial margin) with a dealer to borrow the security in question.
+
+          The goal of the short seller is to beat its benchmark by generating uncorrelated returns using
+leverage through shorting. Short sellers borrow securities when prices are high and return them when
+prices are low, the inverse of a buy-low-sell-high strategy.
+
+          If the dealer does not have the particular security in its inventory, it would look for a securities
+lender — say a corporate bond ETF — to borrow it from.31 The dealer would then take the borrowed
+security and repledge it to the short seller. Similar to the cash for funding example, this transaction
+would show up on the dealer’s balance sheet as a repo liability to the short seller (who posted cash as
+collateral) and a reverse repo asset to the ETF (which took cash as collateral), completing a matched
+book repo transaction.
+
+          To close the loop, the ETF would reinvest the cash collateral it received for the securities
+loaned, with the transfer of cash to a cash collateral reinvestment account, where it is invested with the
+
+
+
+31 A securities lender may also be a pension fund, a foreign central bank’s FX reserves management desk or a long-only
+
+mutual fund either directly or indirectly through the securities lending program of a large custodian bank.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                           	   37	  
+www.treasury.gov/OFR	                                                                                            	  
+same type of intermediaries it was withdrawn from when the short seller decided to withdraw its cash
+from safe assets and post it as risk capital in the form of collateral for securities borrowed.
+
+           The ETF’s incentive to engage in securities lending is the lending fee it receives for securities
+loaned and the reinvestment income it receives on the reinvestment of cash collateral balances. Such
+lending fees and reinvestment incomes are important sources of return that securities lenders book
+either as excess return over a benchmark or as a lower fee relative to those of their competitors.32
+
+           The relative size of the lending fee and reinvestment income in a securities lending transaction
+depends on the nature of the securities loaned. If the securities are special, meaning the security being
+lent has an intrinsic value in the collateral market and the transaction is motivated mainly by the
+borrower’s desire for a specific security, lending fees dominate and reinvestment tends to be on the
+conservative side. On the contrary, if the securities loaned are general, reinvestment incomes dominate
+and the lending fees tend to be relatively small. As a rule of thumb, lending fees dominate in the case of
+private securities and reinvestment income dominates in the case of public securities (see Keane,
+2013).33
+
+           Importantly, while the direction of the flows of cash and collateral in this example is identical to
+the one in the previous cash for funding example, the economic motivations behind them are
+completely different. In the previous example, a matched book repo intermediated a cash loan versus
+securities as collateral for the purposes of funding. In the present example, a matched repo book
+intermediates a security loan versus cash as collateral for the purposes of shorting. The distinction that
+collateral can be both cash and securities is crucial, but one that some literature on collateral markets
+does not fully appreciate (see Singh, 2013).34
+
+
+
+32 Both the securities lender and the short seller get excess return from securities lending. However, if the strategy to go
+
+short works, the bulk of the returns will accrue to the short seller. The securities lender would still take a hit to its NAV,
+which will be mitigated by securities lending revenues only marginally.
+33 As Keane notes: “An implication of this relationship is that if the securities have no intrinsic value in the collateral market,
+
+then the rebate rate [the rate that is typically paid by the securities lender on the cash received as collateral and is also known
+as the lending fee] will be equal to the general level of money market interest rates. If, instead, the rebate rate is lower than
+the relevant general money market rate, then the rebate rate signals that the security being lent has intrinsic value in the
+collateral market and the transaction is motivated, at least partly, by the borrower’s desire for specific securities [in which
+case the rebate rate may even be negative and hence the lending fee positive]. The level of the rebate rate in a securities loan
+provides the same price signal as the level of the repo rate in a repo transaction.”
+34 In particular, securities serve as collateral to borrow cash, and cash serves as collateral to borrow securities via repo. Also
+
+note that cash in one currency serves as collateral to borrow cash in another currency via the FX swap market. Note here
+the conceptual and mechanical parallels between repos and FX swaps!
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                        	   38	  
+www.treasury.gov/OFR	                                                                                                         	  
+III.1.c — MONEY DEALING - BILATERAL REPOS: CASH FOR MARGINING
+
+          Third, consider the case of cash for margining. A risk PM — for example, the manager of a
+total return bond (TRB) fund that invests in corporate and sovereign bonds globally — senses an
+impending sell-off in markets due to some data surprises unexpected by the market.
+
+          The risk PM does not expect the sell-off to be long lasting and sees no problem with the fund’s
+structural asset allocation, and so puts on a tactical hedge such that the selloff does not translate into
+falling net asset values leading to redemptions for the fund.
+
+          The risk PM’s choice of instruments for this tactical hedge are swaps executed with dealers’
+swap desks — foreign exchange swaps (FXS) to hedge against a dollar rally which would hurt its local
+currency bonds in emerging markets, and interest rate swaps (IRS) and credit default swaps (CDS) to
+keep the fund’s mortgage duration on target and hedge against widening corporate spreads,
+respectively.
+
+          If all goes well with the risk PM’s plan, falling bond values would be offset by speedy cash
+collateral transfers on the swaps, keeping the TRB fund’s net asset value stable amidst a temporary
+market sell-off, enabling the risk PM to outperform the benchmark.
+
+          But what if the plan backfires? If, instead of a sell-off, unexpectedly positive data and hawkish
+policy comments spark a rally in EM and corporate spreads and a selloff in rates, the swaps intended as
+a hedge become a drain on the TRB fund’s performance.
+
+          Instead of harvesting cash collateral as a result of mark-to- market gains, the fund has to post
+cash collateral (as specified by its dealer) on mark-to-market losses before closing out the swaps.
+
+          As a bond investor, the TRB fund would carry only minimal cash balances, which it needs to
+hold for redemption purposes. Thus, to pay its counterparty (Dealer A), the fund has to repo some of
+its bonds to raise liquidity to settle derivatives payables.
+
+          Doing so will involve another dealer (Dealer B) who in a manner similar to the first example
+(see cash for funding) would lend the risk PM cash against a portfolio of bonds that the dealer would
+then repledge to cash PMs to fund the loan on a matched book repo basis.
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   39	  
+www.treasury.gov/OFR	                                                                                 	  
+          While the direction of the flows of cash and collateral are the same as in previous examples, the
+motivation is again different: not to fund a bond position, not to go short, but to raise liquidity in order
+to settle derivatives payables — that is, to pay margin.
+
+          But the example does not end here. Dealer A takes the opposite side of the TRB fund’s trades
+only initially, and as a risk dealer (which operates similar to a money dealer, see Mehrling et al, 2013), it
+would later turn around and offload them in a matched book swap transaction to another risk PM —
+for example a macro hedge fund — who effectively takes the opposite (bullish) view of the world
+(expecting a bout of strong macro data) than the TRB fund’s manager.35
+
+          Once the TRB fund has raised the cash from Dealer B and transferred it to Dealer A, Dealer A
+— as a matched book intermediary — then transfers it to the macro hedge fund, which is the final
+recipient in this transaction and the ultimate winner of the bet that the near-term data flow will turn
+unexpectedly strong.
+
+          The risk PM taking the other side of the derivatives trade does not necessarily have to be a
+macro hedge fund, but may be any type of investor that invests using derivative overlay strategies
+instead of investing in cash bonds. This strategy involves a portfolio of derivatives run by a risk PM and
+a cash pool run by a cash PM where cash needs to be accessible at par on demand for margining
+purposes.
+
+          Such derivative overlay strategies are becoming increasingly prominent in asset
+management, as the traditional, long-only products in the industry have come under
+competitive pressure from (1) hedge funds providing alpha through high-margin, absolute-
+return strategies, and (2) index replication products such as ETFs providing beta at a low cost.
+Traditional asset managers have responded to the pressure by offering innovative products
+based on the investment techniques used by hedge funds using derivatives.
+
+III.2 — MONEY MARKET FUNDING OF CAPITAL MARKET LENDING
+
+
+
+35 Macro hedge funds and derivative overlay investment strategies are similar in nature to short sellers, in that until an
+
+investment opportunity to go short or a view of the world gets formulated and expressed using derivatives, these investors
+are mere cash PMs, keeping their cash balances in safe assets. Once these cash balances are used as collateral for short
+positions or are combined with a portfolio of derivatives, they become risk capital. What these examples show is that some
+strategies straddle the world of both risk PMs and cash PMs.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                               	   40	  
+www.treasury.gov/OFR	                                                                                                	  
+          Money market funding of capital market lending, via funding raised through a money dealer,
+may take place onshore or offshore, and on at least four different kinds of balance sheets.
+
+     1. Funded risk PMs’ securities portfolios. These include for example the aforementioned M-
+          REITs, but also risk parity funds that aim to engineer targeted risks and returns (see Dalio,
+          2010) as well as any type of fixed income investment strategy that uses short-term funding to
+          invest in a portfolio of bonds. Funding for such portfolios is typically raised through bilateral
+          (DvP) repos via dealers.
+     2. Foreign banks’ U.S. dollar securities portfolios. These include European and other developed
+          economy banks’ portfolios of mostly private U.S. securities (for example, ABS and private-label
+          RMBS precrisis) funded via interoffice claims or the Eurodollar or FX swap markets (see for
+          example Bernanke et al, 2011 and Shin, 2011).
+     3. U.S. wholesale banks’ securities portfolios. These include public and private securities issued by
+          U.S. residents and dollar-denominated corporate and sovereign bonds issued globally. Funding
+          for these portfolios is typically raised through a diverse mix of money market instruments sold
+          to prime money market funds.
+     4. Dealers’ securities inventories, but only the portion funded in the repo market. Similar to U.S.
+          wholesale banks, these include public and private securities issued by U.S. residents and dollar-
+          denominated corporate and sovereign bonds issued globally.36
+
+III.3 — THE HIERARCHY OF USES – DATA AND DATA GAPS
+
+          Chart 8 shows the volume of money dealing, money market funding of capital market lending
+and loan-based lending by U.S. chartered banks. Segment [1] shows that the volume of money dealing
+by U.S. banks rose from about $500 billion to $1.5 trillion between the second quarter of 2007 and the
+third quarter of 2013, or from 5 percent to 15 percent of total assets, respectively. The blue rectangles
+show that interbank money dealing accounted for half of U.S. banks’ money dealing activity precrisis
+and shrank significantly since then.
+
+Chart 8: The Hierarchy of Uses — U.S. Banks, $ billion
+
+
+36 This section is concerned with the phenomenon of money market funding of capital market lending. Dealer inventories
+
+funded by long-term bonds and equity don’t meet this criteria, only the part funded via the short-term repo
+market.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                           	   41	  
+www.treasury.gov/OFR	                                                                                            	  
+ 12,000
+
+
+
+
+                                                                                                  [1]
+ 10,000
+
+
+
+
+                                        [1]
+  8,000                                                                                           [2]
+
+                                        [2]
+
+
+  6,000
+
+
+
+
+  4,000
+
+                                                                                                  [3]
+                                        [3]
+
+
+  2,000
+
+
+
+
+       0
+                      Assets                       Liabilities                     Assets                       Liabilities
+                                       Q2-07                                                      Q3-13
+           Loans    PRBs    PUBs     RRs      FF lent   Reserves   Balance   DDs     SDs    LDs   RPs     GDF     FF borrowed
+
+
+
+        PRB = private bonds. PUB = public bonds. RR = reverse repos. FF = federal funds. DD =
+        demand deposits. SD = savings and small time deposits. LD = large time deposits. RP = repos.
+        GFD = global dollar funding. Balance = equity and term debt, derived as the difference
+        between total assets and short-term liabilities. The chart excludes funding from the Federal
+        Home Loan Bank (FHLB) system and mortgages pledged for FHLB funds.
+Sources: Haver, Federal Reserve Board, and author’s calculations
+
+
+           Segment [2] shows that over the same period, the volume of money market funding of capital
+market lending by U.S. banks rose from around $2 trillion to nearly $3 trillion, maintaining a roughly 25
+percent share of total assets. Segment [3] shows that over the same period the volume of loan-based
+lending by U.S. banks rose from just over $6 trillion to more than $6.5 trillion, representing a decline
+from 70 percent to 60 percent of total assets. On net, U.S. banks raised about $400 billion of dollar
+funding in Eurodollar markets globally during the second quarter of 2007, less than 5 percent of total
+assets (see yellow rectangle on the liability side of the chart). This amount has fallen to marginal
+amounts since then.
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                         	   42	  
+www.treasury.gov/OFR	                                                                                                          	  
+          Chart 9 shows the volume of global and domestic money dealing, money market funding of
+capital market lending, and loan-based lending by the New York branches of foreign banks. Segment
+[1] shows that between the second quarter of 2007 and the third quarter of 2013 the volume of global
+(or interoffice) money dealing by these branches went from raising $400 billion in the U.S. money
+market and lending it to headquarters globally in order to fund Eurodollar lending, to raising over $500
+billion in Eurodollar markets and funneling these back to the United States to fund reserves at the
+Federal Reserve.
+
+          Segment [2] shows that over the same period the volume of domestic money dealing by the
+New York branches of foreign banks rose from just under $300 billion to nearly $1.5 trillion, or from
+20 percent to 65 percent of total assets. Segment [3] shows that the volume of money market funding
+of capital market lending fell from just over $400 billion to $300 billion, or from about 30 percent to 15
+percent of total assets. And finally, segment [4] shows that loan-based lending rose from about $450
+billion to $500 billion, representing a decline from 30 percent to 25 percent of total assets.
+
+          Segment [4] also shows that the loan books of the New York branches of foreign banks are
+primarily funded with term debt — that is, on the lending side of their business the New York
+branches of foreign banks conduct mostly credit transformation, not maturity transformation. Maturity
+transformation is confined mainly to money market funding of capital market lending activities, and the
+bulk of their balance sheets is dedicated to money dealing, which is a liquidity function, as opposed to a
+credit or maturity transformation function.
+
+          The balance sheet composition by activity of the New York branches of foreign banks is in
+marked contrast to the balance sheet composition by activity of U.S. banks, which (as shown in Chart
+8) are first and foremost lenders via loans and second, lenders via portfolios of capital market
+instruments, activities funded primarily with deposits. At 15 percent of total assets as of the third
+quarter of 2013, money dealing by U.S. chartered commercial banks was also much lower relative to
+that of foreign banks’ New York branches.
+
+Chart 9: The Hierarchy of Uses — Foreign Banks NY Branches, $ billion
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                               	   43	  
+www.treasury.gov/OFR	                                                                                	  
+ 2,500
+
+
+
+
+ 2,000                                                                                           [1]
+
+
+
+
+ 1,500
+
+                                       [1]
+                                                                                                 [2]
+
+
+
+ 1,000                                 [2]
+
+
+
+
+                                       [3]                                                       [3]
+
+   500
+
+
+
+                                                                                                 [4]
+                                       [4]
+
+
+      0
+                     Assets                       Liabilities                     Assets                    Liabilities
+                                      Q2-07                                                      Q3-13
+           Loans    PRBs    PUBs     RRs     FF lent   Reserves   Balance   DDs     SDs    LDs   RPs     FF borrowed   GDF
+
+
+
+          PRB = private bonds. PUB = public bonds. RR = reverse repo. FF = federal funds. DD =
+          demand deposits. SD = savings and small time deposits. LD = large time deposits. RP = repo.
+          GFD = global dollar funding. Balance = equity and term debt (derived as the difference
+          between the total assets of foreign banks’ NY branches and the short-term liabilities above).
+
+
+Sources: Haver, Federal Reserve Board, and author’s calculations
+
+
+           Chart 10 shows the volume of money dealing and money market funding of capital market
+lending by dealers using public securities (Treasuries and agency debt and RMBS) as collateral. Unlike
+banks, which deal in both secured and unsecured and local as well as global money markets, dealers
+deal exclusively in local, secured money markets. The secured nature of dealers’ activities is denoted by
+the arrows on top of Chart 10 marking the flow of cash from right to left and the corresponding flow
+of collateral from left to right.
+
+Chart 10: The Hierarchy of Uses – Dealers’ Government Desks, $ billion
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                      	   44	  
+www.treasury.gov/OFR	                                                                                                       	  
+ 3,000
+                               Securities In                                      Securities Out
+
+
+                                   Cash Out                                          Cash In
+ 2,500
+                                                                [4]
+
+
+
+
+ 2,000
+                                                                [3]
+
+
+
+
+ 1,500
+
+
+                                                                [2]
+
+
+ 1,000
+
+
+
+
+                                                                [1]
+   500
+
+
+
+
+     0
+                                     Assets                                         Liabilities
+                                                               Q3-13
+
+              RR [o/n]         SB [o/n]       RR [< 30]   SB [< 30]    RR [30+]   SB [30+]        RP [o/n]
+              SL [o/n]         RP [< 30]      SL [< 30]   RP [30+]     SL [30+]   Net financing
+
+
+
+         RR = reverse repo. SB = securities borrowed. RP = repo. SL = securities lent. Net financing =
+         the portion of dealers’ securities inventory financed via repos (as opposed to term debt or
+         equity). [o/n] = overnight. [< 30] = secured securities financing transactions longer than
+         overnight but within 30 days. [30+] = transactions longer than 30 days but shorter than a year.
+
+
+Sources: Haver, Federal Reserve Bank of New York, and author’s calculations
+
+
+          Unlike banks, whose money dealing activities are not broken down in the Federal Reserve’s H.8
+release by maturity, the FR 2004 survey of the Federal Reserve Bank of New York breaks out the
+borrowing and lending activities of dealers by term (into overnight, < 30 days, and 30 days <) and by
+asset class, although starting only from 2013.
+
+          Segment [1] shows that during the third quarter of 2013, dealers conducted just over $1 trillion
+in overnight secured money dealing on a matched book basis. Dealers funded about $1 trillion of
+overnight secured cash loans with the same amount of secured cash borrowings, which accounted for
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                      	   45	  
+www.treasury.gov/OFR	                                                                                       	  
+45 percent of the size of dealers’ government bond trading books and 40 percent of dealers’ short-term
+liabilities.
+
+          Segment [2] shows that the volume of secured lending on tenors longer than overnight but less
+than 30 days, and funded with overnight repos was about $350 billion, or about 15 percent of the size
+of dealers’ government bond trading books. Segment [3] shows that the volume of secured lending on
+tenors longer than 30 days was nearly $900 billion, or about 35 percent of dealers’ government bond
+trading books, funded with overnight liabilities of $200 billion, liabilities longer than overnight but less
+than 30 days of about $300 billion, and the balance with liabilities longer than 30 days of $400 billion.
+
+          Segments [1] to [3] show that during the third quarter of 2013 the total volume of secured
+money dealing by dealers was nearly $2.5 trillion, or about 95 percent of their government bond trading
+book.
+
+          By contrast, segment [4] shows that the volume of money market funding of capital market
+lending — the funding of inventories of U.S. Treasuries and agency debt and RMBS via repos — was
+only $150 billion, or 5 percent of dealers’ total short-term liabilities.37
+
+               Chart 11 shows the volume of money dealing and money market funding of capital market
+lending by dealers using private securities (that is, corporate bonds, ABS and Eurodollar bonds) as
+collateral. Segment [1] shows that during the third quarter of 2013, dealers conducted about $70 billion
+overnight secured money dealing on a matched book basis — that is, they funded that much of
+overnight secured cash loans with the same amount of secured cash borrowings. This accounted for 35
+percent of the size of dealers’ credit trading books and less than 5 percent of total short-term liabilities.
+
+               Segment [2] shows that the volume of secured lending on tenors longer than overnight was
+about $60 billion, or about 30 percent of the size of dealers’ credit trading books. The bulk of these
+loans were funded with overnight liabilities of nearly $50 billion and the balance of $10 billion with
+secured liabilities longer than overnight.
+
+Chart 11: The Hierarchy of Uses — Dealers’ Corporate Desks, $ billion
+
+
+
+37 Dealer inventories are much larger than this, but the bulk of dealers’ inventory is funded with term debt and equity, not
+via repo in the money market.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                 	   46	  
+www.treasury.gov/OFR	                                                                                                  	  
+ 250
+
+                              Securities In                                             Securities Out
+
+
+                                  Cash Out                                                     Cash In
+ 200
+
+
+
+
+                                                                 [3]
+ 150
+
+
+
+
+ 100                                                             [2]
+
+
+
+
+     50
+
+
+                                                                 [1]
+
+
+
+
+      0
+                                   Assets                                                  Liabilities
+                                                                Q3-13
+
+           RR [o/n]    SB [o/n]     RR [term]   SB [term]   RP [o/n]    SL [o/n]   RP [term]     SL [term]   Net financing
+
+
+
+
+          RR = reverse repo. SB = securities borrowed. RP = repo. SL = securities lent. Net financing =
+          the portion of dealers’ securities inventory financed via repos (as opposed to term debt or
+          equity). [o/n] = overnight. [term] = secured loans with maturities longer than overnight.
+
+
+Sources: Haver, Federal Reserve Bank of New York, and author’s calculations
+
+           Segment [3] shows that the volume of money market funding of capital market lending by
+dealers using private securities (the funding of inventories of corporate bonds, ABS and Eurodollar
+bonds via short-term repos) was about $60 billion. This volume accounted for about 30 percent of the
+size of dealers’ credit trading books, and less than 5 percent of total short-term liabilities.38
+
+           The previous examples show that dealer banks function primarily as money dealers and use
+only a small share of their balance sheets to fund term securities. Put differently, the bulk of their short-
+term liabilities fund short-term, securities financing transactions, as opposed to inventories of long-term
+securities such as bonds.
+38 Dealer inventories are much bigger than this, but the bulk of dealers’ inventory is funded with term debt and equity, not
+via repo in the money market.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                      	   47	  
+www.treasury.gov/OFR	                                                                                                       	  
+             Chart 12 shows the volume of money dealing by government-only money funds (that is,
+money funds that invest exclusively in short-term Treasuries and agency debt, and repos backed by
+both short and long-term Treasuries, and agency debt and RMBS as collateral).
+
+             Unlike banks and dealers, whose money dealing activities can be funded by money market
+funding that may range from overnight to term, money funds can be thought of as “one-sided” money
+dealers. Money funds’ money dealing is funded solely via overnight claims, in the form of the constant
+NAV shares — their quintessential product.
+
+             Furthermore, unlike banks and dealers, money funds do money dealing only but no money
+market funding of capital market lending, as their mandates do not allow holding term, capital market
+assets.
+
+             Segment [1] shows that between the second quarter of 2007 and the third quarter of 2013, the
+volume of overnight, matched book money dealing by government-only money funds (through
+overnight government repo investments) fell from more than $400 billion to $300 billion, or from over
+50 percent to about 30 percent of total assets.
+
+             Segment [2] shows that over the same period, the volume of term money dealing by
+government-only money funds (through short-term U.S. Treasuries and agency discount notes) rose
+from $350 to over $650 billion, or from around 50 percent to 70 percent of total assets.
+
+Chart 12: The Hierarchy of Uses — Government Money Funds, $ billions
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                              	   48	  
+www.treasury.gov/OFR	                                                                               	  
+ 1,000
+
+
+
+   900
+
+
+
+   800
+
+
+
+   700
+
+                                                                                           [2]
+   600
+                                       [2]
+
+
+   500
+
+
+
+   400
+
+
+
+   300
+
+
+
+   200                                 [1]
+
+                                                                                           [1]
+   100
+
+
+
+      0
+                     Assets                     Liabilities                Assets                     Liabilities
+                                      2007                                             January 2014
+                            Repos     T-Bills   T-Notes w/ RM < 1 Yr.   GSEs   Other     CNAV [o/n]
+
+
+
+          GSEs = agency discount notes. CNAV [o/n] = par on demand, constant NAV, overnight
+          money fund shares.
+
+
+Sources: Haver, Federal Reserve Board, SEC, and author’s calculations
+
+
+             Chart 13 shows the volume of money dealing by prime money funds (that is, money funds
+that can invest not only government and government-backed claims, but also credit risky, private
+claims).
+
+           Segment [1] shows that during both the second quarter of 2007 and the third quarter of 2013
+the volume of overnight, matched book money dealing by prime money funds (through overnight
+repos to dealer banks) was roughly $200 billion or about 10 percent of total assets.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                             	   49	  
+www.treasury.gov/OFR	                                                                                              	  
+           Segment [2] shows that over the same period, the volume of term money market lending to the
+sovereign and the government-sponsored enterprises (GSEs) increased from just under $100 billion to
+just over $200 billion, or from 5 percent to 10 percent of total assets.
+
+Chart 13: The Hierarchy of Uses — Prime Money Funds, $ billions
+
+ 2,000
+
+
+
+ 1,800
+
+
+
+ 1,600                                 [4]                                                [4]
+
+
+ 1,400
+
+
+
+ 1,200
+
+
+
+ 1,000
+                                                                                          [3]
+
+   800                                 [3]
+
+
+
+   600
+
+
+
+   400
+                                                                                          [2]
+
+                                       [2]
+   200
+
+                                       [1]                                                [1]
+
+      0
+                     Assets                    Liabilities                  Assets                   Liabilities
+                                      2007                                            January 2014
+                Repos [o/n]       T-Bills    T-Notes w/ RM < 1 Yr.   GSEs   LTDs     CP   Other   CNAV [o/n]
+
+
+          GSEs = agency discount notes. LTDs = large time deposits. CP = financial commercial paper.
+          Other = non-financial CP and asset-backed CP. CNAV = par on demand, constant NAV
+          shares.
+
+
+Sources: Haver, Federal Reserve Board, SEC, and author’s calculations
+
+
+           Segment [3] shows the volume of term money market lending to wholesale banks dropping
+from about $1.1 trillion to around $900 billion, or from 60 percent to 50 percent of total assets. The
+bulk of these loans was extended to foreign banks either directly via Eurodollar CDs (certificates of
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                            	   50	  
+www.treasury.gov/OFR	                                                                                             	  
+deposit) and CP (commercial paper) or indirectly through their New York branches via Yankee CDs
+and CP.
+
+          Segment [4] shows the volume of money market lending to real economy participants (as
+opposed to intermediaries or the sovereign) via nonfinancial commercial paper and asset-backed
+commercial paper, a significant portion of which also represents offshore dollar needs.
+
+          Data gaps prevent providing additional examples of money market funding of capital market
+lending other than the previously mentioned cases of onshore securities portfolios and inventories of
+banks and dealers. At present, there is no systematic effort to gauge the volume of short-term repo
+financing raised by risk PMs or the volume of short-term Eurodollar funding raised by global banks
+offshore to fund U.S. dollar-denominated bond portfolios.
+
+          Other than the mortgage REITs (or M-REITs), no official statistics exist on the volume of repo
+borrowings by separate accounts, risk parity funds, relative value hedge funds, total return bond funds
+and less traditional bond funds, such as absolute return and unconstrained bond funds (see for example
+Foley, 2014).
+
+          Judging from the volume of primary dealers’ reverse repo books and netting for interdealer and
+dealer-to-bank repos (see Part IV for more detail) a conservative estimate for the volume of such repo
+borrowings could be at least $1 trillion, split about 1:2 between mortgage REITs and other risk PMs on
+the buyside of the ecosystem.
+
+          Chart 14 shows the evolution of the volume of money market funding of capital market lending
+done by agency mortgage REITs between the second quarter of 2007 and the third quarter of 2013.
+
+             The majority of M-REITs’ repo funding is raised from dealers (which would show up as
+reverse repos on dealers’ balance sheets). Based on a sampling of the SEC filings of public M-REITs,
+about 10 percent of this funding will be shorter than 30 days; the rest longer.
+
+             Finally, we know very little about the details of offshore dollar lending and borrowing that go
+through global banks’ balance sheets outside U.S. borders. For example, the locational banking statistics
+of the Bank for International Settlements (BIS) provide estimates about the volume of U.S. dollar assets
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                 	   51	  
+www.treasury.gov/OFR	                                                                                  	  
+and liabilities of banks outside the Unites States — that is, the volume of Eurodollar lending and
+borrowing by globally active banks outside U.S. borders.
+
+Chart 14: The Hierarchy of Uses — Mortgage REITs, $ billion
+ 350
+
+
+
+
+ 300
+
+
+
+
+ 250
+
+
+
+
+ 200
+
+
+
+
+ 150
+
+
+
+
+ 100
+
+
+
+
+  50
+
+
+
+
+   0
+                   Assets                   Liabilities                    Assets           Liabilities
+                                    Q2-07                                           Q3-13
+
+                                                Balance   Agency RMBS   Repos
+
+
+
+
+        Balance refers to the difference between Agency RMBS and repos. It is a proxy of M-REITs’
+        equity capital and other, short or long-term non-repo liabilities such as term debt.
+Source: Haver, Federal Reserve Board, and author’s calculations
+
+             Chart 15 shows that as of the end of the third quarter of 2013, the U.S. dollar lending and
+borrowing by banks outside the U.S. amounted to about $9 trillion and nearly $8 trillion, respectively.
+
+             But beyond that, we have no information about whether these dollar assets were loans or
+portfolios of bonds. Similarly, we do not know if corresponding dollar liabilities were long-term (such
+as bank bonds) or short-term, and if short-term, whether they were deposits, commercial paper, repos
+(done in Europe) or FX swaps.
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                   	   52	  
+www.treasury.gov/OFR	                                                                                    	  
+Chart 15: The Hierarchy of U.S. — Offshore Dollar Banking, $ trillion
+ 10
+
+
+
+  9
+
+
+
+  8
+
+
+
+  7
+
+
+
+  6
+
+
+
+  5
+
+
+
+  4
+
+
+
+  3
+
+
+
+  2
+
+
+
+  1
+
+
+
+  0
+                  Assets                         Liabilities                    Assets                 Liabilities
+                                   Q2-07                                                       Q3-13
+
+                                       Balance      U.S. dollar assets   U.S. dollar liabilities
+
+
+
+Source: Haver, BIS
+
+             To be able to provide a more or less complete mapping of the volume of U.S. dollar-
+denominated loan-based lending, money dealing and money market funding of capital market lending
+done by various kinds of intermediaries both within and outside the United States, we would need to
+survey the repo borrowings of all risk PMs (or equivalently, the reverse repo lending of dealers by
+counterparty) and would need more details on the U.S. dollar assets and liabilities of banks outside of
+U.S. borders (see McCauley and McGuire, 2014).
+
+PART IV – THE DEALER ECOSYSTEM
+
+          As the previous examples show, dealers are unique among core intermediaries. Unlike banks
+and money funds, dealers conduct money dealing not only with other intermediaries but also the
+buyside. Effectively, they are the primary source of funding for the entire spectrum of levered
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                              	   53	  
+www.treasury.gov/OFR	                                                                                               	  
+investment strategies in the asset management complex. Dealers are also the primary source of
+derivative trades.
+
+          We can sketch a simple accounting framework of the unique role of dealers by abstracting from
+the details of the balance sheets of cash and risk PMs, and by tuning out the forms of money and
+banking (deposits and central, retail and wholesale banking) we know well.
+
+          Cash PMs invest in the money market and are risk averse by their mandate. They seek minimal
+credit, duration, and liquidity risk. Their balance sheets consist of portfolios of money market
+instruments on the asset side financed with equity or security loans in the case of securities lenders’
+cash collateral reinvestment accounts.
+
+          Risk PMs invest in the capital market and are risk seeking by their mandate. They venture far
+out on the credit, duration, and liquidity spectrum. Their balance sheets typically consist of bonds on
+the asset side financed with some mix of equity and repos on the liability side, as well as derivatives,
+which given risk PMs’ long positions in bonds, are used mainly for hedging and risk management.
+
+          Some investment strategies straddle the realms of both risk PMs and cash PMs. Recall the
+examples of short sellers and derivative overlay investors who take risks by shorting securities and
+expressing their market views using derivatives with their risk PM hats, and are looking for safety with
+their cash PM hat as managers of cash pools maintained to pay margin on their short and derivative
+positions.
+
+          Cash PMs and risk PMs are natural complements to each other. Cash PMs are cash rich but
+“safety poor” because they are too large to be eligible for deposit insurance, which drives them toward
+insured deposit alternatives such as repos and money funds (see Pozsar, 2011).
+
+          On the other hand, risk PMs are securities rich but “return poor” in the sense that they are
+mandated to beat benchmarks. To that end, they employ the techniques of funding, shorting, and
+derivatives.
+
+          In all of these cases, risk PMs repo securities out and cash in (to get funding, to lend securities,
+to raise cash to pay margin on out of the money derivative positions), and on the flipside, cash PMs
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                   	   54	  
+www.treasury.gov/OFR	                                                                                    	  
+repo securities in and cash out (to lend cash on a secured basis or to build a short position in specific
+securities).
+
+          Cash PMs have their safety (thanks to the securities posted by risk PMs as collateral) and risk
+PMs have their enhanced return (thanks to cash PMs’ cash loans in exchange for collateral — and
+assuming that risk PMs’ levered bets ultimately work out as planned).
+
+          Dealers are thus intermediaries between risk PMs and cash PMs. Risk PMs interface with
+dealers on the asset side of dealer’s balance sheet, and cash PMs interface with dealers on the liability
+side of dealers’ balance sheets. In this process, dealers intermediate risks (credit, duration, liquidity as
+well as foreign exchange (FX) risks) away from cash PMs and toward risk PMs using repos and
+derivatives. This is risk intermediation (see Checki, 2009 and Pozsar, 2013).
+
+          As risk intermediaries, dealers perform two core functions: money dealing and risk dealing.
+Money dealing involves trading cash for collateral via dealers’ government and credit trading desks. Risk
+dealing involves trading risks for collateral via dealers’ swaps trading desks. Together, dealers’ money
+and risk dealing activities represent what is typically referred to as dealers’ fixed income, currencies and
+commodities (or FICC) trading business.
+
+          The vast majority of dealers’ money and risk dealing activities via repos and derivatives,
+respectively, occur on a matched book basis. This means that the bulk of dealers’ activities reflect the
+intermediation of risks between risk PMs and cash PMs, and only a small portion of their balance
+sheets reflects their absorption of risks (by virtue of their dealer function) via inventory positions.
+
+          Conceptually, one can distill this ecosystem into a model made up of six simple building blocks:
+risk PMs and cash PMs, money dealers and risk dealers, and matched books and speculative books.
+This model has been developed by the Shadow Banking Colloquium at INET (see Figure 4 and
+“Bagehot Was a Shadow Banker” by Mehrling et al, 2013).39
+
+
+
+39 A key departure from Mehrling et al’s model is how this paper arrives at what Mehrling et al call the “capital funding
+
+bank.” The capital funding bank is conceptualized as an investor who holds a portfolio of bonds and hedges all the risks of
+this portfolio via interest rate swaps, foreign exchange swaps, and credit default swaps, effectively holding a funded Treasury
+bill portfolio. This in fact was the business model of the first structured investment vehicles (SIVs), Alpha, Beta, and Sigma
+Finance Corporations. In this paper, we arrive at something like a capital funding bank’s portfolio by collapsing various risk
+PMs’ balance sheets into a single stylized balance sheet. The balance sheet items and instruments used in both cases are the
+same, but their net effect is different. Whereas the capital funding bank’s aim is to run a levered bill portfolio, the stylized
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                     	   55	  
+www.treasury.gov/OFR	                                                                                                      	  
+          Data limitations hamper gauging the scale of money and risk dealing between cash PMs and risk
+PMs. This problem is more acute in the case of risk dealing via swaps, because we only know the
+aggregate volume of transactions (both on a gross notional and a net credit exposure basis) but have
+very limited information about the identities of the buyers and sellers of credit, interest rate and FX
+risks.
+
+Figure 4: The Dealer Ecosystem
+
+
+            Risk PM                                 Money Dealer                                  Cash PM
+      (search for yield)                       (cash for collateral)                        (search for safety)
+                                                                                                       …
+     T-Notes            T-Repos                 Matched           Matched                                      CDS
+                                                                                             "Cash"
+     P-Notes            P-Repos                  books       <     books                                       IRS
+       CDS                  …                       …               …                                          FXS
+       IRS               Equity                 Trading          Financing                                   Equity
+       FXS            (temporary)              inventory           (net)                                   (temporary)
+
+
+
+                                                    Risk Dealer
+                                               (risk for collateral)
+                                                Matched           Matched
+                                                 books       <     books
+                                                    …               …
+                                                Trading          Financing
+                                               inventory           (net)
+
+         Securities Out                                                                         Securities In
+
+               Cash In                                                                              Cash Out
+
+  Source: Bagehot Was a Shadow Banker - Mehrling et al (2013)
+
+
+          Gauging the scale of money dealing activities in the repo market is somewhat easier, but the
+picture is still far from complete. Figure 5 shows that, the bulk of cash PM’s cash entering the dealer
+ecosystem arrives via tri-party repos. Bilateral repos account for a relatively small share of cash entering
+the system. General collateral finance repos happen exclusively on an interdealer and triparty basis. And
+cash lending by dealers to risk PMs occurs exclusively through bilateral repos.
+
+          Combining the conceptual map of the dealer ecosystem with the accounting exercise of
+Copeland et al (2012) shows that as of the second quarter of 2012, cash PMs placed more than $3
+
+risk PM portfolio implies that some investors are levered on a funded basis, some are levered because they lent securities`,
+and some are levered through the use of derivatives either to speculate or to hedge.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                 	   56	  
+www.treasury.gov/OFR	                                                                                                  	  
+trillion in cash with dealers. Of this amount, $2.5 trillion was lent on, with the difference used to
+finance dealers’ securities inventories. Of the $2.5 trillion about $500 billion was lent on to other dealers
+in the GCF repo market against general collateral and the remaining $2 trillion was lent on in the
+bilateral repo market. Because of data limitations, we do not know how much of the $2 trillion was lent
+to risk PMs versus other banks and dealers, but anecdotal evidence suggests about a 1:1 split between
+banks and dealers, and risk PMs.40
+
+Figure 5: Mapping and Sizing the U.S. Repo Market
+
+
+          Risk PM                                      Money Dealer                           Cash PM
+    (search for yield)                            (cash for collateral)                 (search for safety)
+                                                                                                    …
+   T-Notes            T-Repos                      Matched         Matched       TRP                       CDS
+                                            DvP                                          "Cash"
+   P-Notes            P-Repos                       books     <     books        DvP                       IRS
+     CDS                  …                          …               …                                     FXS
+     IRS               Equity                      Trading        Financing                              Equity
+     FXS            (temporary)                   inventory         (net)                               (temporary)
+
+                                                           GCF
+                                                     (inter-dealer)
+
+                       Reverse Repo Transactions                          Repo Transactions
+                       $2,446           Total      $2,446          $3,035       Total    $3,035
+                        $463                GCF     $463            $463         GCF      $463
+                          -                  -        -            $1,608        TRP     $1,608
+                       $1,983               DvP    $1,983           $964         DvP      $964
+                           -                Net     $589              -           -           -
+
+       Securities Out                                                                         Securities In
+
+             Cash In                                                                              Cash Out
+
+Source: Mehrling et al (2013) and Copeland et al (2012)
+
+
+          The following charts show the volume of money dealing by motivation — whether to borrow
+securities to make markets and facilitate client short positions; or whether to provide financing for
+clients via reverse repos either to fund of long positions in bonds or raise liquidity for derivatives
+margining (a breakdown that is impossible to determine with the present granularity of the data).
+
+
+
+
+40 For the nuances and caveats behind the estimates see Copeland et al, 2012.
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                               	   57	  
+www.treasury.gov/OFR	                                                                                                	  
+Chart 16: Money Dealing Using Public Bonds as Collateral, $ billion41
+ 4,000
+
+
+
+
+ 3,500
+
+
+
+
+ 3,000
+
+
+
+
+ 2,500
+
+
+
+
+ 2,000
+
+
+
+
+ 1,500
+
+
+
+
+ 1,000
+
+
+
+
+   500
+
+
+
+
+      0
+                     Assets                        Liabilities                     Assets                  Liabilities
+                                      Q2-07                                                      Q3-13
+          Secs. In [SI]     RRs [SI]        Secs. Borrowed [SI]   Secs. Out [SO]    RPs [SO]   Secs. Loaned [SO]   Balance
+
+
+
+Sources: Haver, Federal Reserve Bank of New York
+
+          Chart 16 shows that in the third quarter of 2013, the $2.5 trillion in funding raised by dealers
+using public bonds (U.S. Treasuries and agency debt and RMBS) came almost exclusively through repos
+and only a small portion through client short positions. About 80 percent of the $2.5 trillion raised was
+used to fund customers’ needs via reverse repos and only 20 percent was used to post cash as collateral
+to borrow securities as market makers.
+
+
+
+
+Chart 17: Money Dealing Using Private Bonds as Collateral, $ billion42
+
+41 Public shadow money collateralized by Treasury and agency debt and RMBS. “Securities In” refers to the sum of reverse
+
+repos and securities borrowed (both transactions involve lending cash versus securities). “Securities Out” refers to the sum
+of repos and securities loaned (both transactions involve borrowing cash versus securities). Before 2013, data on securities in
+and out were not broken down by transaction types. “Balance” refers to net financing, the volume of dealers’ securities
+inventory funded on a short-term basis. Net financing only reflects a portion of dealers’ securities inventories, the bulk of
+which is financed by intercorporate loans, long-term debt securities, and equity.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                      	   58	  
+www.treasury.gov/OFR	                                                                                                       	  
+ 500
+
+
+
+ 450
+
+
+
+ 400
+
+
+
+ 350
+
+
+
+ 300
+
+
+
+ 250
+
+
+
+ 200
+
+
+
+ 150
+
+
+
+ 100
+
+
+
+  50
+
+
+
+   0
+                   Assets                         Liabilities                      Assets                  Liabilities
+                                    Q2-07                                                        Q3-13
+         Secs. In [SI]      RRs [SI]        Secs. Borrowed [SI]   Secs. Out [SO]     RPs [SO]   Secs. Loaned [SO]   Balance
+
+
+
+Sources: Haver, Federal Reserve Bank of New York
+
+          Chart 17 shows that over the same period, roughly $200 billion in funding raised by dealers
+using private securities (corporate bonds, ABS and private-label RMBS) also came almost exclusively
+through repos and only a small portion through client shorts. Less than half of the $200 trillion raised
+was used to fund customers’ needs via reverse repos and the rest to borrow securities and fund
+inventories of private securities to trade as market makers.
+
+PART V — THE MACRO PERSPECTIVE
+
+          The global financial ecosystem that dealers operate in can be understood at two levels: first, by
+profiling the types of institutional investors that dealers interact with on both the asset and liability sides
+of their balance sheets (questions of “who” and “what”), and second, by identifying the global macro
+drivers behind the rise of these institutional investors and their needs (questions of “why”).
+42 Private shadow money claims collateralized by private securities (such as corporate bonds, asset-backed securities, private-
+
+label RMBS, collateralized loan obligations, and collateralized debt obligations, as well as whole loans).
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                       	   59	  
+www.treasury.gov/OFR	                                                                                                        	  
+          We discussed the questions of “who” and “what” in Parts III and IV of the paper. Turning to
+questions of “why”, the secular rise of cash PMs seeking safety and risk PMs seeking yield has been
+driven by macro imbalances – both global and local, present and future.
+
+          The secular rise of cash PMs could be attributed to at least three macro imbalances (see Figure
+6, items 1 to 3 on the right), although more analysis in this area is needed.43
+
+
+
+Figure 6: Macro Imbalances Shaping the Dealer Ecosystem
+
+          Imbalances                                                                                                 Imbalances
+           (future)                                                                                                   (present)
+
+         Macro Drivers                 Risk PM                 Money Dealer                 Cash PM                 Macro Drivers
+      (global and local)         (search for yield)       (cash for collateral)       (search for safety)        (global and local)
+                                                                                               …
+[4] Underfunded Pensions        T-Notes      T-Repos       Matched         Matched                    CDS        Managed FX Regimes   [1]
+                                                                                      "Cash"
+[5] Sterilization Costs         P-Notes      P-Repos        books     <     books                     IRS        Capital vs. Labour   [2]
+[6] "Rosy" Expectations           CDS            …           …               …                        FXS        Cash Pooling (AMX)   [3]
+                                  IRS        Equity        Trading        Financing                 Equity
+                                  FXS       (temporary)   inventory         (net)                  (temporary)
+
+
+
+                                                               Risk Dealer
+                                                          (risk for collateral)
+                                                           Matched         Matched
+                                                            books     <     books
+                                                             …               …
+                                                           Trading        Financing
+                                                          inventory         (net)
+
+                                   Securities Out                                        Securities In
+
+                                       Cash In                                             Cash Out
+
+Source: Pozsar (2014) expanding on Bagehot Was a Shadow Banker - Mehrling et al (2013)
+
+
+
+          First, on the global level, the secular rise of managed FX regimes in relation to the U.S. dollar is
+one explanation for the rise of cash pools held by FX reserve managers in the form of FX reserves’
+liquidity tranches, which are estimated at $1.5 trillion.44
+
+          Second, on both the global and local levels, the largest global corporations are holding more
+cash than ever before, estimated at more than $1.5 trillion. Unlike in previous decades, corporations
+today are net funding providers. There are many possible explanations for the increase in corporate
+cash pools. A likely contributing factor is the long-term secular increase in corporate profits as a share
+
+
+
+43 All numbers referenced below are as of the second quarter of 2013 (see the Office of Financial Research’s 2013 Annual
+
+Report).
+44 The share of countries under a freely floating FX arrangement vis-à-vis the U.S. dollar declined from just over 45 percent
+
+of world GDP and world exports in 2000 to just over 35 percent in 2007 (see Eichengreen et al, 2011). On the secular rise
+of FX reserve accumulation contributing to the rise of short-term assets held by reserve managers see Pozsar, 2011 and
+McCauley and Rigaudy, 2011.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                                     	   60	  
+www.treasury.gov/OFR	                                                                                                                      	  
+of national income, relative to wages. Corporations hold cash as a liquidity buffer for future
+investments; multinational firms may hold cash in foreign subsidiaries to defer or avoid taxes.45
+
+          Third, on the local level, the rise of cash pools within the asset management complex estimated
+at more than $3 trillion is explained by consolidation among asset managers, the centralized liquidity
+management of fund complexes, and the secular growth in securities lending and derivative overlay
+strategies (see Part III).
+
+          These examples reflect imbalances in the distribution of present incomes — between countries
+with current account surpluses and deficits, between capital and labor, and as a result of an increasingly
+large share of savings being managed by ever fewer asset managers.46
+
+          By contrast, the secular rise of risk PMs reflects imbalances between expected future investment
+returns, which exceed present yields on long-term investments on an unleveraged, long-only basis.
+These imbalances can be observed in at least two different cases (see Figure 5, items 4 to 6 on the left
+and Pozsar, 2013).47
+
+          First, underfunded pensions. The wedge between expected and actual long-term returns is the
+principal driver of the trend that pension funds using overly optimistic discount rates allocate an
+
+
+
+
+45 Corporate cash pools are stocks of accumulated profit flows over time. Corporate profits have risen to record highs as a
+
+share of GDP at the expense of wages (see “Labour pains,” The Economist, November 2, 2013). However, high profit
+margins do not explain why corporations chose to hold on to more of the cash they generate (a trend that was entrenched
+even before the crisis). Debate about this remains unsettled, but one oft-cited argument is the rapid decline in the cost of
+capital goods, especially that of information technology equipment by virtue of Moore’s law (see for example Summers,
+2013). Other contributing factors include cloud computing, where businesses rent hardware rather than owning their own
+(this improves free cash flow) and the absence of investment needs associated with selling additional units of software (GM
+had to invest in capacity to produce more cars, Microsoft doesn’t have to).
+46 See for example “Asset management hits record level,” Financial Times, July 9, 2013 which notes that the asset
+
+management “industry is [increasingly] taking on winner-takes-all characteristics. For example, the top 10 U.S. managers
+took almost two-thirds of all net new fund assets among managers with positive net flows in 2012, compared with 54 per
+cent in 2011”. Also see the OFR study on asset managers which notes: “economies of scale in portfolio management and
+administration, combined with index-based strategies, have increased industry concentration in recent years” (see “Asset
+Management and Financial Stability,” Office of Financial Research, 2013).
+47 On the degree of corporate pension funds’ structural under-funded status see Towers Watson, 2012; on the degree of
+
+state and local pension funds’ structural under-funded status see Novy-Marx and Rauh, 2013. On the secular rise of risk
+PMs see the rise in hedge fund’s assets under management from less than $50 billion in 1990 to $500 billion in 2000 and
+$2.25 trillion in 2012 (see McKinsey Global Institute, 2007 and HFR, 2012). Finally, on the rise of pension funds’ and
+endowments’ increased allocation to hedge funds see the increase in hedge funds’ capital under management from pension
+funds and endowments rise from about 15 percent in the mid-1990s to 30 percent in the mid-2000s and nearly 35 percent as
+of March, 2012 (see McKinsey Global Institute, 2007 and FSA, 2012) and U.S. pension funds’ allocations to alternative
+investments doubling from 10 percent in 2002 to more than 20 percent in 2012 (see Towers Watson, 2012).
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                 	   61	  
+www.treasury.gov/OFR	                                                                                                  	  
+increasing share of their assets to risk PMs (see Caballero, 2013) in the form of hedge funds and
+alternative investment strategies.48
+
+          In an ever lower yield environment, risk PMs may also have an extra incentive to increase the
+use of leverage via funding, securities lending, shorting and derivatives, with an aim to enhance returns
+and avoid major portfolio drawdowns. They are all aiming to provide equity-like returns with bond-like
+volatility for pensions.49
+
+          Second, FX reserve managers, whose needs are somewhat similar to those of pension funds,
+because the maintenance of FX pegs is typically a negative carry proposition (see IMF, 2010).50 This is
+because the bills issued to sterilize the exchange of foreign currency to domestic currency yield more
+than the foreign currency bonds that FX reserves are held in, which is a fiscal cost. To minimize these
+costs, reserve managers also employ the techniques of securities lending and as well as other forms of
+leverage to enhance returns.51
+
+          Thus, the modern financial ecosystem has five groups of players, each with a well-defined goal
+(see Figure 7).
+
+          Chief investment officers (CIOs) at pension funds and foreign central banks — the first group
+— are mandated to “meet liabilities.”
+
+          They do so by allocating more and more of their portfolios to risk PMs (hedge funds, separate
+accounts, etc) — the second group — mandated to “beat the benchmark” and use leverage to that end.
+
+          Cash PMs — the third group — whose mandate is “do not lose,” shun credit, duration, and
+liquidity risks and invest cash on a collateralized and diversified basis. Finally, the cash pools managed
+by cash PMs are the products of decisions taken by government and corporate CEOs — the fourth
+group — whose mandate from voters and shareholders is to “grow” their economies and profits,
+respectively.
+
+Figure 7: Four Simple Goals that “Make the World Go ‘Round”
+
+48 See “The Shortage of Safe Assets,” 2013 presentation by Ricardo Caballero at the Bank of England. The graph on p. 19 of
+
+the presentation shows a strong positive correlation between pension funds’ underfundedness and their tendency to increase
+their allocation to riskier assets and asset management strategies.
+49 Because risk PMs are mandated to beat their benchmark, they always search for yield. However, there may be added
+
+pressures to search for yield if ultimate investors’ yield expectations don’t adjust to an ever-lower yield environment.
+50 Unlike FX reserves’ liquidity tranches discussed above, this section refers to FX reserves’ long-duration segments where
+
+search for yield is more prevalent.
+51 “The SNB’s bond buying: now with more context,” FTAlphaville, October 8, 2012
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                	   62	  
+www.treasury.gov/OFR	                                                                                                 	  
+          Imbalances                                                                                                 Imbalances
+           (future)                                                                                                   (present)
+
+         Macro Drivers                 Risk PM                 Money Dealer                 Cash PM                 Macro Drivers
+      (global and local)         (search for yield)       (cash for collateral)       (search for safety)        (global and local)
+                                                                                               …
+     Underfunded Pensions       T-Notes      T-Repos       Matched         Matched                    CDS        Managed FX Regimes
+                                                                                      "Cash"
+      Sterilization Costs       P-Notes      P-Repos        books     <     books                     IRS        Capital vs. Labour
+      "Rosy" Expectations         CDS           …            …               …                        FXS        Cash Pooling (AMX)
+                                  IRS        Equity        Trading        Financing                 Equity
+                                  FXS       (temporary)   inventory         (net)                  (temporary)
+
+
+
+                                                               Risk Dealer
+                                                          (risk for collateral)
+                                                           Matched         Matched
+                                                            books     <     books
+                                                             …               …
+                                                           Trading        Financing
+                                                          inventory         (net)
+
+             CIOs                     Risk PMs                                              Cash PMs                    CEOs
+      "Meet Liabilities"        "Beat the Benchmark"                                     "Do Not Lose"                 "Grow"
+
+Source: Pozsar (2014) expanding on Bagehot Was a Shadow Banker - Mehrling et al (2013)
+
+
+
+          The goals of these market participants — meeting liabilities for CIOs, beating benchmarks for
+risk PMs, par on demand liquidity for cash PMs, and growth for CEOs — represent nominal rigidities
+in the ecosystem that drive what dealers — the fifth group — do.
+
+          Dealers’ role is to make markets and intermediate risks away from cash PMs to risk PMs,
+enabling them to preserve their wealth in the present and help meet liabilities in the future, respectively.
+
+          Dealers, for the most part, engage in risk intermediation through their matched book positions
+and only engage in risk transformation through their inventory positions (either in the form of a
+portfolio of securities or derivatives), which — as more than “just” brokers — they accumulate through
+market making activities.52
+
+          The macro view of the dealer ecosystem presented above suggests that there are at least three
+possible entry points for policymakers to supervise the global financial ecosystem and enhance its
+stability. These entry points are at the dealer level, the PM (or asset manager level) and at the global
+macro level (see Figure 8).
+
+          To date, however, financial reform has focused mostly on dealers (and wholesale banks) —
+their capitalization, funding, trading, and separation from retail banking (see the Volcker and Vickers
+rules).
+
+52 It follows that risk intermediation corresponds to matched books and risk transformation corresponds to net long or
+
+short inventories. If a risk PM sheds risks to a dealer using derivatives and a cash PM assumes the same risks from the dealer
+through a matched book transaction, then risks have been intermediated. However, if a risk PM sheds risks but the dealer is
+unable to offload it to anyone, then, from the PM’s perspective, the dealer transformed these risks through its equity, much
+like banks would transform the credit, maturity, and liquidity risk of loans from depositors’ perspective via deposits.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                               	   63	  
+www.treasury.gov/OFR	                                                                                                                	  
+Figure 8: A Three Level Policy Problem
+
+           Level III                  Level II                       Level I                   Level II                  Level III
+
+              G20                           ?                            FSB                       ?                        G20
+
+         Macro Drivers                 Risk PM                     Money Dealer                 Cash PM                 Macro Drivers
+      (global and local)         (search for yield)           (cash for collateral)       (search for safety)        (global and local)
+                                                                                                   …
+     Underfunded Pensions       T-Notes          T-Repos       Matched         Matched                    CDS        Managed FX Regimes
+                                                                                          "Cash"
+      Sterilization Costs       P-Notes          P-Repos        books     <     books                     IRS        Capital vs. Labour
+      "Rosy" Expectations         CDS               …            …               …                        FXS        Cash Pooling (AMX)
+                                  IRS            Equity        Trading        Financing                 Equity
+                                  FXS           (temporary)   inventory         (net)                  (temporary)
+
+
+
+                                                                   Risk Dealer
+                                                              (risk for collateral)
+                                                               Matched         Matched
+                                                                books     <     books
+                                                                 …               …
+                                                               Trading        Financing
+                                                              inventory         (net)
+
+             CIOs                     Risk PMs                                                  Cash PMs                    CEOs
+      "Meet Liabilities"        "Beat the Benchmark"                                         "Do Not Lose"                 "Grow"
+
+Source: Pozsar (2014) expanding on Bagehot Was a Shadow Banker - Mehrling et al (2013)
+
+
+
+          However, focusing on dealers only, while leaving risk and cash PMs’ and their CIO and CEO
+masters’ needs unaddressed, will shift problems around but not solve them. Ultimately, the policy
+extremes are to either address the underlying macro imbalances53 or accommodate the ecosystem as it is
+by giving the dealers at its core access to official liquidity puts (the “dealer of last resort” option, see
+Mehrling, 2010, Carney, 2013, and the Bank of England’s recently updated Sterling Monetary
+Framework, 2013).
+
+          If neither shrinking imbalances or broadening the official safety net is palatable, partial solutions
+would recognize that the ecosystem’s existing needs will be met by new structures that need to be
+understood and monitored to avoid new systemic excesses.
+
+          Partial solutions include the Fed’s full allotment reverse repo facility, and the U.S. Treasury
+increasing its supply of Treasury bills and floating rate notes (FRNs) with the aim to absorb more of
+cash PMs’ demand for money (par on demand) and money-like (par at maturity) claims with public as
+opposed to private money claims.
+
+          However, these policy measures only address cash investors’ needs, but not those of risk PMs,
+who as a result will effectively have to compete with the public sector for funding and lose business to
+it. There are at least two avenues through which this may show up.
+
+53 At the sovereign level, this may happen if current account surplus countries decide to pursue expansionary policies. At the
+
+corporate level, this may happen through changes in the corporate tax code (see “G20 back fundamental reform of
+corporate taxation,” Reuters, July 19, 2013, and “Japan can put people before profits,” FT, February 5, 2013).
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                                                   	   64	  
+www.treasury.gov/OFR	                                                                                                                    	  
+          First, there may be fewer opportunities to lend Treasuries and agency RMBS, a significant
+portion of which were lent in order to enable dealers to absorb cash pools’ demand for safe, short-term
+assets via repos backed by Treasury and agency RMBS. With the Federal Reserve willing to lend its
+inventory of Treasury and agency securities via RRPs, there will be less need for dealers to borrow these
+securities from securities lenders in order to source collateral in order for them to absorb the money
+demand of cash PMs via Treasury and agency repos.
+
+          Second, the costs of raising liquidity for margin and funding for relative value trades involving
+Treasuries and agency RMBS may rise. The latter is evident from the fact that the RRP facility will set
+the minimum haircut on Treasury and agency collateral and thus the Fed will control how much cash
+and leverage Treasury and agency collateral will raise.
+
+          This is the third significant aspect of the RRP facility, the first being that RRPs simplify the
+plubing by giving shadow banks access to a quasi reserve account at the Federal Reserve as explained in
+Part I of the paper, and the second being that that minimum RRP balances could one day become the
+equivalents of what reserve requirements are for banks as explained in Part II of the paper.
+
+          RRPs could also give the Federal Reserve ability to set minimum haircuts on safe assets such as
+Treasuries – and the more collateral the Fed gives for the cash it takes in from shadow banks, the more
+collateral the rest of the ecosystem will have to pledge to shadow banks to lever up. Minimum haircut
+requirements could become the equivalents of minimum capital requirements for the backing of
+shadow money claims, and could give the Federal Reserve macro-prudential control over market-based
+credit cycles - a control it did not have precrisis when competition drove haircuts to bare bone
+minimums.
+
+          Therefore, with profit opportunities from the lending of general collateral about to erode, and
+the price of the provision of leverage and liquidity to risk PMs about to get more expensive, but the
+fundamental reasons for search for yield unaddressed, it will be imperative to monitor how the
+ecosystem will evolve in its search for cheaper funding and ways to reduce asset-liability mismatches.
+
+          But we cannot monitor what we do not measure. The Flow of Funds accounts were not
+designed to measure the ecosystem described in this paper.
+
+          The Flow of Funds accounts have been designed to show who borrows, who lends, and
+through what types of instruments. But it is too aggregated to provide accounting information about
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                  	   65	  
+www.treasury.gov/OFR	                                                                                   	  
+the cash and risk PMs that make up the dealer ecosystem, and does not provide information on the
+asset-liability mismatches of pension funds and FX reserve managers; it does not cover hedge funds
+and separate accounts which make up an increasing share of institutional investors’ portfolios; it does
+not provide a breakdown of dealers’ matched repo books to gauge the volume of funding passed on to
+the buyside, or the purpose of that funding: whether it was to fund a bond position or a short position,
+or to raise liquidity for margin; and it does not measure the size of the offshore Eurodollar market and
+the volume and type of dollar lending Eurodollars fund globally.
+
+          Moreover, the Flow of Funds accounts end where derivatives begin: derivatives effectively
+separate the flow of risks (credit, duration, and FX risks) from the flow of funds. As such, examining
+holdings of bonds without looking at accompanying derivatives limits the usefulness of the Flow of
+Funds accounts. Without these measures, our ability to understand asset prices is also limited.
+
+          One recommendation would be for the U.S. Flow of Funds accounts to be augmented over
+time to incorporate measures of structural asset-liability mismatches and supplemented with a set of
+Flow of Collateral and a set of Flow of Risk satellite accounts to tabulate the sources, types, and flows
+of collateral that back the flow of funds and risks within the financial ecosystem.
+
+          From a financial globalization perspective (see Mehrling et al, 2013) the Flow of Funds
+accounts could also be supplemented with a set of Flow of Eurodollar satellite accounts in recognition
+of the fact that an increasing share of credit to U.S. residents is funded in the Eurodollar markets by
+foreign banks outside the United States.
+
+          These satellite accounts would be an essential first step toward understanding and modeling
+asset price dynamics better and having a comprehensive macro-financial data set that would help
+identify and measure “risk and liquidity pockets” and “liquidity mismatches” as proposed by
+Brunnermeier, Gorton and Krishnamirthy (2011) in the paper “Risk Topography.”
+
+          Furthermore, since these satellite accounts would be organized around timeless concepts (flows
+of collateral, risk and Eurodollars), its keepers would be forced to keep up with the ever-changing
+instrumentality of the financial ecosystem, much like the Flow of Funds accounts periodically
+incorporate new instruments (for example, ETFs) through which savers and borrowers exchange
+money. The Flow of Collateral accounts would have to keep track of the collateral flows in secured
+funding markets by periodically incorporating new secured financing arrangements (for example,
+collateralized commercial paper), and the Flow of Risk accounts would have to keep track of the
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                              	   66	  
+www.treasury.gov/OFR	                                                                               	  
+trading of “basic” risks – credit, duration and FX risks — by periodically incorporating new derivatives
+(for example, the trend of the “futurization” of swaps).
+
+CONCLUSION
+
+          The aim of this paper was to provide a macro-financial map to better understand the drivers
+behind the rise of the shadow banking system and the unique role of dealers at the core of the system:
+Dealers are not real economy lenders, but intermediaries between cash and risk PMs who search for the
+symmetrical extremes of safety and yield.
+
+          Dealers provide collateralized safe assets in the form of repos to cash PMs on the liability side
+of their balance sheet, and leverage via collateralized cash loans in the form of reverse repos to risk
+PMs on the asset side of their balance sheet. This helps cash PMs safekeep growing cash pools and risk
+PMs provide returns that are in excess of the real economy’s growth potential.
+
+          As a result of these collateralized transactions, bonds are becoming more and more valuable as
+collateral and bond portfolios are becoming more and more leveraged across the financial ecosystem.
+
+          From a policy perspective, the fundamental problem at hand is a financial ecosystem that has
+outgrown the safety net that was put around it many years ago. Today we have a different class of
+savers (cash PMs versus retail depositors), a different class of borrowers (risk PMs to enhance
+investment returns via financial leverage versus ultimate borrowers to enhance their ability to spend via
+loans) and a different class of intermediaries (dealers who do securities financing versus banks that
+finance the economy directly via loans) to whom discount window access and deposit insurance do not
+apply.
+
+          These twin pillars of the official safety net were erected around traditional, deposit-funded
+banks to address retail runs. In contrast, the 2007-08 crisis was sparked by institutional runs: cash PMs
+ran on dealers and dealers ran on risk PMs. But importantly, as our examples demonstrate, beyond the
+institutional façade of the ecosystem it is ultimately retail wealth and promises that are at stake.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                	   67	  
+www.treasury.gov/OFR	                                                                                 	  
+REFERENCES
+
+          Afonso, Gara, Entz, Alex and LeSueur, Eric (2013), “Who Is Lending in the Fed Funds
+Market”, Liberty Street Economics, December 3.
+
+          Bank of England (2013), “Liquidity insurance at the Bank of England: developments in the
+Sterling Monetary Framework”, October.
+
+          Bernanke, Ben, Bertaut, Carol, DeMarco, Laurie Pounder, Kamin, Steve (2011), “International
+Capital Flows and the Returns to Safe Assets in the United States, 2003 – 2007”, FRB Working Paper
+No. 1014.
+
+          Brunnermeier, Markus, Gorton, Gary, Krishnamurthy, Arvind (2011), “Risk Topography”,
+Working Paper, 30 March.
+
+          Caballero, Ricardo (2013), “The Shortage of Safe Assets: Macroeconomic Policy Implications”,
+presentation at the Bank of England.
+
+          Carney, Mark (2013), “The UK at the heart of a renewed globalisation”, speech at an event to
+celebrate the 125th anniversary of the Financial Times, London, 24 October.
+
+          Checki, Terrence (2009), “Beyond the Crisis: Reflections on the Challenges”, remarks at the
+Foreign Policy Association Corporate Dinner, New York City, December 2.
+
+          Claessens, Stijn, Zoltan Pozsar, Lev Ratnovski, and Manmohan Singh (2012), “Shadow
+Banking: Economics and Policy”, IMF Staff Discussion Note 12/12.
+
+          Copeland, Morris (1947), “Tracing Money Flows through the United States Economy”,
+American Economic Review, 37-2, pp. 31-49.
+
+          Copeland, Adam, Davis, Isaac, LeSueur, Eric and Martin, Antoine (2012), “Mapping and Sizing
+the U.S. Repo Market”, Liberty Street Economics, June 25.
+
+          Dalio, Ray (2010), “Engineering Targeted Returns & Risks” Bridgewater Associates.
+
+          Eichner, Matthew, Kohn, Donald, Palumbo, Michael (2010), “Financial Statistics for the United
+States and the Crisis: What Did They Get Right, What Did They Miss, and How Should They Change”,
+Board of Governors of the Federal Reserve System, FEDS Working Paper No. 2010-20.
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                            	   68	  
+www.treasury.gov/OFR	                                                                             	  
+          Geithner, Timothy (2014), “Stress Test”, Crown Publishers.
+
+          Gorton, Gary (2009), “Slapped in the Face by the Invisible Hand: Banking and the Panic of
+2007”, working paper for the Federal Reserve Bank of Atlanta’s 2009 Financial Markets Conference,
+May 9.
+
+          Greenwood, Robin, Hanson, Samuel and Stein, Jeremy (2010), “A Comparative-Advantage
+Approach to Government Debt Maturity”, Harvard Business School Working Paper No. 11-035.
+
+          Keane, Frank (2013), “Securities Loans Collateralized by Cash: Reinvestment Risk, Run Risk
+and Incentive Issues”, Federal Reserve Bank of New York Current Issues in Economics and Finance,
+Vol. 12, No. 3.
+
+          McCabe, Patrick (2010), “The Cross Section of Money Market Fund Risks and Financial
+Crises”, FEDS Working Paper No. 2010-51.
+
+          McCauley, Robert and Rigaudy, Jean-Francois (2010), “Managing foreign exchange reserves in
+the crisis and after”, BIS Papers No. 58.
+
+          McCauley, Robert and McGuire, Patrick, (2014), “Non-US banks’ claims on the Federal
+Reserve”, BIS Quarterly Review, March.
+
+          McCulley, Paul (2007), “Teton Reflections”, PIMCO Global Central Bank Focus, September.
+
+          McCulley, Paul (2009), “Saving Capitalistic Banking from Itself”, PIMCO Global Central Bank
+Focus, February.
+
+          McCulley, Paul and Pozsar, Zoltan (2013), “Helicopter Money: Or How I Stopped Worrying
+and Love Fiscal-Monetary Cooperation”, Global Interdependence Center Global Society of Fellows,
+working paper, March.
+
+          McGuire, Patrick and von Peter, Goetz (2009), “The U.S. dollar shortage in global banking”,
+BIS Quarterly Review, March, 2009.
+
+          Mehrling, Perry (2011), The New Lombard Street: How the Fed Became the Dealer of Last
+Resort, Princeton University Press.
+
+          Mehrling, Perry (2012), “The Inherent Hierarchy of Money”, Social Fairness and Economics:
+Economic Essays in the Spirit of Duncan Foley.
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                           	   69	  
+www.treasury.gov/OFR	                                                                            	  
+              Mehrling, Perry (2013), “Essential Hybridity: A Money View of FX”, Journal of Comparative
+Economics, Vol. 41, Issue 2, pp. 355-363.
+
+              Mehrling, Perry, Zoltan Pozsar, James Sweeney, and Daniel Neilson (2013), “Bagehot was a
+Shadow Banker: Shadow Banking, Central Banking, and the Future of Global Finance”, INET,
+working paper, November.
+
+              Nakamura, Leonard (2013), “Durable Financial Regulation”, Federal Reserve Bank of
+Philadelphia, working paper No. 13-2.
+
+              Pozsar, Zoltan (2008), “The Rise and Fall of the Shadow Banking System”, Moody’s
+Economy.com, July.
+
+              Pozsar, Zoltan, Tobias Adrian, Adam Ashcraft, and Hayley Boesky (2010), “Shadow Banking”,
+New York Fed Staff Report No. 458, July.
+
+              Pozsar, Zoltan (2011), “Institutional Cash Pools and the Triffin Dilemma of the U.S. Banking
+System”, IMF Working Paper No. 11/190.
+
+              Pozsar, Zoltan (2012), “A Macro View of Shadow Banking: Do T-Bill Shortages Pose a New
+Triffin Dilemma?”, in Franklin Allen et al (eds.), Is U.S. Government Debt Different?, Chapter 4, pp.
+35–44.
+
+              Pozsar, Zoltan (2013), “Shadow Banking and the Global Financial Eco-System”, VoxEU,
+November 6.
+
+              Pozsar, Zoltan (2014), “Mapping Collateral Flows in the Derivative and Short-Term Funding
+Markets” OFR Working Paper, forthcoming.
+
+              Shin, Hyun Song (2010a), “Financial Intermediation and the Post-Crisis Financial System”, BIS
+Working Paper No. 304.
+
+              Shin, Hyun Song (2010b), “Non-Core Liabilities Tax as a Tool for Prudential Regulation”,
+Policy Memo, February 19.
+
+              Shin, Hyun Song (2011), “Global Banking Glut and Loan Risk Premium”, paper presented at
+         th
+the 12 Jacques Polak Annual Research Conference hosted by the IMF, Washington, D.C., November
+10-11.
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                                 	   70	  
+www.treasury.gov/OFR	                                                                                  	  
+          Singh, Manmohan (2013), “Collateral and Monetary Policy”, IMF Working Paper 13/186.
+
+          Stein, Jeremy (2012), “Dollar Funding and Global Banks”, speech at the Global Research
+Forum, International Finance and Macroeconomics sponsored by the European Central Bank,
+Frankfurt am Main, December 17.
+
+          Summers, Lawrence (2013), “Why stagnation might prove to be the new normal”, Financial
+Times, December 15.
+
+          Tarullo, Daniel (2013), “Shadow Banking and Systemic Risk Regulation”, speech at the
+Americans for Financial Reform and Economic Policy Institute Conference, Washington, D.C.,
+November 22.
+
+          Turner, Adair (2013), “Credit, Money and Leverage: What Wicksell, Hayek and Fisher Knew
+and Modern Macro Forgot”, speech at the conference “Towards a Sustainable Financial System”,
+Stockholm, September 12.
+
+          Van Wetering, Eric (2011), “Systems thinking in investment, banking and regulation”, working
+paper.
+
+          Wolf, Martin (2013), “Japan can put people before profits”, Financial Times, February 5.
+
+
+
+
+OFFICE	  OF	  FINANCIAL	  RESEARCH	                                                              	   71	  
+www.treasury.gov/OFR	                                                                               	  
+

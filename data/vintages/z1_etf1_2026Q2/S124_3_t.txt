@@ -1,0 +1,15 @@
+FA564090005.Q	Exchange-traded funds; total financial assets	Line 1	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564022005.Q	Exchange-traded funds; debt securities; asset	Line 2	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563061103.Q	Exchange-traded funds; Treasury securities; asset	Line 3	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563062003.Q	Exchange-traded funds; municipal securities; asset	Line 4	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563063003.Q	Exchange-traded funds; corporate and foreign bonds; asset	Line 5	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563064100.Q	Exchange-traded funds; corporate equities; asset	Line 6	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563034003.Q	Exchange-traded funds; money market fund shares; asset	Line 7	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA563093003.Q	Exchange-traded funds; unidentified miscellaneous assets 	Line 8	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564090005.Q	Exchange-traded funds; total financial assets	Line 9	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564091600.Q	Exchange-traded funds; total financial assets in domestic equity funds 	Line 10	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564092603.Q	Exchange-traded funds; total financial assets in world equity funds	Line 11	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564091703.Q	Exchange-traded funds; total financial assets in other funds (commodity funds)	Line 12	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564091403.Q	Exchange-traded funds; total financial assets in hybrid funds 	Line 13	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564091303.Q	Exchange-traded funds; total financial assets in taxable bond funds 	Line 14	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate
+FA564091203.Q	Exchange-traded funds; total financial assets in municipal bond funds 	Line 15	S124.3.t Exchange-traded funds	Millions of dollars; transactions at a seasonally adjusted annual rate

@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Third Derivative — Cascade Analysis &amp; Paragon Panel</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img, svg { max-width: 100%; }
+  h1,h2,h3,h4 { margin: 0; }
+  ul { margin: 0; }
+  i { font-style: normal; }
+</style>
+</head>
+<body>
+<style>
+  /* ============ TOKENS ============ */
+  :root {
+    /* neutrals, biased warm toward the copper accent rather than inherited grey */
+    --paper:      #faf9f7;
+    --surface:    #ffffff;
+    --surface-2:  #f3f1ed;
+    --rule:       #e2ddd5;
+    --rule-firm:  #c8c1b5;
+    --ink:        #1a1815;
+    --ink-2:      #4a453d;
+    --ink-3:      #756e63;
+
+    /* the three orders. copper oxidising to verdigris is the subject's own material:
+       copper is the literal transmission medium of the electricity case, and patina
+       is what remains after the heat. validated for CVD separation + contrast. */
+    --o1: #3A5FA0;   /* latent — the invention, before anything happens */
+    --o2: #BA5A22;   /* copper — the frenzy, hot and wasteful */
+    --o3: #00897A;   /* verdigris — what is left, and what endures */
+    --o1-soft: #eaeff7;
+    --o2-soft: #f9ece3;
+    --o3-soft: #e2f1ee;
+
+    --accent: var(--o2);
+    --warn:   #9a6a12;
+    --bad:    #a33a2a;
+    --good:   #2f6d4f;
+
+    --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-body: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-mono: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+    --w: 1080px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:     #16171a;
+      --surface:   #1c1e22;
+      --surface-2: #232529;
+      --rule:      #33363c;
+      --rule-firm: #4a4e56;
+      --ink:       #eceae6;
+      --ink-2:     #b8b4ac;
+      --ink-3:     #8b8780;
+      --o1: #6B8FD4;  --o2: #D4752F;  --o3: #0FA98F;
+      --o1-soft: #1e2634; --o2-soft: #33241a; --o3-soft: #16302c;
+      --warn: #c99a3d; --bad: #d9705f; --good: #5ba37d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#16171a; --surface:#1c1e22; --surface-2:#232529; --rule:#33363c; --rule-firm:#4a4e56;
+    --ink:#eceae6; --ink-2:#b8b4ac; --ink-3:#8b8780;
+    --o1:#6B8FD4; --o2:#D4752F; --o3:#0FA98F;
+    --o1-soft:#1e2634; --o2-soft:#33241a; --o3-soft:#16302c;
+    --warn:#c99a3d; --bad:#d9705f; --good:#5ba37d;
+  }
+  :root[data-theme="light"] {
+    --paper:#faf9f7; --surface:#ffffff; --surface-2:#f3f1ed; --rule:#e2ddd5; --rule-firm:#c8c1b5;
+    --ink:#1a1815; --ink-2:#4a453d; --ink-3:#756e63;
+    --o1:#3A5FA0; --o2:#BA5A22; --o3:#00897A;
+    --o1-soft:#eaeff7; --o2-soft:#f9ece3; --o3-soft:#e2f1ee;
+    --warn:#9a6a12; --bad:#a33a2a; --good:#2f6d4f;
+  }
+
+  /* ============ BASE ============ */
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px; line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--w); margin: 0 auto; padding: 0 28px 120px; }
+  p { margin: 0 0 1em; max-width: 68ch; }
+  a { color: var(--o1); }
+  strong { font-weight: 600; color: var(--ink); }
+  em { font-style: italic; }
+  code, .mono { font-family: var(--font-mono); font-size: .88em; }
+
+  /* ============ SLIDE / SECTION ============ */
+  .slide {
+    border-top: 1px solid var(--rule);
+    padding: 54px 0 8px;
+  }
+  .slide:first-of-type { border-top: 0; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 10px;
+    display: flex; gap: 14px; align-items: baseline;
+  }
+  .eyebrow .num { color: var(--accent); font-weight: 600; }
+  /* action title: states the conclusion, not the topic */
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(25px, 3.2vw, 35px); line-height: 1.2; font-weight: 600;
+    margin: 0 0 20px; text-wrap: balance; letter-spacing: -.011em;
+    max-width: 26ch;
+  }
+  h3 {
+    font-family: var(--font-body); font-size: 15px; font-weight: 650;
+    letter-spacing: .005em; margin: 34px 0 12px; color: var(--ink);
+    text-wrap: balance;
+  }
+  .lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 64ch; }
+  .lede strong { color: var(--ink); }
+
+  /* ============ COVER ============ */
+  .cover { padding: 76px 0 30px; border: 0; }
+  .cover h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(40px, 7vw, 76px); line-height: 1.02;
+    letter-spacing: -.025em; margin: 0 0 22px; text-wrap: balance;
+  }
+  .cover .sub { font-size: 20px; color: var(--ink-2); max-width: 56ch; line-height: 1.5; }
+  .cover-rule { display: flex; height: 5px; margin: 30px 0 26px; max-width: 460px; }
+  .cover-rule i { flex: 1; }
+  .meta {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3);
+    letter-spacing: .05em; text-transform: uppercase; line-height: 2;
+  }
+
+  /* ============ EXHIBIT SHELL ============ */
+  figure {
+    margin: 26px 0 8px; background: var(--surface);
+    border: 1px solid var(--rule); border-radius: 3px;
+    overflow: hidden;
+  }
+  figcaption {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-3);
+    padding: 11px 18px; border-bottom: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+  figcaption b { color: var(--accent); font-weight: 600; }
+  .fig-body { padding: 22px 18px; }
+  .src {
+    font-size: 11.5px; color: var(--ink-3); line-height: 1.5;
+    padding: 0 18px 15px; max-width: none;
+  }
+  .scroll { overflow-x: auto; }
+
+  /* ============ TABLES ============ */
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 10px 14px; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  th {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 500;
+    border-bottom: 1px solid var(--rule-firm); white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+  .t-tight td, .t-tight th { padding: 8px 12px; }
+
+  /* ============ CASCADE DIAGRAM ============ */
+  .cascade { display: grid; gap: 0; }
+  .casc-row {
+    display: grid; grid-template-columns: 132px 1fr; gap: 0;
+    border-left: 3px solid var(--c); background: var(--bg);
+    padding: 14px 16px; margin-bottom: 3px;
+  }
+  .casc-row .lbl {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--c); font-weight: 600; padding-top: 2px;
+  }
+  .casc-row .body { font-size: 13.5px; line-height: 1.55; }
+  .casc-row .body b { display: block; margin-bottom: 3px; }
+  .casc-arrow {
+    font-family: var(--font-mono); color: var(--ink-3); font-size: 12px;
+    padding: 3px 0 3px 138px; letter-spacing: .04em;
+  }
+  .r1 { --c: var(--o1); --bg: var(--o1-soft); }
+  .r2 { --c: var(--o2); --bg: var(--o2-soft); }
+  .r3 { --c: var(--o3); --bg: var(--o3-soft); }
+
+  /* ============ STAT TILES ============ */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 1px; background: var(--rule); }
+  .tile { background: var(--surface); padding: 18px 16px; }
+  .tile .v {
+    font-family: var(--font-display); font-size: 34px; line-height: 1;
+    font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--tc, var(--ink));
+  }
+  .tile .k { font-size: 12px; color: var(--ink-2); margin-top: 8px; line-height: 1.42; }
+
+  /* ============ BAR CHART ============ */
+  .bars { display: grid; gap: 12px; }
+  .bar-row { display: grid; grid-template-columns: 190px 1fr 44px; gap: 14px; align-items: center; font-size: 13px; }
+  .bar-track { background: var(--surface-2); height: 22px; position: relative; }
+  .bar-fill { height: 100%; background: var(--bc); border-radius: 0 3px 3px 0; }
+  .bar-row .n { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 12px; color: var(--ink-2); }
+  .legend span { display: flex; align-items: center; gap: 7px; }
+  .sw { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    border-left: 3px solid var(--accent); background: var(--surface-2);
+    padding: 16px 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.6;
+  }
+  .callout p { max-width: 62ch; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.neg { border-left-color: var(--bad); }
+
+  /* ============ PILLS ============ */
+  .pill {
+    display: inline-block; font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .07em; text-transform: uppercase; padding: 2px 7px;
+    border-radius: 2px; white-space: nowrap; font-weight: 600;
+  }
+  .p-nec  { background: var(--o2-soft); color: var(--o2); }
+  .p-con  { background: var(--surface-2); color: var(--ink-3); }
+  .p-pass { background: var(--o3-soft); color: var(--o3); }
+  .p-fail { background: color-mix(in srgb, var(--bad) 13%, transparent); color: var(--bad); }
+  .p-mix  { background: color-mix(in srgb, var(--warn) 15%, transparent); color: var(--warn); }
+
+  /* ============ LENS GRID ============ */
+  .lenses { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 1px; background: var(--rule); }
+  .lens { background: var(--surface); padding: 18px 16px; }
+  .lens h4 {
+    font-family: var(--font-display); font-size: 19px; font-weight: 600;
+    margin: 0 0 3px; letter-spacing: -.01em;
+  }
+  .lens .role {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px;
+  }
+  .lens .call {
+    font-size: 13px; font-weight: 600; padding: 7px 10px; margin-bottom: 11px;
+    background: var(--surface-2); border-left: 2px solid var(--lc);
+  }
+  .lens p { font-size: 12.8px; line-height: 1.5; margin: 0 0 8px; color: var(--ink-2); }
+  .lens p:last-child { margin: 0; }
+  .lens .rule-line { font-size: 12.5px; color: var(--ink); border-top: 1px solid var(--rule); padding-top: 10px; margin-top: 10px; }
+
+  /* ============ DISAGREEMENT ============ */
+  .dis { border: 1px solid var(--rule); margin-bottom: 14px; background: var(--surface); }
+  .dis-h {
+    padding: 12px 16px; border-bottom: 1px solid var(--rule); background: var(--surface-2);
+    font-size: 14px; font-weight: 650;
+  }
+  .dis-h .tag { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent); letter-spacing: .08em; margin-right: 9px; }
+  .dis-b { display: grid; grid-template-columns: 1fr 1fr; }
+  .dis-side { padding: 14px 16px; font-size: 13px; line-height: 1.55; }
+  .dis-side + .dis-side { border-left: 1px solid var(--rule); }
+  .dis-side .who { font-weight: 650; margin-bottom: 5px; font-size: 13px; }
+  .dis-var {
+    padding: 12px 16px; border-top: 1px solid var(--rule);
+    font-size: 12.8px; background: var(--surface-2); color: var(--ink-2);
+  }
+  .dis-var b { color: var(--ink); }
+
+  ul.tight { margin: 0 0 1em; padding-left: 20px; max-width: 68ch; }
+  ul.tight li { margin-bottom: 7px; line-height: 1.55; }
+
+  .footer {
+    border-top: 1px solid var(--rule-firm); margin-top: 60px; padding-top: 22px;
+    font-size: 12.5px; color: var(--ink-3);
+  }
+
+  @media (max-width: 720px) {
+    .dis-b { grid-template-columns: 1fr; }
+    .dis-side + .dis-side { border-left: 0; border-top: 1px solid var(--rule); }
+    .casc-row { grid-template-columns: 1fr; gap: 6px; }
+    .casc-arrow { padding-left: 16px; }
+    .bar-row { grid-template-columns: 130px 1fr 38px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+<header class="slide cover">
+  <div class="meta">Work &middot; 2026.08 &middot; Internal research</div>
+  <h1>The Third Derivative</h1>
+  <div class="cover-rule">
+    <i style="background:var(--o1)"></i><i style="background:var(--o2)"></i><i style="background:var(--o3)"></i>
+  </div>
+  <p class="sub">Where value actually accrues when a capacity overbuild leaves something behind — and a four-lens panel applied to the live case.</p>
+  <div class="meta" style="margin-top:26px">
+    2 August 2026 &nbsp;·&nbsp; 58 agents, 3 adversarial verifier rounds &nbsp;·&nbsp; Step-ladder protocol
+  </div>
+</header>
+
+<!-- ==================== 01 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">01</span><span>Executive summary</span></div>
+  <h2>The pattern is real, already named, and roughly ten times rarer than the framing assumes</h2>
+
+  <p class="lede">The concept holds — but only as a narrow special case, not as a theory of technological succession. Three of its original claims had to be retracted, its central ordinal had to be rebuilt on a different object, and about a third of the assembled evidence contradicts it. What survives is sharper and more useful than what went in: <strong>a nine-condition test whose main value is telling you when the framework does not apply.</strong></p>
+
+  <figure>
+    <figcaption>Exhibit <b>1</b> — What two research rounds changed</figcaption>
+    <div class="fig-body">
+      <div class="tiles">
+        <div class="tile"><div class="v" style="--tc:var(--o3)">6–8</div><div class="k">Episodes passing the test, out of ~30 candidates</div></div>
+        <div class="tile"><div class="v" style="--tc:var(--o2)">3</div><div class="k">Original claims retracted under evidence</div></div>
+        <div class="tile"><div class="v" style="--tc:var(--bad)">8</div><div class="k">Of 24 documented cases actively contradict the framework</div></div>
+        <div class="tile"><div class="v" style="--tc:var(--o1)">2–40</div><div class="k">Observed lag in years — so lag carries no signal</div></div>
+      </div>
+    </div>
+    <p class="src">Source: 24-case corpus, round 2. Round 1's 45 cases were returned <span class="mono">materially_flawed</span> by three independent verifiers and are retained as raw evidence only.</p>
+  </figure>
+
+  <h3>The four things worth carrying away</h3>
+  <ul class="tight">
+    <li><strong>It has a name.</strong> Carlota Perez's installation → frenzy → turning point → deployment, with William Janeway's "productive bubbles" as the sharper statement of the mechanism. The electricity illustration is Paul David's 1990 argument almost exactly.</li>
+    <li><strong>Counting technology generations cannot work.</strong> Every third order in the corpus is some other case's first order. The fix is to stop counting technologies and count <em>claims on one metered capacity</em>.</li>
+    <li><strong>Value does not go to the asset buyer.</strong> Cogent and Level 3 bought the fibre and earn utility returns; Netflix and Cloudflare bought metered services priced off written-down assets and took the equity value.</li>
+    <li><strong>Applied to AI today, accelerators fail the test.</strong> Power, interconnection and shells pass — but predict <em>incumbent</em> capture, not a new cohort.</li>
+  </ul>
+</section>
+
+<!-- ==================== 02 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">02</span><span>The pattern</span></div>
+  <h2>A primary innovation pays out only after something that looks like waste while it happens</h2>
+
+  <p>The shape is consistent across the cases that survive scrutiny: an innovation creates capacity; a reorganisation or overbuild strands that capacity and destroys the capital behind it; a later operator runs the same physical asset on a cost basis the builder could never have underwritten.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>2</b> — The cascade, on the case with the cleanest evidence</figcaption>
+    <div class="fig-body">
+      <div class="cascade">
+        <div class="casc-row r1">
+          <div class="lbl">First order</div>
+          <div class="body"><b>The builder, who underwrote at P*</b>KPNQwest builds the Ebone pan-European backbone. Roughly €1bn of capital, priced on 1999 assumptions about what bandwidth would sell for.</div>
+        </div>
+        <div class="casc-arrow">↓ &nbsp;the revenue model dies — but physical demand for the output keeps compounding</div>
+        <div class="casc-row r2">
+          <div class="lbl">Second order</div>
+          <div class="body"><b>Whoever takes the write-down</b>Dutch <span class="mono">faillissement</span>. The network is physically switched off on 3 July 2002. Equity and creditors are wiped; the glass stays in the ground.</div>
+        </div>
+        <div class="casc-arrow">↓ &nbsp;control moves to an agent with no sunk commitment to the original model</div>
+        <div class="casc-row r3">
+          <div class="lbl">Third order</div>
+          <div class="body"><b>The operator whose business only works below P*</b>Interoute acquires the assets for roughly €15m — about 1.5% of build cost — relights the dark network, and sells to GTT in 2018 for $2.3bn.</div>
+        </div>
+      </div>
+    </div>
+    <p class="src">Chosen over the more familiar fibre-to-cloud story because the title chain, the dates and both transaction prices are documented. Note what the diagram does <em>not</em> claim: Interoute earned an infrastructure return, not the equity return — see Exhibit 7.</p>
+  </figure>
+
+  <div class="callout">
+    <p><strong>On the two illustrations that started this work.</strong> Electricity → shop floor → mass production, and internet → dot-com/fibre bubbles → cloud. Both were offered to identify the pattern rather than to defend it, and both contain inaccuracies. They are kept as the framing device; the evidence sits on the case library. The corrections are in §7 of the concept map — most consequentially, AWS and Azure come off the list, and Cloudflare is the only well-chosen name on it.</p>
+  </div>
+</section>
+
+<!-- ==================== 03 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">03</span><span>Prior art</span></div>
+  <h2>The concept is a re-description of four literatures that have already fought these battles</h2>
+
+  <p>Seventy-four candidate names were gathered and then cut hard: a third were duplicates (Perez alone occupied eleven slots for what is one book), one was a fabricated attribution returning zero search results, and one was included purely because its <em>title</em> matched while meaning something else entirely.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>3</b> — What this is actually called, ranked by fit</figcaption>
+    <div class="scroll">
+      <table class="t-tight">
+        <thead><tr><th class="num">#</th><th>Established name</th><th>Origin</th><th>What it names</th><th>Where it falls short</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><strong>Installation → frenzy → turning point → deployment</strong></td><td>Carlota Perez (2002)</td><td>The whole arc, including the claim that the bubble is functionally necessary</td><td>Periodisation contested; she distinguishes technology from easy-money bubbles — a distinction the original framing collapses</td></tr>
+          <tr><td class="num">2</td><td><strong>The productive bubble</strong></td><td>William Janeway (2012)</td><td>The precise mechanism: malinvestment leaves a usable residue</td><td>Restricted to general-purpose <em>network</em> infrastructure</td></tr>
+          <tr><td class="num">3</td><td>General Purpose Technology + co-invention</td><td>Bresnahan &amp; Trajtenberg (1995)</td><td>Layer 1, and why its value needs downstream invention</td><td>Models coordination failure, not overcapacity</td></tr>
+          <tr><td class="num">4</td><td>Complementary organisational capital / the dynamo-and-computer lag</td><td>Paul David (1990); Devine (1983)</td><td>Layer 2 as reorganisation — and the actual source of the electricity illustration</td><td>Firm-level; the same firms capture the payoff</td></tr>
+          <tr><td class="num">5</td><td>Complementary and cospecialised assets</td><td>Teece (1986)</td><td><em>Why</em> the originator fails to capture value</td><td>Distribution within one wave, not across waves</td></tr>
+          <tr><td class="num">6</td><td>The productivity J-curve</td><td>Brynjolfsson, Rock &amp; Syverson (2021)</td><td>Makes the lag measurable</td><td>Within-firm; same firms capture</td></tr>
+          <tr><td class="num">7</td><td>Fordism / Régulation School</td><td>Aglietta, Boyer; Gramsci (1929)</td><td>The established name for the electricity illustration's third order</td><td>Inverts the causality — the labour settlement came first</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Counter-literature that must be engaged rather than ignored: Rosenberg &amp; Frischtak (1984), <em>Long Waves: A Critical Appraisal</em> — the framework as originally stated fails all four of their requirements. Also Goldfarb &amp; Kirsch (2019); Klepper &amp; Simons on shakeouts; Eisfeldt &amp; Rampini on procyclical reallocation.</p>
+  </figure>
+
+  <div class="callout neg">
+    <p><strong>On the name.</strong> "Third derivative" carries a false mathematical promise — a real third derivative is computed with respect to a specified variable, and nothing here is. Retained as the house label because it communicates, but it should never be presented as though the ordinal were measured.</p>
+  </div>
+</section>
+
+<!-- ==================== 04 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">04</span><span>Retractions</span></div>
+  <h2>Three claims in the original framing do not survive the evidence</h2>
+
+  <figure>
+    <figcaption>Exhibit <b>4</b> — What had to be given up, and what forced it</figcaption>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Original claim</th><th>Status</th><th>What forced the retraction</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Layers can be counted as technology generations</strong></td>
+            <td><span class="pill p-fail">Not repairable</span></td>
+            <td>Every third order in the corpus is some other case's first order. Worse than indexical: David and Wright describe electrification as a <em>confluence of parallel converging trajectories</em>, and note automated materials handling did not require electrification. In a lattice, "which layer is this" has no answer in principle.</td>
+          </tr>
+          <tr>
+            <td><strong>The bubble made the capacity cheap</strong></td>
+            <td><span class="pill p-fail">Largely wrong</span></td>
+            <td>Kermani &amp; Ma (2020): cyclical conditions move liquidation recovery rates by only 5–10 points, while fixed physical attributes — mobility, durability, customisation — explain ~40% of cross-industry variation. <strong>Specificity sets the price; the cycle does not.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Value usually goes to different people</strong></td>
+            <td><span class="pill p-fail">False as stated</span></td>
+            <td>Klepper &amp; Simons: 4 of 4 industries where post-shakeout leaders are early entrants, adjacent diversifiers or spinoffs of the best early entrants. In US autos the 1895–1904 cohort's exit hazard was 76% below the later cohort's at age 15. AWS, Google and Netflix are bubble-era firms run by bubble-era people.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+
+  <p>The bubble's causal role downgrades from <em>creating the discount</em> to <em>creating the asset in irrational quantity, and supplying the cessation event that dislodges it</em>. That is a smaller claim, and a defensible one.</p>
+</section>
+
+<!-- ==================== 05 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">05</span><span>The repair</span></div>
+  <h2>Stop counting technologies; count claims on one metered capacity</h2>
+
+  <p>The ordinal becomes meaningful when it is anchored on something enumerable. Register four things in writing, timestamped, <em>before</em> any layer assignment:</p>
+
+  <figure>
+    <figcaption>Exhibit <b>5</b> — The Input-Price Frame</figcaption>
+    <div class="fig-body">
+      <div class="scroll">
+        <table class="t-tight">
+          <thead><tr><th style="width:170px">Register</th><th>Definition</th><th>Why it de-indexes the frame</th></tr></thead>
+          <tbody>
+            <tr><td><strong>The metered input <span class="mono">P(t)</span></strong></td><td>A quotable unit price for a physical or legal capacity — $/Mbps-month of transit, $/kW-year of dispatchable capacity, $/GPU-hour of a named accelerator class</td><td>Must be a published or contractible series, <strong>not a narrative</strong></td></tr>
+            <tr><td><strong>The build-justifying price <span class="mono">P*</span></strong></td><td>The price the builder's own pro formas required to return cost of capital</td><td>A <em>historical fact</em>, recoverable from prospectuses, project-finance models, auction bids and filed depreciation schedules — not an analyst's judgement</td></tr>
+            <tr><td><strong>The threshold business class</strong></td><td>A named downstream class at a stated NAICS level whose gross margin is negative at <span class="mono">P*</span> and positive below it</td><td>Named <em>before</em> the outcome, with a customer set distinct from the builders'</td></tr>
+            <tr><td><strong>The scorecard</strong></td><td>PASS/FAIL on the nine conditions</td><td>Recorded before the outcome window opens</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin:22px 0 10px;font-size:13.5px;color:var(--ink-2)">The ordinal then enumerates <strong>the balance sheets that have owned the economics of that one capacity</strong>:</p>
+      <div class="cascade">
+        <div class="casc-row r1"><div class="lbl">First order</div><div class="body">The builder, who underwrote at <span class="mono">P*</span></div></div>
+        <div class="casc-row r2"><div class="lbl">Second order</div><div class="body">The claimant who takes the write-down — bondholders, receiver, acquiring creditor, or the state where losses are forced administratively</div></div>
+        <div class="casc-row r3"><div class="lbl">Third order</div><div class="body">The operator or consumer whose business exists only because <span class="mono">P</span> is now below <span class="mono">P*</span></div></div>
+      </div>
+    </div>
+    <p class="src">"Third order" therefore means <strong>the third claim on a single named capacity</strong>, not the third generation of a technology. Claims on an asset are enumerable and finite; technologies are not.</p>
+  </figure>
+
+  <div class="callout">
+    <p><strong>This supplies the stopping rule the concept lacked.</strong> You can run the frame again on a different metered input, but not on the same one — once capacity is held at written-down basis by an operator whose business works, there is no further write-down to harvest. The number of write-downs on a given asset is finite and typically one. That comes from the accounting, not from a judgement about when generativity decays.</p>
+    <p style="margin-top:10px">It also costs the electricity illustration outright: there is no single metered input whose price collapse the assembly line consumed. <strong>That a repair excludes the flagship example is evidence it is doing work rather than accommodating.</strong></p>
+  </div>
+</section>
+
+<!-- ==================== 06 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">06</span><span>The test</span></div>
+  <h2>Nine conditions, of which four are necessary — and the exclusions matter more than the passes</h2>
+
+  <p class="lede">A second-order overbuild produces a third order <strong>if and only if</strong> the written-down capacity is legally dislodgeable, is a general-purpose input to a <em>different</em> industry than the builders competed in, and faces surviving physical output demand when the revenue model dies.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>6</b> — The discriminating test</figcaption>
+    <div class="scroll">
+      <table class="t-tight">
+        <thead><tr><th style="width:40px">#</th><th>Condition</th><th style="width:104px">Type</th><th>Observe it by</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">C1</td><td><strong>Alienable operating control at a cost-based price.</strong> The variable is forced recognition of loss <em>plus</em> transferable control — not bankruptcy, and not legal title</td><td><span class="pill p-nec">Necessary</span></td><td>Does the licence transfer in insolvency or lapse? What share of the capital sits in mark-to-market hands?</td></tr>
+          <tr><td class="mono">C2</td><td><strong>Output-demand survival.</strong> What dies is the revenue model, not demand for the output</td><td><span class="pill p-nec">Necessary</span></td><td>Compound growth in <em>physical units</em> — bits, satellite-minutes, MWh — peak to peak+5yr. Deliberately not revenue</td></tr>
+          <tr><td class="mono">C3</td><td><strong>Cross-market input, not same-market output capacity</strong></td><td><span class="pill p-nec">Necessary</span></td><td>Name the downstream industry ex ante at a stated NAICS level with a demonstrably distinct customer set</td></tr>
+          <tr><td class="mono">C8</td><td><strong>Physical completion before cessation.</strong> Announced or permitted capacity has nothing to dislodge</td><td><span class="pill p-nec">Necessary</span></td><td>Commissioned units versus announced units. Trivial to check and routinely ignored</td></tr>
+          <tr><td class="mono">C4</td><td>High substrate-to-overlay ratio — civil works, rights-of-way, spectrum, interconnection versus vintage-specific electronics and tooling</td><td><span class="pill p-con">Durability</span></td><td>Split the capex into 20–40yr near-zero-obsolescence assets versus 3–7yr high-customisation assets</td></tr>
+          <tr><td class="mono">C5</td><td>Reset persistence — real replacement cost must not deflate faster than the basis advantage amortises. Working threshold <strong>&gt;5%/yr = fail</strong></td><td><span class="pill p-con">Durability</span></td><td>Ten-year trend in real <em>build</em> cost per unit — the build curve, not the output-price curve</td></tr>
+          <tr><td class="mono">C6</td><td>Aggregability, and pricing as a metered service off the written-down basis</td><td><span class="pill p-con">Contributory</span></td><td>Can a downstream firm buy a metered unit without buying the asset?</td></tr>
+          <tr><td class="mono">C7</td><td>Recombination permission in the labour market, where the residue is human</td><td><span class="pill p-con">Contributory</span></td><td>Non-compete enforceability, spinoff equity norms, local early-stage capital density — all published years ahead</td></tr>
+          <tr><td class="mono">C9</td><td>Shared-asset incompatibility — the only defensible version of "different people"</td><td><span class="pill p-con">Who, not whether</span></td><td>Name the specific firm-level asset and the incompatibility in one sentence. If you cannot, predict incumbent capture</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">C4 and C5 separate a durable third order from a two-year arbitrage. Yield across the corpus: roughly 6–8 passes in ~30 candidate episodes, with failures distributed across different conditions rather than piling onto one — the property a multi-condition test needs in order not to be a single variable in disguise.</p>
+  </figure>
+
+  <h3>The exclusion rule is the most valuable output</h3>
+  <div class="callout">
+    <p>If the candidate overbuild is <strong>competing output capacity in the market it was built to serve</strong> — more solar modules, more airline seats, more merchant megawatts, more of the same tokens sold to the same buyers — <strong>the framework does not apply.</strong> In that region Klepper and the capital cycle are correct: the cull is endogenous, needs no bubble at all, and the winners are survivors with a lineage. Forecast consolidation, not succession.</p>
+    <p style="margin-top:10px">The framework's entire domain is the complement: overbuilds whose residue is an input to <em>somebody else's</em> industry. That is the only reason "different people" appears at all — not because busts create new cohorts, but because the incumbents are, by construction, in the wrong industry to be the buyers.</p>
+  </div>
+</section>
+
+<!-- ==================== 07 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">07</span><span>Evidence</span></div>
+  <h2>A third of the documented cases contradict the framework, and those were the informative ones</h2>
+
+  <figure>
+    <figcaption>Exhibit <b>7</b> — Case corpus by verdict (n = 24)</figcaption>
+    <div class="fig-body">
+      <div class="bars">
+        <div class="bar-row"><span>Supports the framework</span><div class="bar-track"><div class="bar-fill" style="--bc:var(--o3);width:100%"></div></div><span class="n">8</span></div>
+        <div class="bar-row"><span>Contradicts the framework</span><div class="bar-track"><div class="bar-fill" style="--bc:var(--bad);width:100%"></div></div><span class="n">8</span></div>
+        <div class="bar-row"><span>Partial</span><div class="bar-track"><div class="bar-fill" style="--bc:var(--o2);width:50%"></div></div><span class="n">4</span></div>
+        <div class="bar-row"><span>Null case</span><div class="bar-track"><div class="bar-fill" style="--bc:var(--ink-3);width:50%"></div></div><span class="n">4</span></div>
+      </div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--o3)"></i> Mechanism present and documented</span>
+        <span><i class="sw" style="background:var(--bad)"></i> Third order arrived <em>without</em> the mechanism</span>
+        <span><i class="sw" style="background:var(--ink-3)"></i> Overbuild produced nothing at all</span>
+      </div>
+    </div>
+    <p class="src">Round-2 corpus, gathered under the requirement that every case name a specific transmission mechanism — which asset, what price change, who owned it before and after. Bars are counts, not proportions of a sampled universe: there is no pre-registered sampling frame, so this is not a base rate.</p>
+  </figure>
+
+  <h3>What the contradicting cases establish</h3>
+  <ul class="tight">
+    <li><strong>The bubble is not necessary.</strong> China's hyperscale cloud (Alibaba, Tencent) was built organically from cash flow with no preceding fibre bust. India Stack, M-PESA and Brazil's Pix are public infrastructure with live third orders and no malinvestment phase anywhere in the chain.</li>
+    <li><strong>Cleantech 1.0 is the cleanest disconfirmation.</strong> A real bubble, real capital destroyed — and the residue did <em>not</em> seed the 2015–25 battery and EV generation, which came from Tesla (founded 2003, before the bubble) and Asian cell manufacturers who never had a bust. Solyndra's building transferred to Seagate for $90.2m and became data storage; the chemistry-specific tooling was worthless.</li>
+    <li><strong>Overbuild alone is profoundly insufficient.</strong> Soviet industry, Japan post-1990, European 3G and US nuclear all built vast capacity and produced nothing. The deciding variable is not scale of investment — it is whether control can move.</li>
+    <li><strong>The Black Death is the natural experiment.</strong> Identical shock, identical labour scarcity, opposite outcomes east and west of the Elbe — wage labour versus the second serfdom. Institutions, not the shock, determine the third order.</li>
+  </ul>
+</section>
+
+<!-- ==================== 08 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">08</span><span>Value capture</span></div>
+  <h2>The value does not go to whoever buys the asset</h2>
+
+  <p>This is the finding with the most direct commercial bite, and it surprised both sides of the argument it was meant to settle.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>8</b> — Who earned what, in the best-documented qualifying case</figcaption>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Role</th><th>Who</th><th>What they bought</th><th>Return earned</th></tr></thead>
+        <tbody>
+          <tr><td>Builder</td><td>Global Crossing, KPNQwest, 360networks</td><td>Built the capacity at 1999 cost of capital</td><td><span class="pill p-fail">Wiped out</span></td></tr>
+          <tr><td>Asset buyer</td><td>Cogent, Level 3, Zayo, Interoute</td><td>The fibre itself, at cents on the dollar</td><td><span class="pill p-mix">Utility returns</span></td></tr>
+          <tr><td>Complement holder</td><td>Netflix, Cloudflare</td><td>Metered <em>services</em> priced off written-down assets — never touched the underlying</td><td><span class="pill p-pass">The equity value</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">The general statement is Teece (1986): value accrues to whoever holds the <strong>cospecialised complement that remains scarce after the input price collapses</strong>. In fibre that was content rights, subscriber relationships and the last mile. In post-WWI aviation it was the airmail contract — a <em>statutory</em> complement supplying ~95% of early carrier revenue, without which surplus aircraft at $50–100 apiece produced barnstormers and nothing else.</p>
+  </figure>
+
+  <div class="callout">
+    <p><strong>The prospective form.</strong> After inference prices collapse, value goes to holders of scarce complements — proprietary distribution, regulated data, workflow lock-in, firm power and interconnection rights. Not to whoever buys distressed accelerators, and not to a new cohort of model labs.</p>
+  </div>
+</section>
+
+<!-- ==================== 09 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">09</span><span>Live application</span></div>
+  <h2>AI accelerators fail the test; the grid passes but predicts incumbent capture</h2>
+
+  <p>Six current capacity events were scored against the nine conditions with verified anchor prices, dated falsification windows and named failure conditions, and registered before any outcome is known. The full register is in the project folder.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>9</b> — Pre-registered scorecard, 2 August 2026</figcaption>
+    <div class="scroll">
+      <table class="t-tight">
+        <thead><tr><th>Capacity event</th><th style="width:112px">Verdict</th><th>Reasoning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AI accelerator fleets</strong><br><span class="mono" style="font-size:11px;color:var(--ink-3)">$/GPU-hour</span></td><td><span class="pill p-fail">Fails C3 C4 C5</span></td><td>The buyers of GPU-hours are the same buyers the builders are already fighting over — no cross-market input. Replacement cost deflates far faster than any distressed basis can amortise. <strong>Forecast consolidation, not succession.</strong></td></tr>
+          <tr><td><strong>Power, interconnection, shells</strong><br><span class="mono" style="font-size:11px;color:var(--ink-3)">$/MW-year</span></td><td><span class="pill p-mix">Passes C2–C6<br>Fails C8, C9</span></td><td>The only durable residue — substrate with flat-to-rising real replacement cost. But no incompatible shared asset can be named, so the model predicts <strong>incumbent capture</strong> by utilities and existing platforms. Much announced capacity is not yet energised.</td></tr>
+          <tr><td><strong>Tokens at fixed capability</strong><br><span class="mono" style="font-size:11px;color:var(--ink-3)">$/M tokens</span></td><td><span class="pill p-fail">No mechanism</span></td><td>A real and large input-price reset <em>with no bust and no write-down</em>. The framework's mechanism is not merely rare here — it is absent from the most important case of the decade.</td></tr>
+          <tr><td><strong>Chinese solar &amp; battery</strong></td><td><span class="pill p-mix">Live falsifier</span></td><td>Passes most conditions but fails C1 as written — dominant downstream firms with essentially no loss recognition and no title transfer. <strong>The highest-priority threat to the framework.</strong></td></tr>
+          <tr><td><strong>Post-2022 biotech &amp; lab space</strong></td><td><span class="pill p-pass">Best score</span></td><td>Passes seven of nine. The strongest-scoring case in the register — and it is not AI. Non-obvious, and worth its own work.</td></tr>
+          <tr><td><strong>LEO constellations, round two</strong></td><td><span class="pill p-fail">Fails C3 C4 C5</span></td><td>Cannot repeat Iridium <em>precisely because launch got cheap</em>. Spectrum transfers; the satellites go to zero.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Anchor prices verified by direct fetch on 2 August 2026. Every prediction carries a named falsifying observation and a date. Nothing scored after an outcome is admissible as evidence <em>for</em> the framework — only against it.</p>
+  </figure>
+</section>
+
+<!-- ==================== 10 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">10</span><span>The panel</span></div>
+  <h2>Four analytical lenses, built as reusable primers, take four different signs on the same question</h2>
+
+  <p>Each persona was built through the same ladder: three independent research lenses, a fresh verifier, one author, two adversarial reviewers on different axes, then a blind swap test. All four were identified correctly from <em>method alone</em> with names stripped.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>10</b> — The four lenses on the AI datacentre buildout, run blind</figcaption>
+    <div class="lenses">
+      <div class="lens" style="--lc:var(--o2)">
+        <h4>Burry</h4>
+        <div class="role">The contract is the trade</div>
+        <div class="call">Short the financing mezzanine</div>
+        <p>Instrument spec before valuation work. Locates the thin tranche — whoever owes a fixed payment on a fixed date out of a variable revenue stream.</p>
+        <div class="rule-line"><strong>Time doctrine:</strong> pays carry to wait, and buys the patience with a dated calendar.</div>
+      </div>
+      <div class="lens" style="--lc:var(--o1)">
+        <h4>Soros</h4>
+        <div class="role">The loop is the trade</div>
+        <div class="call">Long the thing he says is false</div>
+        <p>Names the first reflexive metric — the observable that must move <em>because</em> belief is spreading. Falsity states which stage comes next; it is not a short signal.</p>
+        <div class="rule-line"><strong>Time doctrine:</strong> refuses to name a date at all.</div>
+      </div>
+      <div class="lens" style="--lc:var(--o3)">
+        <h4>Griffin</h4>
+        <div class="role">The concession is the trade</div>
+        <div class="call">Flat unless paid</div>
+        <p>Never "what is this worth" — always "what am I paid to absorb it, and who else can bid inside 48 hours". Would <em>buy</em> the paper Burry is shorting.</p>
+        <div class="rule-line"><strong>Time doctrine:</strong> "correct but early" is not a state — it is an underfunded position.</div>
+      </div>
+      <div class="lens" style="--lc:var(--warn)">
+        <h4>Druckenmiller</h4>
+        <div class="role">Depth first, then the chart veto</div>
+        <div class="call">Long one rung up, gated</div>
+        <p>Runs the liquidity depth test before reaching the thesis. A good fundamental case with a bad chart is deferred, not downsized.</p>
+        <div class="rule-line"><strong>Time doctrine:</strong> early is indistinguishable from wrong.</div>
+      </div>
+    </div>
+    <p class="src">Burry and Griffin landing on opposite sides of the same instrument is the clearest evidence the files encode different methods rather than different adjectives. Position overlap across the four books: zero.</p>
+  </figure>
+</section>
+
+<!-- ==================== 11 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">11</span><span>Disagreement</span></div>
+  <h2>The panel's product is six live disagreements, each turning on one nameable variable</h2>
+
+  <p>Run blind on 40 current forward-thinker theses, the four lenses split on six specific objects. In each case they agree on the facts and diverge on one variable — which is what makes the disagreement usable rather than merely interesting.</p>
+
+  <div class="dis">
+    <div class="dis-h"><span class="tag">D1</span>The redemption gate on a large private-credit vehicle</div>
+    <div class="dis-b">
+      <div class="dis-side"><div class="who" style="color:var(--o1)">Soros — short the complex</div>A daily mark that can be set against a listed comparable is a run instruction. The defender is building the instrument of its own repricing.</div>
+      <div class="dis-side"><div class="who" style="color:var(--o3)">Griffin — no trade exists</div>The manager exercising a contractual authority is not a crisis. No gate, no fire sale; no fire sale, no forced seller, no trade.</div>
+    </div>
+    <div class="dis-var"><b>The variable:</b> whether a redemption gate propagates stress or terminates it. Both resolve on the same date — a major sponsor's commitment to price its full credit book daily on 30 September 2026.</div>
+  </div>
+
+  <div class="dis">
+    <div class="dis-h"><span class="tag">D3</span>Is the dominant accelerator vendor an obligor?</div>
+    <div class="dis-b">
+      <div class="dis-side"><div class="who" style="color:var(--o1)">Soros — buys protection</div>It has publicly committed its balance sheet to the solvency of its own order book. The credit market moved on a <em>financing</em> headline, not a demand headline. That is the tell.</div>
+      <div class="dis-side"><div class="who" style="color:var(--o2)">Burry — declines the trade</div>Paid on shipment. No fixed payment obligation on a fixed date out of contingent revenue, so it fails the shared-characteristic rule and belongs to a different mechanism.</div>
+    </div>
+    <div class="dis-var"><b>The variable:</b> whether disclosed contingent guarantees convert a shipment-paid supplier into an obligor on someone else's cash flow. Both name the <em>same falsifying document</em> — the guarantee-structure disclosure in the next 10-Q — while holding opposite positions.</div>
+  </div>
+
+  <div class="dis">
+    <div class="dis-h"><span class="tag">D5</span>Does an alienable interconnection right exist?</div>
+    <div class="dis-b">
+      <div class="dis-side"><div class="who" style="color:var(--o2)">Burry — no instrument, no trade</div>An interconnection service agreement is not transferable to me. Review date set for 31 August 2027.</div>
+      <div class="dis-side"><div class="who" style="color:var(--o3)">Griffin — a regulator just manufactured one</div>FERC accepted a replacement-generation process on 29 January 2026 letting capacity interconnection rights transfer at the same site. Alienability created out of nothing, for one specific residue.</div>
+    </div>
+    <div class="dis-var"><b>The variable:</b> how wide the manufactured right is — same-site succession, or a genuine secondary market. <b>Actionable:</b> Burry's own stated falsifier has already partially fired, and his review date is a year later than the event that would resolve it.</div>
+  </div>
+
+  <figure style="margin-top:26px">
+    <figcaption>Exhibit <b>11</b> — Validation verdict on the personas</figcaption>
+    <div class="fig-body">
+      <p style="font-size:14px"><strong>Positions separated cleanly; dismissals did not.</strong> Zero instrument overlap across the four books, four different epistemologies of price, four non-overlapping self-criticisms drawn from genuinely distinct records. But on at least eight input theses the four dismissals were near-<em>co-worded</em>. A reader must not count those as four independent votes — the personas converge precisely where nothing is at stake and diverge where capital is committed.</p>
+      <p style="font-size:14px;margin-bottom:0"><strong>The at-risk pair was mispredicted.</strong> Soros and Druckenmiller were expected to collapse into each other; a scope gate added to the Soros manual held them apart, and each declined a trade his own core rule demanded — which is the signature of a real constraint rather than a decorative one. The pair that actually overlapped was Soros and Griffin, and that overlap produced the panel's best disagreement rather than an echo.</p>
+    </div>
+    <p class="src">One structural caveat: panel exposure is not balanced — three variants of short-the-financing against one long-the-execution. Read the aggregate accordingly.</p>
+  </figure>
+</section>
+
+<!-- ==================== 12 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">12</span><span>Limits</span></div>
+  <h2>It can exclude; it cannot select — and anyone using it to pick winners is misusing it</h2>
+
+  <figure>
+    <figcaption>Exhibit <b>12</b> — What the framework can and cannot do</figcaption>
+    <div class="dis-b" style="border:0">
+      <div class="dis-side" style="border-right:1px solid var(--rule)">
+        <div class="who" style="color:var(--o3)">Can do</div>
+        <ul class="tight" style="font-size:13px;margin-top:8px">
+          <li>Exclude infeasible adjacencies with meaningful precision</li>
+          <li>Bound the cost trajectory of an already-named artefact with calibrated error bars</li>
+          <li>Predict which parts of an overbuild transfer and appreciate versus which are scrapped — the substrate/overlay split</li>
+          <li>Score whether a price reset will persist beyond one asset replacement cycle</li>
+        </ul>
+      </div>
+      <div class="dis-side">
+        <div class="who" style="color:var(--bad)">Cannot do</div>
+        <ul class="tight" style="font-size:13px;margin-top:8px">
+          <li><strong>Name the winner.</strong> Cost-curve forecasting works precisely because curves are smooth — the <em>absence</em> of the discontinuity a cascade needs</li>
+          <li><strong>Date anything.</strong> Observed lags run 2 to 40 years; the lag carries no information and must not be used as a screen</li>
+          <li><strong>Claim the bubble is necessary,</strong> or even characteristic</li>
+          <li><strong>Distinguish itself from an ordinary fire sale</strong> without post-transfer utilisation data, which does not exist until years afterwards</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">The framework and the fire-sale literature predict the <em>same observable</em> — assets exiting the incumbent class in a bust — with <em>opposite welfare signs</em>. Two tests separate them: post-transfer utilisation must rise, and outsiders must pay more than insiders. If outsiders always pay less, the mechanism claim should be abandoned.</p>
+  </figure>
+
+  <div class="callout neg">
+    <p><strong>The defence that died.</strong> "Nobody forecasts the third order" is not available. Gilder's <em>Telecosm</em>, HP's 1998 utility-computing division, Sun Grid at $1/CPU-hour in 2006 and Hastings naming Netflix in 1997 were all ex ante and right in kind. They were destroyed anyway — which is <em>good</em> for the mechanism, because it shows foresight is not the scarce input, and fatal to any claim that this framework confers unique foresight.</p>
+  </div>
+</section>
+
+<!-- ==================== 13 ==================== -->
+<section class="slide">
+  <div class="eyebrow"><span class="num">13</span><span>Method</span></div>
+  <h2>Built adversarially, because the first round did not survive contact with a verifier</h2>
+
+  <p>Constructed under the step-ladder protocol: investigate on independent lenses → verify load-bearing claims with fresh agents → spec → adversarial review on two axes → supervisor re-spec → implement → supervisor verify. No rung was checked by whoever produced it.</p>
+
+  <figure>
+    <figcaption>Exhibit <b>13</b> — What the adversarial rungs caught</figcaption>
+    <div class="scroll">
+      <table class="t-tight">
+        <thead><tr><th>Rung</th><th>Scale</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Concept, round 1</td><td>12 researchers, 3 verifiers, 1 critic</td><td><span class="pill p-fail">Materially flawed ×3</span> — a third of entries duplicated, one fabricated citation returning zero search results, one included by title-matching alone, plus numerical errors of an order of magnitude</td></tr>
+          <tr><td>Concept, round 2</td><td>12 agents against the named gaps</td><td>Three retractions forced; the Input-Price Frame and the nine-condition test derived</td></tr>
+          <tr><td>Paragon investigation</td><td>12 researchers, 4 verifiers</td><td>All four <span class="pill p-mix">sound with corrections</span> — but caricature risk severe in every case, and half to two-thirds of the material was generic boilerplate</td></tr>
+          <tr><td>Paragon specs</td><td>4 authors, 8 reviewers</td><td>Rebuilt from the differentiating cluster only; every caricature broken by name</td></tr>
+          <tr><td>Swap test</td><td>Supervisor-run, blind</td><td><span class="pill p-pass">Passed on method</span> — one defect found and repaired: two lenses were converging</td></tr>
+          <tr><td>Panel</td><td>4 lenses, 40 theses, blind</td><td>Zero position overlap; six substantive disagreements with named resolution dates</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">58 agents in total. Full evidence log, including every refuted claim and the completeness critique that commissioned round 2, is in <span class="mono">_research/</span>.</p>
+  </figure>
+
+  <div class="footer">
+    <p style="max-width:70ch"><strong>Files.</strong> <span class="mono">Third_Derivative_Concept_Map.md</span> — the framework in full. <span class="mono">Third_Derivative_Case_Library.md</span> — 24 cases with mechanisms and value capture. <span class="mono">Personas/</span> — four drop-in subagent primers and a usage guide. <span class="mono">Analysis/</span> — the forward register, the panel reads and the input substrate.</p>
+    <p style="max-width:70ch;margin-top:12px;color:var(--ink-3)">Compiled 2 August 2026. Every claim in this report traces to the evidence log; where evidence is weak or contested, the source documents say so and this report has tried to say so too.</p>
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>

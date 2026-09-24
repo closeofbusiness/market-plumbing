@@ -1,0 +1,596 @@
+<title>Nexus Decisions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --paper:#F4F5F3;
+    --surface:#FFFFFF;
+    --surface-2:#EDEFEC;
+    --ink:#16202A;
+    --ink-2:#3C4A56;
+    --muted:#67757F;
+    --rule:#D8DDD9;
+    --rule-2:#C3CAC5;
+    --accent:#0E5A61;
+    --accent-soft:#DCEAEA;
+    --amber:#8F6210;
+    --amber-soft:#F4E9D2;
+    --clay:#8E3527;
+    --clay-soft:#F3DFDA;
+    --moss:#3D6234;
+    --moss-soft:#E0EBDC;
+    --shadow:0 1px 2px rgba(22,32,42,.06), 0 6px 18px -12px rgba(22,32,42,.28);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F151A;
+      --surface:#161E25;
+      --surface-2:#1D262E;
+      --ink:#E7ECE9;
+      --ink-2:#BAC5C4;
+      --muted:#8B9A9C;
+      --rule:#2A353D;
+      --rule-2:#3A4750;
+      --accent:#5CB6B0;
+      --accent-soft:#15343A;
+      --amber:#DCA744;
+      --amber-soft:#332714;
+      --clay:#D8806E;
+      --clay-soft:#35201C;
+      --moss:#8FBE7E;
+      --moss-soft:#1D2A1B;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 22px -14px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F151A;
+    --surface:#161E25;
+    --surface-2:#1D262E;
+    --ink:#E7ECE9;
+    --ink-2:#BAC5C4;
+    --muted:#8B9A9C;
+    --rule:#2A353D;
+    --rule-2:#3A4750;
+    --accent:#5CB6B0;
+    --accent-soft:#15343A;
+    --amber:#DCA744;
+    --amber-soft:#332714;
+    --clay:#D8806E;
+    --clay-soft:#35201C;
+    --moss:#8FBE7E;
+    --moss-soft:#1D2A1B;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 22px -14px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 96px}
+
+  /* ---------- masthead ---------- */
+  .mast{border-bottom:2px solid var(--ink);padding-bottom:22px;display:flex;flex-direction:column;gap:14px}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+  }
+  h1{
+    font-family:Spectral,Georgia,serif;font-weight:600;
+    font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.04;letter-spacing:-.018em;
+    margin:0;text-wrap:balance;
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:clamp(1.02rem,2.1vw,1.2rem);
+    line-height:1.55;color:var(--ink-2);max-width:64ch;margin:0;
+  }
+  .standfirst em{color:var(--ink);font-style:italic}
+
+  /* ---------- section headings ---------- */
+  .sec{margin-top:clamp(40px,6vw,68px)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule-2);padding-bottom:9px;margin-bottom:22px}
+  .sec-head h2{
+    font-family:"Public Sans",sans-serif;font-weight:700;font-size:.83rem;
+    letter-spacing:.13em;text-transform:uppercase;margin:0;color:var(--ink);
+  }
+  .sec-head .note{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+    margin-left:auto;text-align:right;
+  }
+  .lede{max-width:66ch;color:var(--ink-2);margin:0 0 22px}
+
+  /* ---------- regardless strip ---------- */
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .strip .cell{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+  .strip .when{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--accent);font-weight:500}
+  .strip .what{font-weight:600;font-size:.95rem;line-height:1.35}
+  .strip .why{font-size:.845rem;color:var(--muted);line-height:1.5}
+
+  /* ---------- decision cards ---------- */
+  .decks{display:flex;flex-direction:column;gap:22px}
+  .deck{
+    background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .deck-head{
+    display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+    padding:15px 22px;border-bottom:1px solid var(--rule);background:var(--surface-2);
+  }
+  .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;
+    letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;
+  }
+  .tag.now{background:var(--clay-soft);color:var(--clay)}
+  .tag.week{background:var(--amber-soft);color:var(--amber)}
+  .tag.open{background:var(--accent-soft);color:var(--accent)}
+  .deck-head .q{
+    font-family:Spectral,Georgia,serif;font-weight:600;font-size:1.16rem;
+    line-height:1.25;margin:0;flex:1 1 320px;text-wrap:balance;
+  }
+  .deck-head .clock{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+    margin-left:auto;white-space:nowrap;
+  }
+  .deck-head .clock.hot{color:var(--clay);font-weight:500}
+  .deck-body{padding:20px 22px 22px}
+  .context{max-width:66ch;color:var(--ink-2);margin:0 0 18px;font-size:.945rem}
+  .context strong{color:var(--ink);font-weight:600}
+
+  .branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px}
+  .branch{
+    border:1px solid var(--rule);border-radius:3px;padding:14px 15px;
+    display:flex;flex-direction:column;gap:9px;background:var(--paper);
+  }
+  .branch h4{
+    margin:0;font-size:.92rem;font-weight:700;letter-spacing:-.005em;line-height:1.3;
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .branch h4 .lab{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:500;
+    color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  }
+  .branch p{margin:0;font-size:.87rem;line-height:1.55;color:var(--ink-2)}
+  .branch .cost{
+    margin-top:auto;padding-top:9px;border-top:1px dashed var(--rule-2);
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .branch.rec{border-color:var(--accent);background:var(--accent-soft)}
+  .branch.rec p{color:var(--ink)}
+  .branch.rec .cost{border-top-color:var(--accent);color:var(--accent)}
+
+  .rec-line{
+    margin-top:16px;padding:12px 15px;border-left:3px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 3px 3px 0;font-size:.9rem;line-height:1.55;
+  }
+  .rec-line b{font-weight:700}
+  .rec-line .who{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px;font-weight:500;
+  }
+  .warn{
+    margin-top:14px;padding:12px 15px;border-left:3px solid var(--clay);
+    background:var(--clay-soft);border-radius:0 3px 3px 0;font-size:.885rem;line-height:1.55;color:var(--ink);
+  }
+  .warn .who{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--clay);display:block;margin-bottom:4px;font-weight:500;
+  }
+
+  /* ---------- diagram ---------- */
+  .figure{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:8px 8px 4px;overflow-x:auto}
+  .figure svg{display:block;min-width:720px;width:100%;height:auto}
+  figcaption{
+    font-size:.855rem;color:var(--muted);margin-top:12px;max-width:70ch;line-height:1.55;
+  }
+  figcaption b{color:var(--ink);font-weight:600}
+  .svg-lane{fill:var(--surface-2)}
+  .svg-rule{stroke:var(--rule-2);stroke-width:1}
+  .svg-node{fill:var(--surface);stroke:var(--rule-2);stroke-width:1.25}
+  .svg-node-hot{fill:var(--clay-soft);stroke:var(--clay);stroke-width:1.25}
+  .svg-node-go{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+  .svg-node-wait{fill:var(--amber-soft);stroke:var(--amber);stroke-width:1.25}
+  .svg-t{fill:var(--ink);font-family:"Public Sans",sans-serif;font-size:12.5px;font-weight:600}
+  .svg-s{fill:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em}
+  .svg-lane-lab{fill:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em}
+  .svg-arrow{stroke:var(--rule-2);stroke-width:1.5;fill:none}
+  .svg-arrow-hot{stroke:var(--clay);stroke-width:1.5;fill:none;stroke-dasharray:4 3}
+
+  /* ---------- default path ---------- */
+  .default{
+    border:1px solid var(--rule-2);border-radius:3px;background:var(--surface);
+    padding:20px 22px;display:flex;flex-direction:column;gap:12px;
+  }
+  .default ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+  .default li{font-size:.93rem;line-height:1.55;color:var(--ink-2)}
+  .default li b{color:var(--ink)}
+  .default .head{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  footer{
+    margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:6px 20px;
+  }
+  a{color:var(--accent)}
+  a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">
+      <span>Nonbank–bank nexus programme</span>
+      <span>22 August 2026</span>
+      <span>4 open · 1 overdue</span>
+    </div>
+    <h1>What needs your call</h1>
+    <p class="standfirst">
+      Four decisions are waiting, and two of them turn out to be the same decision. Everything
+      here is a genuine fork — a place where different answers lead to materially different work.
+      Anything I could settle by reading a file or running a command is <em>not</em> on this page.
+    </p>
+  </header>
+
+  <!-- ============ HAPPENING REGARDLESS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2>Not decisions — happening regardless</h2>
+      <span class="note">so you can rule these out</span>
+    </div>
+    <p class="lede">
+      These are already scheduled or already running. They need no answer from you, with one
+      exception noted below.
+    </p>
+    <div class="strip">
+      <div class="cell">
+        <span class="when">OUT NOW</span>
+        <span class="what">Gemini retrieval parcel</span>
+        <span class="why">Group A asks whether Pozsar's shadow-money aggregate, his three satellite accounts, or the cash-pool figure have already been built by someone else. Only you can actually run it.</span>
+      </div>
+      <div class="cell">
+        <span class="when">31 AUGUST</span>
+        <span class="what">FINRA margin-debt snapshot</span>
+        <span class="why">FINRA overwrites one file at one URL with no archive. This decays — miss it and the June→July move stays permanently unknowable. Happens whatever you decide.</span>
+      </div>
+      <div class="cell">
+        <span class="when">5 SEPTEMBER</span>
+        <span class="what">Goal read-back</span>
+        <span class="why">I paste the verbatim quote from <span style="font-family:'IBM Plex Mono',monospace;font-size:.92em">THE_ASK.md</span> and you say whether it still describes the intent. The only check that has ever caught goal corruption.</span>
+      </div>
+      <div class="cell">
+        <span class="when">CONTINUOUS</span>
+        <span class="what">Nexus work with no gate</span>
+        <span class="why">Reading the two primary sources retrieved on 22 Aug, and anything downstream that needs nothing external.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE DECISIONS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2>The four decisions</h2>
+      <span class="note">ordered by when the answer is needed</span>
+    </div>
+
+    <div class="decks">
+
+      <!-- D1 -->
+      <article class="deck">
+        <div class="deck-head">
+          <span class="tag now">Answer today</span>
+          <h3 class="q">What do I work on while Gemini is out?</h3>
+          <span class="clock">blocks nothing · but idles me</span>
+        </div>
+        <div class="deck-body">
+          <p class="context">
+            The retrieval parcel could take a while to come back, and its Group A answer changes
+            what two of the four nexus tasks even <strong>are</strong> — build-from-scratch versus
+            extend-and-check. So starting the money leg now risks building something that already
+            exists. There are three things I could do instead.
+          </p>
+          <div class="branches">
+            <div class="branch rec">
+              <h4><span class="lab">A</span> The interlock harvest</h4>
+              <p>
+                Re-read the nine "double-counting risk" sections of the channel map as
+                <em>findings</em> rather than as a measurement nuisance. Under Pozsar–Singh the
+                interlock is the phenomenon, not an accounting problem to net away.
+              </p>
+              <p class="cost">No dependencies · no retrieval · material we already own</p>
+            </div>
+            <div class="branch">
+              <h4><span class="lab">B</span> The essay items</h4>
+              <p>
+                Margin-debt reconciliation, the opening rewrite against BEA Table 5.1, and the
+                remaining number verification. Real work, cleanly scoped — but it serves the
+                Substack outcome, not the goal.
+              </p>
+              <p class="cost">~2 hours · serves A11, not A12</p>
+            </div>
+            <div class="branch">
+              <h4><span class="lab">C</span> The overdue RTO item</h4>
+              <p>
+                Clears the one red flag on the calendar. But whether it is worth doing at all is
+                itself decision two below — so doing it now would be answering that question by
+                default rather than deliberately.
+              </p>
+              <p class="cost">Pre-empts decision 2 · see the coupling</p>
+            </div>
+          </div>
+          <div class="rec-line">
+            <span class="who">My recommendation</span>
+            <b>A, the interlock harvest.</b> It is the only option that serves the goal directly,
+            it needs nothing from outside, and it cannot be invalidated by whatever Gemini comes
+            back with. If Group A returns "already built", A is still worth having done.
+          </div>
+        </div>
+      </article>
+
+      <!-- D2 -->
+      <article class="deck">
+        <div class="deck-head">
+          <span class="tag now">Overdue</span>
+          <h3 class="q">The 17 August RTO filings — do them, or kill the item?</h3>
+          <span class="clock hot">5 days overdue · asked twice</span>
+        </div>
+        <div class="deck-body">
+          <p class="context">
+            Six FERC compliance filings on large-load and co-location dockets. Three positions in
+            the persona panel were pre-registered to resolve on them. The item has now survived
+            six sessions, and it is the miss that <strong>caused the calendar to be built in the
+            first place</strong> — which makes leaving it there a live demonstration that the
+            mechanism does not work.
+          </p>
+          <div class="branches">
+            <div class="branch">
+              <h4><span class="lab">DO</span> Read the filings</h4>
+              <p>
+                Resolves three pre-registered panel positions — a genuine test of whether the
+                persona forecasts were any good. Pre-registration is only worth something if the
+                resolution actually happens.
+              </p>
+              <p class="cost">Half a day · serves A2, not A12</p>
+            </div>
+            <div class="branch">
+              <h4><span class="lab">KILL</span> Mark it unresolvable</h4>
+              <p>
+                Three positions in the analysis folder get marked unresolvable rather than left
+                looking live, and the calendar row is removed. Honest, and it stops the item
+                silently discrediting the calendar.
+              </p>
+              <p class="cost">20 minutes · closes A2's only live test</p>
+            </div>
+          </div>
+          <div class="warn">
+            <span class="who">The thing I want to be plain about</span>
+            <b>Continuing to defer is the worst of the three options</b>, and it is what has
+            happened five times. A deferred item with no date is a decision nobody has made —
+            and this one is currently making the calendar look unreliable to every future agent
+            that reads it.
+          </div>
+        </div>
+      </article>
+
+      <!-- D3 -->
+      <article class="deck">
+        <div class="deck-head">
+          <span class="tag week">This week</span>
+          <h3 class="q">Does the essay-side work happen this cycle at all?</h3>
+          <span class="clock">shapes the week's plan</span>
+        </div>
+        <div class="deck-body">
+          <p class="context">
+            Three items were ranked as blocking the essay when the essay was recorded as the goal.
+            Under the corrected goal they are outcome-side: real, cleanly scoped, but downstream.
+            They have not gone away — they have been re-ranked, and I want to be sure that is
+            what you intended rather than something I inferred.
+          </p>
+          <div class="branches">
+            <div class="branch rec">
+              <h4><span class="lab">DEFER</span> Wait for the nexus work</h4>
+              <p>
+                Hold all three until the nexus work has something to say. The essay's shape may
+                change substantially once the money leg exists — polishing an opening for an
+                argument that is about to move is wasted effort.
+              </p>
+              <p class="cost">FINRA snapshot still happens 31 Aug</p>
+            </div>
+            <div class="branch">
+              <h4><span class="lab">NOW</span> Clear them this week</h4>
+              <p>
+                About two hours, and it puts a draft within reach. Worth it if you want something
+                publishable soon regardless of where the nexus work lands, or if a stalled
+                Gemini leaves a long gap to fill.
+              </p>
+              <p class="cost">~2 hours · unblocks a draft</p>
+            </div>
+          </div>
+          <div class="rec-line">
+            <span class="who">My recommendation</span>
+            <b>Defer — with the FINRA snapshot carved out.</b> That one decays and must happen on
+            31 August whatever else is true. The rest can wait without cost.
+          </div>
+        </div>
+      </article>
+
+      <!-- D4 -->
+      <article class="deck">
+        <div class="deck-head">
+          <span class="tag open">Unasked until now</span>
+          <h3 class="q">The four investor personas — live capability, or parked?</h3>
+          <span class="clock">couples to decision 2</span>
+        </div>
+        <div class="deck-body">
+          <p class="context">
+            You commissioned the personas to be <strong>run</strong> — fed forward-thinker input
+            and asked where impact is forming. They have been run once, on the third-derivative
+            material, and never on the shadow-debt, funding or collateral work. The research state
+            calls this the most obvious unexploited asset in the project, and it has sat idle
+            since. Under the corrected goal the question is sharper: is a Burry-lens or
+            Griffin-lens read of the collateral stack a real contribution to understanding the
+            nexus, or is it a different project that happens to live in the same folder?
+          </p>
+          <div class="branches">
+            <div class="branch">
+              <h4><span class="lab">LIVE</span> Run them on the nexus</h4>
+              <p>
+                A Griffin-lens read of who gets paid to absorb the basis trade, or a Burry-lens
+                read of the money-like reconciliation. Cheap, and likely to surface things the
+                generic passes did not.
+              </p>
+              <p class="cost">Makes decision 2 a DO</p>
+            </div>
+            <div class="branch">
+              <h4><span class="lab">PARK</span> Capability, not workstream</h4>
+              <p>
+                Keep the primers on file as a tool to reach for, stop treating persona work as
+                open. The panel's pre-registered positions get closed out rather than carried.
+              </p>
+              <p class="cost">Makes decision 2 a KILL</p>
+            </div>
+          </div>
+          <div class="rec-line">
+            <span class="who">Why this is on the page</span>
+            I have no recommendation here, and that is deliberate — <b>it depends on what you
+            wanted the personas for</b>, which is a question about your intent rather than about
+            the evidence. It is on the list because leaving it unasked is how the RTO item has
+            drifted for five sessions.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ STRUCTURE ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2>How they fit together</h2>
+      <span class="note">three lanes · one gate · one coupling</span>
+    </div>
+    <p class="lede">
+      The work runs in three lanes, one per goal row. The diagram shows what is gated, what is
+      free to start, and the one place where two decisions collapse into a single question.
+    </p>
+
+    <figure style="margin:0">
+      <div class="figure">
+        <svg viewBox="0 0 860 420" role="img" aria-label="Three-lane dependency diagram. Lane A12, the nexus goal, contains the interlock harvest which is free to start now, and the money leg and Singh denominator which are gated by the Gemini Group A result. Lane A11, the outcome, contains the deferred essay items and the FINRA snapshot which is fixed to 31 August. Lane A2, the personas, contains the RTO filings and the panel positions, which are coupled into a single decision.">
+
+          <!-- lane grounds -->
+          <rect class="svg-lane" x="96" y="34"  width="748" height="126" rx="3"></rect>
+          <rect class="svg-lane" x="96" y="180" width="748" height="94"  rx="3"></rect>
+          <rect class="svg-lane" x="96" y="294" width="748" height="104" rx="3"></rect>
+
+          <!-- lane labels -->
+          <text class="svg-lane-lab" x="8" y="82">A12 · THE GOAL</text>
+          <text class="svg-s"        x="8" y="98">the nexus</text>
+          <text class="svg-lane-lab" x="8" y="222">A11 · OUTCOME</text>
+          <text class="svg-s"        x="8" y="238">the essay</text>
+          <text class="svg-lane-lab" x="8" y="340">A2 · PERSONAS</text>
+          <text class="svg-s"        x="8" y="356">the panel</text>
+
+          <!-- lane divider -->
+          <line class="svg-rule" x1="88" y1="20" x2="88" y2="404"></line>
+
+          <!-- ===== A12 lane ===== -->
+          <!-- free node -->
+          <rect class="svg-node-go" x="118" y="52" width="176" height="52" rx="3"></rect>
+          <text class="svg-t" x="132" y="74">Interlock harvest</text>
+          <text class="svg-s" x="132" y="91">FREE TO START NOW</text>
+
+          <!-- gate -->
+          <rect class="svg-node-wait" x="360" y="52" width="150" height="52" rx="3"></rect>
+          <text class="svg-t" x="374" y="74">Gemini Group A</text>
+          <text class="svg-s" x="374" y="91">OUT NOW · GATE</text>
+
+          <!-- gated nodes -->
+          <rect class="svg-node" x="580" y="40" width="240" height="34" rx="3"></rect>
+          <text class="svg-t" x="594" y="61">Money leg — cash pools</text>
+          <rect class="svg-node" x="580" y="86" width="240" height="34" rx="3"></rect>
+          <text class="svg-t" x="594" y="107">Singh's denominator</text>
+
+          <!-- arrows from gate -->
+          <path class="svg-arrow" d="M510 70 H548 V57 H574"></path>
+          <path class="svg-arrow" d="M510 86 H548 V103 H574"></path>
+          <polygon points="574,53 582,57 574,61" fill="var(--rule-2)"></polygon>
+          <polygon points="574,99 582,103 574,107" fill="var(--rule-2)"></polygon>
+          <text class="svg-s" x="368" y="126">answer changes what these two ARE</text>
+
+          <!-- ===== A11 lane ===== -->
+          <rect class="svg-node" x="118" y="196" width="176" height="46" rx="3"></rect>
+          <text class="svg-t" x="132" y="216">Essay items ×3</text>
+          <text class="svg-s" x="132" y="232">DEFERRED</text>
+
+          <rect class="svg-node-hot" x="360" y="196" width="150" height="46" rx="3"></rect>
+          <text class="svg-t" x="374" y="216">FINRA snapshot</text>
+          <text class="svg-s" x="374" y="232">31 AUG · DECAYS</text>
+          <text class="svg-s" x="530" y="223">fixed date — not a decision</text>
+
+          <!-- ===== A2 lane ===== -->
+          <rect class="svg-node-hot" x="118" y="312" width="176" height="46" rx="3"></rect>
+          <text class="svg-t" x="132" y="332">RTO filings</text>
+          <text class="svg-s" x="132" y="348">OVERDUE 5 DAYS</text>
+
+          <rect class="svg-node" x="360" y="312" width="150" height="46" rx="3"></rect>
+          <text class="svg-t" x="374" y="332">Panel positions</text>
+          <text class="svg-s" x="374" y="348">×3 PRE-REGISTERED</text>
+
+          <path class="svg-arrow" d="M294 335 H354"></path>
+          <polygon points="354,331 362,335 354,339" fill="var(--rule-2)"></polygon>
+
+          <!-- coupling bracket -->
+          <path class="svg-arrow-hot" d="M118 372 V386 H510 V372"></path>
+          <text class="svg-s" x="196" y="401" style="fill:var(--clay)">DECISION 2 AND DECISION 4 ARE ONE QUESTION</text>
+        </svg>
+      </div>
+      <figcaption>
+        <b>Read it left to right.</b> Only one thing in the goal lane is free to start today; the
+        other two sit behind the Gemini gate, and its answer changes what they are rather than
+        just when they begin. <b>The dashed bracket is the finding:</b> the overdue RTO item exists
+        only to resolve the panel positions, so if the personas are parked the item is moot, and
+        if they are live it is worth doing. Answer decision 4 and decision 2 answers itself.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEFAULT ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2>If you say nothing</h2>
+      <span class="note">the path I take by default</span>
+    </div>
+    <p class="lede">
+      So that silence is a choice you can make deliberately rather than one that happens to you.
+    </p>
+    <div class="default">
+      <span class="head">Default sequence</span>
+      <ol>
+        <li><b>Start the interlock harvest today.</b> Nothing external, serves the goal, cannot be invalidated by the Gemini result.</li>
+        <li><b>Hold the essay items.</b> Except the FINRA snapshot, which I take on 31 August regardless.</li>
+        <li><b>Leave the RTO item overdue and flagged.</b> I will not quietly do it and I will not quietly kill it — both would be answering decision 4 on your behalf.</li>
+        <li><b>Treat the personas as parked but not closed.</b> No persona work starts without you saying so.</li>
+        <li><b>Fold the Gemini results in as soon as they land</b>, and re-rank the nexus tasks against what Group A says already exists.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <span>Nonbank–bank nexus programme</span>
+    <span>42 dead claims · 19 calendar rows · 1 overdue</span>
+    <span>Goal verified intact across three files</span>
+  </footer>
+
+</div>

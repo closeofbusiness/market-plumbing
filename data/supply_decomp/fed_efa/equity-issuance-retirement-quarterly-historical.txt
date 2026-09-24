@@ -1,0 +1,6 @@
+Date:					Quarterly observation date, end of period
+Issuance, Net:				Net equity issuance of domestic nonfinancial corporations, excluding eREITs. Defined as gross equity issuance less gross retirements. Data are reported in billions of dollars at a quarterly rate. Equals series FA103164155.Q of the Financial Accounts of the United States (https://www.federalreserve.gov/releases/Z1/Current/default.htm) divided by 4.
+Issuance, Gross:			Gross equity issuance measures the total value of funds raised by sale of new equity by domestic nonfinancial corporations, excluding eREITs.
+Retirement, Gross:			Gross equity retirement measures the total value of existing equity retired due to share repurchases and mergers and acquisitions.
+Retirements, Repurchases:		Total value of shares of equity retired due to repurchase by the issuer.
+Retirements, Mergers and Acquisitions:	Total value of shares of equity retired due to corporate mergers and acquisitions.

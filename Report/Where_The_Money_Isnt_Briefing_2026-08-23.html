@@ -1,0 +1,252 @@
+<title>Where the Money Isn't</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --paper:#F4F3EF; --surface:#FBFAF7; --surface-2:#ECEAE4;
+    --ink:#1A1D21; --ink-2:#3A4047; --muted:#5E6770;
+    --rule:#D9D6CF; --rule-2:#C4C0B7;
+    --copper:#9A5B2E; --copper-soft:#F0E3D8; --copper-ink:#6E3F1E;
+    --box:#FFFFFF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121417; --surface:#181B1F; --surface-2:#1F2328;
+      --ink:#E9E6DF; --ink-2:#C9C4BA; --muted:#928C82;
+      --rule:#2B2F35; --rule-2:#3A3F46;
+      --copper:#D1915E; --copper-soft:#2E2219; --copper-ink:#E5B48A;
+      --box:#1C2024;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121417; --surface:#181B1F; --surface-2:#1F2328;
+    --ink:#E9E6DF; --ink-2:#C9C4BA; --muted:#928C82;
+    --rule:#2B2F35; --rule-2:#3A3F46;
+    --copper:#D1915E; --copper-soft:#2E2219; --copper-ink:#E5B48A;
+    --box:#1C2024;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;font-variant-numeric:oldstyle-nums proportional-nums}
+  .page{max-width:720px;margin:0 auto;padding:clamp(28px,5vw,72px) clamp(18px,4vw,32px) 96px}
+
+  .kicker{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--copper);display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:22px}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:500;font-variation-settings:"opsz" 120;
+    font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 22px;text-wrap:balance}
+  .stand{font-family:Fraunces,Georgia,serif;font-weight:300;font-variation-settings:"opsz" 30;
+    font-size:clamp(1.15rem,2.4vw,1.36rem);line-height:1.45;color:var(--ink-2);margin:0 0 34px;max-width:60ch}
+  .stand em{font-style:italic;color:var(--ink)}
+  .byline{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.04em;
+    padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 18px}
+
+  h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-variation-settings:"opsz" 60;
+    font-size:1.55rem;line-height:1.2;letter-spacing:-.01em;margin:56px 0 6px;text-wrap:balance}
+  h2 + .rule{width:44px;height:2px;background:var(--copper);margin:0 0 20px}
+  h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:1.08rem;margin:30px 0 8px;line-height:1.35}
+  p{margin:0 0 16px;max-width:66ch}
+  p.lede{font-size:1.06rem}
+  strong{font-weight:600}
+  .small{font-size:.92rem;color:var(--ink-2)}
+
+  /* finding: big figure + text */
+  .finding{display:grid;grid-template-columns:minmax(150px,190px) 1fr;gap:10px 26px;margin:34px 0 10px;align-items:start}
+  .fig{font-family:Fraunces,Georgia,serif;font-weight:300;font-variation-settings:"opsz" 144;font-style:italic;
+    font-size:clamp(2.2rem,5vw,3rem);line-height:1;color:var(--copper);letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+  .fig small{display:block;font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:11px;letter-spacing:.06em;
+    color:var(--muted);margin-top:8px;line-height:1.45;text-transform:none;letter-spacing:.02em}
+  .finding h3{margin-top:2px}
+  .finding p{max-width:60ch}
+  @media (max-width:560px){.finding{grid-template-columns:1fr}.fig{font-size:2.4rem}}
+
+  /* diagram */
+  figure{margin:34px 0 8px}
+  .dia{background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:10px 8px 2px;overflow-x:auto}
+  .dia svg{display:block;min-width:640px;width:100%;height:auto}
+  figcaption{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);line-height:1.55;margin-top:10px;max-width:70ch}
+  .sv-col{fill:var(--surface-2)}
+  .sv-box{fill:var(--box);stroke:var(--rule-2);stroke-width:1}
+  .sv-box-c{fill:var(--copper-soft);stroke:var(--copper);stroke-width:1.2}
+  .sv-t{fill:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:12.5px;font-weight:600}
+  .sv-s{fill:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.02em}
+  .sv-h{fill:var(--copper);font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em}
+  .sv-a{stroke:var(--rule-2);stroke-width:1.4;fill:none}
+  .sv-ac{stroke:var(--copper);stroke-width:1.6;fill:none}
+
+  /* questions */
+  .ask{border:1px solid var(--rule-2);border-left:3px solid var(--copper);border-radius:0 2px 2px 0;background:var(--surface);padding:20px 22px;margin:26px 0}
+  .ask h3{margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.2rem}
+  .ask ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px}
+  .ask li{max-width:62ch}
+  .ask li b{font-weight:600}
+
+  ul.open{margin:0 0 16px;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+  ul.open li{max-width:64ch}
+
+  .sources{margin-top:54px;padding-top:16px;border-top:1px solid var(--rule);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);line-height:1.7}
+  a{color:var(--copper)}
+  a:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="page">
+
+<div class="kicker"><span>Research briefing</span><span>Shadow money · Collateral · The AI capex cycle</span><span>23 August 2026</span></div>
+
+<h1>Where the Money Isn't</h1>
+
+<p class="stand">We set out to find the hidden money creation behind a $400bn-a-year capital-spending boom. We did not find it. What we found instead is how the nonbank–bank nexus has re-plumbed itself around Basel III — and why the cash that feeds it answers to <em>the level of rates</em>, not to the supply of safe assets.</p>
+
+<div class="byline"><span>A working summary for discussion</span><span>All figures re-pulled from issuing sources, 22–23 Aug 2026</span><span>Claims killed along the way: 53 — one of them this morning's estimate of who holds the Hyperion notes</span></div>
+
+<h2>The question, and what it became</h2><div class="rule"></div>
+
+<p class="lede">The opening question was the intuitive one: American companies are spending several hundred billion dollars a year on data centres while the household saving rate falls — so where is the money coming from? If nobody is saving more and nobody is selling other assets, something, somewhere, must be creating purchasing power.</p>
+
+<p>That question was badly posed, and an external reviewer said so within minutes. In the Kalecki identity, falling household saving is one of the terms that <em>produces</em> corporate profits; US non-financial corporates have funded their capex entirely from internal funds, of which roughly 72 per cent is depreciation; the Financial Accounts' financing gap has been negative for four straight quarters; and gross private saving rose by more than a trillion dollars between 2019 and 2025. There was never an aggregate hole to fill.</p>
+
+<p>What remained was the better question underneath it. Zoltan Pozsar and Manmohan Singh argued in 2011 that banks are funded not only by household deposits but by asset managers, who sit on both sides of a single mechanism: they are the dominant demanders of <em>non-M2 money</em> — repo, bills, money-fund shares — and they are the "mines" from which dealers extract collateral through securities lending and prime brokerage. Their line is the one we have been testing: that collateral does work analogous to base money, and that a banking system can lever up with M2 perfectly stable, on the portfolio choices of the asset-management complex alone.</p>
+
+<p>So the project became an attempt to understand that nexus as it runs in 2026 — and to use the AI capex cycle, which is where the original worry lived, as the worked case.</p>
+
+<h2>How we worked</h2><div class="rule"></div>
+
+<p>Adversarially. Every load-bearing number was re-pulled from the publisher that issues it — the Financial Accounts, the OFR's money-fund monitor, the FDIC's bank-level API, SEC filings parsed directly, Treasury's debt tables — and every claim that failed a check was written into a register with the correct position beside it. Fifty-two entries so far, including several of our own and several imported from large language models we used as scouts. On that last point, one finding about method that an economist may find useful: asked to locate a series or a publisher, these models are good; asked to supply a series identifier, a page reference or a post-2020 citation, roughly half of what they return is constructed. We now ask them only where to look.</p>
+
+<h2>What we found</h2><div class="rule"></div>
+
+<div class="finding">
+  <div class="fig">$1.12trn<small>leases signed, not yet commenced · six filers · mid-2026</small></div>
+  <div>
+    <h3>The off-balance-sheet capex is a lease stack, not a guarantee</h3>
+    <p>The ghost figures circulating for hyperscaler lease commitments — $662bn, $970bn — turn out to have a mechanical cause: the commitments are disclosed in the notes by all six large filers and tagged in machine-readable form by none, so every aggregate in the press is somebody's hand-sum. Ours comes to $1.12trn. The contingent-guarantee layer alongside it is far smaller, $86bn live and $228bn contracted, and the price of that support is visible only where the <em>beneficiary</em> discloses it: one Bitcoin-miner-turned-data-centre developer paid $545m of warrants for a backstop worth roughly $87m of interest saving. What is being bought is not basis points but the existence of the financing.</p>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="fig">+$2.5trn<small>Treasury bills outstanding, Jun 2023 → Jul 2026</small></div>
+  <div>
+    <h3>Bill supply did not shrink private money. It drained the Fed.</h3>
+    <p>Pozsar's 2011 policy prescription was to manage bill supply as a macroprudential tool: more bills, less private shadow money. The US has since run that experiment at scale. Over the same window the Fed's overnight reverse-repo facility fell by $2.0trn to effectively nothing, and money funds' Treasury holdings rose by $2.2trn — the cash-pool vehicle rotated almost one-for-one out of the Fed and into bills. Every private money-like claim we can measure <em>rose</em>: uninsured deposits by a trillion, large time deposits by half a trillion, asset-backed commercial paper by a fifth of one. Over 2013–25 bills rose $5.0trn and the private stack rose $5.0trn. And in 2026 the Fed has re-entered as a buyer: its bill holdings are up $304bn this year, roughly 69 per cent of net issuance. The lever was pulled hard and hit the central bank's own balance sheet.</p>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="fig">0.13%<small>share of US corporate bonds held by money-market funds · 2026Q1</small></div>
+  <div>
+    <h3>The AI paper is held by long money</h3>
+    <p>Money funds hold $22bn of a $17.2trn corporate-bond stock. A filing-by-filing census of every money fund that names an AI issuer finds a quarter of a billion of commercial paper and about $4bn of repo collateral — one can see CoreWeave's 2032 convertible pledged inside a BlackRock money fund's overnight repo, which is the mechanism exactly, and it is de minimis. The bonds sit with the rest of the world, life insurers, mutual funds and pensions. Meta's $27bn Hyperion financing, the largest off-balance-sheet deal of the cycle, shows up in 324 registered-fund filings holding $9.8bn — a little over a third of the deal, $6.2bn of it in PIMCO's own mutual funds at one to two per cent of net assets; the other two-thirds sit in insurers' separate accounts and private vehicles. The one place the original intuition is literally true is bank credit — about $150bn outstanding against $450bn committed to AI-adjacent borrowers, plus project loans such as the $38bn Oracle–Vantage package in their months on bank balance sheets. Real, growing, a minority.</p>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="fig">$5.7trn<small>what money-fund assets "should" be on the 2013–21 ratio · actual $8.3trn</small></div>
+  <div>
+    <h3>Cash pools scale with the asset-management complex — until 2021</h3>
+    <p>From 2013 to 2021 the complex — mutual funds, ETFs, pensions, insurers — grew 66 per cent and money funds 71 per cent, institutional ones 80 per cent; corporate liquid assets have held at 22–24 per cent of corporate financial assets in every year since 2013. Pozsar's "reverse maturity transformation" is the right account of the level. It is not the account of what happened next: from 2021 the complex grew 16 per cent and money funds 59 per cent, retail ones 122 per cent. Households moved deposits to 5 per cent money funds; institutions moved $1.3trn above the structural norm across precisely the window in which uninsured deposits fell from $8.8trn to $7.2trn. That is one money form replacing another. The level of rates explains the surge, twice, from independent data.</p>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="fig">+$741bn<small>money-fund repo cleared at FICC, Jun 2023 → Jul 2026</small></div>
+  <div>
+    <h3>The plumbing has re-routed around the dealer</h3>
+    <p>When the cash left the Fed it did not only buy bills. Money funds' Treasury repo with non-Fed counterparties rose by $1.1trn, of which $741bn through FICC's sponsored service — cash pools funding the dealer–hedge-fund complex through a cleared conduit, with the dealer intermediating but not carrying. On the equity side, non-bank-sponsored asset-backed commercial paper conduits are now funding prime-brokerage margin loans: ABCP is up $67bn this year on the Fed's count and more on DTCC's, and the cost of financing equity longs has hit records while Treasury repo stays calm. Two conduits, one logic: Pozsar and Singh's "collateral mining via prime brokerage," rebuilt to step around the G-SIB surcharge. It is also the one channel two external review passes failed to name, and a newspaper did.</p>
+  </div>
+</div>
+
+<figure>
+  <div class="dia">
+    <svg viewBox="0 0 860 330" role="img" aria-label="Diagram of the nexus as it runs in 2026. Left column, cash pools: money funds $8.4trn, corporate liquid assets $8.5trn, AI capex firms' own cash $630bn, foreign official repo $373bn. Middle column, conduits and dealers: FICC sponsored repo, alternative ABCP conduits, dealer repo, bank deposits into loans. Right column: levered accounts (Treasury basis trade, equity margin) at the top, reached via the conduits; long money (insurers, funds, pensions) at the bottom, holding the AI bonds and SPV notes. The AI capex firms appear in both the left column as cash pools and the right column as issuers.">
+      <rect class="sv-col" x="12" y="36" width="250" height="280" rx="2"></rect>
+      <rect class="sv-col" x="304" y="36" width="250" height="280" rx="2"></rect>
+      <rect class="sv-col" x="596" y="36" width="252" height="280" rx="2"></rect>
+      <text class="sv-h" x="20" y="24">CASH POOLS · NON-M2 MONEY DEMAND</text>
+      <text class="sv-h" x="312" y="24">CONDUITS &amp; DEALERS</text>
+      <text class="sv-h" x="604" y="24">WHERE IT LANDS</text>
+
+      <!-- cash pools -->
+      <rect class="sv-box" x="24" y="50" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="34" y="68">Money-market funds</text><text class="sv-s" x="34" y="83">$8.4trn · OFR, Jul 2026</text>
+      <rect class="sv-box" x="24" y="100" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="34" y="118">Corporate liquid assets</text><text class="sv-s" x="34" y="133">$8.5trn · Z.1, 2026Q1</text>
+      <rect class="sv-box-c" x="24" y="150" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="34" y="168">AI capex firms' own cash</text><text class="sv-s" x="34" y="183">~$630bn · 10-Qs, mid-2026 · also issuers →</text>
+      <rect class="sv-box" x="24" y="200" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="34" y="218">Foreign official repo pool</text><text class="sv-s" x="34" y="233">$373bn · H.4.1</text>
+      <rect class="sv-box" x="24" y="250" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="34" y="268">Fed ON RRP</text><text class="sv-s" x="34" y="283">$0.2bn · was $2.5trn in 2022</text>
+
+      <!-- conduits -->
+      <rect class="sv-box-c" x="316" y="50" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="326" y="68">FICC sponsored repo</text><text class="sv-s" x="326" y="83">MMF side $1.1trn · +$741bn since Jun-23</text>
+      <rect class="sv-box-c" x="316" y="100" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="326" y="118">Alternative ABCP conduits</text><text class="sv-s" x="326" y="133">ABCP $488bn · +$67bn YTD · equity margin</text>
+      <rect class="sv-box" x="316" y="150" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="326" y="168">Dealer repo · balance-sheet bound</text><text class="sv-s" x="326" y="183">equity financing at records · Treasury calm</text>
+      <rect class="sv-box" x="316" y="200" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="326" y="218">Banks: deposits → loans</text><text class="sv-s" x="326" y="233">AI-adjacent C&amp;I $150bn out · $450bn committed</text>
+      <rect class="sv-box" x="316" y="250" width="226" height="40" rx="2"></rect>
+      <text class="sv-t" x="326" y="268">Treasury bills</text><text class="sv-s" x="326" y="283">$7.0trn · Fed buying 69% of 2026 net issuance</text>
+
+      <!-- landing -->
+      <rect class="sv-box-c" x="608" y="50" width="228" height="52" rx="2"></rect>
+      <text class="sv-t" x="618" y="68">Levered accounts</text><text class="sv-s" x="618" y="83">Treasury basis trade · equity margin</text><text class="sv-s" x="618" y="95">cash-pool money, via the conduits</text>
+      <rect class="sv-box" x="608" y="118" width="228" height="40" rx="2"></rect>
+      <text class="sv-t" x="618" y="136">Long money</text><text class="sv-s" x="618" y="151">insurers $3.9trn · funds $2.6trn · pensions $1.6trn</text>
+      <rect class="sv-box-c" x="608" y="168" width="228" height="52" rx="2"></rect>
+      <text class="sv-t" x="618" y="186">AI bonds, SPV notes, leases</text><text class="sv-s" x="618" y="201">MMFs hold 0.13% · repo collateral ~$4bn</text><text class="sv-s" x="618" y="213">Hyperion $27bn: ~⅓ registered funds, ⅔ long money</text>
+      <rect class="sv-box" x="608" y="236" width="228" height="54" rx="2"></rect>
+      <text class="sv-t" x="618" y="254">The bank loan</text><text class="sv-s" x="618" y="269">the one literal money-creation channel</text><text class="sv-s" x="618" y="281">~$150bn of ~$1.2trn AI-company debt</text>
+
+      <!-- arrows -->
+      <path class="sv-ac" d="M250 70 H310"></path><polygon points="310,66 318,70 310,74" fill="var(--copper)"></polygon>
+      <path class="sv-ac" d="M250 120 H310"></path><polygon points="310,116 318,120 310,124" fill="var(--copper)"></polygon>
+      <path class="sv-ac" d="M542 70 H602"></path><polygon points="602,66 610,70 602,74" fill="var(--copper)"></polygon>
+      <path class="sv-ac" d="M542 120 H580 V76 H602"></path>
+      <path class="sv-a" d="M542 220 H580 V262 H602"></path><polygon points="602,258 610,262 602,266" fill="var(--rule-2)"></polygon>
+      <path class="sv-a" d="M836 138 V168"></path><polygon points="832,166 836,174 840,166" fill="var(--rule-2)"></polygon>
+      <path class="sv-ac" d="M250 170 H290 V300 H700 V296"></path>
+      <text class="sv-s" x="430" y="312">the same firms: cash pool on the left, issuer on the right</text>
+    </svg>
+  </div>
+  <figcaption>The nexus as it runs in 2026. Copper marks where cash-pool money reaches levered positions without sitting on a dealer balance sheet, and where the capex firms appear on both sides. Figures are ours, from the issuing sources, dated June–August 2026.</figcaption>
+</figure>
+
+<h2>What it adds up to</h2><div class="rule"></div>
+
+<p>There is no hidden money creation behind the AI build-out, with one bounded exception: bank loans to AI-adjacent borrowers, around $150bn outstanding, which do create deposits in the textbook sense and which are a minority of roughly $1.2trn of AI-company debt. The bonds, the SPV notes and the lease commitments are funded by long money — insurers, pensions, bond funds, foreigners — and the daily-redeemable share of even the marquee deal is about a third: material, but a minority, and held at one to two per cent of net assets across 146 fund complexes. The fragility on that side, if there is one, is duration and operating leverage: flexible cost structures turned into bond-like overheads by $1.12trn of commitments that have not yet started.</p>
+
+<p>The nexus itself is very much alive, but it no longer runs through dealer balance sheets the way Pozsar and Singh drew it. It runs through conduits — sponsored repo for Treasury collateral, alternative ABCP for equity collateral — that let cash pools fund levered accounts while the dealer intermediates without carrying. The growth is measurable and recent.</p>
+
+<p>And the variable that moves the whole system is the policy rate, not the supply of safe assets. Pozsar's lever, pulled at scale, emptied the Fed's own facility and left private money untouched; asset-management growth explains the level of cash pools but not their surge; the surge is households and institutions following 5 per cent yields out of deposits. Nagel's account of the near-money premium — it follows the opportunity cost of holding money — fits both results, and the Fed's return as a bill buyer this year means the central bank is now the marginal cash pool as well as the marginal lender.</p>
+
+<p>One inversion is worth dwelling on. The firms doing the capex are themselves the largest corporate cash pools in the world — about $630bn of cash and short-term investments at mid-2026, up $240bn in two years, Alphabet alone at $243bn. They are on both legs of the nexus at once: the issuers of the long paper that insurers buy, and the largest demanders of the short safe assets the bill surge supplies. That is, by definition, what Pozsar and Singh were describing.</p>
+
+<h2>What we do not know</h2><div class="rule"></div>
+
+<ul class="open">
+  <li><b>A prediction with a number.</b> If the surge in cash pools is rate-driven, a material cut should pull money-fund assets toward $5.7–6trn. We have pre-registered it. If assets hold at $8trn through a cutting cycle, the structural account is wrong and something else is going on.</li>
+  <li><b>The size of the conduit channel.</b> We can see it in money-fund filings and in the CP data; we cannot yet see it whole. US securities-lending data under the SEC's new rule does not go public until March 2027, and the primary-dealer repo series by collateral type stopped being carried in 2021.</li>
+  <li><b>Who holds the other two-thirds.</b> A full census of the SEC's bulk fund filings puts registered funds at $9.8bn of the $27bn Hyperion notes. The rest is in insurers' separate accounts and private vehicles, which are not public in aggregate. The same is true for every SPV in the cycle.</li>
+  <li><b>Whether the capex firms hold each other's paper.</b> Alphabet's $187bn of marketable securities includes corporate bonds. If the AI complex's cash pools hold the AI complex's bonds, "who funds whom" has a reflexive answer.</li>
+  <li><b>The measurement structure.</b> Our channel map is nine sector silos, and the literature is clear that sector aggregates cannot separate credit creation from intermediation layering. The answer is a from-whom-to-whom matrix. Nobody has built one for the non-bank system; the G20 data-gaps programme names its absence as unresolved.</li>
+</ul>
+
+<div class="ask">
+  <h3>Three questions for a central-bank economist</h3>
+  <ol>
+    <li><b>The euro-area mirror.</b> The ECB's MMSR and the securities-holdings statistics by sector see the money-fund and repo side of this at transaction level. Does the euro area show the same conduit growth — cash pools funding levered accounts around dealer balance sheets — or is sponsored clearing a US artefact?</li>
+    <li><b>The buffer.</b> In the US the ON RRP absorbed the bill surge and then vanished. In the euro area the deposit facility and the excess-liquidity stock have played that role for longer. When Bubill and T-bill supply moved, did private money-like claims in Europe move the way they did in the US — which is to say, not at all?</li>
+    <li><b>The frame itself.</b> Pozsar and Singh's claim was that collateral matters as much as base money. When the central bank has become both the marginal buyer of bills and, through its facilities, the marginal cash pool, is that still the right frame — or has base money quietly reclaimed the ground?</li>
+  </ol>
+</div>
+
+<div class="sources">
+  Sources, all pulled 22–23 Aug 2026: Federal Reserve Z.1 Financial Accounts (11 Jun 2026 vintage) and H.4.1/H.6/H.8 via FRED · OFR Money Market Fund Monitor (N-MFP based) · FDIC BankFind API · US Treasury MSPD via FiscalData · SEC EDGAR Forms N-MFP3 and NPORT-P, parsed directly; SEC XBRL company facts · Federal Reserve Bank of Chicago, Chicago Fed Insights (2026) · Pozsar &amp; Singh, IMF WP/11/289 (Dec 2011); Pozsar, IMF WP/11/190 (Aug 2011) and OFR WP 2014-04 · Nagel (2016), QJE · FT Alphaville, 29 Jun and 21 Aug 2026 (claims, verified where possible). Press-sourced deal terms (Hyperion, Oracle–Vantage) are marked as such in the underlying notes.
+</div>
+
+</div>

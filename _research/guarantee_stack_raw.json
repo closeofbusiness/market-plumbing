@@ -1,0 +1,801 @@
+{
+ "issuers": [
+  {
+   "scope": "Meta Platforms (CIK 0001326801) and Alphabet (CIK 0001652044) only. Five primary documents read in full for the relevant notes, all fetched directly from SEC EDGAR Archives with a descriptive User-Agent: Meta 10-Q for Q2 2026 (filed 2026-07-30, acc. 0001628280-26-050705); Meta 10-Q for Q1 2026 (filed 2026-04-30, acc. 0001628280-26-028526, pulled solely to verify the external reviewer's $45.99bn); Meta 10-K FY2025 (filed 2026-01-29, acc. 0001628280-26-003942); Alphabet 10-Q for Q2 2026 (filed 2026-07-23, acc. 0001652044-26-000071); Alphabet 10-K FY2025 (filed 2026-02-05, acc. 0001652044-26-000018). Notes read: Variable Interest Entities; Non-Marketable Equity Investments (Meta's VIE disclosure lives here, not in a separately-headed VIE note); Leases; Commitments and Contingencies; Financial Guarantees; Indemnifications; the derivative gross-notional table; and the MD&A \"Purchase Commitments and Other Contractual Obligations\" / \"Leases and Contractual Commitments\" sections. Every document fetched successfully; no substitutions were made. No press coverage, aggregator or analyst note was used. Securities-based lending, NAV loans, portfolio margin and internalised synthetic prime are OUT of scope by instruction and were not examined.",
+   "headline": "The charge does not survive: the number exists and is disclosed. The largest single figure in my scope that measures the created-creditworthiness mechanism itself is Meta's $46.03bn maximum exposure to loss on the Louisiana Venture at 30 Jun 2026 (10-Q Note 5) \u2014 the external reviewer's $45.99bn is CONFIRMED verbatim at 31 Mar 2026 and is now superseded. The more consequential finding is Alphabet: it runs the same mechanism through a different instrument and it is also quantified \u2014 $43.785bn of credit-derivative notional at 30 Jun 2026, described by Alphabet as backstops of third-party data-centre payment obligations and as the maximum potential amount of future payments. That line was $16.94bn at 31 Dec 2025 and $0 at 31 Dec 2024: zero to $43.8bn in eighteen months. Adding Alphabet's $7.6bn of energy-infrastructure financial guarantees \u2014 Alphabet itself pairs the two in one MD&A sentence \u2014 gives $51.4bn of Alphabet contingent-support ceiling at 30 Jun 2026, up from $22.64bn six months earlier. Separately and on a single clean basis, ASC 842 leases not yet commenced at the same 30 Jun 2026 date sum legitimately to $364.19bn across the two filers (Meta $278.99bn + Alphabet $85.2bn), against $162.27bn at 31 Dec 2025.",
+   "disclosures": [
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Maximum exposure to loss, unconsolidated VIE (the Louisiana data centre 'Venture')",
+     "amount": "$46.03 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments, sub-heading 'Non-Marketable Equity Investments Under Equity Method'",
+     "basis": "ASC 810-10-50-4 maximum exposure to loss in a non-consolidated VIE. Meta names four components: carrying value of its equity investment, the lease commitments, estimated future funding commitments, and the maximum RVG threshold.",
+     "verbatim_qualifier": "Meta: 'RVG payments are not probable, and therefore no liability has been recorded to date.'"
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-04-30, acc. 0001628280-26-028526",
+     "period": "As of 2026-03-31",
+     "disclosure_type": "Maximum exposure to loss, unconsolidated VIE (the Venture) \u2014 VERIFICATION of the external reviewer's template figure",
+     "amount": "$45.99 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments, sub-heading 'Non-Marketable Equity Investments Under Equity Method'",
+     "basis": "ASC 810-10-50-4 maximum exposure to loss. CONFIRMED verbatim against the filing text; the external review was correct. Now superseded by the 30 Jun 2026 figure.",
+     "verbatim_qualifier": "Meta: 'RVG payments are not probable, and therefore no liability has been recorded to date.'"
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-K, filed 2026-01-29, acc. 0001628280-26-003942",
+     "period": "As of 2025-12-31",
+     "disclosure_type": "Maximum exposure to loss, unconsolidated VIE (the Venture)",
+     "amount": "$45.95 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "ASC 810-10-50-4. The 10-K is the only one of the three filings that discloses one component inline: it states the figure consists of $1.83bn carrying value plus the lease commitments, estimated future fundings and the maximum RVG threshold.",
+     "verbatim_qualifier": "Meta: RVG payments 'are not probable and therefore, no liability has been recorded.'"
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Maximum exposure to loss, all OTHER unconsolidated VIEs (separate from the Venture)",
+     "amount": "$6.41 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "ASC 810-10-50-4. Composition differs from the Venture figure: this one is stated to represent only the carrying value of the investments including Meta's share of net earnings from equity-method investees. Was $5.58bn at 31 Dec 2025 and $5.79bn at 31 Mar 2026."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Residual value guarantee \u2014 aggregate threshold provided to the Louisiana Venture",
+     "amount": "Approximately $28 billion, described as decreasing over time",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "Residual value guarantee attaching to lessee lease arrangements. No liability recognised. This amount is a COMPONENT of the $46.03bn above, not additive to it. Meta's maximum payment is stated as the shortfall between fair value at the time and the RVG threshold, not the threshold itself.",
+     "verbatim_qualifier": "Meta: 'RVG payments are not probable, and therefore no liability has been recorded to date.'"
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Aggregate initial lease commitment to the Venture (leases commencing 2029)",
+     "amount": "Approximately $12.31 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "ASC 842 lease commitment, not yet commenced. A COMPONENT of the $46.03bn. Initial four-year term per property with renewals to a total period of up to 20 years."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Carrying value of equity investment in the Venture (20% membership interest)",
+     "amount": "$2.92 billion",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "Equity method, within non-marketable equity investments. A COMPONENT of the $46.03bn. Was $1.83bn at 31 Dec 2025 and $2.37bn at 31 Mar 2026."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-K, filed 2026-01-29, acc. 0001628280-26-003942",
+     "period": "Venture formed October 2025; disclosed as of 2025-12-31",
+     "disclosure_type": "Total estimated development costs of the Venture, funded pro rata by the parties",
+     "amount": "Approximately $27 billion total (Meta holds 20%). At formation Meta contributed $4.30bn of held-for-sale assets net of liabilities and received a one-time distribution of $2.55bn.",
+     "footnote": "Note 5 \u2014 Non-Marketable Equity Investments",
+     "basis": "Funding commitment disclosure. Meta's unfunded share is the 'estimated future funding commitments' component of the maximum-exposure figure and is the ONLY one of the four named components never separately quantified in any of the three filings."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Operating and finance leases NOT YET COMMENCED (off balance sheet)",
+     "amount": "Approximately $278.99 billion",
+     "footnote": "Note 9 \u2014 Commitments and Contingencies, sub-heading 'Leases and Contractual Commitments' (repeated verbatim in MD&A)",
+     "basis": "ASC 842, undiscounted lease obligations not yet recorded. Data centres, colocations and network infrastructure; commencing remainder of 2026 through 2036; terms from greater than one year to 30 years. No operating/finance split is given."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-K, filed 2026-01-29, acc. 0001628280-26-003942",
+     "period": "As of 2025-12-31",
+     "disclosure_type": "Operating and finance leases NOT YET COMMENCED (off balance sheet)",
+     "amount": "Approximately $103.77 billion",
+     "footnote": "Note 7 \u2014 Leases",
+     "basis": "ASC 842, undiscounted, not yet recorded. Commencing 2026 to 2030, terms greater than one year to 30 years. Comparative to the $278.99bn above: a 169% increase in six months."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "Entered July 2026; disclosed in the filing covering the quarter ended 2026-06-30",
+     "disclosure_type": "Additional data centre leases entered after the balance sheet date",
+     "amount": "Approximately $68 billion",
+     "footnote": "Note 9 \u2014 Commitments and Contingencies",
+     "basis": "ASC 842 lease obligations, post-balance-sheet. Expected to commence 2027 and 2028, terms of 18 to 20 years. NOT included in the $278.99bn \u2014 do not add it to a 30 Jun 2026 stock without saying so."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Non-cancelable contractual commitments (purchase obligations)",
+     "amount": "$349.31 billion, of which approximately $53.52 billion due in 2026 and $81.65 billion in 2027",
+     "footnote": "Note 9 \u2014 Commitments and Contingencies",
+     "basis": "Non-cancelable purchase/contractual commitment disclosure, not a codified fair-value or exposure measure. Mostly third-party cloud capacity, servers and network infrastructure, data centres, Reality Labs hardware. Was $131.05bn at 31 Dec 2025 (10-K Note 11) \u2014 a 167% increase in six months."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Contingent obligation to purchase cloud capacity",
+     "amount": "Up to $14.72 billion over a five-year period",
+     "footnote": "Note 9 \u2014 Commitments and Contingencies",
+     "basis": "Contingent purchase obligation, separate from and additional to the $349.31bn. Reducible if the cloud service provider resells the capacity to other customers."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Restricted cash equivalents held in escrow under multi-year infrastructure purchase agreements",
+     "amount": "$10.80 billion of money market funds reclassified as restricted",
+     "footnote": "Note 9 \u2014 Commitments and Contingencies, and Note 4 \u2014 Financial Instruments",
+     "basis": "Restricted cash. Included here because it is a rare instance of a contingent infrastructure obligation being COLLATERALISED IN CASH rather than left as a contingent guarantee. Expected to be released between 2028 and 2030."
+    },
+    {
+     "filer": "Meta Platforms",
+     "form": "10-Q, filed 2026-07-30, acc. 0001628280-26-050705",
+     "period": "Agreement entered July 2026; closing expected Q3 2026",
+     "disclosure_type": "SECOND venture \u2014 El Paso, Texas data centre campus, 20% membership interest: residual value guarantees to be provided",
+     "amount": "Maximum aggregate exposure of approximately $13 billion. Meta expects to contribute approximately $2.3 billion of held-for-sale assets net of liabilities and receive a one-time distribution of approximately $1 billion.",
+     "footnote": "Note 13 \u2014 Subsequent Event",
+     "basis": "Pre-closing subsequent event. No maximum-exposure-to-loss figure exists yet because the entity is not yet formed and no VIE assessment is disclosed. This is the Louisiana template being run a second time \u2014 one filer replicating its own structure, NOT independent corroboration.",
+     "verbatim_qualifier": "Meta: 'subject to the execution of definitive agreements and customary closing conditions.'"
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Credit derivatives \u2014 gross notional, being backstops of third-party data-centre payment obligations",
+     "amount": "$43,785 million ($43.8 billion)",
+     "footnote": "Note 3 \u2014 derivative gross notional table, under 'Derivatives Not Designated as Hedging Instruments'; cross-referenced from Note 5 \u2014 Variable Interest Entities",
+     "basis": "ASC 815 credit derivative notional, which Alphabet states represents the maximum potential exposure to future payments in specified default scenarios. Remaining terms up to 15 years, reducing as underlying parties pay. THIS IS ALPHABET'S ANALOGUE OF THE META RVG \u2014 same economic function, different instrument and different standard. Was $16,940m at 31 Dec 2025 and $0 at 31 Dec 2024.",
+     "verbatim_qualifier": "Alphabet: 'These potential inflows are not reflected in the notional amounts for credit derivatives.'"
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-K, filed 2026-02-05, acc. 0001652044-26-000018",
+     "period": "As of 2025-12-31 (with 2024-12-31 comparative)",
+     "disclosure_type": "Credit derivatives \u2014 gross notional, data-centre lease backstop obligations",
+     "amount": "$16,940 million at 31 Dec 2025; $0 at 31 Dec 2024",
+     "footnote": "Note 3 \u2014 derivative gross notional table, footnote (1)",
+     "basis": "ASC 815 credit derivative notional described as the maximum potential amount of future payments in certain default scenarios over remaining agreement periods of up to 15 years. The $0 prior-year comparative is the single most important datum here: the instrument did not exist at the start of 2025.",
+     "verbatim_qualifier": "Alphabet: amounts receivable on default 'are not reflected in the notional amounts for credit derivatives.'"
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Financial guarantees \u2014 maximum potential amount of future payments (backstops supporting counterparty procurement of long-lead-time equipment for future power purchase and energy agreements)",
+     "amount": "$7.6 billion",
+     "footnote": "Note 10 \u2014 Commitments and Contingencies, sub-heading 'Financial Guarantees'",
+     "basis": "ASC 460 guarantee disclosure. Terms through September 2026. Alphabet may receive certain assets if it pays. Was $5.7 billion at 31 Dec 2025 (10-K Note 10, terms then through August 2026).",
+     "verbatim_qualifier": "Alphabet: 'The fair value of these obligations was not material.'"
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Future funding commitments to unconsolidated VIEs (private companies and renewable energy entities)",
+     "amount": "$21.9 billion, of which $20.0 billion is a contingent future capital funding commitment to a single unnamed private company",
+     "footnote": "Note 5 \u2014 Variable Interest Entities",
+     "basis": "Stated by Alphabet as part of the maximum exposure to those VIEs, which it describes as generally limited to current carrying value plus future funding commitments. Was $1.1 billion at 31 Dec 2025 and $1.5 billion at 31 Dec 2024. The $20.0bn is contingent on achievement of specified operational and financial milestones through 2030 and is accounted for as an equity derivative (notional $20,000m in the Note 3 table, $0 at 31 Dec 2025). The counterparty is NOT named in the filing and I have not inferred one."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Leases NOT YET COMMENCED (off balance sheet), primarily data centres",
+     "amount": "$85.2 billion",
+     "footnote": "Note 4 \u2014 Leases",
+     "basis": "ASC 842, future lease payments not yet recorded. Commencing 2026 to 2031, non-cancelable terms between one and 26 years. Separately, a June 2026 short-term lease with a non-cancelable commitment of approximately $5.8 billion commences in Q3 2026."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-K, filed 2026-02-05, acc. 0001652044-26-000018",
+     "period": "As of 2025-12-31",
+     "disclosure_type": "Leases NOT YET COMMENCED (off balance sheet), primarily data centres",
+     "amount": "$5.8 billion short-term and $52.7 billion long-term, i.e. $58.5 billion total",
+     "footnote": "Note 4 \u2014 Leases",
+     "basis": "ASC 842, not yet recorded. Commencing 2026 to 2031, terms primarily between one and 25 years. Note the presentation change: the 10-K splits short/long-term, the Q2 10-Q gives a single figure."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-K, filed 2026-02-05, acc. 0001652044-26-000018",
+     "period": "January 2026 (subsequent to the 31 Dec 2025 balance sheet date)",
+     "disclosure_type": "Power purchase agreement expected to be accounted for as a lease",
+     "amount": "$9.9 billion of future payments between 2027 and 2047, or a one-time payment of approximately $3.5 billion plus assumption of ownership of the power generating assets if certain contractual conditions are not met",
+     "footnote": "Note 4 \u2014 Leases",
+     "basis": "ASC 842 expected lease treatment, contingent on agreement terms. A contingent bifurcated outcome, disclosed but not recorded."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Contractual obligations under contracts with remaining terms greater than one year \u2014 expected future fixed or guaranteed commitments",
+     "amount": "$707.0 billion, the significant majority relating to long-term supply agreements",
+     "footnote": "Note 10 \u2014 Commitments and Contingencies, sub-heading 'Commitments'",
+     "basis": "Narrative commitment disclosure, not a codified measure. Long-term supply agreements for technical infrastructure and inventory components, energy service agreements (terms two to 26 years, obligations through 2054, generally with take-or-pay provisions and substantive termination fees), and content licensing. Expected generally to be fulfilled through 2030."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Purchase commitments and other contractual obligations (MD&A presentation)",
+     "amount": "$811.0 billion total, of which $200.7 billion short-term",
+     "footnote": "MD&A, 'Purchase Commitments and Other Contractual Obligations'",
+     "basis": "Narrative MD&A disclosure. NOTE THE $104bn GAP against the $707.0bn in Note 10 of the same filing: the MD&A figure additionally captures open purchase orders, while Note 10 is limited to contracts with remaining terms greater than one year. Two different numbers for overlapping concepts inside one document \u2014 exactly the seam an unprovenanced aggregate escapes through. Comparative: $149.1 billion at 31 Dec 2025 (10-K MD&A), of which $113.0 billion short-term."
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Agreement to provide FUTURE backstops for data centre and energy supply infrastructure build-out",
+     "amount": "Estimated $24.1 billion",
+     "footnote": "MD&A, 'Purchase Commitments and Other Contractual Obligations', cross-referencing Note 3",
+     "basis": "An estimate of future guarantee capacity, not a current guarantee. NOT included in the $43.8bn credit derivative notional or the $7.6bn financial guarantees, and must not be added to them as if it were a present obligation.",
+     "verbatim_qualifier": "Alphabet: 'subject to finalization of terms with data center providers.'"
+    },
+    {
+     "filer": "Alphabet",
+     "form": "10-Q, filed 2026-07-23, acc. 0001652044-26-000071",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Combined backstop exposure as Alphabet itself presents it in a single sentence",
+     "amount": "$7.6 billion (financial guarantees) and $43.8 billion (credit derivatives) = $51.4 billion",
+     "footnote": "MD&A, 'Purchase Commitments and Other Contractual Obligations'",
+     "basis": "Both are disclosed by Alphabet under the common phrase 'maximum potential amount of future payments'. The pairing is the FILER'S OWN, not my construction \u2014 which is what licenses treating them as one measurement concept despite sitting under ASC 460 and ASC 815 respectively. Comparative at 31 Dec 2025: $5.7bn + $16.9bn = $22.64 billion.",
+     "verbatim_qualifier": "Alphabet: backstops 'with maximum potential amount of future payments of $7.6 billion and $43.8 billion, respectively.'"
+    }
+   ],
+   "what_is_not_disclosed": "THE COMPONENTS OF META'S HEADLINE NUMBER ARE NOT TABULATED. Meta names four components of the $46.03bn but never itemises them. Three are quantified elsewhere in the same note (equity carrying value $2.92bn; lease commitments ~$12.31bn; maximum RVG threshold ~$28bn). The fourth \u2014 \"estimated future funding commitments\" \u2014 is quantified NOWHERE in any of the three filings. Those three named components total $43.23bn, leaving a $2.80bn arithmetic residual. I flag explicitly that $2.80bn IS A RESIDUAL I COMPUTED, NOT A DISCLOSURE, and it must never be cited as one; it is also only as good as the \"approximately\" attaching to the $28bn and $12.31bn, either of which could absorb it entirely.\n\nTHE FINANCING BENEFIT \u2014 THE ENTIRE HUT 8 MECHANISM \u2014 IS QUANTIFIED BY NEITHER FILER. Meta does not disclose the Venture's own debt, its coupon, its rating, or whether the RVG and the lease are what made that debt investment grade. Alphabet does not disclose what its backstop does to the backstopped party's cost of capital. The ~100bp/halving-of-financing-cost effect is real in the Hut 8 case but it is nowhere in these filings. The created creditworthiness is visible only as the guarantor's contingent ceiling, never as the beneficiary's saved basis points. Both filers do report the fair value of the enhancement as effectively nil \u2014 Meta records no liability, Alphabet calls the financial guarantee fair value \"not material\" \u2014 which is precisely the accounting reason the value transferred is invisible.\n\nALPHABET DISCLOSES NO AGGREGATE MAXIMUM EXPOSURE TO LOSS AT ALL. Say this plainly: Alphabet's Note 5 has no Meta-style single number. For three of its four unconsolidated-VIE categories it only DEFINES the ceiling and points elsewhere \u2014 data-centre leases to Note 4, credit backstops to Note 3, energy backstops to Note 10. Only the funding-commitment category ($21.9bn) is quantified inside the VIE note. The numbers exist, but the reader must assemble them across three notes and the MD&A, and Alphabet never states an ASC 810 total. So the answer to \"does Alphabet disclose a guarantee or VIE exposure of the Meta type?\" is: YES in substance and YES in quantum, but NO in the form Meta uses, and no aggregate is offered.\n\nALPHABET'S BACKSTOP CEILING IS GROSS AND THE OFFSETS ARE UNQUANTIFIED. Alphabet says that on default it may receive equity or cash from counterparties, or may assume the leases for internal use or sublease them, and states these inflows are excluded from the notional. It never quantifies them. The $43.8bn is therefore a gross ceiling with an unmeasured recovery leg.\n\nALPHABET DOES NOT IDENTIFY OR STRATIFY ITS COUNTERPARTIES. No names, no credit quality, no per-counterparty notional, no concentration disclosure, and no split of the $43.8bn between VIE and non-VIE counterparties. The $20.0bn milestone-contingent funding commitment likewise names no counterparty; I did not infer one.\n\nMETA GIVES NO OPERATING/FINANCE SPLIT of the $278.99bn not-yet-commenced, and no maturity schedule for it \u2014 only a 2026-2036 window and a one-to-30-year term range.\n\nTHE EL PASO VENTURE HAS NO MAXIMUM EXPOSURE FIGURE YET. Only the ~$13bn RVG ceiling and the ~$2.3bn contribution are given; there is no VIE consolidation assessment because the entity is not yet formed.\n\nNEITHER FILER DISCLOSES THE OVERLAP BETWEEN ITS OWN NUMBERS. Meta's ~$12.31bn Venture lease commitment commences in 2029 and is therefore almost certainly inside the $278.99bn of not-yet-commenced leases as well as inside the $46.03bn maximum exposure \u2014 but Meta never says so. Anyone adding those two Meta figures may be double-counting ~$12.31bn. Likewise Alphabet's data-centre-VIE finance leases sit inside the Note 4 lease totals, and Alphabet says so but gives no amount.\n\nNO PARTY QUANTIFIES THE POPULATION. Neither filer says how many VIEs, how many backstopped counterparties, or how many campuses. The count behind every one of these aggregates is undisclosed.",
+   "summable": "WHAT MAY LEGITIMATELY BE ADDED.\n\n(1) ASC 842 leases not yet commenced, at 30 Jun 2026 \u2014 the cleanest sum available. Meta $278.99bn + Alphabet $85.2bn = $364.19 BILLION. Same standard, same disclosure concept (undiscounted future payments on executed leases not yet recorded), same as-of date, both taken from the Leases/Commitments notes of 10-Qs filed a week apart. Comparative at 31 Dec 2025: Meta $103.77bn + Alphabet $58.5bn = $162.27bn. So this basis grew 124% in six months across my two filers. Add-on items that must be listed SEPARATELY and not folded in: Meta's ~$68bn of July 2026 leases (post-balance-sheet), Alphabet's ~$5.8bn June 2026 short-term lease commencing Q3, and Alphabet's $9.9bn PPA-as-lease (January 2026, contingent).\n\n(2) Meta's ASC 810 maximum exposure to loss, within Meta only. $46.03bn (Venture) + $6.41bn (other unconsolidated VIEs) = $52.44 BILLION at 30 Jun 2026. Both carry Meta's own label \"maximum exposure to loss\" and sit in consecutive sentences of Note 5. Caveat to state whenever this is used: the two are compositionally unlike \u2014 the Venture figure bundles equity carrying value, lease commitments, funding commitments and an RVG threshold, while the other is carrying value only. Same basis, different content.\n\n(3) Alphabet's \"maximum potential amount of future payments\", within Alphabet only. $7.6bn financial guarantees + $43.8bn credit derivatives = $51.4 BILLION at 30 Jun 2026, against $22.64bn at 31 Dec 2025. Strictly these sit under different codification homes (ASC 460 and ASC 815), which would normally bar the sum \u2014 but ALPHABET ITSELF ADDS THEM IN ONE MD&A SENTENCE under one shared phrase. The filer's own presentation is the warrant. I would not have summed them otherwise.\n\nWHAT MAY NOT BE ADDED.\n\n(a) META'S $46.03bn AND ALPHABET'S $51.4bn MUST NOT BE SUMMED. They measure the same economic phenomenon through incompatible disclosures: one is an ASC 810 VIE maximum exposure to loss, the other a pair of ASC 460/815 guarantee ceilings. Report them side by side, never as ~$97bn.\n\n(b) META'S ~$28bn RVG IS ALREADY INSIDE THE $46.03bn. Adding it is a straight double count. The same goes for the ~$12.31bn lease commitment and the $2.92bn carrying value.\n\n(c) THE PURCHASE-OBLIGATION FIGURES ARE THE MOST DANGEROUS ON THIS PAGE. Meta's $349.31bn \"non-cancelable contractual commitments\" and Alphabet's $811.0bn \"purchase commitments and other contractual obligations\" are narrative disclosures under no common standard, with different scopes and different cancellation conventions. Alphabet's own filing carries TWO different figures for overlapping concepts \u2014 $811.0bn in MD&A versus $707.0bn in Note 10 \u2014 differing by $104bn purely on whether open purchase orders are included. A \"Meta plus Alphabet purchase obligations\" total is therefore either $1,160bn or $1,056bn depending on an undisclosed scoping choice. I do not endorse either as a sum.\n\n(d) MAXIMUM EXPOSURE FIGURES MAY NOT BE ADDED TO LEASE OR PURCHASE FIGURES. Stock versus stock, but different regimes and heavily overlapping populations.\n\nSTOCK, NOT FLOW, AND CEILING, NOT EXPECTATION. Every figure above is a point-in-time stock and every \"maximum exposure\" is an upper bound under an adverse scenario the filers say is not probable. None is an expected loss, a drawdown, or an annual rate. The six-month growth rates I cite are differences between two stocks, not flows.\n\nON THE INDEPENDENCE TEST \u2014 this matters given the project's repeated failure mode. Meta and Alphabet do NOT share disclosure language here. Meta gives one bundled ASC 810 maximum-exposure number for a named joint venture with an RVG; Alphabet decomposes by instrument into credit derivatives, financial guarantees, finance leases and funding commitments, and offers no aggregate. Different structures, different standards, different words. These are TWO GENUINELY INDEPENDENT DISCLOSURES of the same mechanism, and that is the strongest thing in this report. The one place I DID find template repetition is inside Meta alone: the El Paso RVG sentence in Note 13 mirrors the Louisiana RVG sentence in Note 5 almost exactly. That is one filer reusing its own structure a second time \u2014 evidence the template is being scaled, but ONE fact, not two.\n\nON THE $662bn AND $970bn GHOSTS. Neither is reproducible from my two filers on any basis. My clean lease sum is $364.19bn; the two purchase-obligation totals are $1,056bn or $1,160bn. Nothing in Meta's or Alphabet's filings produces $662bn or $970bn, and I found no primary source for either.\n\nVERDICT ON THE CHARGE. No retreat is warranted. The measurable cooperated. The mechanism is disclosed, it is quantified by both filers, and on the one basis where a cross-filer sum is legitimate it is $364.19bn at 30 Jun 2026. The single most telling datum is not a level but a trajectory that required no estimation at all: Alphabet's data-centre credit backstops went $0 at 31 Dec 2024, $16.94bn at 31 Dec 2025, $43.79bn at 30 Jun 2026, with a further $24.1bn of backstop capacity agreed and awaiting final terms.",
+   "counterparty_note": "The receiving side is essentially absent from these two filings, and that asymmetry is itself the finding. Meta names no counterparty to the Louisiana Venture, gives no counterparty to the El Paso venture, and does not name the cloud provider behind the $14.72bn contingent capacity obligation or the counterparties to the $10.80bn of escrowed infrastructure purchase agreements. Alphabet names no backstopped data-centre counterparty, no energy-infrastructure counterparty, and does not name the private company behind the $20.0bn milestone-contingent funding commitment; I deliberately did not infer an identity for any of them. So the guarantor discloses a ceiling while the beneficiary is unidentified in the guarantor's own filing \u2014 meaning the obligation can only be matched to the receiving side by going to the beneficiary's filings, which for private JVs and private companies may not exist at all. Where the receiving side IS a public filer, the same obligation should appear as the credit support behind rated project debt: the Hut 8 case in the confirmed template is the demonstration \u2014 the lease guarantee is what the rating agency underwrites, and it shows up in the ISSUER's offering documents and rating rationale, not in the guarantor's footnote. Two structural asymmetries follow and both should be stated whenever this work is used. First, DIRECTIONAL: the guarantor discloses a maximum ceiling with no liability recorded and a fair value called not material, while the beneficiary books real debt at a real coupon; the guarantee is a liability nowhere and an asset nowhere, yet it is priced in the beneficiary's spread. Second, WITHIN ALPHABET, a partial internal counterparty match does exist and is worth noting: Alphabet states that on default under the backstops it retains the right to assume the underlying leases for internal use or to sublease to third parties, and may extinguish the obligation by a termination payment partially offset by equity or cash receipts from counterparties \u2014 so Alphabet has told us a recovery leg exists on the receiving side, and then declined to quantify any part of it. Note finally that Alphabet's Q2 2026 GFiber transaction (contributing a wholly owned subsidiary into a newly formed entity for $1.5bn cash and a $2.0bn instrument) appears in both the notes and MD&A but carries no guarantee or maximum-exposure disclosure, so I did not treat it as an instance of this mechanism."
+  },
+  {
+   "scope": "Microsoft (CIK 0000789019), Amazon (CIK 0001018724) and Oracle (CIK 0001341439), with Oracle prioritised. Sources read: Oracle 10-K FY2026 (period 2026-05-31, filed 2026-06-22, acc 0001193125-26-277521), Oracle 10-Q Q3 FY2026 (period 2026-02-28, acc 0001193125-26-101045), Oracle 10-K FY2025 (period 2025-05-31, acc 0000950170-25-087926); Microsoft 10-K FY2026 (period 2026-06-30, filed 2026-07-29, acc 0001193125-26-323660), Microsoft 10-K FY2025 (period 2025-06-30, acc 0000950170-25-100235); Amazon 10-Q Q2 2026 (period 2026-06-30, filed 2026-07-31, acc 0001018724-26-000026), Amazon 10-Q Q1 2026 (period 2026-03-31, acc 0001018724-26-000014), Amazon 10-K FY2025 (period 2025-12-31, filed 2026-02-06, acc 0001018724-26-000004). Note: Oracle's latest filing is the FY2026 10-K, not a 10-Q \u2014 its FY ends 31 May, so no interim filing exists after 22 June 2026. Method: primary documents pulled from SEC Archives, read as text, then the load-bearing figures re-verified two ways \u2014 against the raw un-stripped HTML, and against the SEC XBRL companyfacts API. Arithmetic cross-checks were run on both the Microsoft and Amazon commitment tables and both foot to the stated totals.",
+   "headline": "The measurable cooperated. The charge does not stand. Leases signed but not yet commenced \u2014 one disclosure, one standard (ASC 842), all three filers \u2014 total $726.3bn: Microsoft $329.1bn (30 Jun 2026), Oracle $260bn (31 May 2026), Amazon $137.2bn (30 Jun 2026). That is a legitimate same-basis sum and it is roughly 3x the ~$232bn the same three filers disclosed a year earlier. Separately, and this is the find: Oracle discloses an actual EXTENDED guarantee \u2014 \"up to $3.3 billion of the lessor's borrowing\" on a datacentre lease, up from $2.2bn one quarter earlier. That is created creditworthiness, quantified, in a filing. It is the only one of its kind among the three. Neither $662bn nor $970bn reproduces from any figure at any of these filers on any basis.",
+   "disclosures": [
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "As of 2026-05-31",
+     "disclosure_type": "Lease commitments signed but not yet commenced, off balance sheet",
+     "amount": "$260 billion",
+     "footnote": "Note 9 \u2014 Leases (following the lease maturities table); flagged again in MD&A 'Contractual Obligations'",
+     "basis": "ASC 842 lessee disclosure of leases signed but not yet commenced. Explicitly excluded from the balance sheet and from the maturities table.",
+     "verbatim_qualifier": "Oracle: \"generally expected to commence between the first quarter of fiscal 2027 and fiscal 2029\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "As of 2026-05-31",
+     "disclosure_type": "Guarantee of a third party's debt \u2014 guarantee of a lessor's borrowing on a datacentre lease (credit EXTENDED by the filer)",
+     "amount": "Up to $3.3 billion",
+     "footnote": "Note 9 \u2014 Leases, same paragraph as the not-yet-commenced disclosure",
+     "basis": "ASC 460 guarantee, embedded in the ASC 842 lease disclosure. No liability recognised; disclosed as a maximum. Matures September 2026.",
+     "verbatim_qualifier": "Oracle: \"we have guaranteed up to $3.3 billion of the lessor's borrowing\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-Q, filed 2026-03-11, acc 0001193125-26-101045",
+     "period": "As of 2026-02-28",
+     "disclosure_type": "Guarantee of a lessor's borrowing \u2014 prior-quarter comparative for the same guarantee",
+     "amount": "Up to $2.2 billion",
+     "footnote": "Leases note",
+     "basis": "ASC 460 guarantee within ASC 842 lease disclosure. Same instrument as the $3.3bn above \u2014 a comparative, NOT an additional exposure.",
+     "verbatim_qualifier": "Oracle: \"guaranteed up to $2.2 billion of the lessor's borrowing, which matures in September 2026\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2025-06-18, acc 0000950170-25-087926",
+     "period": "As of 2025-05-31",
+     "disclosure_type": "Lease commitments not yet commenced \u2014 prior-year comparative",
+     "amount": "$43.4 billion",
+     "footnote": "Leases note",
+     "basis": "ASC 842 signed-not-commenced. Same basis as the $260bn; the growth is 6.0x in twelve months.",
+     "verbatim_qualifier": "Oracle: \"primarily for data centers... terms of ten to sixteen years\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "As of 2026-05-31",
+     "disclosure_type": "Unconditional purchase obligations, primarily datacentre power",
+     "amount": "$13,309 million ($13.3bn)",
+     "footnote": "Note 9 \u2014 'Unconditional Obligations'; full maturity table given (FY27 $1,841m, FY28 $1,034m, FY29 $1,053m, FY30 $952m, FY31 $896m, thereafter $7,533m)",
+     "basis": "Unrecorded unconditional purchase obligations. XBRL-tagged as UnrecordedUnconditionalPurchaseObligationBalanceSheetAmount \u2014 verified against the SEC companyfacts API.",
+     "verbatim_qualifier": "Oracle: obligations that are \"enforceable and legally binding\" with fixed or minimum quantities"
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "Subsequent to 2026-05-31 (unquantified date)",
+     "disclosure_type": "Subsequent-event unconditional purchase commitments for cloud infrastructure assets",
+     "amount": "$19 billion",
+     "footnote": "Note 9 \u2014 'Unconditional Obligations', final sentence",
+     "basis": "Unrecorded unconditional purchase obligation, subsequent event. NOT included in the $13,309m above \u2014 additive to it, but as of a later and unstated date.",
+     "verbatim_qualifier": "Oracle: commitments that \"commence in fiscal 2027 and have a term of five years\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "As of 2026-05-31",
+     "disclosure_type": "Remaining performance obligations (owed TO Oracle \u2014 opposite direction to everything else in this table)",
+     "amount": "$638 billion",
+     "footnote": "Note 1 \u2014 'Remaining Performance Obligations from Contracts with Customers'; repeated in MD&A",
+     "basis": "ASC 606. Contracted revenue not yet recognised. Runoff disclosed: ~12% within 12 months, 34% months 13-36, 34% months 37-60, remainder thereafter. XBRL-verified (RevenueRemainingPerformanceObligation).",
+     "verbatim_qualifier": "Oracle attributes the rise to \"certain significant cloud contracts that were entered into during the period\""
+    },
+    {
+     "filer": "Oracle",
+     "form": "10-K, filed 2026-06-22, acc 0001193125-26-277521",
+     "period": "FY2026, FY2025, FY2024",
+     "disclosure_type": "Customer concentration \u2014 REVENUE basis only. No RPO counterparty concentration is disclosed anywhere.",
+     "amount": "No customer at or above 10% of total revenues",
+     "footnote": "Note 1 \u2014 'Concentrations of Risk'",
+     "basis": "ASC 280 / SEC concentration-of-credit-risk disclosure, measured on recognised revenue. This does NOT speak to the $638bn RPO, which is unallocated to any counterparty.",
+     "verbatim_qualifier": "Oracle: \"No single customer accounted for 10% or more of our total revenues\""
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2026-07-29, acc 0001193125-26-323660",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Leases signed but not yet commenced, off balance sheet",
+     "amount": "$329.1 billion",
+     "footnote": "Note 13 \u2014 Leases, immediately after the lease maturities table",
+     "basis": "ASC 842 signed-not-commenced. Commence FY2027-FY2033, terms 1-20 years. Cross-checked: the MD&A contractual-obligations lease line of $443,506m less total undiscounted lease payments of $114,392m equals $329,114m \u2014 the table and the note reconcile exactly.",
+     "verbatim_qualifier": "Microsoft: \"with some arrangements subject to certain contractual conditions being met\""
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2025-07-30, acc 0000950170-25-100235",
+     "period": "As of 2025-06-30",
+     "disclosure_type": "Leases not yet commenced \u2014 prior-year comparative",
+     "amount": "$92.7 billion",
+     "footnote": "Leases note",
+     "basis": "ASC 842 signed-not-commenced. Same basis as the $329.1bn; growth of 3.55x in twelve months.",
+     "verbatim_qualifier": "Microsoft: leases \"primarily for datacenters\" commencing fiscal 2026 to fiscal 2031"
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2026-07-29, acc 0001193125-26-323660",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Construction commitments",
+     "amount": "$34,566 million ($29,848m short-term + $4,718m long-term)",
+     "footnote": "MD&A contractual obligations table, cross-referenced to Note 6 \u2014 Property and Equipment",
+     "basis": "SEC contractual-obligations presentation. A separate basis with no counterpart at Oracle or Amazon; not a purchase obligation and not a lease.",
+     "verbatim_qualifier": "Microsoft presents these separately from purchase commitments in the same table"
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2026-07-29, acc 0001193125-26-323660",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Purchase commitments \u2014 DEFINITIONALLY WIDER than Oracle's and Amazon's 'unconditional purchase obligations'",
+     "amount": "$194,060 million ($169,008m short-term + $25,052m long-term)",
+     "footnote": "MD&A contractual obligations table, footnote (d)",
+     "basis": "SEC contractual-obligations presentation. Includes open purchase orders as well as take-or-pay contracts. Amazon expressly EXCLUDES cancellable open orders from its equivalent line, so these two are not the same measurement.",
+     "verbatim_qualifier": "Microsoft: these \"include open purchase orders and take-or-pay contracts\""
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2026-07-29, acc 0001193125-26-323660",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Funding commitment to OpenAI (equity-method investee, related party)",
+     "amount": "$13.0 billion total committed, of which $11.9 billion funded",
+     "footnote": "Note 1 \u2014 Accounting Policies, OpenAI related-party paragraph (ASC 850)",
+     "basis": "ASC 850 related-party disclosure. An investment funding commitment, NOT a guarantee and NOT credit extended to a third party's lenders. Also disclosed: FY2026 revenue from OpenAI $24.1bn, receivable $6.0bn, ~25% interest on an as-converted basis.",
+     "verbatim_qualifier": "Microsoft: \"total funding commitments of $13.0 billion related to our investment\""
+    },
+    {
+     "filer": "Microsoft",
+     "form": "10-K, filed 2026-07-29, acc 0001193125-26-323660",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "VIE maximum exposure to loss \u2014 NOT QUANTIFIED. This is a negative finding recorded as a row.",
+     "amount": "No amount disclosed",
+     "footnote": "Note 1 \u2014 Accounting Policies, variable interest entities paragraph",
+     "basis": "ASC 810. Microsoft states it is not the primary beneficiary of any VIE investment and gives no maximum-exposure figure. There is no Meta-style $45.99bn number here. The words 'maximum exposure' appear zero times in the document.",
+     "verbatim_qualifier": "Microsoft: \"We have determined we are not the primary beneficiary of any of our VIE investments\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Leases signed but not yet commenced, off balance sheet \u2014 with a full maturity schedule",
+     "amount": "$137,214 million ($137.2bn)",
+     "footnote": "Note 4 \u2014 Commitments and Contingencies, 'Leases not yet commenced' row",
+     "basis": "ASC 842 signed-not-commenced. Amazon is the only one of the three to give a maturity profile: H2-2026 $4,018m, 2027 $11,732m, 2028 $9,278m, 2029 $9,483m, 2030 $9,227m, thereafter $93,476m. Note the back-loading \u2014 68% falls after 2030.",
+     "verbatim_qualifier": "Amazon presents this within \"principal contractual commitments, excluding open orders... generally cancellable\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-K, filed 2026-02-06, acc 0001018724-26-000004",
+     "period": "As of 2025-12-31",
+     "disclosure_type": "Leases not yet commenced \u2014 prior comparative",
+     "amount": "$96,373 million ($96.4bn)",
+     "footnote": "Commitments and Contingencies note",
+     "basis": "ASC 842 signed-not-commenced. Same basis. Intermediate reading: $106,347m at 2026-03-31 (10-Q acc 0001018724-26-000014).",
+     "verbatim_qualifier": "Same table construction and same exclusion of cancellable open orders"
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Unconditional purchase obligations",
+     "amount": "$130,065 million ($130.1bn)",
+     "footnote": "Note 4 \u2014 Commitments and Contingencies, footnote (2)",
+     "basis": "Unrecorded unconditional purchase obligations \u2014 energy, digital media content, property and equipment, software. Excludes cancellable open orders. Comparable in definition to Oracle's $13.3bn; NOT comparable to Microsoft's $194.1bn.",
+     "verbatim_qualifier": "Amazon: \"we do not estimate the total obligation beyond any minimum quantities\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "VIE maximum exposure to loss \u2014 named VIEs but NO single quantified ceiling",
+     "amount": "Not stated as a figure. Components disclosed: $122.3bn carrying value of private-company equity investments, plus $21.3bn of then-unfunded OpenAI commitment.",
+     "footnote": "Note 2 \u2014 Financial Instruments, final paragraph of the equity investments discussion",
+     "basis": "ASC 810. Amazon names Anthropic and OpenAI as unconsolidated VIEs and describes the ceiling qualitatively rather than stating it. The two components are disclosed elsewhere in the same note, so a reader can construct a figure \u2014 but Amazon does not, and constructing one is inference, not disclosure.",
+     "verbatim_qualifier": "Amazon: \"maximum exposure to loss is generally limited to the current carrying values\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30; remainder funded after quarter-end",
+     "disclosure_type": "Equity commitment letter \u2014 contractual obligation to purchase OpenAI Series C Preferred Stock",
+     "amount": "$35.0 billion Commitment Amount (on top of an initial $15.0bn investment); $13.7bn funded in Q2 2026, remaining $21.3bn funded subsequent to 2026-06-30",
+     "footnote": "Note 2 \u2014 Financial Instruments, 'OpenAI' paragraph",
+     "basis": "Firm equity funding commitment under a letter agreement. A hard obligation, but an investment commitment \u2014 NOT a guarantee of anyone else's borrowing and NOT creditworthiness extended to a lender.",
+     "verbatim_qualifier": "Amazon: agreed to purchase shares \"with an aggregate purchase price of $35.0 billion\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Standby letters of credit \u2014 guarantees issued by banks on Amazon's behalf",
+     "amount": "$13.4 billion of facilities assigned to specific beneficiaries",
+     "footnote": "Note 4 \u2014 Commitments and Contingencies",
+     "basis": "ASC 460. Explicitly attributed to payment-related services and workers' compensation and insurance programmes \u2014 NOT to datacentre or AI counterparties. Included here to rule it out, not to count it.",
+     "verbatim_qualifier": "Amazon: these \"can only be drawn in the event we fail to perform under the underlying obligation\""
+    },
+    {
+     "filer": "Amazon",
+     "form": "10-Q, filed 2026-07-31, acc 0001018724-26-000026",
+     "period": "As of 2026-06-30",
+     "disclosure_type": "Total contractual commitments (all bases combined by the filer itself)",
+     "amount": "$650,034 million ($650.0bn)",
+     "footnote": "Note 4 \u2014 Commitments and Contingencies, 'Total commitments' row",
+     "basis": "Amazon's own cross-basis total: long-term debt principal and interest $220,309m + operating lease liabilities $116,350m + finance leases incl. interest $16,660m + financing obligations incl. interest $11,070m + leases not yet commenced $137,214m + unconditional purchase obligations $130,065m + other commitments $18,366m. Arithmetic verified to foot. Prior periods: $569,280m at 2026-03-31, $439,661m at 2025-12-31.",
+     "verbatim_qualifier": "Amazon excludes \"open orders for purchases that support normal operations and are generally cancellable\""
+    }
+   ],
+   "what_is_not_disclosed": "Six specific gaps, each of which I looked for and did not find.\n\n1. ORACLE DISCLOSES NO VIE INFORMATION AT ALL. The string \"variable interest entit\" appears zero times in Oracle's FY2026 10-K. There is no maximum-exposure-to-loss number because there is no VIE note. Meta's $45.99bn has no Oracle analogue \u2014 not a smaller one, none.\n\n2. ORACLE DISCLOSES NO RPO COUNTERPARTY CONCENTRATION. This is the sharpest gap in the set. RPO went from $137.8bn to $638bn in twelve months \u2014 an increase of $500bn \u2014 and Oracle attributes it only to \"certain significant cloud contracts.\" No counterparty is named, no share is given, no top-customer percentage of RPO appears anywhere. The one concentration statement Oracle makes is on a different measure entirely: no customer at 10% or more of REVENUES. That is backward-looking and recognised; it tells you nothing about who owes the $638bn. The nearest thing to an admission is a risk factor: in certain OCI offerings Oracle is \"more concentrated among a number of large customers\" \u2014 qualitative, unquantified, and in Item 1A rather than the financial statements. Anyone circulating a number for Oracle's single-customer RPO share did not get it from the filings.\n\n3. NO RESIDUAL VALUE GUARANTEE AT ANY OF THE THREE. Meta's RVG sentence has no counterpart at Microsoft, Amazon or Oracle. This one is genuinely absent, not merely unquantified.\n\n4. MICROSOFT QUANTIFIES NO GUARANTEE EXTENDED TO ANYONE. Its Contingencies note is purely legal \u2014 the Irish DPC matter and $553m of accrued legal liabilities. No financial guarantee, no third-party debt guarantee, no VIE ceiling. Microsoft's only quantified forward obligation to an AI counterparty is the $13.0bn OpenAI funding commitment, which is an investment, not credit support.\n\n5. NEITHER AMAZON NOR MICROSOFT QUANTIFIES ITS VIE CEILING. Both use the ASC 810 escape hatch. Amazon's \"generally limited to\" wording is doing real work: \"generally\" is unbounded and \"future funding commitments\" is open-ended. Amazon happens to disclose the components elsewhere, so a reader can build a number \u2014 but building it is the reader's inference, not the filer's disclosure, and it should not be presented as the latter.\n\n6. THE BIGGEST NUMBERS ARE NOT MACHINE-READABLE. I checked the SEC XBRL companyfacts API for all three filers. Not one of them tags leases-not-yet-commenced. There is no LesseeOperatingLeaseLeaseNotYetCommenced fact for Microsoft, Amazon or Oracle; searching Microsoft's entire fact set for the values 329,100,000,000 and 92,700,000,000 returns zero hits, and Oracle's $260bn and $3.3bn are likewise untagged. These figures exist only as narrative prose inside a footnote. This is probably the mechanical explanation for how confected aggregates get into circulation: there is no structured series for anyone to pull, so intermediaries reconstruct one and the reconstruction acquires a provenance it never had. It also means the only way to get these numbers right is to read the footnotes, which is what this pass did.\n\nON THE DISCREDITED $662bn AND $970bn: I tried to reproduce them and could not. Microsoft's total contractual obligations are $743,821m (FY2026) and $397,045m (FY2025) \u2014 both arithmetically verified against the stated totals. Amazon's total commitments are $650,034m (30 Jun 2026), $569,280m (31 Mar 2026) and $439,661m (31 Dec 2025). The three-filer same-basis not-yet-commenced sum is $726.3bn. No figure at any of these three filers, on any basis or at any vintage I examined, equals $662bn or $970bn. Amazon's $650.0bn is the closest at about 2% below $662bn, which is close enough to tempt a match and not close enough to be one \u2014 I am recording the near-miss so nobody else mistakes it for the source. My conclusion is negative: these three filers are not where those numbers came from.",
+   "summable": "WHAT MAY BE SUMMED.\n\nLeases signed but not yet commenced. One disclosure, one standard, all three filers, all excluded from the balance sheet by the same rule:\n  Microsoft $329.1bn (2026-06-30) + Oracle $260bn (2026-05-31) + Amazon $137.2bn (2026-06-30) = $726.3bn.\nVintage caveat: Oracle's is one month earlier than the other two. That is a real but small mismatch and should be stated rather than smoothed over. Prior-period equivalents sum to roughly $232.5bn \u2014 Microsoft $92.7bn (2025-06-30), Amazon $96.4bn (2025-12-31), Oracle $43.4bn (2025-05-31) \u2014 but those three vintages span seven months, so treat the ~3x growth as an order-of-magnitude statement, not a precise multiple. This $726.3bn is the properly sourced replacement the project asked for. Every component was read in the filing and re-verified against raw HTML; the Microsoft figure additionally reconciles to the penny against its own MD&A table.\n\nUnconditional purchase obligations, Oracle and Amazon only: $13.3bn + $130.1bn = $143.4bn. Both are unrecorded unconditional purchase obligations excluding cancellable open orders. Oracle's is XBRL-confirmed.\n\nWHAT MAY NOT BE SUMMED.\n\nMicrosoft's $194.1bn \"purchase commitments\" must NOT be added to the $143.4bn above. Microsoft's line includes open purchase orders; Amazon's explicitly excludes them. Same-sounding label, different measurement, and the difference is large enough to swamp Oracle's entire figure. This is exactly the trap the project's rule exists to catch.\n\nMicrosoft's $34.6bn construction commitments belong to no shared basis \u2014 neither of the other two presents the category.\n\nOracle's $638bn RPO must not be added to anything here, for two independent reasons. It is ASC 606 rather than ASC 842 or ASC 460, and more fundamentally it points the other way: it is money owed TO Oracle, an asset-side expectation, not an obligation Oracle owes. Netting it against obligations, or stacking it on top of them, would be wrong in opposite directions.\n\nAmazon's $650.0bn \"Total commitments\" is a cross-basis total that Amazon itself computes. It is fine to quote as Amazon's own figure but it cannot be added to Microsoft's $743.8bn or to anything from Oracle, and note that it already contains Amazon's $137.2bn of not-yet-commenced leases \u2014 so quoting both the $650.0bn and the $726.3bn in the same breath double-counts Amazon.\n\nOracle's $2.2bn (Feb) and $3.3bn (May) are the same guarantee at two dates. $5.5bn is not a number.\n\nOracle's $19bn subsequent-event purchase commitment is additive to its $13.3bn in substance but sits at a later, unstated date; combining them yields a total as of no particular day.\n\nON THE CONVERGENCE-IS-NOT-CONFIRMATION RULE. All three filers use near-identical construction for the not-yet-commenced sentence \u2014 a single narrative figure, \"primarily for datacenters,\" a commencement window, a term range. That similarity is a disclosure convention under ASC 842, not three independent corroborations of a common underlying fact. It should be read as one accounting practice observed three times. Amazon is the partial exception worth crediting: it alone gives a maturity schedule, which is why Amazon's figure supports a duration claim and the other two do not.\n\nWHAT THE MEASUREMENT ACTUALLY SETTLES. The external charge was that the project retreated to the unmeasurable. It did not need to. The measurable produced $726.3bn on a single clean basis, and it produced something better than an aggregate: Oracle's guarantee of up to $3.3 billion of a lessor's borrowing is the created-creditworthiness mechanism itself, disclosed, quantified, dated, and observably growing 50% in one quarter. It is a contingent guarantee that is not a financial instrument until drawn \u2014 the exact object the project went looking for \u2014 and it sits in a footnote with no XBRL tag. One instance is not a pattern, and $3.3bn is small against $260bn of leases behind it. But it is disclosed, and it is the receipt the argument needed before it may move on to securities-based lending, NAV loans, portfolio margin or internalised synthetic prime.",
+   "counterparty_note": "I looked for the receiving side of each extended obligation and could not close any of them from public filings. Recording that as a finding rather than leaving it implied.\n\nOracle's guarantee of up to $3.3bn of the lessor's borrowing: the lessor is not named in the 10-K. Without a name I cannot search EDGAR for the corresponding liability, and I did not guess. If this lessor is an SEC registrant, the guarantee should appear on its side as credit support on a datacentre financing \u2014 that is a findable object for a later pass, but it needs the counterparty identified first, most plausibly from an Oracle 8-K or the lessor's own bond documentation rather than from the 10-K. This is the single highest-value open thread I am leaving.\n\nOracle's $638bn RPO: no counterparty is named, so there is no receiving side to look up. Whoever owes it does not appear in Oracle's filings.\n\nMicrosoft's $13.0bn OpenAI funding commitment and Amazon's $35.0bn OpenAI equity commitment: OpenAI is private and files nothing with the SEC, so neither has a locatable counterparty disclosure. Note that these two commitments are to the same entity from two different filers, and Amazon separately holds preferred stock in both Anthropic and OpenAI. The exposures are related through a common counterparty even though they are disclosed independently and under different standards \u2014 worth flagging because it is the kind of linkage that a per-filer reading structurally cannot see.\n\nStructural point for the template. In the confirmed Hut 8 case the guarantee and its beneficiary are visible on both sides because the beneficiary issued rated public bonds. None of the three obligations above has that property. The mechanism becomes measurable only when the credit-receiving party happens to issue public debt; where the counterparty is private, the created creditworthiness is real, is doing collateral work, and leaves no trace on the receiving side at all. That asymmetry is a property of the disclosure regime, not of the exposure."
+  },
+  {
+   "scope": "Lens: NVIDIA Corporation (CIK 0001045810) as GUARANTOR, plus the vendor-financing question. Primary sources only, read in full text: (1) FY2026 Form 10-K, filed 2026-02-25, period ended 2026-01-25, accession 0001045810-26-000021; (2) Form 10-Q for Q1 FY2027, filed 2026-05-20, period ended 2026-04-26, accession 0001045810-26-000052 \u2014 this is the LATEST periodic filing; the Q2 FY2027 10-Q (period ~2026-07-26) was NOT yet filed as of 2026-08-22; (3) Form 8-K filed 2026-08-17, event date 2026-08-17, accession 0001045810-26-000069. Counterparty check on Hut 8 Corp. (CIK 0001964789) Form 10-Q filed 2026-08-04, period 2026-06-30, accession 0001104659-26-090025, and Form 8-K/EX-99.1 filed 2026-07-20, accession 0001104659-26-084862. Notes read: Commitments and Contingencies; Derivative Financial Instruments; Non-marketable Securities; Leases; Debt; Concentrations of Credit Risk; Item 1A Risk Factors; Item 7 MD&A. Searched exhaustively for: \"variable interest\", \"primary beneficiary\", \"maximum exposure to loss\", \"residual value\", \"guarantee\", \"backstop\", \"not yet commenced\", \"customer/vendor financing\", \"unconditional purchase obligation\".",
+   "headline": "The measurable cooperated, and it is enormous \u2014 but it landed five days ago, outside every periodic filing. On 2026-08-17 NVIDIA filed an 8-K under Item 1.01 \"Residual Value Guaranties\" and Item 2.03 (off-balance-sheet arrangement) disclosing residual value guaranties to lessor SB Energy Corp. covering ~4.25 GW of IT load at the Portsmouth Site (Pike County, Ohio), where an affiliate of OpenAI Group PBC is the tenant, with NVIDIA's \"aggregate payment obligation ... cumulatively capped at $105 billion\" (NVIDIA 8-K, Item 1.01). That is a single disclosed guarantee 2.3x Meta's $45.99bn VIE maximum exposure. The mechanism is stated in NVIDIA's own words: the guaranty terminates upon, among other things, \"OpenAI achieving a satisfactory credit rating\" (NVIDIA 8-K). NVIDIA's balance sheet is explicitly substituting for a counterparty's missing credit rating, and the filer says so. Separately, the periodic filings disclose a much smaller pre-existing stack: $3.5bn maximum gross exposure on facility lease guarantees. On the vendor-financing question NVIDIA gives a rare explicit ZERO: \"We have not entered into any financing arrangements\" (FY2026 10-K, Item 1A). Two corrections to the project's template are required, below.",
+   "disclosures": [
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "8-K, filed 2026-08-17 (event date 2026-08-17), accession 0001045810-26-000069",
+     "period": "Agreements entered 2026-08-17; obligations become effective on commencement of each applicable lease, ready-for-service expected beginning 2028",
+     "disclosure_type": "Residual value guaranty (guarantor). Filed under Item 1.01 Entry into a Material Definitive Agreement and Item 2.03 Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement",
+     "amount": "$105 billion \u2014 cumulative cap on NVIDIA's aggregate payment obligation for its initial commitment, covering approximately 4.25 GW of IT load",
+     "footnote": "Item 1.01, subheading 'Residual Value Guaranties'; incorporated by reference into Item 2.03",
+     "basis": "Residual value guarantee. NVIDIA does NOT state the accounting classification in the 8-K. The form of agreements is to be filed as an exhibit to the Q2 FY2027 10-Q (quarter ended 2026-07-26), which was unfiled as of 2026-08-22, so no ASC 460 / ASC 815 / ASC 842 characterisation exists yet in any filing. Treat the basis as UNSTATED.",
+     "verbatim_qualifier": "\"cumulatively capped at $105 billion for its initial commitment\" \u2014 NVIDIA 8-K, Item 1.01"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "8-K, filed 2026-08-17, accession 0001045810-26-000069",
+     "period": "As of 2026-08-17",
+     "disclosure_type": "Optional additional credit support \u2014 UNQUANTIFIED",
+     "amount": "NOT DISCLOSED in dollars. NVIDIA states it can provide credit support to secure approximately an additional 3.8 GW at the Portsmouth Site, exercisable in its sole discretion. No cap, no dollar figure given. If priced at the same ratio as the disclosed tranche ($105bn / 4.25 GW), this would be a further ~$94bn \u2014 but NVIDIA does NOT disclose that number and it must NOT be imputed.",
+     "footnote": "Item 1.01, subheading 'Residual Value Guaranties'",
+     "basis": "Contingent, discretionary, unquantified. Not summable with anything.",
+     "verbatim_qualifier": "\"exercisable in its sole discretion\" \u2014 NVIDIA 8-K, Item 1.01"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-K (FY2026), filed 2026-02-25, accession 0001045810-26-000021",
+     "period": "As of 2026-01-25 (fiscal year 2026 year-end)",
+     "disclosure_type": "Guarantee of partners' facility lease obligations, received in exchange for warrants \u2014 maximum gross exposure",
+     "amount": "$3.5 billion maximum gross exposure under all agreements; partners have placed $712 million in escrow to mitigate exposure; terms 5 to 7 years",
+     "footnote": "Note 10 \u2014 Derivative Financial Instruments, subheading 'Facility Lease Guarantees'. NOT in Note 12 Commitments and Contingencies.",
+     "basis": "ASC 815 credit derivative. NVIDIA explicitly classifies these as credit derivatives with fair value changes in Other income and expense \u2014 NOT as ASC 460 guarantees and NOT as ASC 810 VIE exposure.",
+     "verbatim_qualifier": "\"classified as credit derivatives\" and \"were not material\" \u2014 NVIDIA FY2026 10-K, Note 10"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "No as-of date stated for this figure \u2014 see qualifier. Filing period ended 2026-04-26.",
+     "disclosure_type": "Guarantee of partners' facility lease obligations \u2014 maximum gross exposure (SAME disclosure as the 10-K row above, carried forward)",
+     "amount": "$3.5 billion maximum gross exposure; $712 million escrow \u2014 IDENTICAL figures and near-identical wording to the FY2026 10-K",
+     "footnote": "Note 8 \u2014 Derivative Financial Instruments, subheading 'Facility Lease Guarantee'",
+     "basis": "ASC 815 credit derivative. IMPORTANT: this is ONE disclosure at two filing dates, not two independent data points. The same $3.5bn also appears a third time in FY2026 10-K Item 7 MD&A as 'land, power, and shell guarantees to early-stage companies'. Three appearances, one fact.",
+     "verbatim_qualifier": "\"which is reduced as the partners make payments to the lessors\" \u2014 NVIDIA Q1 FY2027 10-Q, Note 8"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Leases signed but not yet commenced (lessee)",
+     "amount": "$32.4 billion of future obligations on leases expected to commence between Q2 FY2027 and FY2033, primarily data center leases, terms of 3 to 20 years. Up from $22.7 billion (FY2027\u2013FY2030, terms 1.8\u201320 years) at 2026-01-25 per FY2026 10-K Note 17.",
+     "footnote": "Note 14 \u2014 Leases",
+     "basis": "ASC 842 lessee disclosure of leases not yet commenced. A different standard from both the guarantee rows and the commitments rows. Note also that the stated lease expiry horizon extended from fiscal 2041 (10-K, as of 2026-01-25) to fiscal 2075 (10-Q, as of 2026-04-26) \u2014 a 34-year extension of maximum tenor in a single quarter, consistent with NVIDIA taking very long-dated third-party datacentre capacity as lessee.",
+     "verbatim_qualifier": "\"primarily for data center leases to support our research and development efforts\" \u2014 NVIDIA 10-Q, Note 14"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Manufacturing, supply, and capacity purchase commitments",
+     "amount": "$119 billion, of which $95 billion payable in remainder of FY2027 and the balance across FY2028\u2013FY2031. Was $95.2 billion at 2026-01-25 (FY2026 10-K Note 12).",
+     "footnote": "Note 10 \u2014 Commitments and Contingencies, subheading 'Commitments'",
+     "basis": "Contractual purchase/supply commitments. Separate basis from guarantees and from ASC 842 leases.",
+     "verbatim_qualifier": "\"in certain instances, these agreements are cancellable, able to be rescheduled\" \u2014 NVIDIA 10-Q, Note 10"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Multi-year cloud service agreement commitments",
+     "amount": "$30 billion ($6bn remainder FY2027; $7bn FY2028; $7bn FY2029; $5bn FY2030; $3bn FY2031; $2bn FY2032 and thereafter). Was $27 billion at 2026-01-25.",
+     "footnote": "Note 10 \u2014 Commitments and Contingencies",
+     "basis": "Contractual purchase commitments, same basis as the supply commitments row. NOTE an overlap risk: these are compute-capacity commitments and may be economically adjacent to the ASC 842 not-yet-commenced datacentre leases; do not treat the two as cleanly additive economic exposures even though they are accounting-distinct.",
+     "verbatim_qualifier": "\"Cloud service capacity may be reduced or terminated\" \u2014 NVIDIA 10-Q, Note 10"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Investment commitments (unfunded)",
+     "amount": "$27 billion, expected to be made through the remainder of FY2027. Was $11.4 billion at 2026-01-25 (FY2026 10-K Note 12) \u2014 a 2.4x increase in one quarter.",
+     "footnote": "Note 6 \u2014 Non-marketable Securities, subheading 'Investment Commitments'. Note the presentation moved: at FY2026 year-end this sat inside Note 12 Commitments and Contingencies; in the 10-Q it sits in the securities note.",
+     "basis": "Unfunded investment commitments, subject to contingencies. Same commitments basis as Note 10 items (the FY2026 10-K itself grouped them together).",
+     "verbatim_qualifier": "\"subject to certain contingencies\" \u2014 NVIDIA 10-Q, Note 6"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Other vendor commitments",
+     "amount": "$6 billion, majority payable through FY2027. Was $3.4 billion 'other commitments' at 2026-01-25.",
+     "footnote": "Note 10 \u2014 Commitments and Contingencies",
+     "basis": "Contractual purchase commitments, same basis as supply and cloud rows.",
+     "verbatim_qualifier": "\"the majority will be paid through fiscal year 2027\" \u2014 NVIDIA 10-Q, Note 10"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Maximum loss exposure on equity method investments in infrastructure funds",
+     "amount": "$2.3 billion maximum loss exposure including invested and future committed amounts, against $1.0 billion of carrying value",
+     "footnote": "Note 6 \u2014 Non-marketable Securities, subheading 'Equity Method Investments'",
+     "basis": "Equity method (ASC 323) maximum loss exposure. This is the ONLY place NVIDIA uses 'maximum loss exposure' language. It is NOT the ASC 810 'maximum exposure to loss' VIE disclosure \u2014 NVIDIA has no VIE note at all.",
+     "verbatim_qualifier": "\"including invested and future committed amounts\" \u2014 NVIDIA 10-Q, Note 6"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-Q (Q1 FY2027), filed 2026-05-20, accession 0001045810-26-000052",
+     "period": "As of 2026-04-26",
+     "disclosure_type": "Non-marketable equity securities in privately-held companies (context only \u2014 ON balance sheet, not an off-balance-sheet exposure)",
+     "amount": "$42.336 billion carrying value, up from $22.251 billion at 2026-01-25 \u2014 $17.899 billion of net additions in a single quarter, plus $2.603 billion of unrealized gains. FY2026 MD&A states $17.5 billion invested in private companies and infrastructure funds during FY2026.",
+     "footnote": "Note 6 \u2014 Non-marketable Securities",
+     "basis": "ASC 321 measurement alternative (cost less impairment, adjusted for observable price changes). On-balance-sheet asset. Included for scale context on NVIDIA's ecosystem support; must NOT be summed with any guarantee or commitment figure.",
+     "verbatim_qualifier": "\"carried at cost less impairment, and adjusted for observable price changes\" \u2014 NVIDIA 10-Q, Note 6"
+    },
+    {
+     "filer": "NVIDIA Corporation",
+     "form": "10-K (FY2026), filed 2026-02-25, accession 0001045810-26-000021",
+     "period": "As of 2026-01-25",
+     "disclosure_type": "Vendor/customer financing \u2014 EXPLICIT DISCLOSED ZERO",
+     "amount": "$0. NVIDIA states it has been asked to offer financing arrangements to support customers' and partners' datacentre buildout and that it has not entered into any. This is a rare affirmative negative and is the single most useful sentence in the file for the vendor-financing question.",
+     "footnote": "Item 1A Risk Factors, risk factor headed 'Commercial arrangements expose us to counterparty risks'",
+     "basis": "Narrative risk-factor statement, not a financial-statement measurement. Not audited, not tagged, and as of 2026-01-25 only. The Q1 FY2027 10-Q did not list this risk factor among those changed, so the statement stood as of 2026-05-20 \u2014 but the 2026-08-17 8-K guaranty arguably supersedes its spirit even if a residual value guaranty is not literally a 'financing arrangement'.",
+     "verbatim_qualifier": "\"We have not entered into any financing arrangements.\" \u2014 NVIDIA FY2026 10-K, Item 1A"
+    }
+   ],
+   "what_is_not_disclosed": "SEVEN specific gaps, in descending order of importance.\n\n1. NO VIE NOTE EXISTS. NVIDIA's FY2026 10-K and Q1 FY2027 10-Q contain ZERO occurrences of \"variable interest\", \"primary beneficiary\", or \"maximum exposure to loss\". The Meta template number ($45.99bn ASC 810 maximum VIE exposure) has NO NVIDIA analogue and cannot be constructed. NVIDIA consolidates nothing as a VIE and discloses no unconsolidated VIE interests. Whatever the SB Energy / OpenAI / Portsmouth structure turns out to be, it produced no VIE disclosure in any periodic filing to date.\n\n2. THE $105bn IS NOT YET IN ANY FOOTNOTE, AND ITS ACCOUNTING BASIS IS UNSTATED. It exists only in an Item 1.01/2.03 8-K narrative. NVIDIA does not say whether it will be an ASC 460 guarantee, an ASC 815 derivative (as it did for the $3.5bn), or an ASC 842 item. It gives no fair value, no recorded liability, no probability language. The form of agreements is promised as an exhibit to the Q2 FY2027 10-Q, unfiled as of 2026-08-22. THIS IS THE SINGLE HIGHEST-VALUE FORWARD TEST IN THE PROJECT: that filing is imminent and will convert a press-adjacent 8-K number into an audited footnote with a stated measurement basis.\n\n3. CURRENT EXPOSURE ON THE $3.5bn IS NOT DISCLOSED. NVIDIA discloses the inception ceiling and says it \"is reduced as the partners make payments to the lessors\" \u2014 but never quantifies the reduction. Neither the 10-K nor the 10-Q attaches an as-of date to the $3.5bn or the $712m escrow; both figures are reported identically across two filing dates four months apart, which is either a genuinely static ceiling or a number simply not re-measured. The reader cannot tell which. Current outstanding guarantee exposure is unknowable from the filings.\n\n4. NO COUNTERPARTY IS NAMED FOR THE $3.5bn. NVIDIA says only \"partners\" and \"early-stage companies\". No entity, no per-deal breakdown, no concentration. Hut 8, CoreWeave, Nebius, Crusoe, Lambda, xAI, Fluidstack \u2014 none appear anywhere in either periodic filing. The only third party NVIDIA names in the FY2026 10-K is OpenAI, and only to say it was \"finalizing an investment and partnership agreement\" with no dollar amount attached.\n\n5. THE ADDITIONAL ~3.8 GW OF PORTSMOUTH CREDIT SUPPORT IS UNQUANTIFIED. NVIDIA discloses the optionality but attaches no cap and no dollar figure. Do not impute one.\n\n6. NVIDIA'S OWN LESSEE OBLIGATION IS NOT ATTRIBUTABLE. The $32.4bn of not-yet-commenced leases is a single undifferentiated aggregate, characterised as \"primarily for data center leases to support our research and development efforts\". No counterparty, no site, no per-lease breakdown. If any specific commercialised campus sits inside it, no reader can extract it.\n\n7. NO RESIDUAL VALUE GUARANTEE APPEARS IN EITHER PERIODIC FILING. Zero hits for \"residual value\" in the FY2026 10-K and the Q1 FY2027 10-Q. The entire residual-value-guarantee mechanism at NVIDIA is five days old in disclosure terms.\n\nTWO CORRECTIONS TO THE PROJECT TEMPLATE \u2014 both material, both from primary sources.\n\nCORRECTION A: The Hut 8 transaction's tenant is NOT identified as NVIDIA in any filing. Hut 8's 10-Q (period 2026-06-30, accession 0001104659-26-090025) describes Beacon Point DC LLC's $4.25 billion (not $4.3bn) of 6.129% senior secured notes due 2042, rated Baa2 by Moody's, and says the data center is \"leased in its entirety to a high-investment-grade company\" \u2014 unnamed. The word NVIDIA appears ZERO times in Hut 8's 10-Q. In Hut 8's 2026-07-20 press release (EX-99.1, accession 0001104659-26-084862) NVIDIA is mentioned exactly twice, and only as an equipment standard: the campus is \"designed to NVIDIA's DSX reference architecture\". The tenant is again only \"the high-investment-grade company that executed the Phase 1 lease\". Moreover Hut 8 states the Beacon Point Notes are \"not guaranteed by the parent company, the tenant, or any of their respective subsidiaries or affiliates\" \u2014 so at Beacon Point there is NO guarantee at all; the lease covenant alone does the credit work. The project's belief that NVIDIA is the Hut 8 lessee/guarantor is NOT filing-supported and should be demoted to press attribution. This is precisely the \"N sources citing one paper\" failure mode.\n\nCORRECTION B: The clean, NAMED instance of the mechanism at Hut 8 is a different deal and a different guarantor. Hut 8 DC LLC's River Bend project (St. Francisville, Louisiana, 245 MW) issued $3.25 billion of 6.192% senior secured notes due 2042; the tenant is Fluidstack USA IV Inc., and the lease \"is supported by a financial backstop provided by Google LLC for rent payments and certain other financial obligations\" (Hut 8 10-Q, Note 9). Google is named as the credit-enhancer; the notes are not guaranteed by Hut 8, the tenant, or the lease guarantor. Hut 8 states plainly in its 2026-07-20 release that 100% of its contracted AI datacentre capacity is \"leased to or backstopped by investment-grade counterparties\". The mechanism is real and the lessor quantifies it precisely ($19.6bn aggregate base-term contract value across the two Beacon Point leases, up to $50.2bn with all renewals; $26.6bn base-term across the whole Hut 8 portfolio). Alphabet's own quantification of the Fluidstack backstop was not examined in this lens and is the obvious next target.",
+   "summable": "WHAT MAY BE SUMMED.\n\n(a) The commitments basis, within NVIDIA, at a single vintage. At 2026-04-26: manufacturing/supply/capacity $119bn + multi-year cloud services $30bn + other vendor $6bn + investment commitments $27bn = $182 billion. This sum is legitimate because NVIDIA's own FY2026 10-K grouped all four categories under a single note (Note 12, Commitments and Contingencies); the 10-Q merely relocated investment commitments to Note 6. The comparable FY2026 year-end figure at 2026-01-25 is $95.2 + $27 + $11.4 + $3.4 = $137.0 billion. Caveat: NVIDIA itself says some of these agreements are cancellable or reschedulable, so this is a gross contractual ceiling, not a firm obligation.\n\n(b) Nothing else within NVIDIA sums cleanly. The $3.5bn facility lease guarantee is already stated as the aggregate \"under all agreements\" \u2014 there is nothing to add to it.\n\nWHAT MAY NOT BE SUMMED, AND WHY.\n\n(c) $105bn (residual value guaranties, 8-K, basis UNSTATED) + $3.5bn (facility lease guarantees, explicitly ASC 815 credit derivatives) \u2260 $108.5bn as an accounting aggregate. Economically both are ceilings on NVIDIA's payment obligation under guarantees of third parties' lease obligations, and a reader may reasonably cite \"$108.5 billion of disclosed gross lease-guarantee ceiling\" \u2014 but ONLY with three caveats stated in the same breath: (i) the $105bn accounting basis is not yet characterised by the filer and may not be ASC 815; (ii) the $105bn is not yet effective \u2014 each guaranty becomes effective on commencement of its lease, with ready-for-service expected beginning 2028, so essentially none of it is live today; (iii) the $3.5bn is an inception ceiling whose current level is undisclosed and is stated to be lower. Given rule \"sum within one basis or do not sum\", the defensible presentation is to report $105bn and $3.5bn separately and let the reader see the arithmetic, not to publish $108.5bn as a single measured quantity.\n\n(d) NVIDIA's $105bn may NOT be added to Meta's $45.99bn. Meta's figure is an ASC 810 maximum-exposure-to-loss disclosure for unconsolidated variable interest entities. NVIDIA's is a residual value guaranty of an operating lease with a named tenant. Different standards, different trigger conditions, different meanings of \"maximum\". A cross-filer \"off-balance-sheet AI credit support\" total built by adding these is exactly the unprovenanced aggregate the project has already been burned by.\n\n(e) $32.4bn of not-yet-commenced leases (ASC 842, NVIDIA as lessee) may not be added to any guarantee figure. NVIDIA is the obligor in one and the contingent backstop in the other; adding them conflates a direct obligation with a contingent one. Nor may it be added to the $30bn of cloud-service commitments without a double-count warning, since both are compute-capacity procurement.\n\n(f) $22.7bn and $32.4bn may NOT be added. Same ASC 842 disclosure at two vintages. Use $32.4bn (2026-04-26) and discard the older figure.\n\n(g) $2.3bn equity-method maximum loss exposure may not be added to the guarantee figures \u2014 ASC 323, different standard, and it includes already-invested capital that is on balance sheet.\n\n(h) $42.3bn of non-marketable equity securities is an on-balance-sheet asset, not an exposure disclosure, and may not be summed with anything here.\n\nINDEPENDENCE WARNING. The $3.5bn appears three times across two filings (FY2026 10-K Note 10; FY2026 10-K Item 7 MD&A restated as \"land, power, and shell guarantees\"; Q1 FY2027 10-Q Note 8) in near-identical language. That is one disclosure carried forward, not three confirmations. Likewise, the FY2026 10-K and Q1 FY2027 10-Q wording of the facility lease guarantee differs only in \"Other income and expense\" versus \"Other income (expense), net\" \u2014 a boilerplate carry-forward, i.e. a disclosure convention, not evidence of re-measurement.\n\nSTOCK NOT FLOW. Every figure above is a stock and, where labelled \"maximum\" or \"capped\", a ceiling. The $105bn is the maximum NVIDIA could ever pay cumulatively over up to 20 years per lease if OpenAI defaults AND recoveries from reletting or sale are zero \u2014 and NVIDIA further discloses that OpenAI has agreed to reimburse and indemnify it for any amounts actually paid. None of these are expectations, and the expected value of the $105bn is nowhere disclosed.",
+   "counterparty_note": "THREE counterparty legs, two of which I verified against primary filings.\n\nLEG 1 \u2014 Portsmouth / SB Energy / OpenAI (the $105bn). Verified only from NVIDIA's side. The 8-K (accession 0001045810-26-000069) names SB Energy Corp. as Lessor and an affiliate of OpenAI Group PBC as tenant. SB Energy is not an SEC reporting company I located, and OpenAI Group PBC does not file periodic reports, so there is NO receiving-side filing to check. The structure NVIDIA describes: on OpenAI insolvency-default or payment failure, NVIDIA pays the shortfall between the lease's guaranteed minimum value and amounts recovered via replacement lease or sale; NVIDIA may then assume the lease, force a relet, initiate a sale, allow termination, or defer remedies for up to a year. Termination triggers include the 20th anniversary of lease commencement and \u2014 the thesis in the filer's own words \u2014 \"OpenAI achieving a satisfactory credit rating\" (NVIDIA 8-K, Item 1.01). OpenAI has agreed to reimburse and indemnify NVIDIA for amounts actually paid, an unquantified offsetting receivable from an unrated private counterparty.\n\nLEG 2 \u2014 Hut 8 / Beacon Point. VERIFIED, and it CONTRADICTS the project template. Hut 8 Corp. 10-Q, filed 2026-08-04, period 2026-06-30, accession 0001104659-26-090025, Note 9 'Loans, notes payable, and other financial liabilities': Beacon Point DC LLC issued $4.25 billion of 6.129% senior secured notes due 2042-11-30 at par, rated Baa2 by Moody's, non-recourse to Hut 8, financing 352 MW critical IT capacity in Nueces County, Texas. The site is \"leased in its entirety to a high-investment-grade company under a triple-net lease\" \u2014 TENANT UNNAMED. NVIDIA appears zero times in the 10-Q, and only as \"NVIDIA's DSX reference architecture\" (an equipment standard) in the 2026-07-20 EX-99.1. Critically, Hut 8 states the notes are \"not guaranteed by the parent company, the tenant, or any of their respective subsidiaries or affiliates\" \u2014 there is no guarantee at Beacon Point; the lease covenant alone earns the investment-grade rating. Lessor-side quantification is precise: Phase 2 base contract value ~$9.8bn over 15 years with 3% escalators, campus total ~$19.6bn base-term, ~$50.2bn if all three five-year renewal options per lease are exercised, 704 MW critical IT (~1 GW utility). The template's attribution of this deal to NVIDIA is not supported by any filing and should be re-sourced or dropped.\n\nLEG 3 \u2014 Hut 8 / River Bend / Fluidstack / Google. VERIFIED, and this is the clean named instance of the mechanism. Same Hut 8 10-Q, Note 9: Hut 8 DC LLC issued $3.25 billion of 6.192% senior secured notes due 2042-11-15 at par, financing 245 MW at St. Francisville, Louisiana; tenant is Fluidstack USA IV Inc.; the lease \"is supported by a financial backstop provided by Google LLC for rent payments and certain other financial obligations\". Hut 8 refers to Google as \"the lease guarantor\". Hut 8 does NOT quantify the Google backstop. Alphabet Inc.'s own filings were not examined in this lens and are the obvious next target: the question is whether Alphabet quantifies the Fluidstack backstop anywhere, and under which heading. Hut 8's own summary of the mechanism, from its 2026-07-20 release, is the plainest statement of the thesis I found in any filing: 100% of its contracted AI data center capacity is leased to or backstopped by investment-grade counterparties.\n\nNET ASYMMETRY. The lessors quantify the obligation to the dollar and the year, because rent is their revenue. The guarantors quantify it late, coarsely, or not at all \u2014 NVIDIA's $105bn exists today only in an 8-K narrative with no stated accounting basis, and Google's backstop is unquantified by the party that discloses it. The disclosed thing is now measurable on the guarantor side for exactly one filer, for exactly five days, and only because an Item 1.01/2.03 trigger forced it."
+  }
+ ],
+ "counterparty": {
+  "scope": "Lens: THE RECEIVING SIDE \u2014 beneficiaries of investment-grade tech covenants, and the price of the guarantee. Primary sources only, all fetched directly from SEC EDGAR Archives / efts full-text search with a descriptive User-Agent, and read as text. Documents read in full for the relevant notes: Hut 8 Corp (CIK 0001964789) 10-Q period 2026-06-30 filed 2026-08-04 acc 0001104659-26-090025 (Notes 4, 9, 18, MD&A), 8-K filed 2025-12-17 acc 0001104659-25-122052 EX-99.1, 8-K filed 2026-04-27 acc 0001104659-26-049090 EX-99.1 (River Bend investor presentation), 8-K filed 2026-04-28 acc 0001104659-26-049810 EX-99.1 (River Bend pricing release), 8-K filed 2026-06-04 acc 0001104659-26-070393 EX-99.1 (Beacon Point investor presentation), 8-K filed 2026-06-05 acc 0001104659-26-070744 EX-99.1 (Beacon Point pricing release), 8-K filed 2026-07-20 acc 0001104659-26-084862 EX-99.1; TeraWulf Inc (CIK 0001083301) 10-Q period 2026-06-30 filed 2026-08-05 acc 0001083301-26-000166 (Notes on HPC leases, Debt, Fair Value); Cipher Digital Inc (CIK 0001819989) 10-Q period 2026-06-30 filed 2026-08-04 acc 0001819989-26-000041 (Leases, Debt, Warrants); Applied Digital Corp (CIK 0001144879) 10-K period 2026-05-31 filed 2026-07-29 acc 0001144879-26-000048 (Business, Debt, Subsequent Events); CoreWeave Inc (CIK 0001769628) 10-Q period 2026-06-30 filed 2026-08-12 acc 0001769628-26-000366 (Debt); Galaxy Digital Inc (CIK 0001859392) 8-K filed 2026-07-24 acc 0001859392-26-000074 EX-99.1 and 8-K filed 2026-07-22 acc 0001859392-26-000068 EX-99.1; Meta Platforms 10-Q period 2026-06-30 acc 0001628280-26-050705 Note 8; NVIDIA 10-Q period 2026-04-26 acc 0001045810-26-000052 Note 9; QTS Phoenix II DC2 Holding I LLC (CIK 0002083795) ABS-15G filed 2026-06-15 acc 0001140361-26-025272 and its EX-99.1 Deloitte agreed-upon-procedures report. Plus a systematic EDGAR full-text sweep (efts.sec.gov) over 2025-01-01 to 2026-08-22 for \"Google backstop\", \"financial backstop provided by Google\", \"lease backstop\", \"backstopped by\" + \"data center\", \"investment grade hyperscaler\", \"high-investment-grade\", and \"data center\" within Form ABS-15G. No press coverage, no aggregator, no analyst note, no rating-agency report was used. Rating agency rationales are not SEC filings and were therefore not obtainable within this lens. Securities-based lending, NAV loans, portfolio margin and internalised synthetic prime were out of scope and not examined.",
+  "headline": "The covenant is measurable and it is measured. $16.58 billion of 144A senior secured project notes across four filers (Hut 8, TeraWulf, Cipher, Applied Digital) is currently serviced by leases to, or backstopped by, an investment-grade tech counterparty \u2014 every component read in a filing. The covenant is worth 100 to 390 basis points of coupon, measured within one instrument class; the cleanest single datum is Applied Digital pricing its OWN two project bonds 250bp apart four months apart purely on tenant identity: 9.250% (issued at 97) with CoreWeave as tenant on 13 Nov 2025 versus 6.750% (issued at 98) with \"a U.S.-based investment-grade hyperscaler\" as tenant on 10 Mar 2026. And the price of the guarantee is disclosed on the RECEIVING side, which is the finding the guarantor side cannot produce: TeraWulf recorded a $515.5 million asset and Cipher a $544.5 million asset, each being the initial fair value of penny warrants issued to Google as consideration for a lease backstop \u2014 $1.060 billion on one identical measurement basis, against Alphabet's own characterisation of its financial-guarantee fair value as not material. Two template corrections follow: the \"roughly halves the financing cost\" claim is FALSE on coupon at every filer pair I found (largest reduction 38%) and can only be true of the spread, which no filing discloses; and the \"~100bp over Nvidia's own 30-year paper\" claim is not reproducible from EDGAR at all \u2014 NVIDIA's only long bond is a 3.70% 2060 issued in 2020, and 6.129% is 240bp over that coupon.",
+  "disclosures": [
+   {
+    "filer": "Applied Digital Corp (CIK 0001144879)",
+    "form": "10-K, filed 2026-07-29, acc 0001144879-26-000048",
+    "period": "Notes issued 13 Nov 2025 (purchase agreement) / closed Nov 2025; balance as of 2026-05-31",
+    "disclosure_type": "Third-party project debt priced off a NON-investment-grade tenant covenant \u2014 control observation for the spread measurement",
+    "amount": "$2.35 billion of 9.250% senior secured notes due 15 Dec 2030, issued at 97.000% of par, semi-annual amortisation, issuer APLD ComputeCo LLC (Polaris Forge 1, Ellendale ND)",
+    "footnote": "Item 1 Business and Note 'Debt' \u2014 2030 9.250% Notes Offering",
+    "basis": "Contractual debt terms as disclosed by the issuer's parent. Tenant is CoreWeave, Inc. under the ELN-02 / ELN-03 / Building 4 leases; on 30 Mar 2026 the ELN-02 Lease was amended and ELN-03 assigned to CoreWeave Compute Acquisition Co. VIII LLC, an SPV, with CoreWeave providing an 'Unconditional Springing Guaranty' \u2014 i.e. the tenant covenant was demonstrably restructured after the bonds priced."
+   },
+   {
+    "filer": "Applied Digital Corp (CIK 0001144879)",
+    "form": "10-K, filed 2026-07-29, acc 0001144879-26-000048",
+    "period": "Priced 3 Mar 2026, closed 10 Mar 2026; escrow released 18 Jun 2026",
+    "disclosure_type": "Third-party project debt priced off an INVESTMENT-GRADE tenant covenant \u2014 the paired observation",
+    "amount": "$2.15 billion of 6.750% senior secured notes due 15 Mar 2031, issued at approximately 98% of par, issuer APLD ComputeCo 2 LLC (Polaris Forge 2, Harwood ND)",
+    "footnote": "Note 'Debt' \u2014 2031 6.750% Notes Offering; tenant identity from Item 1 Business, Polaris Forge 2 paragraph",
+    "basis": "Contractual debt terms. THE TENANT LINKAGE IS A TWO-SENTENCE JOIN I MADE, NOT A SINGLE DISCLOSURE: the 10-K says ComputeCo 2 was formed in a reorganisation of 'the entities and assets related to the Polaris Forge 2 campus', and separately says Polaris Forge 2 is leased to 'a U.S.-based investment-grade hyperscaler' (200 MW, leases dated 20 Oct 2025). Applied Digital never states in one place that the 6.750% notes are secured by that lease.",
+    "verbatim_qualifier": "\"a U.S.-based investment-grade hyperscaler\" (Applied Digital 10-K, Item 1)"
+   },
+   {
+    "filer": "Applied Digital Corp (CIK 0001144879)",
+    "form": "10-K, filed 2026-07-29, acc 0001144879-26-000048",
+    "period": "Closed 16 Jun 2026",
+    "disclosure_type": "Third-party project debt, TENANT NOT IDENTIFIED \u2014 excluded from my IG-covenant total",
+    "amount": "$1.59 billion of 7.000% senior secured notes due 15 Jun 2031, issued at 100.000% of par, issuer APLD ComputeCo 3 LLC, refinancing a $300m Goldman Sachs bridge facility",
+    "footnote": "Note 'Subsequent Events' \u2014 2031 7.000% Notes Offering",
+    "basis": "Contractual debt terms. The 10-K does NOT state which campus or tenant secures ComputeCo 3. Excluded from the summable total."
+   },
+   {
+    "filer": "Cipher Digital Inc (formerly Cipher Mining) (CIK 0001819989)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001819989-26-000041",
+    "period": "Warrants issued Sept 2025; asset carried at 2026-06-30 and 2025-12-31",
+    "disclosure_type": "THE PRICE OF THE GUARANTEE, PAID BY THE BENEFICIARY \u2014 fair value of consideration given to Google for a lease backstop",
+    "amount": "$544.5 million recorded in Other noncurrent assets, being the initial fair value of warrants over 24,178,576 shares at an exercise price of $0.01, issued to Google as consideration for backstopping Fluidstack's obligations under the Barber Lake Facility lease. A floor applies: if the Warrant Shares are worth less than $430.0 million the day before the exercise period opens, Cipher must issue more shares and/or pay cash to make up the shortfall.",
+    "footnote": "Note on Leases (deferred/other noncurrent assets) and the Google Warrant Agreement note; amortised straight-line over the life of the lease",
+    "basis": "Initial fair value of equity instruments issued as consideration for a credit enhancement, capitalised as a deferred charge and amortised over the lease. Level 3 valuation. Same basis as TeraWulf's $515.5 million below \u2014 these two ARE summable.",
+    "verbatim_qualifier": "\"the value of Google agreeing to make the lease payments from Fluidstack\" (Cipher 10-Q)"
+   },
+   {
+    "filer": "TeraWulf Inc (CIK 0001083301)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-05, acc 0001083301-26-000166",
+    "period": "Warrants issued Aug 2025; asset carried at 2026-06-30 and 2025-12-31",
+    "disclosure_type": "THE PRICE OF THE GUARANTEE, PAID BY THE BENEFICIARY \u2014 second, independent instance",
+    "amount": "$515.5 million recorded in deferred charges, being the fair value at issuance of warrants over 73,580,000 shares at an exercise price of $0.01, issued to Google in consideration of the Google Backstop of Fluidstack's obligations under the Fluidstack HPC Leases at Lake Mariner",
+    "footnote": "Note on Leases \u2014 Google Recognition Agreements / Google Warrants; amortised straight-line over the life of the Fluidstack HPC Leases",
+    "basis": "Initial fair value of equity instruments issued as consideration for a credit enhancement, capitalised as a deferred charge. The warrants are ALSO carried as a warrant liability at fair value through P&L, so the same instrument appears on both sides of TeraWulf's balance sheet.",
+    "verbatim_qualifier": "\"In consideration of Google providing the Google Backstop\" (TeraWulf 10-Q)"
+   },
+   {
+    "filer": "Hut 8 Corp (CIK 0001964789)",
+    "form": "8-K filed 2026-06-05, acc 0001104659-26-070744, EX-99.1 (pricing press release); notes terms repeated in 10-Q acc 0001104659-26-090025",
+    "period": "Priced 4 Jun 2026, closed 9 Jun 2026",
+    "disclosure_type": "Third-party project debt priced off a HIGH-investment-grade tenant covenant, with the tenant's rating band disclosed",
+    "amount": "$4.25 billion of 6.129% senior secured notes due 30 Nov 2042, issued at par, fully amortising from 30 May 2030, non-recourse to Hut 8; issuer Beacon Point DC LLC. The tenant is described as \"a tenant that is a high-investment-grade company (i.e., rated AA- or higher) as of the date hereof\".",
+    "footnote": "EX-99.1 pricing release, use-of-proceeds paragraph; 10-Q Note 9 'Loans, notes payable, and other financial liabilities' \u2014 Beacon Point Notes",
+    "basis": "Contractual debt terms plus a disclosed tenant credit-rating BAND. This is the sharpest tenant-quality disclosure I found anywhere: 'rated AA- or higher' narrows the counterparty to a handful of issuers but the filings never name it. The 10-Q calls it a 'high-investment-grade technology company'.",
+    "verbatim_qualifier": "\"a high-investment-grade company (i.e., rated AA- or higher)\" (Hut 8 8-K EX-99.1)"
+   },
+   {
+    "filer": "Hut 8 Corp (CIK 0001964789)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001104659-26-090025",
+    "period": "As of 2026-06-30",
+    "disclosure_type": "Credit rating assigned to the project debt \u2014 the created-creditworthiness outcome, stated",
+    "amount": "Baa2 by Moody's Ratings on the Beacon Point Notes. No rating and no rating agency is disclosed anywhere for the River Bend Notes.",
+    "footnote": "Item 2 MD&A, 'Recent Developments' \u2014 $4.25 Billion Beacon Point Phase 1 Financing",
+    "basis": "Issuer-reported credit rating. NOTE THE ASYMMETRY: a construction-stage, single-asset, non-recourse SPV is rated Baa2 while its tenant is rated AA- or higher \u2014 roughly five notches of credit transferred and then partly given back by the project risk. The rating rationale is not in any filing."
+   },
+   {
+    "filer": "Hut 8 Corp (CIK 0001964789)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001104659-26-090025; announcement 8-K filed 2025-12-17, acc 0001104659-25-122052, EX-99.1",
+    "period": "Priced 27 Apr 2026, closed 30 Apr 2026; lease signed Dec 2025",
+    "disclosure_type": "Third-party project debt priced off a GOOGLE BACKSTOP of a non-investment-grade tenant",
+    "amount": "$3.25 billion of 6.192% senior secured notes due 15 Nov 2042, issued at par, fully amortising from 15 May 2028, non-recourse. Tenant Fluidstack USA IV Inc.; the lease \"is supported by a financial backstop provided by Google LLC for rent payments and certain other financial obligations thereunder\". Effective interest rate 6.41%; fair value $3.30 billion at 30 Jun 2026.",
+    "footnote": "10-Q Note 9 \u2014 River Bend Notes",
+    "basis": "Contractual debt terms. The 8-K of 2025-12-17 additionally discloses the GUARANTOR's own ratings: \"Google, a subsidiary of Alphabet Inc. (S&P: AA+, Moody's: Aa2), is providing a financial backstop\". Hut 8 discloses NO consideration paid to Google for this backstop \u2014 no warrants, no fee \u2014 in contrast to TeraWulf and Cipher.",
+    "verbatim_qualifier": "\"supported by a financial backstop provided by Google LLC\" (Hut 8 10-Q Note 9)"
+   },
+   {
+    "filer": "Hut 8 Corp (CIK 0001964789)",
+    "form": "8-K filed 2025-12-17, acc 0001104659-25-122052, EX-99.1; 8-K filed 2026-07-20, acc 0001104659-26-084862, EX-99.1",
+    "period": "Leases signed Dec 2025 (River Bend) and July 2026 (Beacon Point Phase 2)",
+    "disclosure_type": "Contracted lease value standing behind the project debt \u2014 the beneficiary-side quantification of the covenant",
+    "amount": "River Bend: $7.0 billion base-term contract value over 15 years (3.0% annual escalator), up to $17.7 billion with three 5-year renewals; expected cumulative NOI $6.9 billion. Beacon Point: $19.6 billion across two 15-year leases, up to $50.2 billion with renewals. Portfolio total: $26.6 billion of aggregate base-term contract value across 949 MW of contracted IT capacity, with average annual NOI of more than $1.75 billion.",
+    "footnote": "EX-99.1 'Transaction Highlights' in each release",
+    "basis": "Issuer-stated undiscounted contracted lease revenue, not a codified accounting measure and not an ASC 842 figure. Hut 8 states \"100% of Hut 8's contracted AI data center capacity is leased to or backstopped by investment-grade counterparties.\""
+   },
+   {
+    "filer": "TeraWulf Inc (CIK 0001083301)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-05, acc 0001083301-26-000166",
+    "period": "Issued 22 Oct 2025",
+    "disclosure_type": "Third-party project debt priced off a Google backstop that was NOT YET EFFECTIVE at issuance",
+    "amount": "$3.20 billion of 7.75% Senior Secured Notes due 15 Oct 2030, issuer Wulf Compute LLC. Fair value $3,356.8 million at 30 Jun 2026 (Level 1).",
+    "footnote": "Note 10 Debt \u2014 Senior Secured Notes; and the HPC Leases note",
+    "basis": "Contractual debt terms. CRITICAL STRUCTURAL POINT that explains why this priced 156bp wide of Hut 8's Google-backstopped River Bend six months later: the Google Backstop \"becomes effective as of the commencement date under the corresponding Fluidstack HPC Lease\", which had not occurred, so Google instead PLEDGED the warrants to the collateral agent for the lenders' benefit and a Google affiliate unconditionally agreed with the collateral agent to pay the Termination Fee. The credit support at issuance was collateral plus a direct undertaking, not the backstop itself."
+   },
+   {
+    "filer": "Cipher Digital Inc (CIK 0001819989)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001819989-26-000041",
+    "period": "Issued 13 Nov 2025 ($1.4bn) and 24 Nov 2025 ($333m tap)",
+    "disclosure_type": "Third-party project debt priced off a Google backstop \u2014 same sponsor as the IG-hyperscaler deal below, which is what makes the pair usable",
+    "amount": "$1.4 billion plus a $333.0 million additional series = $1.733 billion of 7.125% Senior Secured Notes due 15 Nov 2030, issuer Cipher Compute LLC; no amortisation before completion of the Barber Lake Facility (tenant Fluidstack USA II Inc., Google-backstopped)",
+    "footnote": "Note 'Debt' \u2014 Cipher Compute 2030 Senior Secured Notes",
+    "basis": "Contractual debt terms."
+   },
+   {
+    "filer": "Cipher Digital Inc (CIK 0001819989)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001819989-26-000041",
+    "period": "Issued 11 Feb 2026",
+    "disclosure_type": "Third-party project debt priced off a direct INVESTMENT-GRADE hyperscaler covenant \u2014 the same-sponsor pair to the 7.125% above",
+    "amount": "$2.0 billion of 6.125% Senior Secured Notes due 15 Feb 2031, issuer Black Pearl Compute LLC, secured on the Black Pearl Facility (Wink, Texas, ~300 gross MW) which is subleased under a 15-year lease to \"an investment grade hyperscaler tenant\"",
+    "footnote": "Note 'Debt' \u2014 Black Pearl Compute 2031 Senior Secured Notes; tenant description in the Leases note",
+    "basis": "Contractual debt terms. Same sponsor, same instrument class, same market, 90 days apart, tenant credit is the variable that changed.",
+    "verbatim_qualifier": "\"a 15-year lease agreement with an investment grade hyperscaler tenant\" (Cipher 10-Q)"
+   },
+   {
+    "filer": "Cipher Digital Inc (CIK 0001819989)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-04, acc 0001819989-26-000041",
+    "period": "Issued 15 Jun 2026",
+    "disclosure_type": "Third-party project debt, TENANT NOT IDENTIFIED \u2014 excluded from my IG-covenant total",
+    "amount": "$810.0 million of 6.000% Senior Secured Notes due 15 Jun 2031, issuer Stingray Compute LLC; amortisation based on Stingray's consolidated net operating income",
+    "footnote": "Note 'Debt' \u2014 Stingray Compute 2031 Senior Secured Notes",
+    "basis": "Contractual debt terms. Cipher says elsewhere it is 'building one of its existing sites for a hyperscaler tenant' but never links that tenant to Stingray. Excluded from the summable total; at 6.000% it is the tightest coupon in the whole set."
+   },
+   {
+    "filer": "Galaxy Digital Inc (CIK 0001859392)",
+    "form": "8-K filed 2026-07-24, acc 0001859392-26-000074, EX-99.1 (pricing release); tenant from 8-K filed 2026-07-22, acc 0001859392-26-000068, EX-99.1 (investor presentation)",
+    "period": "Priced 23 Jul 2026, closing expected 28 Jul 2026",
+    "disclosure_type": "Third-party project debt priced off a NON-investment-grade tenant covenant \u2014 the most recent and widest point in the series",
+    "amount": "$3.507 billion of 9.875% senior secured notes due 1 Aug 2031, issuer Galaxy Helios Data Centers II LLC, financing 260 MW critical IT at Dickens County, Texas; amortising at only 4.00% per annum of original principal (i.e. a large balloon). The investor presentation states the phase is \"leased to CoreWeave\" on a 15-year base term with $10.4 billion of minimum contracted lease payments.",
+    "footnote": "EX-99.1 pricing press release; EX-99.1 transaction overview, 'Transaction Overview: ~$3.5Bn Financing of the Helios Data Center'",
+    "basis": "Contractual debt terms. Note what the pricing release does NOT say: unlike Hut 8, Galaxy's release makes no claim about tenant credit quality and does not name the tenant. The tenant name appears only in the separately furnished investor presentation."
+   },
+   {
+    "filer": "CoreWeave, Inc. (CIK 0001769628)",
+    "form": "10-Q period 2026-06-30, filed 2026-08-12, acc 0001769628-26-000366",
+    "period": "Issuances Jul 2025 through Aug 2026",
+    "disclosure_type": "The tenant's OWN cost of unsecured debt \u2014 the benchmark that the CoreWeave-tenant project bonds converge on",
+    "amount": "9.00% senior notes due 2031 ($1.8bn, Jul 2025); 9.75% senior notes due 1 Oct 2031 ($2.8bn, Apr 2026); 9.625% senior notes due 15 Jul 2032 ($1.3bn, Jun 2026); EUR 2.0bn senior notes due 2032 (Jun 2026); DDTL 5.5 Facility entered Aug 2026 at Term SOFR + 5.50% (base rate + 4.50%). Combined fair value of the 2030/2031/2032 senior notes $10.0 billion at 30 Jun 2026.",
+    "footnote": "Note 'Debt' \u2014 Senior Notes and Delayed Draw Term Loan Facilities; and Subsequent Events",
+    "basis": "Contractual debt terms of the tenant itself. This is the load-bearing observation for the whole lens: Galaxy's CoreWeave-tenant project bond at 9.875% (Jul 2026) prices essentially AT or slightly wide of CoreWeave's own unsecured curve (9.625% in Jun 2026), despite first-priority liens on a $3.3bn+ asset. A lease-backed project bond does not price off the sponsor or the bricks; it prices off the tenant."
+   },
+   {
+    "filer": "Meta Platforms, Inc. (CIK 0001326801)",
+    "form": "10-Q period 2026-06-30, filed 2026-07-30, acc 0001628280-26-050705",
+    "period": "May 2026 issuance; balances as of 2026-06-30",
+    "disclosure_type": "An investment-grade tech issuer's OWN long-dated cost of funds, from a filing \u2014 the reference point the template asserts but never sources",
+    "amount": "May 2026 Notes: $25.00 billion in six series, maturities 2031-2066, stated interest rates 4.55% - 6.45%, effective interest rates 4.60% - 6.48%. Total face amount of Meta long-term debt $84.0 billion at 30 Jun 2026 (up from $59.0 billion at 31 Dec 2025). Estimated fair value of all outstanding notes $79.75 billion.",
+    "footnote": "Note 8 \u2014 Long-term Debt",
+    "basis": "Stated and effective interest rates on senior unsecured notes. Provides the only filing-sourced contemporaneous IG-tech long-bond coupon: Meta's own 40-year money in May 2026 cost up to 6.45%, one month before Hut 8's Beacon Point SPV borrowed 16.5-year fully-amortising money at 6.129% on the strength of an AA--or-better tenant's lease. Tenors differ materially; this is a neighbourhood comparison, not a spread."
+   },
+   {
+    "filer": "NVIDIA Corporation (CIK 0001045810)",
+    "form": "10-Q period 2026-04-26, filed 2026-05-20, acc 0001045810-26-000052",
+    "period": "As of 2026-04-26",
+    "disclosure_type": "Refutation of the template's benchmark \u2014 NVIDIA's entire bond stack and its vintage",
+    "amount": "3.20% Notes due 2026 ($1.0bn), 1.55% due 2028 ($1.25bn), 2.85% due 2030 ($1.5bn), 2.00% due 2031 ($1.25bn), 3.50% due 2040 ($1.0bn), 3.50% due 2050 ($2.0bn), 3.70% due 2060 ($0.5bn, 34.0 years remaining, effective rate 3.73%). Net carrying amount $8.47 billion. No NVIDIA bond has been issued since 2020.",
+    "footnote": "Note 9 \u2014 Debt",
+    "basis": "Stated and effective interest rates on senior unsecured notes. THE TEMPLATE CLAIM THAT HUT 8 PRICED '~100bp over Nvidia's own 30-year paper' IS NOT REPRODUCIBLE FROM EDGAR: 6.129% is 240bp over NVIDIA's 3.70% 2060 coupon, and the claim can only work against a secondary-market YIELD on a 2020-vintage bond, which appears in no filing. Beacon Point is also 16.5-year fully amortising, not 30-year."
+   },
+   {
+    "filer": "QTS Phoenix II DC2 Holding I, LLC (CIK 0002083795) \u2014 securitizer for QTS Issuer ABS II, LLC / QTS Co-Issuer ABS II, LLC",
+    "form": "ABS-15G filed 2026-06-15, acc 0001140361-26-025272, Exhibit 99.1 (Deloitte & Touche LLP agreed-upon-procedures report dated 15 Jun 2026)",
+    "period": "Lease data as of close of business 2026-02-28; report dated 2026-06-15",
+    "disclosure_type": "THE ABS ROUTE \u2014 direct evidence that data-centre securitisations are underwritten on the tenant parent's credit rating, and the only quantity the form discloses",
+    "amount": "17 tenant leases expected to be included in Secured Data Center Revenue Term Notes, Series 2026-6, Series 2026-7 and Series 2026-8. Verified lease characteristic 15 is the \"Customer parent credit rating\", which Deloitte compared against the Standard & Poor's Financial Services LLC website on 11 June 2026 using the customer parent name taken from each Lease Agreement.",
+    "footnote": "Item 2.01, Findings and Conclusions of a Third Party Due Diligence Report Obtained by the Issuer (Rule 15Ga-2)",
+    "basis": "Rule 15Ga-2 third-party due-diligence disclosure. This is NOT a financial disclosure: it gives no deal size, no coupon, no tranche ratings, no tenant names and no rating values. Its evidentiary value is structural \u2014 an auditor was instructed to verify every tenant's parent credit rating against S&P, which is the securitisation market saying in a filing that the tenant covenant IS the credit."
+   },
+   {
+    "filer": "Population of data-centre ABS/CMBS securitizers visible on EDGAR (my count, from EDGAR full-text search)",
+    "form": "Form ABS-15G, 89 filings, 2025-01-01 to 2026-08-22",
+    "period": "2025-01-01 to 2026-08-22",
+    "disclosure_type": "Size of the data-centre securitisation channel \u2014 COUNT ONLY, because size is not disclosable on EDGAR",
+    "amount": "89 ABS-15G filings containing the phrase \"data center\", from 34 distinct securitizer or depositor entities: Phoenix Data Center Acquisitions, QTS (Phoenix II DC2, Hillsboro, QTS Depositor 2026), Vantage Data Centers Holdings and Retained Vantage Data Centers, Sabey, Switch, STACK Infrastructure, Compass Datacenters (four entities), DataBank, Flexential, TierPoint (issuer and co-issuer), Cologix US and Cologix Canada, CyrusOne LP, ADC Holdco, eStruxture, Urbacon Developments (II), MECP1 Mesa, LMDV Sponsor, SF ABS Parent, Zaft Rudaba, Aroosak Sponsor, PRP Depositor 2025-RCF4 and 2026-RCF2, plus CMBS depositors Citigroup Commercial Mortgage Securities, Deutsche Mortgage & Asset Receiving, Barclays Commercial Mortgage Securities and JP Morgan Chase Commercial Mortgage Securities.",
+    "footnote": "EDGAR full-text search, forms=ABS-15G, q=\"data center\"",
+    "basis": "A COUNT OF FILINGS AND FILERS THAT I PERFORMED, not a disclosure by anyone. It is under-inclusive (only filings whose text contains the exact phrase) and over-inclusive at deal level (co-issuers and multiple 15Ga-2 reports per deal). It establishes that the channel exists and is active; it does not establish its size."
+   },
+   {
+    "filer": "Hut 8 Corp (CIK 0001964789) \u2014 MY COMPUTATION from disclosed schedules",
+    "form": "8-K filed 2026-04-27 acc 0001104659-26-049090 EX-99.1 and 8-K filed 2026-06-04 acc 0001104659-26-070393 EX-99.1 (furnished investor presentations)",
+    "period": "Full life of the notes, as modelled by the issuer",
+    "disclosure_type": "WHAT A BASIS POINT IS WORTH IN DOLLARS \u2014 derived, not disclosed",
+    "amount": "Approximately $739 million of lifetime interest per 100bp across Hut 8's two project bonds. Derivation: the presentations disclose total illustrative interest expense of $2,569 million on Beacon Point at 6.129% and $1,982 million on River Bend at 6.192%. Dividing gives $41,915 million and $32,009 million of debt-years respectively; 100bp on those is $419 million and $320 million.",
+    "footnote": "'Indicative cash waterfall and credit metrics' slide in each presentation",
+    "basis": "MY ARITHMETIC ON DISCLOSED FIGURES \u2014 this is a residual computation and must never be cited as a disclosure. It is only as good as the issuer's own illustrative interest schedule, which the presentations label as projected and exclude interest during construction. The same slides disclose Beacon Point DSCR sculpted to 1.34x with 7.95x leverage, and River Bend to 1.31x with 9.20x leverage."
+   }
+  ],
+  "what_is_not_disclosed": "NINE gaps, each of which I searched for specifically and did not find.\n\n1. NO RATING RATIONALE EXISTS IN ANY FILING, ANYWHERE. The task asked what the rating agency said the lease did to the credit. Rating agency reports are not SEC filings and none is furnished as an exhibit. Hut 8 discloses six words \u2014 \"rated Baa2 by Moody's Ratings\" \u2014 in MD&A and nothing more. There is no discussion of notching, no lease-quality analysis, no comparison to the tenant's own rating. The mechanism's central evidentiary claim (that the lease is WHY the bonds are investment grade) is nowhere asserted by an agency in a document I can cite.\n\n2. WORSE: HUT 8 DISCLOSES NO RATING AT ALL FOR THE RIVER BEND NOTES. The 27 April 2026 press release is headlined \"Hut 8 Announces Pricing of $3.25 Billion of Investment-Grade Senior Secured Notes for River Bend Data Center Project\" and the word \"rating\" does not appear in its body. Neither the release nor the 10-Q names an agency or a rating for those notes. A $3.25 billion issue is publicly characterised as investment grade in a furnished exhibit with no rating disclosed to support it. That is the single most quotable disclosure failure in this lens.\n\n3. NO ISSUER DISCLOSES A SPREAD TO ANY BENCHMARK. Not one of Hut 8, Applied Digital, Cipher, TeraWulf or Galaxy states a spread to Treasuries, to swaps, or to any index. Every deal is disclosed as a coupon and a price. THIS IS WHY THE \"HALVES THE FINANCING COST\" CLAIM CANNOT BE VERIFIED FROM FILINGS: the ratio depends entirely on a risk-free base rate that appears in no filing. On coupon, which IS disclosed, the reduction is never a halving \u2014 Applied Digital 9.250% to 6.750% is 27%, Cipher 7.125% to 6.125% is 14%, and the widest pair I found (Galaxy 9.875% versus Hut 8 6.129%) is 38%. A halving would require the base rate to be roughly half the safe-tenant coupon, which is arithmetically possible in early-2026 conditions but is an assumption, not a finding.\n\n4. NO BOND OFFERING DOCUMENT IS ON EDGAR. Every one of these deals is Rule 144A / Regulation S. There is no prospectus, no offering memorandum, no ratings letter, no pricing supplement. The indentures are filed as 8-K exhibits (Hut 8's are EX-4.1 to the 8-Ks of 1 May and 10 June 2026), but an indenture does not contain pricing, tenant identity or ratings. Everything I have on pricing comes from press releases and investor presentations FURNISHED under Item 7.01 or 8.01 \u2014 which are expressly not deemed \"filed\" and are not audited.\n\n5. NO TENANT IS NAMED WHERE THE TENANT IS INVESTMENT GRADE. This is a perfect inverse correlation across the whole dataset and it is worth stating as a pattern. Where the tenant is CoreWeave (non-IG) it is named: Applied Digital names it, Galaxy names it in its presentation. Where the tenant is investment grade it is never named: Hut 8 says \"a high-investment-grade company (i.e., rated AA- or higher)\", Cipher says \"an investment grade hyperscaler tenant\", Applied Digital says \"a U.S.-based investment-grade hyperscaler\" and, for Delta Forge 1 and Polaris Forge 3, \"a second U.S.-based investment-grade hyperscaler\". Four filers, four unnamed IG tenants. The credit that is doing the work is systematically anonymous.\n\n6. TWO PROJECT BONDS TOTALLING $2.40 BILLION HAVE NO DISCLOSED TENANT AT ALL \u2014 Cipher's Stingray 2031 ($810m at 6.000%) and Applied Digital's ComputeCo 3 2031 ($1.59bn at 7.000%). Their coupons sit squarely in the IG-tenant band, which is suggestive, but suggestion is not disclosure and I have excluded both from every total.\n\n7. THE SIZE OF THE DATA-CENTRE ABS/CMBS MARKET IS NOT ESTABLISHABLE FROM EDGAR AND I WILL NOT ESTIMATE IT. ABS-15G is a due-diligence findings form: it discloses the accountant, the date, the procedures and sometimes a lease count. It discloses no deal size, no coupon, no tranche rating and no tenant name. I found no registered (Regulation AB) data-centre ABS prospectus \u2014 no 424B5, no ABS-EE \u2014 in the period searched; the channel is entirely 144A. Anyone circulating a dollar figure for outstanding data-centre ABS did not obtain it from EDGAR.\n\n8. HUT 8 DISCLOSES NO CONSIDERATION PAID TO GOOGLE. TeraWulf and Cipher each disclose exactly what the backstop cost them ($515.5m and $544.5m of warrant fair value). Hut 8's River Bend lease carries an identical-function Google backstop and Hut 8 discloses no warrants, no fee, and no deferred charge for it. Either the consideration sits inside the lease economics, or it was given for nothing, or it is undisclosed. The filings do not permit a choice between these, and the difference matters: it is the difference between a priced credit enhancement and a free one.\n\n9. THE OFFSETS ARE UNQUANTIFIED ON BOTH SIDES. Google's backstop at TeraWulf gives Google the OPTION either to pay the termination fee or to assume the lease as tenant; Hut 8's is described only as covering \"rent payments and certain other financial obligations\". Neither the recovery leg nor the termination-fee quantum is disclosed by any beneficiary. And no beneficiary discloses what it would have paid without the covenant \u2014 the counterfactual is constructed by me from sibling deals, not stated by anyone.",
+  "summable": "WHAT MAY LEGITIMATELY BE ADDED.\n\n(1) THE PRICE OF THE GUARANTEE, RECEIVING SIDE. $515.5 million (TeraWulf) + $544.5 million (Cipher) = $1,060.0 MILLION. Identical measurement basis: the initial fair value of penny warrants issued to Google as consideration for a lease backstop, capitalised as a deferred charge and amortised over the lease. Both at 30 Jun 2026, both disclosed as the same concept in the same words (\"in consideration of Google providing the Google Backstop\" / \"the value of Google agreeing to make the lease payments from Fluidstack\"). This is the summable number this lens exists to produce, and it is the only place in the entire project where the created creditworthiness has an arm's-length PRICE rather than a ceiling. Set it against Alphabet's own statement that its financial-guarantee fair value is not material and Meta's \"no liability has been recorded to date\": the guarantors record approximately nothing; the beneficiaries recorded $1.06 billion of equity given away.\n\n(2) THIRD-PARTY DEBT PRICED OFF AN INVESTMENT-GRADE TECH COVENANT. $16,583 MILLION at 22 Aug 2026, one instrument class (144A senior secured project notes whose sole or principal source of debt service is a data-centre lease), four filers:\n  Google-backstopped Fluidstack leases \u2014 Hut 8 River Bend $3,250m (6.192%, Apr 2026) + TeraWulf 2030 Secured Notes $3,200m (7.75%, Oct 2025) + Cipher Compute 2030 $1,733m incl. the $333m tap (7.125%, Nov 2025) = $8,183m.\n  Direct investment-grade tenant leases \u2014 Hut 8 Beacon Point $4,250m (6.129%, Jun 2026, tenant rated AA- or higher) + Cipher Black Pearl $2,000m (6.125%, Feb 2026) + Applied Digital ComputeCo 2 $2,150m (6.750% at 98, Mar 2026) = $8,400m.\n  Vintage caveat: these are ISSUANCE amounts spanning Oct 2025 to Jun 2026, not a single as-of date, and none has begun amortising. Excluded and listed separately: $2,400m of tenant-undisclosed deals (Cipher Stingray $810m, APLD ComputeCo 3 $1,590m). Also excluded: $5,857m of CoreWeave-tenant comparators (APLD ComputeCo 2030 $2,350m, Galaxy Helios II $3,507m) \u2014 those are the control group, not the population.\n\n(3) THE COVENANT IN BASIS POINTS. Measured within one instrument class, the range is 100 to 390bp of coupon. Four observations, best-controlled first:\n  (a) SAME SPONSOR, TENANT SWAPPED \u2014 Applied Digital: 9.250% at 97.000 with CoreWeave (13 Nov 2025) versus 6.750% at 98.000 with an IG hyperscaler (3 Mar 2026). Coupon delta 250bp; the 1-point issue-price difference adds roughly 19bp over a ~5.2-year life (my arithmetic), so approximately 270bp on yield. Contaminated by 3.7 months of market movement.\n  (b) SAME SPONSOR, TENANT SWAPPED \u2014 Cipher: 7.125% Google-backstopped Fluidstack (13/24 Nov 2025) versus 6.125% direct IG hyperscaler (11 Feb 2026), both at par. Coupon delta 100bp. This is the LOW end and it is the honest low end: a Google backstop gets you most of the way to an IG tenant.\n  (c) DATE-MATCHED, SPONSOR SWAPPED \u2014 November 2025: Cipher 7.125% (Google backstop) versus Applied Digital 9.250% at 97 (CoreWeave). Coupon delta 212.5bp, roughly 275bp on yield. Same month, same market, same instrument class; different sponsors and sites.\n  (d) NEAR-DATE-MATCHED, WIDEST \u2014 June/July 2026: Hut 8 Beacon Point 6.129% (AA--or-better tenant, 16.5-year fully amortising) and Cipher Stingray 6.000% versus Galaxy Helios II 9.875% (CoreWeave, 5-year, only 4%/yr amortisation). Delta 375-387bp, and the cheap end has three times the tenor.\n  My working figure is 250bp, the same-sponsor Applied Digital observation, because it holds sponsor, jurisdiction, asset type and instrument class constant and varies only the tenant. Applied to the $16,583m population that is approximately $415 million of interest avoided per year (my arithmetic). For Hut 8's two deals alone the disclosed illustrative interest schedules imply $739 million of lifetime interest per 100bp, so 250bp is roughly $1.85 billion over the life of $7.5 billion of notes \u2014 about a quarter of principal.\n\n(4) THE PROJECT BOND PRICES OFF THE TENANT, NOT THE SPONSOR OR THE ASSET. This is the strongest structural claim the data supports and it needs no estimation. Galaxy's CoreWeave-tenant project bond priced at 9.875% in July 2026 while CoreWeave's own unsecured 2032 notes had priced at 9.625% a month earlier \u2014 the first-priority lien on a purpose-built data centre bought essentially nothing. Meanwhile Applied Digital, one sponsor with one balance sheet, priced 250bp apart on two structurally identical deals. The sponsor is irrelevant, the collateral is nearly irrelevant, and the tenant covenant is the credit.\n\nWHAT MAY NOT BE ADDED.\n\n(a) THE $1.06 BILLION OF WARRANT VALUE MAY NOT BE ADDED TO ANY GUARANTOR-SIDE FIGURE. It is the price of the enhancement, not the exposure. Adding it to Alphabet's $43.785 billion of credit-derivative notional or its $7.6 billion of financial guarantees mixes a paid consideration with a maximum-payment ceiling.\n\n(b) NO RECONCILIATION IS POSSIBLE BETWEEN THIS LENS AND ALPHABET'S NOTIONAL. Alphabet discloses $43.785 billion of credit-derivative gross notional at 30 Jun 2026, described as backstops of third-party data-centre payment obligations. On the receiving side I can identify exactly one quantified Google-backstopped lease value \u2014 Hut 8's River Bend at $7.0 billion base-term ($17.7 billion with renewals). TeraWulf and Cipher disclose the existence of their Google-backstopped leases but not their contract values in the notes I read. So a $7.0 billion beneficiary-side figure sits against a $43.8 billion guarantor-side ceiling and the remaining $36.8 billion is unattributed. I did not attempt to close it and nobody should.\n\n(c) CONTRACT VALUES MAY NOT BE ADDED TO DEBT. Hut 8's $26.6 billion of base-term contract value, Galaxy's $10.4 billion of minimum contracted lease payments and the $16.583 billion of project notes are three different things: undiscounted future rent, undiscounted future rent, and principal outstanding. Rent is the source of debt service, so the two overlap almost completely.\n\n(d) COUPONS FROM DIFFERENT DATES ARE NOT A SPREAD. Every pair above except (c) and (d) is separated by weeks or months, and the whole market tightened materially between Oct 2025 and Jun 2026 \u2014 visible in the fact that Applied Digital's own CoreWeave-tenant deal at 9.250% (Nov 2025) is inside Galaxy's CoreWeave-tenant deal at 9.875% (Jul 2026), which cuts the other way and warns against reading a clean time trend either. Treat the 100-390bp range as a range, not a series.\n\n(e) THE MEASUREMENT IS COUPON, NOT SPREAD, AND THE TWO ANSWER DIFFERENT QUESTIONS. Nothing in EDGAR converts one into the other.\n\nON THE INDEPENDENCE TEST. There are genuinely FOUR independent beneficiary disclosures here, not one convention observed four times, and the evidence for that is that the four filers disagree structurally. TeraWulf and Cipher both capitalise the Google warrants as an asset \u2014 that IS a shared convention and should be read as two applications of one accounting answer to one deal template, though the warrant counts (73,580,000 versus 24,178,576) and the amounts ($515.5m versus $544.5m) are independently determined, and Cipher alone carries a $430.0 million value floor. Hut 8 discloses no consideration at all, which is a genuinely different fact rather than different wording. Applied Digital and Galaxy have no backstop and describe their tenants in opposite ways. And the pricing observations are hard market outcomes at four different sponsors, which is the strongest form of independence available. The one place I DID find pure convention: all five issuers use near-identical 144A/Reg S language and near-identical \"senior secured obligations... first-priority liens... non-recourse\" formulations. That is one law-firm template observed five times and proves nothing about the economics.\n\nON THE $662bn AND $970bn GHOSTS. Nothing in this lens reproduces either figure on any basis. My largest constructed number is $16.583 billion of project notes; my largest single disclosed number is Hut 8's $50.2 billion of potential campus contract value if all renewals are exercised, which is a contingent maximum on one campus. Neither ghost is anywhere near.\n\nSTOCK, NOT FLOW; PRICE, NOT CEILING. One correction to the project's own framing is warranted here. The guarantor-side figures the earlier lenses produced are ceilings under adverse scenarios the filers call improbable. The $1.06 billion in this lens is NOT of that kind: it is consideration actually transferred, at a fair value actually recorded, for a guarantee actually given. It is the one number in the whole exercise that is a price rather than a bound, which is exactly why it is the right answer to the charge.",
+  "counterparty_note": "The guarantor side of these same obligations sits in Alphabet's filings, and the two sides do not reconcile \u2014 which is itself the finding. Google LLC is the named backstop provider in Hut 8's River Bend lease (Hut 8 10-Q Note 9), TeraWulf's Fluidstack HPC Leases (TeraWulf 10-Q, Google Recognition Agreements) and Cipher's Barber Lake Facility lease (Cipher 10-Q, Google Warrant Agreement). Hut 8's 8-K of 2025-12-17 discloses the guarantor's own credit: \"Google, a subsidiary of Alphabet Inc. (S&P: AA+, Moody's: Aa2)\". The prior Alphabet lens established the guarantor-side quantum at $43,785 million of credit-derivative gross notional at 30 Jun 2026, described by Alphabet as backstops of third-party data-centre payment obligations and as the maximum potential amount of future payments, plus $7.6 billion of ASC 460 financial guarantees.\n\nThree things follow. FIRST, Alphabet's $43.785 billion is not decomposable to these three beneficiaries and they do not decompose to it: the only quantified Google-backstopped lease value I could read on the receiving side is Hut 8's River Bend at $7.0 billion over the 15-year base term (up to $17.7 billion with three 5-year renewals), and TeraWulf and Cipher disclose the backstop's existence without disclosing their leases' contract values in the notes I read. Roughly $36.8 billion of Alphabet's notional has no beneficiary-side counterpart I can point to. Neither side discloses a counterparty breakdown, so this gap is structural, not a search failure.\n\nSECOND, the valuation asymmetry is stark and is disclosed on both sides. Alphabet calls its financial-guarantee fair value not material; Meta records no liability for its residual value guarantee because payments are \"not probable\". On the receiving side the identical enhancement is worth $515.5 million to TeraWulf and $544.5 million to Cipher \u2014 $1.060 billion of equity handed to Google, recorded as an asset and amortised. The guarantors book approximately nothing for something the beneficiaries paid a billion dollars for. That is not an accounting error on either side; it is the exact accounting reason the transfer is invisible in every aggregate the project has been looking at.\n\nTHIRD, TeraWulf's disclosure shows the guarantor taking a direct, non-contingent role that the guarantor's own filings would not reveal: in connection with the $3.2 billion 2030 Secured Notes, Google pledged its warrants to Wilmington Trust as collateral agent for the lenders' benefit, and \"an affiliate of Google unconditionally agreed with the collateral agent for the benefit of the lenders that it shall (or shall cause Google to) pay the Termination Fee\". An unconditional undertaking to a bond trustee is a materially stronger commitment than a contingent recognition agreement, it is disclosed only by the beneficiary, and whether it is inside Alphabet's $43.785 billion notional is not determinable from either filing.\n\nOne further counterparty note on Meta: no Meta-backstopped third-party issuer appears anywhere in this lens. The systematic full-text sweep for backstop language turned up Google in every instance and Meta in none. Meta's mechanism runs through residual value guarantees inside its own joint ventures, which produces no third-party bond issuer on EDGAR to observe from the receiving side. So the receiving-side test is currently a test of the Google structure only, and the absence of a Meta analogue is a real limit on how far this lens generalises."
+ },
+ "total": "# SYNTHESIS: THE DISCLOSED CONTINGENT-GUARANTEE STACK\n\n**Nine filers read, all primary SEC sources, three lenses. Verdict on the charge: it fails, but not in the direction the project expected.**\n\n---\n\n## 1. THE NUMBER, ON ONE BASIS\n\n**Basis:** *Maximum potential amount of future payments under a guarantee of a third party's obligation, as disclosed by the guarantor.* This is ASC 460-10-50-4 and the credit-derivative-seller disclosures in ASC 815-10-50, treated as one measurement concept \u2014 a warrant I take from Alphabet, which pairs its ASC 460 and ASC 815 ceilings in a single MD&A sentence under one shared phrase.\n\n**The methodological move that makes the sum possible** (neither lens did this): Meta's headline $46.03bn is ASC 810 and bundles equity carrying value, lease commitments and funding commitments alongside the guarantee. I have **decomposed it and taken only the guarantee component \u2014 the ~$28bn RVG threshold** \u2014 which is what makes Meta commensurable with the other four. The $46.03bn itself is not summable with anything and must not be used here.\n\n### Per-filer table (the defensible artefact)\n\n| Filer | Guarantee ceiling | Instrument / standard | As of | Effective? |\n|---|---|---|---|---|\n| Alphabet | **$43.785bn** | Credit derivatives, data-centre payment backstops (ASC 815) | 2026-06-30 | Live; reducing as parties pay |\n| Alphabet | **$7.6bn** | Financial guarantees, energy equipment (ASC 460) | 2026-06-30 | Live, terms through Sept 2026 |\n| Meta | **~$28bn** | Residual value guarantee, Louisiana Venture | 2026-06-30 | Disclosed as current; underlying leases commence **2029** |\n| NVIDIA | **$3.5bn** | Facility lease guarantees (ASC 815 credit derivative) | 2026-04-26 (inception ceiling, never re-measured) | Live; current level undisclosed |\n| Oracle | **$3.3bn** | Guarantee of lessor's borrowing (ASC 460) | 2026-05-31 | Live; matures Sept 2026 |\n| Microsoft | **nil** | Contingencies note is purely legal; \"maximum exposure\" appears zero times | 2026-06-30 | Determinate zero |\n| Amazon | **nil** | $13.4bn standby LCs exist but are expressly for payment services and workers' comp | 2026-06-30 | Determinate zero for this purpose |\n\n**LIVE / CURRENTLY DISCLOSED: $86.2bn.**\n**SIGNED BUT NOT YET EFFECTIVE: $142.1bn** \u2014 NVIDIA Portsmouth $105bn (8-K 2026-08-17, effective on lease commencement from 2028), Meta El Paso ~$13bn (closing expected Q3 2026), Alphabet ~$24.1bn of agreed future backstop capacity.\n**TOTAL CONTRACTED: $228.3bn.**\n\n**Alternative cut, offered because the effectiveness line is genuinely arguable:** if Meta's $28bn moves to the not-yet-effective tier on the grounds that its leases commence in 2029 (the difference between Meta and NVIDIA here is disclosure *form*, not economics), the split is **$58.2bn live / $170.1bn contracted-not-live**. Total unchanged.\n\n**Excluded, and why:** Microsoft's $13bn and Amazon's $35bn OpenAI commitments and Alphabet's $21.9bn VIE funding commitments (investments, not guarantees of another party's obligation to a lender); Meta's $46.03bn ASC 810 figure and its $12.31bn lease and $2.92bn carrying-value components (double counts); Amazon's standby LCs (wrong purpose); NVIDIA's optional ~3.8GW of additional Portsmouth credit support (**unquantified \u2014 do not impute the ~$94bn a pro-rata scaling would give**); all purchase obligations and all ASC 842 lease figures.\n\n**Coverage: 6 of 6 filers determinate. 4 quantify, 2 are clean negatives.** That is unusually complete. But quality is not: only Alphabet gives a re-measured series with comparatives ($0 at 2025-12-31 \u2192 $16.94bn at 2025-12-31 \u2192 $43.785bn). NVIDIA's $3.5bn is an inception ceiling repeated verbatim across two filings four months apart with no as-of date attached \u2014 one disclosure carried forward, not two observations.\n\n### The number the guarantee stack sits behind \u2014 and it is 13x bigger\n\n**ASC 842 leases signed but not yet commenced, six filers, one standard:**\n\nMeta $278.99bn + Microsoft $329.1bn + Oracle $260bn + Amazon $137.2bn + Alphabet $85.2bn + NVIDIA $32.4bn = **$1,122.9bn**.\n\nVintages: four at 2026-06-30, Oracle 2026-05-31, NVIDIA 2026-04-26. Prior-period equivalents sum to **~$417.4bn** across vintages spanning eight months \u2014 so roughly **2.7x growth**, an order-of-magnitude statement, not a precise multiple. **Disclosed by 6 of 6. Tagged in XBRL by 0 of 6.** Excluded add-ons: Meta ~$68bn (July 2026), Alphabet $5.8bn short-term and $9.9bn PPA-as-lease.\n\n**This is the finding that reorganises the project.** The credit support is usually *not* a guarantee. At Hut 8's Beacon Point the notes are expressly **not guaranteed by anyone** \u2014 Hut 8 says so \u2014 and the lease covenant alone earns Baa2. Of the $16.58bn of investment-grade-covenant project debt identified on the beneficiary side, **$8.40bn rests on a bare lease to an unnamed IG tenant and $8.18bn on a guarantee**. The guarantee is the visible minority case. The unrecorded lease is the majority case, is 13x larger in aggregate, and is equally off balance sheet.\n\n---\n\n## 2. IS THE CHARGE ANSWERED?\n\n**Partly. The ceiling is measurable and measured; the value is measurable only from the beneficiary side, at 9.5% coverage; and the claim that motivated the mechanism is false.**\n\n**(a) The quantum: YES.** $86.2bn live, $228.3bn contracted, 6/6 determinate coverage, every component read in a filing. There is no retreat to the unmeasurable on the size of the guarantee stack. That half of the charge fails outright.\n\n**(b) The value: the coverage ratio is 9.5%.** The two-sided test is the strongest evidence the project has produced and also the source of its sharpest gap. Alphabet discloses $43.785bn of backstop notional and names no counterparty. The beneficiary side independently identifies **$8.183bn** of Google-backstopped project debt at three filers \u2014 Hut 8 River Bend $3.25bn, TeraWulf Wulf Compute $3.20bn, Cipher Compute $1.733bn, all with Fluidstack as tenant. **$8.183bn traceable against $86.2bn of disclosed guarantee ceiling = 9.5%. Roughly 90% of the disclosed guarantee ceiling has no beneficiary visible anywhere on EDGAR** \u2014 Meta's Venture, NVIDIA's SB Energy and unnamed \"early-stage companies\", and Oracle's unnamed lessor are not SEC filers. Every traceable dollar of guarantee-enabled project debt has a single guarantor: Google.\n\n**And the price of the guarantee is disclosed \u2014 but only by the party paying it.** TeraWulf $515.5m + Cipher $544.5m = **$1.060bn** of penny-warrant fair value capitalised as consideration to Google for the backstop, against $4.933bn of backstopped debt (21.5% of principal). The guarantor reports the same service at approximately nil \u2014 Meta records no liability, Alphabet calls financial-guarantee fair value not material \u2014 and Alphabet does not break out the warrants it *received*. **The consideration is invisible on both sides of the guarantor's books and fully priced on the beneficiary's.** Two caveats: Hut 8 has the identical Google backstop at River Bend and discloses no consideration at all, so even the beneficiary-side price has 2-of-3 coverage; and TeraWulf's and Cipher's warrants are two instances of one counterparty's standard deal terms, **not two independent price discoveries**.\n\n**(c) The template claim: REFUTED. Do not soften this.** \"A Big Tech lease guarantee roughly halves a project's financing cost\" is false on the only measure any filer discloses. No issuer states a spread to any benchmark, so the ratio is unverifiable; on coupon, the reduction is never a halving:\n\n| Comparison | Coupons | \u0394 | Reduction |\n|---|---|---|---|\n| Applied Digital, same sponsor, 110 days: CoreWeave \u2192 IG hyperscaler | 9.250% @97 \u2192 6.750% @98 | 250bp | 27% |\n| Cipher, same sponsor, 90 days: Google backstop \u2192 direct IG | 7.125% \u2192 6.125% | 100bp | 14% |\n| **Hut 8, same sponsor, 38 days, both 2042, both amortising, both non-recourse: Google backstop \u2192 direct AA- tenant** | **6.192% \u2192 6.129%** | **6.3bp** | **1.0%** |\n| Widest observed, cross-sponsor: Galaxy/CoreWeave \u2192 Cipher/IG | 9.875% \u2192 6.125% | 375bp | 38% |\n\nMaximum observed reduction: **38%**. A halving requires 50%.\n\n**The Hut 8 pair is the single best-controlled observation in the dataset and neither lens drew it out: a Google backstop of a non-investment-grade tenant prices within 6.3 basis points of a direct AA-or-higher tenant covenant.** River Bend also amortises two years earlier (shorter WAL), which should price it tighter, so 6.3bp is if anything a floor \u2014 though no rating is disclosed for River Bend and the comparison is not curve-adjusted. The Cipher pair says 100bp for the same substitution. **The backstop discount is somewhere between 6 and 100bp and the two same-sponsor observations do not agree.**\n\n**Two further corrections carried forward, both filing-supported:** (i) the \"~100bp over Nvidia's own 30-year paper\" claim is not reproducible \u2014 NVIDIA has issued no bond since 2020, its only long bond is 3.70% due 2060, and 6.129% is **243bp** over that coupon; (ii) **NVIDIA is not identified as the Hut 8 tenant in any filing** \u2014 Hut 8 says \"a high-investment-grade company (i.e., rated AA- or higher)\" and the word NVIDIA appears zero times in its 10-Q. Demote to press attribution. The rating band narrows the candidate set; do not name.\n\n**(d) One thing the coupon comparison cannot see, and it favours the mechanism.** Cipher paid $544.5m of warrants for a backstop worth 100bp on $1.733bn \u2014 about $87m of interest over the note life. **Six times the coupon saving.** TeraWulf's $515.5m is 16.1% of principal, a ~322bp-per-year equivalent over five years, inside but near the top of the observed band. The warrant is not priced off the bond; it backstops a 10\u201315 year lease, and no filer discloses the lease contract value against which it would pencil. **The beneficiaries are not buying basis points. They are buying the existence of the financing.** That is created creditworthiness with a price on it, and it is the one place in the project where the mechanism is measured rather than asserted.\n\n**(e) A finding that reframes how much the covenant is worth.** Beacon Point: tenant rated **AA- or higher**, project notes rated **Baa2**. Seven notches of leakage. And Galaxy's CoreWeave-tenant project bond at 9.875% prices **25bp wider than CoreWeave's own unsecured 9.625% 2032**. Together: project structure alone is worth nothing or less than nothing; the tenant covenant is worth everything; and what it buys is a lift *into* investment grade, not *to* the tenant's rating.\n\n---\n\n## 3. WHAT WOULD CLOSE THE GAP\n\nThe requirements largely exist and are being answered with boilerplate. Six named fixes:\n\n1. **XBRL tagging of ASC 842-20-50-8.** $1,122.9bn disclosed by six filers, tagged by none. This is an SEC Inline XBRL matter (Reg S-T Rule 405) plus a taxonomy element, not a FASB change. **This is the mechanical explanation for how the $662bn and $970bn ghosts got into circulation** \u2014 with no structured series to pull, intermediaries reconstruct one and the reconstruction acquires a provenance it never had. Highest ratio of fix-cost to value in the whole list.\n2. **Extend ASC 842-20-50-8 to require the maturity analysis that 842-20-50-6 already requires for commenced leases.** Amazon alone provides one (68% of its $137.2bn falls after 2030), proving feasibility. Without it, $985bn of the trillion has no duration.\n3. **Require disclosure of the fair value of consideration *received* for issuing a guarantee.** ASC 460-10-50-4 requires the carrying amount of the liability; nothing requires the guarantor to disclose what it was paid. This is the exact mirror of what TeraWulf and Cipher already disclose, and adding it would convert a $1.060bn beneficiary-side observation into a guarantor-side series. The single most targeted fix available.\n4. **Counterparty disaggregation of guarantee ceilings above a threshold.** Alphabet names none of the $43.785bn; NVIDIA names none of the $3.5bn; four beneficiaries never name an IG tenant \u2014 a perfect inverse correlation (non-IG tenants named, IG tenants anonymous). Closeable by SEC staff guidance under the existing ASC 460-10-50-4 \"how it arose\" requirement and ASC 275 concentration rules, without new standard-setting.\n5. **Pull single-tenant data-centre lease-backed project notes into Reg AB.** The multi-tenant colocation securitisations file Form ABS-15G under Rule 15Ga-2 \u2014 89 filings from 34 securitizers, including QTS, Vantage, Switch, STACK, Compass. Hut 8, Cipher, Applied Digital and Galaxy do not. Widening the Item 1101(c) definition of asset-backed security would bring third-party due diligence findings and Rule 17g-7 rating disclosure to the $16.58bn channel. Today these are all Rule 144A: **no prospectus, no offering memorandum, no ratings letter on EDGAR anywhere.** Everything the project has on pricing comes from Item 7.01/8.01 exhibits that are furnished, not filed, and not audited.\n6. **The spread question is closable today without any rule change: TRACE disseminates 144A corporate bond transactions.** That is the dataset that settles \"halves the financing cost.\" It is public and it is not on EDGAR. Rating rationales are not closable through filings at all \u2014 Hut 8 discloses six words (\"rated Baa2 by Moody's Ratings\") and **discloses no rating whatsoever for the $3.25bn River Bend notes, whose pricing release is headlined \"Investment-Grade.\"** That is the most quotable disclosure failure in the pass.\n\n---\n\n## 4. THE SIZE TEST\n\n| Measure | Level | vs $27,033bn runnable | vs $2,006bn bank\u2192NBFI | vs $3.1trn NFC capex |\n|---|---|---|---|---|\n| Guarantee ceiling, live | $86.2bn | 0.32% | 4.3% | 2.8% |\n| Guarantee ceiling, contracted | $228.3bn | 0.84% | 11.4% | 7.4% |\n| **Leases not yet commenced** | **$1,122.9bn** | **4.2%** | **56%** | **36%** |\n\n**Answer: the guarantee layer is a $50bn-class phenomenon and the essay it supports on its own is a small one. But we are in the $500bn essay \u2014 the $500bn is not the guarantee, it is the lease.**\n\nThree qualifiers on the small number, in decreasing strength:\n\n- **The ratio, not the level, is the object.** $86.2bn of guarantee sits behind $1,122.9bn of unrecorded lease obligation \u2014 a 13:1 hinge. The guarantee is the visible exception; the lease covenant is the ordinary case and is 13x bigger.\n- **The population is 90% invisible.** $86.2bn disclosed, $8.183bn traceable to a named beneficiary. At Hut 8's River Bend ratio ($7.0bn of base-term contract value supporting $3.25bn of notes, ~2.2x), Alphabet's $43.785bn of notional is consistent with roughly $20bn of backstopped project debt against $8.183bn identified \u2014 **flagged explicitly as my computation from a single deal's disclosed schedule, not a disclosure**, and with the competing explanation stated: the notional may also cover leases carrying no bond financing at all, which collapses the implied figure.\n- **The trajectory.** Alphabet $0 \u2192 $16.94bn \u2192 $43.785bn in eighteen months. NVIDIA: zero occurrences of \"residual value\" in any periodic filing, then $105bn in a single 8-K five days before this pass. Meta ran its Louisiana template a second time at El Paso within nine months. Real, but note this is **one filer replicating its own structure and one instrument scaling \u2014 not independent corroboration**, and extrapolating it is not a finding.\n\n---\n\n## 5. WHERE NEXT\n\n**The essay is neither \"hidden systemic layer\" nor \"nothing here.\" It is a third thing, and the negative results are load-bearing content, not apologies:** a small, fully disclosed, fast-growing, untagged, asymmetrically-priced guarantee layer sitting on top of a trillion dollars of executed, non-cancellable, unrecorded lease obligation that six of six filers disclose and zero of six tag. The interesting quantity is the 13:1 ratio, and no filer discloses it because no filer is asked to.\n\n**What survives as publishable, verified, and new:**\n- $1,122.9bn on one clean basis, 6/6 disclosure, 0/6 XBRL tagging \u2014 with tagging absence as the *mechanical explanation* for confected aggregates.\n- $1.060bn of beneficiary-disclosed price for a service the guarantor reports at nil.\n- 6.3bp: a Google backstop prices within six basis points of a direct AA- covenant, same sponsor, 38 days apart.\n- AA- tenant behind Baa2 project paper \u2014 seven notches of leakage; and a CoreWeave-tenant project bond pricing 25bp *wider* than CoreWeave's own unsecured.\n- Three refutations: the halving claim (max 38%), the NVIDIA-Hut 8 tenancy, and the ~100bp-over-Nvidia benchmark.\n- The $662bn and $970bn ghosts: nine filers, two independent lenses, no reproduction on any basis at any vintage. Closest near-miss is Amazon's $650.0bn total commitments, ~2% below $662bn \u2014 recorded so nobody mistakes it for the source. **The negative is now well-supported and should be stated as a finding.**\n\n**Independence audit, since it is a standing rule.** Genuinely independent: Meta vs Alphabet as guarantors (different standards, different words, different structures); and \u2014 uniquely and most importantly \u2014 **Alphabet-as-guarantor vs TeraWulf/Cipher/Hut 8-as-beneficiary, which are opposite sides of the same contracts, disclosed by four unrelated filers under different standards, none citing any other.** That is the strongest evidentiary structure in the project. Not independent: all six filers' not-yet-commenced sentences (one ASC 842 convention observed six times); NVIDIA's $3.5bn (three appearances, one fact); Meta Louisiana/El Paso (one filer, twice); TeraWulf/Cipher warrants (one guarantor's standard terms, twice).\n\n**Do next, in order:**\n1. **The NVIDIA Q2 FY2027 10-Q \u2014 days away and worth more than any further breadth pass.** Q1 was filed 24 days after quarter end; Q2 ended ~2026-07-26. It will put the $105bn into an audited footnote with a stated measurement basis (ASC 460? 815? 842? \u2014 NVIDIA has not said), file the form of the guaranty agreements as an exhibit, and re-measure the $3.5bn. This converts a press-adjacent 8-K number into the largest single guarantee disclosure in the dataset, 2.3x Meta's.\n2. **Close the 90% population gap.** EDGAR full-text sweep for \"backstop\" plus Google, and for Fluidstack as tenant, across all filers and all forms. Cheap, mechanical, and it directly attacks the weakest number in this synthesis.\n3. **TRACE 144A new-issue spreads.** The one dataset that settles the halving question. Public, available, off EDGAR, not yet used.\n4. **The lessor side.** Meta's Louisiana Venture and SB Energy Corp are the two largest instances and neither is known to file. Meta discloses none of the Venture's debt, coupon or rating \u2014 the entire Hut 8 mechanism at the biggest instance is unobserved. If the Venture files anything, that hole closes.\n5. **Do not add hyperscalers.** Six filers gave 6/6 determinate coverage; Apple, Broadcom, AMD and Tesla will return nil. Breadth is exhausted.\n\n**On the gate.** The reviewer's gate was: sum the disclosed footnotes before moving to securities-based lending, NAV loans, portfolio margin or internalised synthetic prime. The gate is passed \u2014 but **passing it argues against walking through it.** The disclosed guarantee layer turned out to be small *and* fully disclosed *and* two-sided-verifiable. That is weak evidence for a large undisclosed layer sitting next to it, not strong evidence. The honest recommendation is to write the trillion-dollar unrecorded-lease finding and the 13:1 ratio, publish the three refutations, and treat the adjacent-market hunt as a separate hypothesis requiring its own motivation rather than as this argument's next step."
+}

@@ -1,0 +1,1354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://www.federalreserve.gov/structure/compact/H41_H41"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified" xmlns="http://www.federalreserve.gov/structure/compact/H41_H41" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:frb="http://www.federalreserve.gov/structure/compact/common">
+ <xs:import
+    namespace="http://www.federalreserve.gov/structure/compact/common"
+    schemaLocation="frb_common.xsd" />
+ <xs:element
+    name="Series"
+    type="SeriesType"
+    substitutionGroup="frb:Series" />
+ <xs:complexType
+    name="SeriesType">
+  <xs:complexContent>
+   <xs:extension
+        base="frb:SeriesType">
+    <xs:attribute
+          name="CATEGORY"
+          type="CL_CATEGORY"
+          use="required" />
+    <xs:attribute
+          name="SUBCATEGORY"
+          type="CL_SUBCATEGORY"
+          use="required" />
+    <xs:attribute
+          name="COMPONENT"
+          type="CL_COMPONENT"
+          use="required" />
+    <xs:attribute
+          name="DISTRIBUTION"
+          type="CL_DISTRIBUTION"
+          use="required" />
+    <xs:attribute
+          name="SERIESTYPE"
+          type="CL_SERIESTYPE"
+          use="required" />
+   </xs:extension>
+  </xs:complexContent>
+ </xs:complexType>
+ <xs:simpleType
+    name="CL_CATEGORY">
+  <xs:restriction
+      base="xs:string">
+   <xs:enumeration
+        value="ASSET">
+    <xs:annotation>
+     <xs:documentation>Assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="COLL">
+    <xs:annotation>
+     <xs:documentation>Collateralization of Currency</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LIABCAP">
+    <xs:annotation>
+     <xs:documentation>Liabilities and Capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MEMO">
+    <xs:annotation>
+     <xs:documentation>Memorandum Items</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SUPP">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SUPPHIST">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information - Historical Data</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType
+    name="CL_SUBCATEGORY">
+  <xs:restriction
+      base="xs:string">
+   <xs:enumeration
+        value="AAA">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Preferred Interests in AIA Aurora LLC and ALICO Holdings LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CAP">
+    <xs:annotation>
+     <xs:documentation>Capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CH">
+    <xs:annotation>
+     <xs:documentation>Custody Holdings</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CPFF">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of Commercial Paper Funding Facility LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRN">
+    <xs:annotation>
+     <xs:documentation>Federal Reserve notes</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="HAFRN">
+    <xs:annotation>
+     <xs:documentation>Holdings Against Federal Reserve notes</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LCF">
+    <xs:annotation>
+     <xs:documentation>Liquidity and Credit Facilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LLC2020">
+    <xs:annotation>
+     <xs:documentation>Supplemental Information on 2020 Credit Facilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LIAB">
+    <xs:annotation>
+     <xs:documentation>Liabilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MBS">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Mortgage-Backed Securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MEMO">
+    <xs:annotation>
+     <xs:documentation>Memo Items</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ML">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of Maiden Lane LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MLII">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of Maiden Lane II LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MLIII">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of Maiden Lane III LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MMIFF">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of LLCs Funded through the Money Market Investor Funding Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="NPHML">
+    <xs:annotation>
+     <xs:documentation>Net Portfolio Holdings of Maiden Lane LLCs</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="NPHTALF">
+    <xs:annotation>
+     <xs:documentation>Net Portfolio Holdings of TALF LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OFDRB">
+    <xs:annotation>
+     <xs:documentation>Other Factors Draining Reserve Balances</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OFSRB">
+    <xs:annotation>
+     <xs:documentation>Other Factors Supplying Reserve Balances</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ORH">
+    <xs:annotation>
+     <xs:documentation>Securities Held Outright</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="PI">
+    <xs:annotation>
+     <xs:documentation>Preferred Interests</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SECL">
+    <xs:annotation>
+     <xs:documentation>Securities Lent to Dealers</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SWAP">
+    <xs:annotation>
+     <xs:documentation>Central Bank Liquidity Swaps</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TA">
+    <xs:annotation>
+     <xs:documentation>Total Assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TALF">
+    <xs:annotation>
+     <xs:documentation>Supplementary Information on Principal Accounts of TALF LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TLC">
+    <xs:annotation>
+     <xs:documentation>Total Liabilities and Capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ZZZZ">
+    <xs:annotation>
+     <xs:documentation>Other</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType
+    name="CL_COMPONENT">
+  <xs:restriction
+      base="xs:string">
+   <xs:enumeration
+        value="ADAIG">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Funds from American International Group, Inc. asset dispositions, held as agent</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ADPIA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Accrued dividends on preferred interests of ALICO Holdings LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ADPIAA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Accrued dividends on preferred interests of AIA Aurora LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ADPIAAA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Accrued dividends on preferred interests of AIA Aurora LLC and ALICO Holdings LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ABSH">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Asset-backed securities held by TALF LLC (Face value)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ABSHF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Asset-backed securities holdings (Fair value)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="AIP">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Accrued interest payable to the Federal Reserve Bank of New York</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="BP">
+    <xs:annotation>
+     <xs:documentation>Bank premises</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CBL">
+    <xs:annotation>
+     <xs:documentation>Central bank liquidity swaps</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CBUY">
+    <xs:annotation>
+     <xs:documentation>Commitments to buy mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CCF">
+    <xs:annotation>
+     <xs:documentation>Corporate Credit Facilities LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CCE">
+    <xs:annotation>
+     <xs:documentation>Cash and cash equivalents</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CIC">
+    <xs:annotation>
+     <xs:documentation>Currency in circulation</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CN">
+    <xs:annotation>
+     <xs:documentation>Coin</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CPHF">
+    <xs:annotation>
+     <xs:documentation>Commercial paper holdings, face value</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CPHN">
+    <xs:annotation>
+     <xs:documentation>Commercial paper holdings, net</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CPI">
+    <xs:annotation>
+     <xs:documentation>Capital paid in</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CPIN">
+    <xs:annotation>
+     <xs:documentation>Commercial paper issued by LLCs funded through Money Market Investor Funding Facility, net of related discounts</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CSELL">
+    <xs:annotation>
+     <xs:documentation>Commitments to sell mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DACI">
+    <xs:annotation>
+     <xs:documentation>Deferred availability cash items</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEP">
+    <xs:annotation>
+     <xs:documentation>Deposits</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPDI">
+    <xs:annotation>
+     <xs:documentation>Deposits: Other deposits held by depository institutions</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPTDF">
+    <xs:annotation>
+     <xs:documentation>Deposits: Term deposits held by depository institutions</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPUSTG">
+    <xs:annotation>
+     <xs:documentation>Deposits with FR Banks, other than reserve balances: U.S. Treasury, General Account</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPUSTS">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Deposits with FR Banks, other than reserve balances: U.S. Treasury, Supplementary Financing Account</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPZO">
+    <xs:annotation>
+     <xs:documentation>Deposits with FR Banks, other than reserve balances: Other</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DEPZF">
+    <xs:annotation>
+     <xs:documentation>Deposits with FR Banks, other than reserve balances: Foreign official</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DISCSHOR">
+    <xs:annotation>
+     <xs:documentation>Unamortized discounts on securities held outright</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DORB">
+    <xs:annotation>
+     <xs:documentation>Deposits with FR Banks, other than reserve balances</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DORBS">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Deposits with FR Banks, other than reserve balances: Service-related</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DORBSC">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Deposits with FR Banks, other than reserve balances: Service-related: Required clearing balances</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DORBSF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Deposits with FR Banks, other than reserve balances: Service-related: Adjustments to compensate for float</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="DPAIP">
+    <xs:annotation>
+     <xs:documentation>Deferred payment and accrued interest payable to subsidiaries of American International Group, Inc.</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FADS">
+    <xs:annotation>
+     <xs:documentation>Federal agency debt securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FARF">
+    <xs:annotation>
+     <xs:documentation>Total factors, other than reserve balances, absorbing reserve funds</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FAS">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Federal agency securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FASN">
+    <xs:annotation>
+     <xs:documentation>Federal agency debt and mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FCDA">
+    <xs:annotation>
+     <xs:documentation>Foreign currency denominated assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FLT">
+    <xs:annotation>
+     <xs:documentation>Float</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CHFRN">
+    <xs:annotation>
+     <xs:documentation>Collateral held against Federal Reserve notes</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FPUST">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Funding provided by U.S. Treasury to TALF LLC, including accrued interest payable</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRNC">
+    <xs:annotation>
+     <xs:documentation>Federal Reserve notes to be collateralized</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRNHFRB">
+    <xs:annotation>
+     <xs:documentation>Notes held by FR Banks (netted from liabilities)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRNN">
+    <xs:annotation>
+     <xs:documentation>Federal Reserve notes, net of F.R. Bank holdings</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRNNSC">
+    <xs:annotation>
+     <xs:documentation>Notes held by F.R. Banks not subject to collateralization (netted from Federal Reserve notes outstanding)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FRNOS">
+    <xs:annotation>
+     <xs:documentation>Federal Reserve notes outstanding</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="FSRF">
+    <xs:annotation>
+     <xs:documentation>Total factors supplying reserves funds</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="GCA">
+    <xs:annotation>
+     <xs:documentation>Gold certificate account</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="GS">
+    <xs:annotation>
+     <xs:documentation>Gold stock</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="IDSA">
+    <xs:annotation>
+     <xs:documentation>Interdistrict settlement account</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="INVCPFF">
+    <xs:annotation>
+     <xs:documentation>Commerical Paper Funding Facility II LLC Treasury contributions and other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="INVCCF">
+    <xs:annotation>
+     <xs:documentation>Corporate Credit Facilities LLC Treasury contributions and other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="INVMAIN">
+    <xs:annotation>
+     <xs:documentation>MS Facilities LLC (Main Street Lending Program)  Treasury contributions and other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="INVMUNI">
+    <xs:annotation>
+     <xs:documentation>Municipal Liquidity Facility LLC Treasury contributions and other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="INVTALF">
+    <xs:annotation>
+     <xs:documentation>TALF II LLC Treasury contributions and other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="IPC">
+    <xs:annotation>
+     <xs:documentation>Items in process of collection</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LN">
+    <xs:annotation>
+     <xs:documentation>Loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNAIG">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Loans: Credit extended to American International Group, Inc., Net</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNALMF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Loans: Asset-Backed Commercial Paper Money Market Mutual Fund Liquidity Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNALMF2">
+    <xs:annotation>
+     <xs:documentation>Loans: Money Market Mutual Fund Liquidity Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNC">
+    <xs:annotation>
+     <xs:documentation>Loans (Calculated)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNCPFF2">
+    <xs:annotation>
+     <xs:documentation>Net portfolio holdings of Commercial Paper Funding Facility 2020 LLC (Post 2020-04-06)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   	<xs:enumeration
+        value="LNNET">
+				<xs:annotation>
+					<xs:documentation>
+						Loans, net
+					</xs:documentation>
+				</xs:annotation>
+	</xs:enumeration>
+		<xs:enumeration
+        value="LNBTFP">
+				<xs:annotation>
+					<xs:documentation>
+						Loans: Bank Term Funding Program, net
+					</xs:documentation>
+				</xs:annotation>
+	</xs:enumeration>
+   <xs:enumeration
+        value="LNPPPLF">
+    <xs:annotation>
+     <xs:documentation>Loans: Payroll Protection Program Liquidity Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNCE">
+    <xs:annotation>
+     <xs:documentation>Loans: Other credit extensions</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNPC">
+    <xs:annotation>
+     <xs:documentation>Loans: Primary credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNPDCF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Loans: Primary dealer and other broker-dealer credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNPDCF2">
+    <xs:annotation>
+     <xs:documentation>Loans: Primary dealer and other broker-dealer credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNSC">
+    <xs:annotation>
+     <xs:documentation>Loans: Secondary credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNSEAC">
+    <xs:annotation>
+     <xs:documentation>Loans: Seasonal credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNTALF">
+    <xs:annotation>
+     <xs:documentation>Loans: Term Asset-Backed Securities Loan Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LNTALF2">
+    <xs:annotation>
+     <xs:documentation>Net Portfolio Holdings of TALF II LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MBSSHOR">
+    <xs:annotation>
+     <xs:documentation>Mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RMSSHOR">
+    <xs:annotation>
+     <xs:documentation>Residential mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="CMSSHOR">
+    <xs:annotation>
+     <xs:documentation>Commercial mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MAIN">
+    <xs:annotation>
+     <xs:documentation>Net Portfolio Holdings of Main Street Facilities LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ML">
+    <xs:annotation>
+     <xs:documentation>Net portfolio holdings of Maiden Lane LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MLII">
+    <xs:annotation>
+     <xs:documentation>Net portfolio holdings of Maiden Lane II LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MLIII">
+    <xs:annotation>
+     <xs:documentation>Net portfolio holdings of Maiden Lane III LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MMIHF">
+    <xs:annotation>
+     <xs:documentation>Money market instrument holdings, face value</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MMIHN">
+    <xs:annotation>
+     <xs:documentation>Money market instrument holdings, net</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="MUNI">
+    <xs:annotation>
+     <xs:documentation>Municipal Liquidity Facility LLC (Effective 2020-05-26)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="NPHCPFF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Net portfolio holdings of Commercial Paper Funding Facility LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="NPHMIFF">
+    <xs:annotation>
+     <xs:documentation>Net portfolio holdings of LLCs funded through the Money Market Investor Funding Facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OA">
+    <xs:annotation>
+     <xs:documentation>Other assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OAP">
+    <xs:annotation>
+     <xs:documentation>Other assets pledged</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OARS">
+    <xs:annotation>
+     <xs:documentation>Other Assets, Reserve Bank Table (post 2020-3-14)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OBCPFF">
+    <xs:annotation>
+     <xs:documentation>Outstanding amount of Commerical Paper Funding Facility II LLC asset purchases</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OBCCF">
+    <xs:annotation>
+     <xs:documentation>Outstanding amount of Corporate Credit Facilities LLC asset purchases</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OBMAIN">
+    <xs:annotation>
+     <xs:documentation>Outstanding amount of MS Facilities LLC (Main Street Lending Program) asset purchases</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OBMUNI">
+    <xs:annotation>
+     <xs:documentation>Outstanding amount of Municipal Liquidity Facility LLC asset purchases</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OBTALF">
+    <xs:annotation>
+     <xs:documentation>Outstanding balance of TALF II LLC assets purchased by LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OC">
+    <xs:annotation>
+     <xs:documentation>Other capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OF">
+    <xs:annotation>
+     <xs:documentation>Overnight facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OFFADS">
+    <xs:annotation>
+     <xs:documentation>Overnight facility, Federal agency debt securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OFUSTS">
+    <xs:annotation>
+     <xs:documentation>Overnight facility, U.S. Treasury securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OFRA">
+    <xs:annotation>
+     <xs:documentation>Other Federal Reserve assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OIN">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Other investments, net</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OLAD">
+    <xs:annotation>
+     <xs:documentation>Other liabilities and accrued dividends</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OLADRIF">
+    <xs:annotation>
+     <xs:documentation>Other liabilities and accrued dividends includes the liability for earnings remittances due to the U.S. Treasury</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OLC">
+    <xs:annotation>
+     <xs:documentation>Other liabilities and capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OPA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Outstanding principal amount of loan extended by Federal Reserve Bank of New York</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OPAAIAIG">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount and accrued interest on loan payable to American International Group, Inc.</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OPAAIJPM">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount and accrued interest on loan payable to JPMorgan Chase and Co.</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="OTH">
+    <xs:annotation>
+     <xs:documentation>Other securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="PIA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Preferred interests in ALICO Holdings LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="PIAA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Preferred interests in AIA Aurora LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="PIAAA">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Preferred interests in AIA Aurora LLC and ALICO Holdings LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="PREMSHOR">
+    <xs:annotation>
+     <xs:documentation>Unamortized premiums on securities held outright</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RBC">
+    <xs:annotation>
+     <xs:documentation>Reserve Bank credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RBFRB">
+    <xs:annotation>
+     <xs:documentation>Reserve balances with Federal Reserve Banks</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RIF">
+    <xs:annotation>
+     <xs:documentation>Earnings remittances due to the U.S. Treasury</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RP">
+    <xs:annotation>
+     <xs:documentation>Repurchase agreements</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RPF">
+    <xs:annotation>
+     <xs:documentation>Foreign official - Repurchase agreements</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RPD">
+    <xs:annotation>
+     <xs:documentation>Others - Repurchase agreements</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RRP">
+    <xs:annotation>
+     <xs:documentation>Reverse repurchase agreements</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RRPO">
+    <xs:annotation>
+     <xs:documentation>Reverse repurchase agreements: Others</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RRPF">
+    <xs:annotation>
+     <xs:documentation>Reverse repurchase agreements: Foreign official and international accounts</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="RRPFV">
+    <xs:annotation>
+     <xs:documentation>Face value of securities under reverse repurchase agreements (netted from Total U.S. Treasury, agency debt, and mortgage-backed securities)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SDRCA">
+    <xs:annotation>
+     <xs:documentation>Special drawing rights certificate account</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SHOR">
+    <xs:annotation>
+     <xs:documentation>Securities held outright</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SRPTACOL">
+    <xs:annotation>
+     <xs:documentation>Securities, premiums, discounts, repurchase agreements, and loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="SUR">
+    <xs:annotation>
+     <xs:documentation>Surplus</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TA">
+    <xs:annotation>
+     <xs:documentation>Total assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TAC">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Term auction credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TALF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Net portfolio holdings of TALF LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TC">
+    <xs:annotation>
+     <xs:documentation>Total capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TCCF">
+    <xs:annotation>
+     <xs:documentation>Treasury Contribution to Credit Facilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TCH">
+    <xs:annotation>
+     <xs:documentation>Treasury cash holdings</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TCO">
+    <xs:annotation>
+     <xs:documentation>Treasury currency outstanding</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TCS">
+    <xs:annotation>
+     <xs:documentation>Securities held in custody for foreign official and international accounts</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TF">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Term facility</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TFOO">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Term facility options outstanding</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TL">
+    <xs:annotation>
+     <xs:documentation>Total liabilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TLC">
+    <xs:annotation>
+     <xs:documentation>Total liabilities and capital</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TMS">
+    <xs:annotation>
+     <xs:documentation>Discontinued: Total (Marketable securities held in custody for foreign official and international accounts)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TSECL">
+    <xs:annotation>
+     <xs:documentation>Total (Securities lent to dealers)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTADMBSE">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury, agency debt, and mortgage-backed securities eligible to be pledged</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTADMBSP">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury, agency debt, and mortgage-backed securities pledged</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTADMBST">
+    <xs:annotation>
+     <xs:documentation>Total U.S. Treasury, agency debt, and mortgage-backed securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTS">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSN">
+    <xs:annotation>
+     <xs:documentation>Marketable U.S. Treasury securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSB">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities: Bills</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSIC">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities: Inflation compensation</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSNB">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities: Notes and bonds</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSNBI">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities: Notes and bonds, inflation-indexed</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="USTSNBN">
+    <xs:annotation>
+     <xs:documentation>U.S. Treasury securities: Notes and bonds, nominal</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ZCPFF">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount of loan extended to the Commercial Paper Funding Facility II LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ZCCF">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount of loan extended to the Corporate Credit Facilities LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ZMAIN">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount of loan extended to the MS Facilities LLC (Main Street Lending Program)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ZMUNI">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount of loan extended to the Municipal Liquidity Facility LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+    <xs:enumeration
+        value="ZTALF">
+    <xs:annotation>
+     <xs:documentation>Outstanding principal amount of loan extended to the TALF II LLC</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType
+    name="CL_DISTRIBUTION">
+  <xs:restriction
+      base="xs:string">
+   <xs:enumeration
+        value="TOT">
+    <xs:annotation>
+     <xs:documentation>Total</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TOTC">
+    <xs:annotation>
+     <xs:documentation>Total (Less elimination from consolidation)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="TOTE">
+    <xs:annotation>
+     <xs:documentation>Total, Elimination from consolidation</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="D15">
+    <xs:annotation>
+     <xs:documentation>Maturing within 15 days</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="D90">
+    <xs:annotation>
+     <xs:documentation>Maturing in 16 to 90 days</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="Y1">
+    <xs:annotation>
+     <xs:documentation>Maturing in 91 days to 1 year</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="Y5">
+    <xs:annotation>
+     <xs:documentation>Maturing in over 1 year to 5 years</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="Y10">
+    <xs:annotation>
+     <xs:documentation>Maturing in over 5 years to 10 years</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="Y10GT">
+    <xs:annotation>
+     <xs:documentation>Maturing in over 10 years</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="1">
+    <xs:annotation>
+     <xs:documentation>District 1: Boston</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="2">
+    <xs:annotation>
+     <xs:documentation>District 2: New York</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="3">
+    <xs:annotation>
+     <xs:documentation>District 3: Philadelphia</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="4">
+    <xs:annotation>
+     <xs:documentation>District 4: Cleveland</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="5">
+    <xs:annotation>
+     <xs:documentation>District 5: Richmond</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="6">
+    <xs:annotation>
+     <xs:documentation>District 6: Atlanta</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="7">
+    <xs:annotation>
+     <xs:documentation>District 7: Chicago</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="8">
+    <xs:annotation>
+     <xs:documentation>District 8: St. Louis</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="9">
+    <xs:annotation>
+     <xs:documentation>District 9: Minneapolis</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="10">
+    <xs:annotation>
+     <xs:documentation>District 10: Kansas City</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="11">
+    <xs:annotation>
+     <xs:documentation>District 11: Dallas</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="12">
+    <xs:annotation>
+     <xs:documentation>District 12: San Francisco</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType
+    name="CL_SERIESTYPE">
+  <xs:restriction
+      base="xs:string">
+   <xs:enumeration
+        value="L">
+    <xs:annotation>
+     <xs:documentation>Wednesday level</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LCW">
+    <xs:annotation>
+     <xs:documentation>Change in Wednesday level from previous Wednesday level</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="LCY">
+    <xs:annotation>
+     <xs:documentation>Change in Wednesday level from year ago level</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="A">
+    <xs:annotation>
+     <xs:documentation>Week average</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ACW">
+    <xs:annotation>
+     <xs:documentation>Change in week average from previous week average</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration
+        value="ACY">
+    <xs:annotation>
+     <xs:documentation>Change in week average from year ago week average</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+</xs:schema>

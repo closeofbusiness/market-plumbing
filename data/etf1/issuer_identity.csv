@@ -1,0 +1,15 @@
+window,item,series,flow_bn,note
+2024Q1-2026Q2,total net issuance,FU893064105.Q,3243.113,Z.1 F51.1.t_tu, all sectors
+2024Q1-2026Q2,ETF share issuance,FU564090005.Q,3603.814,wrapper; includes bond ETFs
+2024Q1-2026Q2,issuance net of ETF shares,derived,-360.701,total minus ETF share issuance
+2024Q1-2026Q2,nonfinancial corporate business,FU103164105.Q,-540.713,operating companies, public+closely-held
+2024Q1-2026Q2,rest of the world,FU263164105.Q,382.240,foreign shares held by US residents
+2024Q1-2026Q2,pass-through funds (ETF+interval+CEF),derived,3693.849,3603.814 -0.741 +90.776
+2024Q1-2026Q2,other domestic financial issuers,derived,-292.263,banks, insurers, holding cos, BDCs, etc.
+2024Q1-2026Q2,ETF equity-fund issuance,FU564091600+FU564092603,2456.5,domestic + world equity funds
+2024Q1-2026Q2,ETF bond-fund issuance,FU564091303+FU564091203,1065.0,taxable + municipal bond funds
+2024Q1-2026Q2,ETF commodity-fund issuance,FU564091703,60.1,ICI 'other (commodity)'
+2024Q1-2026Q2,ETF hybrid-fund issuance,FU564091403,22.3,
+2024Q1-2026Q2,ETF purchases of corporate equity,FU563064100.Q,2460.875,underlying stocks, not the wrapper
+2024Q1-2026Q2,ETF purchases of debt securities,FU564022005.Q,1059.136,Treasuries+munis+corp/foreign bonds
+2024Q1-2026Q2,household net purchases of the wrapper instrument,FU153064105.Q,3069.407,Z.1 residual; includes ETF shares

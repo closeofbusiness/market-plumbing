@@ -1,0 +1,176 @@
+series_id	channel	note
+bills_outstanding_total_bn	a	Treasury bill supply (fiscal financing / D1 Triffin test)
+mmf_total_investments_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_treasuries_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_treasury_repo_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_repo_with_fed_bn	a	ON RRP facility usage — central-bank balance sheet leg
+mmf_repo_ficc_cleared_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_repo_other_collateral_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_agency_repo_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_agency_securities_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_bank_related_assets_bn	b	money-market-fund balance-sheet composition (N2/D1)
+mmf_other_assets_bn	b	money-market-fund balance-sheet composition (N2/D1)
+uninsured_deposits_all_insts_bn	a	bank deposit base, run-risk
+microsoft_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+alphabet_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+alphabet_marketable_securities_current_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+amazon_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+amazon_marketable_securities_current_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+meta_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+meta_marketable_securities_current_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+oracle_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+nvidia_cash_equivalents_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+nvidia_marketable_securities_current_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+fed_on_rrp_bn	a	central-bank facility
+reserve_balances_bn	a	central-bank balance sheet
+fed_soma_tbills_bn	a	central-bank balance sheet
+foreign_official_rrp_bn	a	central-bank facility, foreign official use
+abcp_outstanding_bn	b	shadow-money instrument stock
+financial_cp_bn	b	shadow-money instrument stock
+cp_total_bn	b	shadow-money instrument stock
+large_time_deposits_bn	a	bank liability; z_k non-M2 bank-funding component
+retail_mmf_h6_bn	b	shadow-money instrument stock
+hf_qhf_net_assets_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_qhf_gross_assets_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_collateral_posted_cashlike_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_collateral_posted_securities_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_collateral_posted_other_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_unencumbered_cash_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_repo_borrowing_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_prime_brokerage_borrowing_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_other_secured_borrowing_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_reverse_repo_exposure_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_long_treasury_exposure_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+hf_short_treasury_exposure_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+ccp_im_required_15ccp_fia_bn	c	CCP initial margin (D3 margin leg)
+ficc_sponsored_repo_bn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_sponsored_reverse_repo_bn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_sponsored_dvp_bn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_sponsored_gc_bn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_sponsored_total_bn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_gsd_monthly_value_compared_trn	c	FICC sponsored/cleared repo (D8 conduit)
+ficc_gsd_monthly_net_obligations_trn	c	FICC sponsored/cleared repo (D8 conduit)
+actrix_total_cleared_repo_adv_trn	c	cleared repo market indicators (D8)
+actrix_sponsored_cleared_repo_adv_trn	c	cleared repo market indicators (D8)
+actrix_direct_cleared_repo_adv_trn	c	cleared repo market indicators (D8)
+mmf_secback_abcp_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_bank_multiseller_abcp_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_jpm_collateralized_paper_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+finra_margin_debit_balances_bn	c	FINRA margin debt — the leverage/margin series named in the goal charter
+finra_free_credit_cash_bn	c	FINRA free-credit cash balance (margin-account plumbing)
+finra_free_credit_margin_bn	c	FINRA free-credit margin balance (margin-account plumbing)
+amazon_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+meta_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+alphabet_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+nvidia_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+microsoft_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+oracle_corporate_debt_securities_bn	b	hyperscaler cash-pool / AI-paper holding (D2/D9) — explanandum F
+mmf_nonbank_abcp_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_abcp_total_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_chesham_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_ionic_capitolis_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+capitolis_clgm_total_assets_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+capitolis_clgm_affiliate_revolver_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_named_conduit_families_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+mmf_capitolis_holdings_bn	b	ABCP conduit held by MMFs; funds equity TRS/margin (D8b) — c-adjacent
+singh_equiv_hf_source_collateral_trn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+isla_global_on_loan_eur_trn	c	securities-lending on-loan/collateral (N3 real-money leg)
+isla_global_lendable_eur_trn	c	securities-lending on-loan/collateral (N3 real-money leg)
+collateral_velocity_range	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+isla_onloan_realmoney_share_pct	c	securities-lending on-loan/collateral (N3 real-money leg)
+isla_onloan_cash_collateral_share_pct	c	securities-lending on-loan/collateral (N3 real-money leg)
+singh_realmoney_leg_estimate_trn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+bank_loans_to_nondepository_fis_bn	a	H.8 bank credit to NDFIs — the direct money-creation line (N2c engine)
+nfc_net_equity_issuance_bn	d	net equity issuance/buybacks — structural equity flow
+treasury_net_issuance_bn	a	fiscal deficit financing (N2c closure)
+fed_treasury_purchases_flow_bn	a	central-bank balance sheet (RMP/QT)
+corp_bonds_all_net_issuance_bn	b	nonbank credit intermediation funding AI/data-centre capex (explanandum F)
+stablecoin_total_outstanding_bn	b	stablecoin reserve/float (D6)
+fed_bill_absorption_ratio_matched	a	Fed bill purchases vs net issuance (C-063)
+row_equity_net_purchases_bn	d	foreign (RoW) net purchases of US equities
+household_row_equity_net_purchases_bn	d	household-sector net equity purchase flow (Z.1, includes HF/error)
+pd_ust_repo_out_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+pd_ust_reverse_in_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+pd_ust_rev_sponsored_dvp_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+pd_ust_repo_sponsored_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+pd_ust_repo_triparty_gc_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+pd_ust_rev_uncleared_bilateral_bn	c	NY Fed primary-dealer venue split (D10 re-use)
+gs_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+gs_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+ms_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+ms_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+jpm_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+jpm_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+bac_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+bac_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+bnym_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+bnym_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+citi_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+wfc_collateral_permitted_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+wfc_collateral_repledged_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+ofr_repo_mmf_lend_bn	c	OFR repo participant lend/borrow (D10)
+ofr_repo_hf_gross_borrow_bn	c	OFR repo participant lend/borrow (D10)
+ofr_repo_hf_lend_bn	c	OFR repo participant lend/borrow (D10)
+ofr_repo_pd_net_borrow_bn	c	OFR repo participant lend/borrow (D10)
+isla_onloan_total_eur_trn	c	securities-lending on-loan/collateral (N3 real-money leg)
+isla_onloan_client_split_pct	c	securities-lending on-loan/collateral (N3 real-money leg)
+tether_total_assets_bn	b	stablecoin reserve/float (D6)
+tether_tbills_direct_bn	b	stablecoin reserve/float (D6)
+cbi_ie_mmf_usd_assets_eur_bn	b	Irish-domiciled offshore USD MMF assets (N2a offshore money-like)
+bis_usd_liab_cayman_nonbank_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+bis_usd_liab_cayman_nbfi_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+bis_usd_claims_cayman_nbfi_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+bis_usd_liab_allctry_nonbank_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+bis_usd_liab_uk_nonbank_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+tic_mfh_cayman_ust_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+tic_shl_cayman_ust_total_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+fx_usd_leg_total_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+fx_usd_nonbank_obligations_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+fx_usd_ofi_notional_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+gli_usd_credit_nonbank_exus_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+gli_usd_loans_nonbank_exus_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+gli_usd_debtsec_nonbank_exus_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+cpis_cym_us_total_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+cpis_cym_us_debt_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+cpis_cym_us_equity_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+cssf_lu_mmf_usd_nav_eur_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+ecb_bsi_lu_mmf_total_assets_eur_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+tic_cayman_ust_dec2022_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+barth_cayman_hf_ust_trn	b	offshore-dollar / Cayman reconciliation (N2a)
+shl_cayman_equity_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+shl_cayman_debt_total_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+bis_usd_claims_cayman_nbfi_loans_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+cima_cpis_cayman_us_total_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+cima_cpis_cayman_us_equity_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+cima_cpis_cayman_us_debt_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+cayman_debt_gap_matched_bn	b	offshore-dollar / Cayman reconciliation (N2a)
+occ_us_bank_fx_notional_trn	b	FX-swap offshore-dollar funding leg (N2a)
+zk_wholesale_share_low_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_wholesale_share_high_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_wholesale_share_incl_fed_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+mmf_private_repo_bn	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_W_low_bn	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+m2_h6_sa_bn	a	M2 aggregate — z_k denominator
+zk_private_share_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+singh_panel_bac_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_citi_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_jpm_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_gs_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_ms_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_us5_permitted_2017_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_us5_permitted_2026_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_us5_ratio_2017_2026	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+singh_panel_utilization_2017_pct	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+jpm_collateral_permitted_sep2025_bn	c	dealer 10-K permitted-to-repledge/repledged collateral (N3/D10)
+barclays_collateral_permitted_fy2025_gbp_bn	c	Singh panel cross-check (N3v4)
+barclays_collateral_permitted_fy2024_gbp_bn	c	Singh panel cross-check (N3v4)
+zk_v2_W2_M2_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_v2_W2_h8dep_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_v2_W2_bn	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+zk_v2_W2_us_scaled_pct	b	z_k nonbank wholesale-funding share (N2b) — the nexus estimator
+hf_reverse_repo_formpf_bn	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+singh_implied_cashlike_share_2017	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+formpf_hf_collateral_gross_bn	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+hf_repo_to_cashlike_ratio	c	Form PF hedge-fund leverage/collateral (D3/D10/N3)
+singh_hf_source_growth_2013_2017	c	Singh velocity/source-collateral reconciliation (N3/N3v4)
+formpf_hf_collateral_growth_2013_2017	c	Singh velocity/source-collateral reconciliation (N3/N3v4)

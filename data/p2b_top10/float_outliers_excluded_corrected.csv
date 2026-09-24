@@ -1,0 +1,7 @@
+year,cik,name,end_date,reported_float_usd,sanity_bound_usd,note
+2015,1121788,GARMIN LTD,2015-06-27,5634428735000.0,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)
+2017,1121788,GARMIN LTD,2017-07-01,6129443292000.0,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)
+2019,1070750,"HOST HOTELS & RESORTS, INC.",2019-06-28,1.313590246e+16,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)
+2021,1136869,"ZIMMER BIOMET HOLDINGS, INC.",2021-06-30,3.3533707317e+16,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)
+2023,1286681,DOMINOS PIZZA INC,2023-06-18,11569716092000.0,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)
+2023,36270,M&T BANK CORP,2023-06-30,1.9900658494e+16,5000000000000,excluded: exceeds sanity bound (corrected/nearest-instant method)

@@ -1,0 +1,464 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-08-23T12:42Z	bills_outstanding_total_bn	2026-07-31	6988.9	$bn	FiscalData MSPD Table 1, Marketable/Bills, total	month-end
+2026-08-23T12:42Z	mmf_total_investments_bn	2026-07-31	8411.9	$bn	OFR MMF Monitor API MMF-MMF_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_treasuries_bn	2026-07-31	3452.6	$bn	OFR MMF Monitor API MMF-MMF_T_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_treasury_repo_bn	2026-07-31	1798.1	$bn	OFR MMF Monitor API MMF-MMF_RP_T_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_repo_with_fed_bn	2026-06-30	6.8	$bn	OFR MMF Monitor API MMF-MMF_RP_wFR-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_repo_ficc_cleared_bn	2026-07-31	1075.9	$bn	OFR MMF Monitor API MMF-MMF_RP_wFICC-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_repo_other_collateral_bn	2026-07-31	169.5	$bn	OFR MMF Monitor API MMF-MMF_RP_OA_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_agency_repo_bn	2026-07-31	957.6	$bn	OFR MMF Monitor API MMF-MMF_RP_AG_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_agency_securities_bn	2026-07-31	1214.8	$bn	OFR MMF Monitor API MMF-MMF_AG_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_bank_related_assets_bn	2026-07-31	467.4	$bn	OFR MMF Monitor API MMF-MMF_BRA_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	mmf_other_assets_bn	2026-07-31	352.0	$bn	OFR MMF Monitor API MMF-MMF_OA_TOT-M	N-MFP based, month-end
+2026-08-23T12:42Z	uninsured_deposits_all_insts_bn	2026-03-31	8373.0	$bn	FDIC BankFind API, DEPUNINS summed over all institutions	quarter-end; Schedule RC-O estimated uninsured
+2026-08-23T12:42Z	microsoft_cash_equivalents_bn	2026-06-30	20.9	$bn	SEC XBRL companyfacts CIK789019 CashAndCashEquivalentsAtCarryingValue	10-K
+2026-08-23T12:42Z	alphabet_cash_equivalents_bn	2026-06-30	55.9	$bn	SEC XBRL companyfacts CIK1652044 CashAndCashEquivalentsAtCarryingValue	10-Q
+2026-08-23T12:42Z	alphabet_marketable_securities_current_bn	2026-06-30	186.6	$bn	SEC XBRL companyfacts CIK1652044 MarketableSecuritiesCurrent	10-Q
+2026-08-23T12:42Z	amazon_cash_equivalents_bn	2026-06-30	78.2	$bn	SEC XBRL companyfacts CIK1018724 CashAndCashEquivalentsAtCarryingValue	10-Q
+2026-08-23T12:42Z	amazon_marketable_securities_current_bn	2026-06-30	44.8	$bn	SEC XBRL companyfacts CIK1018724 MarketableSecuritiesCurrent	10-Q
+2026-08-23T12:42Z	meta_cash_equivalents_bn	2026-06-30	15.5	$bn	SEC XBRL companyfacts CIK1326801 CashAndCashEquivalentsAtCarryingValue	10-Q
+2026-08-23T12:42Z	meta_marketable_securities_current_bn	2026-06-30	74.8	$bn	SEC XBRL companyfacts CIK1326801 MarketableSecuritiesCurrent	10-Q
+2026-08-23T12:42Z	oracle_cash_equivalents_bn	2026-05-31	31.3	$bn	SEC XBRL companyfacts CIK1341439 CashAndCashEquivalentsAtCarryingValue	10-K
+2026-08-23T12:42Z	nvidia_cash_equivalents_bn	2026-04-26	13.2	$bn	SEC XBRL companyfacts CIK1045810 CashAndCashEquivalentsAtCarryingValue	10-Q
+2026-08-23T12:42Z	nvidia_marketable_securities_current_bn	2025-10-26	49.1	$bn	SEC XBRL companyfacts CIK1045810 MarketableSecuritiesCurrent	10-Q
+2026-08-23T12:42Z	fed_on_rrp_bn	2026-08-21	0.2	$bn	FRED RRPONTSYD (mirror of Fed release)	
+2026-08-23T12:42Z	reserve_balances_bn	2026-08-19	2935.3	$bn	FRED WRESBAL (mirror of Fed release)	
+2026-08-23T12:42Z	fed_soma_tbills_bn	2026-08-19	537.8	$bn	FRED WSHOBL (mirror of Fed release)	
+2026-08-23T12:42Z	foreign_official_rrp_bn	2026-08-19	373.4	$bn	FRED WLRRAFOIAL (mirror of Fed release)	
+2026-08-23T12:42Z	abcp_outstanding_bn	2026-08-19	488.4	$bn	FRED ABCOMP (mirror of Fed release)	
+2026-08-23T12:42Z	financial_cp_bn	2026-08-19	623.0	$bn	FRED FINCP (mirror of Fed release)	
+2026-08-23T12:42Z	cp_total_bn	2026-08-19	1441.2	$bn	FRED COMPOUT (mirror of Fed release)	
+2026-08-23T12:42Z	large_time_deposits_bn	2026-07-01	2537.6	$bn	FRED LTDACBM027NBOG (mirror of Fed release)	
+2026-08-23T12:42Z	retail_mmf_h6_bn	2026-07-06	3017.8	$bn	FRED WRMFNS (mirror of Fed release)	
+2026-08-23T13:11Z	hf_qhf_net_assets_bn	2026-03-31	4918.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_NAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:11Z	hf_qhf_gross_assets_bn	2026-03-31	12626.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_GAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:11Z	hf_collateral_posted_cashlike_bn	2026-03-31	2921.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_CASH_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:11Z	hf_collateral_posted_securities_bn	2026-03-31	4924.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_SECURITIES_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:11Z	hf_collateral_posted_other_bn	2026-03-31	366.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_OTHER_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:11Z	hf_unencumbered_cash_bn	2026-03-31	702.3	$bn	OFR Hedge Fund Monitor API, sum over 9 strategies of FPF-STRATEGY_*_CASHRATIO_NAVWMEAN x FPF-STRATEGY_*_NAV_SUM	derived: Form PF Q33/Q9; NAV-weighted mean ratio x strategy NAV = strategy unencumbered cash
+2026-08-23T13:13Z	hf_repo_borrowing_bn	2026-03-31	3243.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_REPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:13Z	hf_prime_brokerage_borrowing_bn	2026-03-31	3221.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_PRIMEBROKER_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:13Z	hf_other_secured_borrowing_bn	2026-03-31	781.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_OTHERSECURED_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:13Z	hf_reverse_repo_exposure_bn	2026-03-31	1399.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_REPO_REVERSEREPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:13Z	hf_long_treasury_exposure_bn	2026-03-31	2348.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_LTREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T13:13Z	hf_short_treasury_exposure_bn	2026-03-31	1567.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_STREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-08-23T18:07Z	ccp_im_required_15ccp_fia_bn	2026-03-31	1071.0	$bn	FIA CCP Tracker API (PQD 6.1.1), sum over 15 CCPs of house_net+client_gross	quarter-end; derivatives CCPs only, no FICC; FIA USD conversion
+2026-08-23T18:07Z	ficc_sponsored_repo_bn	2026-08-20	1030.8	$bn	DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members borrowing cash (hedge-fund side)
+2026-08-23T18:07Z	ficc_sponsored_reverse_repo_bn	2026-08-20	1264.8	$bn	DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members lending cash (money-fund side)
+2026-08-23T18:07Z	ficc_sponsored_dvp_bn	2026-08-20	1556.5	$bn	DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)	daily; DVP leg
+2026-08-23T18:07Z	ficc_sponsored_gc_bn	2026-08-20	739.1	$bn	DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)	daily; GC leg
+2026-08-23T18:07Z	ficc_sponsored_total_bn	2026-08-20	2295.6	$bn	DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)	daily; total sponsored activity
+2026-08-23T18:51Z	ficc_gsd_monthly_value_compared_trn	2026-07	258.0	$trn/month	DTCC chart 'Previous 12 Months Volume for Government Securities' (dtcc.com/charts/previous-12-months-volume-for-gsd), scraped via browser 2026-08-23 — Cloudflare blocks curl	monthly total value compared (gross), GSD; 2001-01 onward
+2026-08-23T18:51Z	ficc_gsd_monthly_net_obligations_trn	2026-07	85.0	$trn/month	same page, 'Dollar Value of Obligations Created from the Net'	monthly; GSD
+2026-08-23T18:51Z	actrix_total_cleared_repo_adv_trn	2026-06	6.5	$trn ADV	ISDA-Actrix US Treasury Repo Market Clearing Indicators, June 2026 edition (PDF, data/vintages/isda_actrix/)	monthly from Jun 2026; built from OFR STFM, DTCC, OFR MMF, NY Fed PD stats; +1.2% m/m
+2026-08-23T18:51Z	actrix_sponsored_cleared_repo_adv_trn	2026-06	2.5	$trn ADV	ISDA-Actrix June 2026 (bilateral 1.7 + triparty 0.8)	38.6% of cleared; YTD -6%, y/y +23%
+2026-08-23T18:51Z	actrix_direct_cleared_repo_adv_trn	2026-06	4.0	$trn ADV	ISDA-Actrix June 2026 (total minus sponsored)	YTD -1%, y/y +9%
+2026-08-24T04:45Z	mmf_secback_abcp_holdings_bn	2026-07-31	17.6	$bn	N-MFP3 full census (325/325 filings, bin/census_nmfp3.py), securities-backed/aggregator programmes: Northcross 5.0, Chesham/BSN 2.8, Overwatch 2.7, Nearwater 2.6, Ridgefield/Guggenheim 2.3, Bennington Stark 1.5, Mountcliff/20Gates 0.7	month-end; sponsor->programme map verified 24 Aug (D8b)
+2026-08-24T04:45Z	mmf_bank_multiseller_abcp_holdings_bn	2026-07-31	18.4	$bn	same census, bank multi-seller: RBC 7.6, JPM 3.0, SocGen 2.7, TD 2.2, BNP 1.5, CA 1.3	month-end; named programmes only, not all bank conduits
+2026-08-24T04:45Z	mmf_jpm_collateralized_paper_bn	2026-07-31	5.8	$bn	same census: Collateralized Commercial Paper V + Park Avenue Collateralized Notes	bank-sponsored securities/repo-backed paper
+2026-08-24T04:52Z	mmf_secback_abcp_holdings_bn	2026-06-30	20.5	$bn	N-MFP3 full census, July 2026 filings (325/325; bin/census_nmfp3.py 2026-07): Northcross 7.3, Nearwater 3.8, Chesham/BSN 2.9, Overwatch 2.6, Ridgefield 2.1, Bennington Stark 1.3, Mountcliff 0.7	back-month; aggregator paper FELL 20.5→17.6 into 31 Jul
+2026-08-24T04:52Z	mmf_bank_multiseller_abcp_holdings_bn	2026-06-30	18.5	$bn	same census: RBC 7.8, JPM 2.7, SocGen 2.7, TD 2.4, BNP 1.6, CA 1.3	back-month
+2026-08-24T04:52Z	mmf_jpm_collateralized_paper_bn	2026-06-30	5.6	$bn	same census	back-month
+2026-08-24T05:43Z	finra_margin_debit_balances_bn	2026-07	1417.2	$bn	FINRA Margin Statistics workbook (finra.org, column B); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-24T05:43Z	finra_free_credit_cash_bn	2026-07	205.1	$bn	FINRA Margin Statistics workbook (finra.org, column C); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-24T05:43Z	finra_free_credit_margin_bn	2026-07	217.3	$bn	FINRA Margin Statistics workbook (finra.org, column D); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-24T05:46Z	amazon_corporate_debt_securities_bn	2026-06-30	59.4	$bn	SEC filing read from the note: 10-Q acc 0001018724-26-000026, Note 2	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T05:46Z	meta_corporate_debt_securities_bn	2026-06-30	33.1	$bn	SEC filing read from the note: 10-Q acc 0001628280-26-050705, Note 4 (28.6 marketable + 4.5 cash equiv)	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T05:46Z	alphabet_corporate_debt_securities_bn	2026-06-30	26.2	$bn	SEC filing read from the note: 10-Q acc 0001652044-26-000071, Note 3 hierarchy table (26.157 mkt + 0.009 CE); AFS table gives 22.9 — unexplained gap, D9 §3.4	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T05:46Z	nvidia_corporate_debt_securities_bn	2026-04-26	15.1	$bn	SEC filing read from the note: 10-Q acc 0001045810-26-000052, Note 5 (13.6 marketable + 1.5 cash equiv)	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T05:46Z	microsoft_corporate_debt_securities_bn	2026-06-30	12.4	$bn	SEC filing read from the note: 10-K acc 0001193125-26-323660, Note 4 (10.660 Level 2 + 1.738 Level 3)	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T05:46Z	oracle_corporate_debt_securities_bn	2026-05-31	0.0	$bn	SEC filing read from the note: 10-K acc 0001193125-26-277521, Note 2 — NO corporate debt line; pool is MMFs 23.4 + time deposits 0.7	hand-read from the securities-composition note (not XBRL); no issuer detail disclosed in any of the six — D9
+2026-08-24T06:14Z	mmf_nonbank_abcp_holdings_bn	2026-07-31	41.8	$bn	N-MFP3 DEFINITIVE census, all 325 Aug-2026 filings / 44,512 positions, no name or category filter (bin/census_nmfp3_all_positions.py). SUPERSEDES the 17.6 row of 2026-08-24T05:0x (C-058 retracted, C-059)	non-bank-sponsored/aggregator families with a known or strongly evidenced sponsor; +7.9 sponsor-unknown, +7.0 newly-found bank-sponsored
+2026-08-24T06:14Z	mmf_abcp_total_holdings_bn	2026-07-31	101.2	$bn	N-MFP3 DEFINITIVE census, all 325 Aug-2026 filings / 44,512 positions, no name or category filter (bin/census_nmfp3_all_positions.py). SUPERSEDES the 17.6 row of 2026-08-24T05:0x (C-058 retracted, C-059); positions categorised 'Asset Backed Commercial Paper'	139 distinct issuers; excludes ~3.1bn of the same programmes filed by funds as Non-Financial Company CP
+2026-08-24T06:14Z	mmf_chesham_holdings_bn	2026-07-31	7.159	$bn	N-MFP3 DEFINITIVE census, all 325 Aug-2026 filings / 44,512 positions, no name or category filter (bin/census_nmfp3_all_positions.py). SUPERSEDES the 17.6 row of 2026-08-24T05:0x (C-058 retracted, C-059)	all categories; the 23-Aug 7.2 figure was correct — C-058 retracted
+2026-08-24T06:14Z	mmf_ionic_capitolis_holdings_bn	2026-07-31	5.21	$bn	N-MFP3 DEFINITIVE census, all 325 Aug-2026 filings / 44,512 positions, no name or category filter (bin/census_nmfp3_all_positions.py). SUPERSEDES the 17.6 row of 2026-08-24T05:0x (C-058 retracted, C-059)	Capitolis-sponsored; TRS on listed equities — the FT's equity-conduit mechanism
+2026-08-25T04:34Z	capitolis_clgm_total_assets_bn	2026-01-31	19.696	$bn	Capitolis Liquid Global Markets LLC, Statement of Financial Condition (semi-annual, free at capitolis.com/regulatory-disclosures); PDFs archived data/vintages/capitolis/	CLGM = the equity-TRS trading entity; semi-annual 31 Jan / 31 Jul
+2026-08-25T04:34Z	capitolis_clgm_affiliate_revolver_bn	2026-01-31	18.092	$bn	Capitolis Liquid Global Markets LLC, Statement of Financial Condition (semi-annual, free at capitolis.com/regulatory-disclosures); PDFs archived data/vintages/capitolis/	revolving loan advances from Ionic Funding LLC and HQLA Funding LLC (the ABCP issuers) — the conduit-funded leg
+2026-08-25T04:43Z	mmf_secback_abcp_holdings_bn	2026-07-31	WITHDRAWN	$bn	WITHDRAWN (C-059): produced by the deprecated name-map census, which missed abbreviated issuer spellings and every unlisted programme. DO NOT USE. Superseded for 2026-07-31 by mmf_nonbank_abcp_holdings_bn (definitive, all positions). 2026-06-30 has no corrected value until the June-data definitive census is run.	see 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.0
+2026-08-25T04:43Z	mmf_secback_abcp_holdings_bn	2026-06-30	WITHDRAWN	$bn	WITHDRAWN (C-059): produced by the deprecated name-map census, which missed abbreviated issuer spellings and every unlisted programme. DO NOT USE. Superseded for 2026-07-31 by mmf_nonbank_abcp_holdings_bn (definitive, all positions). 2026-06-30 has no corrected value until the June-data definitive census is run.	see 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.0
+2026-08-25T04:43Z	mmf_bank_multiseller_abcp_holdings_bn	2026-07-31	WITHDRAWN	$bn	WITHDRAWN (C-059): produced by the deprecated name-map census, which missed abbreviated issuer spellings and every unlisted programme. DO NOT USE. Superseded for 2026-07-31 by mmf_nonbank_abcp_holdings_bn (definitive, all positions). 2026-06-30 has no corrected value until the June-data definitive census is run. Bank multi-seller was understated: the map missed Victory, Gotham, Liberty Street, Sheffield, Ranger, Versailles and LMA Americas.	see D8b section 2.1
+2026-08-25T04:43Z	mmf_bank_multiseller_abcp_holdings_bn	2026-06-30	WITHDRAWN	$bn	WITHDRAWN (C-059): produced by the deprecated name-map census, which missed abbreviated issuer spellings and every unlisted programme. DO NOT USE. Superseded for 2026-07-31 by mmf_nonbank_abcp_holdings_bn (definitive, all positions). 2026-06-30 has no corrected value until the June-data definitive census is run.	see D8b section 2.1
+2026-08-25T04:47Z	mmf_abcp_total_holdings_bn	2026-06-30	104.47	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	all positions categorised Asset Backed Commercial Paper
+2026-08-25T04:47Z	mmf_named_conduit_families_bn	2026-06-30	52.98	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	the eight tracked families; like-for-like groupings across both months
+2026-08-25T04:47Z	mmf_capitolis_holdings_bn	2026-06-30	10.51	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	Ionic + HQLA — the equity-TRS and Treasury-repo conduits of one sponsor
+2026-08-25T04:47Z	mmf_abcp_total_holdings_bn	2026-07-31	101.22	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	all positions categorised Asset Backed Commercial Paper
+2026-08-25T04:47Z	mmf_named_conduit_families_bn	2026-07-31	49.69	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	the eight tracked families; like-for-like groupings across both months
+2026-08-25T04:47Z	mmf_capitolis_holdings_bn	2026-07-31	8.83	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py; all positions, no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1	Ionic + HQLA — the equity-TRS and Treasury-repo conduits of one sponsor
+2026-08-27T22:19Z	singh_equiv_hf_source_collateral_trn	2026-03-31	6.89	$trn	Derived in 2026-08-25-N3-Singhs-Denominator-Reconciled.md §1 — Form PF Q43 bracket (securities-posted lower, all-collateral-posted upper) positioned at the 2013-17 mean against Singh & Goel WP/19/106 Table 2	DERIVED not observed; range 6.15-7.31; Singh's own end-2017 value 2.2
+2026-08-27T22:19Z	isla_global_on_loan_eur_trn	2026-03-31	3.9	EUR trn	ISLA securities-lending market data page (islagroup.org), read at source 25 Aug	UPPER BOUND on Singh's real-money leg: all lender types, all borrowers, includes churn he excludes
+2026-08-27T22:19Z	isla_global_lendable_eur_trn	2026-03-31	40.6	EUR trn	same page	context for the on-loan figure
+2026-08-28T21:14Z	singh_equiv_hf_source_collateral_trn	2026-03-31	6.89 [range 4.92-7.31 after review]	$trn	C-061 annotation: the 0.60 bracket position is UNIDENTIFIED in 2026 (Grok N3R review, adjudicated 28 Aug); floor = securities-only 4.92; the 6.89 point stands only under the 2013-17 fitted position	N3 doc §6; use the range, not the point
+2026-08-28T21:14Z	collateral_velocity_range	2026	1.5-2.0 (Singh 2.0 primary)	ratio	Singh, Risk.net 12 Jan 2026 (free, archived): 'almost constant at around 2.0' on hand-collected top-20-bank data; our fitted-bracket alternative 1.55	S-N3 v2, C-061; flat-to-falling in all readings — never rising
+2026-08-29T06:41Z	isla_onloan_realmoney_share_pct	2026-03-31	61	%	ISLA market-data page charts (Chart.js, read via browser 29 Aug; underlying DataLend), data as of 2026-03-31; archived data/vintages/isla/	Singh real-money set: pensions 21 + gov/SWF 17 + insurers 3 + collective vehicles 20; excl. banks/brokers 16 and undisclosed 23
+2026-08-29T06:41Z	isla_onloan_cash_collateral_share_pct	2026-03-31	33	%	ISLA market-data page charts (Chart.js, read via browser 29 Aug; underlying DataLend), data as of 2026-03-31; archived data/vintages/isla/	cash EUR 1,240bn of EUR 3,754bn total collateral received (weekly series, 26 Mar 2026) — the D5 cash-reinvestment pool, sized
+2026-08-29T06:41Z	singh_realmoney_leg_estimate_trn	2026-03-31	2.7 [2.4-3.3 EURtrn x 1.1498]	$trn	Derived: EUR 3.9trn on-loan x 61% real-money share = EUR 2.38trn = USD 2.74trn at ECB 2026-03-31 rate 1.1498; upper 84% if Undisclosed/Other is all real money	UPPER BOUND on Singh's leg: includes non-dealer borrowers and churn he excludes; his end-2017 value was 1.5
+2026-08-29T11:39Z	collateral_velocity_range	2026	1.3-1.5 (mechanism-signed)	ratio	N3 doc §8: bracket-position floor 0.73 from signed wedges (FICC IM 0.08, CCP ceiling 0.30, true-cash 0.50 vs 3.29trn bucket); HF source ≥7.33trn; real-money 1.6-2.7. SUPERSEDES the 28-Aug '1.5-2.0 Singh primary' row (C-061 addendum)	Singh's 2.0 = conflicting direct measurement, reconciliation gap ~2.5-3trn
+2026-08-29T13:17Z	bank_loans_to_nondepository_fis_bn	2026-07-31	2005.0	$bn	Fed H.8 full package (FRB_H8.zip, series B1030NCBAM, item 1030, all commercial banks, SA, monthly level); raw in data/vintages/z1_closure/	THE bank->shadow money-creation line: 324bn Jan-2015 -> 2,005bn Jul-2026; flows +106 (2023) +200 (2024) +625 (2025) +178 (2026 7mo)
+2026-08-29T13:17Z	nfc_net_equity_issuance_bn	2025	-304	$bn/yr	Z.1 all-series package (FU103164105.Q), flows summed	-611 (2023), -398 (2024), -304 (2025): buybacks make the corporate sector the structural net equity buyer, funded in the credit market
+2026-08-29T13:17Z	treasury_net_issuance_bn	2025	1930	$bn/yr	Z.1 FU313161105 = all-sector absorption FU893061105 (internal check passes)	2,382 (2023), 1,913 (2024), 1,930 (2025), 572 (2026Q1)
+2026-08-29T13:17Z	fed_treasury_purchases_flow_bn	2026-03-31	156	$bn/qtr	Z.1 FU713061103.Q	Fed flipped: -741 (2023), -515 (2024), -83 (2025) -> +156 in 2026Q1 alone — the largest single Treasury buyer at the margin
+2026-08-29T13:17Z	corp_bonds_all_net_issuance_bn	2025	705	$bn/yr	Z.1 FU893163005.Q	505 (2023), 728 (2024), 705 (2025), 335 in 2026Q1 — annualising ~1.3trn: the data-centre wave visible
+2026-08-29T17:23Z	stablecoin_total_outstanding_bn	2026-08-29	309.4	$bn	DeFiLlama free API stablecoins.llama.fi/stablecoincharts/all (on-chain mint/burn indexing), pulled directly 29 Aug; daily from 2017; raw archived data/vintages/stablecoins/	engine 5 of N2c: 130.3 (Dec-23) -> 206.5 (Dec-24) -> 307.5 (Dec-25) -> 309.4 (29 Aug 26): flows +76/+101/+2bn — PLATEAU in 2026
+2026-08-30T08:16Z	bank_loans_to_nondepository_fis_bn	2026-07-31	2005.0 [2025 flow contaminated]	$bn	C-064 annotation: the LEVEL is valid; the 2025 flow (+625) contains $400.8bn of H.8 reclassification (five dated notes, verified). Organic 2025 <= ~224bn; 2023/2024 flows clean	read flows only from break-adjusted growth or after subtracting the dated notes
+2026-08-30T08:16Z	fed_bill_absorption_ratio_matched	2026-08-26	44.4%	ratio	C-063: SOMA bills +308.4 (H.4.1, Dec-31->Aug-26) / DTS net bill issuance +694.0 same window; July-matched 63.6%. RMP-only numerator ~160 of ~250 through early Jul (July MPR)	supersedes the 69% of D1 §9; falling as private demand took the August wave
+2026-08-30T08:16Z	row_equity_net_purchases_bn	2025	643.7	$bn/yr	Z.1 F51.1.t rest-of-world net purchases of US corporate equities (verified to reproduce)	185.3 (2024); the under-weighted row in the original N2c account; TIC June 2026: +144.7bn in one month
+2026-08-30T08:16Z	household_row_equity_net_purchases_bn	2025	863.5	$bn/yr	Z.1 F51.1.t household-sector net purchases (residual sector: contains domestic hedge funds and measurement error; ETF-share layering applies)	984.9 (2024); NOT natural-person saving
+2026-08-30T11:42Z	pd_ust_repo_out_bn	2026-08-19	3008.8	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:42Z	pd_ust_reverse_in_bn	2026-08-19	2743.6	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:42Z	pd_ust_rev_sponsored_dvp_bn	2026-08-19	478.7	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:42Z	pd_ust_repo_sponsored_bn	2026-08-19	359.5	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:42Z	pd_ust_repo_triparty_gc_bn	2026-08-19	875.5	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:42Z	pd_ust_rev_uncleared_bilateral_bn	2026-08-19	1559.0	$bn	NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS	weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc
+2026-08-30T11:44Z	gs_collateral_permitted_bn	2026-06-30	1431.9	$bn	GS 10-Q acc 0000886982-26-000297, Note 11	collateral received available to be delivered or repledged; verified verbatim
+2026-08-30T11:44Z	gs_collateral_repledged_bn	2026-06-30	1265.7	$bn	GS 10-Q acc 0000886982-26-000297, Note 11	collateral that was delivered or repledged
+2026-08-30T11:44Z	ms_collateral_permitted_bn	2026-06-30	1382.7	$bn	MS 10-Q acc 0000895421-26-000212, Note 8	collateral received with right to sell or repledge
+2026-08-30T11:44Z	ms_collateral_repledged_bn	2026-06-30	1062.2	$bn	MS 10-Q acc 0000895421-26-000212, Note 8	collateral sold or repledged; excl. securities used for US broker-dealer federal regulations
+2026-08-30T11:44Z	jpm_collateral_permitted_bn	2026-06-30	2181.4	$bn	JPM 10-Q acc 0001628280-26-054343, Note 23	collateral permitted to be sold or repledged, delivered, or otherwise used
+2026-08-30T11:44Z	jpm_collateral_repledged_bn	2026-06-30	1741.8	$bn	JPM 10-Q acc 0001628280-26-054343, Note 23	collateral sold, repledged, delivered or otherwise used
+2026-08-30T11:44Z	bac_collateral_permitted_bn	2026-06-30	1400	$bn	BAC 10-Q acc 0000070858-26-000394	disclosed only as rounded 1.4 trillion; one significant digit
+2026-08-30T11:44Z	bac_collateral_repledged_bn	2026-06-30	1300	$bn	BAC 10-Q acc 0000070858-26-000394	disclosed only as rounded 1.3 trillion
+2026-08-30T11:44Z	bnym_collateral_permitted_bn	2026-06-30	394	$bn	BNY 10-Q acc 0001390777-26-000086	securities received that can be sold or repledged; principal book, not the triparty-agent book
+2026-08-30T11:44Z	bnym_collateral_repledged_bn	2026-06-30	331	$bn	BNY 10-Q acc 0001390777-26-000086	securities collateral sold or repledged
+2026-08-30T11:44Z	citi_collateral_permitted_bn	2025-12-31	1064	$bn	Citi 10-K acc 0000831001-26-000011, Note 28	ANNUAL ONLY - absent from 10-Qs; repledged amount not quantified by Citi (qualitative: a substantial portion)
+2026-08-30T13:22Z	wfc_collateral_permitted_bn	2026-06-30	600.3	$bn	WFC 10-Q acc 0000072971-26-000302	right to sell or repledge; omission caught by D10R; verified verbatim
+2026-08-30T13:22Z	wfc_collateral_repledged_bn	2026-06-30	448.9	$bn	WFC 10-Q acc 0000072971-26-000302	sold or repledged
+2026-08-30T13:22Z	ofr_repo_mmf_lend_bn	2025-H2	2927.5	$bn	OFR Brief 26-03 Figure 1 table (on-disk PDF)	money funds: 100% lending, borrow 0.0 - terminal node confirmed
+2026-08-30T13:22Z	ofr_repo_hf_gross_borrow_bn	2025-H2	2811.6	$bn	OFR Brief 26-03 Figure 1 table	hedge funds gross borrow; net -1804.7
+2026-08-30T13:22Z	ofr_repo_hf_lend_bn	2025-H2	1007.0	$bn	OFR Brief 26-03 Figure 1 table	hedge funds ALSO lend - re-use-capable node (C-066 lesson)
+2026-08-30T13:22Z	ofr_repo_pd_net_borrow_bn	2025-H2	986.4	$bn	OFR Brief 26-03 Figure 1 table	primary dealers net borrow - inventory financing share of repo OUT
+2026-08-30T14:07Z	isla_onloan_total_eur_trn	2026-03-31	3.9	EUR trn	islagroup.org/securities-lending-market-data (chart config extracted in browser)	global on-loan all asset classes; lendable 40.6; gov bonds on-loan 1.7
+2026-08-30T14:07Z	isla_onloan_client_split_pct	2026-03-31	pensions 21 / govt-SWF 17 / CIV 20 / insurance 3 / banks-BD 16 / undisclosed 23	% of on-loan	same page, DataLend chart, values read from the page's chart object	real-money identified share 61%; closes the N3 real-money-leg residual
+2026-08-30T14:07Z	tether_total_assets_bn	2026-06-30	187.75	$bn	tether.to/en/transparency (BDO ISAE 3000R report figures shown on page)	liabilities 183.64, net equity 4.11
+2026-08-30T14:07Z	tether_tbills_direct_bn	2026-06-30	115.0	$bn	derived: 187.75bn x 74.91% cash-equiv x 81.75% T-bills, percentages from same page	DERIVED from page percentages, not a stated figure; reverse repo (o/n+term) ~25.6bn by same method
+2026-08-30T14:07Z	cbi_ie_mmf_usd_assets_eur_bn	2026-06-30	451.2	EUR bn	CBI ie-money-market-funds-all-series.xlsx, MMF.2 currency breakdown (loans USD 155.4 + securities USD 3.1+58.7+234.1)	44.9% of total Irish MMF assets EUR 1,005.7bn; Luxembourg domicile NOT included - separate source needed
+2026-08-30T14:10Z	bis_usd_liab_cayman_nonbank_bn	2026-Q1	1025.0	$bn	BIS LBS Q.S.L.A.USD.A.5J.A.5A.N.KY.N (stats.bis.org API; spot-checked in-house incl. OBS_PRE_BREAK 1024.8 - break negligible)	banks' cross-border USD liabilities to Cayman non-banks; 617.3 at 2019Q4, 687.5 at 2022Q4
+2026-08-30T14:10Z	bis_usd_liab_cayman_nbfi_bn	2026-Q1	882.4	$bn	BIS LBS Q.S.L.A.USD.A.5J.A.5A.F.KY.N	NBFI subset; F-sector series exist only from 2013Q4
+2026-08-30T14:10Z	bis_usd_claims_cayman_nbfi_bn	2026-Q1	1309.3	$bn	BIS LBS Q.S.C.A.USD.A.5J.A.5A.F.KY.N	banks' USD claims ON Cayman NBFIs - the financing leg; 654.0 at 2022Q4 = x2.0 in 13 quarters
+2026-08-30T14:10Z	bis_usd_liab_allctry_nonbank_bn	2026-Q1	7644.2	$bn	BIS LBS Q.S.L.A.USD.A.5J.A.5A.N.5J.N	all-country denominator; NBFI subset 5047.3
+2026-08-30T14:10Z	bis_usd_liab_uk_nonbank_bn	2026-Q1	1012.7	$bn	BIS LBS Q.S.L.A.USD.A.5J.A.5A.N.GB.N	523.5 at 2019Q4
+2026-08-30T14:10Z	tic_mfh_cayman_ust_bn	2026-06	453.1	$bn	TIC slt_table5.txt (live MFH; Publish/mfh.txt is FROZEN Mar-2023 - C-068)	grand total denominator 9299.0; Jun-2025 was 440.9
+2026-08-30T14:10Z	tic_shl_cayman_ust_total_bn	2025-06-30	440.4	$bn	SHL 2025 benchmark, Table A7 (shl_app07_2025.txt): 286.3 LT + 154.1 ST	all-country total 9076.1; Cayman ALL US securities (A1): 3180
+2026-08-30T16:09Z	fx_usd_leg_total_trn	2025-S2	113.5	$trn	BIS OTC derivatives WS_OTC_DERIV2, instruments D (forwards+FX swaps) + I (currency swaps), risk FX, USD leg, all counterparties (H.A.{D,I}.B.5J.A.5J.A.USD.TO1.A.A.3.C)	validated: same computation reproduces the Borio-McCauley-McGuire $85trn at 2022-S1 exactly
+2026-08-30T16:09Z	fx_usd_nonbank_obligations_trn	2025-S2	35.9	$trn	same series, sectors C (other financial institutions) + U (non-financial), halved per the qt2212h method	paper method replicated: gives 26.0 at 2022-S1 = the paper's $26trn; caveats: /2 halving assumption, OFI includes non-reporting banks
+2026-08-30T16:09Z	fx_usd_ofi_notional_trn	2025-S2	60.2	$trn	same series, sector C only, not halved	two-sided notional with other financial institutions; 43.0 at 2022-S1
+2026-08-30T16:11Z	gli_usd_credit_nonbank_exus_trn	2026-Q1	14.74	$trn	BIS GLI Q.USD.3P.N.A.I.B.USD (spot-checked in-house)	on-balance-sheet USD credit to non-banks outside US; 12.12 at 2019Q4, 12.82 at 2022Q4 (matches qt2212h's ~13trn mid-2022)
+2026-08-30T16:11Z	gli_usd_loans_nonbank_exus_trn	2026-Q1	6.68	$trn	BIS GLI Q.USD.3P.N.B.I.G.USD	bank-loans component; loans+debt=total verified exactly
+2026-08-30T16:11Z	gli_usd_debtsec_nonbank_exus_trn	2026-Q1	8.06	$trn	BIS GLI Q.USD.3P.N.A.I.D.USD	international debt securities component
+2026-08-30T16:15Z	cpis_cym_us_total_trn	2024-12-31	4.51	$trn	IMF PIP (formerly CPIS) api.imf.org, key CYM.A.P_TOTINV_P_USD.S1.S1.USA.A	Cayman SELF-REPORTED holdings of US securities; 2023: 3.86; pre-2023 values not comparable (CIMA coverage expansion: 2022 was 1.97)
+2026-08-30T16:15Z	cpis_cym_us_debt_trn	2024-12-31	2.38	$trn	IMF PIP key CYM.A.P_F3_P_USD.S1.S1.USA.A	US debt securities all types (UST not separable); LT 2.17 + ST 0.21
+2026-08-30T16:15Z	cpis_cym_us_equity_trn	2024-12-31	2.13	$trn	IMF PIP key CYM.A.P_F51_P_USD.S1.S1.USA.A	US equity
+2026-08-30T16:18Z	cssf_lu_mmf_usd_nav_eur_bn	2025-12-31	334	EUR bn	CSSF MMF Reporting Dashboard 2025 (Art. 37 MMFR data), section 3.1; cssf.lu/wp-content/uploads/MMF_Reporting_Dashboard_2025.pdf	USD-denominated NAV, 53% of total NAV 631; NAV not gross assets - definitional mismatch vs CBI Ireland figure flagged
+2026-08-30T16:18Z	ecb_bsi_lu_mmf_total_assets_eur_bn	2026-Q2	692.9	EUR bn	ECB BSI.Q.LU.N.F.T00.A.1.Z5.0000.Z01.E (spot-checked)	gross total assets all currencies; ECB publishes NO currency split for MMF assets (verified across countries) - annual CSSF dashboard is the only USD split
+2026-08-30T20:16Z	tic_cayman_ust_dec2022_bn	2022-12	283.7	$bn	TIC table3b.txt (fetched; matched-window anchor per N2aR)	matched window vs LBS: Dec-22 283.7 -> Mar-26 460.1 = +62%
+2026-08-30T20:16Z	barth_cayman_hf_ust_trn	2024-12-31	1.85	$trn	Barth et al., Fed FEDS Note 2025-10-15 (Form PF + Form ADV based; preserved in _research/primary_sources/offshore_dollar/)	+$1trn since 2022; TIC undercount measured at ~$1.4trn end-2024 - supersedes the repo-invisibility CANDIDATE framing
+2026-08-30T20:16Z	shl_cayman_equity_bn	2025-06-30	2160.1	$bn	SHL 2025 Table A5 (appendix on disk)	vs CPIS equity 2,130 - matched within 1.4%
+2026-08-30T20:16Z	shl_cayman_debt_total_bn	2025-06-30	1020.2	$bn	SHL 2025 Table A5: LT 861.8 (UST 286.3, agency 56.4, corporate 519.1) + ST 158.5	vs CPIS debt 2,380 - the 1.36trn debt-only gap = the measured repo hole
+2026-08-30T20:16Z	bis_usd_claims_cayman_nbfi_loans_bn	2026-Q1	1136.0	$bn	BIS LBS Q.S.C.G.USD.A.5J.A.5A.F.KY.N (re-pulled)	loans/deposits instrument only; 451.6 at 2022-Q4 = x2.5 - the doubling is financing not valuation
+2026-08-30T22:57Z	finra_margin_debit_balances_bn	2026-07	1417.2	$bn	FINRA Margin Statistics workbook (finra.org, column B); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-30T22:57Z	finra_free_credit_cash_bn	2026-07	205.1	$bn	FINRA Margin Statistics workbook (finra.org, column C); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-30T22:57Z	finra_free_credit_margin_bn	2026-07	217.3	$bn	FINRA Margin Statistics workbook (finra.org, column D); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-31T04:37Z	finra_margin_debit_balances_bn	2026-07	1417.2	$bn	FINRA Margin Statistics workbook (finra.org, column B); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-31T04:37Z	finra_free_credit_cash_bn	2026-07	205.1	$bn	FINRA Margin Statistics workbook (finra.org, column C); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-31T04:37Z	finra_free_credit_margin_bn	2026-07	217.3	$bn	FINRA Margin Statistics workbook (finra.org, column D); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-08-31T04:45Z	cima_cpis_cayman_us_total_bn	2025-06-30	4513.3	$bn	CIMA's own CPIS submission, Table 1 row 246, file 377PI6_2025S1.xlsx (cima.ky); values re-read from raw XML by me	MATCHED DATE vs SHL. All-countries total 6,895.6 (US = 65.5%). Dec-2024 vintage 4,509.8 matches IMF PIP exactly - validates the PIP route
+2026-08-31T04:45Z	cima_cpis_cayman_us_equity_bn	2025-06-30	2129.8	$bn	CIMA CPIS Table 1 row 246 col I	vs SHL equity 2,160.1 - SHL LARGER by 30.2; equity matched within 1.4%
+2026-08-31T04:45Z	cima_cpis_cayman_us_debt_bn	2025-06-30	2383.5	$bn	CIMA CPIS Table 1 row 246 col J (LT 2,166.6 + ST 216.9)	vs SHL debt 1,020.2 - gap 1,363.3 on a MATCHED date
+2026-08-31T04:45Z	cayman_debt_gap_matched_bn	2025-06-30	1363.3	$bn	computed: CIMA CPIS debt 2,383.5 minus SHL Table A5 debt 1,020.2, both at 30 Jun 2025	THE matched-date wedge; timing objection eliminated; ~= Fed-measured 1.4trn TIC undercount (Barth et al.)
+2026-08-31T04:45Z	occ_us_bank_fx_notional_trn	2026-Q1	75.3	$trn	OCC Quarterly Report on Bank Trading and Derivatives Activities 1Q2026, Tables 10/15 (spot-checked)	gross notional, all insured US banks/SAs (1,192 filers); 41.9 at 2Q2022. NO net/directional FX data published - see note
+2026-08-31T05:24Z	zk_wholesale_share_low_pct	2026-07	19.03	%	N2b build: W_low/(W_low+M2); components N-MFP3 (OFR) + large time deposits + H.6 M2	private counterparties only; 15.88% at 2023-12
+2026-08-31T05:24Z	zk_wholesale_share_high_pct	2026-07	20.33	%	N2b build: W_high/(W_high+M2), no MMF-CD/large-time-deposit dedup	17.49% at 2023-12
+2026-08-31T05:24Z	zk_wholesale_share_incl_fed_pct	2026-07	19.05	%	N2b: (total MMF repo + large time deposits)/(that + M2) - Fed term cancels algebraically	19.05% at 2023-12: FLAT. The rise in the private measure is the ON RRP handoff
+2026-08-31T05:24Z	mmf_private_repo_bn	2026-07	2918.4	$bn	N-MFP3 via OFR: treasury+agency+other collateral repo LESS repo with Fed	cross-validates vs OFR Brief 26-03 money-fund lending 2927.5 (H2-2025) to 0.19%
+2026-08-31T05:24Z	zk_W_low_bn	2026-07	5456.0	$bn	N2b: measured non-M2 nonbank wholesale funding, lender-side, US perimeter	LOWER BOUND on a partial perimeter; excludes HF lending 1007.0 and non-primary BD 1086.8 (OFR 26-03)
+2026-08-31T05:24Z	m2_h6_sa_bn	2026-07	23218.0	$bn	Federal Reserve H.6 release, 25 Aug 2026, seasonally adjusted	20779.9 at 2023-12 (ALFRED vintage); +11.7% over the window
+2026-08-31T06:32Z	zk_wholesale_share_incl_fed_pct	2026-07	WITHDRAWN	%	C-070: superseded. The Fed-inclusive measure is a category error (ON RRP funds the central bank, not a bank) and the flatness was an endpoint artefact	see zk_private_share_pct
+2026-08-31T06:32Z	zk_private_share_pct	2021-12	9.09	%	N2b v1 corrected (C-070): W_priv/(W_priv+M2), private counterparties only	start of the series
+2026-08-31T06:32Z	zk_private_share_pct	2023-12	15.88	%	same construction	
+2026-08-31T06:32Z	zk_private_share_pct	2025-12	19.31	%	same construction	
+2026-08-31T06:32Z	zk_private_share_pct	2026-06	19.45	%	same construction; LAST month with every OFR component published (July Fed-repo line unpublished)	more than doubled since 2021-12; now plateaued as the ON RRP is empty
+2026-08-31T18:52Z	zk_wholesale_share_low_pct	2026-07	SUPERSEDED	%	Housekeeping 31 Aug: endpoint is soft (OFR Fed-repo line unpublished for July; June carried forward). Value itself is the correct private measure but on a soft date	use zk_private_share_pct (2026-06 = 19.45, last month with every component published)
+2026-08-31T18:52Z	zk_wholesale_share_high_pct	2026-07	SUPERSEDED	%	same soft-endpoint issue; the high/low bound pair is retained in the doc, not as a headline series	use zk_private_share_pct
+2026-08-31T18:52Z	zk_W_low_bn	2026-07	ANNOTATED	$bn	Value stands (5456.0) but note: the non-primary-broker-dealer leg named in the exclusion note is a DEALER, not a z_k 'other nonbank' - C-070 amendment	perimeter test pending in N2b v2 via Form PF reverse repo
+2026-09-01T04:30Z	singh_panel_bac_permitted_2017_bn	2017-12-31	561.9	$bn	BAC FY2017 10-K acc 0000070858-18-000009, Note 1 'Collateral'; verified verbatim in-house	Singh Fig.3 'Merrill/BoA' bar. Repledged 476.1 (BAC quantifies both). My visual read of the chart was ~560 (0.3% off)
+2026-09-01T04:30Z	singh_panel_citi_permitted_2017_bn	2017-12-31	457.5	$bn	Citi FY2017 10-K acc 0000831001-18-000040, Note 26; verified verbatim in-house	Singh Fig.3 'Citigroup' bar. Repledged NOT QUANTIFIED in 2017 either ('a substantial portion') - so the panel must be built on the PERMITTED line, which is what Fig.3 measures anyway. Visual read was ~460
+2026-09-01T04:31Z	singh_panel_jpm_permitted_2017_bn	2017-12-31	968.8	$bn	JPM FY2017 10-K acc 0000019617-18-000057 Note 28; verified verbatim in-house	repledged 775.3; reported in billions unlike GS/MS
+2026-09-01T04:31Z	singh_panel_gs_permitted_2017_bn	2017-12-31	764.0	$bn	GS FY2017 10-K acc 0001193125-18-056383 Note 10; verified verbatim	repledged 599.6
+2026-09-01T04:31Z	singh_panel_ms_permitted_2017_bn	2017-12-31	599.2	$bn	MS FY2017 10-K acc 0001193125-18-060831 Note 6; verified verbatim	repledged 475.1
+2026-09-01T04:31Z	singh_panel_us5_permitted_2017_bn	2017-12-31	3351.4	$bn	Sum of the five US names in WP/19/106 Figure 3, all filing-sourced	replaces my visual read of the chart (3,360 - which was 0.3% off)
+2026-09-01T04:31Z	singh_panel_us5_permitted_2026_bn	2026-06-30	7460.0	$bn	Same five names; BAC 1-digit rounded, Citi at Dec-2025 (annual disclosure only)	ratio 2.23x vs 2017; sensitivity to BAC rounding 2.21-2.24x
+2026-09-01T04:31Z	singh_panel_us5_ratio_2017_2026	2026-06-30	2.23	x	Rebuilt Figure 3 US panel, permitted-to-repledge line	vs Singh's own global 7.5->13trn = 1.73x; implies US share 44.7% -> 57.4%, reproducing his 'over half' statement
+2026-09-01T04:31Z	singh_panel_utilization_2017_pct	2017-12-31	80.4	%	Four names quantifying both lines (JPM/GS/MS/BAC); Citi never quantifies repledged	rose to 84.0% by Jun-2026 - re-use intensified modestly as well as the stock doubling
+2026-09-01T04:36Z	jpm_collateral_permitted_sep2025_bn	2025-09-30	1829.9	$bn	JPM Q3-2025 10-Q acc 0001628280-25-048859, verified verbatim in-house	THE vintage available to Singh on 12 Jan 2026; matches his 'around $1.8 trillion' to 0.5% (C-071). Repledged 1439.9
+2026-09-01T04:36Z	barclays_collateral_permitted_fy2025_gbp_bn	2025-12-31	1513.9	GBP bn	Barclays PLC 20-F acc 0000312069-26-000004 Note 37; IFRS 7.15 XBRL tags confirm concept	= $2036bn at GBPUSD 1.3447 (Fed H.10 31-Dec-25). Repledged GBP1382.1bn = $1858bn. NOTE: filed 10 Feb 2026, AFTER Singh's article
+2026-09-01T04:36Z	barclays_collateral_permitted_fy2024_gbp_bn	2024-12-31	1318.9	GBP bn	Barclays PLC FY2024 comparative column, same note	= $1651bn at GBPUSD 1.2521 (Fed H.10 31-Dec-24) - the Barclays vintage Singh could have had
+2026-09-03T04:53Z	zk_v2_W2_M2_pct	2026-03	23.07	%	N2b v2 §8: W2/(W2+M2), W2 = private MMF repo + large time deposits + Form PF hedge-fund reverse repo	13.10% at 2021-12; full path in _research/n2b_v2/zk_v2.csv; 3 adversarial lenses passed
+2026-09-03T04:53Z	zk_v2_W2_h8dep_pct	2026-03	29.22	%	N2b v2 §8: same W2 over H.8 total deposits less large time (strictest bank-funding denominator)	16.42% at 2021-12
+2026-09-03T04:53Z	zk_v2_W2_bn	2026-03	6801.7	$bn	N2b v2: W1 5402.7 + hedge-fund reverse repo 1399.0	hand-recomputed by me and independently by the ZK2 lens; exact
+2026-09-03T04:53Z	zk_v2_W2_us_scaled_pct	2025-12	22.19	%	N2b v2 §8 amendment: hedge-fund leg rescaled to the OFR 26-03 US census (x0.7543)	vs 23.07% unscaled - level -0.88pp, direction unchanged; ratio benchmarked only at H2-2025
+2026-09-03T04:53Z	hf_reverse_repo_formpf_bn	2021-12	1078.0	$bn	OFR Hedge Fund Monitor FPF-ASSETCLASS_REPO_REVERSEREPO_SUM (global qualifying hedge funds)	grew only ~30% to 1399.0 by 2026-03 - dilutes but does not reverse the z_k rise
+2026-09-03T17:28Z	singh_implied_cashlike_share_2017	2017-12-31	0.32	ratio	Back-test: (his HF source 2200 - Form PF securities 1824 - other 74) / cash-like 930	reproduces his Table 2 row exactly (sources 3.70trn, velocity 2.03); an IMPLIED residual, not a stated convention
+2026-09-03T17:28Z	formpf_hf_collateral_gross_bn	2017-12-31	2828	$bn	OFR Form PF: cash-like 930 + securities 1824 + other 74	grew to 8211 by 2026Q1 = x2.90, vs his implied source growth of x1.76
+2026-09-03T17:28Z	hf_repo_to_cashlike_ratio	2026-03-31	1.11	ratio	hf_repo_borrowing / hf_collateral_posted_cashlike	0.74 in 2017, 0.80 in 2021 - the bucket turned Treasury-heavy, which is why a 2017-era 32% share cannot hold in 2026
+2026-09-04T14:33Z	singh_implied_cashlike_share_2017	2017-12-31	WITHDRAWN	ratio	C-074: a single-row calibration. Across 2013-17 the implied share wanders 32-71%, so it is not a convention	see singh_hf_source_growth_2013_2017
+2026-09-04T14:33Z	singh_hf_source_growth_2013_2017	2017-12-31	18.9	%	WP/19/106 Table 2 hedge-fund column, 1.85 -> 2.20trn; annual steps sd 1.01pp	his series is SMOOTH
+2026-09-04T14:33Z	formpf_hf_collateral_growth_2013_2017	2017-12-31	39.1	%	OFR Form PF collateral posted (cash-like+securities+other), 2.03 -> 2.83trn; annual steps sd 6.84pp	ours is LUMPY - the two are not the same object
+2026-09-11T09:22Z	hf_qhf_net_assets_bn	2026-03-31	4918.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_NAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_qhf_gross_assets_bn	2026-03-31	12626.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_GAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_collateral_posted_cashlike_bn	2026-03-31	2921.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_CASH_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_collateral_posted_securities_bn	2026-03-31	4924.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_SECURITIES_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_collateral_posted_other_bn	2026-03-31	366.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_OTHER_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_repo_borrowing_bn	2026-03-31	3243.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_REPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_prime_brokerage_borrowing_bn	2026-03-31	3221.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_PRIMEBROKER_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_other_secured_borrowing_bn	2026-03-31	781.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_OTHERSECURED_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_reverse_repo_exposure_bn	2026-03-31	1399.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_REPO_REVERSEREPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_long_treasury_exposure_bn	2026-03-31	2348.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_LTREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_short_treasury_exposure_bn	2026-03-31	1567.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_STREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-11T09:22Z	hf_unencumbered_cash_bn	2026-03-31	702.3	$bn	OFR Hedge Fund Monitor API, sum over 9 strategies of FPF-STRATEGY_*_CASHRATIO_NAVWMEAN x FPF-STRATEGY_*_NAV_SUM	derived: Form PF Q33/Q9; NAV-weighted mean ratio x strategy NAV = strategy unencumbered cash
+2026-09-11T09:49Z	mmf_abcp_total_holdings_bn	2026-08-31	103.94	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py 2026-09; all 327 Sep-2026 filings / 44,674 positions, 0 fetch errors; no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1, aggregated by bin/aggregate_nmfp3_families.py, which reproduces the 2026-07-31 rows exactly. Raw: data/vintages/nmfp3/nmfp3_ALL_positions_2026-08-31_pulled_2026-09-11.csv.gz	all positions categorised Asset Backed Commercial Paper; +2.7% m/m
+2026-09-11T09:49Z	mmf_named_conduit_families_bn	2026-08-31	50.61	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py 2026-09; all 327 Sep-2026 filings / 44,674 positions, 0 fetch errors; no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1, aggregated by bin/aggregate_nmfp3_families.py, which reproduces the 2026-07-31 rows exactly. Raw: data/vintages/nmfp3/nmfp3_ALL_positions_2026-08-31_pulled_2026-09-11.csv.gz	the eight tracked families of the D8b 2.1 Jun/Jul table = non-bank + still-unattributed under D8b 2.1b (bank-sponsored Podium/Paradelle excluded); like-for-like with 49.69 at 2026-07-31. The non-bank/unattributed SPLIT has three documented cuts; only this sum is stable
+2026-09-11T09:49Z	mmf_capitolis_holdings_bn	2026-08-31	9.69	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py 2026-09; all 327 Sep-2026 filings / 44,674 positions, 0 fetch errors; no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1, aggregated by bin/aggregate_nmfp3_families.py, which reproduces the 2026-07-31 rows exactly. Raw: data/vintages/nmfp3/nmfp3_ALL_positions_2026-08-31_pulled_2026-09-11.csv.gz	Ionic + HQLA. The legs diverged in August: HQLA (Treasury-repo conduit) +31.3% m/m, Ionic (equity TRS) -5.2%
+2026-09-11T09:49Z	mmf_ionic_capitolis_holdings_bn	2026-08-31	4.94	$bn	N-MFP3 definitive census (bin/census_nmfp3_all_positions.py 2026-09; all 327 Sep-2026 filings / 44,674 positions, 0 fetch errors; no name or category filter). Groupings per 2026-08-24-Parcel-D8b-Conduit-Return.md section 2.1, aggregated by bin/aggregate_nmfp3_families.py, which reproduces the 2026-07-31 rows exactly. Raw: data/vintages/nmfp3/nmfp3_ALL_positions_2026-08-31_pulled_2026-09-11.csv.gz	Capitolis-sponsored; TRS on listed equities — the FT's equity-conduit mechanism
+2026-09-11T20:25Z	nfc_net_equity_issuance_bn	2025	-348.2	$bn/yr	Z.1 release 2026-09-11 (2026Q2 vintage) F51.1.t FU103164105.Q, 4 quarters summed	revised from -304 (June vintage); bin/z1_equity_netbuyers.py
+2026-09-11T20:25Z	row_equity_net_purchases_bn	2025	646.7	$bn/yr	Z.1 release 2026-09-11 F51.1.t FU263064105.Q, 4 quarters summed	revised from 643.7
+2026-09-11T20:25Z	household_row_equity_net_purchases_bn	2025	824.0	$bn/yr	Z.1 release 2026-09-11 F51.1.t FU153064105.Q, 4 quarters summed	residual sector; revised from 863.5; hedge funds now a separate line
+2026-09-11T20:25Z	alphabet_common_stock_proceeds_bn	2026-06-30	30.499	$bn H1	SEC XBRL companyfacts CIK1652044 ProceedsFromIssuanceOfCommonStock, 10-Q 0001652044-26-000071	H1 2026; H1 2025 zero
+2026-09-11T20:25Z	alphabet_conv_preferred_proceeds_bn	2026-06-30	19.063	$bn H1	SEC XBRL companyfacts CIK1652044 ProceedsFromIssuanceOfConvertiblePreferredStock, 10-Q 0001652044-26-000071	H1 2026
+2026-09-11T20:25Z	alphabet_buybacks_bn	2026-06-30	0.0	$bn H1	SEC XBRL companyfacts CIK1652044 PaymentsForRepurchaseOfCommonStock, 10-Q 0001652044-26-000071	H1 2025 was 28.3
+2026-09-11T20:25Z	alphabet_net_financing_cf_bn	2026-06-30	86.32	$bn H1	SEC XBRL companyfacts CIK1652044 NetCashProvidedByUsedInFinancingActivities, 10-Q 0001652044-26-000071	the figure inside Green's $80-90bn 'equity' claim
+2026-09-12T06:18Z	alphabet_capex_guidance_2026_bn	2026-06-02	185	$bn/yr	Alphabet 424B5 accession 0001193125-26-257702 (Series B), read 12 Sep	guidance range $180-190bn for 2026; 2027 'significantly increase'
+2026-09-12T06:18Z	alphabet_berkshire_private_placement_bn	2026-06-04	10.0	$bn	Alphabet 8-K accession 0001193125-26-257724	private placement of Class A+C to a Berkshire Hathaway affiliate; 14,212,035 Class A at ~$351.8
+2026-09-12T06:18Z	alphabet_atm_program_ceiling_bn	2026-06-01	40.0	$bn	Alphabet 424B5 accession 0001193125-26-257702	ATM; proceeds earmarked for employee-award tax withholding, NOT capex
+2026-09-12T06:18Z	oracle_atm_proceeds_bn	2026-08-31	19.9	$bn	Oracle 10-Q accession 0001193125-26-389274 Note 7	ATM fully utilised, 141m shares; generic use of proceeds
+2026-09-12T06:18Z	oracle_purchase_obligations_bn	2026-08-31	34.15	$bn	Oracle 10-Q accession 0001193125-26-389274	unconditional purchase obligations: cloud components and data-centre power
+2026-09-12T06:18Z	amazon_delayed_draw_term_loan_bn	2026-06-30	17.5	$bn	Amazon delayed-draw term loan (Citibank), June 2026, per filings read 12 Sep	BANK debt, not a registered security - invisible to prospectus-based counts
+2026-09-12T06:37Z	ipo_primary_proceeds_2026ytd_bn	2026-09-11	111.9	$bn	424B4 prospectuses via EDGAR, 9 operating-company deals >$1bn, base offer price	company-side gross; excludes Medline (Dec 2025, +$6.3bn), SPACs, funds and follow-ons
+2026-09-12T06:37Z	ipo_secondary_proceeds_2026ytd_bn	2026-09-11	3.8	$bn	same prospectuses	paid to existing holders, not to the companies
+2026-09-12T06:37Z	spacex_ipo_primary_bn	2026-06-11	75.0	$bn	SpaceX 424B4, accession 0001628280-26-042639	555,555,555 shares at $135.00; no selling stockholders; $85.7bn if the over-allotment is exercised in full
+2026-09-12T11:37Z	oracle_rpo_bn	2026-08-31	664	$bn	Oracle 10-Q acc. 0001193125-26-389274, revenue note	was 455 at 2025-08-31 and 638 at 2026-05-31; 13% due as revenue within 12 months
+2026-09-12T11:37Z	oracle_offbs_lease_commitments_bn	2026-08-31	288	$bn	Oracle 10-Q acc. 0001193125-26-389274, leases note	additional lease commitments not on balance sheet, substantially all data centres, commencing FY27Q2-FY29, 15+ year terms; 260 at 2026-05-31
+2026-09-12T11:37Z	oracle_operating_lease_liab_bn	2026-08-31	34.62	$bn	Oracle 10-Q acc. 0001193125-26-389274, leases note	from 30.19 at 2026-05-31
+2026-09-12T11:37Z	oracle_finance_lease_liab_bn	2026-08-31	9.19	$bn	Oracle 10-Q acc. 0001193125-26-389274, leases note	from 7.70 at 2026-05-31
+2026-09-12T11:37Z	oracle_capex_quarterly_bn	2026-08-31	28.50	$bn/qtr	Oracle 10-Q acc. 0001193125-26-389274, cash flow statement	vs 8.50 in the year-earlier quarter
+2026-09-12T11:41Z	fed_treasury_purchases_flow_bn	2026-06-30	97.8	$bn/qtr	Z.1 release 2026-09-11, FU713061103.Q	still a net buyer; 156.2 in Q1; -741/-515/-83 in 2023-25
+2026-09-12T11:41Z	mmf_treasury_flow_bn	2026-06-30	-144.9	$bn/qtr	Z.1 release 2026-09-11, closure table	net selling deepened from -91.4 in Q1
+2026-09-12T11:41Z	nfc_net_equity_issuance_q_bn	2026-06-30	153.2	$bn/qtr	Z.1 release 2026-09-11, F51.1.t FU103164105.Q	SECOND positive quarter (Q1 +51.3, revised from +31); net supply has changed sign
+2026-09-12T11:41Z	sp500_premium_effect_on_pe_2024_2026_pts	2026-06-30	3.01	P/E points	bin/rates_vs_premium.py, Shiller + FRED DFII10	risk-premium effect; the real-rate effect over the same window was -2.14 points
+2026-09-12T11:41Z	sp500_valuation_excess_vs_constant_premium_pct	2026-06-30	35.4	% of level	bin/rates_vs_premium.py	actual P/E 25.22 vs 16.30 implied by today's real yield at the 2015-19 average premium; 52.2% on CAPE
+2026-09-12T11:52Z	nvidia_openai_sbenergy_guarantee_bn	2026-07-26	105.0	$bn	NVIDIA 10-Q, guarantees note (supervisor-verified at source)	capped guarantee: land/power/shell build-out with SB Energy affiliates on behalf of an OpenAI affiliate; ~4.25GW; 20-year leases; effective per phase from FY2029
+2026-09-12T11:52Z	nvidia_total_guarantees_bn	2026-07-26	108.5	$bn	NVIDIA 10-Q, guarantees note	105.0 SB Energy/OpenAI + 3.5 pre-existing
+2026-09-12T11:52Z	hyperscaler6_capex_ttm_bn	2026-09-12	593.7	$bn	F1 funding table, six companies, mixed fiscal bases	Alphabet, Amazon, Meta, Microsoft, Oracle, NVIDIA; NOT a synchronised cross-section
+2026-09-12T11:52Z	alphabet_purchase_commitments_bn	2026-06-30	811.0	$bn	Alphabet 10-Q commitments note, via the F1 table	all-future-years stock, not a period flow
+2026-09-12T11:52Z	oracle_internal_cash_vs_capex_gap_bn	2026-08-31	-34.9	$bn/TTM	F1 funding table	internal cash 40.8 against capex 75.7 — the only one of the six that cannot self-fund
+2026-09-13T08:05Z	dc_private_net_contributions_bn	2023	-16.3	$bn/yr	ICI Retirement Market Q1-2026 wkbk, Table 4 row 55 (Form 5500)	NOT a market flow: both legs contain rollovers. Negative every year since 2013
+2026-09-13T08:05Z	dc_private_contributions_bn	2023	715.7	$bn/yr	ICI Table 4	employer+employee, private-sector DC
+2026-09-13T08:05Z	dc_private_benefits_disbursed_bn	2023	731.9	$bn/yr	ICI Table 4	note 4: EXCLUDES benefits paid directly by insurance carriers, so understated
+2026-09-13T08:05Z	dc_all_private_contributions_dol_bn	2023	767.581	$bn/yr	DOL 2023 Form 5500 Abstract, sheet 3	wider coverage than ICI: incl. multiemployer/multiple-employer
+2026-09-13T08:05Z	dc_all_private_benefits_dol_bn	2023	783.697	$bn/yr	DOL 2023 Form 5500 Abstract, sheet 3	net -16.116
+2026-09-13T08:05Z	dc_contributions_from_others_incl_rollovers_dol_bn	2023	74.607	$bn/yr	DOL 2023 Form 5500 Abstract, sheet 8	transfers IN from other retirement accounts, counted as contributions
+2026-09-13T08:05Z	dc_organic_net_excl_rollovers_in_bn	2023	-90.723	$bn/yr	DERIVED: 767.581 - 74.607 - 783.697	supervisor arithmetic, 13 Sep; the headline -16.1 net of transfers in
+2026-09-13T08:05Z	trad_ira_rollovers_in_bn	2023	652.8	$bn/yr	ICI Table 11 row 35	note 2: primarily from employer-sponsored plans - most DC outflow stays invested
+2026-09-13T08:05Z	trad_ira_withdrawals_bn	2023	475.0	$bn/yr	ICI Table 11 row 35	flows N/A for 2024-25 (IRS SOI lag)
+2026-09-13T08:05Z	trad_ira_contributions_bn	2023	26.9	$bn/yr	ICI Table 11 row 35	
+2026-09-13T08:05Z	dc_net_contributions_first_negative_year	2013	-14.2	$bn/yr	ICI Table 4	first of 11 consecutive negative years through 2023
+2026-09-13T09:20Z	damodaran_erp_t12m_pct	2023-12-01	4.53	%	Damodaran ERPbymonth.xlsx 'Historical ERP', fetched 13 Sep 2026	start-of-month value; forward-looking DDM with explicit growth
+2026-09-13T09:20Z	damodaran_erp_t12m_pct	2024-01-01	4.60	%	Damodaran ERPbymonth.xlsx, fetched 13 Sep 2026	window start for the P2c comparison
+2026-09-13T09:20Z	damodaran_erp_t12m_pct	2026-07-01	4.20	%	Damodaran ERPbymonth.xlsx, fetched 13 Sep 2026	window end; -40bp vs Jan-2024, against our trailing residual -49bp
+2026-09-13T09:20Z	damodaran_expected_growth_pct	2024-01-01	8.74	%	Damodaran ERPbymonth.xlsx, fetched 13 Sep 2026	the growth term our trailing residual does NOT contain
+2026-09-13T09:20Z	damodaran_expected_growth_pct	2026-07-01	13.69	%	Damodaran ERPbymonth.xlsx, fetched 13 Sep 2026	+4.95pp over the window - why the LEVEL of our residual is not comparable (C-078)
+2026-09-13T09:20Z	sp500_trailing_pe	2023-12-01	24.3468	ratio	_research/2026-09-12-P2c-monthly_series.csv	window start
+2026-09-13T09:20Z	sp500_trailing_pe	2024-12-01	28.6002	ratio	_research/2026-09-12-P2c-monthly_series.csv	PEAK - the endpoint comparison hides this (C-078)
+2026-09-13T09:20Z	sp500_trailing_pe	2026-06-01	25.2212	ratio	_research/2026-09-12-P2c-monthly_series.csv	last month with trailing E
+2026-09-13T09:20Z	corr_realyield_trailing_residual	2003-2026	-0.6991	corr	DERIVED from P2c monthly series, n=282, supervisor 13 Sep	why a fixed-premium counterfactual sits off the historical manifold
+2026-09-13T17:10Z	efa_nfc_gross_issuance_bn	2026Q1	361.45	$bn/qtr	Fed EFA equity-issuance-retirement quarterly	RECORD in 118 qtrs; prior high 251.82 (2021Q2). NFC excl eREITs, SA quarterly rate
+2026-09-13T17:10Z	efa_nfc_repurchases_bn	2026Q1	176.10	$bn/qtr	Fed EFA	FELL -10.0% QoQ, -20.4% YoY; below its own top five
+2026-09-13T17:10Z	efa_nfc_ma_retirements_bn	2026Q1	160.15	$bn/qtr	Fed EFA	+103% QoQ but NOT a record (2007Q4 221.48 is)
+2026-09-13T17:10Z	efa_nfc_net_issuance_bn	2026Q1	25.20	$bn/qtr	Fed EFA = FA103164155.Q/4	does NOT reconcile with our FU103164105.Q +51.3 - different series, open
+2026-09-13T17:10Z	efa_nfc_public_ipo_seo_bn	2026Q1	38.17	$bn/qtr	Fed EFA monthly file, 3 months summed	only 10.6% of gross issuance is PUBLIC; the rest is VC/PE/private placement
+2026-09-13T17:10Z	efa_nfc_gross_issuance_prior_record_bn	2021Q2	251.82	$bn/qtr	Fed EFA	the record 2026Q1 broke, by 43.5%
+2026-09-13T18:05Z	efa_nfc_ma_retirement_bn	2025	375.78	$bn/yr	Fed EFA, re-summed from quarterly	broader than going-private: incl. private targets; built on paywalled SDC
+2026-09-13T18:05Z	efa_nfc_repurchases_bn	2025	773.28	$bn/yr	Fed EFA, re-summed	buybacks grew 445.39 (2015) -> 773.28 (2025); M&A retirement did NOT trend
+2026-09-13T18:05Z	efa_nfc_ma_retirement_bn	2015	427.18	$bn/yr	Fed EFA, re-summed	decade start, for the trend comparison
+2026-09-13T18:05Z	efa_nfc_repurchases_bn	2015	445.39	$bn/yr	Fed EFA, re-summed	decade start
+2026-09-13T18:05Z	sec_sc13e3_originals_count	2025	37	filings/yr	EDGAR full-index form.idx, filing date	affiliate going-private only; NOT additive with Form 25/25-NSE
+2026-09-13T18:05Z	sec_form25_nse_count	2025	1768	filings/yr	EDGAR full-index form.idx	exchange-filed delistings, ALL causes - not an acquisition signal
+2026-09-13T20:30Z	z1_gross_equity_buying_bn	2024Q1-2026Q2	6886.8	$bn	DERIVED: sum of positive holder flows, netbuyers_periods_2026Q2.csv	the OTHER denominator; net is 3243.1. Implied M = 6.34, inside the envelope (C-080)
+2026-09-13T20:30Z	implied_multiplier_on_gross_buying	2024Q1-2026Q2	6.34	ratio	DERIVED 43676.3/6886.8	vs 13.47 on net issuance - the bound is denominator-dependent
+2026-09-13T20:30Z	z1_etf_equity_purchases_bn	2024Q1-2026Q2	2460.9	$bn	Z.1 FU563064100.Q holder	the passive bid, gross
+2026-09-13T20:30Z	z1_mutualfund_equity_purchases_bn	2024Q1-2026Q2	-2009.0	$bn	Z.1 FU653064100.Q holder	offsets 82% of ETF buying - rotation, not new money
+2026-09-13T20:30Z	z1_pension_equity_purchases_bn	2024Q1-2026Q2	-559.4	$bn	Z.1 holder: private + federal + state/local DB	all three pension types were net SELLERS
+2026-09-13T22:15Z	norges13f_tic_norway_correlation	2015Q2-2026Q2	0.6152	corr	DERIVED: 13F implied net trades vs TIC Norway, n=45, supervisor 13 Sep	TIC country attribution degrades but does not destroy the NBIM signal
+2026-09-13T22:15Z	norges_13f_total_value_usd_bn	2026-06-30	1003.2	$bn	SEC 13F-HR acc 0001374170-26-000069	units: schema X0202 reports DOLLARS; pre-Feb-2023 X01 reports THOUSANDS
+2026-09-13T22:15Z	tic_norway_equity_net_purchases_mean_mn	2015-01..2026-06	1429	$mn/month	TIC Form S then SLT for_lt_eqty_net	138 months, zero blanks, zero suppressed
+2026-09-13T23:40Z	gpif_foreign_equity_band_min_headroom_pp	2020Q2-2026Q2	4.51	pp	DERIVED from gpif_allocation_quarterly.csv, supervisor 13 Sep	band NEVER bound in 25 quarters; min is the transition quarter
+2026-09-13T23:40Z	gpif_foreign_equity_deviation_sd_pp	2021Q1-2026Q2	0.60	pp	DERIVED, excl. 2020 transition	GPIF rebalances continuously to target, not at thresholds
+2026-09-13T23:40Z	gpif_foreign_equity_band_pp	2020-04..2025-03	7.0	pp	GPIF 4th medium-term policy, Adoption_of_New_Policy_Portfolio_details_2_en.pdf	CORRECTS BR2's claim of 6pp; 6pp applies only from 2025-04-01
+2026-09-13T23:40Z	gpif_aum_jpy_trn	2026-06-30	320.4	JPY trn	GPIF quarterly investment results	matches the BR2 figure
+2026-09-13T23:40Z	gpif_us_share_of_foreign_equity_pct	2026-03-31	65.32	%	DERIVED by agent from GPIF annual ISIN-level holdings	ISIN issuer country, NOT MSCI economic exposure; 95.5% coverage of the sleeve
+2026-09-14T00:20Z	nbim_inflow_firststage_F	2017-2025	3.41	F-stat	DERIVED, n=9 annual, no controls; pre-registered threshold 10	FAIL - design closed negative. Slope +1.078, corr +0.5723, R2 0.3275
+2026-09-14T00:20Z	nbim_inflow_firststage_slope	2017-2025	1.078	$/$	DERIVED	right sign, plausible size, but underpowered - NOT evidence of no effect
+2026-09-14T00:20Z	nbim_band_crossings_documented	2019-05..2026-06	1	events	NBIM submission to Ministry re COVID; Annual Report 2020	March 2020 only; one event is not an instrument
+2026-09-14T00:20Z	nbim_equity_share_actual_benchmark_pct	2026-06-30	72.93	%	nbim.no benchmark-index page	vs 70% strategic +/-2pp; published ANNUALLY only - the reason the design fails
+2026-09-14T00:20Z	nbim_us_share_of_equity_benchmark_pct	2026-06-30	53.80	%	nbim.no benchmark-index page	up from 36.08% in 2017
+2026-09-13T21:10Z	damodaran_erp_real_basis_change_bp	2023-12..2026-06	-29.31	bp	DERIVED: Damodaran ERP + our breakeven, P5(ii)	vs our -48.59bp; the 60.3% is a CEILING not a finding
+2026-09-13T21:10Z	our_trailing_residual_change_bp	2023-12..2026-06	-48.59	bp	_research/2026-09-12-P2c-monthly_series.csv	2.2718% -> 1.7859%
+2026-09-13T21:10Z	our_trailing_residual_change_bp	2025-12..2026-06	17.36	bp	same series	WIDENED in H1-2026 as earnings caught up - the compression has reversed
+2026-09-13T21:10Z	damodaran_erp_real_basis_change_bp	2014-12..2019-12	-55.87	bp	DERIVED, control window	ratio to ours 249% vs 60% in the main window - the relationship is not stable
+2026-09-13T21:10Z	growth_consistent_share_of_compression_pct	2023-12..2026-06	40	% (lower bound)	P5(ii) bounds	at least 40%; could exceed 100% on a consistent extrapolation. NOT a point estimate
+2026-09-13T22:05Z	sp500_cap_minus_equalweight_gap_pp_yr	2015-2019	1.78	pp/yr	Official ^GSPC vs ^SP500EW, price basis	denominator 503-name index
+2026-09-13T22:05Z	sp500_cap_minus_equalweight_gap_pp_yr	2024-2026	7.23	pp/yr	Official ^GSPC vs ^SP500EW, price basis	gap ~4x the earlier window
+2026-09-13T22:05Z	top10_idiovol_ratio_to_rest	2015-2019	0.686	ratio	Market-model residual, 200/7233 ticker-quarters	megacaps were 31% CALMER than the market
+2026-09-13T22:05Z	top10_idiovol_ratio_to_rest	2024-2026	1.042	ratio	Market-model residual, 110/5192 ticker-quarters, 2025 top-10 list	reversed to level-or-above: the JVZ direction
+2026-09-13T22:05Z	corr_etfflow_idiovol_gap	2024-2026	-0.74	corr	Z.1 ETF net purchases vs top10-minus-rest idio-vol gap, n=10	WRONG SIGN vs JVZ; flow link not supported
+2026-09-13T23:30Z	megacap6_useful_life_share_of_ni_growth_pct	FY2019-FY2025/26	5.0-10.8	% range	E2, six companies, each at own latest FY	denominator: aggregate REPORTED NI growth of the six. NOT an index-level figure
+2026-09-13T23:30Z	megacap6_reported_ni_growth_bn	FY2019-FY2025/26	422.32	$bn	E2 restated_financials.csv	118.88 -> 541.20
+2026-09-13T23:30Z	megacap6_useful_life_ni_effect_bn	FY2019-FY2025/26	20.94	$bn	E2 conservative (flat carry-forward)	upper bound 45.54; Oracle's share is a modelled FLOOR
+2026-09-13T23:30Z	amazon_useful_life_ni_effect_bn	FY2025	-1.0	$bn	Amazon FY2025 10-K, acc 0001018724-26-000004	REVERSAL: shortened a subset 6yr->5yr, dep +1.4bn, NI -1.0bn
+2026-09-13T23:30Z	alphabet_useful_life_dep_effect_bn	FY2023	-3.9	$bn	Alphabet 10-K acc 0001652044-24-000022, verified at source by supervisor	'a reduction in depreciation expense of $3.9 billion'
+2026-09-14T10:00Z	h8_bank_credit_all_commercial_banks_bn	2026-09-02	19835.3	$bn	Fed H.8 series B1001NCBA (CATEGORY=A, ITEM=1001), SA level	10,591.4 in Jan-2015. NOT B1100 (a LIABILITY line) - see the note below
+2026-09-14T10:00Z	h8_deposits_all_commercial_banks_bn	2026-09-02	19565.9	$bn	Fed H.8 series B1058NCBA	at its series peak; 10,502.8 in Jan-2015
+2026-09-14T10:00Z	soma_treasuries_held_outright_bn	2026-09-09	4552.3	$bn	Fed H.4.1 XML archive	peak 5,771.4 on 2022-06-08; QT signature present
+2026-09-14T10:00Z	soma_mbs_held_outright_bn	2026-09-09	1913.6	$bn	Fed H.4.1 XML archive	peak 2,740.2 on 2022-04-13; QT signature present
+2026-09-14T12:30Z	spf_survey_erp_pct	2026-Q1	3.4077	%	Philly Fed SPF STOCK10 minus BOND10, same panel, nominal 10y	survey-elicited, NO model - the third independent measure
+2026-09-14T12:30Z	spf_survey_erp_pct	2024-Q1	3.5986	%	Philly Fed SPF STOCK10 minus BOND10	main-window start
+2026-09-14T12:30Z	spf_survey_erp_change_bp	2024Q1-2026Q1	-19.1	bp	DERIVED, supervisor 14 Sep	39% of our -48.6bp -> ~2/5 risk, 3/5 growth+construction
+2026-09-14T12:30Z	spf_survey_erp_change_bp	2015Q1-2019Q1	-7.0	bp	DERIVED, control window	ratio 31%, consistent; but Q1-2020 endpoint gives +147.8bp, WRONG SIGN - control not clean
+2026-09-14T14:00Z	nl_pension_db_assets_eur_bn	2026-Q1	1085.8	EUR bn	EIOPA IORP balance sheet	was 1,621.0 in 2025Q4: -535.2 in one quarter
+2026-09-14T14:00Z	nl_pension_dc_assets_eur_bn	2026-Q1	602.3	EUR bn	EIOPA IORP balance sheet	was 63.7 in 2025Q4: +538.6 - a near-exact mirror, i.e. reclassification
+2026-09-14T14:00Z	nl_pension_dc_bond_share_pct	2026-Q1	40.6	% of investments	DERIVED from EIOPA, supervisor 14 Sep	DB book is 40.3% - the converted book is the old portfolio relabelled
+2026-09-14T14:00Z	nl_pension_dc_derivatives_share_pct	2026-Q1	-9.8	% of investments	DERIVED from EIOPA	DB -6.3%; the swap-book signature carries across conversion
+2026-09-14T14:00Z	nl_pension_total_assets_eur_bn	2026	1720 / 1688 / 1961	EUR bn	DNB / EIOPA / ECB respectively	THREE official sources, ~330bn spread - always name the source
+2026-09-14T14:00Z	uk_db_bond_share_pct	2025-03-31	70.6	% of assets	PPF Purple Book 2025	cash reported at -7.9%: LDI swap/repo collateral
+2026-09-14T16:00Z	sp500_2024_dpe_quarter_boundary_artifact	2024	-2.83	P/E pts	DERIVED from daily series, supervisor 14 Sep	88% of the measured +3.20 total; a spec flaw of mine, not a market event
+2026-09-14T16:00Z	sp500_2024_dpe_ex_artifact	2024	6.03	P/E pts	DERIVED	the real price-driven 2024 move
+2026-09-14T16:00Z	fomc_window_share_of_2024_dpe_pct	2024	25.6	%	Event study [-1,+1], 9.5% of trading days	strengthens to 40.1% on 5.95% of days when shared days are stripped
+2026-09-14T16:00Z	earnings_window_share_of_2024_dpe_pct	2024	-34.7	%	Event study [-1,+1], 26.2% of trading days	NEGATIVE - megacap earnings windows are not where the expansion arrived
+2026-09-14T16:00Z	neither_window_share_of_2024_dpe_pct	2024	183	%	Event study [-1,+1], ex-artifact, 67.9% of days	the expansion accrued as DRIFT on ordinary days
+2026-09-14T18:00Z	z1_household_share_of_net_new_equity_pct	2024Q1-2026Q2	94.6	%	DERIVED from netbuyers_periods_2026Q2.csv, supervisor 14 Sep	3,069.4 of 3,243.1 net issued; households is the Z.1 RESIDUAL, identity closes to 0.0
+2026-09-14T18:00Z	z1_all_other_holders_net_bn	2024Q1-2026Q2	173.7	$bn	DERIVED, same source	every measurable holding sector combined, net - large gross flows cancel
+2026-09-14T19:30Z	dfa_top1pct_share_of_household_equity	2026-Q1	50.1	%	Fed Distributional Financial Accounts, recomputed by supervisor	50.4% in 2015Q1 - essentially unchanged for a decade
+2026-09-14T19:30Z	dfa_top10pct_share_of_household_equity	2026-Q1	87.3	%	Fed DFA, recomputed by supervisor	bottom 50% hold 1.1%. STOCK share - says nothing about who BOUGHT
+2026-09-14T19:30Z	dfa_revaluation_share_of_level_change_pct	2023Q4-2026Q1	81	%	DERIVED: DFA level change 14,629bn vs aggregate flow 2,718.9bn	why the stable shares cannot identify the marginal buyer
+2026-09-14T19:30Z	z1_nonprofit_share_of_household_sector_pct	2025	5.53	%	Fed annual supplementary tables (IRS Form 990 basis)	5.5-8% across 2010-2025; ~170-185bn of the 3,069.4bn flow
+2026-09-14T21:00Z	retail_broker_client_assets_bn	2026-Q2	31887.7	$bn	Seven brokers' own SEC filings, summed by supervisor	STOCK, all asset types. Fidelity and Vanguard are NOT SEC filers - coverage ~30-50%
+2026-09-14T21:00Z	schwab_client_assets_bn	2026-Q2	13084.9	$bn	Schwab monthly activity report via 8-K EX-99	largest single custodian in the filer universe
+2026-09-14T23:30Z	deposit_growth_hr_window_bn	2024Q1-2026Q2	1948.4	$bn	H.8 B1058NCBA, quarter-end levels differenced, supervisor-verified	vs 3,069.4bn household equity buying: ratio 0.63, buying OUTRAN deposits 1.6x
+2026-09-14T23:30Z	corr_deposit_growth_household_equity	2015Q2-2026Q2	0.263	corr	DERIVED, n=45, quarterly changes	R2 6.9%, slope ~16 cents per $1; NOT significant at 0.05
+2026-09-14T23:30Z	corr_deposit_growth_household_equity	2020Q1-2021Q4	-0.264	corr	DERIVED, n=8, pandemic only	SIGN FLIPS - the association is not a pandemic artefact
+2026-09-14T23:30Z	soma_ust_quarterly_change_bn	2026-Q2	113.0	$bn/qtr	H.4.1, supervisor-verified	+26.6 (2025Q4), +147.3 (2026Q1): the Fed is a net Treasury buyer again
+2026-09-15T01:00Z	nvidia_sb_energy_guarantee_bn	2026-07-26	105.0	$bn	NVIDIA 10-Q Note 10, acc 0001045810-26-000075, verified at source	credit support for an OpenAI affiliate via SB Energy; ~4.25 GW of IT load
+2026-09-15T01:00Z	nvidia_max_guarantee_exposure_bn	2026-07-26	108.5	$bn	NVIDIA 10-Q Note 10	CONTINGENT maximum, a DIFFERENT population from the $56bn firm commitments - not an inconsistency
+2026-09-15T01:00Z	nvidia_additional_firm_commitments_bn	2026-07-26	56.0	$bn	NVIDIA 10-Q Note 10	AI-cloud $36bn + leases not commenced $20bn
+2026-09-15T01:00Z	alphabet_vie_future_funding_commitments_bn	2026-06-30	21.9	$bn	Alphabet 10-Q Note 5	incl. an UNNAMED $20bn commitment 'with a private company'
+2026-09-15T01:00Z	sec_private_funds_reported_count	2025-Q4	58891	funds	SEC Private Fund Statistics	classified by LEGAL TYPE only - a data-centre series is structurally impossible
+2026-09-15T02:00Z	ipo2026_cornerstone_share_of_proceeds_pct	2026	6.6	%	DERIVED: 7.35/111.94, cornerstones vs primary proceeds INCL SpaceX	19.9% EXCLUDING SpaceX - the 3x swing is SpaceX, which named zero cornerstones
+2026-09-15T02:00Z	ipo2026_unnamed_buyer_share_pct	2026	77-93	% range	DERIVED, depends on denominator	confidential book-building; 13G/13D cannot fill it - they are cap-table snapshots
+2026-09-15T02:00Z	medline_gic_stake_pct	2026	14.64	%	SC 13G	sovereign wealth visible where it files; ADIA 5.9% on the same deal
+2026-09-15T02:00Z	spacex_extended_lockup_expiry	2027-06-12	60	% of shares	424B4 lockup terms	100% of Musk's 6.4bn-share stake; the graduated tranches run Aug-Dec 2026
+2026-09-15T09:00Z	z1_etf_share_issuance_bn	2024Q1-2026Q2	3603.8	$bn	Z.1 FU564090005.Q, col 9 of the Fed's F51.1.t	ETF SHARE creation counted as corporate equity issuance - includes bond ETFs (C-081)
+2026-09-15T09:00Z	z1_nfc_net_equity_issuance_issuer_bn	2024Q1-2026Q2	-540.7	$bn	Z.1 FU103164105.Q issuer side	operating companies RETIRED equity on net over the window
+2026-09-15T07:14Z	ccp_im_required_15ccp_fia_bn	2026-03-31	1071.0	$bn	FIA CCP Tracker API (PQD 6.1.1), sum over 15 CCPs of house_net+client_gross	quarter-end; derivatives CCPs only, no FICC; FIA USD conversion
+2026-09-15T07:40Z	z1_issuance_ex_etf_bn	2024Q1-2026Q2	-360.7	$bn	Z.1 FU893064105 minus FU564090005, 2026Q2 vintage	operating+RoW+non-ETF financials; identity net of the wrapper
+2026-09-15T07:40Z	z1_etf_bond_fund_issuance_bn	2024Q1-2026Q2	1065.0	$bn	Z.1 S124.3.t_tu FU564091303+FU564091203; ICI Table 13 2024+2025 match	bond ETFs counted as corporate equity issuance (C-081)
+2026-09-15T07:40Z	z1_etf_equity_fund_issuance_bn	2024Q1-2026Q2	2456.5	$bn	Z.1 S124.3.t_tu FU564091600+FU564092603	domestic+world equity ETF share issuance
+2026-09-15T07:40Z	z1_etf_commodity_fund_issuance_bn	2024Q1-2026Q2	60.1	$bn	Z.1 S124.3.t_tu FU564091703	ICI other/commodity funds
+2026-09-15T07:40Z	z1_etf_hybrid_fund_issuance_bn	2024Q1-2026Q2	22.3	$bn	Z.1 S124.3.t_tu FU564091403	
+2026-09-15T07:40Z	z1_etf_debt_securities_flow_bn	2024Q1-2026Q2	1059.1	$bn	Z.1 S124.3.t_tu FU564022005	Treasuries+munis+corp/foreign bonds held by ETFs
+2026-09-15T07:40Z	z1_pass_through_fund_issuance_bn	2024Q1-2026Q2	3693.8	$bn	ETF+interval+CEF issuer lines	wrapper issuance including non-ETF pass-throughs
+2026-09-15T07:40Z	z1_other_fin_issuance_ex_passthrough_bn	2024Q1-2026Q2	-292.3	$bn	domestic financial minus ETF/interval/CEF	holding cos, insurers, BDCs, banks, etc.
+2026-09-15T07:40Z	z1_public_domestic_equity_stock_bn	2026Q2	93607.7	$bn	Z.1 LM883164115.Q F51.1.s	includes ETF shares; 75.7% of all-sectors stock
+2026-09-15T07:40Z	z1_closely_held_equity_stock_bn	2026Q2	15637.0	$bn	Z.1 LM883164125.Q F51.1.s	= S-corps 12069.7 + C-corps 3567.2; 12.6% of stock
+2026-09-15T07:40Z	z1_closely_held_s_corp_stock_bn	2026Q2	12069.7	$bn	Z.1 LM883164133.Q	
+2026-09-15T07:40Z	z1_closely_held_c_corp_stock_bn	2026Q2	3567.2	$bn	Z.1 LM883164135.Q	
+2026-09-15T07:40Z	ici_etf_bond_aum_bn	2026-06	2553.0	$bn	ICI monthly ETF release June 2026 (July 2026 pub carries the June column); Z.1 LM564091303+LM564091203 = 2553.1	census agrees with Z.1 S124.3 to $0.1bn
+2026-09-15T09:50Z	z1_hh_equity_share_pct	2022Q4	39.4	%	Z.1 LM153064105/LM893064105 F51.1.s 2026Q2 vintage	instrument share, not Rosenthal taxable
+2026-09-15T09:50Z	z1_row_equity_share_pct	2022Q4	16.6	%	Z.1 LM263064105/LM893064105 F51.1.s 2026Q2 vintage	not Rosenthal's 42% FDI-inclusive look-through
+2026-09-15T09:50Z	z1_hf_domestic_equity_stock_bn	2026Q2	906.2	$bn	Z.1 LM623064105.Q F51.1.s	named holder from 2012Q4; 0.7% of instrument
+2026-09-15T09:50Z	z1_hh_equity_stock_bn	2026Q2	52119.2	$bn	Z.1 LM153064105.Q F51.1.s	residual; includes IRAs, PE funds, personal trusts, ETF shares
+2026-09-15T09:50Z	rosenthal_taxable_share_pct	2022	27	%	Rosenthal-Mucciolo Tax Notes 1 Apr 2024 Table 5	THEIR look-through FDI-inclusive total U.S. equity; not Z.1
+2026-09-15T09:50Z	rosenthal_foreign_share_pct	2022	42	%	Rosenthal-Mucciolo Tax Notes 1 Apr 2024	end-2022; FDI-inclusive; do not quote as Z.1 RoW
+2026-09-15T09:50Z	rosenthal_taxable_share_1965_pct	1965	79	%	Rosenthal-Mucciolo Tax Notes 1 Apr 2024 Table 5	same reconstructed concept
+2026-09-15T09:50Z	holmquist_nonprofit_networth_share_pct	2018Q3	6	%	Holmquist FEDS Notes 2019-01-04 Figure 3 prose	combined B.101.h+n net worth, not the F51 equity instrument
+2026-09-15T10:15Z	n4_w2_delta_2024_bn	2024	722.5	$bn	DERIVED: zk_v2.csv W2 4980.8 (2023-12) -> 5703.3 (2024-12)	compression-year raw wholesale expansion; not a funded share (C-085)
+2026-09-15T10:15Z	n4_private_repo_net_of_rrp_2024_bn	2024	-45.7	$bn	DERIVED: zk_v2 private MMF repo +540.6 minus ON RRP drain 586.3	2024 private-repo growth fully accounted by RRP drain
+2026-09-15T10:15Z	n4_handoff_adj_2024_bn	2024	136.2	$bn	DERIVED: priv net of RRP -45.7 + LTD +116.9 + HF reverse repo +65.0	capacity ceiling, not a funded share (C-085)
+2026-09-15T10:15Z	n4_w2_delta_2023dec_2026mar_bn	2023-12..2026-03	1820.9	$bn	DERIVED: zk_v2 W2 4980.8 -> 6801.7	last quarter with Form PF HF leg
+2026-09-15T10:15Z	n4_handoff_adj_2023dec_2026mar_bn	2023-12..2026-03	858.6	$bn	DERIVED: priv net of RRP +266.1 + LTD +233.5 + HF +359.0	full-window ceiling vs 3069.4 household wrapper purchases
+2026-09-15T10:15Z	n4_zk_w1_d1_pct	2023-12	15.94	%	zk_v2.csv z_W1_D1_pct	H.8 LTD perimeter; v1 LTD vintage is 15.88 (C-067)
+2026-09-15T10:15Z	n4_zk_w1_d1_pct	2024-12	17.63	%	zk_v2.csv z_W1_D1_pct	still rising in the compression year; steep climb was 2023
+2026-09-15T10:15Z	n4_zk_w1_d1_pct	2026-06	19.42	%	zk_v2.csv z_W1_D1_pct	plateau; v1 LTD vintage 19.45
+2026-09-15T10:15Z	n4_zk_w2_d1_pct	2026-03	23.07	%	zk_v2.csv z_W2_D1_pct	W2 = W1 + Form PF HF reverse repo; last HF print
+2026-09-15T10:15Z	z1_hh_equity_purchases_2024_bn	2024	1404.9	$bn	Z.1 F51.1.t FU153064105, N2c 2026Q2 vintage calendar-year sum	N4b 2024 comparator; residual holder line
+2026-09-15T10:15Z	d10_sixbank_permitted_h1_2026_pct	2026-H1	19.3	%	D10R: six-bank permitted Dec-2025 -> Jun-2026	wrong year for 2024 compression (C-085)
+2026-09-15T10:15Z	d10_sixbank_repledged_h1_2026_pct	2026-H1	21.5	%	D10R: six-bank repledged Dec-2025 -> Jun-2026	same window
+2026-09-15T12:50Z	soxl_aum_usd	2026-09-15	17483133784	USD	Direxion holdings CSV SOXL.csv shares×holdings-% median / cross-check shares×Yahoo	D-G remainder; gross exposure ~3.00× AUM
+2026-09-15T12:50Z	soxl_shares_outstanding	2026-09-15	173250060	shares	Direxion holdings CSV header	D-G remainder
+2026-09-15T12:50Z	soxl_mu_weight_pct_of_aum	2026-09-15	6.238	%	Direxion SOXL holdings row MU	equity sleeve weight of AUM; not full 3× notional weight
+2026-09-15T12:50Z	muu_aum_usd	2026-09-15	3366856704	USD	Direxion holdings CSV MUU.csv	2× single-stock MU LETF; peak ~5.4B per ETF.com feature
+2026-09-15T12:50Z	tqqq_aum_usd	2026-09-14	34748560024	USD	ProShares TQQQ page snapshot-netAssets	largest US equity LETF in this scan
+2026-09-15T12:50Z	upro_aum_usd	2026-09-14	5319749116	USD	ProShares UPRO page snapshot-netAssets	
+2026-09-15T12:50Z	spxl_aum_usd	2026-09-15	6934000000	USD	Direxion holdings SPXL.csv	approx from holdings-% median
+2026-09-15T12:50Z	sox_ann_vol_2026ytd	2026-01-02..2026-09-14	0.490	fraction	Yahoo ^SOX daily closes; sample SD × sqrt(252)	G-014; μ_be(L=3,LETF=0)≈σ²=0.240
+2026-09-15T12:50Z	ici_index_share_lt_fund_assets_pct	2025-YE	52	%	ICI Fact Book 2026 Fig 2.5 (live PDF 2026-09-15)	E-006 reconfirm of first-batch primary
+2026-09-15T12:50Z	ici_derived_index_share_dom_eq_fund_assets_pct	2025-YE	63.3	%	DERIVED 19/(19+11) from ICI Fact Book 2026 Fig 2.6	E-006 exact match to DG2 CSV
+2026-09-15T16:55Z	b6_phase1_verdict	2015-2026	FAILS_KILL_SWITCH	enum	2026-09-15-B6-Phase1-Payment-Day-Mechanism.md	Calendar-true payment dates; do not invent M
+2026-09-15T16:55Z	b6_phase1_calendar_raw_gap	2015-2026	-0.00061208	daily_return	B6 Phase 1 calendar-true subsample	top-bottom SPY mean
+2026-09-15T16:55Z	b6_phase1_calendar_ctrl_top_dummy	2015-2026	0.00000696	daily_return	B6 Phase 1 HC1 OLS	t~0.01 kill switch
+2026-09-15T16:55Z	b6_phase1_calendar_ctrl_t	2015-2026	0.0080	tstat	B6 Phase 1	kill switch trips
+2026-09-15T16:55Z	b6_phase1_full_ctrl_top_dummy	2015-2026	0.00114066	daily_return	B6 Phase 1 imputed robustness	t~1.37 not promoted
+2026-09-15T16:55Z	b6_phase1_e006_spy_close	2026-09-15	757.22	USD	Yahoo chart SPY	E-006 re-derive
+2026-09-15T16:55Z	b6_phase1_e006_spy_aum_approx_bn	2026-09-15	695.0	bn_USD	shares x price Yahoo	E-006 re-derive
+2026-09-16T10:19Z	jvz_stageb_verdict	2020Q4-2026Q2	INCONCLUSIVE	enum	2026-09-16-JVZ-StageB-Mechanism.md	Free data; within-Q gate passed; no M
+2026-09-16T10:19Z	jvz_stageb_gate_within_q	2020Q4-2026Q2	1	bool	stage_b regression panel	within-Q SD>0 in 23/23 quarters
+2026-09-16T10:19Z	jvz_stageb_within_ss_share	2020Q4-2026Q2	0.99973	share	ANOVA pctVal SS	within-Q / total
+2026-09-16T10:19Z	jvz_stageb_n_firm_quarters	2020Q4-2026Q2	3936	count	firm x quarter	residuals ∩ IWB ∩ Z.1 ETF holder
+2026-09-16T10:19Z	jvz_stageb_n_firms	2020Q4-2026Q2	181	count	matched tickers	Stage A Yahoo cache name-match
+2026-09-16T10:19Z	jvz_stageb_n_quarters	2020Q4-2026Q2	23	count	quarters	N-PORT IWB span after Sep/Dec pull
+2026-09-16T10:19Z	jvz_stageb_ret_beta	2020Q4-2026Q2	0.503738	pp_excess_per_pctVal_x_flowSD	PanelOLS firm+Q FE, two-way cluster	t=0.621
+2026-09-16T10:19Z	jvz_stageb_ret_se	2020Q4-2026Q2	0.811380	pp	same	firm+quarter cluster
+2026-09-16T10:19Z	jvz_stageb_ret_t	2020Q4-2026Q2	0.621	t	same	
+2026-09-16T10:19Z	jvz_stageb_idio_beta	2020Q4-2026Q2	-0.051436	pp_ann_idio_per_pctVal_x_flowSD	same	t=-0.238 wrong sign vs JVZ
+2026-09-16T10:19Z	jvz_stageb_idio_se	2020Q4-2026Q2	0.216290	pp	same	
+2026-09-16T10:19Z	jvz_stageb_idio_t	2020Q4-2026Q2	-0.238	t	same	
+2026-09-16T10:19Z	jvz_stageb_flow_mean_bn	2020Q4-2026Q2	180.251	USD_bn_per_quarter	Z.1 ETF holder flow	n=23 sample quarters
+2026-09-16T10:19Z	jvz_stageb_flow_sd_bn	2020Q4-2026Q2	98.807	USD_bn_per_quarter	Z.1 ETF holder flow	z-score denominator
+2026-09-16T11:51Z	jvz_stageb_sharpen_verdict	2020Q1-2026Q2	NOT_SUPPORTED	enum	2026-09-16-JVZ-StageB-Sharpen.md	SPY intensity + 37 megas; no M
+2026-09-16T11:51Z	jvz_stageb_sharpen_n_mega_added	2020Q1-2026Q2	37	count	Yahoo residual rebuild	all succeeded 46Q each
+2026-09-16T11:51Z	jvz_stageb_sharpen_intensity	2020Q1-2026Q2	SPY	enum	N-PORT CIK 884394	IVV parallel agrees
+2026-09-16T11:51Z	jvz_stageb_sharpen_n_fq	2020Q1-2026Q2	5010	count	SPY panel	208 firms x 26Q
+2026-09-16T11:51Z	jvz_stageb_sharpen_within_q_sd	2020Q1-2026Q2	0.818	pctVal	SPY panel	gate passed
+2026-09-16T11:51Z	jvz_stageb_sharpen_ret_beta	2020Q1-2026Q2	-0.336326	pp_excess_per_pctVal_x_flowSD	PanelOLS firm+Q FE two-way cluster	t=-0.618
+2026-09-16T11:51Z	jvz_stageb_sharpen_ret_t	2020Q1-2026Q2	-0.618	t	same	wrong sign vs JVZ
+2026-09-16T11:51Z	jvz_stageb_sharpen_idio_beta	2020Q1-2026Q2	0.065508	pp_ann_idio_per_pctVal_x_flowSD	same	t=0.224
+2026-09-16T11:51Z	jvz_stageb_sharpen_idio_t	2020Q1-2026Q2	0.224	t	same	
+2026-09-17T05:34Z	actrix_total_cleared_repo_adv_trn	2026-07	7.8	$trn ADV	ISDA-Actrix July 2026 (PDF + isda.org 2026-09-15 post); Methodology_Updated.pdf	revised methodology (Sponsored GC add); −2.5% m/m vs revised June
+2026-09-17T05:34Z	actrix_sponsored_cleared_repo_adv_trn	2026-07	2.4	$trn ADV	ISDA-Actrix July 2026 (bilateral 1.7 + triparty 0.8)	31.1% of total cleared; −3.1% m/m; plateau holds vs ~2.5 revised June
+2026-09-17T05:34Z	actrix_direct_cleared_repo_adv_trn	2026-07	5.4	$trn ADV	ISDA-Actrix July 2026 (typically dealers / direct CM)	−2.3% m/m vs revised June
+2026-09-17T05:34Z	actrix_sponsored_share_of_cleared_pct	2026-07	31.1	%	ISDA-Actrix July 2026	denominator = total cleared repo ADV; revised series
+2026-09-17T05:34Z	actrix_total_cleared_repo_adv_trn	2026-06	8.0	$trn ADV	ISDA-Actrix July 2026 page (implied from July 7.8 and −2.5% m/m); restated	SUPERSEDES 6.5 row (2026-08-23); methodology revision Sep 2026
+2026-09-17T05:34Z	actrix_sponsored_cleared_repo_adv_trn	2026-06	2.5	$trn ADV	ISDA-Actrix July 2026 page (implied from July 2.4 and −3.1% m/m); restated	~31% of revised total; absolute near prior 2.5 calendar print
+2026-09-17T05:34Z	actrix_direct_cleared_repo_adv_trn	2026-06	5.5	$trn ADV	ISDA-Actrix July 2026 page (implied from July 5.4 and −2.3% m/m); restated	SUPERSEDES 4.0 row (2026-08-23); methodology revision Sep 2026
+2026-09-17T05:36Z	tic_cslt_foreign_net_us_equity_bn	2026-07	2.778	$bn	CSLT for_lt_eqty_net_69995 (All Countries)	net purchases market value; source $mn/1000
+2026-09-17T05:36Z	tic_cslt_foreign_net_us_equity_bn	2026-06	181.393	$bn	CSLT for_lt_eqty_net_69995	prior month
+2026-09-17T05:36Z	tic_table5_japan_ust_bn	2026-07	1103.9	$bn	TIC Table 5 end-period holdings	m/m -12.8
+2026-09-17T05:36Z	tic_table5_china_ust_bn	2026-07	618.0	$bn	TIC Table 5	m/m -15.4
+2026-09-17T05:36Z	tic_table5_foreign_official_ust_bn	2026-07	3773.1	$bn	TIC Table 5 bills+notes	m/m -5.0
+2026-09-17T05:36Z	tic_classic_equities_net_bn	2026-07	-10.6	$bn	TIC press release domestic-securities table	NOT substituted for CSLT
+2026-09-18T05:55Z	eps_split_dlog_eps_shiller	2025-12-31	1.061257	log	P2a Shiller E factor 2.89	log(2.89)
+2026-09-18T05:55Z	eps_split_dlog_shares_w2015	2025-12-31	-0.172588	log	companyfacts diluted WASO split-adj 2015-mcap	2015→2025
+2026-09-18T05:55Z	eps_split_dlog_agg_earnings	2025-12-31	0.888669	log	identity: dlog_eps + dlog_shares	inferred
+2026-09-18T05:55Z	eps_split_profit_share_of_price	2025-12-31	0.689301	share	dlog_agg/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_accretion_share_of_price	2025-12-31	0.133869	share	-dlog_shares/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_pe_share_of_price	2025-12-31	0.176831	share	P2a residual dlog_pe/dlog_price	denominator Δlog Shiller P
+2026-09-18T05:55Z	eps_split_profit_share_of_eps	2025-12-31	0.837374	share	dlog_agg/dlog_eps	denominator Δlog Shiller E
+2026-09-18T05:55Z	eps_split_accretion_share_of_eps	2025-12-31	0.162626	share	-dlog_shares/dlog_eps	denominator Δlog Shiller E
+2026-09-18T05:55Z	eps_split_n_usable	2025-12-31	385	count	firms with 2015&2025 diluted WASO	of 500
+2026-09-18T05:55Z	eps_split_sbc_over_repurchase	2025-12-31	0.199586	ratio	SBC USD / repurchase USD 2015-2025 usable	dollar offset not shares
+2026-09-18T19:31Z	finra_margin_debit_balances_bn	2026-08	1453.8	$bn	FINRA Margin Statistics workbook (finra.org, column B); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-09-18T19:31Z	finra_free_credit_cash_bn	2026-08	207.6	$bn	FINRA Margin Statistics workbook (finra.org, column C); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-09-18T19:31Z	finra_free_credit_margin_bn	2026-08	217.5	$bn	FINRA Margin Statistics workbook (finra.org, column D); dated copy saved to data/vintages/finra/	monthly from 1997-01; source file is OVERWRITTEN each month
+2026-09-21T06:30Z	w3_etr_2015	2015	0.2735	share	SEC companyfacts Σtax/Σpretax n=412	consolidated tags only
+2026-09-21T06:30Z	w3_etr_2025	2025	0.1962	share	SEC companyfacts Σtax/Σpretax n=412	consolidated tags only
+2026-09-21T06:30Z	w3_dlog_1m_etr	2015-2025	0.1012	log	log((1-etr25)/(1-etr15))	after-tax ×1.106
+2026-09-21T06:30Z	w3_tax_pct_of_eps_growth	2015-2025	9.53	pct	dlog(1-ETR)/1.0613	
+2026-09-21T06:30Z	w3_eps_share_of_price_restated	2015-2025	74.5	pct	2025 EPS at 2015 ETR / Δlog P	was 82.3% actual
+2026-09-21T06:30Z	w3_w1_rebalance_share	2024Q1-2026Q2	0.725	share	Z.1 debt buys / $938.4bn W1 ceiling	residual ~$258bn

@@ -1,0 +1,66 @@
+stamped_at	agent	parcel	status	fields	next
+2026-09-15T14:27:56	claude	collab-infrastructure	paused	corrections=86 max=C-086 ask=6 series=391 docs=105 calendar=48	write E-006 into THE_ASK, rules into CLAUDE.md
+2026-09-15T14:41:03	claude	collab-infrastructure	done	corrections=86 max=C-086 ask=7 series=391 docs=105 calendar=48	ranked item 5 - D-G remainder: leveraged-ETF rebalancing flows from issuer holdings files
+2026-09-15T14:55:49	grok	D-G-remainder	done	corrections=86 max=C-086 ask=7 series=401 docs=106 calendar=48	next: Tier B standing (B6 dividend-timing decide worth-it; optional tighten May-Jul 2026 MUU/SOXL AUM path) — or SYN1/BR2 outside parcels if principal routes
+2026-09-15T16:22:33	claude	DG-review	done	corrections=88 max=C-088 ask=7 series=401 docs=106 calendar=48	ranked item 6 - Tier B standing: decide whether B6 dividend-timing is worth running; SYN1/BR2 outside parcels still unreturned
+2026-09-15T16:59:53	grok	BR2	done	corrections=88 max=C-088 ask=7 series=401 docs=106 calendar=48	SYN1 still in flight; then Tier B B6 decide using BR2 design (dividend payment-day IV)
+2026-09-15T17:00:31	grok	SYN1	done	corrections=88 max=C-088 ask=7 series=401 docs=106 calendar=48	Tier B B6 decide — BR2 names dividend payment-day IV as the only honest free-data aggregate route; Claude adjudicates SYN1 money-side rebuild
+2026-09-15T17:55:04	claude	SYN1-BR2-adjudication	done	corrections=89 max=C-089 ask=7 series=401 docs=106 calendar=48	B6 phase 1 - S&P500 payers 2015-2026, top vs bottom quintile payment-day yield, kill switch armed; then 6b PFS verification before any measurement
+2026-09-15T18:03:39	grok	PFS-scout	done	corrections=89 max=C-089 ask=7 series=401 docs=106 calendar=48	B6 Phase 1 still running; 6b PE-bound via PFS is dead — do not measure
+2026-09-15T18:55:30	grok	B6-phase1	done	corrections=89 max=C-089 ask=7 series=412 docs=107 calendar=48	Stop B6 mechanism claim; do not invent M. Next open: Tier B residual (Dutch Wtp wait) or principal routes
+2026-09-15T18:56:00	grok	B6-phase1	done	corrections=89 max=C-089 ask=7 series=412 docs=107 calendar=48	Stop B6 mechanism claim; series.tsv schema repaired; do not invent M
+2026-09-15T18:56:34	grok	B6-phase1	done	corrections=89 max=C-089 ask=7 series=408 docs=107 calendar=48	Stop B6; series.tsv schema repaired; no M
+2026-09-15T21:12:26	claude	B6-adjudication	done	corrections=90 max=C-090 ask=7 series=408 docs=107 calendar=48	Tier B: no fourth design until a free NYSE payment-date source is scouted; C-084 gap open with no free route; Dutch Wtp on elapsed time
+2026-09-15T21:30:38	claude	B6-adjudication	done	corrections=90 max=C-090 ask=7 series=408 docs=107 calendar=48	Tier B: no fourth design until a free NYSE payment-date source is scouted; C-084 gap open with no free route; Dutch Wtp on elapsed time
+2026-09-16T07:24:18	grok	NYSE-paydate-scout	done	corrections=90 max=C-090 ask=7 series=408 docs=107 calendar=48	VERIFIED NO free NYSE pay dates at scale; do not re-run B6; Tier B E-005 resolution limit named
+2026-09-16T07:24:37	grok	NYSE-paydate-scout	done	corrections=90 max=C-090 ask=7 series=408 docs=107 calendar=48	VERIFIED NO; do not re-run B6; Tier B E-005 resolution limit named
+2026-09-16T07:57:13	claude	B6-scout-review	done	corrections=91 max=C-091 ask=7 series=408 docs=107 calendar=48	Tier B: 6c JVZ is the only live design and is MDE-GATED - compute minimum detectable effect before any pull; B6 closed as an arithmetic limit, not a data limit
+2026-09-16T11:35:54	claude	6c-spec	done	corrections=91 max=C-091 ask=7 series=408 docs=107 calendar=48	6c Stage A (MDE gate only) per _research/2026-09-16-JVZ-MDE-Gate-Spec.md - report the MDE and STOP; do not pull N-PORT, do not run the regression
+2026-09-16T12:10:31	grok	6c-mde-gate	done	corrections=91 max=C-091 ask=7 series=408 docs=107 calendar=48	Stage A CLEARS GATE (_research/2026-09-16-JVZ-MDE-Gate.md); Stage B next: within-Q passive intensity × ETF flow, firm+Q FE; no scalar M
+2026-09-16T12:21:29	grok	6c-stageb	done	corrections=91 max=C-091 ask=7 series=422 docs=107 calendar=48	JVZ Stage B INCONCLUSIVE (_research/2026-09-16-JVZ-StageB-Mechanism.md); within-Q gate passed; Tier B free designs exhausted — next is principal call on sharpen vs E-005 write-up
+2026-09-16T13:53:06	grok	6c-stageb-sharpen	done	corrections=91 max=C-091 ask=7 series=431 docs=107 calendar=48	JVZ sharpen NOT SUPPORTED (_research/2026-09-16-JVZ-StageB-Sharpen.md); Tier B free mechanism tests closed — next principal: E-005 Tier B write-up
+2026-09-16T14:33:05	grok	tierb-e005-limit	done	corrections=91 max=C-091 ask=7 series=431 docs=108 calendar=48	Tier B E-005 resolution limit written (2026-09-16-TierB-E005-Resolution-Limit.md); free aggregate bridge closed — next is principal
+2026-09-16T15:09:26	claude	tierb-review	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	JVZ leg withdrawn (C-092) - uninformative not refuted; MDE rule now requires a realised clustered SE; JVZ reopenable on mega-firm coverage (rate-limit, fixable) + N-PORT span
+2026-09-16T15:19:32	claude	tierb-review	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	JVZ leg withdrawn (C-092): uninformative not refuted, reopenable on mega-firm coverage which was a Yahoo rate limit; MDE rule now requires a realised clustered SE; B5/P4 data and B6 arithmetic legs stand
+2026-09-16T17:09:40	claude	6c-rerun-spec	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	Grok: 6c gate rerun per _research/2026-09-16-JVZ-Gate-Rerun-Spec.md - close mega coverage, measure within-Q SD, 200 placebo draws for the MDE, report PASS/FAIL and STOP
+2026-09-16T17:34:53	grok	6c-gate-rerun	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	FAIL; medSE_ret=0.548 medSE_idio=0.239 MDE_ret=1.097 MDE_idio=0.478; ratios 0.48x/0.90x; SD_with=0.579; cov 540/587; principal clearance next
+2026-09-16T18:02:07	grok	tierb-permanent-close	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	Tier B PERMANENTLY CLOSED (E-005 note + RESEARCH_STATE); JVZ underpower not rejection; next: 18 Sep cluster / synthesis per principal
+2026-09-16T18:04:55	grok	tierb-permanent-close	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	Tier B PERMANENTLY CLOSED (principal on gate FAIL); note + RESEARCH_STATE amended; next: 18 Sep cluster / synthesis
+2026-09-16T20:16:40	claude	tic-prestage	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	18 Sep: TIC is a MANUAL browser pull (not in pull_series.py, links not in static HTML); check the new CSLT dataset first. Then the synthesis.
+2026-09-16T20:19:56	claude	tic-prestage	done	corrections=92 max=C-092 ask=7 series=431 docs=108 calendar=48	18 Sep TIC = MANUAL browser pull (not in pull_series.py, links not in static HTML); check the new CSLT dataset first. Then the synthesis.
+2026-09-17T07:39:53	grok	18sep-cluster	done	corrections=92 max=C-092 ask=7 series=444 docs=108 calendar=48	18 Sep cluster: TIC July DONE (CSLT eq .778bn; FO UST −5.0); Actrix July DONE (sponsored 2.4/31.1% plateau); OFR FPF Q2 SLIPPED → re-date 24 Sep
+2026-09-17T22:04:57	claude	synthesis	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	ANSWER doc is START HERE; SYN reduced to a pointer. Nothing blocking. 22 Sep FINRA (scripted), 25 Sep goal read-back must not slip.
+2026-09-17T22:08:02	claude	synthesis	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	ANSWER doc written and is START HERE; SYN reduced to a pointer. Next: nothing blocking - 22 Sep FINRA, 25 Sep goal read-back (do not slip)
+2026-09-17T22:15:38	claude	handover-dedupe	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	no open work; 22 Sep FINRA scripted, 25 Sep goal read-back must not slip; largest open exposure is earnings quality outside the E2 margin (ANSWER section 6)
+2026-09-18T06:43:09	claude	answer-goal-coverage	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	ANSWER now covers all goal channels; item 8 EPS split spec'd and UNROUTED - principal routes
+2026-09-18T07:09:14	claude	answer-goal-coverage	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	gate genuinely green (all 5 guards + 0 killed claims); item 8 EPS split spec'd, UNROUTED - principal routes
+2026-09-18T07:09:39	claude	gate-reading-rule	done	corrections=92 max=C-092 ask=7 series=444 docs=109 calendar=48	no open work of mine; item 8 EPS split spec'd and UNROUTED - principal routes; 22 Sep FINRA, 25 Sep goal read-back
+2026-09-18T08:02:11	grok	eps-split	done	corrections=92 max=C-092 ask=7 series=454 docs=111 calendar=48	EPS split DONE: 68.9% aggregate profit / 13.4% per-share accretion / 17.7% multiple of Δlog price; of EPS 83.7%/16.3%; cov 385/500; 2026-09-18-EPS-Split.md
+2026-09-18T21:31:28	grok	finra-aug-early	done	corrections=92 max=C-092 ask=7 series=457 docs=111 calendar=48	FINRA Aug margin DONE early: debit cd "/Volumes/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research"
+python3 <<'PY'
+from pathlib import Path
+base = Path('.')
+cal = base/'CALENDAR.tsv'
+lines = cal.read_text().splitlines()
+out=[]
+for ln in lines:
+    if ln.startswith('2026-09-22\t') and 'finra' in ln.lower():
+        parts=ln.split('\t')
+        parts[0]='2026-09-18'
+        parts[1]=('DONE early 18 Sep — August edition landed. `bin/pull_series.py --only finra`: margin debit balances **$1,453.8bn** (Jul $1,417.2bn, +$36.6bn m/m); free credit cash $207.6bn; free credit margin $217.5bn. Dated vintage under data/vintages/finra/. Source file is overwritten monthly — archive kept. Prior row: AUTOMATED 22 Sep for AUGUST edition…')
+        parts[-1]='DONE'
+        ln='\t'.join(parts)
+    out.append(ln)
+cal.write_text('\n'.join(out)+'\n')
+print('calendar updated')
+# confirm series tail
+for ln in (base/'data/series.tsv').read_text().splitlines()[-5:]:
+    if 'finra' in ln: print(ln)
+# vintage file
+import os
+v=sorted(os.listdir('data/vintages/finra'))[-3:]
+print('vintages', v)
+PY
+bin/check.sh --handover write grok finra-aug-early done "FINRA Aug margin DONE early: debit $1,453.8bn (+$36.6bn m/m vs Jul 1,417.2); free credit cash 207.6 / margin 217.5; next calendar 24 Sep OFR FPF Q2",453.8bn (+6.6bn m/m vs Jul 1,417.2); free credit cash 207.6 / margin 217.5; next calendar 24 Sep OFR FPF Q2
+2026-09-18T21:31:37	grok	finra-aug-early	done	corrections=92 max=C-092 ask=7 series=457 docs=111 calendar=48	FINRA Aug margin DONE early: debit 1453.8bn (+36.6bn m/m vs Jul 1417.2); free credit cash 207.6 / margin 217.5; next calendar 24 Sep OFR FPF Q2
+2026-09-19T18:51:38	grok	ofr-early-plus-qe-draft	done	corrections=92 max=C-092 ask=7 series=457 docs=112 calendar=48	OFR FPF Q2 still unpublished as of 19 Sep (last obs 2026-03-31); 24 Sep row stays OPEN. Draft QE sentiment parcel at Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md — not sent.

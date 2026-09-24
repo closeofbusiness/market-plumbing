@@ -1,0 +1,106 @@
+path	date	kind	channels	explanandum	status	reusable
+2026-08-21-Inbox-Harvest-And-Research-Plan.md	2026-08-22	analysis	c,d,a	P	claim	Green flow-multiplier/passive-bid material and margin-debt re-derivation are early (d)/(c) evidence
+2026-08-21-Offshore-Dollar-And-Money-Like.md	2026-08-21	analysis	b	none	superseded	Core +$1.90trn offshore money-creation measure reusable for b; sign-inversion claim in doc dead (C-018/019)
+2026-08-21-Safe-Asset-Share-Reexamined.md	2026-08-22	analysis	a,c	none	claim	GLM safe-asset-share null-fails finding; FA-vs-FR discriminating test reusable for channel a
+2026-08-21-Singh-And-The-Two-Circuits.md	2026-08-21	analysis	c	P	claim	Refutes collateral-reuse-as-money-creation for P; velocity phrasing rule (say 'Singh estimates')
+2026-08-22-D1-Bill-Supply-vs-Shadow-Money.md	2026-08-30	analysis	a,b	none	claim	Triffin bill-supply-vs-shadow-money test; H1 corrected by N2b, use corrected reading not original
+2026-08-22-D2-Who-Holds-The-AI-Paper.md	2026-08-23	analysis	b	F	claim	Answers F: AI debt is long-money funded at security level; full N-PORT census still open
+2026-08-22-Grok-External-Review.md	2026-08-22	external return	e	none	claim	Kalecki-identity resolution is the (e) fundamentals-benchmark counterpoint the widened goal wants
+2026-08-22-Guarantee-Stack.md	2026-08-22	analysis	f	F	verified	$86.2bn live/$228.3bn contracted guarantee stack vs 13x-larger lease stack — filing-sourced F evidence
+2026-08-22-Nexus-Primary-Sources.md	2026-08-22	primary-data pull	b,c	none	draft	Frame doc for b/c; 4 flagged directions (Flow-of-Risk account, dealer-as-pivot) still open under widened goal
+2026-08-22-Nexus-WP11289-Read.md	2026-08-22	primary-data pull	b,c	none	verified	elibrary.imf.org retrieval route and reverse-maturity-transformation concept are reusable b/c infrastructure
+2026-08-22-Parcel-A-Interlock-Return.md	2026-08-22	external return	b,c	none	verified	From-whom-to-whom netting convention generalizes to interlock work across all six widened channels
+2026-08-22-Parcel-B-Numbers-Return.md	2026-08-22	external return	c,e	P	claim	Margin-debt reconciliation method reusable; 83.7% equity-linked split CONTESTED (C-046/047), not settled
+2026-08-22-Parcel-C-FERC-Return.md	2026-08-22	external return	f	none	superseded	Sections 2-4 wrong (C-048, filings don't exist); serves A2 persona tangent, not P/F/I
+2026-08-22-Parcel-D1-Scouting-Return.md	2026-08-22	external return	a,b	none	claim	Series map/construction template usable for a/b Triffin extension; do not reuse literal FRED IDs (~50% wrong)
+2026-08-23-D3-Cash-Pools-vs-Asset-Management-Structure.md	2026-08-23	analysis	b,c	none	claim	AUM-scaling test of cash-pool demand; CCP margin series already in series.tsv for channel c
+2026-08-23-FT-Harvest-ABCP-Conduits-And-Equity-Repo.md	2026-09-11	analysis	b,c	P	claim	Verified on re-check: C-063 IS correctly struck-through with correction bracket at its own line 40 (not stale as a secondary doc's diagnostic implied); FT ABCP-to-equity-margin mechanism (b/c bridge) reusable, press claims still unverified
+2026-08-23-Parcel-D8-Clearing-Return.md	2026-08-23	external return	c	none	verified	FICC sponsored-repo plateau (~$2.5trn) and new DTCC/Actrix series directly reusable for channel c
+2026-08-23-Parcel-N3-Collateral-Return.md	2026-08-23	external return	c	none	verified	CCP margin series and Singh Table 2 read-at-source are load-bearing for c; raw return's identifiers were mostly wrong
+2026-08-24-D9-Does-The-AI-Complex-Fund-Itself.md	2026-08-24	analysis	b	F	verified	Hyperscalers hold $146.2bn corp debt securities (6.6x MMF industry) — direct filing-sourced F evidence
+2026-08-24-Parcel-D8b-Conduit-Return.md	2026-08-25	external return	b,c	F	verified	Capitolis/Ionic/HQLA equity-TRS-via-ABCP chain is the clearest documented b/c bridge for the widened goal
+2026-08-25-N3-Singhs-Denominator-Reconciled.md	2026-08-29	analysis	c	none	claim	Superseded in turn by N3v4 (31 Aug), which rebuilds the numerator from filings — use that version
+2026-08-29-D6-Stablecoins-Fifth-Cash-Pool.md	2026-08-29	analysis	b	none	verified	Stablecoin-issuer-as-cash-pool (GENIUS Act) is settled b-channel taxonomy; 2026 growth plateau noted
+2026-08-29-N2c-The-Funding-Closure.md	2026-08-30	analysis	a,b,c,d	P,F	claim	Closest existing doc to the widened goal's attribution-table ask; needs re-cut under six channels not nine
+2026-08-30-D10-Reuse-On-The-Measured-Chain.md	2026-09-11	analysis	c	none	claim	Dealer re-use instrumentation (PD venue split + 10-Q XBRL census) reusable; C-066/C-067 both struck
+2026-08-30-FERC-EL26-Informational-Reports.md	2026-08-30	primary-data pull	f	F	verified	Negative: no RTO reports aggregate GW demand while financing (D9) is sized — F-adjacent context only
+2026-08-30-N2a-Offshore-Dollar-Leg.md	2026-08-31	analysis	b	none	claim	Five-ledger offshore-dollar cash-pool map feeds z_k; C-069 rebuild is the current version
+2026-08-30-Singh-Ask.md	2026-09-03	draft	c	none	draft	Not content — a send-plan for external validation; central question superseded by N3v4 section 6
+2026-08-31-N2b-zk-The-Wholesale-Share.md	2026-09-03	analysis	b	none	claim	z_k (13.10%->23.07%) is the single most re-runnable channel-b metric; ready to carry N4 synthesis
+2026-08-31-N3v4-Singh-Reconciliation.md	2026-09-04	analysis	c	none	claim	Current authoritative Singh-numerator panel (x2.23, 2017-2026); back-test shows his series is not a Form PF aggregate
+CLAUDE.md	2026-09-11	governance	none	none	verified	Already carries the widened E-003 goal string; operating rules only, not evidence
+CORRECTIONS.md	2026-09-11	index/log	none	none	verified	The authoritative dead-claims register (75 entries) every other file was cross-checked against
+Collateral_Data_Inventory.md	2026-08-21	tooling note	c	none	superseded	Pre-fold-in source catalogue superseded operationally by data/series.tsv; build-order checklist still useful
+Collateral_Open_Questions.md	2026-08-21	governance	c	none	unclear	Pre-fold-in open-questions log; its 3 questions are now answered elsewhere (N2c, N3v4) but doc itself is silent on that
+Collateral_State_of_Argument.md	2026-08-21	governance	b,c,d	F	superseded	Its four original pillars (ETF plumbing/AI debt/PE flywheel/equity collateralisation) map onto widened b/d/b/c
+Funding_Identity_First_Principles.md	2026-08-22	analysis	a,e	P,F	claim	Nine-traditions synthesis is the central pre-existing document for explanandum F and channel (e) benchmark
+Parcel_A_Interlock_For_Gemini.md	2026-08-22	parcel brief	none	none	verified	Prompt template for interlock-across-channels commission; specific ask already answered
+Parcel_B_Essay_Numbers_For_Gemini.md	2026-08-22	parcel brief	c,e	P	claim	Derive-before-reveal anti-anchoring design (C-045) reusable methodology; content already executed
+Parcel_C_FERC_Dockets_For_Gemini.md	2026-08-22	parcel brief	f	none	superseded	Explicitly A2-scoped (persona capability); its return was substantively wrong (C-048)
+Parcel_D10R_Reuse_Review_For_Grok.md	2026-08-30	parcel brief	c	none	claim	Executed; adversarial-review template for dealer-reuse claims
+Parcel_D1_BillSupply_Scouting_For_Gemini.md	2026-08-22	parcel brief	a,b	none	claim	Scouting-parcel design (no ID/quote construction) reusable methodology for channel a/b work
+Parcel_D3_CashPool_Drivers_Scouting_For_Gemini.md	2026-08-23	parcel brief	b,c	none	claim	Narrow-scouting template (publisher+table+name only) is the safer refined parcel design
+Parcel_D6_Stablecoins_For_Gemini.md	2026-08-29	parcel brief	b	none	claim	Executed and verified (C-062); template reusable for future stablecoin scouting
+Parcel_D8_TreasuryClearing_Scouting_For_Gemini.md	2026-08-23	parcel brief	c	none	claim	Executed; six-rule design (no template-filled rows) reusable pattern
+Parcel_D8b_Conduits_For_Grok.md	2026-08-23	parcel brief	b,c	F	claim	Self-contained grounding-table design is the best-performing external-parcel pattern in the project
+Parcel_D8c_Sponsors_For_Grok.md	2026-08-24	parcel brief	b	none	claim	Executed; narrow-and-specific (8 named vehicles) design worked well after broad attempts failed
+Parcel_N2aR_Offshore_Review_For_Grok.md	2026-08-30	parcel brief	b	none	claim	Executed; produced C-069 correction and confirmed the Barth et al. $1.4trn Cayman-undercount anchor
+Parcel_N2a_Offshore_Scouting_For_Gemini.md	2026-08-30	parcel brief	b	none	claim	Executed; confirms standing rule that scouting URLs must always be re-derived
+Parcel_N2bR_zk_Review_For_Grok.md	2026-08-31	parcel brief	b	none	claim	Executed; this review broke the z_k v1 headline within hours (C-070) — evidence the judging lane works
+Parcel_N2cR_Funding_Closure_Review_For_Grok.md	2026-08-29	parcel brief	a,b,c,d	P,F	claim	Executed against N2c; its return is highly relevant methodology for auditing any cross-channel attribution table
+Parcel_N3R_Velocity_Review_For_Grok.md	2026-08-28	parcel brief	c	none	claim	Executed; produced the range-not-point retraction rule for velocity claims (C-061)
+Parcel_N3_CollateralLeg_Scouting_For_Gemini.md	2026-08-23	parcel brief	c	none	claim	Executed (C-055); 'any identifier deleted unread' rule originates here
+Parcel_SB1_Briefing_Verify_For_Grok_Cursor.md	2026-09-02	parcel brief	c	none	claim	Fact-check-against-disk pattern (default REFUTED unless quoted) is a strong reusable QA template
+Parcel_ZK2_DoubleCount_Lens_For_Gemini_AGY.md	2026-09-02	parcel brief	b	none	claim	Executed against z_k v2; confirms no lender double-count; recompute-from-disk pattern reusable
+RESEARCH_STATE.md	2026-09-11	governance	none	none	verified	The document the supervisor re-plans FROM; contains section 0.0 goal charter and section 5 ranked work
+Review_Prompt_For_Gemini.md	2026-08-22	parcel brief	e	none	superseded	Executed under the old pre-nexus essay-numbers framing; superseded by the Retrieval parcel
+Review_Prompt_For_Gemini_Retrieval.md	2026-08-22	parcel brief	b,c	none	claim	Executed (N4a DONE); Group A answered negatively for post-2013 shadow-money extension
+Review_Prompt_For_Grok.md	2026-08-22	parcel brief	e	none	superseded	Doc's own successor says 'must not be reused' — its opening question withdrawn (C-030)
+Shadow_Debt_Channel_Map.md	2026-08-28	analysis	b,c	F	claim	Largest single asset (523KB); nine old channels map entirely into b/c — channels a/d/e have no chapter here
+Shadow_Debt_Measurement_Handbook.md	2026-08-21	analysis	b,c	F	claim	Build-order tiers reusable template for building out channels a/d/e; headline bank-credit figure now in series.tsv
+THE_ASK.md	2026-09-11	index/log	none	none	verified	Canonical append-only source for E-003, the 11-Sep widening this whole task exists to re-plan around
+Third_Derivative_Case_Library.md	2026-08-02	analysis	none	none	claim	Out-of-scope tangent (original Third Derivative project); Tier T candidate unless tied to explanandum F
+Third_Derivative_Concept_Map.md	2026-08-02	analysis	none	none	claim	Same tangent as case library (A3 goal row); its forward-prediction register lives in out-of-scope Analysis/
+Where_The_Two_Workstreams_Meet.md	2026-08-21	governance	c	none	claim	Explains the original fold-in rationale; its three house-style invariants (stock!=flow!=velocity etc.) still apply
+_research/D10R_Reuse_Review_Return_paste.md	2026-08-30	external return	c	none	claim	Raw backing for D10's C-066/C-067 corrections; read the verification doc instead of citing this directly
+_research/D10R_verification_2026-08-30.md	2026-09-01	analysis	c	none	verified	Adjudicated outcome of D10R: 2 claims fall (C-066/067), 3 stand-with-amendment
+_research/D1_Scouting_Return_gemini_ondisk.md	2026-08-22	external return	a,b	none	claim	Raw only, own banner says nothing verified; read the adjudication doc instead, >=8 constructed refs (C-050)
+_research/D3_Scouting_Return_gemini_ondisk.md	2026-08-23	external return	b,c	none	claim	Raw locator list for margin/sec-lending/AUM sources; re-verify every URL before reuse
+_research/D3_Scouting_Return_gemini_summary_pasted.md	2026-08-23	external return	b,c	none	unclear	Chat-paste summary of the same commission as the on-disk file; low incremental value
+_research/D6_Stablecoin_Scouting_Return_gemini_pasted.md	2026-08-29	external return	b	none	claim	Raw backing for D6; most literature titles constructed (C-062) — reserve/issuer size figures are the reusable part
+_research/D8_Clearing_Scouting_Return_gemini_ondisk.md	2026-08-23	external return	c	none	claim	Raw backing for the well-verified D8 finding; SEC clearing-rule dates are the reusable located facts
+_research/D8b_Conduit_Scouting_Return.md	2026-08-24	external return	b,c	F	verified	First external return adjudicated with no constructed identifiers found; sponsor->programme map is high-trust
+_research/D8b_D8c_conduit_sponsor_evidence_2026-08-24.md	2026-08-25	primary-data pull	b	none	verified	URL evidence table behind D8b/D8c conclusions; keeps gated-vs-opened distinction explicit
+_research/D8c_Sponsor_Identification_Return.md	2026-08-24	external return	b	none	claim	Backs Capitolis/Ionic sponsor ID; several vehicles remain CANNOT DETERMINE if the ABCP map is extended
+_research/LADDER_reentry_repair_2026-09-11.md	2026-09-11	tooling note	none	none	claim	Meta-process log of the 11-Sep infrastructure repair; no P/F/I content, tooling only
+_research/N2aR_Offshore_Review_Return_paste.md	2026-08-30	external return	b	none	claim	Raw backing for N2a's C-069 correction; read the verification doc for the adjudicated version
+_research/N2aR_verification_2026-08-30.md	2026-08-30	analysis	b	none	verified	Authoritative outcome: Claim 1 falls (C-069); one Grok arithmetic attack rejected on re-measurement
+_research/N2aS_Offshore_Scouting_Return_paste.md	2026-08-30	external return	b	none	claim	Locator list for offshore-dollar datasets; 4/13 URLs constructed per verification, re-derive before use
+_research/N2aS_verification_2026-08-30.md	2026-08-30	analysis	b	none	verified	Per-question adjudication with corrected URLs — the fixed source list for channel-b offshore work
+_research/N2bR_verification_2026-08-31.md	2026-08-31	analysis	b	none	verified	The adjudication that produced C-070 (z_k v1 headline falls, endpoint artefact) — read before citing z_k
+_research/N2bR_zk_Review_Return_paste.md	2026-08-31	external return	b	none	claim	Raw backing for the z_k v1->v2 correction; one of five claims falls outright
+_research/N2cR_Funding_Closure_Review_Return.md	2026-08-30	external return	a,b,c,d	P,F	claim	Ten numbered attacks are a methodology lesson directly applicable to the widened goal's attribution-table rule
+_research/N3R_Velocity_Review_Return.md	2026-08-28	external return	c	none	claim	Backs the v1.5-point-estimate-to-range retraction (C-061); bracket-position-arbitrary critique still relevant
+_research/N3_Collateral_Scouting_Return_gemini_ondisk.md	2026-08-23	external return	c	none	claim	Raw locator list (11 CCPs, re-use measures); re-verify every URL per the adjudicated return's scorecard
+_research/Round1_Evidence_Log.md	2026-08-02	external return	none	none	superseded	Explicitly materially_flawed per all 3 verifiers; superseded by round-2 case library/concept map; out-of-scope tangent
+_research/SB1_Briefing_Verify_Return_paste.md	2026-09-03	external return	c	none	claim	Backs C-071/072/073; caught the 'reached from filings alone' overstatement in the still-unsent Singh outreach
+_research/SB1_verification_2026-08-31.md	2026-09-03	analysis	c	none	verified	Adjudicated: three refutations accepted, authoritative correction record for the Singh-outreach numbers
+_research/SPEC_reentry_infrastructure_2026-09-11.md	2026-09-11	tooling note	none	none	draft	Header says 'Not yet applied' but companion LADDER doc/RESEARCH_STATE section 5 say rungs 6-8 closed same day
+_research/ZK2_DoubleCount_Return_paste.md	2026-09-03	external return	b	none	claim	Backs 'no lender double-count' for z_k v2; bank-CP-vs-CD ambiguity is a small still-open residual
+_research/ZK2_verification_2026-08-31.md	2026-09-03	analysis	b	none	verified	Confirms every ZK2 arithmetic claim reproduces exactly; ran on a flat-fee seat after a session-limit process failure
+_research/collateral_multiplier_original_CLAUDE.md	2026-08-21	governance	c	none	superseded	Pre-merge rules doc referencing a docs/ layout that no longer exists; invariants already migrated into live CLAUDE.md
+_research/data/README.md	2026-08-21	tooling note	none	none	verified	Still-valid instruction for data/ layout; no channel content
+_research/funding_identity_adversarial_reviews.md	2026-08-21	analysis	a,e	P,F	claim	Review 1's 'residual is zero' finding is the clearest (e)-fundamentals-benchmark evidence in the corpus
+_research/guarantee_stack_filers.md	2026-08-22	primary-data pull	f	F	verified	Filing-level backing for the Guarantee Stack; Google-backstop vs Hut8/TeraWulf/Cipher reconciliation is a citable F gap
+_research/inbox_harvest_lenses.md	2026-08-21	analysis	d,a	P	claim	Michael Green passive-bid/flow-multiplier material originates here — high value for the widened goal's (d) chapter
+_research/measurement_infrastructure_reviews.md	2026-08-21	tooling note	none	none	verified	Z.1 crosswalk and 'what does not exist' catalogue are durable infrastructure notes for any channel's series
+_research/offshore_moneylike_lenses.md	2026-08-21	analysis	b	none	claim	Four-case balance-sheet mechanics (London/Japan/HK-Cayman/interbank) is a reusable conceptual framework for channel b
+_research/old_masters_traditions.md	2026-08-21	analysis	a,e	F,P	claim	Nine traditions with dated observable tests; Schumpeter section gives five checkable F observables
+_research/paragon_burry_dossier.md	2026-08-02	analysis	none	none	claim	Serves the idle A2 persona capability; reusable only if personas are re-run over the money-like stack per section 0.1
+_research/paragon_druckenmiller_dossier.md	2026-08-02	analysis	none	none	claim	Same as Burry dossier — A2 persona capability, not channel content
+_research/paragon_griffin_dossier.md	2026-08-02	analysis	none	none	claim	Same as Burry dossier — A2 persona capability, not channel content
+_research/paragon_soros_dossier.md	2026-08-02	analysis	none	none	claim	Same as Burry dossier — A2 persona capability, not channel content
+_research/safe_asset_lenses.md	2026-08-21	analysis	a,c	P	claim	GLM reconstruction/discriminating-test methodology reusable for a; zero-wealth-elasticity result citable for P
+_research/session_scripts_2026-08/README.md	2026-08-23	tooling note	none	none	unclear	Provenance-partial by its own admission; superseded by bin/pull_series.py as the maintained pipeline
+_research/singh_two_circuits_attack.md	2026-08-21	analysis	c,e	P	claim	Corrected profits/multiple decomposition (59.3%/40.7%) is a clean reusable (e)-vs-P number
+_research/singh_two_circuits_lenses.md	2026-08-21	analysis	c,e	P	claim	Direct negative: Singh's own corpus never uses asset-price language; velocity fell while equities doubled

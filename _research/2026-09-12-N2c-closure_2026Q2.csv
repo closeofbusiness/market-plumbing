@@ -1,0 +1,20 @@
+market,row,2023,2024,2025,2026Q1,2026Q2
+Treasury,Money market funds,1205.5,725.4,523.0,-91.4,-144.9
+Treasury,Households + nonprofits,781.8,43.7,245.5,-13.5,182.9
+Treasury,Rest of world,728.2,630.2,545.0,128.8,21.4
+Treasury,Federal Reserve,-740.9,-515.3,-82.8,156.2,97.8
+Treasury,Banks (private depository),-100.1,197.4,202.7,95.4,-4.7
+Treasury,Mutual funds + ETFs + closed-end,117.4,205.8,256.3,133.6,44.4
+Treasury,Insurers + pensions (incl. S&L retirement),252.2,279.1,172.8,103.6,-4.6
+Treasury,Broker-dealers,108.0,130.2,71.2,81.2,-51.3
+Treasury,"State & local govts, GSEs, corporates, other",111.0,282.0,52.2,-4.0,88.5
+Treasury,"Net issuance (Federal government liability, = all-sector absorption)",2381.6,1912.9,1930.2,571.9,236.7
+Treasury,"All-sector check (holder side, Treasury securities asset)",2381.6,1912.9,1930.2,571.9,236.7
+Treasury,[diagnostic] sum of 9 buyer rows,2463.1,1978.5,1985.9,589.9,229.5
+Equity,All sectors (total net issuance),33.5,905.0,1163.8,443.7,730.5
+Equity,"Nonfinancial corporate business (issuer, net buybacks)",-602.9,-397.0,-348.2,51.3,153.2
+Equity,Households and nonprofit organizations (holder),448.7,1404.9,824.0,490.0,350.5
+Equity,Exchange-traded funds (holder),400.2,840.4,958.4,269.0,393.1
+Equity,Rest of the world (holder),50.1,178.7,646.7,-21.7,410.2
+Equity,Mutual funds (holder),-319.3,-514.6,-1073.8,-197.6,-223.0
+Equity,"Hedge funds, domestic (holder)",-81.9,-1.3,-15.1,-31.6,-3.1

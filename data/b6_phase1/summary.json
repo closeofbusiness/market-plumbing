@@ -1,0 +1,211 @@
+{
+  "verdict": "FAILS KILL SWITCH",
+  "kill_switch": "TRIPS",
+  "why": "KILL SWITCH TRIPS on the better-identified sample: Nasdaq-calendar true payment dates (coef=0.000007, t=0.01; raw gap=-0.000612, wrong sign). Full-universe with 78% imputed ex\u2192pay lags shows weak positive (coef=0.001141, t=1.37) but is NOT used to claim mechanism presence \u2014 that would invent an M-adjacent finding from worse timing. Announcement and ex-date placebos also \u22480 after controls.",
+  "primary_full_universe": {
+    "label": "full_universe",
+    "verdict": "MECHANISM APPEARS",
+    "kill_switch": "DOES NOT TRIP",
+    "raw_gap": 0.0006053888371472386,
+    "se_gap": 0.0007473303968133823,
+    "ttest_stat": 0.8100685315740097,
+    "ttest_p": 0.4181344949376858,
+    "mean_top": 0.0012657362595277148,
+    "mean_bot": 0.0006603474223804762,
+    "n_pos": 2362,
+    "n_top": 473,
+    "n_bot": 473,
+    "reg_all_coef": 0.0012708878159847143,
+    "reg_all_t": 1.9298149360911256,
+    "reg_all_p": 0.05362977216524717,
+    "reg_all_n": 2362,
+    "reg_tb_coef": 0.0011406576600578712,
+    "reg_tb_t": 1.3733838602289379,
+    "reg_tb_p": 0.16963304457810402,
+    "reg_tb_n": 946,
+    "reg_cont_coef": 0.0003971696217489302,
+    "reg_cont_t": 0.8060562262210745,
+    "reg_cont_p": 0.4202104298883552,
+    "mean_py_top": 0.00013617286689558683,
+    "mean_py_bot": 4.025462281453908e-06
+  },
+  "robustness_calendar_paydates_only": {
+    "label": "calendar_paydates_only",
+    "verdict": "FAILS KILL SWITCH",
+    "kill_switch": "TRIPS",
+    "raw_gap": -0.0006120790494958891,
+    "se_gap": 0.0008424539856674986,
+    "ttest_stat": -0.7265430040204779,
+    "ttest_p": 0.46778352846359716,
+    "mean_top": 0.0003624980563430029,
+    "mean_bot": 0.000974577105838892,
+    "n_pos": 1705,
+    "n_top": 341,
+    "n_bot": 341,
+    "reg_all_coef": -4.9726977041405834e-05,
+    "reg_all_t": -0.06591033000121897,
+    "reg_all_p": 0.9474492163166218,
+    "reg_all_n": 1705,
+    "reg_tb_coef": 6.9601746177687286e-06,
+    "reg_tb_t": 0.008041698370330844,
+    "reg_tb_p": 0.9935837221833723,
+    "reg_tb_n": 682,
+    "reg_cont_coef": 0.0002753075814675163,
+    "reg_cont_t": 0.24269062100855796,
+    "reg_cont_p": 0.8082450736298112,
+    "mean_py_top": 7.531354498139035e-05,
+    "mean_py_bot": 1.6794081516055032e-06
+  },
+  "announcement_placebo": {
+    "n": 1721,
+    "gap": 6.007954264132054e-06,
+    "reg_top_coef": 0.00015482190793000738,
+    "reg_top_t": 0.22403220060311607,
+    "reg_top_p": 0.822732247511957,
+    "status": "ok"
+  },
+  "exdate_placebo": {
+    "n": 2718,
+    "gap": 0.00014811250876928413,
+    "reg_top_coef": 0.00016739430648763184,
+    "reg_top_t": 0.28810235750935503,
+    "reg_top_p": 0.7732683880703872,
+    "status": "ok"
+  },
+  "e006": {
+    "asof_utc": "2026-09-15T16:06:55.903193+00:00",
+    "spy_last_close": 757.219970703125,
+    "spy_last_date": "2026-09-15",
+    "spy_shares_outstanding_yahoo_quote_earlier": 917782016.0,
+    "spy_aum_approx_usd": 694962871267.375,
+    "spy_holdings_asof": "14-Sep-2026 (SSGA holdings-daily xlsx)",
+    "spy_holdings_n": 505,
+    "source": "Yahoo chart v8 (closes); Yahoo quote v7 shares (earlier same day); SSGA SPY holdings",
+    "note": "Re-pulled SPY daily closes from Yahoo chart; cross-check price vs quote was 757.x"
+  },
+  "universe": {
+    "source": "Wikipedia current S&P500 (503 tickers)",
+    "n_tickers": 503,
+    "n_tickers_with_yahoo_divs": 411,
+    "historical_membership": false,
+    "survivorship_caveat": "UNCERTAIN \u2014 current constituents only",
+    "payment_date_calendar_share": 0.2236685045188427,
+    "payment_date_imputed_share": 0.7763314954811573,
+    "median_ex_to_pay_lag_days": 18,
+    "note_nyse_payment_dates": "Nasdaq calendar/dividends covers Nasdaq-listed names with true payment dates (~22% of events); NYSE names use median ex\u2192pay lag imputation."
+  },
+  "methods_notes": [
+    "DPS+ex-dates: Yahoo chart v8 events=div.",
+    "Payment dates: Nasdaq calendar/dividends by ex-date where available; else ticker/global median lag imputation.",
+    "Shares\u2248Nasdaq MarketCap/PreviousClose snapshot; specials filtered (DPS>5% of price or amount>$25).",
+    "Mcap denom=sum(current constituent mcaps)\u00d7SPY_t/SPY_now, lagged 1d.",
+    "Market return=SPY close-to-close; controls=DOW+month dummies+lagged VIX (^VIX Yahoo chart).",
+    "This is NOT a multiplier for the household residual / 2024\u201326 revaluation."
+  ],
+  "quintile_means_full": [
+    {
+      "py_quintile": 1,
+      "n": 473,
+      "mean_spy_ret": 0.0006603474223804762,
+      "mean_gspc_ret": 0.0007024088705742506,
+      "mean_py": 4.025462281453908e-06,
+      "mean_cash_bn": 0.15610056034298206,
+      "mean_vix": 17.63122621499963,
+      "mean_n_payers": 1.5031712473572938
+    },
+    {
+      "py_quintile": 2,
+      "n": 472,
+      "mean_spy_ret": 0.001107205321045116,
+      "mean_gspc_ret": 0.0011059149043390608,
+      "mean_py": 1.3954732939737208e-05,
+      "mean_cash_bn": 0.5275567694280096,
+      "mean_vix": 18.49605931669979,
+      "mean_n_payers": 2.8029661016949152
+    },
+    {
+      "py_quintile": 3,
+      "n": 472,
+      "mean_spy_ret": 3.357486121690425e-05,
+      "mean_gspc_ret": 4.080576656524953e-05,
+      "mean_py": 3.267225862825177e-05,
+      "mean_cash_bn": 1.238965109866024,
+      "mean_vix": 18.40572035110603,
+      "mean_n_payers": 4.622881355932203
+    },
+    {
+      "py_quintile": 4,
+      "n": 472,
+      "mean_spy_ret": -0.0004895386038592268,
+      "mean_gspc_ret": -0.0004882818618935688,
+      "mean_py": 6.670968067302573e-05,
+      "mean_cash_bn": 2.4778662479691476,
+      "mean_vix": 18.444957630108977,
+      "mean_n_payers": 6.627118644067797
+    },
+    {
+      "py_quintile": 5,
+      "n": 473,
+      "mean_spy_ret": 0.0012657362595277148,
+      "mean_gspc_ret": 0.0012810141477869014,
+      "mean_py": 0.00013617286689558683,
+      "mean_cash_bn": 4.672125189422193,
+      "mean_vix": 18.863128996802686,
+      "mean_n_payers": 10.050739957716702
+    }
+  ],
+  "quintile_means_calendar_only": [
+    {
+      "py_quintile": 1,
+      "n": 341,
+      "mean_spy_ret": 0.000974577105838892,
+      "mean_gspc_ret": 0.0010796665656599392,
+      "mean_py": 1.6794081516055032e-06,
+      "mean_cash_bn": 0.06561168791132194,
+      "mean_vix": 17.80999999731517,
+      "mean_n_payers": 1.1173020527859236
+    },
+    {
+      "py_quintile": 2,
+      "n": 341,
+      "mean_spy_ret": -7.481567365929533e-06,
+      "mean_gspc_ret": 0.00012861276589221045,
+      "mean_py": 5.180294099012085e-06,
+      "mean_cash_bn": 0.20173420902347625,
+      "mean_vix": 18.37648093036193,
+      "mean_n_payers": 1.6627565982404693
+    },
+    {
+      "py_quintile": 3,
+      "n": 341,
+      "mean_spy_ret": 0.0011629856019010087,
+      "mean_gspc_ret": 0.0011502267237584296,
+      "mean_py": 1.0502628040992856e-05,
+      "mean_cash_bn": 0.3894563704966537,
+      "mean_vix": 18.74483871739631,
+      "mean_n_payers": 2.1407624633431084
+    },
+    {
+      "py_quintile": 4,
+      "n": 341,
+      "mean_spy_ret": 0.0007809567507969989,
+      "mean_gspc_ret": 0.0007629398351974961,
+      "mean_py": 2.2609835806055632e-05,
+      "mean_cash_bn": 0.8511059186352967,
+      "mean_vix": 18.265659816104296,
+      "mean_n_payers": 2.8504398826979473
+    },
+    {
+      "py_quintile": 5,
+      "n": 341,
+      "mean_spy_ret": 0.0003624980563430029,
+      "mean_gspc_ret": 0.00031413990795863125,
+      "mean_py": 7.531354498139035e-05,
+      "mean_cash_bn": 2.678198067810665,
+      "mean_vix": 18.535835805876165,
+      "mean_n_payers": 3.375366568914956
+    }
+  ],
+  "hs_citation": "Hartzmark\u2013Solomon NBER w30688; AER Sept 2025 market-level M\u22481.9, top-quintile payment-day returns ~4\u00d7 bottom (cite only; not re-derived from paid data).",
+  "decision_rule": "Primary weight on calendar-true payment dates (BR2/HS object). Imputed-lag full universe is robustness only."
+}

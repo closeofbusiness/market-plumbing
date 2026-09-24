@@ -1,0 +1,8 @@
+
+# Fed Board release XML. H41 is over GitHub's 100MB limit; the two H.8
+# copies are the 75MB files named in the 24 Sep 2026 migration. Not stored
+# here. data/a1_money_creation/FRB_h41.zip and FRB_h8.zip are the Board
+# packages under 50MB; unzipping them restores these XML files.
+data/a1_money_creation/H41_data.xml
+data/a1_money_creation/H8_data.xml
+data/a1_money_creation/h8_data/H8_data.xml

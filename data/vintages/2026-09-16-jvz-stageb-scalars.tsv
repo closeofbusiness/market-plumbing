@@ -1,0 +1,15 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-16T10:19Z	jvz_stageb_verdict	2020Q4-2026Q2	INCONCLUSIVE	enum	2026-09-16-JVZ-StageB-Mechanism.md	Free data; within-Q gate passed; no M
+2026-09-16T10:19Z	jvz_stageb_gate_within_q	2020Q4-2026Q2	1	bool	stage_b regression panel	within-Q SD>0 in 23/23 quarters
+2026-09-16T10:19Z	jvz_stageb_within_ss_share	2020Q4-2026Q2	0.99973	share	ANOVA pctVal SS	within-Q / total
+2026-09-16T10:19Z	jvz_stageb_n_firm_quarters	2020Q4-2026Q2	3936	count	firm x quarter	residuals ∩ IWB ∩ Z.1 ETF holder
+2026-09-16T10:19Z	jvz_stageb_n_firms	2020Q4-2026Q2	181	count	matched tickers	Stage A Yahoo cache name-match
+2026-09-16T10:19Z	jvz_stageb_n_quarters	2020Q4-2026Q2	23	count	quarters	N-PORT IWB span after Sep/Dec pull
+2026-09-16T10:19Z	jvz_stageb_ret_beta	2020Q4-2026Q2	0.503738	pp_excess_per_pctVal_x_flowSD	PanelOLS firm+Q FE, two-way cluster	t=0.621
+2026-09-16T10:19Z	jvz_stageb_ret_se	2020Q4-2026Q2	0.811380	pp	same	firm+quarter cluster
+2026-09-16T10:19Z	jvz_stageb_ret_t	2020Q4-2026Q2	0.621	t	same	
+2026-09-16T10:19Z	jvz_stageb_idio_beta	2020Q4-2026Q2	-0.051436	pp_ann_idio_per_pctVal_x_flowSD	same	t=-0.238 wrong sign vs JVZ
+2026-09-16T10:19Z	jvz_stageb_idio_se	2020Q4-2026Q2	0.216290	pp	same	
+2026-09-16T10:19Z	jvz_stageb_idio_t	2020Q4-2026Q2	-0.238	t	same	
+2026-09-16T10:19Z	jvz_stageb_flow_mean_bn	2020Q4-2026Q2	180.251	USD_bn_per_quarter	Z.1 ETF holder flow	n=23 sample quarters
+2026-09-16T10:19Z	jvz_stageb_flow_sd_bn	2020Q4-2026Q2	98.807	USD_bn_per_quarter	Z.1 ETF holder flow	z-score denominator

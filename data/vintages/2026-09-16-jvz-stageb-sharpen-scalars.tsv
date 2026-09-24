@@ -1,0 +1,10 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-16T11:51Z	jvz_stageb_sharpen_verdict	2020Q1-2026Q2	NOT_SUPPORTED	enum	2026-09-16-JVZ-StageB-Sharpen.md	SPY intensity + 37 megas; no M
+2026-09-16T11:51Z	jvz_stageb_sharpen_n_mega_added	2020Q1-2026Q2	37	count	Yahoo residual rebuild	all succeeded 46Q each
+2026-09-16T11:51Z	jvz_stageb_sharpen_intensity	2020Q1-2026Q2	SPY	enum	N-PORT CIK 884394	IVV parallel agrees
+2026-09-16T11:51Z	jvz_stageb_sharpen_n_fq	2020Q1-2026Q2	5010	count	SPY panel	208 firms x 26Q
+2026-09-16T11:51Z	jvz_stageb_sharpen_within_q_sd	2020Q1-2026Q2	0.818	pctVal	SPY panel	gate passed
+2026-09-16T11:51Z	jvz_stageb_sharpen_ret_beta	2020Q1-2026Q2	-0.336326	pp_excess_per_pctVal_x_flowSD	PanelOLS firm+Q FE two-way cluster	t=-0.618
+2026-09-16T11:51Z	jvz_stageb_sharpen_ret_t	2020Q1-2026Q2	-0.618	t	same	wrong sign vs JVZ
+2026-09-16T11:51Z	jvz_stageb_sharpen_idio_beta	2020Q1-2026Q2	0.065508	pp_ann_idio_per_pctVal_x_flowSD	same	t=0.224
+2026-09-16T11:51Z	jvz_stageb_sharpen_idio_t	2020Q1-2026Q2	0.224	t	same	

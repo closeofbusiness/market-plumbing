@@ -1,0 +1,17 @@
+window,group,start_date,end_date,n_years,avg_n_constituents,min_n_constituents,cumulative_return_pct,annualized_return_pct,annualized_vol_pct,source
+2015-19,"cap_weighted_index (^SP500TR, total return)",2014-12-31,2019-12-31,4.999,,,72.069,11.467,13.44,"Yahoo Finance chart API, ^SP500TR"
+2015-19,cap_weighted_price_only (^GSPC),2014-12-31,2019-12-31,4.999,,,55.3,9.204,13.437,"Yahoo Finance chart API, ^GSPC"
+2015-19,equal_weighted_official (^SP500EW),2014-12-31,2019-12-31,4.999,,,43.07,7.427,13.314,"Yahoo Finance chart API, ^SP500EW"
+2015-19,equal_weighted_ETF (RSP),2014-12-31,2019-12-31,4.999,,,55.481,9.23,13.489,"Yahoo Finance chart API, RSP"
+2015-19,"equal_weighted_constructed (n=396 names, 2014-12-24 membership)",2014-12-31,2019-12-31,4.999,371.5830023828435,369,65.943,10.662,13.685,fja05680/sp500 GitHub membership + Yahoo prices
+2015-19,"top10_basket (2015 P2b list, equal-wtd within 10)",2014-12-31,2019-12-31,4.999,10.0,10,74.739,11.811,13.575,data/p2b_top10/top10_by_year_corrected.csv (2015) + Yahoo prices
+2015-19,"rest_of_market (n=386, mem_w1 minus top10_2015)",2014-12-31,2019-12-31,4.999,361.5830023828435,359,65.655,10.623,13.731,fja05680/sp500 membership minus P2b top10 + Yahoo prices
+2024-26,"cap_weighted_index (^SP500TR, total return)",2023-12-29,2026-09-11,2.702,,,65.731,20.557,15.311,"Yahoo Finance chart API, ^SP500TR"
+2024-26,cap_weighted_price_only (^GSPC),2023-12-29,2026-09-11,2.702,,,60.076,19.018,15.313,"Yahoo Finance chart API, ^GSPC"
+2024-26,equal_weighted_official (^SP500EW),2023-12-29,2026-09-11,2.702,,,35.137,11.788,13.952,"Yahoo Finance chart API, ^SP500EW"
+2024-26,equal_weighted_ETF (RSP),2023-12-29,2026-09-11,2.702,,,41.306,13.65,13.924,"Yahoo Finance chart API, RSP"
+2024-26,"equal_weighted_constructed (n=485 names, 2023-12-18 membership)",2023-12-29,2026-09-11,2.702,482.0605612998523,482,40.576,13.432,14.121,fja05680/sp500 GitHub membership + Yahoo prices
+2024-26,"top10_basket (2023 P2b list, equal-wtd within 10)",2023-12-29,2026-09-11,2.702,10.0,10,94.322,27.871,19.216,data/p2b_top10/top10_by_year_corrected.csv (2023) + Yahoo prices
+2024-26,"rest_of_market (n=475, mem_w2 minus top10_2023)",2023-12-29,2026-09-11,2.702,472.0605612998523,472,39.53,13.119,14.154,fja05680/sp500 membership minus P2b top10 + Yahoo prices
+2024-26,"top10_basket (2025 P2b list, look-ahead robustness check)",2023-12-29,2026-09-11,2.702,10.0,10,127.777,35.613,23.113,data/p2b_top10/top10_by_year_corrected.csv (2025) + Yahoo prices
+2024-26,"rest_of_market (n=475, mem_w2 minus top10_2025)",2023-12-29,2026-09-11,2.702,472.0605612998523,472,39.014,12.964,14.121,fja05680/sp500 membership minus P2b top10 + Yahoo prices

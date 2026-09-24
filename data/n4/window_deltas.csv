@@ -1,0 +1,5 @@
+window,start,end,d_W1_bn,d_W2_bn,d_private_repo_bn,d_rrp_bn,private_repo_net_of_rrp_drain_bn,d_ltd_bn,d_hf_rr_bn,handoff_adjusted_bn,note
+2023_calendar,2022-12,2023-12,1640.3,1694.3,1060.1,-1370.9,-310.8,580.2,54.0,323.4,handoff_adj=priv_net_rrp+ltd+hf; 2023 z_k steep climb
+2024_calendar,2023-12,2024-12,657.5,722.5,540.6,-586.3,-45.7,116.9,65.0,136.2,compression year; private repo growth fully accounted by RRP drain
+N4_to_2026Q1,2023-12,2026-03,1461.9,1820.9,1228.4,-962.3,266.1,233.5,359.0,858.6,last quarter with Form PF HF leg
+N4_W1_to_2026Q2,2023-12,2026-06,1641.2,,1370.6,-961.9,408.7,270.6,,679.3,W2/HF not published for 2026-06

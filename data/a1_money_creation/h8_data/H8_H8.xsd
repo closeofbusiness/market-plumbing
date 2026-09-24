@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.federalreserve.gov/structure/compact/H8_H8" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.federalreserve.gov/structure/compact/H8_H8" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:frb="http://www.federalreserve.gov/structure/compact/common">
+ <xs:import namespace="http://www.federalreserve.gov/structure/compact/common" schemaLocation="frb_common.xsd" />
+ <xs:element name="Series" type="SeriesType" substitutionGroup="frb:Series" />
+ <xs:complexType name="SeriesType">
+  <xs:complexContent>
+   <xs:extension base="frb:SeriesType">
+    <xs:attribute name="BG" type="CL_BG" use="required" />
+    <xs:attribute name="H8_UNITS" type="CL_H8_UNITS" use="required" />
+    <xs:attribute name="SA" type="CL_SA" use="required" />
+    <xs:attribute name="CATEGORY" type="CL_CATEGORY" use="required" />
+    <xs:attribute name="ITEM" type="CL_ITEM" use="required" />
+   </xs:extension>
+  </xs:complexContent>
+ </xs:complexType>
+ <xs:simpleType name="CL_BG">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="CB">
+    <xs:annotation>
+     <xs:documentation>All Commercial Banks in the United States</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="DM">
+    <xs:annotation>
+     <xs:documentation>Domestically Chartered Commercial Banks in the United States</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="LG">
+    <xs:annotation>
+     <xs:documentation>Large Domestically Chartered Commercial Banks in the United States</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="SM">
+    <xs:annotation>
+     <xs:documentation>Small Domestically Chartered Commercial Banks in the United States</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="FR">
+    <xs:annotation>
+     <xs:documentation>Foreign-Related Institutions in the United States</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="CL_H8_UNITS">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="LEVEL">
+    <xs:annotation>
+     <xs:documentation>Levels (USD)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="RATE">
+    <xs:annotation>
+     <xs:documentation>Percent change (annual rate)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="CL_SA">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="SA">
+    <xs:annotation>
+     <xs:documentation>Seasonally adjusted</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="NSA">
+    <xs:annotation>
+     <xs:documentation>Not seasonally adjusted</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="CL_CATEGORY">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="A">
+    <xs:annotation>
+     <xs:documentation>Assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="L">
+    <xs:annotation>
+     <xs:documentation>Liabilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="M">
+    <xs:annotation>
+     <xs:documentation>Memo</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="CL_ITEM">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="1001">
+    <xs:annotation>
+     <xs:documentation>(1) Bank credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1002">
+    <xs:annotation>
+     <xs:documentation>(2) Securities in bank credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1003">
+    <xs:annotation>
+     <xs:documentation>(3) Treasury and agency securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1301">
+    <xs:annotation>
+     <xs:documentation>(4) Treasury and agency securities; Mortgage-backed securities (MBS)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1302">
+    <xs:annotation>
+     <xs:documentation>(5) Treasury and agency securities; Non-MBS</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1011">
+    <xs:annotation>
+     <xs:documentation>(6) Other securities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1303">
+    <xs:annotation>
+     <xs:documentation>(7) Other securities; Mortgage-backed securities (MBS)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1304">
+    <xs:annotation>
+     <xs:documentation>(8) Other securities; Non-MBS</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1020">
+    <xs:annotation>
+     <xs:documentation>(9) Loans and leases in bank credit</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1023">
+    <xs:annotation>
+     <xs:documentation>(10) Commercial and industrial loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1026">
+    <xs:annotation>
+     <xs:documentation>(11) Real estate loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1221">
+    <xs:annotation>
+     <xs:documentation>(12) Real estate loans; Residential real estate loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1027">
+    <xs:annotation>
+     <xs:documentation>(13) Real estate loans; Residential real estate loans; Revolving home equity loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1220">
+    <xs:annotation>
+     <xs:documentation>(14) Real estate loans; Residential real estate loans; Closed-end residential loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3219">
+    <xs:annotation>
+     <xs:documentation>(15) Real estate loans; Commercial real estate loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1215">
+    <xs:annotation>
+     <xs:documentation>(16) Real estate loans; Commercial real estate loans; Construction and land development loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1216">
+    <xs:annotation>
+     <xs:documentation>(17) Real estate loans; Commercial real estate loans; Secured by farmland</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1217">
+    <xs:annotation>
+     <xs:documentation>(18) Real estate loans; Commercial real estate loans; Secured by multifamily properties</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1218">
+    <xs:annotation>
+     <xs:documentation>(19) Real estate loans; Commercial real estate loans; Secured by nonfarm nonresidential properties</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1029">
+    <xs:annotation>
+     <xs:documentation>(20) Consumer loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1247">
+    <xs:annotation>
+     <xs:documentation>(21) Consumer loans; Credit cards and other revolving plans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3248">
+    <xs:annotation>
+     <xs:documentation>(22) Consumer loans; Other consumer loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1243">
+    <xs:annotation>
+     <xs:documentation>(23) Consumer loans; Other consumer loans; Automobile loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="2245">
+    <xs:annotation>
+     <xs:documentation>(24) Consumer loans; Other consumer loans; All other consumer loans</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3305">
+    <xs:annotation>
+     <xs:documentation>(25) All other loans and leases</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1030">
+    <xs:annotation>
+     <xs:documentation>(26) All other loans and leases; Loans to nondepository financial institutions</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="2310">
+    <xs:annotation>
+     <xs:documentation>(27) All other loans and leases; All loans not elsewhere classified</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1043">
+    <xs:annotation>
+     <xs:documentation>(28) LESS: Allowance for loan and lease losses</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1048">
+    <xs:annotation>
+     <xs:documentation>(29) Cash assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3092">
+    <xs:annotation>
+     <xs:documentation>(30) Total federal funds sold and reverse RPs</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1047">
+    <xs:annotation>
+     <xs:documentation>(31) Loans to commercial banks</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3053">
+    <xs:annotation>
+     <xs:documentation>(32) Other assets including trading assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1151">
+    <xs:annotation>
+     <xs:documentation>(33) Total assets</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1058">
+    <xs:annotation>
+     <xs:documentation>(34) Deposits</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1072">
+    <xs:annotation>
+     <xs:documentation>(35) Large time deposits</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1110">
+    <xs:annotation>
+     <xs:documentation>(36) Other deposits</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3094">
+    <xs:annotation>
+     <xs:documentation>(37) Borrowings</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1100">
+    <xs:annotation>
+     <xs:documentation>(38) Net due to related foreign offices</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="3095">
+    <xs:annotation>
+     <xs:documentation>(39) Other liabilities including trading liabilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1152">
+    <xs:annotation>
+     <xs:documentation>(40) Total liabilities</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="1091">
+    <xs:annotation>
+     <xs:documentation>(41) Residual (assets less liabilities)</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+</xs:schema>

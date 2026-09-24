@@ -1,0 +1,59 @@
+{
+  "window": "2024Q1-2026Q2",
+  "ceiling_bn": 938.4,
+  "sectors": [
+    {
+      "sector": "State and local government employee defined benefit pension funds",
+      "key": "sl_db_pension",
+      "equity_sale_bn": 463.892,
+      "debt_acq_bn": 267.223,
+      "n_quarters": 10,
+      "series_file": "sl_db_pension_BOGZ1FU224022045Q.csv",
+      "rebal_capped_bn": 267.223,
+      "rebal_share_of_sector": 0.5760457175377027
+    },
+    {
+      "sector": "Life insurance companies",
+      "key": "life_insurance",
+      "equity_sale_bn": 193.992,
+      "debt_acq_bn": 611.981,
+      "n_quarters": 10,
+      "series_file": "life_insurance_BOGZ1FU544022005Q.csv",
+      "rebal_capped_bn": 193.992,
+      "rebal_share_of_sector": 1.0
+    },
+    {
+      "sector": "Property-casualty insurance companies",
+      "key": "pc_insurance",
+      "equity_sale_bn": 185.036,
+      "debt_acq_bn": 364.524,
+      "n_quarters": 10,
+      "series_file": "pc_insurance_BOGZ1FU514022005Q.csv",
+      "rebal_capped_bn": 185.036,
+      "rebal_share_of_sector": 1.0
+    },
+    {
+      "sector": "Federal government pension funds",
+      "key": "federal_pension",
+      "equity_sale_bn": 67.787,
+      "debt_acq_bn": 6.505,
+      "n_quarters": 10,
+      "series_file": "federal_pension_BOGZ1FU344022005Q.csv",
+      "rebal_capped_bn": 6.505,
+      "rebal_share_of_sector": 0.09596235266349004
+    },
+    {
+      "sector": "Private pension funds, including 403(b) plans",
+      "key": "private_pension",
+      "equity_sale_bn": 27.702,
+      "debt_acq_bn": 145.188,
+      "n_quarters": 10,
+      "series_file": "private_pension_BOGZ1FU574022005Q.csv",
+      "rebal_capped_bn": 27.702,
+      "rebal_share_of_sector": 1.0
+    }
+  ],
+  "total_rebal_capped_bn": 680.458,
+  "rebal_share_of_ceiling": 0.7251257459505541,
+  "gross_debt_acq_bn": 1395.421
+}

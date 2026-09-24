@@ -1,0 +1,14 @@
+verdict: FAILS KILL SWITCH
+kill_switch: TRIPS
+explicit: This is NOT a multiplier for the household residual / 2024-26 revaluation.
+calendar_true_raw_gap: -0.000612
+calendar_true_ctrl_coef: 0.000007
+calendar_true_ctrl_t: 0.008
+full_imputed_raw_gap: 0.000605
+full_imputed_ctrl_coef: 0.001141
+full_imputed_ctrl_t: 1.37
+spy_close_e006: 757.22 on 2026-09-15
+spy_aum_approx: 694962871267
+survivorship: UNCERTAIN current S&P500 only
+payment_date_calendar_share: 0.224
+see: summary.json on box /workspace/b6_phase1/outputs/summary.json for full machine JSON

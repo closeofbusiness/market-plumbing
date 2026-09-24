@@ -1,0 +1,1886 @@
+﻿<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1"/>
+        <meta name="keywords" content="Board of Governors of the Federal Reserve System, Federal Reserve Board of Governors, Federal Reserve Board, Federal Reserve" />
+        <meta name="description" content="The Federal Reserve Board of Governors in Washington DC." />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Decomposing Hedge Funds’ U.S. Treasury Exposures"/>    
+        <meta property="og:image" content="https://www.federalreserve.gov/images/social-media/social-default-image-opengraph.jpg" />
+        <meta property="og:image:alt" content="Board of Governors of the Federal Reserve System" />
+        <meta property="og:description" content="The Federal Reserve Board of Governors in Washington DC."/>
+        <meta property="og:url" content="https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-20260622.html" />
+        <meta name="twitter:card" content="summary" />    
+        <meta name="twitter:title" content="Decomposing Hedge Funds’ U.S. Treasury Exposures" />
+        <meta name="twitter:image" content="https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg" />
+        <meta name="twitter:image:alt" content="Board of Governors of the Federal Reserve System" />
+        <meta name="twitter:description" content="The Federal Reserve Board of Governors in Washington DC." /> 
+        
+        <meta name="citation_author" content="Phillip J. Monin" />
+        <meta name="citation_title" content="Decomposing Hedge Funds’ U.S. Treasury Exposures" />
+        <meta name="citation_publication_date" content="06-22-2026" />
+        <title>The Fed - Decomposing Hedge Funds’ U.S. Treasury Exposures</title>
+        
+        <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/css/bluesteel-theme.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/assets/main.css">
+        <script src="/assets/main.js" defer type="module"></script>
+        <script src="/js/modernizr-latest.js" type="text/javascript"></script>
+        <link href="/css/icons.data.svg.css" rel="stylesheet">           
+        <script src="/js/angular.min.js" type="text/javascript"></script>
+        <script src="/js/app.js" type="text/javascript"></script>
+        
+        <!-- For Linear Gradients in IE9 or greater -->
+        <!--[if gte IE 9]>
+            <style type="text/css">
+              .gradient {
+                 filter: none;
+              }
+            </style>
+        <![endif]-->
+
+ 
+        <style type="text/css">
+            /*Overriding the global styles*/
+            @media (min-width: 992px) {
+                .page-header .page-title {width: 79%;}
+                .page-header .shareDL { width: 21%;}  
+            }
+        </style>
+    </head>
+    <body data-ng-app="pubwebApp">
+        <a href="#content" class="globalskip">Skip to main content</a>
+<nav class="nav-primary-mobile" id="nav-primary-mobile"></nav>
+<div id='top-banner' data-hydrate='true'><link rel="preload" as="image" href="/images/icon-us-flag.svg"/><link rel="preload" as="image" href="/images/expand_more.svg"/><link rel="preload" as="image" href="https://designsystem.digital.gov/assets/img/icon-dot-gov.svg"/><link rel="preload" as="image" href="https://designsystem.digital.gov/assets/img/icon-https.svg"/><div class="custom-banner"><div class="custom-banner__header"><div class="custom-banner__left"><img class="custom-banner__flag" src="/images/icon-us-flag.svg" width="20" height="20" alt="US Flag"/><p class="custom-banner__text">An official website of the United States Government</p></div><button type="button" class="custom-banner__button"><span class="custom-banner__button-text">Here&#x27;s how you know</span><img id="banner-caret-_R_0_" class="custom-banner__caret " src="/images/expand_more.svg" alt="Expand More"/></button></div><div class="custom-banner__content " id="banner-content-_R_0_"><div class="custom-banner__info"><div class="info-block"><img src="https://designsystem.digital.gov/assets/img/icon-dot-gov.svg" alt=".gov icon"/><p><strong>Official websites use .gov</strong><br/>A <strong>.gov</strong> website belongs to an official government organization in the United States.</p></div><div class="info-block"><img src="https://designsystem.digital.gov/assets/img/icon-https.svg" alt="HTTPS icon"/><p><strong>Secure .gov websites use HTTPS</strong><br/>A <strong>lock</strong> (<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" role="img" aria-labelledby="banner-lock-description-_R_0_" focusable="false"><title id="banner-lock-title-_R_0_">Lock</title><desc id="banner-lock-description-_R_0_">Locked padlock icon</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"></path></svg></span>) or <strong>https://</strong> means you&#x27;ve safely connected to the .gov website. Share sensitive information only on official, secure websites.</p></div></div></div></div></div><div class="t1_nav navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="t1_container clearfix">
+        <a id="logo" class="btn btn-default icon-FRB_logo-bw visible-xs-table-cell t1__btnlogo" href="/default.htm" role="button"><span class="sr-only">Back to Home</span></a>
+        <a href="/default.htm" id="banner" class="visible-xs-table-cell t1__banner" title="Link to Home Page" role="button">Board of Governors of the Federal Reserve System</a>
+        <ul class="nav navbar-nav visible-md visible-lg t1_toplinks">
+            <li class="navbar-text navbar-text__social">
+                <span class="navbar-link" tabindex="0">Stay Connected</span>
+            <ul class="nav navbar-nav t1_social social_ten">
+              <li class="social__item">
+                <a
+                  data-icon="facebook"
+                  href="https://www.facebook.com/federalreserve"
+                  class="noIcon"
+                >
+                  <div class="icon-facebook-color icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve Facebook Page</span
+                  ></a
+                >
+              </li>
+              <li class="social__item">
+                <a
+                  data-icon="instagram"
+                  href="https://www.instagram.com/federalreserveboard/"
+                  class="noIcon"
+                >
+                  <div class="icon-instagram icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve Instagram Page</span
+                  ></a
+                >
+              </li>
+
+              <li class="social__item">
+                <a
+                  data-icon="youtube"
+                  href="https://www.youtube.com/federalreserve"
+                  class="noIcon"
+                >
+                  <div class="icon-youtube-color icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve YouTube Page</span
+                  ></a
+                >
+              </li>
+
+              <li class="social__item">
+                <a
+                  data-icon="flickr"
+                  href="https://www.flickr.com/photos/federalreserve/"
+                  class="noIcon"
+                >
+                  <div class="icon-flickr-color icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve Flickr Page</span
+                  ></a
+                >
+              </li>
+
+              <li class="social__item">
+                <a
+                  data-icon="linkedin"
+                  href="https://www.linkedin.com/company/federal-reserve-board"
+                  class="noIcon"
+                >
+                  <div class="icon-linkedin-color icon icon__sm"></div>
+                  <span class="sr-only">Federal Reserve LinkedIn Page</span></a
+                >
+              </li>
+              <li class="social__item">
+                <a data-icon="threads" href="https://www.threads.net/@federalreserveboard" class="noIcon">
+                  <div class="icon-threads icon icon__sm"></div>
+                  <span class="sr-only">Federal Reserve Threads Page</span></a
+                >
+              </li>
+              <li class="social__item">
+                <a
+                  data-icon="twitter"
+                  href="https://x.com/federalreserve"
+                  class="noIcon"
+                >
+                  <div class="icon-social-x icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve X Page</span
+                  ></a
+                >
+              </li>
+              <li class="social__item">
+                <a
+                  data-icon="bluesky"
+                  href="https://bsky.app/profile/federalreserve.gov"
+                  class="noIcon"
+                >
+                  <div class="icon-bluesky icon icon__sm"></div>
+                  <span class="sr-only"
+                    >Federal Reserve Bluesky Page</span
+                  ></a
+                >
+              </li>
+              <li class="social__item">
+                <a data-icon="rss" href="/feeds/feeds.htm" class="noIcon">
+                  <div class="icon-rss-color icon icon__sm"></div>
+                  <span class="sr-only">Subscribe to RSS</span></a
+                >
+              </li>
+
+              <li class="social__item">
+                <a data-icon="email" href="/subscribe.htm" class="noIcon">
+                  <div class="icon-email-color icon icon__sm"></div>
+                  <span class="sr-only">Subscribe to Email</span></a
+                >
+              </li>
+                </ul>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/recentpostings.htm">Recent Postings</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/newsevents/calendar.htm">Calendar</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/publications.htm">Publications</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/sitemap.htm">Site Map</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/azindex.htm">A-Z index</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/careers.htm">Careers</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/faqs.htm">FAQs</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/videos.htm">Videos</a>
+            </li>
+
+            <li class="navbar-text">
+                <a class="navbar-link" href="/aboutthefed/contact-us-topics.htm">Contact</a>
+            </li>
+        </ul>
+        <form class="nav navbar-form hidden-xs nav__search" role="search" action="//www.fedsearch.org/board_public/search"  method="get">
+            <div class="form-group input-group input-group-sm">
+                <label for="t1search" class="sr-only">Search</label>
+                <input id="t1search" class="nav__input form-control" name="text" placeholder="Search" type="text" />
+                <span class="input-group-btn">
+                    <button type="submit" class="nav__button btn btn-default" id="headerTopLinksSearchFormSubmit" name="Search">
+                        <span class="sr-only">Submit Search Button</span>
+                        <span class="icon-magnifying-glass icon icon__xs icon--right"></span>
+                    </button>
+                </span>
+            </div>
+            <div class="nav__advanced">
+                <a class="noIcon" href="//www.fedsearch.org/board_public/">Advanced</a>
+            </div>
+        </form>
+        <div class="btn-group visible-xs-table-cell visible-sm-table-cell t1__dropdown">
+            <span class="icon icon__md icon--right dropdown-toggle icon-options-nav" data-toggle="dropdown">
+                <span class="sr-only">Toggle Dropdown Menu</span>
+            </span>
+        </div>
+    </div>
+</div>
+<header class="jumbotron hidden-xs">
+    <a class="jumbotron__link" href="/default.htm" title="Link to Home Page">
+        <div class="container-fluid">
+            <h1 class="jumbotron__heading">Board of Governors of the Federal Reserve System
+            </h1>
+            <p class="jumbotron__content">
+                <em>The Federal Reserve, the central bank of the United States, provides
+          the nation with a safe, flexible, and stable monetary and financial
+          system.</em>
+            </p>
+        </div>
+    </a>
+</header>
+<div class="t2__offcanvas visible-xs-block">
+    <div class="navbar-header">
+        <button type="button" class="offcanvas__toggle icon-offcanvas-nav" data-toggle="offcanvas" data-target="#offcanvasT2Menu" data-canvas="body">
+            <span class="sr-only">Main Menu Toggle Button</span>
+        </button>
+        <span class="navbar-brand offcanvas__title">Sections</span>
+        <button type="button" class="offcanvas__search icon-search-nav" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Search Toggle Button</span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse mobile-form" id="navbar-collapse">
+        <form method="get" class="navbar-form" role="search" action="//www.fedsearch.org/board_public/search">
+            <div class="form-group input-group mobileSearch">
+                <label class="sr-only" for="t2search">Search</label>
+                <input id="t2search" name="text" class="form-control" placeholder="Search" type="text" />
+                <span class="input-group-btn">
+                    <span class="sr-only">Search Submit Button</span>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<nav class="nav-primary navbar hidden-xs nav-nine" id="nav-primary" role="navigation">
+    <ul class="nav navbar-nav" role="menubar">
+        <li role="menuitem" class="dropdown nav-about dropdown--3Col">
+            <a href="/aboutthefed.htm" class="sr-only-focusable" aria-haspopup="true" id="aboutMenu">About<br />the Fed</a>
+            <ul aria-labelledby="aboutMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-4 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/fedexplained/who-we-are.htm">Structure of the Federal Reserve System</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/the-fed-explained.htm">The Fed Explained</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/bios/board/default.htm">Board Members</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/advisorydefault.htm">Advisory Councils</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/federal-reserve-system.htm">Federal Reserve Banks</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/directors/about.htm">Federal Reserve Bank and Branch Directors</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/fract.htm">Federal Reserve Act</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/currency.htm">Currency</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-4 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/boardmeetings/meetingdates.htm">Board Meetings</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/boardvotes.htm">Board Votes</a>
+                            </li>
+
+                            
+
+                            <li>
+                                <a class="sr-only-focusable" href="/careers.htm">Careers</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/procurement/tips.htm">Do Business with the Board</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/k8.htm">Holidays Observed - K.8</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/ethics-values.htm">Ethics & Values</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-4 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/contact-us-topics.htm">Contact</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/foia/about_foia.htm">Requesting Information (FOIA)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/faqs.htm">FAQs</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/educational-tools/default.htm">Economic Education</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/fed-financial-statements.htm">Fed Financial Statements</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/financial-innovation.htm">Financial Innovation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-news dropdown--1Col">
+            <a href="/newsevents.htm" class="sr-only-focusable" aria-haspopup="true" id="newsMenu">News<br />& Events</a>
+            <ul aria-labelledby="newsMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <a class="sr-only-focusable" href="/newsevents/pressreleases.htm">Press Releases</a>
+                </li>
+                <li>
+                    <a class="sr-only-focusable" href="/newsevents/speeches-testimony.htm">Speeches & Testimony</a>
+                </li>
+                <li>
+                    <a class="sr-only-focusable" href="/newsevents/calendar.htm">Calendar</a>
+                </li>
+                <li>
+                    <a class="sr-only-focusable" href="/videos.htm">Videos</a>
+                </li>
+                <li>
+                    <a class="sr-only-focusable" href="/photogallery.htm">Photo Gallery</a>
+                </li>
+                <li>
+                    <a class="sr-only-focusable" href="/conferences.htm">Conferences</a>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-monetary dropdown--2Col">
+            <a href="/monetarypolicy.htm" class="sr-only-focusable" aria-haspopup="true" id="monetaryMenu">Monetary<br />Policy</a>
+            <ul aria-labelledby="monetaryMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-6 list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Federal Open Market Committee</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/fomc.htm">About the FOMC</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/fomccalendars.htm">Meeting calendars and information</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/fomc_historical.htm">Transcripts and other historical materials</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/fomc_projectionsfaqs.htm">FAQs</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Monetary Policy Principles and Practice</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/monetary-policy-principles-and-practice.htm">Notes</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-6 list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Policy Implementation</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/policy-normalization.htm">Policy Normalization</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/policytools.htm">Policy Tools</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Reports</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/publications/mpr_default.htm">Monetary Policy Report</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/publications/beige-book-default.htm">Beige Book</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/publications/balance-sheet-developments-report.htm">Federal Reserve Balance Sheet Developments</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Review of Monetary Policy Strategy, Tools, and Communications</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/monetarypolicy/review-of-monetary-policy-strategy-tools-and-communications-2025.htm">Overview</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-supervision dropdown--fw">
+    <a href="/supervisionreg.htm" class="sr-only-focusable" id="supervisionMenu"
+        aria-haspopup="true">Supervision<br />& Regulation</a>
+    <ul aria-labelledby="supervisionMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+        <li>
+            <div class="row">
+                <ul class="col-sm-3 col-nav list-unstyled">
+                    <li class="nav__header">
+                        <p>
+                            <strong>Supervision</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/community-banks.htm">
+                            Community Banks</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/regional-and-small-foreign-banks.htm">
+                            Regional Banks and Foreign Banks with U.S. Assets < $100 Billion</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/large-banks-and-large-foreign-banks.htm">
+                            Large Banks and Large Foreign Banks</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/global-systemically-important-banks.htm">
+                            Global Systemically Important Banks</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/financial-market-utility-supervision.htm">Financial Market
+                            Utilities</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/consumer-compliance.htm">Consumer
+                            Compliance</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/resources-for-supervised-institutions.htm">
+                            Resources for Supervised Institutions</a>
+                    </li>
+
+                    
+
+                    <li class="nav__header">
+                        <p>
+                            <strong>Reports</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/publications/supervision-and-regulation-report.htm">Federal Reserve
+                            Supervision and Regulation Report</a>
+                    </li>
+                </ul>
+                <ul class="col-sm-3 list-unstyled col-nav">
+                    <li class="nav__header">
+                        <p>
+                            <strong>Reporting Forms</strong>
+                        </p>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/apps/reportingforms/recentupdates">Recent Reporting Form Updates</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/apps/reportingforms/home/review">Information Collections
+                            Under Review</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/ReportingForms/?reportTypesIdsJson=["1"]'>Financial
+                            Statements</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/ReportingForms/?reportTypesIdsJson=["7"]'>Securities Exchange Act of 1934</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable"
+                            href='/apps/ReportingForms/?reportTypesIdsJson=["2"]'>Applications/Structure Change</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/ReportingForms/?reportTypesIdsJson=["3"]'>FFIEC</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/ReportingForms/?reportTypesIdsJson=["8"]'>Municipal and
+                            Government Securities</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/ReportingForms/?reportTypesIdsJson=["9"]'>Activities Monitoring</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href='/apps/mdrm/'>Micro Data Reference Manual</a>
+                    </li>
+
+                     
+
+                </ul>
+
+
+
+
+                <ul class="col-sm-3 list-unstyled col-nav">
+
+<li class="nav__header">
+                        <p>
+                            <strong>Legal Developments</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/legal-developments.htm">Enforcement Actions and
+                            Legal Developments</a>
+                    </li>
+
+
+                     <li class="nav__header">
+                        <p>
+                            <strong>Mergers, Acquisitions, and Other Applications</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/application-process.htm">Process</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/afi/afi.htm">Filing
+                            Information</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/board-and-reserve-bank-actions.htm">Board and Reserve
+                            Bank Actions</a>
+                    </li>
+
+                
+                    
+                    
+                    
+                </ul>
+
+                <ul class="col-sm-3 list-unstyled col-nav">
+
+<li class="nav__header">
+                        <p>
+                            <strong>Supervision and Regulation Letters</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/srletters/srletters.htm">By Year</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/topics/topics.htm">By Topic</a>
+                    </li>
+
+
+                    <li class="nav__header">
+                        <p>
+                            <strong>Regulatory and Policy Resources</strong>
+                        </p>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/aboutthefed/fract.htm">Federal Reserve Act</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/frrs/regulations/bank-holding-company-act-of-1956.htm">Bank Holding Company Act</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/reglisting.htm">Regulations</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/publications/supmanual.htm">Supervision Manuals</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/frrs/federal-reserve-regulatory-service.htm">Federal Reserve Regulatory Service</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/disaster-preparedness-and-recovery-resources.htm">Disaster Preparedness and Recovery Resources
+     </a>
+                    </li>
+
+
+                    
+                </ul>
+                <ul class="col-sm-3 list-unstyled col-nav">
+                    <li class="nav__header">
+                        <p>
+                            <strong>Banking and Data Structure</strong>
+                        </p>
+                    </li>
+
+                    
+
+                    <li>
+                        <a class="sr-only-focusable" href="/apps/reportforms/insider.aspx">Beneficial Ownership
+                            Reports</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/releases/lbr/">U.S. Domestically Chartered Commercial Banks</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/minority-depository-institutions.htm">Minority Depository
+                            Institutions</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/releases/iba/">U.S. Offices of Foreign Entities</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/fhc.htm">Financial Holding
+                            Companies</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/isb-default.htm">Interstate
+                            Branching</a>
+                    </li>
+
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/suds.htm">Securities
+                            Underwriting and Dealing Subsidiaries</a>
+                    </li>
+                    <li>
+                        <a class="sr-only-focusable" href="/supervisionreg/state-member-banks-supervised-federal-reserve.htm">State Member Banks Supervised by the Federal Reserve</a>
+                    </li>
+
+                    
+                </ul>
+            </div>
+        </li>
+    </ul>
+</li>
+
+
+
+
+
+
+        <li role="menuitem" class="dropdown nav-stability dropdown--2Col">
+            <a href="/financial-stability.htm" class="sr-only-focusable" aria-haspopup="true" id="stabilityMenu">Financial<br />Stability</a>
+            <ul aria-labelledby="stabilityMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <div class="row">
+                    <ul class="col-sm-6 list-unstyled">
+                        <li class="nav__header">
+                            <p>
+                                <strong>Financial Stability Assessments </strong>
+                            </p>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/what-is-financial-stability.htm">About Financial Stability</a>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/types-of-financial-system-vulnerabilities-and-risks.htm">Types of Financial System Vulnerabilities & Risks</a>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/monitoring-risk-across-the-financial-system.htm">Monitoring Risk Across the Financial System</a>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/proactive-monitoring-of-markets-and-institutions.htm">Proactive Monitoring of Markets & Institutions</a>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/financial-stability-and-stress-testing.htm">Financial Stability & Stress Testing</a>
+                        </li>
+                    </ul>
+                    <ul class="col-sm-6 list-unstyled">
+                        <li class="nav__header">
+                            <p>
+                                <strong>Financial Stability Coordination & Actions</strong>
+                            </p>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/responding-to-financial-system-emergencies.htm">Responding to Financial System Emergencies</a>
+                        </li>
+                        <li>
+                            <a class="sr-only-focusable" href="/financial-stability/cooperation-on-financial-stability.htm">Cooperation on Financial Stability</a>
+                        </li>
+                        <li class="nav__header">
+                            <p>
+                                <strong>Reports</strong>
+                            </p>
+                        </li>
+
+                        <li>
+                            <a class="sr-only-focusable" href="/publications/financial-stability-report.htm">Financial Stability Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </li>
+        <li role="menuitem" class="dropdown nav-payment dropdown--fw">
+            <a href="/paymentsystems.htm" class="sr-only-focusable" id="paymentMenu" aria-haspopup="true">Payment<br />Systems</a>
+            <ul aria-labelledby="paymentMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-3 col-nav list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Regulations & Statutes</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/regcc-about.htm">Regulation CC (Availability of Funds and Collection of Checks)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/regii-about.htm">Regulation II (Debit Card Interchange Fees and Routing)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/reghh-about.htm">Regulation HH (Financial Market Utilities)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/other-regulations.htm">Other Regulations and Statutes</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Payment Policies</strong>
+                                </p>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/pfs_about.htm">Federal Reserve's Key Policies for the Provision of Financial Services</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/joint_requests.htm">Guidelines for Evaluating Joint Account Requests</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/oo_about.htm">Overnight Overdrafts</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/psr_about.htm">Payment System Risk</a>
+                            </li>
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/telecomm.htm">Sponsorship for Priority Telecommunication Services</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Reserve Bank Payment Services & Data</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fedach_about.htm">Automated Clearinghouse Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/check_about.htm">Check Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/coin_about.htm">Currency and Coin Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/psr_data.htm">Daylight Overdrafts and Fees</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fednow_about.htm">FedNow<sup>&reg;</sup> Service</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fedfunds_about.htm">Fedwire Funds Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fedsecs_about.htm">Fedwire Securities Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fisagy_about.htm">Fiscal Agency Services</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/master-account-and-services-database-about.htm">Master Account and Services Database</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/natl_about.htm">National Settlement Service</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Financial Market Utilities & Infrastructures</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/over_about.htm">Supervision & Oversight of Financial Market Infrastructures</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/designated_fmu_about.htm">Designated Financial Market Utilities</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/int_standards.htm">International Standards for Financial Market Infrastructures</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Research, Reports, & Committees</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/fr-payments-study.htm">Federal Reserve Payments Study (FRPS)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/payres_about.htm">Payments Research</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/reports.htm">Reports</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/paymentsystems/pspa_committee.htm">Payments System Policy Advisory Committee</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-econ dropdown--right dropdown--2Col">
+            <a href="/econres.htm" class="sr-only-focusable" aria-haspopup="true" id="econMenu">Economic<br />Research</a>
+            <ul aria-labelledby="econMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-6 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/researchers.htm">Meet the Researchers</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Working Papers and Notes</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/feds/index.htm">Finance and Economics Discussion Series (FEDS)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/notes/feds-notes/default.htm">FEDS Notes</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/ifdp/index.htm">International Finance Discussion Papers (IFDP)</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-6 list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Data, Models and Tools</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/economic-research-data.htm">Economic Research Data</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/us-models-about.htm">FRB/US Model</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/edo-models-about.htm">Estimated Dynamic Optimization (EDO) Model</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/scfindex.htm">Survey of Consumer Finances (SCF)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-data dropdown--right dropdown--fw">
+            <a href="/data.htm" class="sr-only-focusable" id="dataMenu" aria-haspopup="true">Data</a>
+            <ul aria-labelledby="dataMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-3 col-nav list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/datadownload"><span class="icon icon-ddp icon__sm"></span>Data Download Program</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Bank Assets and Liabilities</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h3/current/default.htm">Aggregate Reserves of Depository Institutions and the Monetary Base - H.3</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h8/current/default.htm">Assets and Liabilities of Commercial Banks in the U.S. - H.8</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/assetliab/current.htm">Assets and Liabilities of U.S. Branches and Agencies of Foreign Banks</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/chargeoff/">Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/sfos/sfos.htm">Senior Financial Officer Survey</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/sloos.htm">Senior Loan Officer Opinion Survey on Bank Lending Practices</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Bank Structure Data</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/lbr/">U.S. Domestically Chartered Commercial Banks</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/supervisionreg/minority-depository-institutions.htm">Minority Depository Institutions</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/iba/default.htm">Structure and Share Data for the U.S. Offices of Foreign Banks</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Business Finance</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/cp/">Commercial Paper</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/g20/current/default.htm">Finance Companies - G.20</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/govsecure/current.htm">New Security Issues, State and Local Governments</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/corpsecure/current.htm">New Security Issues, U.S. Corporations</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Dealer Financing Terms</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/scoos.htm">Senior Credit Officer Opinion Survey on Dealer Financing Terms</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Exchange Rates and International Data</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h10/current/">Foreign Exchange Rates - H.10/G.5</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/intlsumm/current.htm">International Summary Statistics</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/secholdtrans/current.htm">Securities Holdings and Transactions</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/statbanksus/current.htm">Statistics Reported by Banks and Other Financial Firms in the United States</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/iba/default.htm">Structure and Share Data for U.S. Offices of Foreign Banks</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Financial Accounts</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/z1/default.htm">Financial Accounts of the United States - Z.1</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Household Finance</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/g19/current/default.htm">Consumer Credit - G.19</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/DSR">Household Debt Service Ratios</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/mortoutstand/current.htm">Mortgage Debt Outstanding</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/econres/scfindex.htm">Survey of Consumer Finances (SCF)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/shed.htm">Survey of Household Economics and Decisionmaking</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Industrial Activity</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/g17/current/default.htm">Industrial Production and Capacity Utilization - G.17</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Interest Rates</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h15/">Selected Interest Rates - H.15</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled col-nav">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Micro Data Reference Manual (MDRM)</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/mdrm.htm">Micro and Macro Data Collections</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Money Stock and Reserve Balances</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h41/">Factors Affecting Reserve Balances - H.4.1</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/releases/h6/current/default.htm">Money Stock Measures - H.6</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Other</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/data/yield-curve-models.htm">Yield Curve Models and Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li role="menuitem" class="dropdown nav-consumer dropdown--right dropdown--4Col">
+            <a href="/consumerscommunities.htm" class="sr-only-focusable" aria-haspopup="true" id="consumerMenu">Consumers<br /> & Communities</a>
+            <ul aria-labelledby="consumerMenu" role="menu" class="dropdown-menu sub-nav-group navmenu-nav">
+                <li>
+                    <div class="row">
+                        <ul class="col-sm-3 list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Regulations</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/cra_about.htm">Community Reinvestment Act (CRA)</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/supervisionreg/reglisting.htm">All Regulations</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Supervision & Enforcement</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/supervisionreg/caletters/caletters.htm">CA Letters</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/apps/enforcementactions/default.aspx">Enforcement Actions</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/independent-foreclosure-review.htm">Independent Foreclosure Review</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled">
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Community Development</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/neighborhood-revitalization.htm">Housing and Neighborhood Revitalization</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/small-business-and-entrepreneurship.htm">Small Business and Entrepreneurship</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/workforce.htm">Employment and Workforce Development</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/cdf.htm">Community Development Finance</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/rural-community-economic-development.htm">Rural Community and Economic Development</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/conferences.htm">Conferences</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Research & Analysis</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/shed.htm">Survey of Household Economics and Decisionmaking</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/community-development-publications.htm">Research Publications & Data Analysis</a>
+                            </li>
+                        </ul>
+                        <ul class="col-sm-3 list-unstyled">
+                            <li>
+                                <a class="sr-only-focusable" href="/aboutthefed/cac.htm">Community Advisory Council</a>
+                            </li>
+
+                            <li class="nav__header">
+                                <p>
+                                    <strong>Resources for Consumers</strong>
+                                </p>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/fraud-scams.htm">Frauds and Scams</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/foreclosure.htm">Mortgage and Foreclosure Resources</a>
+                            </li>
+
+                            <li>
+                                <a class="sr-only-focusable" href="/consumerscommunities/comm-dev-system-map.htm">Federal Reserve Community Development Resources</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+        <!-- BODY CONTENT -->
+        <div id="content" class="container container__main  economic-research" role="main">
+            <!-- Page Header -->
+            <div class="row">
+                <div class="page-header">
+                    <!-- T3 NAV: Breadcrumbs -->
+                    <ol id="t3_nav" class="breadcrumb">
+                        
+                            <li class='breadcrumb__item'><a class="breadcrumb__link" href="/default.htm">Home</a></li>
+                            
+                                                    <li class='breadcrumb__item'><a class="breadcrumb__link" href="/econres.htm">Economic Research</a></li>
+                                                    
+                    
+                                                    <li class='breadcrumb__item'><a class="breadcrumb__link" href="/econres/notes/feds-notes/default.htm">FEDS Notes</a></li>
+                                                    
+                                                    <li class='breadcrumb__item'><a class="breadcrumb__link" href="/econres/notes/feds-notes/2026-index.htm">2026</a></li>
+                                                    
+                                                
+                                                
+                
+                                                
+                        
+                    </ol>
+                    <!-- Page Title/Share & Download Buttons -->
+                    <div class="header-group">
+                        <!-- Page Title -->
+                        <div id="page-title" class="page-title">
+                        
+                                <h2>FEDS Notes</h2>
+                                        
+                        </div><!-- /  #page-title .btn-group .pull-left -->
+                        
+                        <!-- Share / Download Button -->
+                        <!-- Delete/Add class="hidden" to <div> below when display/hiding this option -->
+                        <div class="shareDL">
+                            <!-- InstanceBeginEditable name="ShareDLButton" -->
+                            
+                            <a href="" class="btn shareDL__button noIcon">
+                                <span class="icon icon__sm icon--centered icon-twitter-color"></span>
+                                <span class="shareDL__iconTitle">Twitter</span>
+                            </a>   
+                                
+                          
+                            <a href="#" class="btn shareDL__button dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon icon__sm icon--centered icon-share-header"></span>
+                                <span class="shareDL__iconTitle">Share</span>
+                            </a>
+                            <ul class="dropdown-menu shareDL__dropdown--header" role="menu">
+                              
+
+
+    
+            <li class='shareDL__item'>
+             
+                <a class="shareDL__link icon__link sr-only-focusable" href="https://twitter.com/share?url=https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-20260622.html&text=Decomposing Hedge Funds&#8217; U.S. Treasury Exposures&via=FederalReserve">
+                        <span class="icon icon__sm icon--centered icon-twitter-color"></span>
+                </a>
+            </li>
+            
+            <li class='shareDL__item'>
+             
+                <a class="shareDL__link icon__link sr-only-focusable" href="https://www.facebook.com/sharer.php?u=https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-20260622.html&name=Decomposing Hedge Funds&#8217; U.S. Treasury Exposures">
+                        <span class="icon icon__sm icon--centered icon-facebook-color"></span>
+                </a>
+            </li>
+            
+            <li class='shareDL__item'>
+             
+                <a class="shareDL__link icon__link sr-only-focusable" href="https://www.linkedin.com/shareArticle?url=https://www.federalreserve.gov/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-20260622.html&title=Decomposing Hedge Funds&#8217; U.S. Treasury Exposures&mini=true">
+                        <span class="icon icon__sm icon--centered icon-linkedin-color"></span>
+                </a>
+            </li>
+            
+            <li class='shareDL__item'>
+            
+                <a class="shareDL__link icon__link sr-only-focusable" href="/cdn-cgi/l/email-protection#605f020f04195d08141410135a4f4f1717174e0605040512010c120513051216054e070f164f05030f0e1205134f0e0f1405134f060504134d0e0f1405134f0405030f0d100f13090e074d08050407054d06150e04134d154d134d14120501131512194d0518100f13151205134d52505256505652524e08140d0c461315020a0503145d2405030f0d100f13090e074028050407054026150e04134643585251575b40354e334e403412050113151219402518100f1315120513">
+                        <span class="icon icon__sm icon--centered icon-email-color"></span>
+                </a>
+            </li>
+                    
+    
+ 
+ 
+                            </ul>
+                            
+                            
+                            <a href="/feeds/feds_notes.xml" class="btn shareDL__button">
+                                <span class="icon icon__sm icon--centered icon-RSS"></span>
+                                <span class="shareDL__iconTitle">RSS</span>
+                            </a>
+                                 
+                            <!-- InstanceEndEditable -->
+                        </div>
+                        <!--/ End Share / Download Button -->
+                    </div><!-- / .header-group .btn-group -->  
+                </div><!-- / .page-header -->
+            </div><!-- / .row -->
+
+
+  
+
+
+
+            <!-- Content Area -->
+            <div class='row'>
+            
+                <div class="col-xs-12 col-md-8 col-sm-12">  
+                    <p>June 22, 2026</p>
+                    <h3>Decomposing Hedge Funds’ U.S. Treasury Exposures</h3>
+                    <p><a href="https://www.federalreserve.gov/econres/phillip-monin.htm">Phillip J. Monin</a><a href="#fn1" title="footnote 1"><sup>1</sup></a><a name="f1"></a></p>
+                    <p>Between 2023 and September 2025, large hedge funds' gross U.S. Treasury exposures doubled to $4.0 trillion, comprising $2.4 trillion in long exposure and $1.6 trillion in short exposure.<a href="#fn2" title="footnote 2"><sup>2</sup></a><a name="f2"></a> This growth outpaced that of the broader Treasury market, with hedge funds' Treasury securities holdings increasing from about 4.5 percent to about 8.5 percent of total outstanding Treasuries. While hedge funds have many uses for Treasury exposures, including liquidity management and relative value trades exploiting price discrepancies among similar instruments, sizing their activities across specific trades and uses is challenging due to data limitations.</p>
+
+<p>This note analyzes large hedge funds' Treasury activities and provides a new and comprehensive decomposition of their $2.4 trillion in long Treasury exposures across seven distinct strategies and uses. We find that highly leveraged arbitrage strategies dominate hedge funds' Treasury positioning. The Treasury cash-futures basis trade has grown to approximately $830 billion as of September 2025, about double its previous peak in early 2020 and representing 35 percent of hedge funds' total long Treasury exposures. The swap spread arbitrage trade reached approximately $305 billion (13 percent) by September 2025, though it experienced notable stress following the April 2025 tariff announcements when about $60 billion unwound rapidly before recovering within months. Beyond these directly estimated arbitrage trades, we identify substantial positioning in broader trade categories: maturity-matched trades (including on-the-run / off-the-run arbitrage and other strategies with approximately equal durations) totaling $395 billion (17 percent), and steepener-like trades totaling $375 billion (16 percent). The remaining exposures include unencumbered cash holdings, flattener-like trades, and long-only investment uses.</p>
+
+<h4>Recent Growth in Hedge Funds' Treasury Activities</h4>
+
+<p>The top panels of Figure 1 show that hedge funds' gross U.S. Treasury exposures reached $4.0 trillion as of September 2025, comprising $2.4 trillion in long exposure and $1.6 trillion in short exposure. To finance these positions and source securities for shorting, hedge funds rely heavily on repo markets. Hedge funds' repo cash borrowing has grown to $3.0 trillion as of September 2025. The scale of this expansion is striking: since the beginning of 2023, hedge funds' gross Treasury exposures, repo borrowing levels, and monthly turnover in Treasury markets have all more than doubled. Moreover, their Treasury activities have become increasingly concentrated, with the 50 largest funds by gross Treasury exposures accounting for approximately 90 percent of the total, up from 84 percent at the beginning of 2023.</p>
+
+<div class="panel panel-callout">
+<div class="panel-heading">
+<h5 class="panel-title"><a id="fig1"></a>Figure 1. Treasury Exposures, Repo Exposures, and Turnover</h5>
+</div>
+
+<div class="panel-body">
+<figure><img alt="Figure 1. Treasury Exposures, Repo Exposures, and Turnover. See accessible link for data." class="img-responsive" src="/econres/notes/feds-notes/fig1-4082.png" />
+<figcaption>
+<div class="footnotes">
+<p>Note: Data are monthly through September 2025. Physical and derivatives exposures estimated as in Banegas et al. (2021). Treasury market turnover includes cash securities and Treasury-linked derivatives.</p>
+
+<p>Sources: SEC Form PF, author’s analysis.</p>
+
+<p><a href="/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm#fig1">Accessible version</a></p>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+
+<p>To assess the significance of hedge funds' Treasury market expansion, Figure 2 compares their holdings to the overall Treasury market, which also grew significantly during and after the COVID-19 pandemic. As of September 2025, large hedge funds hold about 8.5 percent of total privately held Treasuries by market value, significantly higher than the 4.5 percent they held at the beginning of 2023 and near their highest level as a share of the overall market since at least 2013. Hedge funds' Treasury securities holdings now exceed those of mutual funds and U.S.-chartered depository institutions.<a href="#fn3" title="footnote 3"><sup>3</sup></a><a name="f3"></a></p>
+
+<div class="panel panel-callout">
+<div class="panel-heading">
+<h5 class="panel-title"><a id="fig2"></a>Figure 2. Hedge Funds’ Estimated Treasury Holdings Relative to Outstanding Treasuries</h5>
+</div>
+
+<div class="panel-body">
+<figure><img alt="Figure 2. Hedge Funds’ Estimated Treasury Holdings Relative to Outstanding Treasuries. See accessible link for data." class="img-responsive" src="/econres/notes/feds-notes/fig2-4082.png" />
+<figcaption>
+<div class="footnotes">
+<p>Note: Data are monthly through September 2025. Physical Treasury holdings estimated as in Banegas et al. (2021).</p>
+
+<p>Sources: SEC Form PF, U.S. Department of the Treasury Fiscal Service via FRED, author’s analysis.</p>
+
+<p><a href="/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm#fig2">Accessible version</a></p>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+
+<h4>A New Decomposition of Hedge Funds' Treasury Exposures</h4>
+
+<p>We use the detailed data provided by large hedge funds in their SEC Form PF filings to decompose hedge funds' Treasury exposures. We first assemble fund-level data at a monthly frequency on hedge funds' long and short Treasury exposures, other asset class exposures, interest rate sensitivities, repo exposures, derivatives exposures, and unencumbered cash levels. For each fund, we then decompose its Treasury exposures into the following mutually exclusive categories based on how these trades or uses would be reflected in the data: (1) cash-futures basis trade, (2) swap spread arbitrage trade, (3) maturity-matched trades, (4) steepener-like trades, (5) flattener-like trades, (6) unencumbered cash holdings, and (7) long-only investment uses.<a href="#fn4" title="footnote 4"><sup>4</sup></a><a name="f4"></a> For example, the Treasury cash-futures basis trade involves a short Treasury futures position paired with a repo-financed long Treasury position, and therefore we estimate a fund's basis trade position based on its long Treasury securities holdings, short Treasury derivatives exposures, and repo borrowing levels. Details for all trades and uses are in the appendix. Given that hedge funds do not report trade-level positioning data on Form PF, our estimates should be viewed as approximations consistent with the reported data rather than exact measurements.<a href="#fn5" title="footnote 5"><sup>5</sup></a><a name="f5"></a></p>
+
+<p>Figure 3 depicts the resulting decomposition of hedge funds' long Treasury exposure over time. We find that highly leveraged arbitrage strategies (basis trade and swap spread arbitrage) account for nearly half of the $2.4 trillion in long positions as of September 2025, while the remaining exposure is distributed across yield curve trades, unencumbered cash holdings, and long-only investment uses. We discuss these categories in turn.</p>
+
+<div class="panel panel-callout">
+<div class="panel-heading">
+<h5 class="panel-title"><a id="fig3"></a>Figure 3. Hedge Funds’ Estimated Uses for Long Treasury Exposure</h5>
+</div>
+
+<div class="panel-body">
+<figure><img alt="Figure 3. Hedge Funds’ Estimated Uses for Long Treasury Exposure. See accessible link for data." class="img-responsive" src="/econres/notes/feds-notes/fig3-4082.png" />
+<figcaption>
+<div class="footnotes">
+<p>Note: The key identifies areas in order from bottom to top.</p>
+
+<p>Source: SEC Form PF, author’s analysis.</p>
+
+<p><a href="/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm#fig3">Accessible version</a></p>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+
+<h4>Resurgence of the Basis Trade</h4>
+
+<p>A key driver of the growth of hedge funds' Treasury exposures has been the resurgence of the Treasury cash-futures basis trade. The basis trade is constructed by going short a Treasury futures contract and long a repo-financed Treasury security that is deliverable into the futures. The trade is typically highly leveraged due to low or zero percent haircuts on the repo borrowing and low margin requirements on the futures. While the basis trade plays an important role in price discovery and liquidity provision, it also presents financial stability risks due to its substantial and interconnected exposures across Treasury cash, futures, and repo markets, combined with its high leverage and potential for rapid growth. The March 2020 Treasury market stress was partly attributed to the rapid unwinding of hedge funds' basis trade positions (see, among others, Kruttli et al. (2025), Barth and Kahn (2025), and Banegas et al. (2021)).</p>
+
+<p>Figure 4 depicts our estimated aggregate volume of cash-futures basis trade activity. Consistent with recent research on the basis trade, we find that hedge funds' basis trade positions have significantly increased since 2022 (Glicoes et al. (2024), Barth et al. (2023), and Mixon and Orlov (2026)). We estimate that aggregate basis trade volumes reached approximately $830 billion in September 2025, close to doubling their peak from early 2020.<a href="#fn6" title="footnote 6"><sup>6</sup></a><a name="f6"></a> Hedge fund positions in the basis trade recently accounted for a historically high 3.5 percent of total outstanding privately held Treasury securities by market value, a 40 percent increase from the previous peak of 2.5 percent in early 2020.</p>
+
+<div class="panel panel-callout">
+<div class="panel-heading">
+<h5 class="panel-title"><a id="fig4"></a>Figure 4. Hedge Funds’ Estimated Basis Trade Positions</h5>
+</div>
+
+<div class="panel-body">
+<figure><img alt="Figure 4. Hedge Funds’ Estimated Basis Trade Positions. See accessible link for data." class="img-responsive" src="/econres/notes/feds-notes/fig4-4082.png" />
+<figcaption>
+<div class="footnotes">
+<p>Source: SEC Form PF, U.S. Department of the Treasury Fiscal Service via FRED, author’s analysis.</p>
+
+<p><a href="/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm#fig4">Accessible version</a></p>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+
+<h4>A New Proxy for Hedge Funds in the Swap Spread Arbitrage Trade</h4>
+
+<p>Another relative value trade that has recently gained popularity among hedge funds is the swap spread arbitrage trade. The long swap spread arbitrage trade involves balanced positions in repo-financed Treasury securities and a pay-fixed, receive-floating position in an interest rate swap. Like the cash-futures basis trade, the swap spread trade typically involves significant leverage and interconnected positions across Treasury and rates markets. Moreover, swap spreads are volatile and may widen further over the investment horizon, exposing traders to losses.</p>
+
+<p>Figure 5 plots our swap spread arbitrage proxy over time. Our estimates suggest that long swap spread arbitrage positions were relatively modest until 2019, when they increased to approximately $100 billion. Positions declined following March 2020 and then steadily increased starting in late 2022. Growth accelerated sharply in late 2024 and early 2025, with positions increasing approximately $175 billion between January 2024 and March 2025, reaching about $295 billion. Market participants reported several drivers of these dynamics, including anticipated easing of bank capital requirements related to their Treasury holdings.</p>
+
+<div class="panel panel-callout">
+<div class="panel-heading">
+<h5 class="panel-title"><a id="fig5"></a>Figure 5. Hedge Funds’ Estimated Swap Spread Trade Positions</h5>
+</div>
+
+<div class="panel-body">
+<figure><img alt="Figure 5. Hedge Funds’ Estimated Swap Spread Trade Positions. See accessible link for data." class="img-responsive" src="/econres/notes/feds-notes/fig5-4082.png" />
+<figcaption>
+<div class="footnotes">
+<p>Note: Plots estimates of aggregate long swap spread arbitrage positions, in which a repo-financed Treasury security is paired with a pay-fixed interest rate swap.</p>
+
+<p>Sources: SEC Form PF, author’s analysis.</p>
+
+<p><a href="/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm#fig5">Accessible version</a></p>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+
+<p>The April 2025 tariff announcements triggered steep declines in swap spreads amid sharply increased Treasury yields and deteriorating Treasury market liquidity. Market participants noted that strained conditions in Treasury markets were likely exacerbated by hedge funds rapidly unwinding their swap spread trades, and our decomposition indicates that about $60 billion (20 percent) of swap spread positions unwound in April and a further $40 billion unwound in May. Through September 2025, we estimate that hedge funds' positions in swap spread arbitrage returned to pre-stress levels of about $305 billion.<a href="#fn7" title="footnote 7"><sup>7</sup></a><a name="f7"></a></p>
+
+<h4>Other Hedge Fund Treasury Trades and Uses</h4>
+
+<p>Having estimated exposures to specific arbitrage strategies, we now allocate the remaining long Treasury exposure across broader categories of trades and uses.<a href="#fn8" title="footnote 8"><sup>8</sup></a><a name="f8"></a></p>
+
+<p>We estimate that a substantial portion of hedge funds' remaining Treasury exposure is allocated to maturity-matched trades ($395 billion in September 2025, 17 percent of long Treasury exposure), a category that encompasses various strategies with offsetting positions in Treasury instruments with approximately equal durations. Examples include on-the-run / off-the-run arbitrage, TIPS-nominal Treasury bond trades, and other trades involving long and short positions in Treasuries of similar maturities.</p>
+
+<p>The data also indicate substantial steepener-like positioning. These trades are characterized by long positions in Treasury instruments with shorter duration than their corresponding short positions. A typical example is a yield curve steepener, which bets that short-term yields will increase less (or decrease more) than long-term yields.<a href="#fn9" title="footnote 9"><sup>9</sup></a><a name="f9"></a> Steepener-like trades totaled approximately $375 billion in September 2025 (16 percent of total long Treasury exposure), up from $250 billion in December 2019 but with substantial variation over the period.</p>
+
+<p>The remainder of hedge funds' long Treasury activity is distributed among unencumbered cash holdings ($245 billion, 10 percent), flattener-like trades ($175 billion, 7 percent), and long-only investment uses ($70 billion, 3 percent). Unencumbered cash holdings are held for liquidity purposes and are common uses for Treasury exposures among hedge funds across investment strategies. These holdings serve as buffers for margin calls on derivatives positions, investor redemptions, temporary funding disruptions, and opportunistic deployment into trading strategies. Flattener-like trades include yield curve flatteners that bet on short term yields increasing relative to long term yields. Examples of long-only investment uses include risk-parity trades (levered, long-only positions in Treasuries to balance risk levels across asset classes), invoice spread trades (which exploit mispricings between Treasury futures and swaps, similar to swap spread arbitrage but using futures for the long Treasury leg rather than cash securities), and cross-market trades (involving long Treasury exposure and short exposure in another market).</p>
+
+<h4>Discussion and Conclusion</h4>
+
+<p>This note provides a comprehensive decomposition of hedge funds' Treasury exposures, revealing how their $2.4 trillion in long Treasury positions are distributed across diverse strategies. A key finding is that the basis trade and swap spread arbitrage together account for nearly half of long Treasury exposures. These strategies share several characteristics: high leverage enabled by low or zero repo haircuts and modest derivatives margin requirements, interconnected positions spanning Treasury cash, futures, derivatives, and repo markets, and the potential for rapid unwinds that generate direct selling pressure dealers must absorb. However, these strategies face different vulnerabilities and respond differently to shocks. The basis trade is most exposed to basis widening, futures margin increases, and repo disruptions, while swap spread arbitrage is most vulnerable to swap spread widening from supply and demand imbalances in Treasury and swaps markets, and lacks the mechanical convergence of the basis trade.</p>
+
+<p>Maturity-matched trades and curve trades present somewhat different dynamics than basis and swap spread trades. Maturity-matched trades such as on-the-run/off-the-run arbitrage are vulnerable to flight-to-quality episodes and liquidity shocks that widen arbitrage spreads. Unwinds of such trades involve simultaneously buying on-the-run and selling off-the-run securities rather than net selling of Treasury securities, creating a distinct systemic profile from the basis trade or swap spread trade. Curve trades like steepeners and flatteners are exposed to unexpected macroeconomic or policy developments but likely have lower leverage.</p>
+
+<p>Overall, hedge funds' Treasury positions are large in both absolute and relative terms, with the basis trade at $830 billion, swap spread arbitrage at $305 billion, and maturity-matched trades at $395 billion. With hedge funds holding about 8.5 percent of total outstanding Treasuries and about 90 percent of these exposures concentrated among the top 50 funds, the combination of large scale, high concentration, and elevated leverage creates the potential for systemic stress if multiple strategies face simultaneous pressure or if severe shocks affect the largest participants. The decomposition presented in this note provides a framework for ongoing monitoring of these positions and assessing their implications for Treasury market functioning and resilience.</p>
+
+<h4>References</h4>
+
+<p>Banegas, Ayelen, Phillip J. Monin, and Lubomir Petrasek (2021). "<a href="https://doi.org/10.17016/2380-7172.2979">Sizing hedge funds' Treasury market activities and holdings</a>," FEDS Notes. Washington: Board of Governors of the Federal Reserve System, October 6, 2021.</p>
+
+<p>Barth, Daniel, and R. Jay Kahn (2025), "Hedge funds and the Treasury cash-futures basis trade," <em>Journal of Monetary Economics</em>, 103823.</p>
+
+<p>Barth, Daniel, R. Jay Kahn, and Robert Mann (2023). "<a href="https://doi.org/10.17016/2380-7172.3355">Recent Developments in Hedge Funds' Treasury Futures and Repo Positions: is the Basis Trade 'Back'?</a>," FEDS Notes. Washington: Board of Governors of the Federal Reserve System, August 30, 2023.</p>
+
+<p>Glicoes, Jonathan, Benjamin Iorio, Phillip Monin, and Lubomir Petrasek (2024). "<a href="http://doi.org/10.17016/2380-7172.3458">Quantifying Treasury Cash-Futures Basis Trades</a>," FEDS Notes. Washington: Board of Governors of the Federal Reserve System, March 8, 2024.</p>
+
+<p>Kruttli, Mathias S., Phillip J. Monin, Lubomir Petrasek, and Sumudu W. Watugala (2025). "LTCM Redux? Hedge fund Treasury trading, funding fragility, and risk constraints," <em>Journal of Financial Economics</em> 169, 104017.</p>
+
+<p>Mixon, Scott, and Alexei G. Orlov (2026). "Observations on the Treasury Cash-Futures Basis Trade," <em>Journal of Fixed Income</em> 35(4): 130-143.</p>
+
+<p>Sushko, Vladyslav, and Karamfil Todorov (2025). "Sizing up hedge funds' relative value trades in US Treasuries and interest rate swaps," Box in <em>BIS Quarterly Review</em>, December 2025, pp. 57-59.</p>
+
+<h4>Appendix</h4>
+
+<p>This appendix describes the construction of fund-level proxies that decompose hedge funds' U.S. Treasury exposures into specific trades and uses. These include the Treasury cash–futures basis trade, swap spread arbitrage, maturity-matched trades, steepener-like and flattener-like trades, long-only investment uses, and unencumbered cash holdings. The decomposition proceeds sequentially: (1) estimate basis trade exposures, (2) estimate swap spread arbitrage exposures, (3) attribute Treasury holdings to liquidity buffers and long-only uses, and (4) allocate remaining exposures across curve strategies. This approach ensures that each unit of Treasury exposure is uniquely assigned while preserving consistency with the economic structure of the underlying trades.</p>
+
+<p>After each step in the decomposition, we adjust all relevant variables by removing the estimated exposures attributed in that step. Each subsequent step therefore operates on the residual exposures not yet allocated to prior categories. For notational simplicity, we do not explicitly reflect these adjustments in the equations that follow; all variables should be understood as representing residual quantities after prior allocations.</p>
+
+<p><strong>Data and Variable Construction</strong><br />
+We use fund-level data from Form PF for large ("qualifying") hedge funds.<a href="#fn10" title="footnote 10"><sup>10</sup></a><a name="f10"></a> Although Form PF is filed quarterly, qualifying hedge funds report monthly observations within each quarter for key fields used here, including asset class exposures. We therefore construct a monthly panel.</p>
+
+<p>From Form PF filings, we extract:</p>
+
+<ul>
+	<li>Long and short Treasury exposures (which combine cash securities and Treasury-linked derivatives, primarily Treasury futures)</li>
+	<li>Interest rate sensitivities of long and short Treasury exposures (reported as duration, weighted-average tenor, or 10-year bond equivalent values)</li>
+	<li>Long and short interest rate derivatives exposures</li>
+	<li>Repo cash borrowing and lending</li>
+	<li>Unencumbered cash levels</li>
+</ul>
+
+<p>We define, for fund $$i$$ in month $$t$$:</p>
+
+<ul>
+	<li>$$LT_{it}$$: long Treasury exposure (notional)</li>
+	<li>$$ST_{it}$$: short Treasury exposure (notional)</li>
+	<li>$$NR_{it}$$: net repo, defined as repo cash borrowing minus repo cash lending</li>
+	<li>$$IRD_{it}$$: net interest rate derivatives exposure (10-year bond equivalent values)</li>
+</ul>
+
+<p><em>Separating Cash and Derivatives Exposures</em><br />
+Using the methodology in Banegas et al. (2021), we decompose reported Treasury exposures into:</p>
+
+<ul>
+	<li>$$LT_{it}^{cash}, ST_{it}^{cash}$$: cash Treasury positions</li>
+	<li>$$LT_{it}^{deriv}, ST_{it}^{deriv}$$: Treasury derivatives positions</li>
+</ul>
+
+<p><em>Normalizing Interest Rate Sensitivities</em><br />
+Reported interest rate sensitivities are converted to duration using the methodology in Kruttli et al. (2025). Where needed, notional exposures are converted to 10-year bond equivalent values, and vice versa, using fund-specific duration estimates.</p>
+
+<p><strong>Treasury Cash-Futures Basis Trade</strong><br />
+<em>Identification of Likely Basis Traders</em><br />
+We restrict attention to funds reporting positive allocations to relative value fixed income relative value or global macro strategies. For each fund-month, define the matched Treasury exposure:</p>
+
+<p>$$$$ MT_{it} = \text{min}(LT_{it}, ST_{it}). $$$$</p>
+
+<p>A fund is classified as a Likely Basis Trader if, over the period from Q1 2022 to Q3 2025, the matched Treasury exposure $$MT_{it}$$ is positively and statistically significantly correlated with the fund's net repo, $$NR_{it}$$. Funds identified in either this period or in the 2018–2020 sample (following Banegas et al. (2021) and Kruttli et al. (2025)) are included in the final set. Classifications are manually reviewed for consistency.</p>
+
+<p><em>Measurement of Basis Trade Exposure</em><br />
+For funds identified as Likely Basis Traders, the basis trade exposure at the fund-month level is:</p>
+
+<p>$$$$ Basis_{it} = \text{min}(LT_{it}^{cash}, ST_{it}^{deriv}, NR_{it}). $$$$</p>
+
+<p>This construction reflects that the basis trade is structured as long cash Treasuries financed in repo and combined with short Treasury futures, and that repo haircuts and Treasury futures margin requirements are low.</p>
+
+<p><em>Considerations and Limitations</em><br />
+Our basis trade proxy leverages several strengths of the Form PF data. By combining Treasury holdings, derivatives exposures, and repo positions at the fund level, it captures the three binding constraints that define the basis trade's construction. The proxy is highly correlated in the time series with other independent measures of basis trade activity derived from different data sources.</p>
+
+<p>However, the proxy has limitations. Unlike other trades in our decomposition, identifying basis trade activity requires classifying funds as Likely Basis Traders based on time-series patterns, effectively requiring that changes in a fund's overall Treasury exposures are primarily driven by basis trading. This will not capture basis trades of minor significance within a fund's portfolio. Additionally, the proxy is sensitive to estimates of cash holdings and derivatives exposures (see Banegas et al. (2021)). For example, if funds systematically concentrate their U.S. Treasury short exposure in futures while using repo disproportionately for other sovereign bonds, estimated basis trade activity could differ from our baseline.</p>
+
+<p><strong>Swap Spread Arbitrage</strong><br />
+<em>Construction of Matched Exposures</em><br />
+We restrict attention to funds reporting positive allocations to relative value fixed income relative value or global macro strategies. A long swap spread arbitrage position consists of a repo-financed position in cash Treasuries paired with a pay-fixed position in interest rate swaps. Because interest rate derivatives are reported in 10-year bond equivalent values, we first convert Treasury exposures to the same unit using fund-specific duration estimates, constructing $$LT_{it}^{10y}$$ and $$ST_{it}^{10y}$$ for the long and short Treasury exposures expressed in 10-year bond equivalent values, respectively.<a href="#fn11" title="footnote 11"><sup>11</sup></a><a name="f11"></a> Additionally, to account for interest rate derivatives referencing both U.S. and non-U.S. rates, we scale $$IRD_{it}$$ by the share of gross Treasury exposure in total gross sovereign exposure.</p>
+
+<p>We then construct long swap spread exposure in 10-year equivalent values as:</p>
+
+<p>$$$$ SS_{it}^{10y} = \text{min}(LT_{it}^{10y}, -IRD_{it})\quad \text{when}\quad IRD_{it}&lt;0, $$$$</p>
+
+<p>Where $$IRD_{it}&lt; 0$$ corresponds to a net pay-fixed position. If $$IRD_{it}\geq 0$$, we set $$SS_{it}^{10y} = 0$$.</p>
+
+<p><em>Conversion to Notional and Final Proxy</em><br />
+We convert $$SS_{it}^{10y}$$ to notional units using fund-specific duration estimates, yielding $$SS_{it}$$. The final proxy for long swap spread arbitrage exposure is:</p>
+
+<p>$$$$ SwapSpread_{it} = \text{min}(LT_{it}^{cash}, SS_{it}, NR_{it}). $$$$</p>
+
+<p>This construction reflects the three binding components of the trade: the long cash Treasury position, the offsetting pay-fixed swap exposure, and the associated repo financing.</p>
+
+<p>We do not construct a proxy for short swap spread positions (short cash Treasury, receive-fixed swap), as our focus is on decomposing long Treasury exposures.</p>
+
+<p><strong>Other Uses of Treasury Exposure</strong><br />
+<em>Unencumbered Cash Holdings</em><br />
+We estimate Treasury securities held as liquidity as:</p>
+
+<p>$$$$ CashHoldings_{it} = \text{min}(UnencumberedCash_{it}, LT_{it}^{cash}). $$$$</p>
+
+<p><em>Long-Only Investment Positions</em><br />
+We identify funds with exclusively long Treasury positions (no short exposure). For these funds, long Treasury exposure is attributed to long-only investment uses (e.g., risk parity or invoice spread trades). We apply an analogous procedure for short-only positions, though such cases are not observed in the data.</p>
+
+<p><strong>Classification of Remaining Treasury Exposures</strong><br />
+Residual long Treasury exposures are classified into maturity-matched, steepener-like, and flattener-like trades based on the relationship between the durations of a fund's long and short Treasury positions.</p>
+
+<p>Let $$D_L$$ and $$D_S$$ be the durations of long and short Treasury positions, respectively. Rather than imposing discrete thresholds, we assign exposures to categories using linear interpolation based on the difference in durations, $$\Delta D\equiv D_L - D_S$$. This approach avoids discontinuities near classification boundaries.</p>
+
+<p>We define two threshold parameters:</p>
+
+<ul>
+	<li>$$\delta_1 &gt;0$$: inner threshold for maturity-matched trades</li>
+	<li>$$\delta_2 &gt; \delta_1$$: outer threshold for pure steepener/flattener classification</li>
+</ul>
+
+<p>The allocation is constructed as follows:</p>
+
+<ul>
+	<li>Maturity-matched trades receive full weight when $$|\Delta D|\leq\delta_1$$ and their weight decreases linearly to zero as $$|\Delta D|$$ increases from $$\delta_1$$ to $$\delta_2$$.</li>
+	<li>Steepener-like trades ($$\Delta D &lt; 0$$) receive zero weight when $$\Delta D\geq-\delta_1$$, increase linearly in weight as $$\Delta D$$ decreases from $$-\delta_1$$ to $$-\delta_2$$, and receive full weight when $$\Delta D\leq -\delta_2$$.</li>
+	<li>Flattener-like trades ($$\Delta D &gt; 0$$) are defined symmetrically: zero weight when $$\Delta D\leq\delta_1$$, increasing linearly between $$\delta_1$$ and $$\delta_2$$, and full weight when $$\Delta D\geq\delta_2$$.</li>
+</ul>
+
+<p>In the baseline specification, we set $$\delta_1=0.5$$ years and $$\delta_2=2.0$$ years. Varying these thresholds over a reasonable range yields similar allocations, indicating that the results are not sensitive to the precise choice of parameters. Weights across categories sum to one for each fund-month and are applied to remaining exposures to obtain category-level allocations.</p>
+
+<hr align="left" size="1" width="33%" />
+<div class="footnotes">
+<p><a name="fn1"></a>1. The views expressed in this note are those of the author and do not necessarily reflect the positions of the Board of Governors of the Federal Reserve System or the Federal Reserve System. <a href="#f1">Return to text</a></p>
+
+<p><a name="fn2"></a>2. Our sample includes the Form PF filings of large ("qualifying") hedge funds through September 2025. Qualifying hedge funds are large hedge funds managed by large hedge fund advisers. We focus on qualifying hedge funds because they provide detailed data that we use in our analysis. Qualifying hedge funds manage about 85 percent of the aggregate gross assets of hedge funds that file Form PF. <a href="#f2">Return to text</a></p>
+
+<p><a name="fn3"></a>3. See Financial Accounts of the United States, Z.1. table, L.210 Treasury Securities: <a href="https://www.federalreserve.gov/releases/z1/20250911/html/l210.htm">https://www.federalreserve.gov/releases/z1/20250911/html/l210.htm</a>. <a href="#f3">Return to text</a></p>
+
+<p><a name="fn4"></a>4. The set of trades and uses was determined using the available data fields and market intelligence. According to the March 2025 SCOOS special questions, for example, the most prevalent types of trades by hedge fund clients engaging in Treasury repo transactions with dealers are on-the-run/off-the-run arbitrage, yield curve or duration trades, and cash-futures basis trades. See <a href="https://www.federalreserve.gov/data/scoos/scoos-202503.htm">https://www.federalreserve.gov/data/scoos/scoos-202503.htm</a>. <a href="#f4">Return to text</a></p>
+
+<p><a name="fn5"></a>5. Our approach directly estimates exposures to the basis trade and swap spread arbitrage by identifying the binding constraints that define these specific strategies. For the remaining Treasury exposures, we use duration characteristics to allocate positions across broader categories of trades (maturity-matched, steepener-like, flattener-like) and other uses, recognizing that multiple specific strategies may fall within each category. While our methodology is consistent with reported data and market intelligence, other trading strategies could in principle generate similar data patterns. <a href="#f5">Return to text</a></p>
+
+<p><a name="fn6"></a>6. Multiple proxies for hedge fund basis trade activity exist, drawing on independent data sources including hedge fund filings, Treasury futures data, and transaction-level data (see, among others, Banegas et al. (2021), Glicoes et al. (2024), Barth and Kahn (2025), and Mixon and Orlov (2026)). While these proxies are highly corelated over time, estimated levels of basis trade activity vary significantly across methods. Details on the construction and limitations of our proxy are in the appendix. <a href="#f6">Return to text</a></p>
+
+<p><a name="fn7"></a>7. Sushko and Todorov (2025) propose an upper bound estimate for swap spread arbitrage positions using publicly available aggregate data, calculating the residual of long Treasury exposures after accounting for all short Treasury exposures. This approach assumes that all unmatched long Treasury positions (excluding those in the basis trade) are used for swap spread arbitrage, yielding an estimate of approximately $630 billion as of Q2 2025. Our approach matches Treasury-swap positions at the fund level and accounts for other uses of Treasury exposures, producing more conservative estimates of aggregate swap spread positions. <a href="#f7">Return to text</a></p>
+
+<p><a name="fn8"></a>8. The Treasury cash-futures basis trade, while another example of a maturity-matched yield curve trade, is categorized separately. Similarly, the swap spread arbitrage trade, a long-only investment use for Treasury exposure, is also classified as its own category. <a href="#f8">Return to text</a></p>
+
+<p><a name="fn9"></a>9. Yield curve steepeners are often constructed to be duration-neutral by balancing the long positions in short-duration bonds against the short positions in long-duration bonds. For instance, a long position with duration 2 paired with a short position of duration 8 requires the long position's notional value to be four times the short to neutralize overall duration risk while maintaining exposure to yield curve steepening. <a href="#f9">Return to text</a></p>
+
+<p><a name="fn10"></a>10. Form PF has been amended. The version of Form PF used in this note can be found here: <a href="https://www.sec.gov/files/formpf-legacy.pdf">https://www.sec.gov/files/formpf-legacy.pdf</a>. <a href="#f10">Return to text</a></p>
+
+<p><a name="fn11"></a>11. The conversion of interest rate derivatives exposures from 10-year bond equivalent values to notional values based on duration could introduce error in our proxy for swap spread arbitrage trade volumes. For instance, consider a fund with Treasury positions split between basis trade positions in 2-year Treasuries and swap spread arbitrage trade positions in 30-year Treasuries, with three-quarters of the positions in the basis trade. In this scenario, the fund's weighted average duration would be significantly lower than the duration of the Treasuries used in the swap spread arbitrage trade, potentially inflating the value of the swap spread arbitrage trade proxy. <a href="#f11">Return to text</a></p>
+</div>
+                    
+                    <div style="margin-top: 10px;">
+                        <strong>Please cite this note as:</strong>
+                        <p>Monin, Phillip J. (2026). "Decomposing Hedge Funds’ U.S. Treasury Exposures," FEDS Notes. Washington: Board of Governors of the Federal Reserve System, June 22, 2026, https://doi.org/10.17016/2380-7172.4082.</p>
+                    </div>
+                    
+                </div>            
+               
+                <div class="col-xs-12 col-md-4 col-sm-12">
+                      
+                    
+                </div><!--/ End Right-Rail -->
+                <div class="col-xs-12 col-md-9 footnotes feds-note" style="margin-top:10px;">
+                    <p><em><strong>Disclaimer:</strong> FEDS Notes are articles in which Board staff offer their own views and present analysis on a range of topics in economics and finance. These articles are shorter and less technically oriented than FEDS Working Papers and IFDP papers.</em></p>
+                </div>
+            </div>            
+            <!--/ End Content Area -->
+            
+            <a id="back-top" class="icon__backTop icon-backtop" href="#" title="Scroll To Top"><span class="sr-only">Back to Top</span></a>
+
+            <div class="row">
+                <div class="lastUpdate" id="lastUpdate">Last Update:
+                June 22, 2026
+                </div>
+            </div>
+        </div><!-- / #content .container -->
+                    <footer class="container footer">
+                <div class="row footer__content">
+                    <div class="col-xs-12 col-sm-4">
+                        <h6 class="footer__heading"><span class="text-uppercase">Board of Governors</span> <em>of the</em> <span class="text-uppercase">Federal Reserve System</span></h6>
+                        <ul class="list-unstyled">
+                            <li class='footer__listItem'><a class="footer__link" href="/aboutthefed.htm">About the Fed</a></li><li class='footer__listItem'><a class="footer__link" href="/newsevents.htm">News & Events</a></li><li class='footer__listItem'><a class="footer__link" href="/monetarypolicy.htm">Monetary Policy</a></li><li class='footer__listItem'><a class="footer__link" href="/supervisionreg.htm">Supervision & Regulation</a></li><li class='footer__listItem'><a class="footer__link" href="/financial-stability.htm">Financial Stability</a></li><li class='footer__listItem'><a class="footer__link" href="/paymentsystems.htm">Payment Systems</a></li><li class='footer__listItem'><a class="footer__link" href="/econres.htm">Economic Research</a></li><li class='footer__listItem'><a class="footer__link" href="/data.htm">Data</a></li><li class='footer__listItem'><a class="footer__link" href="/consumerscommunities.htm">Consumers & Communities</a></li><li class='footer__listItem'><a class="footer__link" href="/aboutthefed/aroundtheboard/stayconnected-qr-code-2.htm">Connect with the Board</a></li> 
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h6 class="text-uppercase footer__heading">Tools and Information</h6>
+                        <ul class="list-unstyled">
+                             <li class='footer__listItem'><a href="/aboutthefed/contact-us-topics.htm" class="footer__link">Contact</a></li>
+                            <li class='footer__listItem'><a href="/publications.htm" class="footer__link">Publications</a></li>
+                            <li class='footer__listItem'><a href="/foia/about_foia.htm" class="footer__link">Freedom of Information (FOIA)</a></li>
+                            <li class='footer__listItem'><a href="https://oig.federalreserve.gov/" class="footer__link">Office of Inspector General</a></li>
+                            <li class='footer__listItem'><a href="/publications/annual-report.htm" class="footer__link">Budget &amp; Performance</a> | <a href="/regreform/audit.htm" class="footer__link">Audit</a></li>
+                            <li class='footer__listItem'><a href="/eeo.htm" class="footer__link">No FEAR Act</a></li>
+                            <li class='footer__listItem'><a href="/espanol.htm" class="footer__link">Espa&ntilde;ol</a></li>
+                            <li class='footer__listItem'><a href="/website-linking-policies.htm" class="footer__link">Website Policies</a>  | <a href="/privacy.htm" class="footer__link">Privacy Program</a></li>
+                            <li class='footer__listItem'><a href="/accessibility.htm" class="footer__link">Accessibility</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer__social">
+                            <h6 class="text-uppercase footer__heading footer__heading--social">Stay Connected</h6>
+                            
+            <a
+              class="icon__md icon footer__btn icon-facebook-color"
+              href="https://www.facebook.com/federalreserve"
+              ><span class="sr-only"
+                >Federal Reserve Facebook Page</span
+              ></a
+            >
+            <a
+              class="icon__md icon footer__btn icon-instagram"
+              href="https://www.instagram.com/federalreserveboard/"
+              ><span class="sr-only"
+                >Federal Reserve Instagram Page</span
+              ></a
+            >
+
+            <a
+              class="icon__md icon footer__btn icon-youtube-color"
+              href="https://www.youtube.com/federalreserve"
+              ><span class="sr-only"
+                >Federal Reserve YouTube Page</span
+              ></a
+            >
+
+            <a
+              class="icon__md icon footer__btn icon-flickr-color"
+              href="https://www.flickr.com/photos/federalreserve/"
+              ><span class="sr-only"
+                >Federal Reserve Flickr Page</span
+              ></a
+            >
+
+            <a
+              class="icon__md icon footer__btn icon-linkedin-color"
+              href="https://www.linkedin.com/company/federal-reserve-board"
+              ><span class="sr-only">Federal Reserve LinkedIn Page</span></a
+            >
+
+            <a
+              class="icon__md icon footer__btn icon-threads"
+              href="https://www.threads.net/@federalreserveboard"
+              ><span class="sr-only">Federal Reserve Threads Page</span></a
+            >
+            <a
+              class="icon__md icon footer__btn icon-social-x"
+              href="https://x.com/federalreserve"
+              ><span class="sr-only"
+                >Link to Federal Reserve X Page</span
+              ></a
+            >
+            <a
+              class="icon__md icon footer__btn icon-bluesky"
+              href="https://bsky.app/profile/federalreserve.gov"
+              ><span class="sr-only"
+                >Link to Federal Reserve Bluesky Page</span
+              ></a
+            >
+            <a
+              class="icon__md icon footer__btn icon-rss-color"
+              href="/feeds/feeds.htm"
+              ><span class="sr-only">Subscribe to RSS</span></a
+            >
+
+            <a
+              class="icon__md icon footer__btn icon-email-color"
+              href="/subscribe.htm"
+              ><span class="sr-only">Subscribe to Email</span></a
+            >
+ 
+                        </div>
+                        <a href="https://www.usa.gov/" target="_blank" title="Link to USA.gov">
+                            <img class='footer__image' src="/images/USAGov%402x.png" alt="Link to USA.gov" />
+                        </a>
+                        <a href="/open/open.htm" target="_blank" title="Link to Open.gov">
+                            <img class='footer__image' src="/images/OpenGov%402x.png" alt="Link to Open.gov" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 footer__footer">
+                        <p class="text-uppercase footer__text footer__text--left">Board of Governors <em class="text-lowercase">of the</em> Federal Reserve System</p>
+                        <p class="footer__text footer__text--right">20th Street and Constitution Avenue N.W., Washington, DC 20551</p>
+                    </div>
+                </div>
+            </footer>
+            
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/js/jquery.min.js" type="text/javascript"></script>
+            <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="/js/scripts.js" type="text/javascript"></script>
+            <script src="/js/modal.js" type="text/javascript"></script>
+            <script src="/js/sticky-tables.js" type="text/javascript"></script>
+            <script type="text/javascript" src="/js/slides/ekko-lightbox.min.js"></script>
+            <script src="/js/t4-nav-controller.js" type="text/javascript"></script>
+                     
+            <script type="text/javascript">
+                $(document).ready(function($) {
+                    // delegate calls to data-toggle="lightbox"
+                    $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+                        event.preventDefault();
+                        $(this).ekkoLightbox();
+                    });
+                    $('a[data-click="false"]').click(function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $(target).click();
+                    });
+                });
+            </script>          
+
+            
+        <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$$$','$$$']  ],
+      displayMath: [ ['$$$$','$$$$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+        <!-- Published format -->
+        <script src="/resources/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+        <!--<ul><li>/econres/notes/feds-notes/decomposing-hedge-funds-u-s-treasury-exposures-accessible-20260622.htm</li></ul>-->
+    <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2fc3d15aa94d390',t:'MTc4NzUxMDM1Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

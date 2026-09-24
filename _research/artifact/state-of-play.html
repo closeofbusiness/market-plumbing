@@ -1,0 +1,688 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Holds the Market Up</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ink:#111A24;
+    --paper:#EDF0F3;
+    --surface:#FFFFFF;
+    --rule:#C7D0D8;
+    --rule-soft:#DDE3E9;
+    --muted:#55636F;
+    --ok:#0C6B5A;
+    --ok-wash:#E2EFEB;
+    --dead:#A33F26;
+    --dead-wash:#F6E7E2;
+    --open:#3B5A94;
+    --open-wash:#E4EAF3;
+    --shadow:0 1px 2px rgba(17,26,36,.06),0 8px 24px -12px rgba(17,26,36,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#E4E9EE;
+      --paper:#10151B;
+      --surface:#171E26;
+      --rule:#33414E;
+      --rule-soft:#242E38;
+      --muted:#94A3AF;
+      --ok:#4FC3A6;
+      --ok-wash:#14302B;
+      --dead:#E08A6E;
+      --dead-wash:#36211A;
+      --open:#8FAFE0;
+      --open-wash:#1A2434;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E4E9EE;
+    --paper:#10151B;
+    --surface:#171E26;
+    --rule:#33414E;
+    --rule-soft:#242E38;
+    --muted:#94A3AF;
+    --ok:#4FC3A6;
+    --ok-wash:#14302B;
+    --dead:#E08A6E;
+    --dead-wash:#36211A;
+    --open:#8FAFE0;
+    --open-wash:#1A2434;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 96px}
+  .col{max-width:660px}
+
+  /* ---- masthead ---- */
+  header.mast{padding:56px 0 28px;border-bottom:2px solid var(--ink)}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 18px;
+  }
+  h1{
+    font-family:Spectral,Georgia,serif;font-weight:600;
+    font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:1.05;
+    letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance;
+  }
+  .standfirst{
+    font-family:Spectral,Georgia,serif;font-size:1.16rem;line-height:1.55;
+    color:var(--muted);margin:0;max-width:62ch;
+  }
+  .meta{
+    display:flex;flex-wrap:wrap;gap:10px 26px;margin:26px 0 0;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+  }
+  .meta b{color:var(--ink);font-weight:500}
+
+  /* ---- sections ---- */
+  section{padding:46px 0 0}
+  h2{
+    font-family:Spectral,Georgia,serif;font-weight:600;
+    font-size:clamp(1.45rem,3vw,1.95rem);line-height:1.2;
+    margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance;
+  }
+  .sec-num{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+    color:var(--muted);text-transform:uppercase;display:block;margin-bottom:12px;
+  }
+  .lede{font-size:1.03rem;color:var(--muted);margin:0 0 22px;max-width:64ch}
+  p{margin:0 0 16px;max-width:66ch}
+  strong{font-weight:600}
+  .num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:.94em}
+
+  /* ---- figure ---- */
+  figure{margin:34px 0 38px;background:var(--surface);border:1px solid var(--rule-soft);
+    border-radius:3px;padding:26px 24px 18px;box-shadow:var(--shadow);overflow-x:auto}
+  figure svg{display:block;width:100%;height:auto;min-width:620px;color:var(--ink)}
+  figcaption{
+    margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-soft);
+    font-size:13.5px;line-height:1.5;color:var(--muted);max-width:72ch;
+  }
+  figcaption b{color:var(--ink);font-weight:600}
+
+  /* ---- callout ---- */
+  .call{
+    border-left:3px solid var(--ink);padding:2px 0 2px 20px;margin:26px 0;max-width:66ch;
+  }
+  .call.dead{border-color:var(--dead)}
+  .call.ok{border-color:var(--ok)}
+  .call .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;
+  }
+  .call.dead .tag{color:var(--dead)}
+  .call.ok .tag{color:var(--ok)}
+  .call p:last-child{margin-bottom:0}
+
+  /* ---- ledger table ---- */
+  .tablewrap{overflow-x:auto;margin:26px 0 30px;border:1px solid var(--rule-soft);border-radius:3px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+  th{
+    text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;
+    font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    padding:14px 16px;border-bottom:1px solid var(--rule);vertical-align:bottom;
+  }
+  td{padding:13px 16px;border-bottom:1px solid var(--rule-soft);vertical-align:top;line-height:1.45}
+  tr:last-child td{border-bottom:0}
+  td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;
+  }
+  .pill.ok{background:var(--ok-wash);color:var(--ok)}
+  .pill.dead{background:var(--dead-wash);color:var(--dead)}
+  .pill.open{background:var(--open-wash);color:var(--open)}
+
+  /* ---- queue ---- */
+  ol.queue{list-style:none;counter-reset:q;padding:0;margin:26px 0 0}
+  ol.queue > li{
+    counter-increment:q;position:relative;padding:18px 0 18px 52px;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  ol.queue > li:last-child{border-bottom:0}
+  ol.queue > li::before{
+    content:counter(q);position:absolute;left:0;top:18px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;
+    width:30px;height:30px;line-height:30px;text-align:center;
+    border:1px solid var(--rule);border-radius:50%;color:var(--muted);
+  }
+  ol.queue h3{
+    font-family:"IBM Plex Sans",sans-serif;font-size:1rem;font-weight:600;
+    margin:0 0 5px;display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;
+  }
+  ol.queue p{margin:0;font-size:14.5px;color:var(--muted);max-width:68ch}
+  .dep{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+    display:block;margin-top:7px;
+  }
+  .dep b{color:var(--ink);font-weight:500}
+
+  ul.plain{margin:0 0 18px;padding-left:20px;max-width:66ch}
+  ul.plain li{margin-bottom:9px;padding-left:2px}
+  ul.plain li::marker{color:var(--muted)}
+
+  footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);max-width:72ch;line-height:1.7}
+</style>
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Third Derivative Research · the answer so far</p>
+  <h1>What holds the market up</h1>
+  <p class="standfirst">Why US equity prices rose and where the money came from — assembled with bands rather than false precision, and with the join between the two stated as a measured limit rather than a gap.</p>
+  <div class="meta">
+    <span><b>23 September 2026</b></span>
+    <span>119 registered corrections</span>
+    <span>every channel the goal names, scored</span>
+    <span>authority: <b>2026-09-17-ANSWER</b></span>
+  </div>
+</header>
+
+<section class="col">
+  <span class="sec-num">01 — the answer</span>
+  <h2>Where the argument stands</h2>
+  <p><strong>Prices rose mostly because earnings rose</strong> — and that earnings growth is mostly real profit rather than buybacks shrinking the share count. The multiple held up because <em>the earnings yield barely moved while real yields rose</em> about a third of a point. Calling that a “compressing risk premium” adds less than it seems: the premium is defined as the earnings yield minus the real yield, so most of its fall is the same rate rise, restated (C-102). It arrived as drift rather than on news, and partly reversed in the first half of 2026.</p>
+  <p><strong>On the money side, the headline finding is a measurement result, not an economic one.</strong> The line everyone reads as "equity issuance" in the Federal Reserve's accounts is mostly <em>ETF share creation</em>. Strip that wrapper out and US operating companies <strong>retired</strong> equity over 2024–26 — so the money arriving met a <em>shrinking</em> float of company stock.</p>
+  <p><strong>Across the channels the goal names, the verdict is mostly negative, and that is a result.</strong> The collateral channel did not carry this repricing, and shadow money did not in 2024 — though over the whole window it stays in the picture as a ceiling (C-118). The AI build-out is funded mostly from operating cash flow, with the real financing innovation off balance sheet in lease commitments; the AI debt that does exist is held mainly by long money, and money-market funds hold almost none of it. The IPO boom is two-thirds a single deal.</p>
+  <p><strong>What we cannot say is how much of the price move the money caused.</strong> Four designs to measure that have closed, and each closed for a different, stated reason (§05).</p>
+  <div class="call ok">
+    <span class="tag">What this page is, and what it is not</span>
+    <p>A dated rendering of <span class="num">2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md</span>, which is the authority — where this page and that document disagree, the document wins. This page sits outside the project's automated checks, and that is how an earlier version kept publishing a retracted claim for four days. Its source is run through the corrections ban list before every republish — which catches dead claims in the source, not claims killed after it went up. This version carries twenty-six corrections the 19 September one did not, including three dead claims that one was still publishing.</p>
+  </div>
+  <div class="call">
+    <span class="tag">How to read every number here — the principal’s ruling, 22 September</span>
+    <p><em>“Nothing here is certain if not clearly mathematically proven, thus everything needs to be looked at as potential hypothesis that needs testing.”</em> So every claim carries one of four grades, and the default is the weakest. <strong>Identity</strong>: true by construction — and therefore not evidence; a sum that cannot fail proves nothing. <strong>Measured</strong>: observed on a stated universe with a stated denominator. <strong>Bounded</strong>: a ceiling or a floor, never quoted as an estimate. <strong>Hypothesis</strong>: untested, or tested and survived — survival is not proof. The ledger in §07 carries these grades.</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">02 — what drove prices</span>
+    <h2>Earnings did most of the work, and most of it is real profit</h2>
+    <p class="lede">Two decompositions, each reproduced from source data: where the value sits, and what the earnings part is made of.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 860 392" role="img" aria-label="An accounting decomposition of the 2024 to 2026 rise in the value of US corporate equity held. The forty-six point nine trillion dollar increase splits into three point two trillion of net new equity, 6.9 percent, which is mostly ETF share creation, and forty-three point seven trillion of revaluation, 93.1 percent. Revaluation splits into earnings growth and a net multiple change of plus 0.87 price-earnings points, which splits again, by construction, into a real-rate leg of minus 2.14 points and a premium leg of plus 3.01 points — most of the premium leg being the same rate rise, restated. A dashed arrow from net new equity to the multiple asks whether buying moves the multiple, marked closed on free data.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="currentColor"/></marker>
+        <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="var(--ok)"/></marker>
+        <marker id="arq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="var(--open)"/></marker>
+      </defs>
+      <text x="14" y="14" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.4" fill="currentColor" opacity=".6">ACCOUNTING IDENTITY — 2024:Q1 to 2026:Q2. IT SAYS WHERE THE VALUE SITS, NOT WHAT CAUSED IT.</text>
+      <rect x="14" y="132" width="152" height="66" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="90" y="156" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Change in equity value</text>
+      <text x="90" y="176" text-anchor="middle" font-size="13" font-family="IBM Plex Mono, monospace" fill="currentColor">+$46.9trn</text>
+      <polyline points="166,165 192,165 192,92 216,92" fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar)"/>
+      <polyline points="166,165 192,165 192,256 216,256" fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar)"/>
+      <rect x="218" y="62" width="150" height="62" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="293" y="84" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Revaluation — 93.1%</text>
+      <text x="293" y="101" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="currentColor">+$43.7trn</text>
+      <text x="293" y="116" text-anchor="middle" font-size="10" fill="currentColor" opacity=".65">existing shares worth more</text>
+      <rect x="218" y="226" width="150" height="62" rx="2" fill="none" stroke="var(--open)" stroke-width="1.6"/>
+      <text x="293" y="248" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--open)">Net new equity — 6.9%</text>
+      <text x="293" y="265" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--open)">+$3.2trn</text>
+      <text x="293" y="280" text-anchor="middle" font-size="10" fill="var(--open)" opacity=".85">mostly ETF share creation</text>
+      <polyline points="368,92 392,92 392,44 416,44" fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar)"/>
+      <polyline points="368,92 392,92 392,140 416,140" fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar)"/>
+      <rect x="418" y="16" width="170" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="503" y="40" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Earnings growth</text>
+      <text x="503" y="57" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".7">71–82% of gain since 2015</text>
+      <rect x="418" y="112" width="170" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="503" y="136" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Multiple change</text>
+      <text x="503" y="153" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".7">+0.87 P/E pts, net</text>
+      <polyline points="588,140 612,140 612,84 636,84" fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#ar)"/>
+      <polyline points="588,140 612,140 612,196 636,196" fill="none" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arg)"/>
+      <rect x="638" y="56" width="190" height="56" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text x="733" y="80" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Real-rate leg</text>
+      <text x="733" y="97" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="currentColor">−2.14 P/E pts</text>
+      <rect x="638" y="168" width="190" height="56" rx="2" fill="var(--ok-wash)" stroke="var(--ok)" stroke-width="1.8"/>
+      <text x="733" y="192" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">Premium leg</text>
+      <text x="733" y="209" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ok)">+3.01 P/E pts</text>
+      <path d="M 368,250 C 452,250 448,212 486,176" fill="none" stroke="var(--open)" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arq)"/>
+      <text x="396" y="228" font-size="11.5" font-weight="600" fill="var(--open)">does buying move the multiple?</text>
+      <text x="396" y="244" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--open)">CLOSED ON FREE DATA — see §05</text>
+      <line x1="14" y1="316" x2="846" y2="316" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <text x="14" y="338" font-size="11.5" font-weight="600" fill="currentColor">The 93/7 split is not a verdict on whether money matters.</text>
+      <text x="14" y="356" font-size="11" fill="currentColor" opacity=".75">In an inelastic market a small net flow can move prices a lot — so 6.9% neither shows that flows are unimportant nor measures how important they are.</text>
+      <text x="14" y="376" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".55">Z.1 2026Q2 ($123.7trn HELD, not listed cap) · an identity · 71% of the premium leg is the rate rise (C-102)</text>
+    </svg>
+    <figcaption><b>Where the value sits — and only that.</b> 6.9% is shares that did not exist before, and most of those are ETF shares; 93.1% is existing shares repricing. The identity is silent on <em>why</em>. Reading "flows are only 7%" as "flows do not matter" is one error; multiplying the 7% by a borrowed multiplier to explain the 93% is the opposite one — both divide by an equilibrium quantity rather than the demand shift a multiplier is defined on (C-080). The rate/premium split is Shapley arithmetic that sums by construction — an identity — and an outside attack that reproduced it exactly re-ran arithmetic that cannot fail. Its two legs are near-identical rescalings of one quantity, and 71% of the “premium” leg is the rate rise restated (C-102).</figcaption>
+  </figure>
+
+  <figure>
+    <svg viewBox="0 0 860 262" role="img" aria-label="Shares of the S&amp;P 500 price gain since 2015, shown as ranges. Profit plus index composition is at least 69 to 75 percent. Per-share accretion from shrinking share counts, which is buybacks, is at most 7 to 13 percent — a ceiling, because survivorship pushes every weighting up. Multiple expansion is about 18 percent. The two hatched bands are one uncertainty seen from both sides, because profit and accretion together always make 82.3 percent.">
+      <defs>
+        <pattern id="hOk" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--ok-wash)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--ok)" stroke-width="2.2"/></pattern>
+        <pattern id="hOpen" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--open-wash)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--open)" stroke-width="2.2"/></pattern>
+      </defs>
+      <text x="14" y="16" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.4" fill="currentColor" opacity=".6">SHARE OF THE S&amp;P 500 PRICE GAIN SINCE 2015 — Δlog, SHILLER PRICE ×3.63 · BUYBACKS ARE A CEILING</text>
+      <line x1="250" y1="40" x2="250" y2="192" stroke="currentColor" stroke-width="1" opacity=".35"/>
+      <line x1="395" y1="40" x2="395" y2="192" stroke="currentColor" stroke-width="1" opacity=".12"/>
+      <line x1="540" y1="40" x2="540" y2="192" stroke="currentColor" stroke-width="1" opacity=".12"/>
+      <line x1="685" y1="40" x2="685" y2="192" stroke="currentColor" stroke-width="1" opacity=".12"/>
+      <line x1="830" y1="40" x2="830" y2="192" stroke="currentColor" stroke-width="1" opacity=".12"/>
+      <text x="236" y="75" text-anchor="end" font-size="12.5" font-weight="600" fill="currentColor">Profit + index composition</text>
+      <rect x="250" y="56" width="400" height="28" fill="var(--ok)" opacity=".85"/>
+      <rect x="650" y="56" width="35" height="28" fill="url(#hOk)" stroke="var(--ok)" stroke-width="1"/>
+      <text x="695" y="75" font-size="13" font-family="IBM Plex Mono, monospace" font-weight="500" fill="var(--ok)">≥ 69–75%</text>
+      <text x="236" y="123" text-anchor="end" font-size="12.5" font-weight="600" fill="currentColor">Buybacks — fewer shares</text>
+      <rect x="250" y="104" width="41" height="28" fill="var(--open)" opacity=".85"/>
+      <rect x="291" y="104" width="34" height="28" fill="url(#hOpen)" stroke="var(--open)" stroke-width="1"/>
+      <text x="335" y="123" font-size="13" font-family="IBM Plex Mono, monospace" font-weight="500" fill="var(--open)">≤ 7–13%</text>
+      <text x="236" y="171" text-anchor="end" font-size="12.5" font-weight="600" fill="currentColor">Multiple expansion</text>
+      <rect x="250" y="152" width="103" height="28" fill="currentColor" opacity=".45"/>
+      <text x="363" y="171" font-size="13" font-family="IBM Plex Mono, monospace" font-weight="500" fill="currentColor">~18%</text>
+      <text x="250" y="208" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">0</text>
+      <text x="395" y="208" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">25%</text>
+      <text x="540" y="208" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">50%</text>
+      <text x="685" y="208" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">75%</text>
+      <text x="830" y="208" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">100%</text>
+      <text x="14" y="234" font-size="11" fill="currentColor" opacity=".8">Hatched = the band. The two hatched zones are one uncertainty seen from both sides: profit and buybacks always sum to 82.3%.</text>
+      <text x="14" y="252" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".55">Accretion 7.1% (equal-wt) → 13.4% (2015-mcap); survivorship pushes all up, so a ceiling. Profit is a residual. C-101.</text>
+    </svg>
+    <figcaption><b>Part of the price side's "earnings" is the money side's buybacks — at most roughly a tenth to a sixth of it — but most of it is real profit.</b> The split uses company-by-company diluted share counts from SEC filings, not the Fed's aggregate, which nets public buybacks against private issuance and would falsely show almost none. The method was checked by re-deriving Apple independently: both endpoints match exactly. Read it as a ceiling, not a range: the four weightings are method choices, not a confidence interval, and survivorship pushes every one of them up, because today's index members are, by construction, the firms that bought back (C-101).</figcaption>
+  </figure>
+
+  <div class="col">
+    <div class="call">
+      <span class="tag">Corroborated in direction, not independently — and partly reversed</span>
+      <p>Our premium measure has no growth term, so we checked it against one that does: Damodaran's forward-looking, growth-adjusted equity risk premium fell <span class="num">4.60% → 4.20%</span> over the identical months. Ours fell 49 basis points; his fell 40; a survey measure fell 19. <strong>They agree for a shared structural reason rather than independently</strong>: in all three a bond leg rose faster than the equity leg (+34bp, +57bp, +35bp), and in the survey, equity expectations actually rose (C-102). The measure then gave back about <span class="num">17bp</span> in the first half of 2026 as earnings caught up — that part is measured.</p>
+    </div>
+    <p><strong>What did not resolve:</strong> whether the compression was cheaper risk or better growth expectations. A survey measure seemed to settle it, until an outside review showed the survey premium fell on its <em>bond</em> leg while equity expectations rose. That split is withdrawn (C-082). Netting growth out with Damodaran’s model leaves 36–60% of our 49bp unexplained by growth, depending on which of two defensible rate bases is used (C-104) — a range, not a split.</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">03 — the supply side</span>
+    <h2>What looked like a supply boom was a wrapper</h2>
+    <p class="lede">The quantity of equity is not fixed — but what grew was the fund layer on top of company stock, not company stock itself.</p>
+    <div class="call dead">
+      <span class="tag">The correction that reframes the money question — C-081 / C-083</span>
+      <p>The Federal Reserve's "corporate equities" instrument <strong>counts ETF shares as equity issuance</strong> — a wrapper layer above company stock, some of it backed by <em>bonds</em>. Classified properly, 2024:Q1–2026:Q2 reads: ETF share creation <span class="num">+$3,603.8bn</span> and <strong>operating companies (non-financial corporates) <span class="num">−$540.7bn</span></strong>. The ETF figure is corroborated independently: the Investment Company Institute’s own census matches it to under $0.1bn in both years. “Issuance net of the wrapper”, −$360.7bn, is a derived blend that also nets in foreign issuers, so it understates the operating-company retirement by half (C-107); and the Fed’s issuer lines summing to the total is how its table is built, not a check (C-106). The bars below are real, but they measure the growth of the fund layer.</p>
+    </div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 860 356" role="img" aria-label="Net new equity per year in billions of dollars, against ETF net purchases and non-financial corporate net flows. Net new equity, mostly ETF share creation, was 33.5 billion in 2023, 905 in 2024, 1164 in 2025 and 1174 in the first half of 2026. ETF net purchases were 400, 840, 958 and 662. Non-financial corporations retired 603, 397 and 348 billion on net in 2023 to 2025, mostly through cash acquisitions, then turned to net issuing 205 billion in the first half of 2026.">
+      <text x="14" y="14" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.4" fill="currentColor" opacity=".6">$bn, Z.1 F51.1.t NET FLOWS — THE FUND LAYER vs ETF ABSORPTION</text>
+      <line x1="58" y1="188" x2="836" y2="188" stroke="currentColor" stroke-width="1.2"/>
+      <text x="50" y="192" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">0</text>
+      <line x1="58" y1="61" x2="836" y2="61" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="50" y="65" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">1000</text>
+      <line x1="58" y1="252" x2="836" y2="252" stroke="currentColor" stroke-width="1" opacity=".18"/>
+      <text x="50" y="256" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">−500</text>
+      <rect x="92" y="184" width="40" height="4" fill="var(--open)"/>
+      <rect x="136" y="137" width="40" height="51" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <rect x="180" y="188" width="40" height="76" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.2"/>
+      <text x="156" y="288" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">2023</text>
+      <text x="112" y="178" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--open)">34</text>
+      <rect x="272" y="74" width="40" height="114" fill="var(--open)"/>
+      <rect x="316" y="82" width="40" height="106" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <rect x="360" y="188" width="40" height="50" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.2"/>
+      <text x="336" y="288" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">2024</text>
+      <text x="292" y="67" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--open)">905</text>
+      <rect x="452" y="41" width="40" height="147" fill="var(--open)"/>
+      <rect x="496" y="67" width="40" height="121" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <rect x="540" y="188" width="40" height="44" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.2"/>
+      <text x="516" y="288" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">2025</text>
+      <text x="472" y="34" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--open)">1164</text>
+      <rect x="632" y="40" width="40" height="148" fill="var(--open)"/>
+      <rect x="676" y="104" width="40" height="84" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <rect x="720" y="162" width="40" height="26" fill="var(--ok-wash)" stroke="var(--ok)" stroke-width="1.4"/>
+      <text x="696" y="288" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">2026 H1</text>
+      <text x="652" y="33" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--open)">1174</text>
+      <text x="740" y="155" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ok)">+205</text>
+      <rect x="92" y="306" width="13" height="11" fill="var(--open)"/>
+      <text x="112" y="316" font-size="11" fill="currentColor">Net new equity — mostly ETF shares</text>
+      <rect x="330" y="306" width="13" height="11" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <text x="350" y="316" font-size="11" fill="currentColor">Bought by ETFs</text>
+      <rect x="486" y="306" width="13" height="11" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.2"/>
+      <text x="506" y="316" font-size="11" fill="currentColor">NFC net retirement (below 0) → net issuing</text>
+      <text x="14" y="344" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".55">2026 H1 = Q1 + Q2. Ratios against the 2023 bar are unstable because its denominator is near zero — read the levels.</text>
+    </svg>
+    <figcaption><b>Read the blue bars as the fund layer, not company equity.</b> Non-financial corporates retired $350–600bn a year on net through 2025 — and, as the next note shows, that retirement came mostly through cash acquisitions rather than buybacks. In the first half of 2026 they turned to net issuing, and the record gross quarter of 2026:Q1 was only 10.6% public offerings; the rest was venture, private equity and private placements, which never become listed float.</figcaption>
+  </figure>
+
+  <div class="col">
+    <div class="call">
+      <span class="tag">"Retired" does not mean "bought back"</span>
+      <p>Net retirement is predominantly <strong>M&amp;A</strong> — companies disappearing into cash acquisitions. On the Fed's supplementary accounts for 2024:Q1–2026:Q1, M&amp;A retirement was <span class="num">$858bn</span> against net retirement of <span class="num">$679bn</span>: M&amp;A more than accounts for all of it.</p>
+      <p>This page used to support that with a decade total — buybacks $6.40trn against issuance $6.62trn, “fully offset”. <strong>That comparison is withdrawn (C-108):</strong> the Fed’s own methodology counts buybacks by <em>public</em> firms only, while its issuance series blends public and private — and only 18% of that issuance was identifiable public offerings. Against those, buybacks were 5.3 times larger. The near-equality came from netting in <em>private</em> placements that never touch a listed share count — which is also why the buyback test in §02 used company-level filings instead.</p>
+    </div>
+    <p>Still unreconciled: two Fed series for non-financial net issuance disagree — <span class="num">+$25.2bn</span> against <span class="num">+$51.3bn</span> for 2026:Q1 — and must not be mixed in one table.</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">04 — every channel the goal names</span>
+    <h2>Where the money came from, channel by channel</h2>
+    <p class="lede">The goal asks about every channel by name. Most verdicts are negative — and a negative with a reason is the useful kind.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th style="width:24%">Channel</th><th style="width:15%">Verdict</th><th>Over 2024–26</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Passive bid / ETF creation</strong></td><td><span class="pill ok">Dominant</span></td><td>The wrapper <em>is</em> the issuance (§03). ETFs bought about <span class="num">$2.46trn</span> while mutual funds sold about <span class="num">$2.01trn</span> — an 82% offset, consistent with rotation. Whether it was the same money switching wrapper is not measurable on free data (C-111).</td></tr>
+        <tr><td><strong>AI build-out funding</strong></td><td><span class="pill ok">Mostly self-funded</span></td><td>Five of six hyperscalers generate more operating cash than their capex; only Oracle cannot, by about <span class="num">$35bn</span>. The financing that matters is <strong>off balance sheet</strong>: leases signed but not yet commenced sum to <span class="num">$1,122.9bn</span>, about 4.9× the <span class="num">$228.3bn</span> of guarantees contracted (this row said 13×, against live guarantees only — C-116). The AI debt that does exist is held mainly by long money; money-market funds hold about <span class="num">$4bn</span> of it. Large-bank lending to AI-adjacent industries is <span class="num">$150bn</span> outstanding, but that category already held ~$250bn of commitments in 2015 (C-115).</td></tr>
+        <tr><td><strong>IPO boom</strong></td><td><span class="pill open">Measured, buyers unknown</span></td><td>About <span class="num">$112bn</span> of new company money in 2026 to date — <strong>two-thirds of it one deal</strong> (SpaceX, <span class="num">$75bn</span>). Who was allocated the shares is not recoverable on free data; named cornerstones appear in 3 of 10 deals.</td></tr>
+        <tr><td><strong>Direct money creation</strong></td><td><span class="pill open">Weak, not a ceiling</span></td><td>A small positive association with equity buying. The deposit <em>stock</em> is 6.3× the purchases, and ETF creation is often in-kind, so deposits bound nothing (C-089).</td></tr>
+        <tr><td><strong>Shadow banking / shadow money</strong></td><td><span class="pill open">Not in 2024; a ceiling since</span></td><td><strong>In 2024, a handoff, not fresh money:</strong> the increase in wholesale repo came out of the Fed's reverse-repo facility (C-085). Over the whole window it is not ruled out — raw growth is the same order of magnitude as the purchases, and even net of the handoff about a quarter of them (C-118). No share of purchases can be attributed to nonbank money without manufacturing it.</td></tr>
+        <tr><td><strong>The collateral channel</strong></td><td><span class="pill dead">Not the source</span></td><td>Collateral re-use intensity did not rise. The dated step in the large banks' collateral stock came in H1 2026 — after most of the price rise.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <p><strong>Read together, this is a result about the original hypothesis, not a gap in it.</strong> The money that bought equities was mostly already inside the system — the deposit stock, and offsetting flows between fund types — rather than newly created through shadow or collateral channels (shadow money stays in the picture as a ceiling, C-118), and the largest capex programme in the market was funded mainly from profits and leases. That does not make those channels unimportant in general. It says they are not what carried this repricing. Whether the lease stack is the next source of fragility is a different question, and it is on the calendar for 30 September.</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">05 — the join</span>
+    <h2>The bridge is closed, and each leg closed for a different reason</h2>
+    <p class="lede">Both halves rest on published data — though not every number on them is a measurement (§07 grades them). The join between them — how much a dollar of buying moves a price — is not recoverable on free data. We know exactly why, four times over.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 860 470" role="img" aria-label="Two sides built from published data with a severed join, and four attempts to measure the join. The flow side shows net buyers by sector, operating-company net retirement of 540.7 billion dollars, and every goal channel scored. The price side shows earnings at 71 to 82 percent, buybacks inside earnings at most 7 to 13 percent, and a premium compression of about 49 basis points, most of which is the real-rate rise restated. Between them the multiplier M has no central value. Below, four routes: a sovereign-mandate instrument closed on data with a weak first stage on nine observations; a Russell index cutoff closed on data with a first stage F of about 2.6; dividend payment days closed on arithmetic, needing about 386 years of data at the central multiplier and 16 at the top of the published range; and a mega-firm passive test closed on resolution, able to see only 0.48 of the effect it hunted, with parity around 2048.">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="currentColor"/></marker>
+      </defs>
+      <text x="24" y="30" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.4" fill="currentColor" opacity=".65">FLOW SIDE</text>
+      <rect x="14" y="40" width="270" height="164" rx="3" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <rect x="34" y="54" width="230" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <text x="149" y="71" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Net buyers, by sector</text>
+      <text x="149" y="86" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">Z.1 identity — cannot fail</text>
+      <rect x="34" y="102" width="230" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <text x="149" y="119" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Operating companies (NFC)</text>
+      <text x="149" y="134" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">−$540.7bn, 2024–26</text>
+      <rect x="34" y="150" width="230" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <text x="149" y="167" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Every goal channel scored</text>
+      <text x="149" y="182" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">§04</text>
+      <text x="586" y="30" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.4" fill="currentColor" opacity=".65">PRICE SIDE</text>
+      <rect x="576" y="40" width="270" height="164" rx="3" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <rect x="596" y="54" width="230" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <text x="711" y="71" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Earnings vs multiple</text>
+      <text x="711" y="86" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">71–82% is earnings</text>
+      <rect x="596" y="102" width="230" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+      <text x="711" y="119" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Buybacks inside earnings</text>
+      <text x="711" y="134" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">≤ 7–13% of the gain</text>
+      <rect x="596" y="150" width="230" height="40" rx="2" fill="var(--ok-wash)" stroke="var(--ok)" stroke-width="1.6"/>
+      <text x="711" y="167" text-anchor="middle" font-size="12" font-weight="600" fill="var(--ok)">Premium compression</text>
+      <text x="711" y="182" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">~49bp, mostly the rate rise</text>
+      <line x1="284" y1="122" x2="392" y2="122" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 5" opacity=".5"/>
+      <line x1="468" y1="122" x2="574" y2="122" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 5" opacity=".5" marker-end="url(#ar2)"/>
+      <rect x="392" y="98" width="76" height="48" rx="2" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.6"/>
+      <text x="430" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="var(--dead)">M</text>
+      <text x="430" y="135" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--dead)">multiplier</text>
+      <line x1="398" y1="144" x2="462" y2="100" stroke="var(--dead)" stroke-width="2.2"/>
+      <text x="430" y="86" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="1" fill="var(--dead)">NO CENTRAL VALUE</text>
+      <text x="430" y="166" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--dead)">published $2–$9 · C-077</text>
+      <line x1="14" y1="222" x2="846" y2="222" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <text x="14" y="246" font-size="11.5" font-weight="600" fill="currentColor">Four ways we tried to measure M on free data</text>
+      <rect x="14" y="260" width="196" height="132" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <text x="26" y="282" font-size="12" font-weight="600" fill="currentColor">Sovereign-mandate IV</text>
+      <text x="26" y="298" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">B5 — GPIF, Norges Bank</text>
+      <rect x="26" y="308" width="52" height="18" rx="2" fill="var(--open-wash)"/>
+      <text x="52" y="321" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" letter-spacing=".8" fill="var(--open)">DATA</text>
+      <text x="26" y="348" font-size="11" fill="currentColor">first stage weak, n = 9</text>
+      <text x="26" y="366" font-size="11" fill="currentColor" opacity=".7">monthly triggers unobservable</text>
+      <rect x="226" y="260" width="196" height="132" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <text x="238" y="282" font-size="12" font-weight="600" fill="currentColor">Russell index cutoff</text>
+      <text x="238" y="298" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">P4 — reconstitution RD</text>
+      <rect x="238" y="308" width="52" height="18" rx="2" fill="var(--open-wash)"/>
+      <text x="264" y="321" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" letter-spacing=".8" fill="var(--open)">DATA</text>
+      <text x="238" y="348" font-size="11" fill="currentColor">first stage F ≈ 2.6</text>
+      <text x="238" y="366" font-size="11" fill="currentColor" opacity=".7">free lists never assigned treatment</text>
+      <rect x="438" y="260" width="196" height="132" rx="2" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.5"/>
+      <text x="450" y="282" font-size="12" font-weight="600" fill="currentColor">Dividend payment days</text>
+      <text x="450" y="298" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">B6 — Hartzmark–Solomon</text>
+      <rect x="450" y="308" width="92" height="18" rx="2" fill="var(--surface)" stroke="var(--dead)" stroke-width="1"/>
+      <text x="496" y="321" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" letter-spacing=".8" fill="var(--dead)">ARITHMETIC</text>
+      <text x="450" y="348" font-size="11" fill="currentColor">2.5bp signal in 111bp noise</text>
+      <text x="450" y="366" font-size="11" font-weight="600" fill="var(--dead)">~386 yrs; 16 at M=9.4</text>
+      <rect x="650" y="260" width="196" height="132" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <text x="662" y="282" font-size="12" font-weight="600" fill="currentColor">Mega-firm passive test</text>
+      <text x="662" y="298" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">JVZ — firm-quarter panel</text>
+      <rect x="662" y="308" width="92" height="18" rx="2" fill="var(--open-wash)"/>
+      <text x="708" y="321" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" letter-spacing=".8" fill="var(--open)">RESOLUTION</text>
+      <text x="662" y="348" font-size="11" fill="currentColor">saw 0.48× of the effect hunted</text>
+      <text x="662" y="366" font-size="11" fill="currentColor" opacity=".7">parity needs ~113 quarters (~2048)</text>
+      <text x="14" y="424" font-size="11.5" font-weight="600" fill="currentColor">Payment days are furthest from reopening: ~386 years at the central multiplier, 16 at the top of the range (C-117).</text>
+      <text x="14" y="444" font-size="11" fill="currentColor" opacity=".75">The others would need data that is paid, unpublished, or two decades away — and we never borrowed a multiplier to fill the gap.</text>
+      <text x="14" y="462" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".55">C-086 · C-090 · C-091 · C-092 · C-117. Every test that could not see its own hypothesis now fails a power check first.</text>
+    </svg>
+    <figcaption><b>The honest answer to "the bridge we cannot cross" is that we now know why.</b> The first two designs failed because the free substitutes never assigned treatment. The third failed on signal-to-noise: at the central published multiplier, a payment-day effect of a few basis points inside a hundred basis points of daily noise needs about 386 years of data — but at the top of the published range it needs 16, against the 11.7 free data provides, so it is furthest from reopening rather than permanently closed (C-117). The fourth could only have detected an effect twice the size the paper predicts. None of them failed on the economics — so "money did not move prices" is not what this shows either.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">06 — a mechanism that misleads</span>
+    <h2>Retirement money: the net is not a flow</h2>
+    <p class="lede">A widely-repeated claim says America's retirement system has flipped from contributing to withdrawing, ending an automatic bid for equities. We read the source documents. The picture is more interesting than the claim.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 860 340" role="img" aria-label="Retirement plumbing for 2023. Employers and participants contribute 693 billion dollars of genuinely new money to defined-contribution plans, while a further 74.6 billion arrives as rollovers in from other retirement accounts but is counted as contributions. Plans disburse 783.7 billion, of which 652.8 billion rolls into IRAs and stays invested, and the remainder leaves. IRA withdrawals of 475 billion are the real exit. The headline net of minus 16.1 billion becomes minus 90.7 billion once rollovers in are stripped out.">
+      <defs>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="currentColor"/>
+        </marker>
+        <marker id="ard" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--dead)"/>
+        </marker>
+        <marker id="ark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--ok)"/>
+        </marker>
+      </defs>
+
+      <!-- new money -->
+      <rect x="14" y="52" width="150" height="50" rx="2" fill="none" stroke="var(--ok)" stroke-width="1.6"/>
+      <text x="89" y="72" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--ok)">New money in</text>
+      <text x="89" y="88" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ok)">$693bn — employers + savers</text>
+      <line x1="164" y1="77" x2="256" y2="100" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#ark)"/>
+
+      <!-- rollovers in -->
+      <rect x="14" y="132" width="150" height="50" rx="2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" opacity=".7"/>
+      <text x="89" y="152" text-anchor="middle" font-size="11.5" font-weight="600" fill="currentColor">Rollovers IN</text>
+      <text x="89" y="168" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".75">$74.6bn — a transfer</text>
+      <line x1="164" y1="157" x2="256" y2="132" stroke="currentColor" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ar3)" opacity=".7"/>
+      <text x="176" y="196" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--dead)">counted as "contributions"</text>
+
+      <!-- DC plans -->
+      <rect x="258" y="76" width="150" height="80" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <text x="333" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">DC plans</text>
+      <text x="333" y="123" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".7">401(k) and similar</text>
+      <text x="333" y="139" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".7">in $767.6bn</text>
+
+      <!-- disbursed -->
+      <line x1="408" y1="116" x2="470" y2="116" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar3)"/>
+      <text x="439" y="107" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor">$783.7bn</text>
+
+      <!-- IRA -->
+      <rect x="472" y="40" width="160" height="66" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <text x="552" y="66" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">IRAs</text>
+      <text x="552" y="84" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".7">still invested</text>
+      <polyline points="470,116 490,116 490,108" fill="none" stroke="var(--ok)" stroke-width="2" marker-end="url(#ark)"/>
+      <text x="500" y="130" font-size="10.5" font-family="IBM Plex Mono, monospace" font-weight="500" fill="var(--ok)">$652.8bn rolls over</text>
+      <text x="500" y="144" font-size="10.5" font-family="IBM Plex Mono, monospace" font-weight="500" fill="var(--ok)">never leaves the market</text>
+
+      <!-- real exit -->
+      <line x1="552" y1="106" x2="552" y2="196" stroke="var(--dead)" stroke-width="1.8" marker-end="url(#ard)"/>
+      <rect x="472" y="200" width="160" height="50" rx="2" fill="var(--dead-wash)" stroke="var(--dead)" stroke-width="1.6"/>
+      <text x="552" y="220" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--dead)">Actually spent</text>
+      <text x="552" y="236" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--dead)">IRA withdrawals $475.0bn</text>
+
+      <!-- the two nets -->
+      <line x1="668" y1="52" x2="668" y2="250" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <text x="686" y="72" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.2" fill="currentColor" opacity=".65">THE HEADLINE</text>
+      <text x="686" y="96" font-size="20" font-family="IBM Plex Mono, monospace" font-weight="500" fill="currentColor">−$16.1bn</text>
+      <text x="686" y="114" font-size="10.5" fill="currentColor" opacity=".6">net DC flow, as published</text>
+
+      <text x="686" y="158" font-size="10.5" font-family="IBM Plex Mono, monospace" letter-spacing="1.2" fill="var(--dead)">STRIP THE TRANSFERS</text>
+      <text x="686" y="182" font-size="20" font-family="IBM Plex Mono, monospace" font-weight="500" fill="var(--dead)">−$90.7bn</text>
+      <text x="686" y="200" font-size="10.5" fill="currentColor" opacity=".6">organic net — 5.6× larger</text>
+
+      <line x1="14" y1="278" x2="846" y2="278" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <text x="14" y="300" font-size="11.5" font-weight="600" fill="currentColor">And the turn is not new: net DC contributions went negative in 2013 and have been negative every year since.</text>
+      <text x="14" y="320" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="currentColor" opacity=".6">Boxes: DOL Form 5500, all DC plans, 2023 (IRS lag). The run of negative years: ICI, private-sector DC.</text>
+    </svg>
+    <figcaption><b>Both legs are contaminated by transfers, in opposite directions.</b> Money counted as a "contribution" includes <span class="num">$74.6bn</span> arriving from other retirement accounts; money counted as a "benefit paid" mostly rolls straight into an IRA and stays invested. The gross churn dwarfs the net, so the sign of the net says nothing about whether money entered or left the market. What does survive is starker than the claim it was meant to test: net DC contributions have been negative every year since 2013 — so whatever sustains the passive bid, it is not net contributions. (That run covers all asset classes after transfers; by its source’s own caveat it is not a measure of money leaving equities — C-112.)</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">07 — the ledger</span>
+    <h2>What is solid, what is dead, what is open</h2>
+    <p class="lede">Everything load-bearing, graded under the 22 September ruling. Green is measured; amber is an identity, a bound or a hypothesis; red is dead. The authority for each line is the findings document it came from.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th style="width:40%">Claim</th><th style="width:15%">Grade</th><th>What settles it</th></tr></thead>
+      <tbody>
+        <tr><td>Earnings share of the price gain since 2015: 71.0% to Dec-2025, 82.3% to Jun-2026</td><td><span class="pill ok">Measured</span></td><td class="n">Shiller; the old “70–80%” band excluded the second (C-100)</td></tr>
+        <tr><td>…of which the 2017 tax cut is about a tenth</td><td><span class="pill ok">Measured</span></td><td class="n">412 firms; 8.9–9.5% by basis (C-098)</td></tr>
+        <tr><td>The earnings yield barely moved while real yields rose 34bp</td><td><span class="pill ok">Measured</span></td><td class="n">Shiller E/P; FRED DFII10</td></tr>
+        <tr><td>…and the gap gave back ~17bp in H1-2026</td><td><span class="pill ok">Measured</span></td><td class="n">Earnings caught up</td></tr>
+        <tr><td>2024’s expansion arrived as drift, not on scheduled news</td><td><span class="pill ok">Measured</span></td><td class="n">FOMC beats earnings head-to-head</td></tr>
+        <tr><td>Megacap depreciation-life extensions lift reported profit</td><td><span class="pill ok">Measured</span></td><td class="n">5–11% of six firms’ NI growth — real, not decisive</td></tr>
+        <tr><td>ETFs created $3,604bn of shares, counted as corporate equity</td><td><span class="pill ok">Measured</span></td><td class="n">Z.1, matched by ICI’s census to under $0.1bn</td></tr>
+        <tr><td>Operating companies retired $541bn of equity net, 2024–26</td><td><span class="pill ok">Measured</span></td><td class="n">Z.1 non-financial corporates; the −$361bn “net of wrapper” is a blend (C-107)</td></tr>
+        <tr><td>Net retirement came mostly through M&amp;A, not buybacks</td><td><span class="pill ok">Measured</span></td><td class="n">Fed EFA 2024–26: M&amp;A $858bn vs net $679bn (C-108)</td></tr>
+        <tr><td>ETF buying and mutual-fund selling offset by 82%</td><td><span class="pill ok">Measured</span></td><td class="n">ETFs +$2.46trn vs mutual funds −$2.01trn</td></tr>
+        <tr><td>DC net contributions negative every year since 2013</td><td><span class="pill ok">Measured</span></td><td class="n">ICI; all assets after transfers — not an equity measure</td></tr>
+        <tr><td>The AI build-out is mostly self-funded; its financing is off balance sheet</td><td><span class="pill ok">Measured</span></td><td class="n">Filings: 5 of 6 out-earn capex; leases $1.12trn</td></tr>
+        <tr><td>AI debt is held mainly by long money; money funds hold ~$4bn</td><td><span class="pill ok">Measured</span></td><td class="n">Money-fund filing census</td></tr>
+        <tr><td>~93% of the 2024–26 rise is not transactions — of the $123.7trn <em>held</em>, not listed cap</td><td><span class="pill open">Identity</span></td><td class="n">Level minus flow = revaluation + other volume changes; uncheckable here (C-109, C-119)</td></tr>
+        <tr><td>Real-rate leg −2.14 P/E pts; premium leg +3.01</td><td><span class="pill open">Identity</span></td><td class="n">Sums by construction; 71% of the premium leg is the rate rise (C-102)</td></tr>
+        <tr><td>Buybacks are at most ~7–13% of the gain</td><td><span class="pill open">Bounded — a ceiling</span></td><td class="n">Survivorship pushes every weighting up (C-101)</td></tr>
+        <tr><td>Profit + composition at least ~69–75%</td><td><span class="pill open">Bounded — its complement</span></td><td class="n">The same uncertainty, not a second finding (C-101)</td></tr>
+        <tr><td>The ETF/mutual-fund offset is the same money rotating</td><td><span class="pill open">Hypothesis</span></td><td class="n">Needs account-level data; none is free (C-111)</td></tr>
+        <tr><td>Bank lending funds the AI build-out at scale</td><td><span class="pill open">Hypothesis</span></td><td class="n">$150bn is industry exposure; ~$250bn of it predates the boom (C-115)</td></tr>
+        <tr><td>Cheaper risk versus better growth</td><td><span class="pill open">Hypothesis</span></td><td class="n">36–60% risk share across two rate bases (C-104); needs a third series</td></tr>
+        <tr><td>Who bought — issuer side attributed, holder side unsplit</td><td><span class="pill open">Open, no free route</span></td><td class="n">Private Fund Statistics scout closed negative</td></tr>
+        <tr><td>Two Fed series for corporate net issuance disagree</td><td><span class="pill open">Unresolved</span></td><td class="n">+$25.2bn vs +$51.3bn, 2026:Q1</td></tr>
+        <tr><td>Household and rest-of-world revaluations fail to reconcile</td><td><span class="pill dead">Retracted</span></td><td class="n">The gap is other volume changes, a term the check left out (C-119)</td></tr>
+        <tr><td>The premium, not rates, held the multiple up</td><td><span class="pill dead">Retracted</span></td><td class="n">The premium is defined against the rate (C-102)</td></tr>
+        <tr><td>Buybacks were fully offset by issuance, 2015–26</td><td><span class="pill dead">Retracted</span></td><td class="n">82% of that issuance was private (C-108)</td></tr>
+        <tr><td>Leases are 13× the guarantee stack</td><td><span class="pill dead">Retracted</span></td><td class="n">4.9× like-for-like (C-116)</td></tr>
+        <tr><td>The payment-day test is closed for good, at any budget</td><td><span class="pill dead">Retracted</span></td><td class="n">16 years at the top of the range vs 11.7 (C-117)</td></tr>
+        <tr><td>A two-fifths / three-fifths risk–growth split</td><td><span class="pill dead">Retracted</span></td><td class="n">Survey premium fell on its bond leg</td></tr>
+        <tr><td>The <em>listed</em> equity base grew</td><td><span class="pill dead">Retracted</span></td><td class="n">Operating companies retired equity (C-081)</td></tr>
+        <tr><td>New deposits capped how much buying money creation could fund</td><td><span class="pill dead">Retracted</span></td><td class="n">Deposit stock is 6.3× the purchases (C-089)</td></tr>
+        <tr><td>2024 wholesale-repo growth was new cash</td><td><span class="pill dead">Retracted</span></td><td class="n">Reverse-repo handoff (C-085)</td></tr>
+        <tr><td>A fair-value level from holding the premium fixed</td><td><span class="pill dead">Retracted</span></td><td class="n">Moves 10.9%–43.1% with the baseline (C-078); its CAPE twin too (C-103)</td></tr>
+        <tr><td>A borrowed multiplier converts flows into price impact</td><td><span class="pill dead">Retracted</span></td><td class="n">No central value; $2–$9 published (C-077)</td></tr>
+        <tr><td>The Russell cutoff recovered an elasticity</td><td><span class="pill dead">Retracted</span></td><td class="n">First stage never assigned treatment (C-086)</td></tr>
+        <tr><td>The payment-day test rejected the mechanism</td><td><span class="pill dead">Retracted</span></td><td class="n">Uninformative — ~386 years needed at the central multiplier (C-090/091)</td></tr>
+        <tr><td>The mega-firm passive test rejected the mechanism</td><td><span class="pill dead">Retracted</span></td><td class="n">Uninformative — saw 0.48× of its target (C-092)</td></tr>
+        <tr><td>The Dutch pension transition sells long-duration bonds</td><td><span class="pill dead">Refuted</span></td><td class="n">A relabelling: the DC book keeps the allocation</td></tr>
+        <tr><td>30-year TIPS rose more than 10-year</td><td><span class="pill open">Unverified</span></td><td class="n">FRED blocks scripts — not relied on</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="col">
+  <span class="sec-num">08 — what we don't know</span>
+  <h2>The honest gaps</h2>
+  <p>Fewer than a week ago, and different. Several gaps listed here then are now answered — earnings quality, which part of supply moved, whether deposits funded the buying, the Dutch transition, the join itself. What remains:</p>
+  <ul class="plain">
+    <li><strong>Who, inside the household line, actually bought.</strong> The Fed computes it as a residual. Its issuer side is now attributed to the wrapper; its holder side cannot be split by legal entity on free data, and the last candidate route closed negative.</li>
+    <li><strong>The last of earnings quality.</strong> Depreciation lives, buybacks and the 2017 tax cut are now tested — the tax cut is about a tenth of earnings growth. Stock-based compensation and R&amp;D turned out to be moot on the as-reported series (C-095). Revenue-recognition timing is what remains.</li>
+    <li><strong>What the multiple’s resilience was made of.</strong> Most of the measured “compression” is the rate rise restated (C-102). Of what is left, 36–60% is not explained by growth expectations, depending on the rate basis (C-104). A third premium series that does not share a bond leg would settle it.</li>
+    <li><strong>Whether the off-balance-sheet lease stack is fragile.</strong> A different question from the goal's, but the obvious next one — and two of its tests fall on 30 September.</li>
+    <li><strong>Quarter-end funding stress.</strong> June showed none. September is the next test: practitioner chatter on 25 September and 1 October, scored against the 30 September prints.</li>
+    <li><strong>Retirement flows after 2023.</strong> Official flow data stops there; only levels run to 2025, and the two must never be paired.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="col">
+    <span class="sec-num">09 — the queue</span>
+    <h2>What runs next, and what gates what</h2>
+  </div>
+  <ol class="queue">
+    <li>
+      <h3>Quarter-end sentiment, run 1 <span class="pill open">25 Sep</span></h3>
+      <p>Grok searches X for funding-desk chatter on neutral queries, records the query strings, keeps a direct link for every post, reports the balance of stress against quiet — and ends with a call per question: tighter, similar or easier than June.</p>
+      <span class="dep"><b>Gates:</b> run 2 on 1 Oct, which scores it</span>
+    </li>
+    <li>
+      <h3>Goal read-back <span class="pill open">25 Sep</span></h3>
+      <p>The principal reads the verbatim goal statement — not a summary of it — and says whether it still describes the intent. It is the only check that has ever caught goal corruption here.</p>
+      <span class="dep"><b>Owner:</b> the principal</span>
+    </li>
+    <li>
+      <h3>The 30 September cluster <span class="pill open">30 Sep</span></h3>
+      <p>Quarter-end prints for sponsored repo, the equity total-return futures basis and ABCP; Oracle's lessor guarantee matures; Amazon's undrawn $17.5bn term-loan window closes — and its Q3 filing will not show the outcome until late October.</p>
+      <span class="dep"><b>Scores:</b> the run-1 calls</span>
+    </li>
+    <li>
+      <h3>Quarter-end sentiment, run 2 <span class="pill open">1 Oct</span></h3>
+      <p>The same queries, unchanged, after the turn. Each run-1 call is marked right, wrong or unscoreable against run 2 and the prints.</p>
+    </li>
+    <li>
+      <h3>Money-fund conduit census <span class="pill open">10 Oct</span></h3>
+      <p>The quarter-end filings are the trigger check for the one held item: rebuilding the channel map dealer-first, which waits on the conduit channel stopping.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="col">
+  <span class="sec-num">10 — confidence</span>
+  <h2>What I would and would not bet on</h2>
+  <p>These are credences, not proofs — surviving an attack is a fact about the attack. <strong>High</strong> on the earnings share and on the wrapper reclassification — both measured, and the ETF figure matched by an independent census. <strong>Low to medium</strong> on the premium story: what is measured is that the earnings yield did not follow real yields up; three premium constructions agree on direction for a shared structural reason, not independently. <strong>Low, and explicitly bounded,</strong> on causation: there is no aggregate estimate, and §05 says why four times over.</p>
+  <p><strong>Would.</strong> Earnings did most of the work, and it is mostly real profit. The multiple held up while real yields rose, and has partly given that back. Operating companies retired equity on net while the ETF layer grew. ETF buying and mutual-fund selling largely offset. Collateral did not carry this repricing, and shadow money did not in 2024.</p>
+  <p><strong>Would not.</strong> Any multiplier. Any statement that flows <em>caused</em> a specific share of the repricing. Any split of the household line by wealth group or buyer type. A point estimate for buybacks' share. Anything about retirement flows after 2023. That the premium was “cheaper risk”. That bank lending funds the build-out at the scale of its headline figure.</p>
+</section>
+
+<section class="col">
+  <span class="sec-num">11 — method</span>
+  <h2>Why so much keeps getting retracted</h2>
+  <p>Corrections went from 93 to 119 in four days. Almost none were arithmetic errors — nearly every figure in them reproduced exactly. They fall into five shapes, and each now has a guard.</p>
+  <div class="call dead">
+    <span class="tag">1 · Caught from outside, never from inside</span>
+    <p>The largest corrections — the ETF wrapper, the risk–growth split — came from adversarial review by a second model, not from internal reading. Internal review reads the same reasoning that produced the error and agrees with it. Outside attack stays the highest-yield activity in the programme.</p>
+  </div>
+  <div class="call dead">
+    <span class="tag">2 · Propagation, not detection</span>
+    <p>Several corrections were registered correctly while a second copy of the dead claim lived on elsewhere — in the synthesis, in a pointer file, and on this page. <strong>An edit made in place without a correction number is invisible to the checks.</strong> Every copy of a number is a place it can go stale; the answer document now restates almost none, and this page is scanned before it is republished.</p>
+  </div>
+  <div class="call dead">
+    <span class="tag">3 · Tests that could not see their own hypothesis</span>
+    <p>Three designs returned nulls that were written up as rejections, when none could have detected the effect it was testing for. <strong>The minimum detectable effect is now computed before a design is commissioned</strong> — from a realised clustered standard error, not a formula that counts rows — and a kill switch on an underpowered test no longer counts as a result.</p>
+  </div>
+  <div class="call dead">
+    <span class="tag">4 · Checks that could not fail</span>
+    <p>A decomposition’s “sum check: exact” was exact because one term had been solved for as the remainder; measured directly, that term was 7.6% different. A validation reporting “every year within tolerance, worst year 2019” was an algebraic identity. The corrections gate itself went blind to every correction numbered above 99 and kept printing green. <strong>A check that cannot fail is not a weak check — it is the absence of one.</strong> Residuals are now measured a second way where possible, and the gap is reported.</p>
+  </div>
+  <div class="call dead">
+    <span class="tag">5 · Summaries stronger than their sources</span>
+    <p>Four times in two days a careful source document hedged a finding and the one-line summary standing on it did not — the shadow-money verdict, the premium, the pension flows, the bank-credit figure. The research was sound; the compression was not. <strong>The principal’s ruling of 22 September — everything is a hypothesis until proven — now grades every claim, and this page carries the grades.</strong></p>
+  </div>
+  <p>The guard rails: the principal's statements recorded verbatim and never paraphrased; a corrections register with machine-enforced bans on dead phrasings, read by its pass lines rather than its exit code; every outside number re-derived locally before it is believed; and two agents that hand over after every piece of work with an integrity stamp, because the folder they share syncs on its own schedule.</p>
+</section>
+
+<footer>
+  Third Derivative Research · state of play at 23 September 2026 · a dated rendering of <span class="num">2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md</span>, which is the authority<br>
+  Sources on disk: Fed Z.1 2026Q2 · Fed Enhanced Financial Accounts · Shiller <span class="num">ie_data</span> · FRED DFII10/DGS10 · Damodaran <span class="num">ERPbymonth.xlsx</span> · ICI · DOL Form 5500 · SEC EDGAR XBRL · company filings<br>
+  Corrections C-001 … C-119 · newest with <span class="num">bin/check.sh --latest</span>
+</footer>
+
+</div>

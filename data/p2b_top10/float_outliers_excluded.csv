@@ -1,0 +1,7 @@
+year,cik,name,frame,reported_float_usd,sanity_bound_usd,note
+2015,1121788,GARMIN LTD,CY2015Q2I,5634428735000.0,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"
+2017,1121788,GARMIN LTD,CY2017Q2I,6129443292000.0,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"
+2019,1070750,"HOST HOTELS & RESORTS, INC.",CY2019Q2I,1.313590246e+16,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"
+2021,1136869,"ZIMMER BIOMET HOLDINGS, INC.",CY2021Q2I,3.3533707317e+16,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"
+2023,1286681,DOMINOS PIZZA INC,CY2023Q2I,11569716092000.0,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"
+2023,36270,M&T BANK CORP,CY2023Q2I,1.9900658494e+16,5000000000000,"excluded: exceeds sanity bound, likely filer XBRL scale error (10^3/10^6)"

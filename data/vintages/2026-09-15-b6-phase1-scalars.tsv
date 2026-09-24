@@ -1,0 +1,8 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-15T16:55Z	b6_phase1_verdict	2015-2026	FAILS_KILL_SWITCH	enum	2026-09-15-B6-Phase1-Payment-Day-Mechanism.md	Calendar-true payment dates; do not invent M
+2026-09-15T16:55Z	b6_phase1_calendar_raw_gap	2015-2026	-0.00061208	daily_return	B6 Phase 1 calendar-true subsample	top-bottom SPY mean
+2026-09-15T16:55Z	b6_phase1_calendar_ctrl_top_dummy	2015-2026	0.00000696	daily_return	B6 Phase 1 HC1 OLS	t~0.01 kill switch
+2026-09-15T16:55Z	b6_phase1_calendar_ctrl_t	2015-2026	0.0080	tstat	B6 Phase 1	kill switch trips
+2026-09-15T16:55Z	b6_phase1_full_ctrl_top_dummy	2015-2026	0.00114066	daily_return	B6 Phase 1 imputed robustness	t~1.37 not promoted
+2026-09-15T16:55Z	b6_phase1_e006_spy_close	2026-09-15	757.22	USD	Yahoo chart SPY	E-006 re-derive
+2026-09-15T16:55Z	b6_phase1_e006_spy_aum_approx_bn	2026-09-15	695.0	bn_USD	shares x price Yahoo	E-006 re-derive

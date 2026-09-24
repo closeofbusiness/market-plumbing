@@ -1,0 +1,65 @@
+window,window_label,our_year_month,damodaran_start_of_month,field,value,units,source
+main,window-start,2023-12,2024-01-01 (start of month),P_price_index_points,4685.0515000000005,index pts,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),E_trailing_eps,192.43,index pts,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),EY_trailing_pct,4.107318777605752,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),PE_trailing,24.34678324585564,ratio,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),real_yield_pct_DFII10,1.8355,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),nominal_yield_pct_DGS10,4.0200000000000005,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),breakeven_inflation_pct,2.1845000000000003,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),premium_trailing_pct_OUR_RESIDUAL,2.2718187776057515,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-start,2023-12,2024-01-01 (start of month),SP500_price_snapshot,4770,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),T_Bond_Rate_nominal_rf_pct,3.88,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),Expected_growth_rate_pct,8.74,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),ERP_T12m_nominal_pct,4.6,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),Expected_Return_ke_pct,8.48,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),CF_trailing_12m,164.25,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),Ten_year_average_CF,218.02,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-start,2023-12,2024-01-01 (start of month),Dollar_Riskfree_Rate_pct_IF_POPULATED,,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),P_price_index_points,7450.032857142856,index pts,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),E_trailing_eps,295.3881,index pts,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),EY_trailing_pct,3.964923452878349,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),PE_trailing,25.221167870820985,ratio,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),real_yield_pct_DFII10,2.179047619047619,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),nominal_yield_pct_DGS10,4.47047619047619,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),breakeven_inflation_pct,2.291428571428571,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),premium_trailing_pct_OUR_RESIDUAL,1.7858758338307292,pct,_research/2026-09-12-P2c-monthly_series.csv
+main,window-end,2026-06,2026-07-01 (start of month),SP500_price_snapshot,7499,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),T_Bond_Rate_nominal_rf_pct,4.45,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),Expected_growth_rate_pct,13.69,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),ERP_T12m_nominal_pct,4.2,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),Expected_Return_ke_pct,8.649999999999999,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),CF_trailing_12m,201.83,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),Ten_year_average_CF,301.16,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+main,window-end,2026-06,2026-07-01 (start of month),Dollar_Riskfree_Rate_pct_IF_POPULATED,4.2299999999999995,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),P_price_index_points,2054.27,index pts,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),E_trailing_eps,102.31,index pts,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),EY_trailing_pct,4.980357986048572,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),PE_trailing,20.078877920046917,ratio,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),real_yield_pct_DFII10,0.5104545454545455,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),nominal_yield_pct_DGS10,2.2072727272727275,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),breakeven_inflation_pct,1.696818181818182,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),premium_trailing_pct_OUR_RESIDUAL,4.4699034405940266,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-start,2014-12,2015-01-01 (start of month),SP500_price_snapshot,2059,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),T_Bond_Rate_nominal_rf_pct,2.17,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),Expected_growth_rate_pct,5.58,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),ERP_T12m_nominal_pct,5.78,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),Expected_Return_ke_pct,7.95,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),CF_trailing_12m,100.5,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),Ten_year_average_CF,107.97,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-start,2014-12,2015-01-01 (start of month),Dollar_Riskfree_Rate_pct_IF_POPULATED,,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),P_price_index_points,3176.7495238095235,index pts,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),E_trailing_eps,139.47,index pts,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),EY_trailing_pct,4.390336693361618,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),PE_trailing,22.77729636344392,ratio,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),real_yield_pct_DFII10,0.1447619047619047,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),nominal_yield_pct_DGS10,1.8628571428571428,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),breakeven_inflation_pct,1.718095238095238,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),premium_trailing_pct_OUR_RESIDUAL,4.245574788599714,pct,_research/2026-09-12-P2c-monthly_series.csv
+control,window-end,2019-12,2020-01-01 (start of month),SP500_price_snapshot,3231,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),T_Bond_Rate_nominal_rf_pct,1.92,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),Expected_growth_rate_pct,3.9600000000000004,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),ERP_T12m_nominal_pct,5.2,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),Expected_Return_ke_pct,7.12,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),CF_trailing_12m,150.5,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),Ten_year_average_CF,157.4,index pts,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)
+control,window-end,2019-12,2020-01-01 (start of month),Dollar_Riskfree_Rate_pct_IF_POPULATED,,pct,data/vintages/damodaran_erp_2026-09-13/ERPbymonth.xlsx (sheet: Historical ERP)

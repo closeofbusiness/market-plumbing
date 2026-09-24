@@ -1,0 +1,845 @@
+{
+ "K1-CME": {
+  "section": "K1 #1 CME Clearing (lines 121-127)",
+  "rows": [
+   {
+    "label": "K1 #1 CME Clearing",
+    "given_url": "https://www.cmegroup.com/clearing/cpmi-iosco-reporting.html",
+    "http_status": "curl: 000 (HTTP/2 INTERNAL_ERROR / timeout) and 403 with Chrome UA (Akamai bot-block: \"This IP address is blocked due to suspected web scraping activity\"); browser pane: 1 redirect hop -> 200 at /solutions/clearing/cpmi-iosco-reporting.html",
+    "verdict": "VERIFIED",
+    "page_title_seen": "CPMI-IOSCO Quantitative Disclosure - CME Group",
+    "corrected_url": "https://www.cmegroup.com/solutions/clearing/cpmi-iosco-reporting.html",
+    "what_is_actually_there": "The given URL is live and redirects (1 hop) to the canonical page, which is CME's CPMI-IOSCO Quantitative Disclosure page. Disclosure files sit in div#cmeIOSCOReports behind an 'I AGREE - VIEW REPORTS' terms click (links are in the DOM regardless). File formats actually offered as link hrefs: .zip for 2019Q3 through 2026Q1 (e.g. /clearing/files/cpmi-iosco/CME_DataFile_2026Q1.zip, CME_Data_File_2025Q4.zip), .xlsx for 2015Q3 through 2019Q2 (e.g. /clearing/files/cpmi-iosco/CME_DataFile_2015Q3.xlsx; 2019Q1/Q2 hrefs are .xlsx although anchor text says .zip). NO .pdf and NO .csv disclosure links on the page (the only PDFs are footer Terms of Use / Modern Slavery statement). Archive of past quarters: YES, every quarter listed by year. Earliest quarter visible: 2015 Q3 (CME_DataFile_2015Q3.xlsx, HEAD 200, 519,382 bytes, content-type spreadsheetml). Latest quarter visible: 2026 Q1 (CME_DataFile_2026Q1.zip, 200, application/zip, 417,602 bytes). Downloaded latest zip: contains 'Q1 2026 PQD File/' with CME_DataFile_2026Q1.xlsx (22 sheets: Instructions, QualitativeNotes, Guide, Revisions, CME_AggregatedDataFile, CME_DataFile_4_3 ... CME_DataFile_6_1, CME_DataFile_6_2, 7_1, 7_3, 7_3a, 7_3b, 16_2, 16_3, 17_3, 18_2, 20a, 20b, 23, 23_3), CME_ConsolidatedDisclosure_2026Q1.xlsx (long format, 369 rows), CME_AggregatedDataFile_2026Q1.csv and 19 per-item *.csv files -- all of the '.csv' files are actually XLSX (PK zip with [Content_Types].xml; openpyxl opens them). Item 6.1.1 PRESENT: sheet CME_DataFile_6_1, header ReportDate/ReportLevel/ReportLevelIdentifier/Currency/6.1.1; Guide text 'Total initial margin required split by house, client gross, client net and total'; ReportDate 2026-03-31; values USD: Base House_Net 57,598,931,767; Base Client_Gross 236,187,799,066; Base Total 293,786,730,833; IRS House_Net 10,165,491,026; IRS Client_Gross 30,253,964,628; IRS Total 40,419,455,654; Client_Net blank in data file (0 in consolidated). Item 6.2 PRESENT: sheet CME_DataFile_6_2 with columns 6.2.1-6.2.15 (initial margin held by collateral type: cash at central bank of issue, cash at other central banks, secured cash at commercial banks, unsecured cash, sovereign bonds domestic/other, agency bonds, muni bonds, corporate bonds, equities, gold, other commodities, mutual funds/UCITs, other, total) x rows HouseIM/ClientIM/TotalIM Pre/PostHaircut for Base and IRS, ReportDate 2026-03-31; e.g. Base TotalIM_PreHaircut 6.2.15 = 320,805,836,921; Base TotalIM_PostHaircut 6.2.15 = 311,819,553,310; IRS TotalIM_PostHaircut = 46,837,945,848. Same items also present in CME_ConsolidatedDisclosure_2026Q1.xlsx (94 rows for 6.1.1/6.2.x, ReportDate 2026-03-31).",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-CME/CME_DataFile_2026Q1.zip (unzipped under .../K1-CME/unz/; extracted 6.1/6.2 rows as .../K1-CME/extract_6_1_2026Q1.csv and extract_6_2_2026Q1.csv; observation log .../K1-CME/page_links_observed.txt)",
+    "notes": "Model's claims: URL VERIFIED (redirects to /solutions/clearing/...); archive YES VERIFIED; earliest 2015 Q3 VERIFIED; 'XLSX, PDF' format claim is PARTLY WRONG -- actual formats are ZIP (2019Q3-2026Q1) and XLSX (2015Q3-2019Q2), no PDF offered. cmegroup.com is bot-blocked for curl/WebFetch from this host (HTTP/2 INTERNAL_ERROR, timeouts, then explicit 403 scraping block); everything above was observed through the Claude browser pane (real Chrome). The zip was saved by the browser to ~/Downloads as a hidden temp file .Q6L2SF6YDW.com.anthropic.claudefordesktop.MFrj5G (417,602 bytes) and copied to the scratchpad; the temp file was left in place. Per-item files inside the zip carry a .csv extension but are XLSX; CME's own sheet naming labels 6.2 rows as IM 'held' pre/post haircut, 6.1.1 as IM 'required'."
+   }
+  ],
+  "summary": "CME Clearing K1 row is usable: the given URL is live (1-hop redirect to https://www.cmegroup.com/solutions/clearing/cpmi-iosco-reporting.html, title 'CPMI-IOSCO Quantitative Disclosure - CME Group') and hosts a full quarterly archive from 2015Q3 (xlsx) to 2026Q1 (zip). The format claim 'XLSX, PDF' is constructed in part: actual hrefs are .zip (2019Q3-2026Q1) and .xlsx (2015Q3-2019Q2), no PDF. The latest zip (CME_DataFile_2026Q1.zip, 417,602 bytes) was downloaded and confirmed to contain items 6.1.1 (total IM required, Base/IRS, house/client gross/net/total) and 6.2.1-6.2.15 (IM held by collateral type, pre/post haircut) for ReportDate 2026-03-31, in CME_DataFile_2026Q1.xlsx, per-item files (named .csv but actually xlsx) and the consolidated xlsx. Caveat: cmegroup.com bot-blocks curl from this host; verification was done via the browser pane."
+ },
+ "K1-ICE": {
+  "section": "K1 #2-#4: ICE Clear Credit, ICE Clear US, ICE Clear Europe (lines 129-145)",
+  "rows": [
+   {
+    "label": "K1 #2 ICE Clear Credit",
+    "given_url": "https://www.theice.com/clear-credit/regulation",
+    "http_status": "200 (301-redirects to https://www.ice.com/clear-credit/regulation)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Regulation | ICE Clear Credit",
+    "what_is_actually_there": "The given URL is the real Regulation page; it contains a collapsed 'Quantitative Disclosures' section (anchor #quantitative-disclosures) rendered client-side from the JSON API https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICC&max=100 (totalCount=43). Each quarter is offered as ONE ZIP (not XLSX/PDF as stated): /publicdocs/iosco_reporting/quantitative_disclosures/icc/ICC_QuantitativeDisclosures_YYYYQn.zip. Archive of past quarters: YES, 43 quarters, earliest 2015 Q3 (ICC_QuantitativeDisclosures_2015Q3.zip, HTTP 200, 119,695 bytes), latest 2026 Q1. Inside the 2026Q1 zip (668,249 bytes): 18 per-item CSVs (DataFile_4_3 ... 23), ICC_AggregatedDataFile_2026Q1.csv, ICC_ConsolidatedQuantitativeDisclosures_2026Q1.xlsx, ICC_IOSCO_DataFileGuide_2026Q1.pdf. Item 6.1.1 PRESENT (ICC_DataFile_6_1_2026Q1.csv, ReportDate 2026-03-31: Client_Gross 43,422,538,825.03; House_Net 22,973,637,225.14; Total 66,396,176,050.17 USD). Item 6.2 PRESENT (ICC_DataFile_6_2_2026Q1.csv, columns 6.2.1-6.2.15, rows ClientIM/HouseIM/TotalIM Pre/PostHaircut, ReportDate 2026-03-31; TotalIM_PostHaircut 6.2.15 = 68,436,222,069.95). Both also appear as 6_1_1 / 6_2_1..6_2_15 references in the consolidated XLSX. The 2015Q3 zip contains CSVs + a PDF guide (no XLSX).",
+    "corrected_url": "https://www.ice.com/clear-credit/regulation#quantitative-disclosures (data API: https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICC&filterToken=&max=100&offset=0&pageNumber=1&sortOrder=up&sortType=)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-ICE/ICC_QuantitativeDisclosures_2026Q1.zip (extracted to .../K1-ICE/icc2026q1/); also .../K1-ICE/ICC_QuantitativeDisclosures_2015Q3.zip and .../K1-ICE/qd_ICC.json",
+    "notes": "URL, archive=YES and earliest 2015 Q3 are correct. 'File format: XLSX, PDF' is wrong at the page level: the page offers only ZIP downloads; XLSX and PDF exist only as components inside the zip alongside CSVs (CSV is the primary per-item format). Latest quarter visible 2026 Q1 (2026 Q2 not yet posted as of 2026-08-23). The listing is paginated 10 per page in the browser UI; content is not in the static HTML (curl alone shows only the header and 'Year: All')."
+   },
+   {
+    "label": "K1 #3 ICE Clear US",
+    "given_url": "https://www.theice.com/clear-us/regulation",
+    "http_status": "200 (redirects to https://www.ice.com/clear-us/regulation)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Clearing Regulation for ICE Clear U.S.",
+    "what_is_actually_there": "Real Regulation page with a collapsed 'Quantitative disclosures' section (#quantitative-disclosures, component clearingHouse=ICUS). API https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICUS&max=100 returns totalCount=43: one ZIP per quarter at /publicdocs/iosco_reporting/quantitative_disclosures/icus/ICUS_QuantitativeDisclosures_YYYYQn.zip. Archive: YES; earliest 2015 Q3; latest 2026 Q1. Latest zip fetched (HTTP 200, 106,299 bytes): ICUS_GUIDE_2026Q1.xlsx, ICUS_AggregatedDataFile_2026Q1.csv, ICUS_ConsolidatedQuantitativeDisclosures_2026Q1.xlsx, and 17 per-item CSVs including ICUS_DataFile_6_1_2026Q1.csv and ICUS_DataFile_6_2_2026Q1.csv (contents not opened). No PDF in the 2026Q1 zip.",
+    "corrected_url": "https://www.ice.com/clear-us/regulation#quantitative-disclosures (data API: https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICUS&filterToken=&max=100&offset=0&pageNumber=1&sortOrder=up&sortType=)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-ICE/ICUS_QuantitativeDisclosures_2026Q1.zip; .../K1-ICE/qd_ICUS.json",
+    "notes": "URL, archive=YES, earliest 2015 Q3 correct. Format claim 'XLSX, PDF' wrong: page offers ZIP only; zip contents are CSV + XLSX (no PDF in latest). Static HTML shows no disclosure links (client-rendered), so the model could not have seen formats from the page itself."
+   },
+   {
+    "label": "K1 #4 ICE Clear Europe",
+    "given_url": "https://www.theice.com/clear-europe/regulation",
+    "http_status": "200 (redirects to https://www.ice.com/clear-europe/regulation)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Clearing House Regulation | ICE Clear Europe Regulation",
+    "what_is_actually_there": "Real Regulation page; 'Rules and Disclosures' block links 'ICE Clear Europe Quantitative Disclosures' to #quantitative-disclosures (component clearingHouse=ICEU). API https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICEU&max=100 returns totalCount=48: 2016 Q4-2026 Q1 as a single ZIP per quarter (ICEU_QuantitativeDisclosures_YYYYQn.zip, 38 files); 2015 Q3-2016 Q3 split into two zips per quarter, 'ICE Clear Europe - Futures and Options' (ICEU_FnO_...) and 'ICE Clear Europe - CDS' (ICEU_CDS_...). Archive: YES; earliest 2015 Q3; latest 2026 Q1. Latest zip fetched (HTTP 200, 120,702 bytes): ICEU_GUIDE_2026Q1.xlsx, ICEU_AggregatedDataFile_2026Q1.csv, ICEU_ConsolidatedQuantitativeDisclosures_2026Q1.xlsx, 17 per-item CSVs incl. ICEU_DataFile_6_1_2026Q1.csv and ICEU_DataFile_6_2_2026Q1.csv (contents not opened). No PDF in latest zip.",
+    "corrected_url": "https://www.ice.com/clear-europe/regulation#quantitative-disclosures (data API: https://www.ice.com/api/regulation/quantitative-disclosures/filter?year=&clearingHouse=ICEU&filterToken=&max=100&offset=0&pageNumber=1&sortOrder=up&sortType=)",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-ICE/ICEU_QuantitativeDisclosures_2026Q1.zip; .../K1-ICE/qd_ICEU.json",
+    "notes": "URL, archive=YES, earliest 2015 Q3 correct. Format 'XLSX, PDF' wrong: ZIP downloads containing CSV + XLSX. Note the pre-2016Q4 F&O/CDS split, which the return does not mention. Also on the page: ICE_Clear_Europe_Disclosure_Framework.pdf (PFMI qualitative) and ICEU_EMIR_Disclosure_Statement.pdf, distinct from the quantitative disclosures."
+   }
+  ],
+  "summary": "All three theice.com URLs are real and redirect to the corresponding www.ice.com/clear-*/regulation pages, each of which hosts a collapsed, client-rendered \"Quantitative Disclosures\" section backed by https://www.ice.com/api/regulation/quantitative-disclosures/filter?clearingHouse={ICC|ICUS|ICEU}. The model's archive=YES and earliest-quarter 2015 Q3 claims are correct for all three (ICC 43 quarters, ICUS 43, ICEU 48 incl. the 2015Q3-2016Q3 F&O/CDS split); latest visible is 2026 Q1. The \"File format: XLSX, PDF\" claim is constructed: the pages offer one ZIP per quarter, and the zips contain per-item CSVs plus a consolidated XLSX (ICC adds a PDF data-file guide; ICUS/ICEU have an XLSX guide). ICC 2026Q1 downloaded: items 6.1.1 and 6.2.1-6.2.15 are present for ReportDate 2026-03-31."
+ },
+ "K1-LCH": {
+  "section": "K1 #5-#6: LCH Ltd and LCH SA (lines 147-157)",
+  "rows": [
+   {
+    "label": "K1 #5 LCH Ltd",
+    "given_url": "https://www.lseg.com/en/post-trade/clearing/risk-management/cpmi-iosco-quantitative-disclosure",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Given URL: '404 error page | LSEG'. Corrected URL: 'LCH CCP Disclosures: Clearing Services, Risk and Financial Info | LSEG'",
+    "corrected_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/ccp-disclosures",
+    "what_is_actually_there": "Given URL is a hard 404. The real page (reached via the LCH Information Centre at /en/post-trade/clearing/clearing-resources -> 'Access CCP disclosures'; old lch.com/resources/rules-and-regulations/cpmi-iosco-disclosures 301s to the Information Centre) has separate 'Ltd' and 'SA' tabs, each an ag-grid whose rows are embedded statically in the HTML (columns Title / Disclosure Period / link). Ltd tab: 113 rows, 25 'CPMI IOSCO Quantitative Disclosures - LTD' rows, ALL .xlsx (no PDF/CSV for the quantitative file); PDFs on the tab are the qualitative self-assessment and supplementary materials (rulebook, quick links, acceptable collateral). Archive: YES, one quantitative xlsx per quarter, contiguous from Q1 2020 (July 2020 disclosure, file lch-ltd-2020-q1-v1-0.xlsx, HEAD 200) to Q1 2026 (May 2026 disclosure, ltd-ccp12-pqd-q1-2026.xlsx). Earliest quarter visible = Q1 2020, NOT 2015 Q3 (the only '2015' on the page is 'In February 2015, the CPMI and IOSCO published...'). Latest = Q1 2026. Downloaded latest Ltd file (200, 171,732 bytes, Excel 2007+): sheets Guide, QualitativeNotes, Revisions, CCP_ConsolidatedDataFile, CCP_AggregateDataFile, CCP_DataFile_4_3 ... 6_1, 6_2, 7_1, 7_3 ... 23_3. CCP_DataFile_6_1 has column '6.1.1' with ReportDate 2026-03-31, ReportLevel Clearing_Service for EquityClear/ForexClear/Listed_Rates/RepoClear/SwapClear x House_Net/Client_Gross/Client_Net/Total (GBP). CCP_DataFile_6_2 has columns 6.2.1-6.2.15, ReportDate 2026-03-31, ReportLevel CCP = LCH_Ltd, rows HouseIM/ClientIM/TotalIM Pre/PostHaircut (EUR). Consolidated sheet also carries 6.1.1, 6.2.1-6.2.15, 6.3.1, 6.4.x, 6.5.x-6.8.1. So 6.1.1 and 6.2 are PRESENT for Q1 2026 (quarter-end 31 Mar 2026).",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-LCH/ltd-ccp12-pqd-q1-2026.xlsx",
+    "notes": "Gemini got the publisher (LSEG/LCH) and the existence of an archive right; the URL is constructed (404), 'XLSX, PDF' overstates the quantitative format (quantitative = XLSX only), and 'Earliest quarter visible: 2015 Q3' is not supported by the page (earliest Q1 2020). File-name pattern is inconsistent across quarters (ltd-ccp12-pqd-, lch-ltd-ccp12-pqd-, lch-ltd-pqd-, lch-ltd-2020-qN-v1) so URLs cannot be generated; scrape the data-row-data-static attribute of the grid. Parsed row list saved at .../K1-LCH/grid_rows.json and page HTML at .../K1-LCH/ccp-disclosures.html."
+   },
+   {
+    "label": "K1 #6 LCH SA",
+    "given_url": "https://www.lseg.com/en/post-trade/clearing/risk-management/cpmi-iosco-quantitative-disclosure",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Given URL: '404 error page | LSEG'. Corrected URL: 'LCH CCP Disclosures: Clearing Services, Risk and Financial Info | LSEG'",
+    "corrected_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/ccp-disclosures",
+    "what_is_actually_there": "Same corrected page, 'SA' tab (distinguished from Ltd by separate tab/grid and separate files named sa-/lch-sa-). SA tab: 218 rows; 22 'CPMI IOSCO Quantitative Disclosures - SA' rows, ALL .xlsx; supplementary 'Tri-Party Repo Initial Margin Rates' (6.3.1) is CSV per quarter; PDFs are qualitative self-assessment (incl. lch-sa-pfmi-assessment-2018) and rulebook extracts; a few .docx. Archive: YES, but the listing as served has a GAP: quantitative rows exist for Q2 2019 (Oct 2019 disclosure, lch-sa-2019-q2-v3-1.xlsx, HEAD 200) contiguously through Q1 2024, then jump to Q4 2025 and Q1 2026 -- Q2 2024 through Q3 2025 (6 quarters) are NOT listed on the SA tab. At least one of the missing files exists on the server unlisted: guessed URL .../ccp-disclosures/lch-sa-ccp12-pqd-q3-2025.xlsx returns 200 (xlsx). Earliest quarter visible = Q2 2019, NOT 2015 Q3. Latest = Q1 2026 (sa-ccp12-pqd-q1-2026.xlsx, downloaded, 200, 1,306,289 bytes). In that file CCP_DataFile_6_1 has '6.1.1' for ReportDate 2026-03-31 at Clearing Service level (Bonds_and_Repos, CDSClear, DigitalAssetClear); CCP_DataFile_6_2 has 6.2.1-6.2.15 for 2026-03-31 at Clearing Service level (Bonds_and_Repos, DigitalAssetClear, OTC_CDS). So 6.1.1 and 6.2 PRESENT for Q1 2026.",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-LCH/sa-ccp12-pqd-q1-2026.xlsx",
+    "notes": "Same constructed URL as #5. 'XLSX, PDF' overstates: quantitative = XLSX only (plus CSV supplementary). 'Earliest quarter visible: 2015 Q3' not supported (earliest Q2 2019). Note the SA tab's 6-quarter listing gap (Q2 2024-Q3 2025); files may exist at unlisted URLs (one confirmed), but naming is irregular (sa-ccp12-, sa-ccpp12-, lch-sa-ccp12-, lch-sa-pqd-, lch-sa-2019-qN-vN) so they cannot be reliably generated."
+   }
+  ],
+  "summary": "Usable: LCH Ltd and LCH SA CPMI-IOSCO public quantitative disclosures do exist on lseg.com, at https://www.lseg.com/en/post-trade/clearing/clearing-resources/ccp-disclosures (separate Ltd and SA tabs, rows embedded statically in the HTML), one XLSX per quarter with 6.1.1 and 6.2.1-6.2.15 present in the latest (Q1 2026, ReportDate 2026-03-31) files for both entities; both latest files downloaded to .../n3verify/K1-LCH/. Constructed: the URL Gemini gave (/risk-management/cpmi-iosco-quantitative-disclosure) is a 404; 'XLSX, PDF' is wrong for the quantitative file (XLSX only; PDFs are qualitative/supplementary); 'Earliest quarter visible: 2015 Q3' is not on the page for either entity (Ltd earliest Q1 2020; SA earliest Q2 2019, and the SA listing as served skips Q2 2024-Q3 2025 though at least one of those files exists unlisted on the server)."
+ },
+ "K1-DTCC": {
+  "section": "K1 #7-#8: DTCC/FICC and DTCC/NSCC (lines 159-169)",
+  "rows": [
+   {
+    "label": "K1 #7 DTCC/FICC",
+    "given_url": "https://www.dtcc.com/about/businesses-and-subsidiaries/ficc",
+    "http_status": "403 (curl, both UAs, Cloudflare 'Attention Required!'); 403 via WebFetch; 200 in real browser pane",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Fixed Income Clearing Corporation - FICC | DTCC (H1: 'About DTCC')",
+    "what_is_actually_there": "Given URL is a corporate 'About DTCC > Businesses & Subsidiaries' description page: 0 mentions of 'quantitative', 'PFMI/CPMI' or 'disclosure' in body text, no xlsx/pdf disclosure links (only link matching was an unrelated Important Notice 24740-26.pdf). It does NOT host quantitative disclosures. The real location is https://www.dtcc.com/legal/policy-and-compliance (title 'Policy & Compliance - Legal & Regulatory | DTCC'), a 13-page paginated list (?pgs=N) mixing 'CPMI IOSCO Quantitative Disclosure Results YYYY Qn' entries with FICC/NSCC/DTC Disclosure Framework PDFs. Formats actually offered: XLSX + PDF per quarter from 2016 Q4 onward; 2015 Q3, 2015 Q4, 2016 Q1, 2016 Q2, 2016 Q3 are PDF-only. Archive: YES, all quarters 2015 Q3 -> 2026 Q1 listed with live file links (HEAD 200 on 2015 Q3 PDF and Q4 2025 xlsx). Earliest quarter: 2015 Q3 (CPMI-IOSCO-Quantitative-Disclosure-Results-2015-Q3.pdf). Latest quarter: 2026 Q1, posted May 28 2026, files DTCC-PQD-026Q1.xlsx (HTTP 200, 337,431 bytes, Excel 2007+) and CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2026.pdf (HEAD 200). IMPORTANT: FICC and NSCC do NOT publish separate quantitative files -- one combined DTCC file covers FICC/GSD, FICC/MBSD, NSCC (plus 'DTCC Clearing Agencies' HoldCompany rows). Downloaded xlsx is CCP12 PQD Template 20211028v3, Cover = 'Q1 2026', single ReportDate 2026-03-31 only (no time series in-file). Item 6.1.1 PRESENT (sheet DTCC_DataFile_6_1, quarter 2026 Q1): FICC/GSD Total USD 66,534,991,391.46 (House_Net 66,532,991,391.46; Client_Gross 2,000,000; Client_Net 0); FICC/MBSD Total 12,024,813,792.95; NSCC Total 16,209,229,834. Item 6.2 PRESENT (sheet DTCC_DataFile_6_2, columns 6.2.1-6.2.15, rows ClientIM/HouseIM/TotalIM x Pre/PostHaircut): FICC/GSD TotalIM_PostHaircut 6.2.1=13,942,404,653; 6.2.4=500,000,000; 6.2.5=55,981,103,031; 6.2.7=7,418,312,895; 6.2.15=77,841,820,579 (PreHaircut 6.2.15=81,392,843,971); FICC/MBSD 6.2 all N/A. FICC/GSD = Government Securities Division = the Treasury/repo clearing fund.",
+    "corrected_url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-DTCC/DTCC-PQD-026Q1.xlsx",
+    "notes": "Gemini's URL is wrong (about-page, not disclosure page), but its three attributes (XLSX+PDF, archive YES, earliest 2015 Q3) are correct for the corrected location -- with the nuance that XLSX only starts 2016 Q4. dtcc.com HTML pages are Cloudflare-blocked to curl/WebFetch; -/media/ file downloads work with curl. The task premise 'FICC and NSCC publish separate quantitative disclosure files' is wrong: it is one combined DTCC workbook."
+   },
+   {
+    "label": "K1 #8 DTCC/NSCC",
+    "given_url": "https://www.dtcc.com/about/businesses-and-subsidiaries/nscc",
+    "http_status": "403 (curl, Cloudflare 'Attention Required!'); 200 in real browser pane",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "NSCC - National Securities Clearing Corporation | DTCC (H1: 'About DTCC')",
+    "what_is_actually_there": "Given URL is a corporate subsidiary description page: 0 mentions of quantitative/PFMI/CPMI/disclosure, no xlsx/pdf disclosure links. Does NOT host quantitative disclosures. NSCC's PQD data lives in the same combined DTCC file as FICC at https://www.dtcc.com/legal/policy-and-compliance: latest DTCC-PQD-026Q1.xlsx / CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2026.pdf (2026 Q1, posted May 28 2026); archive 2015 Q3 -> 2026 Q1 (PDF only 2015 Q3-2016 Q3; XLSX+PDF from 2016 Q4). In the downloaded Q1 2026 workbook NSCC rows (ReportLevelIdentifier 'NSCC', ReportLevel 'CCP/Clearing Service') are present: 6.1.1 Total 16,209,229,834 USD; 4.1.1 own capital 136,370,000; 6.2 rows present. Separate NSCC-only quantitative file: none observed.",
+    "corrected_url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-DTCC/DTCC-PQD-026Q1.xlsx",
+    "notes": "Same correction as #7: wrong URL, correct attributes at the real location. Gemini's identical 4-line block for FICC and NSCC is consistent with the disclosures actually being one combined DTCC publication, though the model never said so."
+   }
+  ],
+  "summary": "Both given URLs are DTCC corporate 'about' pages with no quantitative disclosures (confirmed in a real browser; curl/WebFetch get Cloudflare 403). The real source is https://www.dtcc.com/legal/policy-and-compliance, a 13-page archive of 'CPMI IOSCO Quantitative Disclosure Results' from 2015 Q3 (PDF-only until 2016 Q3; XLSX+PDF from 2016 Q4) through 2026 Q1 (posted 28 May 2026). Gemini's format/archive/earliest-quarter attributes are therefore right but attached to the wrong URL, and FICC and NSCC are NOT separate files -- one combined DTCC CCP12-template workbook (single quarter per file) covers FICC/GSD, FICC/MBSD and NSCC. Downloaded DTCC-PQD-026Q1.xlsx: 6.1.1 and 6.2 (6.2.1-6.2.15) are both present for 2026 Q1 (ReportDate 2026-03-31); FICC/GSD 6.1.1 total = USD 66.53bn, 6.2.15 post-haircut total IM = USD 77.84bn."
+ },
+ "K1-OCC": {
+  "section": "K1 #9 OCC (The Options Clearing Corporation) \u2014 lines 171-175",
+  "rows": [
+   {
+    "label": "K1 #9 OCC (The Options Clearing Corporation)",
+    "given_url": "https://www.theocc.com/Risk-Management/PFMI-Disclosures",
+    "http_status": "403 (curl x2 and WebFetch: Cloudflare 'Just a moment...' bot check); 200 in the Browser pane after ~5s automatic verification (no CAPTCHA interaction); xlsx fetch in-browser 200",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Page exists and is the real OCC PFMI page; canonical URL resolves to https://www.theocc.com/risk-management/pfmi-disclosures. Sections: (1) Disclosure Framework narrative PDF 'Updated 04/27/2026' plus a marked PDF; (2) CCP Global QATL Template PDF 'Updated 2/09/2024'; (3) Quantitative Disclosure: XLSX ONLY (no PDF/CSV for the quantitative data; the PDFs are the narrative framework), published quarterly with a one-quarter lag. Archive present: 21 quarterly XLSX links, 2021 Jan-Mar (OCC_PQD_2021Q1.xlsx) through 2026 Jan-Mar (OCC_PQD_2026Q1.xlsx), every quarter 2021Q1-2025Q4 plus 2026Q1; 2023 Q3 has two links. Earliest quarter visible = 2021 Q1 (NOT 2015 Q3 as claimed). Latest = 2026 Q1 (ReportDate 2026-03-31). Downloaded latest file (128,971 bytes, valid xlsx, sha256 5453789104594343a4c593c1797ca285b061e0e355f6a6ec9aa3c5ad67a5910d), 23 sheets incl. Guide, QualitativeNotes, Revisions, CCP_ConsolidatedDataFile, AggregatedDataFile, CCP_DataFile_6_1, CCP_DataFile_6.2, CCP_DataFile_6.2a, 4_3, 4_4a/b, 7_1, 7_3, 16_2, 16_3, 17_3, 18_2, 20a/b, 23, 23_3. Item 6.1.1 PRESENT for 2026-03-31: House_Net 114,163,883,809; Client_Gross 2,228,959,888; Client_Net 45,120,548,582; Total 161,513,392,279 USD. Item 6.2 PRESENT for 2026-03-31: 6.2.1-6.2.15 columns, rows ClientIM/HouseIM/TotalIM Pre- and Post-Haircut (e.g. Total pre-haircut 6.2.1 740,800,000; 6.2.3 725,000,000; 6.2.4 557,884,242; 6.2.5 27,971,312,306; 6.2.6 887,451,834; 6.2.10 equities 244,333,253,100; 6.2.15 total 275,215,701,482; post-haircut total 267,525,232,463); house/client split for cash items 6.2.1/6.2.3/6.2.4 reported as 0 with qualitative note that OCC does not separately report them; 6.2.8/9/11/12/13 N/A. Also 6.2a 'Deposits in Lieu of Margin' sheet.",
+    "page_title_seen": "OCC - PFMI Disclosures",
+    "corrected_url": "https://www.theocc.com/risk-management/pfmi-disclosures",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-OCC/OCC_PQD_2026Q1.xlsx",
+    "notes": "Claims checked: URL correct (case-insensitive redirect to lowercase); 'XLSX, PDF' is only half right \u2014 quantitative disclosures are XLSX only, PDFs are the narrative framework/QATL; archive YES correct; 'Earliest quarter visible: 2015 Q3' is WRONG \u2014 page shows 2021 Q1 as earliest (older quarters not on this page). Latest file URL: https://www.theocc.com/getContentAsset/95d4579a-96da-4c97-8286-d0dfdb3c6b69/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/OCC_PQD_2026Q1.xlsx?language=en-US ; older ones use /getmedia/<guid>/OCC_PQD_YYYYQn.xlsx. Site is behind Cloudflare bot verification: curl and WebFetch return 403; a real browser session is required (file was fetched in-page via fetch() and reassembled from base64 chunks; zip integrity verified)."
+   }
+  ],
+  "summary": "The OCC URL is real and does host CPMI-IOSCO PFMI quantitative disclosures; page title 'OCC - PFMI Disclosures'. Quantitative files are XLSX only (PDF is the narrative framework), with an archive of 21 quarterly files from 2021 Q1 to 2026 Q1 \u2014 the claimed earliest quarter '2015 Q3' is constructed/wrong. The latest file (OCC_PQD_2026Q1.xlsx, ReportDate 2026-03-31) was downloaded and contains items 6.1.1 (house/client/total IM) and 6.2.1-6.2.15 (IM by collateral type, pre/post haircut) plus 6.2a. Note the site is Cloudflare-gated: curl/WebFetch get 403, a real browser is needed to fetch."
+ },
+ "K1-EUREX": {
+  "section": "K1 #10 Eurex Clearing (lines 177-181)",
+  "rows": [
+   {
+    "label": "K1 #10 Eurex Clearing",
+    "given_url": "https://www.eurex.com/ec-en/findata/clearing-data/public-quantitative-disclosure",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Given URL: <title>Error 404</title>, H1 'Error - Fehler'. Real page: H1 'Regulatory standards and disclosures' (og:title 'Eurex Clearing | the Global Central Counterparty')",
+    "corrected_url": "https://www.eurex.com/ec-en/find/about-us/regulatory-standards",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-EUREX/ECAG_PQD_2026Q1.xlsx",
+    "what_is_actually_there": "The given URL is a 404 (no such path on eurex.com). The real CPMI-IOSCO PQD host page is https://www.eurex.com/ec-en/find/about-us/regulatory-standards (HTTP 200; alias https://www.eurex.com/ec-en/Regulatory-standards-and-disclosures-26998 also 200). File formats actually offered for the PQD: XLSX ONLY \u2014 43 .xlsx links titled 'CPMI-IOSCO public quantitative disclosure standards (Qn/YYYY)'; zero .csv and zero .zip links on the page; the 12 PDFs on the page are PFMI self-assessments (2014-2025), a KPMG assurance report, the FSB questionnaire response and a QATL links sheet \u2014 not PQD data. Archive: YES, full quarterly run on one page. Earliest quarter visible: Q3/2015 (CPMI-IOSCO_Q3_2015.xlsx, HEAD 200). Latest quarter visible: Q1/2026 (ECAG_PQD_2026Q1.xlsx, 192,695 bytes, content-type spreadsheetml, downloaded). Filenames switched from CPMI-IOSCO_Qn_YYYY.xlsx to ECAG_PQD_YYYYQn.xlsx from Q4/2024. The Q1/2026 workbook has 22 sheets incl. CCP_ConsolidatedDataFile, AggregatedDataFile and per-item sheets; item 6.1.1 IS present (sheet CCP_DataFile_6_1, ReportDate 2026-03-31, House/Client_Net/Client_Gross/Total at CCP level and per clearing service, e.g. CCP Total EUR 93,236,580,701.60) and item 6.2 IS present (sheet CCP_DataFile_6_2, columns 6.2.1-6.2.15, rows HouseIM/ClientIM/TotalIM Pre- and PostHaircut, ReportDate 2026-03-31, i.e. Q1/2026).",
+    "notes": "Return's URL is constructed (404). Format claim 'CSV, XLSX, PDF' is wrong for the PQD itself \u2014 XLSX only. Archive=YES and earliest=2015 Q3 are correct. Latest quarter (not stated in the 5 lines read) is Q1/2026 as of 2026-08-23. Minor page quirk: the Q1/2016 file link is labelled '(Q3/2016)'."
+   }
+  ],
+  "summary": "The Eurex URL in the return does not exist (404); the actual CPMI-IOSCO public quantitative disclosures live at https://www.eurex.com/ec-en/find/about-us/regulatory-standards. That page is fully usable: a complete quarterly XLSX archive from Q3/2015 to Q1/2026 (43 files), and the downloaded Q1/2026 workbook contains items 6.1.1 and 6.2 (report date 2026-03-31). The return's 'CSV, XLSX, PDF' format claim is constructed \u2014 only XLSX is offered for the PQD; the archive and 2015 Q3 start date are correct."
+ },
+ "K1-JSCC": {
+  "section": "K1 #11 JSCC (Japan Securities Clearing Corporation), lines 183-187",
+  "rows": [
+   {
+    "label": "K1 #11 JSCC \u2014 URL opened: https://www.jpx.co.jp/jscc/en/company/fmi-pdf2.html",
+    "given_url": "https://www.jpx.co.jp/jscc/en/company/fmi-pdf2.html",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Quantitative Disclosure | Japan Securities Clearing Corporation",
+    "what_is_actually_there": "Real JSCC English CPMI-IOSCO 'Quantitative Disclosure' page (breadcrumb: About JSCC > Principles for Financial Market Infrastructures Disclosure > Quantitative Disclosure). Per quarter it offers three files: 'Consolidated Spreadsheet' (e.g. /jscc/en/company/cimhll0000000ouc-att/2026Q1_e.xlsx), 'CCP Global Standardized Format' (JSCC_PQD_2026Q1.xlsx) and 'Summary' PDF (summary_j_2026Q1r.pdf for 2026Q1; summary_e_2025Q4.pdf etc. for earlier). Formats: XLSX + PDF (claim correct). Quarters listed: 1st Quarter 2026, 4th Quarter 2025, 3rd Quarter 2025, 2nd Quarter 2025, 1st Quarter 2025 \u2014 i.e. five quarters only. Earliest quarter visible: 2025 Q1 (NOT 2015 Q3 as claimed). Latest: 2026 Q1 (data as at 2026-03-31; summary PDF dated May 29 2026, last updated June 10 2026). Archive: the page itself says '*For past publications, please contact Clearing Planning Department' and probing older filenames at the same attachment path (2024Q4_e.xlsx, JSCC_PQD_2024Q4.xlsx, 2015Q3_e.xlsx) returned 404 \u2014 so no on-site archive beyond the rolling 5 quarters; 'Archive: YES' is wrong/overstated. The Japanese page (/jscc/kaisya/fmi_pdf2.html, 200, title '\u5b9a\u91cf\u7684\u306a\u60c5\u5831\u958b\u793a') shows the same 5 quarters. Also present: PQD webinar Q&A PDF, 'CCP Global Quick Access Transparency Links' PDF.",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K1-JSCC/JSCC_PQD_2026Q1.xlsx (also 2026Q1_e.xlsx and summary_j_2026Q1r.pdf in same dir)",
+    "notes": "6.1.1 and 6.2 PRESENT for Q1 2026 (ReportDate 2026-03-31). JSCC_PQD_2026Q1.xlsx (814,650 bytes, 25 sheets incl. JSCC_ConsolidatedDataFile, JSCC_DataFile_6_1, JSCC_DataFile_6.2): sheet JSCC_DataFile_6_1 has column '6.1.1' by clearing service x House_Net/Client_Gross/Client_Net/Total in JPY (e.g. ETP(Cash Securities) Total = 284,985,539,932; CFA-regulated ETP House_Net = 14,276,671,245); sheet JSCC_DataFile_6.2 has columns 6.2.1\u20136.2.15 by clearing service x HouseIM/ClientIM/TotalIM Pre/PostHaircut (e.g. ETP(Cash Securities) TotalIM_PreHaircut: 6.2.1=0, 6.2.3=233,606,893,637, 6.2.5=34,388,800,000). 2026Q1_e.xlsx (637,995 bytes; cover 'May 2026 Disclosure ... Q1 2026 Data') 'Contents' sheet also lists 6.1.1 and 6.2/6.2.1\u20136.2.15. Revisions sheet notes corrections to 6.2.1/6.2.3 OSE-Listed ETP data and to ConsolidatedDataFile 2021Q2\u20132025Q2 items 4.4.x \u2014 implying earlier consolidated files exist at JSCC but they are not posted. Fetch count ~14."
+   }
+  ],
+  "summary": "The Gemini URL for JSCC is real and correct: jpx.co.jp/jscc/en/company/fmi-pdf2.html is JSCC's English CPMI-IOSCO Quantitative Disclosure page offering XLSX (consolidated + CCP Global standardized format) and PDF summary per quarter. However the archive claims are constructed: only a rolling five quarters (2025 Q1 \u2013 2026 Q1) are posted, older files return 404, and the page directs users to contact the Clearing Planning Department for past publications \u2014 'Earliest quarter visible: 2015 Q3' is false. Latest file (JSCC_PQD_2026Q1.xlsx, data as at 2026-03-31) was downloaded and contains 6.1.1 and 6.2.1\u20136.2.15 with numeric JPY values per clearing service. Usable: URL, formats, latest quarter, 6.1.1/6.2 presence; constructed: archive depth/earliest quarter."
+ },
+ "K2": {
+  "section": "K2 \u2014 Cross-CCP disclosure aggregations (lines 189-210)",
+  "rows": [
+   {
+    "label": "K2 #1 CCP Global / CCP12 \u2014 PQD Newsflash & Quarterly Trends Report",
+    "given_url": "https://ccp-global.org/publications/",
+    "http_status": "404 (given URL); 200 at corrected URL",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "404 | CCPG (given URL); PQD | CCPG (corrected URL)",
+    "corrected_url": "https://ccp-global.org/pqd",
+    "what_is_actually_there": "ccp-global.org/publications/ does not exist (404). The real page is https://ccp-global.org/pqd (ccp12.org 301s to ccp-global.org). It offers free, no-login PDF downloads: (a) 'CCP Global PQD Newsflash' quarterly, 2018 Q1 through 2025 Q1 (earliest ones titled 'PQD Bulletin'; 2019 Q2 is a .pptx), ~5 pages each; (b) 'CCP Global PQD QTR' = PQD Quarterly Trends Report, 2022 Q1 through 2026 Q1 (latest: CCPG_PQD_QTR_Q1 2026.pdf, 22 pages, dated June-26, covers 63 CCPs: Americas 17/APAC 25/EMEA 21, incl. non-members CC&G, IRGiT); (c) four older 'PQD Newsletters' (2018 Q2, 2018 Q4, 2019 Q2, 2020 Q1); (d) CCP Global PQD Template (xlsx, v3 2021-10-28) and PQD FAQ Guide (pdf 2024-09-10). Formats: PDF only for the aggregates (charts + a few headline tables); NO csv/xlsx aggregate dataset is offered; a Power BI 'Dashboard' exists but sits behind a Secure Area login (/powerbi/user/login). QTR 2026 Q1 contents: member list, headline stats (6.1.1 Global IM Required 1,579B USD; 4.1.4 DF Required 207B; 6.2.15 IM Held 2,003B; 4.3.15 DF Held 231B; 6.6.1 VM 49B; overcollateralization 447B), IM/DF/VM maps, IM&DF required/held by region, house vs client IM, overcollateralization, IM/DF held cash (6.2.1-6.2.4/4.3.1-4.3.4) and non-cash (6.2.5-6.2.14/4.3.5-4.3.14) composition, backtesting ACL, system availability. 'Skin-in-the-Game' and 'Total Default Resources' as named by Gemini were not seen as featured series in the QTR (only DF required/held). 'How far back 2018-2026' holds only for Newsflash+QTR combined (QTR itself starts 2022 Q1). Downloaded: QTR 2026 Q1, Newsflash 2025 Q1, and template xlsx (sheets: Instructions, Guide [Disclosure#, DisclosureTitle, Reference, DisclosureDescription, DescriptionValues, DataType, DataFile, ReportingFrequency], QualitativeNotes, Revisions, CCP_ConsolidatedDataFile [ReportDate, Reference, DisclosureTitle, DisclosureDescription, DataType, ReportLevel1, ReportLevelIdentifier1, Currency1 ...], CCP_AggregateDataFile [ReportDate, ReportLevel, ReportLevelIdentifier, Currency, then one column per disclosure ref 4.1.1 ... 23.3.x], plus per-disclosure sheets CCP_DataFile_4_3/4_4a/4_4b/6_1/6_2/7_1/7_3/7_3a/7_3b/16_2/16_3/17_3/18_2/20a/20b/23/23_3). Note the template is the per-CCP reporting schema, not aggregated data.",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K2/CCPG_PQD_QTR_Q1_2026.pdf ; /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K2/CCPG_PQD_NF_25Q1.pdf ; /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K2/CCPG_PQD_Template_20211028_v3.xlsx",
+    "notes": "Publisher, product names (PQD Newsflash / PQD Quarterly Trends Report), free-PDF claim and '>40 CCPs' are right; the URL is constructed (404). Individual PDF links live under /sites/default/files/2025-02/, 2025-04, 2025-06, 2025-09, 2025-12, 2026-03, 2026-06. Data is USD-normalized at ECB quarter-end FX. Newsflash list on page stops at 2025 Q1 while QTR runs to 2026 Q1."
+   },
+   {
+    "label": "K2 #2 FIA \u2014 CCP Tracker",
+    "given_url": "https://www.fia.org/ccp-tracker",
+    "http_status": "200 (redirects to https://www.fia.org/node/3193)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "CCP Tracker | FIA ; sub-page: Initial Margin \u2013 Combined | FIA",
+    "corrected_url": "https://www.fia.org/fia/initial-margin-combined",
+    "what_is_actually_there": "FIA CCP Tracker exists and is FREE, no login: landing page (node 3193) states it uses CCPs' quarterly public quantitative disclosures 'going back to the second half of 2015' and links to interactive chart pages: /initial-margin-combined (tabs: IM Combined, IM Service Level, DF Combined, DF Service Level, Margin Breaches, Stress Loss, Concentration), /default-resources-combined, /peak-stress-loss-exposure, /clearing-members-and-concentration. Charts are Kendo JS bar charts per CCP per selected quarter (PQD field 6.1.1 IM split House Net / Client Net / Client Gross, USD), fed by a public JSON API (https://fiadataapi.azurewebsites.net/api/Data/GetQuarters|GetEntityOnQtr|GetInitialMargin) whose page-embedded key is sent by every visitor's browser; GetQuarters returned 43 quarters Q3 2015 \u2013 Q1 2026; Q1 2026 IM entity list = 15 CCPs (ASX, CME, Eurex, HKEX, ICE Clear Credit, ICE Clear Europe, ICE Clear US, JSCC, LCH LTD, LCH SA, LME, Nasdaq, OCC, SGX, TMX); sample record fields: id, name, qtr, client_Gross, client_Net, house_Net. No CSV/Excel bulk download is offered on the page; no 'Collateral Type Split' module exists. Gemini's '2019 to 2026' is wrong (actual Q3 2015 \u2013 Q1 2026); 'granular database requires membership' was not observed (data served openly); the 'Quarterly CCP Risk Review' named in the same entry is a different, paid product (legal rule summaries by Linklaters/Milbank at fiadocumentation.org/ccp-risk-review/, 'Request a Demo', 'Price List'), not a quantitative-disclosure summary.",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K2/fia_quarters.json ; /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/K2/fia_im_Q12026.json",
+    "notes": "Given URL works. Free public summary = yes (interactive charts per quarter, 15 derivatives CCPs). Coverage/dates and the 'Risk Review' conflation are constructed details."
+   },
+   {
+    "label": "K2 #3 Clarus \u2014 CCPView + free blog",
+    "given_url": "https://www.clarusft.com/products/data/ccpview/",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "CCPView - Clarus Financial Technology ; blog post: Record Q1 2026 CCP IM disclosures - Clarus Financial Technology",
+    "corrected_url": "https://www.clarusft.com/record-q1-2026-ccp-im-disclosures/",
+    "what_is_actually_there": "CCPView product page exists: 'CPMI-IOSCO Quantitative Disclosures (QD) \u2014 QD Data from Sep 2015 to date', plus cleared volumes/OI; access via 'Request a Demo' (commercial/paid; no price shown). Free blog confirmed: https://www.clarusft.com/blog/ carries a quarterly series readable without login \u2014 'What's New in CCP Disclosures \u2013 1Q24', '2Q24', '3Q24', '4Q24', 'Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', and 'Record Q1 2026 CCP IM disclosures' (2026-06-30, Jon Skinner; charts: IRS IM by CCP, rates OI, CRD IM, ETD IM, kccp 4.2.1; headline numbers in text, e.g. rates-swaps IM $372bn for nine CCPs, CRD IM $82.0bn, ETD IM $697bn for ten CCPs); older posts exist too (e.g. 'CCP Quant Disclosures 2Q20 \u2013 IM drops'). Charts are images; no downloadable data on the blog.",
+    "downloaded_file": "",
+    "notes": "Gemini's description (paid platform; free quarterly blog posts and charts; 2015 Q3 to 2026) matches what is on the site."
+   }
+  ],
+  "summary": "All three aggregators exist and the free/paid split is essentially as claimed, but the CCP Global URL is constructed (ccp-global.org/publications/ is a 404; the real page is ccp-global.org/pqd) and the FIA entry mixes up the free CCP Tracker (Q3 2015\u2013Q1 2026, 15 CCPs, JSON-backed charts, no bulk download) with the paid legal 'CCP Risk Review'. Usable: CCP Global's free PDFs (Newsflash 2018 Q1\u20132025 Q1; Quarterly Trends Report 2022 Q1\u20132026 Q1; latest QTR and Newsflash downloaded), FIA's free interactive tracker, and Clarus's free quarterly 'What's new in CCP Disclosures' blog. Constructed/unsupported: the CCPG URL, FIA's '2019\u20132026' coverage and 'membership-gated database' claim, 'Collateral Type Split' in FIA, and 'Skin-in-the-Game'/'Total Default Resources' as featured CCPG series; no machine-readable CCPG aggregate dataset exists (only the per-CCP reporting template xlsx, also downloaded)."
+ },
+ "S1": {
+  "section": "S1 \u2014 Singh post-2018 pledged collateral and velocity publications (lines 13-32)",
+  "rows": [
+   {
+    "label": "S1 Entry 1 Risk Books 'Collateral and Financial Plumbing (Third Edition)'",
+    "given_url": "https://www.risk.net/books/collateral-and-financial-plumbing-third-edition",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given risk.net URL is a 404 ('Hmmm, we can't seem to find the page'); risk.net search returns a bot 'Client Challenge'. The book is real but lives on riskbooks.com (Shopify store): product page title 'Collateral Markets and Financial Plumbing (3rd edition) - coming March 2020', author Manmohan Singh, GBP 145. Note the 3rd edition was retitled 'Collateral MARKETS and Financial Plumbing'; the older title 'Collateral and Financial Plumbing (2nd Impression)' is a separate product at https://www.riskbooks.com/products/collateral (GBP 85). Table of contents actually shown for the 3rd ed.: 1 Collateral in Financial Plumbing; 2 Collateral Velocity; 3 Leverage in the Financial System; 4 Quantitative Easing and the IS/LM framework; 5 Money and Collateral; 6 'Reverse' Monetary Policy Transmission; 7 Central Bank Balance Sheet Policies and Emerging Markets; 8 The Collateral Custodians; 9 The Changing Collateral Space; 10 Collateral in the OTC Derivatives Market; 11 CCP Resolution Remains Unresolved; 12 The Sovereign-Bank Nexus via OTC Derivatives; 13 Privacy Provision, Payment Latency and Role of Collateral; 14 Conclusion. There is NO chapter titled 'Pledged Collateral and Financial Plumbing' as claimed. Whether the book contains a hedge-fund vs real-money source split cannot be told from the product page (no preview).",
+    "page_title_seen": "Collateral Markets and Financial Plumbing (3rd edition) - coming March 2020 \u2013 Risk Books",
+    "corrected_url": "https://www.riskbooks.com/products/collateral-markets-and-financial-plumbing-3rd-edition",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/e1_rb_book.html",
+    "notes": "Book exists (Risk Books, 3rd ed., 2020, Singh). Claimed URL, exact title, and chapter name are constructed. Year 2020 in the definition note is consistent with the product page."
+   },
+   {
+    "label": "S1 Entry 2 IMF WP 2019 with Goel (pledged collateral pool and velocity)",
+    "given_url": "https://www.imf.org/en/Publications/WP/",
+    "http_status": "403 (imf.org returns Access Denied to this client for all pages tried, incl. WebFetch); given URL is a generic series index, not a paper",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real paper found on IMF eLibrary: IMF Working Paper WP/19/106, 'Pledged Collateral Market's Role in Transmission to Short-Term Market Rates', Manmohan Singh and Rohit Goel, published 17 May 2019, 21 pp. PDF downloaded and read. It DOES carry a source split: Table 2 'Sources of Pledged Collateral, Volume of Market, and Velocity (2007, 2010-17)' with columns Hedge Funds / Securities Lending / Total / Volume of Pledged Collateral / Reuse Rate (velocity); end-2017 row: 2.2 / 1.5 / 3.7 / 7.5 / 2.0 (USD trn); 2007: 1.7/1.7/3.4/10.0/3.0; footnote 13: non-hedge-fund sources (pension, insurers, official sector, asset managers) had USD 1.5trn on loan end-2017; sources cited: Risk Management Association, Singh (2011), updates incl. Canadian banks; Figure 3 'Pledged Collateral Received by U.S. Banks and European Banks' from bank annual reports. Text: pledged collateral received by major banks ~USD 7.5trn end-2017 (up 25% vs 2016); ~USD 6trn for a decade since 2008. The claimed section name 'Pledged Collateral Pool and Velocity Dynamics' does not exist; actual section is 'Collateral Reuse Rebounds\u2014Implications for Money Market Rates'. Abstract itself mentions only rates transmission and collateral reuse, not the split.",
+    "page_title_seen": "IMF Working Papers Volume 2019 Issue 106: Pledged Collateral Market's Role in Transmission to Short-Term Market Rates (2019)",
+    "corrected_url": "https://www.elibrary.imf.org/view/journals/001/2019/106/001.2019.issue-106-en.xml",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/wp19106.pdf",
+    "notes": "imf.org paper page (403 to me) is https://www.imf.org/en/Publications/WP/Issues/2019/05/17/Pledged-Collateral-Market-s-Role-in-Transmission-to-Short-Term-Market-Rates-46847 (found via search). Substance of the Gemini note (source split YES, dealer footnote tabulation) is accurate; URL/section name are not. Split is hedge funds vs securities lending (not 'real money' by name, though fn 13 lists pension/insurers/official/asset managers)."
+   },
+   {
+    "label": "S1 Entry 3 Central Banking 'Pledged Collateral and Quantitative Tightening' (2022)",
+    "given_url": "https://www.centralbanking.com/central-banks/monetary-policy/monetary-policy-framework/quantitative-tightening-and-collateral-velocity",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL is a 404. Singh's author page on centralbanking.com lists one 2022 QT piece: 'Why fears about quantitative tightening are overblown', by Manmohan Singh, published 18 Jul 2022 (datePublished 2022-07-18T15:57:34+01:00), standfirst 'The benefits of collateral availability may outweigh the monetary liquidity withdrawn by central banks'. Opened the article: only the first paragraph is visible (Fed shrinking ~USD 8.5trn balance sheet by USD 47.5bn/month since June); rest paywalled, so source split cannot be told. Other Singh Central Banking items seen on the author page: 'Interoperability of stablecoins' (29 Oct 2021, with Caitlin Long and Charles Kahn); 'How to stop stablecoins from hoarding precious collateral' (18 May 2022); 'Why central banks shouldn't ignore stablecoins' (20 Jan 2023); 'Levelling the playing field for stablecoins' (18 Jan 2024); 'Central bank balance sheets: is there an optimal structure?' (25 Jul 2024); 'M1 vs M0 in an instant payments world' (11 Oct 2024); 'Collateral velocity is disappearing behind a digital curtain' (13 Jan 2026); 'For collateral, can TINA become TIA?' (27 Mar 2026).",
+    "page_title_seen": "Why fears about quantitative tightening are overblown - Central Banking",
+    "corrected_url": "https://www.centralbanking.com/central-banks/monetary-policy/7950951/why-fears-about-quantitative-tightening-are-overblown",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/why-fears-about-quantitative-tightening-are-overblown.html",
+    "notes": "A 2022 Singh Central Banking piece on QT and collateral exists; the claimed title 'Pledged Collateral and Quantitative Tightening' and URL slug 'quantitative-tightening-and-collateral-velocity' are constructed. Author page: https://www.centralbanking.com/author/manmohan-singh (200)."
+   },
+   {
+    "label": "S1 Entry 4 IMF WP 2022 with Armas ('Financial Plumbing and Digital Money')",
+    "given_url": "https://www.imf.org/en/Publications/WP/",
+    "http_status": "403 (generic index; imf.org blocks this client)",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "A Singh & Armas IMF WP does exist: IMF Working Paper WP/2022/206, 'Digital Money and Central Banks Balance Sheet', Adrian Armas and Manmohan Singh, published 28 Oct 2022 (IMF eLibrary). Abstract (as shown on eLibrary search results): digital money as a step in payment-system technology; impact depends on type of substitution of currency-in-circulation and bank deposits by CBDC/e-money and effect on the central bank balance sheet; CBDC remuneration could amplify interest-rate channel. No mention of pledged collateral or a hedge-fund/real-money split \u2014 consistent with the claim 'source split NO'. The claimed section/title 'Financial Plumbing and Digital Money' is not the paper's title.",
+    "page_title_seen": "Search Results | IMF eLibrary (entry: Digital Money and Central Banks Balance Sheet, Adrian Armas and Mr. Manmohan Singh, IMF Working Papers Volume 2022 Issue 206, 28 Oct 2022)",
+    "corrected_url": "https://www.elibrary.imf.org/view/journals/001/2022/206/001.2022.issue-206-en.xml",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/elib_search.html",
+    "notes": "Paper exists (2022, with Armas); title constructed; URL generic. Not opened beyond the search-results abstract."
+   },
+   {
+    "label": "S1 extra \u2014 all Singh IMF Working Papers 2018-2026 found (IMF eLibrary author search, 125 items, sorted recent-to-old)",
+    "given_url": "https://www.elibrary.imf.org/search?f_0=author&q_0=%22Manmohan+Singh%22&pageSize=50&sort=datedescending",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "IMF Working Papers with Singh as author, 2018-2026, as listed on eLibrary: WP/18/62 'Leverage\u2014A Broader View' (Singh & Zohair Alam, 2018) \u2014 PDF opened: no 'Sources of Pledged Collateral' table, has Annex II 'Hedge Funds Leverage\u2014Some Estimates' and a bank/nonbank nexus map; WP/18/65 'Central Counterparties Resolution\u2014An Unresolved Problem' (Singh & Dermot Turing, 20 Mar 2018); WP/18/228 'The Morning After\u2014The Impact on Collateral Supply After a Major Default' (Turing & Singh, 2018) \u2014 PDF opened: velocity discussed in text/Box 1 (~3 end-2007 to below 2 end-2016; ~USD 6trn), no source-split table; WP/19/106 'Pledged Collateral Market's Role in Transmission to Short-Term Market Rates' (Singh & Goel, 17 May 2019) \u2014 source split YES (Table 2, hedge funds vs securities lending); WP/20/148 'Privacy Provision, Payment Latency, and Role of Collateral' (Charles Kahn, Caitlin Long, Singh, 2020) \u2014 not opened; WP/20/185 'Impact of Remittances on Natural Rate of Dollarization\u2014Trends in Caucasus and Central Asia' (Rocio Gondo, Altynai Aidarova, Singh, 2020) \u2014 not opened; WP/21/006 'Some Alternative Monetary Facts' (Peter Stella & Singh, 2021) \u2014 not opened; WP/21/094 'Emerging Market Securities Access to Global Plumbing' (Gongpil Choi, Federico Ortega, Singh, 2021) \u2014 not opened; WP/22/085 'Digital Money and Central Bank Operations' (Kahn, Singh, Jihad Alwazir, 6 May 2022) \u2014 abstract: CBDC/interest-rate channel, no collateral split; WP/22/206 'Digital Money and Central Banks Balance Sheet' (Armas & Singh, 28 Oct 2022). Most recent IMF item of any series: Fintech Note 2024/007 'Implications of Central Bank Digital Currency for Monetary Operations' (Kunaratskul, Reslow, Singh, 4 Oct 2024). NO IMF Working Papers by Singh dated 2023-2026 appear in the eLibrary author listing.",
+    "page_title_seen": "Search Results | IMF eLibrary",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/wp2018062.pdf; /private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/wp2018228.pdf",
+    "notes": "imf.org itself (search, author page, WP index, paper pages) returned 403 to curl and WebFetch; IDEAS/RePEc search returned an empty bot-throttled page. The eLibrary listing is the evidence base; items 'not opened' were only seen as title/author/abstract in search results, so their source-split status is unknown."
+   },
+   {
+    "label": "S1 extra \u2014 Singh January 2026 Central Banking piece",
+    "given_url": "https://www.centralbanking.com/author/manmohan-singh",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "'Collateral velocity is disappearing behind a digital curtain', Manmohan Singh, Central Banking, published 13 Jan 2026 (datePublished 2026-01-13T09:02:06+00:00); standfirst 'Dealers may welcome digital-era rewiring to free up collateral movement, but tokenisation will obscure metrics'; visible opening: collateral velocity closely watched but becoming harder to measure; tokenisation could exponentially increase reuse rate of pledged collateral; cites JP Morgan Kinexys Digital Assets. Body paywalled. A later piece also exists: 'For collateral, can TINA become TIA?' (27 Mar 2026, Financial Stability section).",
+    "page_title_seen": "Collateral velocity is disappearing behind a digital curtain - Central Banking",
+    "corrected_url": "https://www.centralbanking.com/central-banks/financial-market-infrastructure/7974770/collateral-velocity-is-disappearing-behind-a-digital-curtain",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/collateral-velocity-is-disappearing-behind-a-digital-curtain.html",
+    "notes": "Recorded as requested; not part of Gemini's four entries."
+   },
+   {
+    "label": "S1 'Value seen' \u2014 USD 6trn-7.5trn pledged pool, velocity 1.6-2.0",
+    "given_url": "(none given)",
+    "http_status": "n/a",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Consistent with WP/19/106 (Singh & Goel 2019) Table 2 and text: pledged collateral received by major banks ~USD 7.5trn end-2017, ~USD 6trn stuck since 2008 (5.8-6.1 for 2010-2016); velocity 2.0 (2017), 1.8 (2016), 1.9 (2015), 2.5 (2010-11), 3.0 (2007). Velocity 1.6 does not appear in that table (minimum shown is 1.8); WP/18/228 text says 'below two as of end-2016'.",
+    "page_title_seen": "(from wp19106.pdf)",
+    "corrected_url": "https://www.elibrary.imf.org/view/journals/001/2019/106/001.2019.issue-106-en.xml",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S1/wp19106.pdf",
+    "notes": "Numbers are plausible and grounded in the 2019 WP; the 1.6 lower bound was not observed in anything opened here."
+   }
+  ],
+  "summary": "All four claimed publications correspond to real Singh works, but every specific URL and most titles/section names in the return are constructed: the risk.net URL and centralbanking.com URL are 404s, and the two IMF URLs are the generic WP index. Usable: (1) Risk Books 'Collateral Markets and Financial Plumbing (3rd edition)', March 2020 (riskbooks.com product page, TOC has 'Collateral Velocity' and 'The Collateral Custodians' chapters, no 'Pledged Collateral and Financial Plumbing' chapter); (2) IMF WP/19/106 Singh & Goel, 17 May 2019 \u2014 confirmed from the PDF to contain Table 2 splitting pledged-collateral sources into hedge funds vs securities lending (end-2017: 2.2 + 1.5 = 3.7 sources, 7.5trn pledged, velocity 2.0), which also grounds the 'value seen' figures; (3) Central Banking, 'Why fears about quantitative tightening are overblown', Singh, 18 Jul 2022 (paywalled; split cannot be told); (4) IMF WP/2022/206 'Digital Money and Central Banks Balance Sheet', Armas & Singh, 28 Oct 2022 (no collateral split, as claimed). IMF eLibrary author listing shows ten Singh IMF WPs 2018-2022 and none dated 2023-2026; imf.org itself was 403 to this client. The January 2026 Central Banking piece is 'Collateral velocity is disappearing behind a digital curtain' (13 Jan 2026), URL recorded."
+ },
+ "S2S3": {
+  "section": "S2S3 \u2014 S2 (hedge-fund collateral to prime brokers / rehypothecation share) and S3 (securities lending by beneficial-owner type), return lines 34-62",
+  "rows": [
+   {
+    "label": "S2 URL #1 SEC data page",
+    "given_url": "https://www.sec.gov/data",
+    "http_status": "200 (redirects to https://www.sec.gov/data-research/sec-markets-data)",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "SEC 'Data Library' (title: 'SEC.gov | Data Library'). Filter 'Broker-Dealers' exposes only 'Company Information About Active Broker-Dealers' (CIK/name/address text file, Aug 2026). No FOCUS-derived aggregate dataset and nothing on collateral/rehypothecation on this page. Supports the S2 negative as far as this page goes.",
+    "page_title_seen": "SEC.gov | Data Library",
+    "corrected_url": "https://www.sec.gov/data-research/sec-markets-data",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S2S3/sec_data.html",
+    "notes": "URL real (redirect). Negative claim for this page holds."
+   },
+   {
+    "label": "S2 sanity check \u2014 does SEC publish any FOCUS-derived aggregate?",
+    "given_url": "(none given; check requested) https://www.sec.gov/files/dera-broker-dealer-activity-2506.pdf",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "YES, aggregates exist but not for rehypothecation. SEC DERA white paper 'Broker-Dealer Activity in the United States' (Diana Knyazeva, Daniel Bresler, June 2025; announced in SEC press release 2025-96 of 26 Jun 2025) gives FOCUS-derived industry aggregates 2010-2024: number of BDs (~3,340 in 2024), total assets (~$6.4tn, FOCUS item 0940), revenues and expenses by line, by BD type. Footnote 3 states the Commission 'has routinely published aggregated statistics online and in the Commission's Annual Reports', e.g. 'Select SEC and Market Data 2017' (https://www.sec.gov/files/2017-select-market-data v5.pdf). grep of the 2025 paper for rehypothec*/re-pledge/securities borrowed/loaned/prime broker: zero hits. So S2's 'DOES NOT EXIST' for a rehypothecation aggregate stands, but the provenance sentence 'no regulator computes or disseminates a public broker-dealer aggregate series' is overstated \u2014 SEC does publish FOCUS-derived aggregates (assets, revenues, counts), just nothing on collateral received / re-used.",
+    "page_title_seen": "SEC.gov | SEC Publishes Data on Broker-Dealers, Mergers & Acquisitions, and Business Development Companies (press release); PDF title 'Broker-Dealer Activity in the United States'",
+    "corrected_url": "https://www.sec.gov/newsroom/press-releases/2025-96-sec-publishes-data-broker-dealers-mergers-acquisitions-business-development-companies",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S2S3/dera-broker-dealer-activity-2506.pdf",
+    "notes": "One-off white paper, not a recurring series; the annual 'Select SEC and Market Data' series is the recurring FOCUS aggregate (not fetched \u2014 budget)."
+   },
+   {
+    "label": "S2 URL #2 FINRA data",
+    "given_url": "https://www.finra.org/filing-reporting/data",
+    "http_status": "404",
+    "verdict": "NOT_VERIFIED",
+    "what_is_actually_there": "FINRA 'Error 404: Page Not Found'. The nav on the 404 page points to 'FINRA Data' (finra.org/finra-data) but I did not fetch it. The URL as given is constructed.",
+    "page_title_seen": "Error 404: Page Not Found | FINRA.org",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Gemini's characterisation of FINRA margin statistics (debit/credit balances, no collateral values) was not checked."
+   },
+   {
+    "label": "S2 URL #3 OFR data",
+    "given_url": "https://www.financialresearch.gov/data/",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "OFR 'Data & Standards' overview page (FIRD, Data Collections, LEI, Interagency Data Inventory, LIBOR alternatives; nav lists Hedge Fund Monitor, Short-term Funding Monitor). No broker-dealer rehypothecation aggregate on it. Page exists; negative holds for this page.",
+    "page_title_seen": "Data & Standards | Office of Financial Research",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": ""
+   },
+   {
+    "label": "S3 #1 ISLA Securities Lending Market Report",
+    "given_url": "https://www.islaemea.org/market-reports/",
+    "http_status": "301 -> https://www.islagroup.org/market-reports/ -> 404",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL is dead ('Page not found - ISLA'). Real locations: (a) https://www.islagroup.org/securities-lending-market-data/ ('Market Data - ISLA') \u2014 quarterly snapshot, 'Data as of 31 March 2026', lendable \u20ac40.6tn / on-loan \u20ac3.9tn, includes a chart 'Securities On-Loan by Client Type (%)' (source DataLend) and on-loan by asset class, tri-party collateral splits; (b) the report itself: latest = 'Securities Lending Market Report, An ISLA Publication, 24th Edition, H2 2025' (file 2516_ISLA_Market_Report_-_Jan_2026_final, 28 pp) at https://www.islagroup.org/wp-content/smart-pdfs/isla-securities-lending-market-report-h2-2025/ (PDF: .../files/downloads/2516_ISLA_Market_Report_-_Jan_2026_final.pdf); https://docs.islagroup.org/download/latest/isla-securities-lending-market-report still serves the 23rd edition (H1 2025). Index of H2 2025: Foreword p4, Market Highlights p6, Securities Lending Biannual Market Review p8, Data Methodologies p22, Our Members p24. Beneficial-owner content: ONE pie chart 'Global Government Bonds On-Loan by Client Type' (Pension Plans 21%, Government/Sovereign Entities 29%, Insurance Companies 3%, Collective Investment Vehicle 16%, Undisclosed/Other 17%, Banks/Broker Dealers 14%). NO table of lendable assets by owner type, NO utilisation by owner type, NO 'Foundations/Endowments' or 'Sovereign Wealth Funds' category \u2014 Gemini's 'Section: Beneficial Owner Dynamics / Lendable Assets by Investor Type' and field list are constructed. Headline values Dec 2025: lendable \u20ac41.5tn, on-loan \u20ac3.5tn (EUR not USD). Data partners named: DataLend, S&P Global Market Intelligence, FIS Global, plus tri-party BNY, Euroclear, Clearstream, J.P. Morgan. Foreword: 'this may be the final Market Report in its current format'.",
+    "page_title_seen": "Page not found - ISLA (given URL); 'Market Data - ISLA'; '2516_ISLA_Market_Report_-_Jan_2026_final' (flipbook)",
+    "corrected_url": "https://www.islagroup.org/wp-content/smart-pdfs/isla-securities-lending-market-report-h2-2025/files/downloads/2516_ISLA_Market_Report_-_Jan_2026_final.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S2S3/ISLA_Market_Report_H2_2025.pdf",
+    "notes": "Publisher and biannual cadence real; URL wrong domain/path; section/field names constructed; 'first date 2013' not verified (24 biannual editions implies ~2014 start). Value claim 'USD 30trn+ lendable / 2.5-3.5trn on loan' is roughly right in magnitude but the report reports EUR 41.5tn / 3.5tn."
+   },
+   {
+    "label": "S3 #2 RMA securities lending survey",
+    "given_url": "https://www.rmahq.org/securities-lending/",
+    "http_status": "404",
+    "verdict": "NOT_VERIFIED",
+    "what_is_actually_there": "rmahq.org 404 page ('The page you are trying to reach cannot be found') states 'BAI and RMA merged in 2024, creating ProSight Financial Association. RMA content, products, and events have been rebranded to ProSight and can be found at ProSightFA.org.' https://www.prosightfa.org/securities-lending (with and without slash) -> 404. ProSight 'Our Councils & Committees' directory (my.prosightfa.org/Directories/Councils-Committees) lists no Securities Lending Council. Web search surfaces only historical RMA Securities Lending Council comment letters (SEC, Fed) and a dead rmahq.org product link (now 404). No page offering a 'Beneficial Owner Segment Performance' table or a current RMA/S&P survey was found.",
+    "page_title_seen": "The page you are trying to reach cannot be found (rmahq.org); Page not found - ProSight Financial Association; Our Councils & Committees",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Gemini's 'Quarterly / Semi-annual \u00b7 2005 \u00b7 2026' and table/field names are unconfirmed and look constructed; existence of any current RMA/ProSight securities lending aggregate could not be established in budget."
+   },
+   {
+    "label": "S3 #3 OFR pilot survey of agent lender securities lending",
+    "given_url": "https://www.financialresearch.gov/reference-papers/2016/08/25/pilot-survey-agent-lender-securities-lending-activity/",
+    "http_status": "404",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404 ('Page not found (404) | Office of Financial Research'); there is no 'reference-papers' path. Real item: OFR Working Paper 16-08, 'A Pilot Survey of Agent Securities Lending Activity', Viktoria Baklanova (OFR), Cecilia Caglio (FRB), Frank Keane (FRBNY), Burt Porter (SEC), published August 23, 2016, at https://www.financialresearch.gov/working-papers/2016/08/23/pilot-survey-of-agent-securities-lending-activity/ (PDF: https://www.financialresearch.gov/working-papers/files/OFRwp-2016-08_Pilot-Survey-of-Securities-Lending.pdf). Voluntary pilot: end-of-day loan-level data, 75 fields, seven lending agents, three non-consecutive dates (Oct 9, Nov 10, Dec 31 2015). It DOES carry an owner-type split: Table 2 'Securities Available for Lending Aggregated by Types of Securities Owners' and Table 3 'Securities on Loan Aggregated by Types of Securities Owners' ($bn), categories = Investment Firms, Pension Funds and Endowments, Governmental Entities, Insurance Companies, Banks and Broker-Dealers, Others (six groups built from 25 ALD categories). Averages: available 9,443 (Investment Firms 2,988; Pension/Endowments 2,519; Governmental 1,563; Insurance 663; Banks/BD 126; Others 1,585); on loan 1,019 (174; 332; 327; 36; 16; 134). Table 1 is by collateral type (cash/non-cash) overall, NOT by owner; Table 4 is by borrower type.",
+    "page_title_seen": "Page not found (404) | Office of Financial Research (given); 'A Pilot Survey of Agent Securities Lending Activity | Office of Financial Research'",
+    "corrected_url": "https://www.financialresearch.gov/working-papers/2016/08/23/pilot-survey-of-agent-securities-lending-activity/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/S2S3/OFRwp-2016-08_Pilot-Survey-of-Securities-Lending.pdf",
+    "notes": "Substance right (one-off pilot, three 2015 dates, owner split exists). Constructed details: 'Reference Paper Series', date 2016/08/25, table title 'Agent Lender Securities Lending Activity by Beneficial Owner', owner categories 'Mutual funds and ETFs' / 'Sovereign entities and central banks', and 'cash and non-cash collateral received split by owner' (not in the paper)."
+   }
+  ],
+  "summary": "S2's negative verdict (no public broker-dealer rehypothecation aggregate) holds as far as checked, but its provenance line overstates: the SEC does publish FOCUS-derived aggregates (DERA 'Broker-Dealer Activity in the United States', June 2025, 2010-2024 assets/revenues/counts; and the annual 'Select SEC and Market Data'), just nothing on collateral received or re-used; two of S2's three cited URLs are real, the FINRA one is 404. S3: all three given URLs are dead. ISLA and the OFR pilot are real and both carry an on-loan-by-owner-type breakdown \u2014 ISLA H2 2025 (24th ed., Jan 2026) only as a single pie chart of government bonds on loan by client type (plus a client-type chart on its Market Data page), not the lendable/on-loan/utilisation-by-investor table Gemini described; the OFR paper is Working Paper 16-08 (23 Aug 2016), with Tables 2-3 by owner type for three 2015 dates, under different category names than Gemini gave. The RMA entry is unverifiable: RMA merged into ProSight in 2024, the securities-lending page is gone, and no current survey/table was found \u2014 treat its table, field and date details as constructed."
+ },
+ "R1R2": {
+  "section": "R1 (FSB/BIS collateral re-use measures and SFT data standards) and R2 (ESMA / EU SFT markets reporting under SFTR), return lines 66-87",
+  "rows": [
+   {
+    "label": "R1 URL #1 FSB SFT topic page",
+    "given_url": "https://www.fsb.org/work-of-the-fsb/market-and-institutional-resilience/non-bank-financial-intermediation/securities-financing-transactions/",
+    "http_status": "301 -> 200",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Securities Financing Transactions: Reporting guidelines - Financial Stability Board",
+    "corrected_url": "https://www.fsb.org/2018/03/securities-financing-transactions-reporting-guidelines/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/r1_80e5a1b7.html",
+    "what_is_actually_there": "The given URL is not a topic page; it 301-redirects to the March 2018 document page 'Securities Financing Transactions: Reporting guidelines'. That page links to the 2015 'Standards and Processes for Global Securities Financing Data Collection and Aggregation' (https://www.fsb.org/2015/11/standards-and-processes-for-global-securities-financing-data-collection-and-aggregation-3/) and the Jan 2017 'Non-cash Collateral Re-Use: Measure and Metrics' (https://www.fsb.org/2017/01/non-cash-collateral-re-use-measure-and-metrics/). No data tables, no time series.",
+    "notes": "URL resolves only via redirect; the Gemini description ('Section: Interconnectedness and SFT Markets') does not correspond to anything on the page."
+   },
+   {
+    "label": "R1 URL #2 BIS SFT data aggregator page",
+    "given_url": "https://www.bis.org/statistics/sftdata.htm",
+    "http_status": "404",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page not found",
+    "corrected_url": "https://www.bis.org/statistics/sft/submitsft.htm",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/bis_submitsft.html",
+    "what_is_actually_there": "sftdata.htm does not exist (404). The real BIS page is 'Submitting securities financing transactions (SFT) data to the BIS' (200). It says the BIS provides 'operational support for the collection and potential dissemination of aggregated SFT data' and serves as global data aggregator; it offers only methodology documents (2015 Standards, Jan 2017 Non-cash collateral re-use measure and metrics, March 2018 Reporting guidelines, FAQ, data structure definition sft_dsd.pdf/.xlsx, SDMX-ML bis_sft.xml). No published aggregate SFT or re-use data, no archive, no quarters. BIS statistics index (https://www.bis.org/statistics/index.htm -> data portal 'About BIS statistics') has zero mention of SFT/repo/collateral re-use datasets.",
+    "notes": "No public BIS SFT aggregate found. Note the FSB Feb 2026 repo report fn 109: as of Sept 2025 only Australia, Canada, Japan, Mexico, UK report repo data to FSB/BIS under this exercise."
+   },
+   {
+    "label": "R1 URL #3 FSB publications",
+    "given_url": "https://www.fsb.org/publications/",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Publications - Financial Stability Board",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/r1_75ff87c3.html",
+    "what_is_actually_there": "Generic FSB publications listing page; exists but carries no SFT/re-use content of its own. Not a source for any figure.",
+    "notes": "Filler URL."
+   },
+   {
+    "label": "R1 FSB 2017 re-hypothecation and collateral re-use report",
+    "given_url": "(not given in return; checked per task)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Re-hypothecation and collateral re-use: Potential financial stability issues, market evolution and regulatory approaches - Financial Stability Board",
+    "corrected_url": "https://www.fsb.org/2017/01/re-hypothecation-and-collateral-re-use-potential-financial-stability-issues-market-evolution-and-regulatory-approaches/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/r1_rehyp.html",
+    "what_is_actually_there": "Report page exists (25 Jan 2017); PDF at https://www.fsb.org/uploads/Re-hypothecation-and-collateral-re-use.pdf. Companion 'Non-cash Collateral Re-Use: Measure and Metrics' (Jan 2017) at https://www.fsb.org/2017/01/non-cash-collateral-re-use-measure-and-metrics/ (link seen on FSB pages; not fetched). PDF content not downloaded.",
+    "notes": "Gemini's 'January 2017' statement on the policy framework/metrics is consistent with these pages."
+   },
+   {
+    "label": "R1 FSB Global Monitoring Report on NBFI 2025 (latest edition) re-use metrics",
+    "given_url": "(not given; checked per task)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Global Monitoring Report on Nonbank Financial Intermediation 2025 - Financial Stability Board",
+    "corrected_url": "https://www.fsb.org/2025/12/global-monitoring-report-on-nonbank-financial-intermediation-2025/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/P161225.pdf",
+    "what_is_actually_there": "16 Dec 2025 report (PDF https://www.fsb.org/uploads/P161225.pdf, 9.3 MB; plus 2025-monitoring-dataset.xlsx, 2025-underlying-data-for-graphs.xlsx, 2025-reporting-templates.xlsx). Full-text search: 0 hits for 'reuse', 're-use', 'rehypothecation', 'collateral velocity', 'SFT data'; 'SFT' 1 hit, 'repo' 53 hits (repo funding shares of OFIs/MMFs/broker-dealers). No collateral re-use metric or series. Editions listed on the FSB NBFI page run 2014 (shadow banking) through 2025.",
+    "notes": "Confirms 'no tabulated re-use series'. Gemini's claim that GMRs 'discuss re-use and re-hypothecation conceptually and cite dealer footnote proxies' is NOT borne out in the 2025 edition (zero mentions); earlier editions not checked."
+   },
+   {
+    "label": "R1 FSB Feb 2026 'Vulnerabilities in Government Bond-backed Repo Markets' (re-use figures since 2017)",
+    "given_url": "(not given; found while checking)",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Vulnerabilities in Government Bond-backed Repo Markets - Financial Stability Board",
+    "corrected_url": "https://www.fsb.org/2026/02/vulnerabilities-in-government-bond-backed-repo-markets/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/P040226.pdf",
+    "what_is_actually_there": "4 Feb 2026 report (PDF https://www.fsb.org/uploads/P040226.pdf). Section 3.1.3 'Rehypothecation' (24 hits for re-use/reuse) cites THIRD-PARTY estimates only: Bundesbank Securities Holdings Statistics analysis (Jank et al. 2022) re-use rate of euro-area govt bond collateral 'between 50% and 90%'; nine US intermediaries 65% of collateral received rehypothecated (Hempel et al. 2024 OFR); ~85% of incoming US Treasuries later used in outgoing transactions (Infante et al. 2020). No FSB/BIS-own aggregate re-use measure. Footnote 109: as of September 2025, Australia, Canada, Japan, Mexico and the UK report repo data to the FSB and BIS under the global SFT data collection.",
+    "notes": "This is the only FSB document found since 2017 that quotes re-use rates; they are literature citations, not an FSB/BIS published series. Answers the 'any aggregate figure since 2017' question: none of their own."
+   },
+   {
+    "label": "R1 overall verdict/frequency line ('Annual policy monitoring / Operational aggregation \u00b7 2017 \u00b7 2026')",
+    "given_url": "(n/a)",
+    "http_status": "n/a",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "what_is_actually_there": "Verdict 'DOES NOT EXIST as published aggregate dataset' is consistent with everything observed (BIS offers only submission methodology; GMR 2025 has no re-use content; FSB repo report cites outside studies). The 'Frequency/first/latest date' line and 'BIS SFT Data Aggregator \u00b7 Section: Interconnectedness and SFT Markets' are not anchored to any page seen. 'Value seen: none' is accurate.",
+    "notes": "Conclusion usable; the supporting URLs/section names are partly constructed."
+   },
+   {
+    "label": "R2 URL #1 ESMA market report page",
+    "given_url": "https://www.esma.europa.eu/publications-data/market-reports/market-report-eu-securities-financing-transactions-markets",
+    "http_status": "404",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page not found | European Securities and Markets Authority",
+    "corrected_url": "https://www.esma.europa.eu/sites/default/files/2024-04/ESMA50-524821-3147_EU_Securities_Financing_Transactions_markets_2024.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/ESMA_SFT_2024.pdf",
+    "what_is_actually_there": "Given URL 404s. The real report is 'ESMA Market Report: EU Securities Financing Transactions markets 2024', 9 April 2024, ref ESMA50-524821-3147 (PDF 1.8 MB, 200). Press release (200): https://www.esma.europa.eu/press-news/esma-news/esma-publishes-first-overview-eu-securities-financing-transactions-markets (title 'ESMA publishes first overview of EU securities financing transactions markets'; document table shows 09/04/2024). Listed on ESMA Risk Monitoring page https://www.esma.europa.eu/esmas-activities/risk-analysis/risk-monitoring under 'EU Securities Financing Transactions markets' with ONE entry: '2024'. Reporting period 20 Jan 2021 - 20 Sep 2023.",
+    "notes": "Edition list observed today (2026-08-23): 2024 only."
+   },
+   {
+    "label": "R2 URL #2 ESMA data-and-reporting",
+    "given_url": "https://www.esma.europa.eu/data-and-reporting",
+    "http_status": "404",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page not found | European Securities and Markets Authority",
+    "corrected_url": "https://www.esma.europa.eu/data-reporting/sftr-reporting",
+    "downloaded_file": "",
+    "what_is_actually_there": "404. A search result points to 'SFTR Reporting' at https://www.esma.europa.eu/data-reporting/sftr-reporting (not fetched; unverified).",
+    "notes": "Filler URL."
+   },
+   {
+    "label": "R2 editions claim ('inaugural April 2024, followed by subsequent annual editions'; '2024 \u00b7 2026')",
+    "given_url": "https://www.esma.europa.eu/esmas-activities/risk-analysis/risk-monitoring",
+    "http_status": "200",
+    "verdict": "NOT_VERIFIED",
+    "page_title_seen": "Risk Monitoring",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/esma_riskmon.html",
+    "what_is_actually_there": "ESMA's Risk Monitoring page lists market-report series by edition; under 'EU Securities Financing Transactions markets' only '2024' appears (derivatives series, by contrast, lists 2018-2023 editions). A domain-restricted web search for a 2025/2026 SFT market report returned nothing. April 2024 inaugural edition VERIFIED; 'subsequent annual editions' and 'latest 2026' NOT found.",
+    "notes": "Treat 'annual' and '2026' as constructed unless ESMA publishes a 2026 edition later this year."
+   },
+   {
+    "label": "R2 re-use measure claim ('Section: Collateral and Re-use Dynamics \u00b7 Collateral re-use flag; Estimated collateral re-use; Right of use consent indicator')",
+    "given_url": "https://www.esma.europa.eu/sites/default/files/2024-04/ESMA50-524821-3147_EU_Securities_Financing_Transactions_markets_2024.pdf",
+    "http_status": "200",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "ESMA Market Report EU Securities Financing Transactions markets 2024 (PDF)",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/ESMA_SFT_2024.txt",
+    "what_is_actually_there": "Table of contents: Editorial; Executive Summary; Essential statistics; Market monitoring (1.1 SFT markets overview, 1.2 Repo markets, 1.3 Repo collateral use); Statistical methods (1.4 SFTR data reporting); SFT statistics (1.5 SFT markets overview, 1.6 Repo markets, 1.7 Repo collateral use); Annex (Glossary, abbreviations). No section named 'Collateral and Re-use Dynamics'. 're-use'/'reuse' appears 4 times, all in the reporting-scope description; the report states it uses SFTR Tables 1-2 only and that 'Future work will cover the remaining Tables (3 and 4), which contain information on margins for cleared transactions and on collateral re-use.' So no re-use measure, flag tabulation or statistical annex on re-use in the 2024 edition. The field names Gemini lists resemble SFTR Table 4 reporting fields, not report indicators.",
+    "notes": "Gemini's own verdict text ('no ongoing public aggregate re-use time-series') is right, but the named section/indicators do not exist in the report."
+   },
+   {
+    "label": "R2 value claim ('EU repo and reverse repo gross exposures exceed EUR 10trn, sovereign debt over 80 percent of collateral')",
+    "given_url": "https://www.esma.europa.eu/sites/default/files/2024-04/ESMA50-524821-3147_EU_Securities_Financing_Transactions_markets_2024.pdf",
+    "http_status": "200",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "ESMA Market Report EU Securities Financing Transactions markets 2024 (PDF)",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R1R2/ESMA_SFT_2024.pdf",
+    "what_is_actually_there": "Report says: total outstanding SFT exposure in the SFTR dataset EUR 9.8tn as of September 2023; repos EUR 6.7tn (68%), securities lending EUR 2.3tn (23%), buy-sell back EUR 743bn (8%), margin lending EUR 124bn (1%); repo principal amounts up 11% in 2023 to EUR 6.7tn; government bonds 87% of overall collateral (88% EEA sovereigns in cleared segment, 79% sovereigns in non-cleared). No 'EUR 10trn' figure appears (0 hits for '10trn/10tn').",
+    "notes": "The >80% sovereign share is supportable (87%); 'exceed EUR 10trn' for repo/reverse repo is not in the report (repo is 6.7tn; all SFTs 9.8tn)."
+   }
+  ],
+  "summary": "R1's bottom line is usable: neither FSB nor BIS publishes an aggregate collateral re-use series. The BIS SFT page (real URL bis.org/statistics/sft/submitsft.htm; Gemini's sftdata.htm is a 404) offers only submission methodology and speaks of 'potential dissemination'; the FSB GMR on NBFI 2025 (Dec 2025) contains zero mentions of re-use/rehypothecation; the only FSB document since 2017 quoting re-use rates is the Feb 2026 government-bond repo report, and it cites third-party studies (Bundesbank 50-90%, US 65%/85%) and notes only five jurisdictions report repo data to FSB/BIS as of Sept 2025. The first FSB URL resolves only by redirect to the 2018 reporting-guidelines page; the 2017 re-hypothecation report and 'Non-cash collateral re-use: measure and metrics' pages exist. R2: both ESMA URLs are 404 (constructed); the real item is the single 'ESMA Market Report: EU Securities Financing Transactions markets 2024' (9 Apr 2024, ESMA50-524821-3147), which has no re-use section or measure (it explicitly defers SFTR Tables 3-4 incl. collateral re-use to future work); no 2025/2026 edition is listed on ESMA's Risk Monitoring page, so 'subsequent annual editions / 2026' and the named section 'Collateral and Re-use Dynamics' are constructed. The value line is half right (87% sovereign collateral) and half wrong (total SFTs EUR 9.8tn, repo EUR 6.7tn, not '>EUR 10trn')."
+ },
+ "R3R4": {
+  "section": "R3 (OFR NCCBR collection) and R4 (FICC sponsored repo) \u2014 lines 89-117",
+  "rows": [
+   {
+    "label": "R3 URL1 OFR Short-term Funding Monitor",
+    "given_url": "https://www.financialresearch.gov/short-term-funding-monitor/",
+    "http_status": "200",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Short-term Funding Monitor | Office of Financial Research",
+    "what_is_actually_there": "STFM landing page. Data Sets listed: U.S. Money Market Funds; U.S. Repo Markets ('OFR estimates of activity in tri-party and centrally cleared repo markets'); Reference Rates; Primary Dealer Statistics; Treasury Constant Maturity Rates. NO NCCBR dataset. API metadata (https://data.financialresearch.gov/v1/metadata/mnemonics?dataset=repo) returns 164 series, all DVP / GCF / Tri-Party / Tri-Party-ex-Fed (rates, transaction volume, outstanding volume by tenor/collateral, preliminary/final) \u2014 no NCCBR series, no sponsored series.",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R3R4/mnemonics.json",
+    "notes": "The return's claim that OFR 'integrate[s] metrics into its Short-Term Funding Monitor' is not true as of 2026-08-23; OFR's own Dec-2025 blog says NCCBR data 'are intended to be incorporated' into STFM (future tense). Page exists; NCCBR-in-STFM claim is constructed."
+   },
+   {
+    "label": "R3 URL2 OFR NCCBR data collection page",
+    "given_url": "https://www.financialresearch.gov/data/collections/non-centrally-cleared-bilateral-repo-data/",
+    "http_status": "200",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Non-centrally Cleared Bilateral Repo Data | Office of Financial Research",
+    "what_is_actually_there": "Collection description: Final Rule May 2024 (effective July 5, 2024); Category 1 daily reporting from Dec 3, 2024; Category 2 compliance extended to June 30, 2025 (reporting from July 1, 2025); Covered Reporter threshold $10bn NCCBR outstanding; links to FAQ, Reporting Instructions, Technical Guidance, Fact Sheet, Limited Waiver Policy (June 27, 2025), press releases. Lists only 2022 pilot blogs as analysis; no post-Dec-2024 publications or aggregates are linked from this page. No data download.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Provenance claims (12 CFR 1610, Dec 2024 Cat 1, mid-2025 Cat 2) match the page."
+   },
+   {
+    "label": "R3 URL3 OFR From the Director",
+    "given_url": "https://www.financialresearch.gov/from-the-director/",
+    "http_status": "200",
+    "verdict": "NOT_VERIFIED",
+    "page_title_seen": "From the Director | Office of Financial Research",
+    "what_is_actually_there": "Listing of Director statements; most recent is 2023-05-31. Only NCCBR-related items are 2022-08-01 'OFR Continues Efforts to Fill Key Gap in Financial Data' and 2023-05-12 'Update on OFR's Efforts to Fill Key Gap in Financial Data' (pilot-era). Nothing from the live collection (Dec 2024 onward).",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Filler URL \u2014 page exists but carries none of the claimed NCCBR releases."
+   },
+   {
+    "label": "R3 claim: OFR publications from NCCBR collection since Dec 2024 (zero-haircut blog, cross-border blog, counterparty-sector breakdown)",
+    "given_url": "(no URL given in return)",
+    "http_status": "200 (all items fetched)",
+    "verdict": "VERIFIED",
+    "page_title_seen": "Are Zero-Haircut Repos as Common as Advertised? | OFR; Sizing the U.S. Cross-Border Repo Market | OFR; Sizing the U.S. Repo Market | OFR; A Closer Look at the U.S. NCCBR Market | OFR; Who Participates in Repo? | OFR; Central Clearing in Treasury Repos Plateaued in Q1 2026 | OFR; How Will Central Clearing Impact the Repo Market? | OFR",
+    "what_is_actually_there": "Real OFR outputs using the NCCBR collection, observed on financialresearch.gov: (1) Blog 2025-08-12 'Are Zero-Haircut Repos as Common as Advertised?' (Cenicola, Mann, Paddrik) https://www.financialresearch.gov/the-ofr-blog/2025/08/12/are-zero-haircut-repos-as-common-as-advertised/ \u2014 aggregates: share of outstanding repo by haircut type (56% zero / 34% positive / 10% negative, Jan 2\u2013May 30 2025), haircut distribution by collateral type and by counterparty type (affiliates ~half of zero-haircut; hedge fund zero-haircut share 65%); source 'OFR Non-Centrally Cleared Repo Collection'. (2) Blog 2025-12-04 'Sizing the U.S. Repo Market' (Cenicola, Friedrichs, Mann, Olson) https://www.financialresearch.gov/the-ofr-blog/2025/12/04/sizing-us-repo-market/ \u2014 total US repo $12.6trn Q3 2025; NCCBR $5.0trn ($5.9trn incl. forwards); collateral mix (61.8% UST in NCCBR); currency breakdown (EUR, GBP, JPY, CAD). (3) Blog 2026-01-29 'How Will Central Clearing Impact the Repo Market?' (Cenicola, Heilbron, Mann, Paddrik) https://www.financialresearch.gov/the-ofr-blog/2026/01/29/central-clearing-impact-repo-market/ \u2014 uses 'OFR NCCBR collection'; >$8trn UST repo outstanding Aug 2025; mandate-scope estimates. (4) Blog 2026-04-09 'Sizing the U.S. Cross-Border Repo Market' (Friedrichs, Garriott, Mann) https://www.financialresearch.gov/the-ofr-blog/2026/04/09/sizing-the-us-cross-border-repo-market/ \u2014 table: NCCBR $4,928.2bn daily avg Jul 2025\u2013Feb 2026; foreign-currency 23.6%; domestic-lender/foreign-borrower 27.1%; foreign-lender/domestic-borrower 27.6%; ~half of NCCBR cross-border; counterparty-type pairs (banks, dealers, hedge funds). (5) Blog 2026-08-20 'Central Clearing in Treasury Repos Plateaued in Q1 2026' (Cenicola, Mann) https://www.financialresearch.gov/the-ofr-blog/2026/08/20/central-clearing-treasury-repos-plateaued/ \u2014 share of UST repo cleared overall and by counterparty type (hedge funds, MMFs, broker-dealers, G-SIBs), Jul 2025\u2013Apr 2026. (6) Brief 26-03, 2026-03-31 'Who Participates in Repo?' (Cenicola, Friedrichs, Mann, Olson) https://www.financialresearch.gov/briefs/2026/03/31/who-participates-in-repo/ \u2014 outstanding positions by institution type, net lenders/borrowers across segments. (7) Brief 26-05, 2026-08-18 'A Closer Look at the U.S. NCCBR Market' (Cenicola, Garriott) https://www.financialresearch.gov/briefs/2026/08/18/closer-look-us-nccbr-market/ (PDF /briefs/files/OFRBrief-26-05-closer-look-us-nccbr-market.pdf, 10 pp) \u2014 $5trn NCCBR; figures: outstanding by side and counterparty type, by counterparty domicile, by domicile\u00d7currency, by collateral type, reporter size bins, rate waterfall; foreign sovereign collateral $1.3trn; term $2.7trn; $1.5trn potentially movable to clearing. Also on the briefs list but not opened: Brief 26-04 'Affiliate Repo' (2026-05-28) and Brief 26-02 'Hedge Fund Participation in Cleared Repo' (2026-03-03). All aggregates appear only as charts/tables inside blogs/briefs \u2014 no downloadable NCCBR time series or STFM dataset exists.",
+    "corrected_url": "https://www.financialresearch.gov/the-ofr-blog/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R3R4/OFRBrief-26-05.pdf",
+    "notes": "Return's 'Value seen' is wrong/stale: 'USD 2trn\u20132.5trn daily NCCBR' is the 2022 pilot estimate; live-collection figures are $5.0trn (Q3 2025) and $4.9trn (Jul 2025\u2013Feb 2026). 'Cross-border share ~25%' conflates the foreign-currency share (~24\u201327%); OFR says about half of NCCBR is cross-border. Counterparty-sector breakdown (hedge funds, affiliates, foreign counterparties) is real. 'Zero-haircut' and 'cross-border' blogs are real. Blog 2025-08-07 'Affiliate Repo and the 2024 STFM Update' is tri-party only (not NCCBR)."
+   },
+   {
+    "label": "R4 Entry 1 DTCC Sponsored Membership Volume",
+    "given_url": "https://www.dtcc.com/data-services/sponsored-membership-volume",
+    "http_status": "403 (Cloudflare, curl) / 404 (browser)",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Attention Required! | Cloudflare (curl); '404 \u2014 Page not found' (browser); corrected page: 'Sponsored Membership Volume'",
+    "what_is_actually_there": "Given URL does not exist. Actual DTCC page: https://www.dtcc.com/charts/membership ('Sponsored Membership Volume'): two charts 'Sponsored DVP and Sponsored GC Activity' and 'Sponsored Repo and Sponsored Reverse Repo Activity', 'Last updated through Aug 20 2026', amounts from Sponsored Member's perspective. Download CSV: https://www.dtcc.com/data/SponsoredVolume.csv \u2014 daily; columns BUSINESS_DATE, DVP_TOTAL_AMOUNT, GC_TOTAL_AMOUNT, TOTAL_REPO_AMOUNT, TOTAL_REVERSE_REPO_AMOUNT, TOTAL_AMOUNT; 1,251 data rows from 8/16/2021 to 8/20/2026 (rolling ~5-year window; earliest rows blank/zero); latest 8/20/2026 TOTAL $2,295.6bn (DVP $1,556.5bn, GC $739.1bn; repo $1,030.8bn, reverse repo $1,264.8bn). Pre-April-2020 history: https://www.dtcc.com/data/historicdata.csv \u2014 monthly Daily Average and Monthly Peak, 07/2019\u201303/2020 only (03/2020 daily avg $476.7bn). Linked from FICC Sponsored Service page https://www.dtcc.com/clearing-and-settlement-services/ficc-gov/sponsored-membership. No sponsored-member counts observed on these pages.",
+    "corrected_url": "https://www.dtcc.com/charts/membership",
+    "downloaded_file": "",
+    "notes": "Return's series names roughly map to CSV columns (DVP, GC, repo, reverse repo, total). 'First date 2017' not supported \u2014 earliest observed is 07/2019 monthly; daily CSV starts Aug 2021. Claims 'exceeds USD 2.5trn' and 'over 2,800 sponsored member accounts' NOT verified (latest total $2.30trn; no member count published on these pages). CSV contents read in-browser, not saved."
+   },
+   {
+    "label": "R4 Entry 2 OFR Repo Data Release (sponsored breakout)",
+    "given_url": "https://www.financialresearch.gov/short-term-funding-monitor/datasets/repo-data-release/",
+    "http_status": "404",
+    "verdict": "CONSTRUCTED",
+    "page_title_seen": "Page not found (404) | Office of Financial Research; corrected page: 'OFR STFM - U.S. Repo Markets Data Release | Office of Financial Research'",
+    "what_is_actually_there": "Given URL 404. Real page https://www.financialresearch.gov/short-term-funding-monitor/datasets/repo/ \u2014 'U.S. Repo Markets Data Release': daily rates and volumes in centrally cleared (DVP, GCF) and tri-party repo, broken out by tenor and collateral; preliminary daily at 3pm, final quarterly. API mnemonic list for dataset=repo: 164 series, prefixes REPO-DVP_*, REPO-GCF_*, REPO-TRI_*, REPO-TRIV1_* only. No sponsored-member volume breakout; no NCCBR series.",
+    "corrected_url": "https://www.financialresearch.gov/short-term-funding-monitor/datasets/repo/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R3R4/mnemonics.json",
+    "notes": "Project's belief confirmed: OFR's public repo release has NO sponsored breakout. The return's 'DVP Repo Rates (with sponsored member volume breakout)' is constructed. Start date 'October 2019' not checked."
+   },
+   {
+    "label": "R4 Entry 3 Liberty Street Economics sponsored repo",
+    "given_url": "https://libertystreeteconomics.newyorkfed.org/",
+    "http_status": "200",
+    "verdict": "PARTLY_VERIFIED",
+    "page_title_seen": "Liberty Street Economics (homepage); 'The Rise of Sponsored Service for Clearing Repo - Liberty Street Economics'",
+    "what_is_actually_there": "Given URL is the blog homepage. Site search for 'sponsored repo' returns one dedicated post: 'The Rise of Sponsored Service for Clearing Repo', Adam Copeland and R. Jay Kahn, October 8, 2025, https://libertystreeteconomics.newyorkfed.org/2025/10/the-rise-of-sponsored-service-for-clearing-repo/ \u2014 summarises NY Fed Staff Report no. 1140 (https://www.newyorkfed.org/research/staff_reports/sr1140); uses OFR centrally cleared repo collection (confidential); table of average daily Treasury repo Jan 2020\u2013Jun 2024: sponsored lending $244.3bn (15.9%), sponsored borrowing $209.3bn (13.6%), interdealer $1,086.1bn (70.5%), total $1,539.7bn; chart of daily sponsored lending vs borrowing 2020\u20132024; MMFs dominate sponsored lending, hedge funds sponsored borrowing (qualitative); FICC sponsored-member list grew by 555 between Aug 2022 and Jul 2024. Other search hits (2021 'How Competitive are U.S. Treasury Repo Markets?', 2023 'Are There Too Many Ways to Clear and Settle Secured Financing Transactions?') are tangential.",
+    "corrected_url": "https://libertystreeteconomics.newyorkfed.org/2025/10/the-rise-of-sponsored-service-for-clearing-repo/",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/R3R4/lse_sponsored.html",
+    "notes": "Not a 'research series' from 2019 \u2014 one post (Oct 2025) plus one Staff Report. Volumes are split sponsored lending vs borrowing, not by participant class; participant classes (MMFs, hedge funds) are named qualitatively."
+   }
+  ],
+  "summary": "R3: the OFR collection page and STFM URLs are real, but STFM carries no NCCBR dataset (API shows only DVP/GCF/tri-party series) and the From-the-Director page has nothing since 2023; however the substantive claims hold \u2014 OFR has published at least five blogs (2025-08-12 zero-haircut, 2025-12-04 sizing, 2026-01-29 clearing impact, 2026-04-09 cross-border, 2026-08-20 clearing plateau) and two briefs (26-03 Who Participates in Repo, 26-05 A Closer Look at the U.S. NCCBR Market) from the NCCBR collection, with haircut, counterparty-type, domicile, currency and collateral aggregates inside the charts/tables (no downloadable series). The return's values are stale/wrong: NCCBR is ~$5trn (not $2\u20132.5trn) and ~half (not 25%) is cross-border. R4: DTCC URL is constructed (real page https://www.dtcc.com/charts/membership with daily CSV SponsoredVolume.csv, Aug 2021\u2013Aug 20 2026, DVP/GC/repo/reverse split, latest total $2.30trn, plus monthly 07/2019\u201303/2020 history; no member counts); OFR repo-data-release URL is 404 and the real release has NO sponsored breakout (constructed); Liberty Street homepage resolves to one real post, Copeland & Kahn 'The Rise of Sponsored Service for Clearing Repo' (Oct 8, 2025), not a 2019-onward series."
+ },
+ "L1": {
+  "section": "L1 \u2014 Measurement of collateral re-use and velocity, 2016\u20132026 (lines 214-259)",
+  "rows": [
+   {
+    "label": "L1 #1 Infante-Press-Strauss, The Ins and Outs of Collateral Re-use",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-ins-and-outs-of-collateral-re-use-20181221.htm",
+    "http_status": "404 (given); 200 at corrected URL",
+    "page_title_seen": "Given: 'Federal Reserve Board - Page not Found'. Corrected: 'The Fed - The Ins and Outs of Collateral Re-use'",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real paper. Sebastian Infante, Charles Press, Jacob Strauss, 'The Ins and Outs of Collateral Re-use', FEDS Notes, Board of Governors of the Federal Reserve System, dated December 21, 2018 (Crossref registers issue 2019-01, FEDS Notes 2019 no. 2298). Page text confirms: confidential supervisory data on primary dealers, three dealer-level measures of collateral use/re-use, finding that circulation is significantly higher for US Treasuries. Crossref hit: doi.org/10.17016/2380-7172.2298 resolves to the corrected URL.",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/ins-and-outs-of-collateral-re-use-20181221.htm",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L1/feds_real.html",
+    "notes": "Given URL has a spurious 'the-' prefix in the slug and 404s; real slug is 'ins-and-outs-of-collateral-re-use-20181221'. Authors/title/venue/year correct. The specific claim 'primary dealers re-use over 90 percent of received US Treasury collateral' was NOT checked against the note text and should be treated as unverified."
+   },
+   {
+    "label": "L1 #2 Jank-Moench-Schneider, Safe Asset Shortage and Collateral Reuse",
+    "given_url": "https://www.bundesbank.de/en/publications/research/discussion-papers/safe-asset-shortage-and-collateral-reuse-878546",
+    "http_status": "404 (given); 200 at Bundesbank PDF",
+    "page_title_seen": "Given: 'Page not found | Deutsche Bundesbank'. PDF title page: 'Discussion Paper Deutsche Bundesbank No 39/2021 Safe asset shortage and collateral reuse'",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real paper as a Bundesbank Discussion Paper: Stephan Jank, Emanuel Moench, Michael Schneider, 'Safe asset shortage and collateral reuse', Deutsche Bundesbank Discussion Paper No 39/2021 (PDF dated 2021-10-25; confirmed from PDF title page). Also SAFE Working Paper 355 (2022) and SSRN (2021/2022) per Crossref and IDEAS. NO Journal of Financial Economics version found: Crossref (plain and JFE-filtered queries) returns only SSRN records; the IDEAS 'Other versions' list shows only the SAFE WP; web search surfaced no journal publication.",
+    "corrected_url": "https://www.bundesbank.de/resource/blob/878798/19740febf3ca527df453194d8540d92e/mL/2021-10-25-dkp-39-data.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L1/bbk_dkp39.pdf",
+    "notes": "Bundesbank DP 39/2021 and year 2021 verified. 'Journal of Financial Economics' attribution is NOT supported by any source found \u2014 treat as constructed. Given landing-page URL (id 878546) 404s; a guessed 878796 also 404s; the working link is the resource-blob PDF above. Abstract confirms security-level reuse measurement and reuse response to Eurosystem purchase-induced scarcity; the 'Securities Holdings Statistics and money market transaction data' data claim was not checked."
+   },
+   {
+    "label": "L1 #3 Fuhrer-Guggenheim-Schumacher, Re-use of collateral in the repo market",
+    "given_url": "https://www.snb.ch/en/publications/research/working-papers/2016/working_paper_2016_01",
+    "http_status": "200 (but wrong paper); 200 at corrected SNB URL",
+    "page_title_seen": "Given: 'Foreign PMIs: A reliable indicator for exports?' (a different SNB WP 2016-01). Corrected: 'Re-use of collateral in the repo market'",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real paper. SNB page: Working Paper 'Re-use of collateral in the repo market', Lucas Marc Fuhrer, Basil Guggenheim, Silvio Schumacher, Issue 2015-02, dated 16 January 2015 (NOT 2016-01). Journal version per Crossref: Fuhrer, Guggenheim, Schumacher, 'Re-Use of Collateral in the Repo Market', Journal of Money, Credit and Banking, vol. 48 no. 6, pp. 1169-1193, September 2016 (online 8 Aug 2016); publisher URL onlinelibrary.wiley.com/doi/10.1111/jmcb.12330. SNB summary confirms methodology estimating re-use from actual transaction data in the Swiss repo market.",
+    "corrected_url": "https://www.snb.ch/en/publications/research/working-papers/2015/working_paper_2015_02",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L1/snb2015_02.html",
+    "notes": "Authors, title, JMCB 2016 correct. SNB WP number/year wrong: it is WP 2015-02 (January 2015), not 2016; the given 2016_01 URL returns an unrelated paper on foreign PMIs."
+   },
+   {
+    "label": "L1 #4 Infante-Vardoulakis, Collateral Runs",
+    "given_url": "https://academic.oup.com/rfs/article/34/6/2949/5917833",
+    "http_status": "403 (Cloudflare 'Just a moment...' on given and on corrected OUP URL)",
+    "page_title_seen": "'Just a moment...' (bot challenge) for both OUP URLs",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real paper. Crossref record: Sebastian Infante and Alexandros P. Vardoulakis, 'Collateral Runs', The Review of Financial Studies, vol. 34 issue 6, pp. 2949-2992, print May 2021 (online 26 Dec 2020); Crossref's registered resource URL is academic.oup.com/rfs/article/34/6/2949/6050886 (article id 6050886, not 5917833). Earlier versions: FEDS 2018-022 and SSRN 3099637 (2018). Related: Infante & Vardoulakis, 'Monitoring Risk From Collateral Runs', FEDS Notes 2020.",
+    "corrected_url": "https://academic.oup.com/rfs/article/34/6/2949/6050886",
+    "downloaded_file": "",
+    "notes": "Citation (authors/title/RFS/2021, vol 34(6) p.2949) correct. The article-id segment of the given URL (5917833) does not match Crossref's registered id (6050886); OUP blocked direct confirmation, so the given URL is unconfirmed rather than proven dead. Description of 'supervisory balance-sheet data and crisis case evidence' not checked (Collateral Runs is primarily a theoretical model paper)."
+   },
+   {
+    "label": "L1 #5 Aguiar-Biais-Crassard, Collateral Reuse in Euro Area Financial Markets",
+    "given_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2023.en.pdf",
+    "http_status": "404",
+    "page_title_seen": "'Sorry, this page does not exist.' (ECB 404 page)",
+    "verdict": "CONSTRUCTED",
+    "what_is_actually_there": "No such paper found. Crossref bibliographic query for 'Aguiar Biais Crassard Collateral Reuse in Euro Area Financial Markets' returns nothing matching; web search for the three author names plus topic returns no hit for any such paper; the URL pattern 'ecb.wp2023.en.pdf' 404s (ECB WP no. 2023 is not a 2023 paper and real ECB WP URLs carry a tilde-hash). The real ECB Working Paper on this topic is: Georgios Angelis Alexiou, Sofia M. Pereira, Victor Rodrigues-Gomes, 'Repo collateral reuse and liquidity windfalls', ECB Working Paper Series No 3147, 2025 (confirmed from the PDF title page and copyright page; uses confidential SFTR data; finds about 11.6% of European repo volume relies on reused securities).",
+    "corrected_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3147~6c60cabb50.en.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L1/ecb_wp3147.pdf",
+    "notes": "Authors, title, year and URL all appear fabricated; the SFTR-based euro-area measurement claim maps onto the real Alexiou-Pereira-Rodrigues-Gomes ECB WP 3147 (2025), which the model did not cite."
+   },
+   {
+    "label": "L1 ADD #1 Alexiou-Pereira-Rodrigues-Gomes, Repo collateral reuse and liquidity windfalls",
+    "given_url": "n/a (additional find)",
+    "http_status": "200",
+    "page_title_seen": "PDF: 'Working Paper Series \u2014 Repo collateral reuse and liquidity windfalls \u2014 No 3147'",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Georgios Angelis Alexiou, Sofia M. Pereira, Victor Rodrigues-Gomes, 'Repo collateral reuse and liquidity windfalls', ECB Working Paper Series No 3147, European Central Bank, 2025. Empirical measurement of reuse in European repo using confidential SFTR data. URL: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3147~6c60cabb50.en.pdf (also SSRN 5741702 per Crossref).",
+    "corrected_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3147~6c60cabb50.en.pdf",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L1/ecb_wp3147.pdf",
+    "notes": "Fetched and read title/abstract/copyright pages."
+   },
+   {
+    "label": "L1 ADD #2 Infante-Press-Saravay, Understanding Collateral Re-use in the US Financial System",
+    "given_url": "n/a (additional find)",
+    "http_status": "Crossref 200 (publisher page not fetched)",
+    "page_title_seen": "",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Sebastian Infante, Charles Press, Zack Saravay, 'Understanding Collateral Re-use in the US Financial System', AEA Papers and Proceedings, vol. 110, 2020 (Crossref record). Publisher URL: https://www.aeaweb.org/articles?id=10.1257/pandp.20201099",
+    "corrected_url": "https://www.aeaweb.org/articles?id=10.1257/pandp.20201099",
+    "downloaded_file": "",
+    "notes": "Citation from Crossref only; AEA page not fetched within budget."
+   },
+   {
+    "label": "L1 ADD #3 Infante-Saravay, Treasury Market Functioning During the COVID-19 Outbreak: Evidence from Collateral Re-use",
+    "given_url": "n/a (additional find)",
+    "http_status": "Crossref 200 (page not fetched)",
+    "page_title_seen": "",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Sebastian Infante and Zack Saravay, 'Treasury Market Functioning During the COVID-19 Outbreak: Evidence from Collateral Re-use', FEDS Notes, Board of Governors of the Federal Reserve System, 2020 (Crossref record, FEDS Notes no. 2755). Resolver URL: https://doi.org/10.17016/2380-7172.2755",
+    "corrected_url": "https://doi.org/10.17016/2380-7172.2755",
+    "downloaded_file": "",
+    "notes": "Citation from Crossref only; federalreserve.gov page not fetched. Same dealer-level re-use measures applied to March 2020."
+   },
+   {
+    "label": "L1 ADD #4 Inhoffen-van Lelyveld, Safe Asset Scarcity and Re-use in the European Repo Market",
+    "given_url": "n/a (additional find)",
+    "http_status": "Crossref 200 (page not fetched)",
+    "page_title_seen": "",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Justus Inhoffen and Iman van Lelyveld, 'Safe Asset Scarcity and Re-use in the European Repo Market', 2023; circulated as DIW Berlin Discussion Paper 2050 and on SSRN (abstract ids 4522361 / 4562799 per Crossref). DIW PDF URL seen in search results: https://www.diw.de/documents/publikationen/73/diw_01.c.880222.de/dp2050.pdf",
+    "corrected_url": "https://www.diw.de/documents/publikationen/73/diw_01.c.880222.de/dp2050.pdf",
+    "downloaded_file": "",
+    "notes": "Existence confirmed via Crossref and web search result title 'Discussion Papers Safe Asset Scarcity and Re-use in the European Repo Market'; PDF not fetched."
+   },
+   {
+    "label": "L1 ADD #5 Luu-Napoletano-Barucca-Battiston, Collateral Unchained: Rehypothecation networks, concentration and systemic effects",
+    "given_url": "n/a (additional find)",
+    "http_status": "Crossref 200 (page not fetched)",
+    "page_title_seen": "",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Duc Thi Luu, Mauro Napoletano, Paolo Barucca, Stefano Battiston, 'Collateral Unchained: Rehypothecation networks, concentration and systemic effects', Journal of Financial Stability, 2021 (Crossref; earlier SSRN 2018). Publisher resolver: https://doi.org/10.1016/j.jfs.2020.100811. Also noted from Crossref: Brittany Lewis, 'Creditor rights, collateral reuse, and credit supply', Journal of Financial Economics, Sept 2023 (https://doi.org/10.1016/j.jfe.2023.xx \u2014 resolver via Crossref; exact page not fetched); Hyejin Park, 'Collateral reuse, collateral mismatch, and financial crises', Quarterly Review of Economics and Finance, 2021.",
+    "corrected_url": "https://doi.org/10.1016/j.jfs.2020.100811",
+    "downloaded_file": "",
+    "notes": "Network-based measurement of rehypothecation chains; Crossref-only verification. Lewis (JFE 2023) is about reuse rights and credit supply rather than velocity measurement; Park (QREF 2021) is primarily theoretical \u2014 listed for completeness, not as measurement papers."
+   }
+  ],
+  "summary": "Four of the five papers exist and are correctly attributed at the author/title level, but every given URL is wrong or dead: #1 FEDS Note has a bad slug (real page confirmed), #2 Bundesbank DP 39/2021 is real but the 'Journal of Financial Economics' venue is unsupported anywhere and the landing URL 404s (working PDF link found), #3 is real in JMCB 48(6) 2016 but the SNB WP is 2015-02 not 2016-01 and the given URL opens an unrelated SNB paper, #4 is real in RFS 34(6) 2021 but the OUP article id in the URL does not match Crossref's and OUP blocked direct checks. Entry #5 (Aguiar-Biais-Crassard, ECB WP 2023) is constructed: no such paper in Crossref or on the web, URL 404; the real ECB paper on SFTR-based euro-area reuse is Alexiou, Pereira and Rodrigues-Gomes, ECB WP 3147 (2025), fetched and confirmed. Additional real measurement papers found: Infante-Press-Saravay (AEA P&P 2020), Infante-Saravay (FEDS Notes 2020), Inhoffen-van Lelyveld (DIW DP 2050, 2023), Luu et al. (J. Financial Stability 2021), plus Lewis (JFE 2023) and Park (QREF 2021) as adjacent; Crossref-verified, publisher pages not fetched."
+ },
+ "L2": {
+  "section": "L2 \u2014 Official and central-bank work 2021\u20132026 on hedge-fund Treasury leverage and basis trade (lines 261-315)",
+  "rows": [
+   {
+    "label": "L2 #1 Barth-Kahn OFR WP 21-01",
+    "given_url": "https://www.financialresearch.gov/working-papers/2021/04/01/hedge-funds-and-the-treasury-cash-futures-disconnect/",
+    "http_status": "200",
+    "page_title_seen": "Hedge Funds and the Treasury Cash-Futures Disconnect | Office of Financial Research",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Real: Daniel Barth (Federal Reserve Board) and R. Jay Kahn (OFR), 'Hedge Funds and the Treasury Cash-Futures Disconnect', OFR Working Paper no. 21-01, published April 1, 2021. PDF at https://www.financialresearch.gov/working-papers/files/OFRwp-21-01-hedge-funds-and-the-treasury-cash-futures-disconnect.pdf (3.7 MB, downloaded). PDF text: 'Form PF' 23 hits, 'Traders in Financial Futures' 1 hit, OFR Cleared Repo Collection / FICC sponsored repo used. 'TRACE' = 0 hits. 'Journal of Financial Economics' appears only in bibliography references (3 hits), not as the paper's venue.",
+    "corrected_url": "",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L2/OFRwp-21-01.pdf",
+    "notes": "Authors, title, OFR venue, year and URL all correct. The added 'Journal of Financial Economics' venue is not supported by the OFR page or the PDF (unverified/likely constructed). The 'FINRA TRACE' data claim is not supported (zero mentions in the PDF); Form PF, CFTC TFF and OFR cleared-repo data are supported."
+   },
+   {
+    "label": "L2 #2 Banegas-Monin-Petrasek FEDS Note 2021",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/sizing-hedge-funds-treasury-cash-futures-basis-trade-20211029.htm",
+    "http_status": "404",
+    "page_title_seen": "Federal Reserve Board - Page not Found",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL is a 404. FEDS Notes 2021 index lists the real item: Ayelen Banegas, Phillip J. Monin, and Lubomir Petrasek, 'Sizing hedge funds' Treasury market activities and holdings', FEDS Notes, October 06, 2021 (fetched, 200; title seen 'The Fed - Sizing hedge funds' Treasury market activities and holdings'). Abstract: uses SEC Form PF regulatory data to analyze hedge funds' UST holdings/activities and decompose exposures into cash holdings vs derivatives; also repo borrowing. No mention of CFTC COT or primary dealer repo statistics seen in the opening text.",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/sizing-hedge-funds-treasury-market-activities-and-holdings-20211006.html",
+    "downloaded_file": "",
+    "notes": "Authors, venue and year correct; title is constructed ('...Treasury cash-futures basis trade' vs real '...Treasury market activities and holdings'); URL date (20211029 vs 20211006) and extension (.htm vs .html) constructed. Data claim only partly supported (Form PF yes; CFTC COT / primary dealer repo stats not confirmed)."
+   },
+   {
+    "label": "L2 #3 BIS QR Sept 2023 basis-trade box",
+    "given_url": "https://www.bis.org/publ/qtrpdf/r_qt2309e.htm",
+    "http_status": "200",
+    "page_title_seen": "CP and CDs markets: a primer",
+    "verdict": "CONSTRUCTED",
+    "what_is_actually_there": "Given URL exists but is a different article ('CP and CDs markets: a primer'). The real Sept 2023 BIS QR item on the basis trade is Box A, 'Margin leverage and vulnerabilities in US Treasury futures', by Fernando Avalos and Vladyslav Sushko, inside the overview chapter 'Resilient risk-taking in financial markets', BIS Quarterly Review, 18 September 2023 (chapter HTML https://www.bis.org/publ/qtrpdf/r_qt2309a.htm, 200; chapter PDF https://www.bis.org/publ/qtrpdf/r_qt2309a.pdf downloaded, box text confirmed via pdftotext). Box uses CFTC leveraged-fund net short positions in Treasury futures and CME initial margin data; it cites Barth-Kahn-Mann FEDS Note Aug 2023 and Aramonte-Schrimpf-Shin BIS WP 1121.",
+    "corrected_url": "https://www.bis.org/publ/qtrpdf/r_qt2309a.htm",
+    "downloaded_file": "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n3verify/L2/r_qt2309a.pdf",
+    "notes": "Title constructed; authors swapped \u2014 'Avalos, Ehlers, Eren' are the authors of the Dec 2019 BIS QR box 'September stress in dollar repo markets: passing or structural?' (cited in Box A's footnotes), not of the 2023 box. Only the venue/year are right. Data claim (Form PF aggregates, FR 2004) not supported by the box text I saw."
+   },
+   {
+    "label": "L2 #4 Quantifying Treasury Cash-Futures Basis Trades FEDS Note 2024",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/quantifying-treasury-cash-futures-basis-trades-20240308.htm",
+    "http_status": "404",
+    "page_title_seen": "Federal Reserve Board - Page not Found",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404s only because of the extension (.htm). Real page: https://www.federalreserve.gov/econres/notes/feds-notes/quantifying-treasury-cash-futures-basis-trades-20240308.html (200; title 'The Fed - Quantifying Treasury Cash-Futures Basis Trades'). Authors on page: Jonathan Glicoes, Benjamin Iorio, Phillip Monin, and Lubomir Petrasek, FEDS Notes, March 08, 2024. Intro says it introduces two kinds of metrics for basis-trade volume, noting CFTC TFF leveraged-fund shorts overestimate basis activity.",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/quantifying-treasury-cash-futures-basis-trades-20240308.html",
+    "downloaded_file": "",
+    "notes": "Title, venue, date correct. Author list wrong: 'Hempel' does not appear; Glicoes and Iorio omitted (Monin, Petrasek correct). Data claim (Form PF, CFTC, TRACE, OFR repo) not verified from the page text I saw."
+   },
+   {
+    "label": "L2 #5 Cross-Border Trail of the Treasury Basis Trade FEDS Note 2025",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-cross-border-trail-of-the-treasury-basis-trade-20251024.htm",
+    "http_status": "404",
+    "page_title_seen": "Federal Reserve Board - Page not Found",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Given URL 404 (wrong date and extension). Real page: https://www.federalreserve.gov/econres/notes/feds-notes/the-cross-border-trail-of-the-treasury-basis-trade-20251015.html (200; title 'The Fed - The Cross-Border Trail of the Treasury Basis Trade'). Authors on page: Daniel Barth, Daniel Beltran, Matthew Hoops, Jay Kahn, Emily Liu, and Maria Perozek, FEDS Notes, October 15, 2025. Intro: combines regulatory hedge-fund data, CPIS and TIC data; finds TIC undercounts Cayman hedge funds' UST holdings by ~$1.4tn as of end-2024.",
+    "corrected_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-cross-border-trail-of-the-treasury-basis-trade-20251015.html",
+    "downloaded_file": "",
+    "notes": "Title, venue, year correct. Author list entirely constructed ('Bertaut, Monin, Petrasek' \u2014 none of these appear). Date constructed (Oct 24 vs real Oct 15). Data claim partly supported (TIC + hedge-fund regulatory data; CPIS also used; CFTC not confirmed)."
+   },
+   {
+    "label": "L2 #6 Hauser BoE speech 'From sunshine to stormy weather'",
+    "given_url": "https://www.bankofengland.co.uk/speech/2023/november/andrew-hauser-speech-at-the-european-repo-and-collateral-council",
+    "http_status": "404",
+    "page_title_seen": "Page not found | Bank of England",
+    "verdict": "CONSTRUCTED",
+    "what_is_actually_there": "No such item found. BoE 'Andrew Hauser' past-people page (200) lists his speeches: 03 Nov 2023 \"'Less is more' or 'Less is a bore'? Re-calibrating the role of central bank reserves\" (BoE Watchers' Conference, /speech/2023/november/andrew-hauser-keynote-speech-bank-of-england-watchers-conference); 28 Sep 2023 'A journey of 1000 miles begins with a single step: filling gaps in the central bank liquidity toolkit' (MNI Connect); 03 Mar 2023 'Looking through a glass onion: lessons from the 2022 LDI intervention'; 04 Nov 2022 'Thirteen days in October: how central bank balance sheets can support monetary and financial stability'. Web search for the exact title returned nothing. No ERCC speech and no 'From sunshine to stormy weather' title exists on bankofengland.co.uk.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Title, URL and data-use description are constructed; only the speaker/institution are real. If a BoE November 2023 Hauser speech is wanted, the real one is the reserves speech at the BoE Watchers' Conference, which is not about the US basis trade."
+   },
+   {
+    "label": "L2 ADD #1 Barth-Kahn-Mann FEDS Note Aug 2023",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/recent-developments-in-hedge-funds-treasury-futures-and-repo-positions-20230830.html",
+    "http_status": "200",
+    "page_title_seen": "The Fed - Recent Developments in Hedge Funds\u2019 Treasury Futures and Repo Positions: is the Basis Trade \u201cBack\"?",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Daniel Barth, R. Jay Kahn and Robert Mann, 'Recent Developments in Hedge Funds' Treasury Futures and Repo Positions: is the Basis Trade \"Back\"?', FEDS Notes, August 30, 2023. Uses CFTC Traders in Financial Futures data and the OFR Cleared Repo Collection.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional item (not in Gemini's list). Also cited by the BIS Sept 2023 Box A."
+   },
+   {
+    "label": "L2 ADD #2 Banegas-Monin FEDS Note Sept 2023",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/hedge-fund-treasury-exposures-repo-and-margining-20230908.html",
+    "http_status": "200",
+    "page_title_seen": "The Fed - Hedge Fund Treasury Exposures, Repo, and Margining",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Ayelen Banegas and Phillip Monin, 'Hedge Fund Treasury Exposures, Repo, and Margining', FEDS Notes, September 08, 2023. Uses SEC Form PF regulatory data; discusses low/zero haircuts on hedge funds' Treasury repo borrowing.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional item."
+   },
+   {
+    "label": "L2 ADD #3 OFR Blog Berg-Stemp Aug 2026",
+    "given_url": "https://www.financialresearch.gov/the-ofr-blog/2026/08/19/hedge-funds-cash-treasury-holdings/",
+    "http_status": "200",
+    "page_title_seen": "Hedge Funds\u2019 Cash Treasury Holdings Reach $2 Trillion | Office of Financial Research",
+    "verdict": "VERIFIED",
+    "what_is_actually_there": "Ted Berg and Daniel Stemp, 'Hedge Funds' Cash Treasury Holdings Reach $2 Trillion', The OFR Blog, August 19, 2026. Hedge funds' cash Treasury holdings reached $2tn at end-2025, 7% of marketable Treasury debt (Form PF / OFR Hedge Fund Monitor data).",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional item."
+   },
+   {
+    "label": "L2 ADD #4 OFR Blog Hedge Fund Monitor repo reversal June 2025",
+    "given_url": "https://www.financialresearch.gov/the-ofr-blog/2025/06/02/blog-hfm-q4-2024/",
+    "http_status": "not fetched (seen in OFR blog index, 200)",
+    "page_title_seen": "(index link text) OFR Hedge Fund Monitor Shows Repo Reversal",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Listed on https://www.financialresearch.gov/the-ofr-blog/ as 'OFR Hedge Fund Monitor Shows Repo Reversal', dated 2025/06/02 per URL. Authors not checked.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional item; title/URL/date from the official index only."
+   },
+   {
+    "label": "L2 ADD #5 OFR Blog Are Zero-Haircut Repos as Common as Advertised? Aug 2025",
+    "given_url": "https://www.financialresearch.gov/the-ofr-blog/2025/08/12/are-zero-haircut-repos-as-common-as-advertised/",
+    "http_status": "not fetched (seen in OFR blog index, 200)",
+    "page_title_seen": "(index link text) Are Zero-Haircut Repos as Common as Advertised?",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Listed on the OFR blog index, dated 2025/08/12 per URL. Related: 'Hedge Fund Activities Can Influence the U.S. Treasury Yield Curve' (2022/12/27, /the-ofr-blog/2022/12/27/hedge-fund-activities-can-influence-the-us-treasury-yield-curve/) and 'Central Clearing in Treasury Repos Plateaued in Q1 2026' (2026/08/20, /the-ofr-blog/2026/08/20/central-clearing-treasury-repos-plateaued/). Authors not checked.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional items; from the official index only."
+   },
+   {
+    "label": "L2 ADD #6 FEDS Note Why Do Mutual Funds Invest in Treasury Futures? May 2024",
+    "given_url": "https://www.federalreserve.gov/econres/notes/feds-notes/why-do-mutual-funds-invest-in-treasury-futures-20240510.html",
+    "http_status": "not fetched (seen in FEDS Notes 2024 index, 200)",
+    "page_title_seen": "(index link text) Why Do Mutual Funds Invest in Treasury Futures?",
+    "verdict": "PARTLY_VERIFIED",
+    "what_is_actually_there": "Listed on the FEDS Notes 2024 index, dated May 10, 2024 per URL \u2014 the long-futures side of the basis trade. Authors not checked. Also encountered (cited in BIS Box A, not fetched): S. Aramonte, A. Schrimpf and H.S. Shin, 'Margins, debt capacity, and systemic risk', BIS Working Papers no 1121, September 2023.",
+    "corrected_url": "",
+    "downloaded_file": "",
+    "notes": "Additional item; from the official index only."
+   }
+  ],
+  "summary": "Publishers and topics are right but details are largely constructed, consistent with the model's prior pattern. Entry 1 (Barth-Kahn OFR WP 21-01) is fully real (extra JFE venue and TRACE data claims unsupported). Entries 2, 4 and 5 are real FEDS Notes with the wrong URL pattern (.htm, wrong dates) and wrong or partly wrong author lists and, for #2, a constructed title (real: 'Sizing hedge funds' Treasury market activities and holdings'). Entry 3's URL points at an unrelated BIS article; the real Sept 2023 item is Box A 'Margin leverage and vulnerabilities in US Treasury futures' by Avalos and Sushko (authors swapped with the 2019 Avalos-Ehlers-Eren repo box). Entry 6 (Hauser 'From sunshine to stormy weather') does not exist. Usable additions found: Barth-Kahn-Mann FEDS Note Aug 30 2023, Banegas-Monin FEDS Note Sept 8 2023, OFR blog Berg-Stemp Aug 19 2026, plus several OFR blog/FEDS index items."
+ }
+}

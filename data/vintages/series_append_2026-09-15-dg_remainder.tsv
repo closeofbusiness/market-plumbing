@@ -1,0 +1,11 @@
+pulled_at	series_key	as_of	value	unit	source	note
+2026-09-15T12:50Z	soxl_aum_usd	2026-09-15	17483133784	USD	Direxion holdings CSV SOXL.csv shares×holdings-% median / cross-check shares×Yahoo	D-G remainder; gross exposure ~3.00× AUM
+2026-09-15T12:50Z	soxl_shares_outstanding	2026-09-15	173250060	shares	Direxion holdings CSV header	D-G remainder
+2026-09-15T12:50Z	soxl_mu_weight_pct_of_aum	2026-09-15	6.238	%	Direxion SOXL holdings row MU	equity sleeve weight of AUM; not full 3× notional weight
+2026-09-15T12:50Z	muu_aum_usd	2026-09-15	3366856704	USD	Direxion holdings CSV MUU.csv	2× single-stock MU LETF; peak ~5.4B per ETF.com feature
+2026-09-15T12:50Z	tqqq_aum_usd	2026-09-14	34748560024	USD	ProShares TQQQ page snapshot-netAssets	largest US equity LETF in this scan
+2026-09-15T12:50Z	upro_aum_usd	2026-09-14	5319749116	USD	ProShares UPRO page snapshot-netAssets	
+2026-09-15T12:50Z	spxl_aum_usd	2026-09-15	6934000000	USD	Direxion holdings SPXL.csv	approx from holdings-% median
+2026-09-15T12:50Z	sox_ann_vol_2026ytd	2026-01-02..2026-09-14	0.490	fraction	Yahoo ^SOX daily closes; sample SD × sqrt(252)	G-014; μ_be(L=3,LETF=0)≈σ²=0.240
+2026-09-15T12:50Z	ici_index_share_lt_fund_assets_pct	2025-YE	52	%	ICI Fact Book 2026 Fig 2.5 (live PDF 2026-09-15)	E-006 reconfirm of first-batch primary
+2026-09-15T12:50Z	ici_derived_index_share_dom_eq_fund_assets_pct	2025-YE	63.3	%	DERIVED 19/(19+11) from ICI Fact Book 2026 Fig 2.6	E-006 exact match to DG2 CSV
