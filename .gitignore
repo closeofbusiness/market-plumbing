@@ -17,3 +17,4 @@ data/vintages/damodaran_*/
 bin/*.xls
 bin/DGS10.csv
 bin/DFII10.csv
+data/eps_split/panel/yahoo_splits.csv
