@@ -134,4 +134,4 @@ Then open http://localhost:8000. Opening `docs/index.html` directly in a browser
 
 The programme's own write-ups are © closeofbusiness under Creative Commons Attribution 4.0 International ([LICENSE](LICENSE)). Third-party and paywalled documents are summarised and cited, not copied, and quotations are kept short. Material that must not be public is kept outside this repository: the SEC contact string, paywalled originals, correspondence, simulations of named people, and third-party datasets.
 
-The commit history was rewritten once, on 24 September 2026, to remove nine files that should not have been published. Those files are no longer in the history, and nothing else changed. [THE_ASK.md](THE_ASK.md), E-011, records the details.
+On 24 September 2026 nine files that should not have been published were removed. The history was rewritten, and the repository was then deleted and recreated, so GitHub holds no copy of the old commits. Nothing else changed. [THE_ASK.md](THE_ASK.md), E-011 and E-013, records the details.

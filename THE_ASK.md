@@ -27,6 +27,39 @@ verbatim record, **do not rewrite it** — raise it with the principal and appen
 
 ---
 
+## E-013 · 24 September 2026 — the old commit is removed by deleting and recreating the repository
+
+Given in three messages, after the supervisor reported that GitHub still served the pre-rewrite commit to anyone with its ID.
+
+> *"(1) any other way on solving this? Can I not delete THE_ASK.md? Nobody will have the ID"*
+
+> *"Ok we do (1), can you do this?"*
+
+> *"done"*
+
+**Reading notes.** The question was whether deleting this file would hide the old commit's ID. It would not. GitHub itself showed the ID
+on the repository's public Activity page and in its public event feed (checked 24 Sep), and third parties archive that feed permanently.
+The ID was also in a commit message and in older versions of this file and `HANDOVER.tsv`. So the fix had to remove the commit from
+GitHub. The supervisor offered two routes: delete and recreate the repository, or ask GitHub Support to purge the commit. The principal
+chose the first. Deleting a repository is permanent, so the principal did that step, and the supervisor did the rest.
+
+**As applied, 24 Sep.**
+
+- **Before the deletion.** Every branch, pull request #1's text and the repository settings were saved, and the saved copy was checked
+  to contain neither old commit.
+- **The rebuild.** The principal deleted the repository. It was recreated at the same address with the same description, and `main`
+  (`4335719`) and Cursor's branch were pushed back with their commit IDs unchanged. Pull request #1 was re-opened.
+- **Verified the same afternoon.** The old commit, and the cleanup commit whose parent it was, return 404 by short and full ID: on the
+  web, through the API and as raw files. The Activity page now starts at the rebuild. A fresh clone holds 9 commits, none of the nine
+  private files and no personal email, and it passes the gate.
+- **Limits.** Anyone who cloned the repository between 06:32 and 09:36 UTC, or fetched the old commit by its ID before the deletion
+  (just before 14:07 UTC), keeps what they took. Public archives of the event feed keep the ID, which now points at nothing. GitHub keeps
+  the deleted repository for 90 days, visible only to organisation owners.
+- **For every agent.** A clone that still contains the pre-rewrite history must never be pulled into, merged from or pushed from. One
+  such push would publish the files again. Re-clone instead.
+
+---
+
 ## E-012 · 24 September 2026 — can a stranger read the repository, and can the page live in it
 
 Given in one message, after the history rewrite was reported done.
