@@ -4,7 +4,7 @@
 
 ## Start here
 
-1. **What Holds the Market Up** ([`docs/index.html`](docs/index.html)): the current answer on one page, with every claim graded. GitHub shows HTML files as source code, so [open it in a browser](#view-the-page). It is a dated rendering of the answer note.
+1. **[What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/)**: the current answer on one page, with every claim graded. It is a dated rendering of the answer note, and its source is [`docs/index.html`](docs/index.html).
 2. **[The answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md)** is the authority: where the page and the note disagree, the note wins. It restates almost no numbers on purpose. Each claim links to the findings note that owns it.
 3. **[CHARTER.md](CHARTER.md)**: the question, the markets in scope, the rules every file follows, and the four grades.
 4. **[dossiers/](dossiers/)**: one short file per channel (passive and ETF flows, AI funding, shadow money, collateral, rates, and others). Each gives the hypothesis, its status, the evidence, and what would change it.
@@ -44,7 +44,7 @@ The top level is flat, so GitHub's file list is long. It falls into these groups
 | `Third_Derivative_*`, `Shadow_Debt_*`, `Collateral_*`, `Funding_Identity_First_Principles.md` | The two earlier workstreams this question grew out of. See [Where this came from](#where-this-came-from). |
 | [`answer/`](answer/), [`corrections/`](corrections/) | One-line pointers to the answer note and to `CORRECTIONS.md`. |
 | [`dossiers/`](dossiers/), [`monitor/`](monitor/) | Per-channel summaries; the free data series the live claims use, and when each next prints. |
-| [`docs/`](docs/) | The web page. |
+| [`docs/`](docs/) | The web page, which GitHub Pages publishes at https://closeofbusiness.github.io/market-plumbing/ |
 | [`data/`](data/), [`bin/`](bin/) | Derived data (a registry of series in `data/series.tsv`, plus CSV tables) and the scripts that pull, compute and check. |
 | [`_research/`](_research/) | Working notes, replies from outside models, and extracted primary sources. Evidence, not the deliverable. |
 | [`Analysis/`](Analysis/), [`Report/`](Report/) | Outputs of the earlier workstreams: a forward-prediction register and HTML reports. |
@@ -120,7 +120,9 @@ Some older notes cite paths beginning `/private/tmp/claude-501/`. That was an ag
 
 ## View the page
 
-Clone the repository and serve the folder:
+The page is online at **https://closeofbusiness.github.io/market-plumbing/**. GitHub Pages publishes it from `docs/` on `main`.
+
+To view it locally, clone the repository and serve the folder:
 
 ```bash
 git clone https://github.com/closeofbusiness/market-plumbing.git

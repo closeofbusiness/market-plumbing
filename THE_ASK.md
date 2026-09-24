@@ -27,6 +27,26 @@ verbatim record, **do not rewrite it** — raise it with the principal and appen
 
 ---
 
+## E-014 · 24 September 2026 — the old migration clone goes, and the page goes online
+
+Given in one message, answering the two decisions left open after E-013.
+
+> *"delte it and turn on GitHub pages"*
+
+**Reading notes.** "It" is the migration agent's clone, `~/Projects/market-plumbing-migration`, which still held the pre-rewrite
+history and the nine private files. "GitHub pages" means serving `docs/index.html` publicly.
+
+**As applied, 24 Sep.**
+
+- **The clone.** It was checked first: no uncommitted work, no stash, and no commit that was not already on GitHub. It was then moved to
+  the macOS Trash through Finder, so it can be put back. Emptying the Trash makes the deletion permanent, and that step is the
+  principal's.
+- **GitHub Pages.** Pages now serves `docs/` from `main`, with HTTPS enforced, at https://closeofbusiness.github.io/market-plumbing/. The repository's homepage link points there.
+  **From now on, a push to `main` that changes `docs/index.html` republishes the public page.** Before pushing such a change, run the
+  gate's page check and read the page against its sources (C-120).
+
+---
+
 ## E-013 · 24 September 2026 — the old commit is removed by deleting and recreating the repository
 
 Given in three messages, after the supervisor reported that GitHub still served the pre-rewrite commit to anyone with its ID.

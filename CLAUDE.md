@@ -50,9 +50,9 @@
 >   because each file was individually valid and only the set was wrong. That is this project's signature
 >   failure: internally consistent and untrue (E-000, C-081).
 >   **Never pull into, merge from, rebase onto or push from a copy that holds the pre-rewrite history.** A copy is
->   clean only if `git log --all --oneline -- 2026-08-30-Singh-Ask.md` prints nothing. Such copies include the
->   migration clone on the principal's Mac and any executor copy made before 24 Sep (E-013). One push would
->   republish the private files.
+>   clean only if `git log --all --oneline -- 2026-08-30-Singh-Ask.md` prints nothing. Such copies include any
+>   executor copy made before 24 Sep. The migration clone on the principal's Mac went to the Trash on 24 Sep (E-013, E-014).
+>   One push from such a copy would republish the private files.
 > - **Re-derive one load-bearing number from source when you pick up another agent's thread.** One,
 >   not all. C-081 stood for two days because an agent inherited its own summary of a row instead of
 >   re-reading the row.
@@ -188,7 +188,8 @@
 > `check.sh --all` never sees it, and it carried C-083's retracted "irreducibly unattributable" for four days before
 > anyone looked. **It went stale a second time on 23 Sep:** three claims killed on 22–23 Sep stayed live because a
 > pre-publish check only covers claims already dead at publish time — nothing re-scanned the page after a new kill.
-> **Its source now lives at `docs/index.html`** (moved 24 Sep so GitHub can serve it as a web page, E-012). **Publish FROM that file**, and `check.sh --all` scans
+> **Its source now lives at `docs/index.html`** (moved 24 Sep, E-012). **GitHub Pages serves that file at https://closeofbusiness.github.io/market-plumbing/** (E-014), so
+> **a push to `main` that changes it republishes the public page.** Publish the claude.ai artifact FROM that file too. `check.sh --all` scans
 > it on every run (the `page check` line). For a one-off, use `bin/check_page.py <html>`, not `bin/check.sh <html>`: the
 > raw scan caught 2 of the 3 dead claims and missed C-116, whose phrase an HTML tag split. The answer document is the
 > authority; the page must say so and must not be used as a source.
@@ -342,7 +343,7 @@ the improvised-channel problem. The extracted source text sits in
 | `corrections/` | — | POINTER to `CORRECTIONS.md` (E-011) | — | — |
 | `dossiers/` | 12 files | public per-channel summaries; each points at the findings doc that owns its numbers | — | ✓ |
 | `monitor/` | 1 file | public extract of `data/series.tsv` and `CALENDAR.tsv`; those win where they differ | — | — |
-| `docs/` | 1 page | the public web page "What Holds the Market Up" (`index.html`): a dated rendering of the ANSWER note, and the source the claude.ai artifact is published from (E-012) | — | if presenting |
+| `docs/` | 1 page | the public web page "What Holds the Market Up" (`index.html`). It is a dated rendering of the ANSWER note and the source the claude.ai artifact is published from (E-012). GitHub Pages serves it at https://closeofbusiness.github.io/market-plumbing/ (E-014) | — | if presenting |
 | `data/series.tsv` · `bin/pull_series.py` | — | **query** | **query** | **query** |
 | `data/vintages/` (FINRA, ALFRED snapshots) · `Report/*.html` (outputs) | — | if vintage | if vintage | if presenting |
 | `CORRECTIONS.md` | **query only — never whole** (exceeds the Read cap; `bin/check.sh --latest` for the newest, `grep -n '^## C-0'` to locate one) | **always** | **always** | **always** |
