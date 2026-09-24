@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-__all__ = ["fetch_prices", "fetch_fred_series"]
+__all__ = ["fetch_prices", "fetch_dividends", "fetch_fred_series"]
 
 
 def fetch_prices(
@@ -54,6 +54,29 @@ def fetch_prices(
     series = series.dropna()
     series.name = ticker
     return series
+
+
+def fetch_dividends(ticker: str, start: str, end: str | None = None) -> pd.Series:
+    """Fetch per-share cash dividends (the income/carry channel) from Yahoo.
+
+    Returns a date-indexed series of dividend amounts on their ex-dates,
+    clipped to ``[start, end]``. May be empty for non-dividend payers.
+    """
+    import yfinance as yf
+
+    dividends = yf.Ticker(ticker).dividends
+    if dividends is None or dividends.empty:
+        return pd.Series(dtype="float64", name=f"{ticker}_dividends")
+
+    # yfinance returns a tz-aware index; normalize to naive dates for alignment.
+    dividends = dividends.copy()
+    dividends.index = dividends.index.tz_localize(None).normalize()
+    mask = dividends.index >= pd.Timestamp(start)
+    if end is not None:
+        mask &= dividends.index <= pd.Timestamp(end)
+    dividends = dividends[mask]
+    dividends.name = f"{ticker}_dividends"
+    return dividends
 
 
 def fetch_fred_series(series_id: str, start: str, end: str | None = None) -> pd.Series:

@@ -26,7 +26,7 @@ matplotlib.use("Agg")  # headless-safe backend for Cloud Agents / CI
 import matplotlib.pyplot as plt
 
 from marketplumbing import decompose_total_return, summarize_decomposition
-from marketplumbing.data import fetch_prices
+from marketplumbing.data import fetch_dividends, fetch_prices
 
 
 def parse_args() -> argparse.Namespace:
@@ -40,6 +40,11 @@ def parse_args() -> argparse.Namespace:
         default="output/decomposition.png",
         help="Path for the contribution chart",
     )
+    parser.add_argument(
+        "--no-dividends",
+        action="store_true",
+        help="Ignore dividends (price-only decomposition)",
+    )
     return parser.parse_args()
 
 
@@ -50,7 +55,12 @@ def main() -> None:
     prices = fetch_prices(args.ticker, start=args.start, end=args.end)
     print(f"  got {len(prices)} observations: {prices.index[0].date()} -> {prices.index[-1].date()}")
 
-    decomp = decompose_total_return(prices)
+    income = None
+    if not args.no_dividends:
+        income = fetch_dividends(args.ticker, start=args.start, end=args.end)
+        print(f"  dividends in window: {len(income)} (total {float(income.sum()):.4f}/share)")
+
+    decomp = decompose_total_return(prices, income=income)
     summary = summarize_decomposition(decomp)
 
     print("\nPrice-move decomposition")
