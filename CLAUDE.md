@@ -5,13 +5,14 @@
 > ## FIRST ACTION OF EVERY SESSION, BEFORE READING ANYTHING ELSE
 >
 > ```bash
-> bin/check.sh --handover      # FIRST: integrity + what changed since the last parcel (~20 lines)
+> git pull --ff-only           # FIRST: be on the latest main. Never work in a copy made before 24 Sep (E-013)
+> bin/check.sh --handover      # then: integrity + what changed since the last parcel (~20 lines)
 > bin/check.sh --goal
 > bin/check.sh --latest        # newest ~5 corrections (was: head -40, always showed C-001..003)
 > bin/check.sh --todo          # ranked open items (a query over RESEARCH_STATE §5), next 45 days, latest data vintages
 > ```
 >
-> **These four commands are the whole entry path. They are queries, not documents** — together
+> **These commands are the whole entry path. They are queries, not documents** — together
 > about sixty lines. Do not open `CORRECTIONS.md`, `RESEARCH_STATE.md` or the findings docs to
 > find out where things stand; open a document only when you are about to work on what it covers.
 > `--handover` prints what is overdue, so the old standalone CALENDAR awk line is gone.
@@ -32,8 +33,8 @@
 > ## TWO AGENTS WORK THIS FOLDER — Claude and GrokBot (`THE_ASK.md` E-006, 15 Sep 2026)
 >
 > **Peers on research, never simultaneous, routed by the principal** according to which token
-> budget he has. There is no version control and no lock here; correctness comes from the
-> handover, not from arbitration.
+> budget he has. The repository keeps history, but there is still no lock: correctness comes from
+> the handover, not from arbitration.
 >
 > - **Hand over after EVERY work parcel, not once a session.** On the way out:
 >   `bin/check.sh --handover write <claude|grok> <parcel> <done|paused|blocked> <the next concrete step>`.
@@ -44,10 +45,14 @@
 >   **When you rewrite a ranked item, rewrite only that item.** On 18 Sep a rewrite of item 8 consumed item 7
 >   beneath it, silently deleting a HOLD with a live trigger. Check the item count before and after.
 > - **`--handover` on the way in, before reading anything.** If integrity MISMATCHES, **stop**:
->   either Dropbox has not finished syncing or the last agent edited after stamping. The principal
->   never runs the two of you at once, but *Dropbox does not know that* — a tree half-synced over SMB
->   passes every other guard in `check.sh`, because each file is individually valid and only the set
->   is wrong. That is this project's signature failure: internally consistent and untrue (E-000, C-081).
+>   either your copy is behind (`git pull --ff-only`) or the last agent edited after stamping. Before
+>   24 Sep the cause was a Dropbox tree half-synced over SMB. That tree passed every other guard in `check.sh`,
+>   because each file was individually valid and only the set was wrong. That is this project's signature
+>   failure: internally consistent and untrue (E-000, C-081).
+>   **Never pull into, merge from, rebase onto or push from a copy that holds the pre-rewrite history.** A copy is
+>   clean only if `git log --all --oneline -- 2026-08-30-Singh-Ask.md` prints nothing. Such copies include the
+>   migration clone on the principal's Mac and any executor copy made before 24 Sep (E-013). One push would
+>   republish the private files.
 > - **Re-derive one load-bearing number from source when you pick up another agent's thread.** One,
 >   not all. C-081 stood for two days because an agent inherited its own summary of a row instead of
 >   re-reading the row.
