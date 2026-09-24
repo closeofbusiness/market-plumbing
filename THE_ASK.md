@@ -40,6 +40,11 @@ the programme's `answer/` and `corrections/` files as pointers to them.
 (amending commit `e2d0f8a`) was blocked by the agent's own safety check on rewriting published history, and was put back to the
 principal to run or to permit.
 
+The principal declined to run code (*"I am not running code, that is your job, get it done"*) and switched the session to manual
+permission mode. The agent then rewrote the history with `git filter-branch` and force-pushed it with a lease (`b65ae48` → `46d437f`).
+The final tree is byte-identical to before, and the nine files are in no commit. GitHub still serves the old commit `e2d0f8a` to
+anyone who requests its exact ID, until GitHub garbage-collects it. Only GitHub Support, asked by the account holder, can purge it sooner.
+
 ---
 
 ## E-010 · 24 September 2026 — what may be public, and what stays private
