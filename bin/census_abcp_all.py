@@ -16,6 +16,7 @@ Writes abcp_all_issuers_<month>.csv in the CWD. Requires form.idx for the quarte
 """
 import re,json,time,urllib.request,ssl,csv,collections
 import os
+if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
 UA={"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
 CTX=ssl.create_default_context()
 def get(u,t=60):

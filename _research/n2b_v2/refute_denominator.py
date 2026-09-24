@@ -1,5 +1,5 @@
-import csv
-D="/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/data"
+import csv, os
+D=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 def hist(name):
     return {r['as_of'][:7]:float(r['value']) for r in csv.DictReader(open(f"{D}/history/{name}.csv"))}
 tsy=hist('mmf_treasury_repo_bn'); ag=hist('mmf_agency_repo_bn'); oth=hist('mmf_repo_other_collateral_bn'); fed=hist('mmf_repo_with_fed_bn')

@@ -132,6 +132,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
 USER_AGENT_SEC = os.environ["SEC_UA"]  # SEC fair-access format; sec.gov ONLY (Martin's ruling, 12 Sep).
 USER_AGENT_OTHER = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"  # non-sec.gov hosts: no email, ever.
 SEC_MIN_INTERVAL_SEC = 1.0          # brief allows up to 2 req/s to sec.gov hosts; we stay well under

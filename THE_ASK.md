@@ -27,6 +27,35 @@ verbatim record, **do not rewrite it** — raise it with the principal and appen
 
 ---
 
+## E-012 · 24 September 2026 — can a stranger read the repository, and can the page live in it
+
+Given in one message, after the history rewrite was reported done.
+
+> *"Ok, is the Github understandable for third parties? Also, this artifact, can we have this as local http in the Github: https://claude.ai/artifact/QiSp2xPb2Xx5jkAvNDApZk"*
+
+**Reading notes.** There are two asks. The first is a test, not a request for reassurance: can a visitor with no context tell what the
+repository is, what it concludes, how sure it is, and how to check it? The second, "local http", is read as follows. The page's HTML lives
+in the repository and can be served over http: locally with `python3 -m http.server`, or publicly through GitHub Pages. Pages is a
+repository setting, so it is left for the principal to decide.
+
+**As applied, 24 Sep.**
+
+- **The test and the result.** Two cold-reader agents with no context, one a finance reader and one a technical reproducer, each
+  scored the repository **2/5** before any change. They could not tell who does the work, what the codes and roles mean, what the
+  gate checks, or how to rerun a number. The README was rewritten as a front door. It now has a start-here path, who does the
+  work, a map of the top level, a glossary, how to check the work, and provenance. Two fresh readers then scored it **3/5**
+  (finance) and **4/5** (technical).
+- **The page.** Its source moved from `_research/artifact/state-of-play.html` to `docs/index.html`, with an orientation note
+  for outside readers. The gate's page check followed it, and now fails loudly if the page is missing. The re-test also found
+  the page had drifted from its sources. An audit of ~90 claims found six drifts and one uncited row (**C-120**). All are fixed,
+  and the claude.ai artifact was republished as v13 from `docs/index.html`.
+- **Scripts.** Seven scripts no longer hard-code the author's Dropbox path, and five SEC scripts now stop with a plain message
+  when `SEC_UA` is unset. `bin/decomp_sp500_shiller.py` now reads its inputs from `data/vintages/`, and re-run on them it
+  reproduces both P2a tables byte for byte. That also showed C-099's "the script is gone" was wrong; it is marked in place.
+- **Housekeeping.** Committed bytecode was removed, and `requirements.txt` and ignores for third-party inputs were added.
+
+---
+
 ## E-011 · 24 September 2026 — three approvals: pull the private files, clean up, and which register is the authority
 
 Given in one message, answering three questions the supervisor put after verifying the migration: (1) pull the nine private

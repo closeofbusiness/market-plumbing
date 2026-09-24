@@ -14,6 +14,7 @@ sources are authoritative anyway (FRED is a mirror).
 import sys, json, csv, io, os, re, ssl, time, datetime, urllib.request
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TSV=os.path.join(ROOT,"data","series.tsv"); HIST=os.path.join(ROOT,"data","history")
+if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
 UA={"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
 CTX=ssl.create_default_context(); NOW=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
 def get(u,t=90):

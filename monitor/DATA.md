@@ -1,8 +1,8 @@
 # Data monitor
 
-> **An extract.** The live sources are `data/series.tsv` and `CALENDAR.tsv`; where this file and they differ, they win.
+> **An extract.** The live sources are [`data/series.tsv`](../data/series.tsv) and [`CALENDAR.tsv`](../CALENDAR.tsv); where this file and they differ, they win.
 
-Only series identified in the source and used by a claim this repository carries. Latest row is the last observation in `data/series.tsv` (parent of the `_research` folder; file modified 21 September 2026; 463 rows, 387 keys). Frequency is taken from that file’s note when it says so, otherwise from the release the source names. Next print is from `CALENDAR.tsv` when a row exists. If the next print is unknown, the cell says so.
+Only series identified in the source and used by a claim this repository carries. Latest row is the last observation in [`data/series.tsv`](../data/series.tsv) (parent of the [`_research`](../_research) folder; file modified 21 September 2026; 463 rows, 387 keys). Frequency is taken from that file’s note when it says so, otherwise from the release the source names. Next print is from [`CALENDAR.tsv`](../CALENDAR.tsv) when a row exists. If the next print is unknown, the cell says so.
 
 This is not the full monitor. The 11 September channel map counted 175 series and is stale against the file.
 
@@ -12,10 +12,10 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 
 | Series | Free source | Frequency | Last observation | Next print | Used by |
 |---|---|---|---|---|---|
-| Earnings share of the US equity move | Decomposition in `2026-09-11-P2a-Return-Decomposition.md` | Window, not a ticker | 71.0% to Dec 2025; 82.3% to Jun 2026 | Re-run when the next earnings window is built | `answer/LIVE.md`, fundamentals dossier |
-| Tax-restated earnings share | `2026-09-21-W3-Tax-Decomposition.md`; keys `w3_etr_2015`, `w3_etr_2025`, `w3_eps_share_of_price_restated` | Annual window | Effective rate 27.4% (2015) to 19.6% (2025); restated share 74.5% | Unknown | fundamentals dossier |
-| EPS split | `2026-09-18-EPS-Split.md`; keys `eps_split_*` | Window through Dec 2025 | Carried claim is the one-sided tenth-to-sixth band. The key `eps_split_accretion_share_of_price` is 0.134 and is the top of a weighting range, not the figure to quote | Firm panel still missing on disk upstream (C-097) | fundamentals dossier |
-| Real-yield versus earnings-yield window | `2026-09-12-P2c-Rates-vs-Risk-Premium.md` | Dec 2023–Jun 2026 | Real yields +0.34pt; earnings yield −0.14 | Unknown | fundamentals dossier |
+| Earnings share of the US equity move | Decomposition in [`2026-09-11-P2a-Return-Decomposition.md`](../2026-09-11-P2a-Return-Decomposition.md) | Window, not a ticker | 71.0% to Dec 2025; 82.3% to Jun 2026 | Re-run when the next earnings window is built | [`answer/LIVE.md`](../answer/LIVE.md), fundamentals dossier |
+| Tax-restated earnings share | [`2026-09-21-W3-Tax-Decomposition.md`](../2026-09-21-W3-Tax-Decomposition.md); keys `w3_etr_2015`, `w3_etr_2025`, `w3_eps_share_of_price_restated` | Annual window | Effective rate 27.4% (2015) to 19.6% (2025); restated share 74.5% | Unknown | fundamentals dossier |
+| EPS split | [`2026-09-18-EPS-Split.md`](../2026-09-18-EPS-Split.md); keys `eps_split_*` | Window through Dec 2025 | Carried claim is the one-sided tenth-to-sixth band. The key `eps_split_accretion_share_of_price` is 0.134 and is the top of a weighting range, not the figure to quote | Firm panel still missing on disk upstream (C-097) | fundamentals dossier |
+| Real-yield versus earnings-yield window | [`2026-09-12-P2c-Rates-vs-Risk-Premium.md`](../2026-09-12-P2c-Rates-vs-Risk-Premium.md) | Dec 2023–Jun 2026 | Real yields +0.34pt; earnings yield −0.14 | Unknown | fundamentals dossier |
 | Trailing S&P PE | key `sp500_trailing_pe` | As pulled | 25.22 at 2026-06-01 | Unknown | context only; the answer does not rest on this point |
 
 ## Equity money and wrappers
@@ -71,7 +71,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 
 | Series | Free source | Frequency | Last observation | Next print | Used by |
 |---|---|---|---|---|---|
-| Lease stack versus guarantees | Hand-read 10-Ks, `2026-08-22-Guarantee-Stack.md` | Quarterly hand-read | 1,122.9 versus 228.3 contracted; 86.2 live at 22 Aug | 2026-11-15 for the lease note; 2026-09-30 for two guarantee maturities | AI dossier |
+| Lease stack versus guarantees | Hand-read 10-Ks, [`2026-08-22-Guarantee-Stack.md`](../2026-08-22-Guarantee-Stack.md) | Quarterly hand-read | 1,122.9 versus 228.3 contracted; 86.2 live at 22 Aug | 2026-11-15 for the lease note; 2026-09-30 for two guarantee maturities | AI dossier |
 | `oracle_internal_cash_vs_capex_gap_bn` | Oracle filing | Quarterly | −34.9 at 2026-08-31 | Next 10-Q | AI dossier |
 | `oracle_rpo_bn` | Oracle filing | Quarterly | 664 at 2026-08-31 | same | AI dossier |
 | `oracle_offbs_lease_commitments_bn` | Oracle filing | Quarterly | 288 at 2026-08-31 | same | AI dossier |

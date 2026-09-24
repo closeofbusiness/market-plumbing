@@ -10,11 +10,11 @@ The AI build-out was funded by new money creation, shadow credit, or a broad bon
 
 ## Evidence
 
-Five of six hyperscalers generate more operating cash than their capex. Oracle does not: the internal-cash-versus-capex gap in the monitor is about **−$35bn** at 31 August 2026. Sources: `2026-09-12-F1-Funding-Table.md`, `2026-09-12-Oracle-RPO-And-Financing.md`.
+Five of six hyperscalers generate more operating cash than their capex. Oracle does not: the internal-cash-versus-capex gap in the monitor is about **−$35bn** at 31 August 2026. Sources: [`2026-09-12-F1-Funding-Table.md`](../2026-09-12-F1-Funding-Table.md), [`2026-09-12-Oracle-RPO-And-Financing.md`](../2026-09-12-Oracle-RPO-And-Financing.md).
 
-Lease commitments signed but not yet commenced sum to **$1,122.9bn**, about **4.9×** the **$228.3bn** of guarantees contracted. The “13×” figure divided future leases by live guarantees only and was corrected (C-116). Live guarantees were **$86.2bn** at the 22 August reading, which has a known decay date. Source: `2026-08-22-Guarantee-Stack.md`.
+Lease commitments signed but not yet commenced sum to **$1,122.9bn**, about **4.9×** the **$228.3bn** of guarantees contracted. The “13×” figure divided future leases by live guarantees only and was corrected (C-116). Live guarantees were **$86.2bn** at the 22 August reading, which has a known decay date. Source: [`2026-08-22-Guarantee-Stack.md`](../2026-08-22-Guarantee-Stack.md).
 
-Oracle remaining performance obligations were **$664bn** at 31 August 2026, against **$455bn** a year earlier, with **$288bn** of additional data-centre lease commitments off balance sheet. Source: the 15 September calendar row and `2026-09-12-Oracle-RPO-And-Financing.md`.
+Oracle remaining performance obligations were **$664bn** at 31 August 2026, against **$455bn** a year earlier, with **$288bn** of additional data-centre lease commitments off balance sheet. Source: the 15 September calendar row and [`2026-09-12-Oracle-RPO-And-Financing.md`](../2026-09-12-Oracle-RPO-And-Financing.md).
 
 The debt that does exist is held mainly by long money. See the long-money dossier. Amazon’s **$17.5bn** delayed-draw term loan was undrawn at 30 June 2026; the draw window is a calendar item, not a completed taking of bank money.
 

@@ -26,7 +26,7 @@ import csv
 import math
 import os
 
-BASE = "/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research"
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 NETBUYERS_Q = os.path.join(BASE, "data/z1_equity_netbuyers/netbuyers_quarterly_2026Q2.csv")
 NETBUYERS_P = os.path.join(BASE, "data/z1_equity_netbuyers/netbuyers_periods_2026Q2.csv")
 DECOMP_A = os.path.join(BASE, "data/p2a_decomposition/decomp_annual.csv")

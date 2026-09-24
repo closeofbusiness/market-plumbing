@@ -1,8 +1,8 @@
 # P2a — the fundamentals benchmark: S&P 500 return split into earnings, dividends and valuation (11 Sep 2026)
 
 **Status: DATA.** Ranked item 2 (first half; the top-10 test, P2b, is blocked on SEC access). Script
-`bin/decomp_sp500_shiller.py` (needs `xlrd`; it points at a scratch cache — re-point it at
-`data/vintages/shiller_2026-09-02/`); tables `data/p2a_decomposition/`; sources `data/vintages/shiller_2026-09-02/`
+`bin/decomp_sp500_shiller.py` (needs `xlrd`; re-pointed 24 Sep at `data/vintages/shiller_2026-09-02/`, and re-run on those
+inputs it reproduces both tables byte for byte); tables `data/p2a_decomposition/`; sources `data/vintages/shiller_2026-09-02/`
 (Shiller's file saved 2026-09-02; FRED DGS10/DFII10).
 **Supervisor verification (11 Sep):** anchors re-read in the source file — Dec 2014 P 2054.27, E 102.31; Jun 2026
 P 7450.03, E 295.39 — reproduce the split exactly (price x3.63, EPS x2.89, P/E 20.1 -> 25.2; log shares 82.3% /
@@ -97,6 +97,8 @@ Checked quantity: `price_return + dividend_return` vs. actual compounded `total_
 - **Monthly total-return convention**: monthly total return = `(P_m + D_m/12)/P_{m-1} - 1`, i.e., trailing-12-month dividend ÷12 as a smooth-payout proxy for that month's cash dividend. Standard for reconstructing returns from Shiller's columns, but an approximation (real dividends arrive quarterly, not smoothly).
 
 ## Files
+
+*These paths were an agent's temporary workspace on 11 Sep 2026 and no longer exist. The durable copies are the script [`bin/decomp_sp500_shiller.py`](bin/decomp_sp500_shiller.py) and the tables in [`data/p2a_decomposition/`](data/p2a_decomposition/). Shiller's and FRED's input files are third-party and are not redistributed here (README, "Checking the work").*
 
 - `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p2a/decomp.py`
 - `.../decomp_annual.csv`, `.../decomp_cumulative.csv`

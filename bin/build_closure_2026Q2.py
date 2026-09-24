@@ -60,7 +60,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 RAW = HERE / "raw"
-PROJECT = Path("/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research")
+PROJECT = Path(__file__).resolve().parent.parent  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 
 JUNE_RAW = PROJECT / "data/vintages/z1_closure/z1_closure_raw.json"
 JUNE_EXTRA = PROJECT / "data/vintages/z1_closure/z1_closure_extra.json"

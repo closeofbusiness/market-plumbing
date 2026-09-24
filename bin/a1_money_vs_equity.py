@@ -38,7 +38,7 @@ import statistics
 from datetime import date, datetime
 from pathlib import Path
 
-BASE = Path("/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research")
+BASE = Path(__file__).resolve().parent.parent  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 MONEY_DIR = BASE / "data" / "a1_money_creation"
 EQUITY_FILE = BASE / "data" / "z1_equity_netbuyers" / "netbuyers_quarterly_2026Q2.csv"
 OUT_DIR = BASE / "data" / "a1_analysis"

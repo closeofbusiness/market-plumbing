@@ -7,13 +7,22 @@ Splits the S&P 500's return into earnings growth, dividends and valuation
 dividend D, earnings E, all nominal/as-reported) and FRED's 10-year TIPS
 yield (DFII10) and nominal 10-year yield (DGS10).
 
-Outputs (written next to this script):
-  decomp_annual.csv     one row per calendar year 2015-2025 plus 2026 YTD
-  decomp_cumulative.csv the same split over 2015-latest, using log returns
+Inputs (third-party, not redistributed; download them to this folder first --
+README, "Checking the work"):
+  data/vintages/shiller_2026-09-02/ie_data.xls      Shiller, saved 2026-09-02
+  data/vintages/shiller_2026-09-02/FRED_DGS10.csv   FRED DGS10
+  data/vintages/shiller_2026-09-02/FRED_DFII10.csv  FRED DFII10
+
+Outputs (overwrite the committed tables, so `git diff` shows any change):
+  data/p2a_decomposition/decomp_annual.csv      one row per calendar year 2015-2025 plus 2026 YTD
+  data/p2a_decomposition/decomp_cumulative.csv  the same split over 2015-latest, using log returns
 
 Requires: Python 3 stdlib + `xlrd` (for the legacy .xls format; openpyxl
-does not read .xls). A local virtualenv with xlrd/pandas/numpy is provided
-at ./.venv next to this script:  .venv/bin/python decomp.py
+does not read .xls): pip install -r requirements.txt
+Run from anywhere:  python3 bin/decomp_sp500_shiller.py
+(Written in an agent sandbox as decomp.py; in this repository since 11 Sep 2026.
+The notes below describe where the inputs came from; the paths above supersede
+the "next to this script" caches they mention.)
 
 -----------------------------------------------------------------------
 DATA-SOURCING NOTES (read before trusting a re-run's numbers)
@@ -83,6 +92,9 @@ except ImportError:
     )
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)  # repository root
+VINTAGE = os.path.join(ROOT, "data", "vintages", "shiller_2026-09-02")
+OUT_DIR = os.path.join(ROOT, "data", "p2a_decomposition")
 
 USER_AGENT = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"
 REQUEST_HEADERS = {"User-Agent": USER_AGENT, "Accept": "*/*"}
@@ -94,11 +106,11 @@ SHILLER_STATIC_URL = (
 )
 FRED_URL_TMPL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}"
 
-SHILLER_CURRENT_CACHE = os.path.join(HERE, "ie_data_current.xls")
+SHILLER_CURRENT_CACHE = os.path.join(VINTAGE, "ie_data.xls")
 # ie_data.xls (no suffix) is also kept next to this script -- it is the
 # brief's literal static URL fetched verbatim, retained only as evidence of
 # the staleness described above. Nothing in this script reads it.
-FRED_CACHE_TMPL = os.path.join(HERE, "{series}.csv")
+FRED_CACHE_TMPL = os.path.join(VINTAGE, "FRED_{series}.csv")
 
 STALE_WARN_DAYS = 120
 
@@ -419,7 +431,7 @@ def main():
         "nominal10y_avg_pct", "n_days_nom10y", "erp_pct",
         "memo_latest_month", "memo_latest_P", "memo_price_chg_from_end_pct",
     ]
-    annual_path = os.path.join(HERE, "decomp_annual.csv")
+    annual_path = os.path.join(OUT_DIR, "decomp_annual.csv")
     with open(annual_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=annual_fields)
         w.writeheader()
@@ -449,7 +461,7 @@ def main():
         "simple_pe_change", "simple_dividend_return",
         "annualized_simple_price", "annualized_simple_total",
     ]
-    cum_path = os.path.join(HERE, "decomp_cumulative.csv")
+    cum_path = os.path.join(OUT_DIR, "decomp_cumulative.csv")
     with open(cum_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cum_fields)
         w.writeheader()

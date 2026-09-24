@@ -10,7 +10,7 @@ Bank credit and the central-bank balance sheet funded the equity bid, the AI bui
 
 ## Evidence
 
-The deposit stock is several times the equity purchases. ETF creation is often in kind. The association between deposit growth and household equity buying is weak and, on one window in the monitor, negative. Source: `2026-09-14-A1-Money-Creation-Link.md`. Correction C-089 killed the claim that money creation was too small to have funded the buying, and also killed the claim that it was the ceiling.
+The deposit stock is several times the equity purchases. ETF creation is often in kind. The association between deposit growth and household equity buying is weak and, on one window in the monitor, negative. Source: [`2026-09-14-A1-Money-Creation-Link.md`](../2026-09-14-A1-Money-Creation-Link.md). Correction C-089 killed the claim that money creation was too small to have funded the buying, and also killed the claim that it was the ceiling.
 
 Bank loans to non-depository financial institutions are a live level in the monitor (about **$2,005bn** at 31 July 2026). The 2025 flow on that series is annotated as contaminated. Do not use the raw 2025 flow.
 

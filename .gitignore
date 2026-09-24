@@ -6,3 +6,14 @@
 data/a1_money_creation/H41_data.xml
 data/a1_money_creation/H8_data.xml
 data/a1_money_creation/h8_data/H8_data.xml
+
+# Python bytecode caches (were committed by mistake before 24 Sep 2026)
+__pycache__/
+
+# Third-party inputs the scripts read but this repository does not redistribute
+# (README, "Checking the work"). Download them locally; never commit them.
+data/vintages/shiller_*/
+data/vintages/damodaran_*/
+bin/*.xls
+bin/DGS10.csv
+bin/DFII10.csv

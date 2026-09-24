@@ -63,7 +63,7 @@ import xlrd
 # ---------------------------------------------------------------------------
 # Absolute paths. Inputs are READ-ONLY. Outputs go only to this scratch dir.
 # ---------------------------------------------------------------------------
-PROJECT_DIR = "/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research"
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 SHILLER_XLS = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/ie_data.xls")
 FRED_DGS10 = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/FRED_DGS10.csv")
 FRED_DFII10 = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/FRED_DFII10.csv")

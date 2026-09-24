@@ -13,6 +13,7 @@ import sys
 FILING_MONTH = sys.argv[1] if len(sys.argv)>1 else "2026-08"
 QTR = "QTR"+str((int(FILING_MONTH[5:7])+2)//3)
 import re,json,time,urllib.request,ssl,csv,os
+if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
 UA={"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
 CTX=ssl.create_default_context()
 def get(u,t=60):

@@ -1,8 +1,9 @@
 # The answer — what is driving asset prices, and where the money came from (17 September 2026)
 
-**Status: THE ANSWER as it stands. Supersedes `2026-09-14-SYN-What-We-Can-Say.md`, which is now a pointer.**
-Serves the canonical goal in `THE_ASK.md`. Standard of evidence is **E-005**: a rough understanding with
-bands, not proof to the last cent. We never pay for data.
+**Status: THE ANSWER as it stands. Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
+Serves the canonical goal in [`THE_ASK.md`](THE_ASK.md). Standard of evidence is **E-005**: a rough understanding with
+bands, not proof to the last cent. We never pay for data. New to this repository? Its codes (C-, E-, P2a …) and abbreviations are
+explained in the [README glossary](README.md#glossary).
 
 > **This document restates almost no numbers on purpose.** Every figure below lives in one findings doc,
 > named inline, and that doc is the authority. Three of this fortnight's corrections (C-081, C-089, C-092)
@@ -61,15 +62,15 @@ Three specific consequences, all of which have already bitten:
 
 - **Earnings did most of the work** — **71.0% to Dec-2025, 82.3% to Jun-2026** [MEASURED; the two endpoints P2a
   actually computes]. The "70–80%" this document carried until 22 Sep excluded P2a's own second row (**C-100**), and the
-  Jun-2026 figure is partly tax-assisted (**C-098**, §6) → `2026-09-11-P2a-Return-Decomposition.md`.
+  Jun-2026 figure is partly tax-assisted (**C-098**, §6) → [`2026-09-11-P2a-Return-Decomposition.md`](2026-09-11-P2a-Return-Decomposition.md).
 - **It survived a second test: it is mostly real profit, not buybacks.** Of the earnings contribution, per-share
   accretion from shrinking share counts is **at most roughly a tenth to a sixth** — **a ceiling, not an interval**
   [BOUNDED, one-sided]. The 7–13% spread is across **aggregation methods**, not endpoints and not statistical
   uncertainty, and C-093 finds survivorship pushes **every** member of it upward, so the truth sits below the band
   rather than inside it (**C-101**). The missing-mega correction is unsigned. The panel behind it is **not on disk**
-  (**d3**) — `2026-09-18-EPS-Split.md`.
+  (**d3**) — [`2026-09-18-EPS-Split.md`](2026-09-18-EPS-Split.md).
 - **It survived its disconfirming test.** Depreciation-life extensions explain only 5–11% of six megacaps'
-  net-income growth → `2026-09-13-E2-Earnings-Quality-Useful-Lives.md`. Amazon reversed; the finding held.
+  net-income growth → [`2026-09-13-E2-Earnings-Quality-Useful-Lives.md`](2026-09-13-E2-Earnings-Quality-Useful-Lives.md). Amazon reversed; the finding held.
 - **The earnings yield barely moved while real yields rose** [MEASURED] — Dec-2023 → Jun-2026 real yields **rose 0.34
   points** while the earnings yield fell only 0.14, so the multiple held up. **That is the whole observation.**
   The "premium compressed ~49bp" restatement of it is **not a second fact** (**C-102**): the premium is *defined* as
@@ -78,18 +79,18 @@ Three specific consequences, all of which have already bitten:
   near-identical rescalings of one quantity (slopes −6.217 vs −6.195). Damodaran's −40bp and the SPF's −19bp move
   the same way for the same structural reason — **a bond leg rising faster than the equity leg in all three** (+34.35bp,
   +57bp, +34.52bp); in the SPF, equity expectations actually **rose**. Agreement, but not independence →
-  `2026-09-12-P2c-Rates-vs-Risk-Premium.md`.
+  [`2026-09-12-P2c-Rates-vs-Risk-Premium.md`](2026-09-12-P2c-Rates-vs-Risk-Premium.md).
   **Read that doc's C-078 header first:** the *window compression* survives, the *level/counterfactual* claim
   is dead. Do not quote a "% above a constant-premium counterfactual".
 - **It arrived as drift, not as events.** Ordinary days carry the bulk; FOMC beats earnings head-to-head
-  → `2026-09-14-P5i-Event-Study-Result.md`.
+  → [`2026-09-14-P5i-Event-Study-Result.md`](2026-09-14-P5i-Event-Study-Result.md).
 - **What did NOT resolve:** whether the compression was cheaper risk or better growth expectations. The split
   is withdrawn (**C-082**) — the survey premium fell on its **bond** leg while equity expectations *rose*.
 
 ## 2. The supply side — the correction that reframes the money question
 
 Z.1's "corporate equities" instrument **counts ETF shares as issuance**. Once that is classified
-(`2026-09-15-ETF1-Identity-Net-Of-ETF.md`, **C-081/C-083**), the 2024:Q1–2026:Q2 issuance identity reads:
+([`2026-09-15-ETF1-Identity-Net-Of-ETF.md`](2026-09-15-ETF1-Identity-Net-Of-ETF.md), **C-081/C-083**), the 2024:Q1–2026:Q2 issuance identity reads:
 ETF share creation **+$3,603.8bn**, nonfinancial corporates **−$540.7bn**, total **+$3,243.1bn**, and
 **net of the wrapper −$360.7bn** — which is a **derived** line, not an operating-company figure (**C-107**): it blends NFC
 with foreign issuers (+$382.2bn) and other financial issuers. **The operating-company number is NFC alone, −$540.7bn.**
@@ -101,7 +102,7 @@ total and bond columns alike.
 **So net new operating-company equity supply over the window was negative.** *"Retired" does not mean "bought back"* — **the net retirement is predominantly M&A**, companies disappearing into
 cash acquisitions. On the window this claim is about, **2024:Q1–2026:Q1** (all the Enhanced Financial Accounts covers):
 **M&A retirement $858.0bn against net retirement $679.1bn — 126.3%**, so M&A more than accounts for the whole of it.
-M&A retirement is a **published EFA line, not a residual** (re-checked 22 Sep: `2026-09-13-S1-Supply-Decomposition.md`
+M&A retirement is a **published EFA line, not a residual** (re-checked 22 Sep: [`2026-09-13-S1-Supply-Decomposition.md`](2026-09-13-S1-Supply-Decomposition.md)
 reads it from the Fed's quarterly CSV, sourced to LSEG SDC, and all five annual totals re-sum exactly).
 
 > **What this section used to say, and why it is gone (C-108).** It supported the claim with a *decade* aggregate —
@@ -113,12 +114,12 @@ reads it from the Fed's quarterly CSV, sourced to LSEG SDC, and all five annual 
 > issuance series covers public and private firms — so the two were never like-for-like (C-108).
 
 Either way, an NFC-wide aggregate cannot tell you what happened to S&P 500 share counts — see §6 item 1 and
-`_research/2026-09-18-EPS-Split-Spec.md`. Roughly three-tenths of the
+[`_research/2026-09-18-EPS-Split-Spec.md`](_research/2026-09-18-EPS-Split-Spec.md). Roughly three-tenths of the
 wrapper is *bond* ETFs — an equity-instrument line whose growth is partly a fixed-income product.
 
 > **Denominator, because it bites.** P1's "≈93% of the rise is revaluation" describes the **$123.7trn stock
 > of corporate equities held** at 2026:Q2 — **not listed market cap** — and that instrument contains the
-> wrapper. `2026-09-11-P1-Equity-Net-Buyers.md` states this in its own header. Quote it with the denominator
+> wrapper. [`2026-09-11-P1-Equity-Net-Buyers.md`](2026-09-11-P1-Equity-Net-Buyers.md) states this in its own header. Quote it with the denominator
 > or not at all. **And it is an IDENTITY with nothing to check it against (C-109):** revaluation is `ΔLevel − Flow`,
 > and series `893064105` appears in no Z.1 revaluation table — there is no independent Fed series at this aggregation
 > that could disagree. And it is not pure revaluation: `ΔLevel − Flow` is revaluation **plus other volume
@@ -132,7 +133,7 @@ wrapper is *bond* ETFs — an equity-instrument line whose growth is partly a fi
 - **ETF buying and mutual-fund selling offset by 81.6%** [MEASURED] — ETFs +$2,460.9bn against mutual funds
   −$2,009.0bn. **Consistent with rotation; not a measurement of it** (**C-111**). Sector netting cannot tell the same
   dollars switching wrapper from two unrelated flows that happen to offset, and Z.1 has no account-linked data, so
-  this is **UNSETTLED on free data, permanently** → `2026-09-13-S1-Supply-Decomposition.md`.
+  this is **UNSETTLED on free data, permanently** → [`2026-09-13-S1-Supply-Decomposition.md`](2026-09-13-S1-Supply-Decomposition.md).
 - **Pensions were net sellers** [MEASURED] — state/local DB −$463.9bn, federal −$67.8bn, private incl. 403(b)
   −$27.7bn, Z.1 holder side 2024:Q1–2026:Q2, all directly reported lines. **Do not pair this with the DC-contributions
   figure** (**C-112**): that is DOL/ICI administrative data, all asset classes, 2013–23, and RET1 says of its own number
@@ -141,27 +142,27 @@ wrapper is *bond* ETFs — an equity-instrument line whose growth is partly a fi
 - **The household line is a computed residual**, not a measurement. Its **issuer** side is now attributed to
   the wrapper; its **holder** side is still unsplit by legal entity (**C-084**), and after the Private Fund
   Statistics scout there is **no free route** to split it
-  → `2026-09-14-HR-The-Household-Residual.md`, `_research/2026-09-15-PFS-Scout-Corporate-Equity-Line.md`.
+  → [`2026-09-14-HR-The-Household-Residual.md`](2026-09-14-HR-The-Household-Residual.md), [`_research/2026-09-15-PFS-Scout-Corporate-Equity-Line.md`](_research/2026-09-15-PFS-Scout-Corporate-Equity-Line.md).
 - **Foreign flows are now instrumented.** TIC July landed 17 Sep off the new **CSLT** dataset (published
-  21 May 2026, first use by us) — see `CALENDAR.tsv` and `data/series.tsv`.
+  21 May 2026, first use by us) — see [`CALENDAR.tsv`](CALENDAR.tsv) and [`data/series.tsv`](data/series.tsv).
 - **Money creation is not the funding ceiling it was briefly claimed to be** (**C-089**): the deposit *stock*
   is several times the purchases, ETF creation is often in-kind, and the association is weak but positive
-  → `2026-09-14-A1-Money-Creation-Link.md`.
+  → [`2026-09-14-A1-Money-Creation-Link.md`](2026-09-14-A1-Money-Creation-Link.md).
 
 ## 3a. The channels the goal names, one by one
 
 *Added 17 Sep. The first version of this document named none of these five — it answered the equity-market
-half of the goal and was checked against its own spine rather than against `THE_ASK.md`. Each verdict below
+half of the goal and was checked against its own spine rather than against [`THE_ASK.md`](THE_ASK.md). Each verdict below
 points at the doc that owns it.*
 
 | goal channel | verdict over this window | owner |
 |---|---|---|
-| **Direct money creation** | Weak positive association with equity buying; **not** a funding ceiling — the deposit *stock* is several times the purchases (C-089) | `2026-09-14-A1-Money-Creation-Link.md` |
-| **Shadow banking / shadow money creation** | **In 2024, a handoff, not fresh money** — the 2024 increase in wholesale repo came out of the Fed's reverse-repo facility (C-085). **Over the full 2024–26 window it is not ruled out** (**C-118**): N4 finds raw wholesale growth (~$1.8trn against ~$3.1trn of purchases) the same order of magnitude, and even stripped of the handoff about a quarter of purchases — a ceiling that stays in the picture. No share of equity purchases can be attributed to nonbank money — that number would be manufactured, since the purchases were wrapper purchases and the household mix is unsized | `2026-09-15-N4-Scale-Timing-Bound.md`; `2026-08-31-N2b-zk-The-Wholesale-Share.md` §8 |
-| **The collateral channel** | Collateral **re-use intensity did not rise**; the dated step in the six-bank collateral stock is **H1 2026** — after most of the price rise | `2026-09-15-N4-Scale-Timing-Bound.md`; `2026-08-30-D10-Reuse-On-The-Measured-Chain.md` |
-| **Passive bid / ETF creation** | **The dominant finding** — the wrapper *is* the issuance (§2); the bid is mostly rotation (§3) | `2026-09-15-ETF1-Identity-Net-Of-ETF.md` |
-| **AI build-out funding** | **Mostly self-funded**: five of six hyperscalers generate more operating cash than their capex; **only Oracle cannot** (~$35bn shortfall). The financing that matters is **off balance sheet** — lease commitments signed but not yet commenced sum to **$1,122.9bn, about 4.9× the $228.3bn of guarantees contracted** — future against future; the "13×" this row carried until 23 Sep divided future leases by *live* guarantees only (**C-116**). **The AI debt that does exist is held mainly by long money** (W2): money funds hold ~$4bn, ~0.35% of JPMorgan analysts' ~$1.2trn *estimate* of AI-company-issued debt; large-bank C&I exposure to AI-adjacent industries is ~$450bn committed / ~$150bn outstanding, but that classification already stood at ~$250bn of commitments in 2015, so build-out lending is some smaller, unmeasured part of it (**C-115**) | `2026-09-12-F1-Funding-Table.md`; `2026-08-22-Guarantee-Stack.md`; `2026-09-12-Oracle-RPO-And-Financing.md`; `2026-09-22-W2-AI-Paper-Composition.md` |
-| **IPO boom** | About **$112bn of new money** in 2026 to date, **two-thirds of it one deal** (SpaceX, $75bn); $36.9bn excluding it. **Who bought is not recoverable on free data** — cornerstones are named in 3 of 10 deals | `2026-09-12-I1b-IPO-Prospectus-Facts.md`; `2026-09-14-I2-IPO-Allocation.md` |
+| **Direct money creation** | Weak positive association with equity buying; **not** a funding ceiling — the deposit *stock* is several times the purchases (C-089) | [`2026-09-14-A1-Money-Creation-Link.md`](2026-09-14-A1-Money-Creation-Link.md) |
+| **Shadow banking / shadow money creation** | **In 2024, a handoff, not fresh money** — the 2024 increase in wholesale repo came out of the Fed's reverse-repo facility (C-085). **Over the full 2024–26 window it is not ruled out** (**C-118**): N4 finds raw wholesale growth (~$1.8trn against ~$3.1trn of purchases) the same order of magnitude, and even stripped of the handoff about a quarter of purchases — a ceiling that stays in the picture. No share of equity purchases can be attributed to nonbank money — that number would be manufactured, since the purchases were wrapper purchases and the household mix is unsized | [`2026-09-15-N4-Scale-Timing-Bound.md`](2026-09-15-N4-Scale-Timing-Bound.md); [`2026-08-31-N2b-zk-The-Wholesale-Share.md`](2026-08-31-N2b-zk-The-Wholesale-Share.md) §8 |
+| **The collateral channel** | Collateral **re-use intensity did not rise**; the dated step in the six-bank collateral stock is **H1 2026** — after most of the price rise | [`2026-09-15-N4-Scale-Timing-Bound.md`](2026-09-15-N4-Scale-Timing-Bound.md); [`2026-08-30-D10-Reuse-On-The-Measured-Chain.md`](2026-08-30-D10-Reuse-On-The-Measured-Chain.md) |
+| **Passive bid / ETF creation** | **The dominant finding** — the wrapper *is* the issuance (§2); the bid is mostly rotation (§3) | [`2026-09-15-ETF1-Identity-Net-Of-ETF.md`](2026-09-15-ETF1-Identity-Net-Of-ETF.md) |
+| **AI build-out funding** | **Mostly self-funded**: five of six hyperscalers generate more operating cash than their capex; **only Oracle cannot** (~$35bn shortfall). The financing that matters is **off balance sheet** — lease commitments signed but not yet commenced sum to **$1,122.9bn, about 4.9× the $228.3bn of guarantees contracted** — future against future; the "13×" this row carried until 23 Sep divided future leases by *live* guarantees only (**C-116**). **The AI debt that does exist is held mainly by long money** (W2): money funds hold ~$4bn, mostly as repo collateral that finances dealers rather than the companies, ~0.35% of JPMorgan analysts' ~$1.2trn *estimate* of AI-company-issued debt; large-bank C&I exposure to AI-adjacent industries is ~$450bn committed / ~$150bn outstanding, but that classification already stood at ~$250bn of commitments in 2015, so build-out lending is some smaller, unmeasured part of it (**C-115**) | [`2026-09-12-F1-Funding-Table.md`](2026-09-12-F1-Funding-Table.md); [`2026-08-22-Guarantee-Stack.md`](2026-08-22-Guarantee-Stack.md); [`2026-09-12-Oracle-RPO-And-Financing.md`](2026-09-12-Oracle-RPO-And-Financing.md); [`2026-09-22-W2-AI-Paper-Composition.md`](2026-09-22-W2-AI-Paper-Composition.md) |
+| **IPO boom** | About **$112bn of new money** in 2026 to date, **two-thirds of it one deal** (SpaceX, $75bn); $36.9bn excluding it. **Who bought is not recoverable on free data** — cornerstones are named in 3 of 10 deals | [`2026-09-12-I1b-IPO-Prospectus-Facts.md`](2026-09-12-I1b-IPO-Prospectus-Facts.md); [`2026-09-14-I2-IPO-Allocation.md`](2026-09-14-I2-IPO-Allocation.md) |
 
 **Read together, this is a real result about the original hypothesis, not a gap in it.** E-003 named these
 channels as things to test — "potential" factors, in the principal's word. Over 2024–26 the money that bought
@@ -178,7 +179,7 @@ guarantee maturity and hyperscaler free cash flow, 30 Sep).
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 
 The object was a credible **aggregate causal money→price** estimate. It is not recoverable here, and the
-taxonomy matters more than the verdict — `2026-09-16-TierB-E005-Resolution-Limit.md` (read its C-092 banner).
+taxonomy matters more than the verdict — [`2026-09-16-TierB-E005-Resolution-Limit.md`](2026-09-16-TierB-E005-Resolution-Limit.md) (read its C-092 banner).
 
 | leg | why it closed | number |
 |---|---|---|
@@ -202,7 +203,7 @@ buying. Each is a live ban pattern — `bin/check.sh --all` enforces them.
 ## 6. What would change this answer
 
 1. **Buybacks inside the earnings number — TESTED 18 Sep, and the lead claim survives.** Grok split S&P 500 EPS
-   growth using constituent-level diluted share counts from SEC (`2026-09-18-EPS-Split.md`; method re-derived
+   growth using constituent-level diluted share counts from SEC ([`2026-09-18-EPS-Split.md`](2026-09-18-EPS-Split.md); method re-derived
    exactly on AAPL). **Per-share accretion is AT MOST ~7–13% of the price gain since 2015** (one-sided, C-101); **profit plus index
    composition ~69–75%** — which is the arithmetic complement of that band, `100 − 17.7 − accretion`, **not a second
    finding** (verified: 75.24 and 68.91 reproduce it exactly); **the multiple ~18%** (C-093 — carry the band, not the doc's 13.4% point, which is the top of
@@ -216,7 +217,7 @@ buying. Each is a live ban pattern — `bin/check.sh --all` enforces them.
    index EPS — **C-098**]. Restating 2025 EPS at the 2015
    rate moves the earnings share of the price gain from **82.3% to 74.5%** — the unadjusted figure sits *above* the
    70–80% band and the restated one inside it, so the top of that band is tax-assisted →
-   `2026-09-21-W3-Tax-Decomposition.md`. Every scalar was re-derived and matches; the firm-level panel did not
+   [`2026-09-21-W3-Tax-Decomposition.md`](2026-09-21-W3-Tax-Decomposition.md). Every scalar was re-derived and matches; the firm-level panel did not
    land, so the derivation is not auditable here (**C-097**). **And under E-007 the decomposition's third term is
    withdrawn (C-098):** "pre-tax profit is 74.2% of EPS growth" was never measured — it was solved for as the residual,
    which is why its "sum check" was exact. Measured directly from the same panel the term is **0.8603, not 0.7875** — a

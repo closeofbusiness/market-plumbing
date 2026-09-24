@@ -10,9 +10,9 @@ Collateral re-use and velocity — Singh’s channel — created the money that 
 
 ## Evidence
 
-Re-use intensity did not rise. The dated step in the six-bank collateral stock is the first half of 2026, after most of the price rise. Source: `2026-09-15-N4-Scale-Timing-Bound.md` and `2026-08-30-D10-Reuse-On-The-Measured-Chain.md`.
+Re-use intensity did not rise. The dated step in the six-bank collateral stock is the first half of 2026, after most of the price rise. Source: [`2026-09-15-N4-Scale-Timing-Bound.md`](../2026-09-15-N4-Scale-Timing-Bound.md) and [`2026-08-30-D10-Reuse-On-The-Measured-Chain.md`](../2026-08-30-D10-Reuse-On-The-Measured-Chain.md).
 
-Velocity, after the point estimate was withdrawn, is carried as a range **about 1.3–1.5**, mechanism-signed, not a point. Source: `2026-08-31-N3v4-Singh-Reconciliation.md` (C-061). The US-five permitted-collateral panel is about **2.23×** from 2017 to mid-2026 in the monitor. That is a stock reconciliation, not a price impact.
+Velocity, after the point estimate was withdrawn, is carried as a range **about 1.3–1.5**, mechanism-signed, not a point. Source: [`2026-08-31-N3v4-Singh-Reconciliation.md`](../2026-08-31-N3v4-Singh-Reconciliation.md) (C-061). The US-five permitted-collateral panel is about **2.23×** from 2017 to mid-2026 in the monitor. That is a stock reconciliation, not a price impact.
 
 FINRA margin debit was **$1,453.8bn** in August 2026, up about **$37bn** on July. That is leverage outstanding. It is not an attribution to the index return.
 

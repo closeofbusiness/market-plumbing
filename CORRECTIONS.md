@@ -765,6 +765,24 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-120 · The published page (23 Sep) had drifted from its sources in six places — the worst, "$150bn outstanding, but that category already held ~$250bn of commitments in 2015"
+
+**Mine, on "What Holds the Market Up" (v12, published 23 Sep). Caught 24 Sep by a cold reader testing whether the repository is understandable to strangers, who read the page against the ANSWER; a full audit followed the same day — about 90 page claims checked against the ANSWER and the findings notes it names, 83 matching.**
+
+- **Killed by:** the page's own sources. (1)–(2) C-115 and the ANSWER's AI build-out row; (3) `2026-09-12-Parcel-RET1-Retirement-Flows-Return.md`; (4)–(5) `2026-09-22-W2-AI-Paper-Composition.md`; (6) the ANSWER's §7 confidence grades.
+- **What was wrong.**
+  - (1) The channel table set today's large-bank *outstanding* ($150bn) against 2015's *commitments* (~$250bn), two different measures, and dropped the $450bn committed figure the comparison needs.
+  - (2) The ledger row said "~$250bn of it predates the boom", where "it" was the $150bn.
+  - (3) The retirement diagram drew ICI's $652.8bn of rollovers into traditional IRAs as a subset of DOL's $783.7bn of DC disbursements ("of which … and the remainder leaves"). RET1 compares it with ICI's $731.9bn of private-sector DC benefits, and ICI says the rollovers come *primarily*, not only, from employer plans.
+  - (4)–(5) "Money funds hold ~$4bn" dropped W2's qualifier that this is mostly repo collateral financing dealers' inventories, not the companies; direct CP is ~$0.26bn. The ANSWER row carried the same omission.
+  - (6) The page called the premium story "low to medium"; the ANSWER grades it "medium, and lower than it reads".
+  - A seventh row, the Dutch pension transition, was right but named no source; it now cites the E1 scout.
+- **Correct position.** Large-bank exposure to AI-adjacent industries is ~$450bn committed and ~$150bn outstanding, and ~$250bn of the commitments predates the build-out. Rollovers are an IRA-side count set against a different universe from the DOL boxes, and the diagram now says so. Money funds hold ~$4bn, mostly as repo collateral. The premium story is graded medium, and lower than it reads.
+- **Why it matters.** This is shape 5 of the page's own §11 (a summary stronger than its source), on the page that names the shape. The page check scans for banned wording. It cannot see a comparison that mixes measures, a subset drawn across two datasets, or a dropped qualifier. **Only reading the page against its sources finds these**, and that audit has now been run once. Re-run it before any republish that changes numbers.
+- **Still standing at:** nowhere. `docs/index.html` was corrected in place and republished; the ANSWER row gained the W2 qualifier.
+
+---
+
 ## C-119 · C-109's "structural disagreement between independently compiled Fed series" — the gap was a term the check left out
 
 **Mine. Written into C-109, CLAUDE.md and the ANSWER on 22 Sep and told to the principal as a finding that "dwarfs the error model"; P1 had framed the same gaps as "genuine non-reconciliation" on 11 Sep. Overturned 23 Sep by an agent sent to test it, and re-derived by the supervisor before acceptance.**
@@ -1010,6 +1028,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **Correct position.** Delete the pass/fail framing. If a real reconciliation is wanted, it must compound dividends **independently** from monthly cash dividends and compare against the total-return series — that check *can* fail, and was never run.
 - **Why it matters.** This is the C-098 defect one document upstream of where it was caught, in the document that supplies the programme's lead number. The project has now found three tautologies-presented-as-checks in four days (C-098, C-099, and the sum-check in C-101). **A check that cannot fail is not a weak check — it is an absence of a check wearing the costume of one.**
 - **The script is gone.** `decomp.py` lived only in a session scratchpad and is not on disk (d1/d2 class), so which variable was the literal plug cannot be settled — but the 12/12 exact match settles that the relationship is definitional either way.
+- **Update 24 Sep — "the script is gone" was wrong.** It was on disk throughout, renamed: `bin/decomp_sp500_shiller.py`, in the vault since 11 Sep and named in the P2a header. Re-run on the 2 Sep vintage inputs, it reproduces both P2a tables byte for byte, so which variable was the plug can be read from it. Found by a cold reader on 24 Sep. The tautology finding above is unaffected.
 - **Still standing at:** `2026-09-11-P2a-Return-Decomposition.md` §Check, corrected in place.
 
 ---
@@ -1949,4 +1968,9 @@ C-116	13x larger
 C-116	13:1 hinge
 C-116	13× the \$86\.2bn
 C-117	no budget fixes
+C-120	150bn outstanding, but that category
+C-120	\$250bn of it predates
+C-120	652\.8 billion rolls into IRAs
+C-120	never leaves the market
+C-120	Low to medium on the premium
 ```

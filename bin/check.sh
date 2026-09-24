@@ -372,12 +372,13 @@ fi
 # -- page check (23 Sep) --------------------------------------------------------
 # The published page is a rendering OUTSIDE the *.md scan above. It went stale twice (C-083 for four days;
 # C-106/C-116/C-117 later) because claims were killed AFTER it was published and nothing re-scanned it.
-# Its durable source lives in the vault and is checked on every --all run. check_page.py strips tags per
+# Its durable source lives at docs/index.html (moved 24 Sep, E-012, so GitHub can serve it) and is checked on every --all run. check_page.py strips tags per
 # line, so it catches phrases an HTML tag splits -- C-116's "13x the <span>$86.2bn</span>" slipped past
 # the raw scan above when it was pointed at the page.
-if [ "$TARGET" = "--all" ] && [ -f _research/artifact/state-of-play.html ]; then
+if [ "$TARGET" = "--all" ]; then
   echo
-  echo "-- page check: _research/artifact/state-of-play.html (source of the published page) --"
-  python3 bin/check_page.py _research/artifact/state-of-play.html
+  echo "-- page check: docs/index.html (source of the published page) --"
+  if [ -f docs/index.html ]; then python3 bin/check_page.py docs/index.html
+  else echo "  ✗ docs/index.html missing -- the published page has no checked source."; fi
 fi
 exit 0

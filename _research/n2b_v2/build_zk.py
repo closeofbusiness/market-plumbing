@@ -9,7 +9,7 @@ import csv, os, sys, math
 from collections import OrderedDict
 
 SCR = "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n2b_v2"
-DBX = "/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/data"
+DBX = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 HIST = os.path.join(DBX, "history")
 ALF  = os.path.join(DBX, "vintages", "alfred", "alf_M2SL_2026-08-15.csv")
 OUT  = os.path.join(SCR, "zk_v2.csv")

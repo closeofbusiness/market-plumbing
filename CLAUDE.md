@@ -1,5 +1,7 @@
 # Third Derivative & Shadow Debt — one project
 
+*Human visitors: this is the operating manual for the AI agents that work this repository. To read the research, start at [README.md](README.md).*
+
 > ## FIRST ACTION OF EVERY SESSION, BEFORE READING ANYTHING ELSE
 >
 > ```bash
@@ -181,10 +183,15 @@
 > `check.sh --all` never sees it, and it carried C-083's retracted "irreducibly unattributable" for four days before
 > anyone looked. **It went stale a second time on 23 Sep:** three claims killed on 22–23 Sep stayed live because a
 > pre-publish check only covers claims already dead at publish time — nothing re-scanned the page after a new kill.
-> **Its source now lives at `_research/artifact/state-of-play.html`. Publish FROM that file**, and `check.sh --all` scans
+> **Its source now lives at `docs/index.html`** (moved 24 Sep so GitHub can serve it as a web page, E-012). **Publish FROM that file**, and `check.sh --all` scans
 > it on every run (the `page check` line). For a one-off, use `bin/check_page.py <html>`, not `bin/check.sh <html>`: the
 > raw scan caught 2 of the 3 dead claims and missed C-116, whose phrase an HTML tag split. The answer document is the
 > authority; the page must say so and must not be used as a source.
+> **The ban scan cannot see drift.** On 24 Sep a cold reader found, and an audit then confirmed, six places where the v12 page
+> had drifted from its sources, all of them phrased cleanly (C-120). They were a comparison mixing *outstanding* with *committed*, a
+> subset drawn across two datasets, and dropped qualifiers. **Before any republish that changes numbers, read the page against the
+> ANSWER and the findings notes it names**; the 24 Sep audit checked ~90 claims. `check_page.py` also scans aria-label, alt and
+> title text now, because one retired phrase lived only in a chart's aria-label.
 >
 > **The housekeeping skill's link checker reports ~211 "unreachable" docs here. Ignore that half.** It looks
 > for relative markdown links; this project navigates by the **read table below**, which lists filenames in
@@ -330,6 +337,7 @@ the improvised-channel problem. The extracted source text sits in
 | `corrections/` | — | POINTER to `CORRECTIONS.md` (E-011) | — | — |
 | `dossiers/` | 12 files | public per-channel summaries; each points at the findings doc that owns its numbers | — | ✓ |
 | `monitor/` | 1 file | public extract of `data/series.tsv` and `CALENDAR.tsv`; those win where they differ | — | — |
+| `docs/` | 1 page | the public web page "What Holds the Market Up" (`index.html`): a dated rendering of the ANSWER note, and the source the claude.ai artifact is published from (E-012) | — | if presenting |
 | `data/series.tsv` · `bin/pull_series.py` | — | **query** | **query** | **query** |
 | `data/vintages/` (FINRA, ALFRED snapshots) · `Report/*.html` (outputs) | — | if vintage | if vintage | if presenting |
 | `CORRECTIONS.md` | **query only — never whole** (exceeds the Read cap; `bin/check.sh --latest` for the newest, `grep -n '^## C-0'` to locate one) | **always** | **always** | **always** |
@@ -454,7 +462,7 @@ the improvised-channel problem. The extracted source text sits in
 | `Parcel_ATT1_Premium_Attack_For_Grok_Cursor.md` | 1k | if attacking the premium finding | — | — |
 | `Parcel_RET1_Retirement_Flows_For_Gemini_AGY.md` | 1k | if retirement flows (D-G remainder) | — | — |
 | `Parcel_ZK2_DoubleCount_Lens_For_Gemini_AGY.md` | 2k | if z_k/double-count | — | — |
-| `Personas/*.md` | 4k each (5 files) | if running the panel | — | if presenting |
+| `Personas/*.md` | — | **PRIVATE since 24 Sep (E-010)** — not in this repo; the Dropbox companion's `private/Personas/` (simulates named real people) | — | — |
 | `Third_Derivative_Concept_Map.md` | 5k | if cascade | if cascade | ✓ |
 | `Funding_Identity_First_Principles.md` | 11k | if funding | if funding | ✓ |
 | `Shadow_Debt_Measurement_Handbook.md` | 10k | if measuring | if measuring | ✓ |
@@ -462,9 +470,9 @@ the improvised-channel problem. The extracted source text sits in
 | `Collateral_Open_Questions.md` | 1k | if workstream B | — | ✓ |
 | `Collateral_Data_Inventory.md` | 2k | if measuring | — | — |
 | `Third_Derivative_Case_Library.md` | 11k | if cascade | if cascade | grep |
-| `Analysis/Panel_Synthesis.md` | 4k | — | ✓ | ✓ |
+| `Analysis/Panel_Synthesis.md` | — | **PRIVATE since 24 Sep (E-010)** — not in this repo; the Dropbox companion's `private/Analysis/Panel_Synthesis.md` (simulates named real people) | — | — |
 | `Analysis/Forward_Prediction_Register.md` | 10k | — | ✓ | ✓ |
-| `Analysis/Panel_Individual_Reads.md` | 26k | — | grep | grep |
+| `Analysis/Panel_Individual_Reads.md` | — | **PRIVATE since 24 Sep (E-010)** — not in this repo; the Dropbox companion's `private/Analysis/Panel_Individual_Reads.md` (simulates named real people) | — | — |
 | `Analysis/Input_Substrate_Forward_Thinkers.md` | 28k | grep | grep | grep |
 | **`Shadow_Debt_Channel_Map.md`** | **106k** | **NEVER whole — grep only** | **grep only** | **grep only** |
 | `_research/**` | ~500k | **never** unless cited by id | sample | never |
@@ -664,8 +672,8 @@ registration time*, not because the score will mean anything.
 | `Funding_Identity_First_Principles.md` | Workstream B: the identity, the residual, the illusion chain formalised |
 | `Shadow_Debt_*.md` | Workstream B: nine-channel map, measurement handbook |
 | `Collateral_*.md` | Workstream B: inherited state of argument, data inventory, open questions |
-| `Personas/` | Four subagent primers + usage guide |
-| `Analysis/` | Forward register, panel synthesis and reads, input substrate |
+| `Personas/` | Private since 24 Sep (E-010): the Dropbox companion's `private/Personas/` |
+| `Analysis/` | Forward register and input substrate (the panel synthesis and reads are private, E-010) |
 | `_research/` | Raw agent output and evidence. Not the deliverable |
 
 **New findings files are date-prefixed** (`2026-08-21-Topic.md`) so a reader can tell

@@ -82,8 +82,8 @@ It would give a **first-party, falsifiable elasticity** for one real, identifiab
 **The single assumption that would sink this design:** that a firm's rank near the cutoff is uncorrelated with unobserved return-relevant characteristics — i.e., no anticipatory arbitrage or rank manipulation. If capital already trades the reconstitution well before the effective date (well documented as the effect has attenuated over time), the measured discontinuity understates or erases the true elasticity without the effect being absent, and this design cannot tell those two cases apart.
 
 ### Critical Files for Implementation
-- `/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/RESEARCH_STATE.md` (item 4/P3 next-step plan; §0.0 answerability rules)
-- `/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/CLAUDE.md` (SEC User-Agent rule, bot-block list, model-routing rules)
-- `/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/2026-09-12-ATT0-First-Attribution.md` and `_research/P3R_verification_2026-09-12.md` (what was refuted, and why)
-- `/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/2026-09-11-P1-Equity-Net-Buyers.md` and `bin/z1_equity_netbuyers.py` (existing Z.1 pull to extend for design (d))
-- `/Users/martinschroeder/Dropbox/31 - Claude Cowork/Work/2026.08 - Third Derivative Research/_research/2026-09-11-P3-papers.csv` (the reconstitution/demand-system papers already read at source: Pavlova-Sikorskaya, Chinco-Sammon, Parker-Schoar-Sun)
+- `RESEARCH_STATE.md` (item 4/P3 next-step plan; §0.0 answerability rules)
+- `CLAUDE.md` (SEC User-Agent rule, bot-block list, model-routing rules)
+- `2026-09-12-ATT0-First-Attribution.md` and `_research/P3R_verification_2026-09-12.md` (what was refuted, and why)
+- `2026-09-11-P1-Equity-Net-Buyers.md` and `bin/z1_equity_netbuyers.py` (existing Z.1 pull to extend for design (d))
+- `_research/2026-09-11-P3-papers.csv` (the reconstitution/demand-system papers already read at source: Pavlova-Sikorskaya, Chinco-Sammon, Parker-Schoar-Sun)

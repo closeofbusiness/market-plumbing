@@ -20,6 +20,7 @@ variable that did not exist. Run unedited, the script silently re-fetched the Au
 """
 import re,json,time,urllib.request,ssl,csv,collections,sys
 import os
+if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
 UA={"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
 CTX=ssl.create_default_context()
 if len(sys.argv)!=2 or not re.fullmatch(r'\d{4}-(0[1-9]|1[0-2])',sys.argv[1]):

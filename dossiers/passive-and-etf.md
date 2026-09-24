@@ -10,13 +10,13 @@ The passive bid and ETF creation, as argued by Michael Green, are a large part o
 
 ## Evidence
 
-Z.1 “corporate equities” issuance over 2024:Q1–2026:Q2 is mostly ETF share creation (**+$3,603.8bn**). Operating companies (nonfinancial corporates) retired **$540.7bn**. About three-tenths of the wrapper is bond ETFs (**$1,065bn** on the bond-fund issuance key). Commodity-fund issuance on the same identity is **$60.1bn**. Sources: `2026-09-15-ETF1-Identity-Net-Of-ETF.md`; series keys `z1_etf_share_issuance_bn`, `z1_etf_bond_fund_issuance_bn`, `z1_etf_commodity_fund_issuance_bn`.
+Z.1 “corporate equities” issuance over 2024:Q1–2026:Q2 is mostly ETF share creation (**+$3,603.8bn**). Operating companies (nonfinancial corporates) retired **$540.7bn**. About three-tenths of the wrapper is bond ETFs (**$1,065bn** on the bond-fund issuance key). Commodity-fund issuance on the same identity is **$60.1bn**. Sources: [`2026-09-15-ETF1-Identity-Net-Of-ETF.md`](../2026-09-15-ETF1-Identity-Net-Of-ETF.md); series keys `z1_etf_share_issuance_bn`, `z1_etf_bond_fund_issuance_bn`, `z1_etf_commodity_fund_issuance_bn`.
 
-ETF buying and mutual-fund selling offset by **81.6%** (**+$2,460.9bn** versus **−$2,009.0bn**). Consistent with rotation. Not a measurement of it (C-111). Source: `2026-09-13-S1-Supply-Decomposition.md`.
+ETF buying and mutual-fund selling offset by **81.6%** (**+$2,460.9bn** versus **−$2,009.0bn**). Consistent with rotation. Not a measurement of it (C-111). Source: [`2026-09-13-S1-Supply-Decomposition.md`](../2026-09-13-S1-Supply-Decomposition.md).
 
 Retirement was predominantly M&A, not buybacks alone, on 2024:Q1–2026:Q1 (**$858.0bn** M&A retirement versus **$679.1bn** net retirement).
 
-Green’s own numbers were checked where free data allowed (`2026-09-11-DG-Green-Numbers-Checked.md`, `2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md`). Some mechanism sketches reproduced. Several magnitudes are blocked on proprietary data and were not filled in. Older Substack posts were left unpulled by a 11 September ruling.
+Green’s own numbers were checked where free data allowed ([`2026-09-11-DG-Green-Numbers-Checked.md`](../2026-09-11-DG-Green-Numbers-Checked.md), [`2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md`](../2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md)). Some mechanism sketches reproduced. Several magnitudes are blocked on proprietary data and were not filled in. Older Substack posts were left unpulled by a 11 September ruling.
 
 The causal test — how far a dollar of non-price-sensitive buying moves aggregate equity value — closed. See [corrections/REGISTER.md](../corrections/REGISTER.md). No multiplier is carried.
 

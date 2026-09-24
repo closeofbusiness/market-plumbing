@@ -1,0 +1,5 @@
+# Only the two scripts that read spreadsheets need these: xlrd for
+# bin/decomp_sp500_shiller.py and bin/rates_vs_premium.py, pandas for the second only.
+# Every other script in bin/ uses the Python standard library.
+pandas
+xlrd

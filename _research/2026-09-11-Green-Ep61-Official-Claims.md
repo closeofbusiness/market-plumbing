@@ -1,7 +1,7 @@
 <!-- Official transcript of The End Game Ep 61 (Martin's download, 11 Sep 2026); claims extracted and reconciled by a Sonnet agent. Quotes <=15 words. Index: 2026-09-11-Green-Substack-And-Ep61-Synthesis.md -->
 # Ep 61 Official Transcript vs ASR Reconciliation — Mike Green, The End Game #61
 
-Source: `/Users/martinschroeder/Downloads/The-End-Game_Transcript_0061_Mike_Green.pdf` (20 pp., published Sept 07/08 2026), converted with `pdftotext -layout`. Page numbers below are the PDF's own printed page numbers (footer), verified to match the pdftotext page-split.
+Source: `The-End-Game_Transcript_0061_Mike_Green.pdf`, a local copy of the published transcript (third-party, not redistributed here) (20 pp., published Sept 07/08 2026), converted with `pdftotext -layout`. Page numbers below are the PDF's own printed page numbers (footer), verified to match the pdftotext page-split.
 ASR file checked against: `2026-09-11-Green-Claims.tsv`, rows with episode_id 4555 (G-011 through G-020, 10 rows — confirmed by `awk` count, no other 4555 rows exist).
 
 ---
