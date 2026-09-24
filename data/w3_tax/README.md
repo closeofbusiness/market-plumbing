@@ -1,13 +1,30 @@
-# W3 tax panel location
+# W3 tax panel
 
-Full firm-level panel (343 KB CSV, 412 ok firms) is on the executor box at:
+Firm-level SEC companyfacts tax panel backing `2026-09-21-W3-Tax-Decomposition.md`.
 
-`/workspace/tdr/data/w3_tax/firm_tax_panel.csv`
+## Files
 
-**NOT mirrored here (C-097, 21 Sep).** This folder holds only `README.md`, `results.json` and `w1_rebalance_attack.json`. `data/z1_debt/` does not exist either, so the five raw FRED pulls named in the `series_file` fields of `w1_rebalance_attack.json` are also absent. Every headline scalar was re-derived from `results.json` and matches; the step from SEC companyfacts to Σtax/Σpretax over 412 firms cannot be checked here until the panel lands.
+- `firm_tax_panel.csv` — 503 rows (412 `status=ok`); landed 24 Sep 2026 from executor `/workspace/tdr` (C-097).
+- `results.json` — headline scalars. Re-derived from the ok rows: ETR 2015 27.351%, ETR 2025 19.615%, Δlog(1−ETR) 0.10119, after-tax multiplier 1.10649. Matches this file.
+- `w1_rebalance_attack.json` — W1 rebalance pair.
 
-Headline scalars: `results.json` (this folder).
-W1 rebalance pair: `w1_rebalance_attack.json` (this folder).
-Deliverable note: project root `2026-09-21-W3-Tax-Decomposition.md`.
+## Schema (`firm_tax_panel.csv`)
 
-Panel columns include: ticker, cik10, pretax_2015/2025, tax_2015/2025, pretax_tag_2015/2025, tax_tag, dom_for match flags, status.
+| column | meaning |
+|---|---|
+| ticker | equity ticker |
+| cik10 | zero-padded CIK |
+| status | `ok` if both-year pretax+tax usable; else reason |
+| missing_fields | fields absent when not ok |
+| pretax_tag / tax_tag | XBRL tags used |
+| pretax_tag_2015 / pretax_tag_2025 / tax_tag_2015 / tax_tag_2025 | year-specific tags |
+| pretax_2015 / tax_2015 / pretax_2025 / tax_2025 | USD as reported |
+| pretax_end_2015 / pretax_end_2025 / tax_end_2015 / tax_end_2025 | period end dates |
+| has_domestic / has_foreign | tag presence flags |
+| dom_for_match_2015 / dom_for_match_2025 | domestic+foreign equals consolidated |
+| dom_plus_for_2015 / dom_plus_for_2025 | domestic+foreign sums |
+| dom_for_vs_consol_2015 / dom_for_vs_consol_2025 | difference vs consolidated |
+| n_pretax_tags / consol_candidates | tag inventory |
+| pretax_frame_2015 / pretax_frame_2025 | frame / calendar-year fallback marker |
+
+Do not re-fetch without `SEC_UA` already set in the environment. Never invent a User-Agent containing a personal email.
