@@ -1,16 +1,12 @@
 # Charter
 
-## The question
+## The mission
 
-What is driving asset prices, and where is the money coming from?
+> Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 
-The canonical wording, taken from the source programme’s goal string (derived from the principal’s 11 September 2026 amendment, and confirmed the same day):
+This is the programme's standing goal: the principal asked for it on 25 September 2026 to replace scattered statements of the goal ([THE_ASK.md](THE_ASK.md), E-015). It is built from the principal's own words in E-003, E-004, E-005 and E-007, and the principal's read-back of this wording is pending. The sections below are how it is carried out; none of them is a second goal.
 
-> A fundamental, quantified understanding of what is driving asset prices higher and where the money is coming from — including the funding of the AI build-out and the IPO boom — across every channel: direct money creation, shadow banking and shadow money creation, the collateral channel, market-structure flows such as the passive bid and ETF creation, and any other driver the evidence reveals.
-
-That string widened an earlier goal: a fundamental understanding of shadow-banking collateral and money creation on the Pozsar–Singh nonbank–bank nexus. The nexus work carries over. It is two channels, not the whole question.
-
-Michael Green’s market-structure arguments (passive bid, ETF creation) are hypotheses to size. They are not conclusions. Fundamentals are the benchmark every liquidity or flow story must beat: earnings, rates, and risk premia; for commodities, the physical balance and the inventory path.
+It widened an earlier goal: a fundamental understanding of shadow-banking collateral and money creation on the Pozsar–Singh nonbank–bank nexus. The nexus work carries over as two of the channels. Michael Green's market-structure arguments (the passive bid, ETF creation) are hypotheses to size, not conclusions. For commodities, the fundamentals benchmark is the physical balance and the inventory path.
 
 ## Three questions, in this order
 

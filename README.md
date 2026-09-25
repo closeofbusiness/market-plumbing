@@ -6,7 +6,7 @@
 
 1. **[What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/)**: the current answer on one page, with every claim graded. It is a dated rendering of the answer note, and its source is [`docs/index.html`](docs/index.html).
 2. **[The answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md)** is the authority: where the page and the note disagree, the note wins. It restates almost no numbers on purpose. Each claim links to the findings note that owns it.
-3. **[CHARTER.md](CHARTER.md)**: the question, the markets in scope, the rules every file follows, and the four grades.
+3. **[CHARTER.md](CHARTER.md)**: the mission (the standing goal), the markets in scope, the rules every file follows, and the four grades.
 4. **[dossiers/](dossiers/)**: one short file per channel (passive and ETF flows, AI funding, shadow money, collateral, rates, and others). Each gives the hypothesis, its status, the evidence, and what would change it.
 5. **[CORRECTIONS.md](CORRECTIONS.md)**: the register of retracted claims. It is long, so don't read it straight through. When a note cites, say, C-081, search the file for `## C-081`. `bash bin/check.sh --latest` prints the newest entries.
 

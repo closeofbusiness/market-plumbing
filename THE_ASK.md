@@ -13,17 +13,68 @@ wording, stop — that is the failure this file prevents.
 
 ---
 
-## THE CANONICAL GOAL
+## THE CANONICAL GOAL — the mission statement
 
 `bin/check.sh --goal` verifies this exact string appears in `CLAUDE.md` and `RESEARCH_STATE.md`.
 Changing it here without changing it there — or the reverse — fails the check.
 
 ```goal
-A fundamental, quantified understanding of what is driving asset prices higher and where the money is coming from — including the funding of the AI build-out and the IPO boom — across every channel: direct money creation, shadow banking and shadow money creation, the collateral channel, market-structure flows such as the passive bid and ETF creation, and any other driver the evidence reveals.
+Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 ```
 
-**Derived from entry E-003 below (11 Sep 2026), which widens E-002; the agent's additions in it were confirmed in E-004.** If you believe the canonical string no longer matches the
-verbatim record, **do not rewrite it** — raise it with the principal and append a new entry.
+**The principal asked on 25 Sep for one clear mission statement to be the standing goal (E-015).** The agent worded it from
+E-003 (the goal), E-004 (the confirmed additions), E-005 (the standard of evidence), E-007 (everything is a hypothesis until
+tested) and E-015 (the scope). **The principal's read-back of this exact wording is pending.** The 11 Sep string it replaces is
+quoted in E-015. If you believe the mission no longer matches the verbatim record, **do not rewrite it**: raise it with the
+principal and append a new entry.
+
+---
+
+## E-015 · 25 September 2026 — five rulings, and one mission statement as the standing goal
+
+Given in one message, answering the five items the supervisor put after the 25 Sep housekeeping:
+1. which lane runs QE RUN 1;
+2. the goal read-back, with E-003 and E-004 pasted verbatim, and whether CHARTER's wider scope is intended;
+3. whether simulated views of named investors should leave the public repository;
+4. the 30 Sep quarter-end observations;
+5. the 1 Oct items, including the revolver-drawdown brief.
+
+> *"1) yes 2) yes, but we should summarise this into a better mission statement that is clear and that is  the standing goal - we should not have this flying around like unconnected thoughts like this 3)-5) agreed"*
+
+**Reading notes.**
+- **(1)** "yes" answers the offer *"Say yes and I'll rewrite the brief"*: both QE sentiment runs switch to public web sources, through Grok in Cursor, with the same seven queries (C-121).
+- **(2)** The goal still describes the intent, and CHARTER's wider scope (rates, FX and commodities as well as equities) is intended. The principal wants the goal stated once, clearly, as a mission statement that is the standing goal. It replaces the combination of a verbatim quote, a list of confirmed additions and a separate working description.
+- **(3)** Simulated views attributed to named investors leave the public repository, not only the persona files. This extends E-010.
+- **(4)** The 30 Sep observations run as calendared.
+- **(5)** The 1 Oct items run as calendared, and the revolver-drawdown brief is approved.
+
+**The mission statement.** It is the agent's wording, and **the principal's read-back of it is pending**. It is installed as the
+canonical goal above, in `CLAUDE.md`, in `RESEARCH_STATE.md` §0.0, and at the head of `CHARTER.md`:
+
+> Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
+
+Where each part comes from:
+- **E-003:** what drives asset prices and where the money comes from; the AI build-out and the IPO boom; the named channels.
+- **E-004:** the four confirmed additions: quantified; any other driver; fundamentals as the benchmark; every purchase has a seller.
+- **E-005:** ranges, not proof to the last cent; free data only.
+- **E-007:** everything is a hypothesis until it is tested.
+- **E-009 and E-010:** the work is public and attributed.
+- **This entry:** the scope.
+
+The Substack piece stays a side condition for a later date (E-003) and is not part of the mission.
+
+**Superseded on 25 Sep: the 11 Sep canonical string, kept here verbatim.**
+
+> A fundamental, quantified understanding of what is driving asset prices higher and where the money is coming from — including the funding of the AI build-out and the IPO boom — across every channel: direct money creation, shadow banking and shadow money creation, the collateral channel, market-structure flows such as the passive bid and ETF creation, and any other driver the evidence reveals.
+
+**As applied, 25 Sep.**
+- **QE runs.** The parcel was rewritten for public web sources (commit `5e4e8cf`), and the calendar rows and RESEARCH_STATE §5 item 1
+  follow.
+- **Simulated views.** Slides 10–11 were removed from `Report/Third_Derivative_Report.html`, and lens positions elsewhere are now named by
+  letter (commit `3705cf7`). The full originals and the letter key are in the private companion.
+- **The mission.** It is installed as above. The 25 Sep goal read-back is closed, and a read-back of the mission's wording is calendared
+  for 26 Sep.
+- **Revolver-drawdown brief.** Approved and routed to Grok in Cursor; the supervisor writes it by 30 Sep.
 
 ---
 

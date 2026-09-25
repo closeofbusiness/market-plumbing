@@ -16,13 +16,14 @@ finished. Last updated **2026-09-11** (**GOAL AMENDED by the principal — `THE_
 getting an answer wrong.** Every agent reads this before §1. If a piece of work does not
 serve a row in this table, it is a tangent — which is allowed, but should be known.
 
-### 0.0 THE ULTIMATE GOAL — amended by the principal, 11 Sep 2026 (`THE_ASK.md` E-003; widens E-002 of 22 Aug)
+### 0.0 THE MISSION — the standing goal (`THE_ASK.md` E-015, 25 Sep 2026; consolidates E-003, E-004, E-005 and E-007)
 
-> A fundamental, quantified understanding of what is driving asset prices higher and where the money is coming from — including the funding of the AI build-out and the IPO boom — across every channel: direct money creation, shadow banking and shadow money creation, the collateral channel, market-structure flows such as the passive bid and ETF creation, and any other driver the evidence reveals.
+> Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 >
-> *Canonical string, derived from `THE_ASK.md` entry E-003. `bin/check.sh --goal` enforces it
-> here, in `CLAUDE.md`, and in `THE_ASK.md`. Do not reword — corruption enters via paraphrase.
-> This section is the goal's working description; the principal's own words are E-003.*
+> *The mission statement, verbatim from `THE_ASK.md` (E-015; the principal's read-back of the wording is pending).
+> `bin/check.sh --goal` enforces it here, in `CLAUDE.md` and in `THE_ASK.md`. Do not reword it: corruption enters
+> through paraphrase. The rest of this section is the mission's working detail, not a second goal. The principal's own
+> words are E-003, E-004, E-005, E-007 and E-015.*
 
 **The question, plainly.** Asset prices have run up to records — the S&P 500 is at an all-time
 high — and very large sums are funding the AI build-out and an IPO boom. What is driving prices
@@ -97,6 +98,7 @@ correction of agent error. The nexus work is now channels (b) and (c).
 | A11 | Produce serious insights fit for **an initial high-value Substack post** | **Open — this is the OUTPUT, downstream of A12. Reclassified 22 Aug (C-041); it was recorded as "the output target", which was read as the goal.** |
 | A12 | **Comprehensively understand the nonbank–bank nexus** — all shadow-banking collateral and money-creation mechanisms, on the Pozsar–Singh frame in which collateral does the work of base money | **The goal from 22 Aug to 11 Sep; now channels (b) and (c) of A13.** Open. Collateral leg covered (negatively); money leg BUILT (N2a, N2b); the interlock (N4) open |
 | A13 | **Understand what is driving asset prices higher and where the money is coming from** — the AI build-out and the IPO boom included — across direct money creation, shadow banking, the collateral channel, and market-structure flows such as the passive bid and ETF creation (Michael Green) | **THE ULTIMATE GOAL since 11 Sep (E-003). Open. See §0.0.** Re-planned 11 Sep (§5) on the channel map and the Green corpus dossier; any further Green material from the principal feeds item D-G |
+| A14 | **Summarise the goal into one clear mission statement that is the standing goal**, rather than separate thoughts (E-015) | **Done 25 Sep**: the mission above. The principal's read-back of the wording is pending |
 
 ### 0.1 The standing capability that is currently idle
 

@@ -240,10 +240,11 @@ to what drives asset prices and where the money comes from. Before that it was c
 
 ### The ultimate goal
 
-> A fundamental, quantified understanding of what is driving asset prices higher and where the money is coming from — including the funding of the AI build-out and the IPO boom — across every channel: direct money creation, shadow banking and shadow money creation, the collateral channel, market-structure flows such as the passive bid and ETF creation, and any other driver the evidence reveals.
+> Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 
-*Canonical string, verbatim from `THE_ASK.md`. `bin/check.sh --goal` fails if it drifts here,
-there, or in `RESEARCH_STATE.md`. Do not reword it — not even to improve it.*
+*The mission statement: the canonical goal, verbatim from `THE_ASK.md`. The principal asked for it on 25 Sep (E-015), and the
+principal's read-back of its wording is pending. `bin/check.sh --goal` fails if it drifts here, there, or in `RESEARCH_STATE.md`.
+Do not reword it, not even to improve it.*
 
 **The working description is `RESEARCH_STATE.md` §0.0 — read it, do not restate it here:** what is
 being explained (asset prices; the AI build-out's funding; the IPO boom), the six candidate
