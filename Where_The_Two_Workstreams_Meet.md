@@ -57,7 +57,7 @@ neither could see the other.
 **From the panel.** All four lenses named a *different* terminal holder of the loss —
 offshore-reinsured annuity books, gated LPs and IG index funds, lessees under
 uncommenced leases, retail ratepayers. Four identities, one shared property:
-**whoever it is cannot be compelled to recognise quickly.** The Soros lens put it
+**whoever it is cannot be compelled to recognise quickly.** One panel lens put it
 directly — America is about to reproduce China post-2015: enormous real capacity,
 permanently impaired, quietly carried, never transferred.
 
@@ -120,7 +120,7 @@ collateral project's own working rules require.
 **Pillar B is the panel's instrument.** Compute ABF, DDTLs, GPU SPVs, neocloud structures
 and hyperscaler off-balance-sheet borrowing are exactly what the four lenses took
 positions on. The panel's single largest unexamined risk was that **no observed recovery
-data exists for this collateral class**, so roughly half the payoff on the Burry-lens
+data exists for this collateral class**, so roughly half the payoff on one panel lens's
 short is priced on a default assumption with an unpriced recovery. Pillar B's build order
 is the thing that would fix that.
 

@@ -26,7 +26,8 @@
 >   load with `set -a; source …; set +a`) and `private/`, kept at original repo-relative paths, where `private/MANIFEST.tsv` gives each
 >   file's reason (paywalled originals, correspondence, inbox-derived, personas, third-party data, files too big for git).
 > - **Before committing anything, ask whether it could be public.** Never commit personal data (scripts read the SEC contact string from
->   `SEC_UA`), paywalled or copyrighted full text, correspondence, or simulations of named real people. Attributed synthesis is fine (E-010).
+>   `SEC_UA`), paywalled or copyrighted full text, correspondence, or simulations of named real people. That includes their outputs: positions, quotes or trades
+>   attributed to a named person's persona. Public files name the panel lenses by letter (A–D), and the key is private (E-015). Attributed synthesis is fine (E-010).
 > - **Commit only as the GitHub noreply identity, never a personal email.** This machine's default git email is personal, so set
 >   `user.email` in every clone.
 >

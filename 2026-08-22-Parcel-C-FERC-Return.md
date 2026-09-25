@@ -98,13 +98,15 @@ turns six noes into a yes.
 
 | Position | Stated trigger | Provisional outcome |
 |---|---|---|
-| **Burry-lens** decline-to-answer | Converts to a live long **if** a transferable class appears | **Did not fire. Decline-to-answer stands.** |
-| **Griffin-lens** size zero | Becomes priceable **if** a transferable class appears | **Did not fire. Size zero stands.** |
-| **Druckenmiller-lens** GEV/ENR cover | Half the trigger is *"RTOs defend firm-service-only tariffs"*; other half is GEV converting **10 GW+** of reservations to firm orders in the Q3 print. **Both required, cover that evening** | **One leg reportedly fired. Second leg pending. Does not cover.** |
+| **Panel lens A** decline-to-answer | Converts to a live long **if** a transferable class appears | **Did not fire. Decline-to-answer stands.** |
+| **Panel lens C** size zero | Becomes priceable **if** a transferable class appears | **Did not fire. Size zero stands.** |
+| **Panel lens D** GEV/ENR cover | Half the trigger is *"RTOs defend firm-service-only tariffs"*; other half is GEV converting **10 GW+** of reservations to firm orders in the Q3 print. **Both required, cover that evening** | **One leg reportedly fired. Second leg pending. Does not cover.** |
 
 **Two limits, stated rather than buried.**
 
-**(a) The trigger was written as a binary and reality came back mixed.** Druckenmiller's leg reads
+*The persona panel these lenses belong to is kept private (THE_ASK E-010, E-015); lenses are named by letter only.*
+
+**(a) The trigger was written as a binary and reality came back mixed.** Lens D's leg reads
 "RTOs defend firm-service-only tariffs." Five did; PJM — the largest and the one that matters
 most for data-centre load — defends the firm core *while* proposing an interim flexible track.
 **A pre-registered trigger that cannot cleanly resolve against a 5-of-6-plus-a-mixed-case outcome
@@ -124,7 +126,7 @@ pending accession-level verification**, which is now a dated calendar item.
   finding in each. Annotated accordingly.
 - **New: ~18 July generation adequacy reports** — a 30-day deliverable nobody here knew about,
   already a month stale.
-- **New: GEV Q3 print** — the pending second leg of the Druckenmiller cover trigger, now the only
+- **New: GEV Q3 print** — the pending second leg of lens D's cover trigger, now the only
   thing standing between that position and a cover.
 - **New: 16 Sept intervenor comments / 1 Oct replies**, both unverified; FERC substantive orders
   reportedly expected late Q4 2026 – Q1 2027.
@@ -198,13 +200,13 @@ transferability — a different question, but a real and unread primary source.
 
 | Position | Prior (wrong) reading | **Correct status** |
 |---|---|---|
-| Burry-lens decline-to-answer | "Falsifier did not fire; stands" | **Unresolved.** No filing existed to fire it either way |
-| Griffin-lens size zero | "Did not fire; stands" | **Unresolved.** Same reason |
-| Druckenmiller GEV/ENR cover | "First leg fired" | **First leg did NOT fire.** No RTO defended anything; they obtained a stay |
+| Lens A decline-to-answer | "Falsifier did not fire; stands" | **Unresolved.** No filing existed to fire it either way |
+| Lens C size zero | "Did not fire; stands" | **Unresolved.** Same reason |
+| Lens D GEV/ENR cover | "First leg fired" | **First leg did NOT fire.** No RTO defended anything; they obtained a stay |
 
 **New date: ~12–13 November 2026**, 90 days from the 14 August grants. That lands within days of
 the **GE Vernova Q3 print (15 Nov)** already on the calendar — so **both legs of the
-Druckenmiller trigger now resolve in the same week**, which is a materially different and much
+lens D's trigger now resolve in the same week**, which is a materially different and much
 more actionable configuration than anything the earlier reading produced.
 
 ## 6.5 The lesson, which is not about Gemini
