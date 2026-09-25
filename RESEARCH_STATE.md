@@ -550,14 +550,17 @@ OPEN-ITEM INVENTORY — complete, enumerated 20 Sep at the principal's request, 
 Every item below already lives in a tier section of this file; this is an INDEX, not a second copy.
 Do not restate findings here. Status and detail stay in the home section named on each line.
 
-  SEQUENCING — what gates what, and what DECAYS (24 Sep). Dates live in CALENDAR.tsv, not here.
+  SEQUENCING — what gates what, and what DECAYS (24 Sep; items 1 and 3 updated 25 Sep). Dates live in CALENDAR.tsv, not here.
    1  QE sentiment RUN 1 ....... 25 Sep, GROK. DECAYS TO IMPOSSIBLE: a read of expectations BEFORE the
                                  quarter-end turn. Miss it and run 2 (1 Oct) has nothing to score against.
+                                 24 Sep attempt BLOCKED (X sign-in wall in Cursor, C-121): its calls are placeholders.
+                                 Needs a lane that reads X, or the principal's OK to use public web sources.
    2  Goal read-back ........... 25 Sep, THE PRINCIPAL'S. The only check that has ever caught goal
                                  corruption; an agent restating the goal cannot detect it (E-000).
-   3  Panel asks (C-097, d3) ... 25 Sep, same Grok contact, after RUN 1. FIRST confirm /workspace/tdr still
-                                 exists: if the executor was recycled, the W3 panel is gone (re-pull from SEC).
-                                 DECAYS: every day the panels sit only on the executor they can vanish.
+   3  Panel asks (C-097, d3) ... DONE 24 Sep. Grok landed data/w3_tax/firm_tax_panel.csv and data/eps_split/panel/;
+                                 the supervisor re-derived both exactly (W3: 412 firms, ETR 27.351% and 19.615%;
+                                 EPS split: 366 firms reproduce the published bounds, a ceiling of ~7-13% of the price
+                                 gain, C-101). The optional Z.1 debt pulls did not land.
    4  30 Sep quarter-end ....... point-in-time observations that cannot be made up afterwards; they also
                                  score RUN 1.
    5  Revolver-drawdown parcel . 1 Oct. Its gate was "only after the synthesis names the fragility question

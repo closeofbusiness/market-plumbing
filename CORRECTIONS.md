@@ -765,6 +765,24 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-121 · "Grok in Cursor has live X search" — and the supervisor's advice to run RUN 1 at grok.com
+
+**Assumed in the QE sentiment parcel (19 Sep), its two calendar rows, CLAUDE.md's read table and the supervisor's 24 Sep instructions to Grok. Killed 24 Sep by RUN 1 itself. The supervisor's grok.com advice, given the same day, was wrong too.**
+
+- **Killed by:**
+  - `_research/2026-09-25-QE-Sentiment-Run1.md`. Grok in Cursor ran the seven queries through the x.com website, hit X's sign-in wall, and read zero posts.
+  - The principal's routing rule for outside models (25 Sep): Grok is available to this programme only through Cursor. There is no grok.com lane.
+- **What was wrong.** The parcel said Grok had live X search and routed RUN 1 to Grok in Cursor. Cursor's browser cannot read X without logging in, and Grok's native X search is not available there. The supervisor then told the principal to paste RUN 1 into grok.com or Grok in the X app, which is a lane the programme does not have.
+- **Correct position.**
+  - No lane we have is shown to read X posts.
+  - RUN 1's four SIMILAR calls are placeholders from June's base rate, not a sentiment reading.
+  - RUN 1 needs either a lane that demonstrably reads X posts, or a switch to public web sources with the same seven queries. That choice is the principal's.
+  - Whichever lane is used, RUN 2 (1 Oct) must use the same.
+- **Why it matters.** RUN 1 decays: it cannot be taken after the 30 Sep turn. The routing assumption was never tested before the run it gated.
+- **Still standing at:** nowhere. The parcel's status line, `CLAUDE.md`'s read-table row, the RUN 1 and RUN 2 rows of `CALENDAR.tsv` and `RESEARCH_STATE.md` §5 item 1 were corrected in place.
+
+---
+
 ## C-120 · The published page (23 Sep) had drifted from its sources in six places — the worst, "$150bn outstanding, but that category already held ~$250bn of commitments in 2015"
 
 **Mine, on "What Holds the Market Up" (v12, published 23 Sep). Caught 24 Sep by a cold reader testing whether the repository is understandable to strangers, who read the page against the ANSWER; a full audit followed the same day — about 90 page claims checked against the ANSWER and the findings notes it names, 83 matching.**
@@ -1056,6 +1074,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **What is wrong.** `data/w3_tax/` holds three files: `README.md`, `results.json`, `w1_rebalance_attack.json`. The 343 KB, 412-firm panel exists only on the executor box at `/workspace/tdr/data/w3_tax/firm_tax_panel.csv`, which nothing here can reach. `data/z1_debt/` does not exist, so the five raw FRED pulls named inside `w1_rebalance_attack.json` are absent too. The README's sentence claiming a local mirror is false.
 - **What survives.** Every headline scalar was re-derived independently from `results.json` and matches: ETR 27.35% / 19.62%, Δlog(1−ETR) 0.1012, tax 9.53% of Δlog EPS, restated share 74.5%, and the Task 2 pairing totals 680.5 / 938.4 = 72.5%. The arithmetic is sound. What cannot be checked here is the step from SEC companyfacts to Σtax/Σpretax over 412 firms — the tag picks, the FY fallback, the Dom/Foreign exclusions.
 - **Correct position.** W3's ETR figures carry **"scalars reproduced, source panel absent"** until the two artifact sets land. Ask Grok for them on next contact.
+- **Update 24 Sep — the W3 panel has landed.** `data/w3_tax/firm_tax_panel.csv` (503 rows, 412 usable) re-derives every aggregate scalar exactly (supervisor, 24 Sep): ETR 27.351% and 19.615%, Δlog(1−ETR) 0.10119, multiplier 1.10649. The raw Z.1 debt pulls have still not landed.
 - **Why it matters.** Same defect class as d1/d2 (21 Sep): a document naming a deliverable that is not there. A parcel is not finished when the note is written; it is finished when the evidence is reachable by someone who was not in the session.
 - **Still standing at:** `data/w3_tax/README.md`, corrected in place.
 
@@ -1973,4 +1992,5 @@ C-120	\$250bn of it predates
 C-120	652\.8 billion rolls into IRAs
 C-120	never leaves the market
 C-120	Low to medium on the premium
+C-121	Grok has live X search
 ```

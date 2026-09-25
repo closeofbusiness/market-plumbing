@@ -1,6 +1,8 @@
 # Quarter-end funding sentiment — X search, two runs (Grok in Cursor)
 
-**Status: FINAL — routed to Grok in Cursor by the principal, 19 Sep 2026.** Grok has live X search. Rewritten by
+**Status: FINAL — routed to Grok in Cursor by the principal, 19 Sep 2026.** **[C-121] Grok in Cursor cannot read X:** its
+browser stops at X's sign-in wall, and the first RUN 1 attempt (24 Sep) read zero posts. RUN 1 needs a lane that reads X,
+or the principal's OK to switch both runs to public web sources. Rewritten by
 Claude from Grok's own 19 Sep draft; the filename still says DRAFT only to avoid a rename on the SMB mount.
 **Runs:** **RUN 1 on 25 Sep** (expectations, before the turn) and **RUN 2 on 1 Oct** (what happened at the turn).
 Same searches both times — the comparison is the finding.
