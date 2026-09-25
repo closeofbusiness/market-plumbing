@@ -413,7 +413,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-14-F1r-AI-Funding-Remainder.md`** | 4k | if AI build-out financing — NVIDIA's tables reconcile; 4 of 6 firms name no vehicle | ✓ | ✓ |
 | **`2026-09-14-I2-IPO-Allocation.md`** | 4k | if the IPO boom or forward supply — 77-93% of proceeds go to unnamed buyers; lockup schedule | ✓ | ✓ |
 | **`Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md`** | 2k | if running the adversarial check on the synthesis | ✓ | ✓ |
-| `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` | 2k | **FINAL (filename says DRAFT). Two runs, 25 Sep and 1 Oct, same queries; calls pre-registered against the 30 Sep prints.** Routed to Grok in Cursor, which **cannot read X**: its browser stops at the sign-in wall, and the first RUN 1 attempt was blocked on 24 Sep (C-121) | — | — |
+| `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` | 2k | **FINAL (filename says DRAFT). Two runs, 25 Sep and 1 Oct, same queries; calls pre-registered against the 30 Sep prints.** Routed to Grok in Cursor, which **cannot read X** (the first RUN 1 attempt was blocked on 24 Sep, C-121); switched to **public web sources** by the principal on 25 Sep (E-015) | — | — |
 | **`_research/SYN1_return_2026-09-15.md`** | 2k | if SYN — Grok hostile return: earnings ok-amended; money-side assembly fails | ✓ | ✓ |
 | **`_research/2026-09-15-PFS-Scout-Corporate-Equity-Line.md`** | 2k | if 6b/C-084 — PFS scout: QHF equity YES; PE equity line NO | ✓ | ✓ |
 | **`Parcel_LIT1_Residual_Literature_For_Gemini_DeepResearch.md`** | 2k | if running the household-residual literature map | ✓ | ✓ |
