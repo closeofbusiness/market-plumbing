@@ -556,7 +556,8 @@ Do not restate findings here. Status and detail stay in the home section named o
    1  QE sentiment RUN 1 ....... 25 Sep, GROK. DECAYS TO IMPOSSIBLE: a read of expectations BEFORE the
                                  quarter-end turn. Miss it and run 2 (1 Oct) has nothing to score against.
                                  24 Sep attempt BLOCKED (X sign-in wall in Cursor, C-121): its calls are placeholders.
-                                 25 Sep: the principal switched both runs to public web sources (E-015). The parcel is rewritten.
+                                 25 Sep: switched to public web sources (E-015). DONE 25 Sep: four SIMILAR calls, LOW weight
+                                 (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 on 1 Oct; the design decision on 2 Oct.
    2  Goal read-back ........... 25 Sep, THE PRINCIPAL'S. The only check that has ever caught goal
                                  corruption; an agent restating the goal cannot detect it (E-000).
    3  Panel asks (C-097, d3) ... DONE 24 Sep. Grok landed data/w3_tax/firm_tax_panel.csv and data/eps_split/panel/;

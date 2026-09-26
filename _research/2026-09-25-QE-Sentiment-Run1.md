@@ -1,8 +1,11 @@
-# QE Sentiment RUN 1 — 25 Sep 2026 (expectations, before the turn)
+# QE Sentiment RUN 1 — expectations before the 30 Sep 2026 turn
 
-**Parcel:** `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` (FINAL despite filename).  
-**Agent:** grok. **Executor clock when written:** 2026-09-24 evening Europe/Berlin (contact titled 25 Sep).  
-**Method constraint:** every kept item needs a direct `https://x.com/.../status/...` URL (C-048 / C-079).
+**Parcel:** `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md`. **Agent:** grok. **Two attempts.**
+- **The registered RUN 1 is the public-web run of 25 Sep (E-015)**, below. Its four calls are the ones RUN 2 and the 30 Sep prints
+  score.
+- **The X attempt of 24 Sep was blocked** at X's sign-in wall (C-121). Its calls were placeholders, and they are superseded. It is kept
+  because it is part of the record.
+- A supervisor check (26 Sep) is at the end.
 
 ## Neutral queries (verbatim — reuse unchanged for RUN 2 on 1 Oct)
 
@@ -14,7 +17,12 @@
 6. `stock loan quarter end`
 7. `ABCP`
 
-## X sample — BLOCKED
+
+## Attempt 1, 24 Sep: X search — BLOCKED, superseded by the public-web run (C-121)
+
+*Written 24 Sep evening Europe/Berlin. Method constraint then: every kept item needed a direct `https://x.com/.../status/...` URL (C-048, C-079).*
+
+### X sample — BLOCKED
 
 Attempted Live search at `https://x.com/search?q=quarter-end%20repo&src=typed_query&f=live` (and the other six strings). The box browser hit X’s sign-in wall (“See what’s happening” / Continue with phone|Google|Apple). No post bodies and no status URLs were readable without authentication.
 
@@ -27,7 +35,54 @@ Attempted Live search at `https://x.com/search?q=quarter-end%20repo&src=typed_qu
 Per parcel rule (“URL or drop”; “never route around a block”), the X section stops here. RUN 2 must re-use the same seven strings.
 
 
-## RUN 1 — public web sources (E-015)
+
+### Observed vs inferred
+
+**Observed:** X login wall; seven query strings recorded; vault vintages above; FRED SOFR/SOFR99/RRP path through 23 Sep.  
+**Inferred (low confidence):** with zero usable X items, the designed sentiment balance cannot overturn the parcel’s June-2026 “quiet” base rate.
+
+
+### Placeholder calls (superseded; not the registered calls)
+
+These are required by the parcel even when the X sample is empty. They are **provisional**, driven by the June quiet base rate plus the absence of readable stress chatter — **not** by a counted X balance.
+
+1. Quarter-end repo (squeeze / specials / sponsored-vs-bilateral): **SIMILAR**
+2. Equity financing (stock loan / TRS / margin): **SIMILAR**
+3. ABCP / conduits vs equity-TRS or HQLA-repo legs: **SIMILAR**
+4. Versus June 2026 overall: **SIMILAR**
+
+RUN 2 (1 Oct) and the 30 Sep / 1 Oct prints score these calls right / wrong / unscorable.
+
+
+## Prints read on 24 Sep (context for both attempts; out of the sentiment counts)
+
+### Vault prints read on the day (`data/series.tsv` latest vintages)
+
+Parcel aliases → actual keys:
+
+| parcel name | series_key in vault | as_of | value |
+|---|---|---|---|
+| finra_margin_debit_balances_bn | `finra_margin_debit_balances_bn` | 2026-08 | 1453.8 |
+| ficc_sponsored_total_bn | `ficc_sponsored_total_bn` | 2026-08-20 | 2295.6 |
+| actrix_sponsored_share_of_cleared_pct | `actrix_sponsored_share_of_cleared_pct` | 2026-07 | 31.1 |
+| abcp_outstanding_bn | `abcp_outstanding_bn` | 2026-08-19 | 488.4 |
+| hf_repo_borrowing_bn | `hf_repo_borrowing_bn` | 2026-03-31 | 3243.0 |
+
+No June-2026 rows exist in `data/series.tsv` for these five keys (FINRA has Jul 1417.2 then Aug 1453.8; FICC/Actrix/ABCP are single late-summer points; HF repo last print is Q1). OFR Q2 HF data still unpublished — not treated as a finding.
+
+
+### Open-market prints (not X; separate from the designed sample)
+
+FRED daily (retrieved 2026-09-24 from fred.stlouisfed.org CSV):
+
+- SOFR: 2026-09-16 3.62 → 2026-09-17 3.85 → 2026-09-23 3.87 ([FRED SOFR](https://fred.stlouisfed.org/series/SOFR), as of 23 Sep 2026).
+- SOFR 99th percentile: 2026-09-16 3.70 → 2026-09-17 3.93 → 2026-09-23 3.95 ([FRED SOFR99](https://fred.stlouisfed.org/series/SOFR99), as of 23 Sep 2026).
+- ON RRP (RRPONTSYD): 2026-09-23 0.461 ([FRED RRPONTSYD](https://fred.stlouisfed.org/series/RRPONTSYD), as of 23 Sep 2026).
+
+The mid-September SOFR step coincides with the FOMC window; it is **not** scored here as quarter-end stress without desk chatter.
+
+
+## RUN 1 — public web sources (E-015): THE REGISTERED RUN
 
 **Run clock:** 2026-09-25 morning Europe/Berlin. **Tool:** Cursor `WebSearch` (no date/recency filter in the tool; window applied by reading dates), plus `WebFetch` on candidate URLs for dates and visible text. **Never logged in; never bypassed a paywall or sign-in wall.** Paywalled items: headline + visible opening only.
 
@@ -102,49 +157,11 @@ These describe the known reporting-date mechanism (dealer balance-sheet pullback
 RUN 2 (1 Oct) and the 30 Sep / 1 Oct prints score these calls right / wrong / unscorable.
 
 
-## Vault prints read on the day (`data/series.tsv` latest vintages)
 
-Parcel aliases → actual keys:
-
-| parcel name | series_key in vault | as_of | value |
-|---|---|---|---|
-| finra_margin_debit_balances_bn | `finra_margin_debit_balances_bn` | 2026-08 | 1453.8 |
-| ficc_sponsored_total_bn | `ficc_sponsored_total_bn` | 2026-08-20 | 2295.6 |
-| actrix_sponsored_share_of_cleared_pct | `actrix_sponsored_share_of_cleared_pct` | 2026-07 | 31.1 |
-| abcp_outstanding_bn | `abcp_outstanding_bn` | 2026-08-19 | 488.4 |
-| hf_repo_borrowing_bn | `hf_repo_borrowing_bn` | 2026-03-31 | 3243.0 |
-
-No June-2026 rows exist in `data/series.tsv` for these five keys (FINRA has Jul 1417.2 then Aug 1453.8; FICC/Actrix/ABCP are single late-summer points; HF repo last print is Q1). OFR Q2 HF data still unpublished — not treated as a finding.
-
-## Open-market prints (not X; separate from the designed sample)
-
-FRED daily (retrieved 2026-09-24 from fred.stlouisfed.org CSV):
-
-- SOFR: 2026-09-16 3.62 → 2026-09-17 3.85 → 2026-09-23 3.87 ([FRED SOFR](https://fred.stlouisfed.org/series/SOFR), as of 23 Sep 2026).
-- SOFR 99th percentile: 2026-09-16 3.70 → 2026-09-17 3.93 → 2026-09-23 3.95 ([FRED SOFR99](https://fred.stlouisfed.org/series/SOFR99), as of 23 Sep 2026).
-- ON RRP (RRPONTSYD): 2026-09-23 0.461 ([FRED RRPONTSYD](https://fred.stlouisfed.org/series/RRPONTSYD), as of 23 Sep 2026).
-
-The mid-September SOFR step coincides with the FOMC window; it is **not** scored here as quarter-end stress without desk chatter.
-
-## Observed vs inferred
-
-**Observed:** X login wall; seven query strings recorded; vault vintages above; FRED SOFR/SOFR99/RRP path through 23 Sep.  
-**Inferred (low confidence):** with zero usable X items, the designed sentiment balance cannot overturn the parcel’s June-2026 “quiet” base rate.
-
-## Pre-registered calls vs June 2026 (one word each)
-
-These are required by the parcel even when the X sample is empty. They are **provisional**, driven by the June quiet base rate plus the absence of readable stress chatter — **not** by a counted X balance.
-
-1. Quarter-end repo (squeeze / specials / sponsored-vs-bilateral): **SIMILAR**
-2. Equity financing (stock loan / TRS / margin): **SIMILAR**
-3. ABCP / conduits vs equity-TRS or HQLA-repo legs: **SIMILAR**
-4. Versus June 2026 overall: **SIMILAR**
-
-RUN 2 (1 Oct) and the 30 Sep / 1 Oct prints score these calls right / wrong / unscorable.
-
-## UNCERTAIN (method)
+### UNCERTAIN (method)
 
 A desk blog at `conks.plumbing` has dated Sep-2026 money-market posts (e.g. 13 Sep structural cleared-repo piece; 24 Sep snapshot with orderly SOFR/GC). Those URLs did **not** appear in the seven verbatim Cursor `WebSearch` result pages, so they are **not** in the kept counts or the four calls. Widening the query list or browsing off-result domains would break RUN 1 / RUN 2 comparability (parcel: same searches, same tool, same rules).
+
 
 ## Do-not list (checked)
 
@@ -152,3 +169,25 @@ A desk blog at `conks.plumbing` has dated Sep-2026 money-market posts (e.g. 13 S
 - Missing OFR Q2 not treated as a finding.
 - No scalar multiplier; no claim about what drove prices (C-077).
 - Queries not widened mid-run.
+
+## Supervisor check (26 Sep, E-008)
+
+- **Sources.** Three cited pages were opened on 26 Sep.
+  - The kept Au79 Macro post exists and is dated 22 Sep 2026. Its visible summary says what the table says: net liquidity fell over 72
+    hours on a $154.5bn rise in the Treasury General Account. Only the free part of the paid post was used.
+  - The NY Fed Teller Window piece is dated 1 Sep 2026, and the FEDS note 6 Jun 2025. Both are correctly treated as official and kept
+    out of the counts.
+  - `conks.plumbing` exists (a money-market newsletter). It was correctly left out of the counts, because it did not appear in the
+    seven searches.
+  - No fabricated source was found.
+- **Denominators.** Every row adds up: read = kept + dropped + official + off-topic, 62 in all.
+- **Structure.** The web run had been inserted between parts of the blocked attempt, which left two sets of calls in one note. The
+  note was reordered: the blocked attempt and its placeholder calls come first, marked superseded, and the web run is marked as the
+  registered run. No content was changed.
+- **Adjudication.** The four SIMILAR calls stand as registered, but **their evidential weight is low**. The run found one in-window,
+  non-official item, and it is about macro liquidity rather than the four questions. A search that finds almost nothing cannot tell
+  "quiet" from "invisible to web search", so the calls are close to June's base rate restated. RUN 2 (1 Oct) will probably score most
+  of them unscoreable, and the 30 Sep prints carry the real test. This is a limit of the design, not an error in the run.
+- **For the December quarter-end.** Generic web search on neutral terms returned mostly primers, official notes and old pages. A test
+  with power would pre-register a list of practitioner sources, such as money-market newsletters like Conks and public dealer strategy
+  notes, and then read every post in the window. Decide after RUN 2 is scored (calendar, 2 Oct).
