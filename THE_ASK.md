@@ -24,9 +24,29 @@ Establish, in numbers with ranges rather than false precision, what is driving a
 
 **The principal asked on 25 Sep for one clear mission statement to be the standing goal (E-015).** The agent worded it from
 E-003 (the goal), E-004 (the confirmed additions), E-005 (the standard of evidence), E-007 (everything is a hypothesis until
-tested) and E-015 (the scope). **The principal's read-back of this exact wording is pending.** The 11 Sep string it replaces is
+tested) and E-015 (the scope). **The principal confirmed this exact wording on 26 Sep (E-016).** The 11 Sep string it replaces is
 quoted in E-015. If you believe the mission no longer matches the verbatim record, **do not rewrite it**: raise it with the
 principal and append a new entry.
+
+---
+
+## E-016 · 26 September 2026 — the mission confirmed; the revolver brief goes ahead
+
+Given in one message, after the supervisor asked again for the read-back of the E-015 mission statement and said the revolver
+brief was next.
+
+> *"mission is fine, go ahead with the revolver brief"*
+
+**Reading notes.** *"mission is fine"* is the read-back E-000 requires. The mission statement was put to the principal verbatim
+on 25 and 26 Sep, and the principal confirmed it as worded. It is now the principal's goal, not a proposal. *"go ahead with the
+revolver brief"* means write the revolver-drawdown parcel now.
+
+**As applied, 26 Sep.**
+- The "read-back pending" markers were removed from THE_ASK's canonical section, `CLAUDE.md`, `RESEARCH_STATE.md` §0.0 (and row
+  A14) and `CHARTER.md`. E-015 is left as written.
+- The 26 Sep read-back row is closed, and the next recurring read-back stays on 16 Oct.
+- The brief is `Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md`, routed to Grok in Cursor. The return is due as
+  `_research/2026-10-01-RV1-Revolver-Drawdown-Return.md`.
 
 ---
 

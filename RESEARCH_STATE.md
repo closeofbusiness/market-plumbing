@@ -20,7 +20,7 @@ serve a row in this table, it is a tangent — which is allowed, but should be k
 
 > Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 >
-> *The mission statement, verbatim from `THE_ASK.md` (E-015; the principal's read-back of the wording is pending).
+> *The mission statement, verbatim from `THE_ASK.md` (E-015; the principal confirmed the wording on 26 Sep, E-016).
 > `bin/check.sh --goal` enforces it here, in `CLAUDE.md` and in `THE_ASK.md`. Do not reword it: corruption enters
 > through paraphrase. The rest of this section is the mission's working detail, not a second goal. The principal's own
 > words are E-003, E-004, E-005, E-007 and E-015.*
@@ -98,7 +98,7 @@ correction of agent error. The nexus work is now channels (b) and (c).
 | A11 | Produce serious insights fit for **an initial high-value Substack post** | **Open — this is the OUTPUT, downstream of A12. Reclassified 22 Aug (C-041); it was recorded as "the output target", which was read as the goal.** |
 | A12 | **Comprehensively understand the nonbank–bank nexus** — all shadow-banking collateral and money-creation mechanisms, on the Pozsar–Singh frame in which collateral does the work of base money | **The goal from 22 Aug to 11 Sep; now channels (b) and (c) of A13.** Open. Collateral leg covered (negatively); money leg BUILT (N2a, N2b); the interlock (N4) open |
 | A13 | **Understand what is driving asset prices higher and where the money is coming from** — the AI build-out and the IPO boom included — across direct money creation, shadow banking, the collateral channel, and market-structure flows such as the passive bid and ETF creation (Michael Green) | **THE ULTIMATE GOAL since 11 Sep (E-003). Open. See §0.0.** Re-planned 11 Sep (§5) on the channel map and the Green corpus dossier; any further Green material from the principal feeds item D-G |
-| A14 | **Summarise the goal into one clear mission statement that is the standing goal**, rather than separate thoughts (E-015) | **Done 25 Sep**: the mission above. The principal's read-back of the wording is pending |
+| A14 | **Summarise the goal into one clear mission statement that is the standing goal**, rather than separate thoughts (E-015) | **Done**: the mission above. The principal confirmed the wording on 26 Sep (E-016) |
 
 ### 0.1 The standing capability that is currently idle
 
@@ -570,6 +570,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  precisely". W2 (23 Sep) now names it: ~$300bn of committed-but-undrawn bank
                                  lines to AI-adjacent industries, plus N2c §7's undrawn NDFI commitments. The gate
                                  is arguably met — routing is the principal's call.
+                                 APPROVED 25 Sep (E-015). Brief ready 26 Sep: Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md.
    6  10 Oct N-MFP3 census ..... the trigger check for item 7 (D4). Nothing else waits on it.
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
 

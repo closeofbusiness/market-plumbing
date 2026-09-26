@@ -242,8 +242,8 @@ to what drives asset prices and where the money comes from. Before that it was c
 
 > Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 
-*The mission statement: the canonical goal, verbatim from `THE_ASK.md`. The principal asked for it on 25 Sep (E-015), and the
-principal's read-back of its wording is pending. `bin/check.sh --goal` fails if it drifts here, there, or in `RESEARCH_STATE.md`.
+*The mission statement: the canonical goal, verbatim from `THE_ASK.md`. The principal asked for it on 25 Sep (E-015) and
+confirmed the wording on 26 Sep (E-016). `bin/check.sh --goal` fails if it drifts here, there, or in `RESEARCH_STATE.md`.
 Do not reword it, not even to improve it.*
 
 **The working description is `RESEARCH_STATE.md` §0.0 — read it, do not restate it here:** what is
@@ -416,6 +416,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-14-I2-IPO-Allocation.md`** | 4k | if the IPO boom or forward supply — 77-93% of proceeds go to unnamed buyers; lockup schedule | ✓ | ✓ |
 | **`Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md`** | 2k | if running the adversarial check on the synthesis | ✓ | ✓ |
 | `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` | 2k | **FINAL (filename says DRAFT). Two runs, 25 Sep and 1 Oct, same queries; calls pre-registered against the 30 Sep prints.** Routed to Grok in Cursor, which **cannot read X** (the first RUN 1 attempt was blocked on 24 Sep, C-121); switched to **public web sources** by the principal on 25 Sep (E-015) | — | — |
+| `Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md` | 2k | **READY 26 Sep** (E-015, E-016): what draws committed credit lines all at once. It covers the March-2020 precedent, drawdown rates by facility type (NDFI lines included), triggers, brakes and free monitor series. Routed to Grok in Cursor; the supervisor applies any rate to today's exposures | — | — |
 | **`_research/SYN1_return_2026-09-15.md`** | 2k | if SYN — Grok hostile return: earnings ok-amended; money-side assembly fails | ✓ | ✓ |
 | **`_research/2026-09-15-PFS-Scout-Corporate-Equity-Line.md`** | 2k | if 6b/C-084 — PFS scout: QHF equity YES; PE equity line NO | ✓ | ✓ |
 | **`Parcel_LIT1_Residual_Literature_For_Gemini_DeepResearch.md`** | 2k | if running the household-residual literature map | ✓ | ✓ |
