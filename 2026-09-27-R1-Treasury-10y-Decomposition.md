@@ -69,6 +69,10 @@ direction is common to both, and the survey disputes even that for the years it 
 - Kim-Wright uses survey forecasts in its estimation, so it is not independent of surveys.
 - The 14 February reference date approximates the survey deadline.
 
+**Cross-check:** the Kim-Wright term premium in this pull is 0.519% on 13 Feb 2026 and 0.839% on 14 Aug 2026. That matches the
+"~0.52% to 0.82–0.85%" the Treasury-buyers synthesis quoted from a secondary source ([`2026-09-11-Who-Buys-Treasuries-Synthesis.md`](2026-09-11-Who-Buys-Treasuries-Synthesis.md)),
+which is now re-pulled from the Fed Board's own file.
+
 ## A holder's return, in percent
 
 | period | income | roll-down | price | total | three-month bills |

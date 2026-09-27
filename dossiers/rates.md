@@ -6,7 +6,7 @@ The same three questions apply. First the price: carry, roll, the expected path 
 
 ## Status
 
-**US 10-year: first pass done (R1, 27 Sep 2026). JGBs and euro-area bonds: open.** The price side is decomposed in [`2026-09-27-R1-Treasury-10y-Decomposition.md`](../2026-09-27-R1-Treasury-10y-Decomposition.md). Real yields and the long end did the work. The split between term premium and expected rates is not measurable on free data, because two models and a survey disagree (HYPOTHESIS). Who bought, against what duration supply, is next (R2). Do not treat Treasury holdings or Fed purchases as a yield result.
+**US 10-year: first pass done (R1, 27 Sep 2026). JGBs and euro-area bonds: open.** The price side is decomposed in [`2026-09-27-R1-Treasury-10y-Decomposition.md`](../2026-09-27-R1-Treasury-10y-Decomposition.md). Real yields and the long end did the work. The split between term premium and expected rates is not measurable on free data, because two models and a survey disagree (HYPOTHESIS). Duration supply against buyers is measured in [`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](../2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): the public absorbed about 36% more 10-year equivalents at constant prices, and Treasury issuance, not the Fed's runoff, supplied about 96% of it. Which buyers took the duration is HYPOTHESIS. Do not treat Treasury holdings or Fed purchases as a yield result.
 
 ## Evidence
 

@@ -21,3 +21,4 @@ data/eps_split/panel/yahoo_splits.csv
 
 # R1 rates inputs (Treasury CSVs, NY Fed ACM workbook, Fed Board Kim-Wright CSV): fetched by the script, not redistributed
 data/vintages/r1_treasury/
+data/vintages/r2_treasury/

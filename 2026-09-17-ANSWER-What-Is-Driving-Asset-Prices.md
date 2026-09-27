@@ -181,8 +181,11 @@ what funded the run-up.
 
 **Rates, first pass (R1, 27 Sep).** The US 10-year yield rose on real yields and at the long end, mostly after February 2026. Whether
 that was a higher term premium or higher expected rates cannot be separated on free data: two models and a survey disagree, over
-2024–26 even in sign. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md). Who bought
-is next (R2); JGBs and euro-area bonds come after (R3).
+2024–26 even in sign. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md). On the supply
+side, the public absorbed much more duration over the same months, supplied by Treasury issuance rather than the Fed's runoff; which
+buyers took it, and whether it raised term premia, is not measured. See
+[`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md). JGBs and
+euro-area bonds come next (R3).
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 

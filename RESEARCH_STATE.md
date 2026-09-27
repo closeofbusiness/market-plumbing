@@ -575,8 +575,9 @@ Do not restate findings here. Status and detail stay in the home section named o
    6  10 Oct N-MFP3 census ..... the trigger check for item 7 (D4). Nothing else waits on it.
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
-  R2 NEXT: who bought against duration supply (Treasury 10-year equivalents, Fed runoff; holders in Z.1, TIC, the basis trade).
-  R3 AFTER: JGBs and euro-area government bonds (MoF, ECB free data).
+  R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
+  R2 follow-ups, undated: rest-of-world official vs private on matched windows; free maturity-by-holder sources.
+  R3 NEXT: JGBs and euro-area government bonds (MoF, ECB free data).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
    W1  Meet the leak objection ........ DONE 20 Sep -> 2026-09-20-W1-The-Leak-Objection.md (C-094)
