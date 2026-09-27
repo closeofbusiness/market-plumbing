@@ -580,7 +580,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   Treasury's attribution of issuance to Fed redemptions, which would narrow the Fed's 4-13% share.
   R1/R2 OUTSIDE REVIEW DONE 27 Sep: Grok's R12R return adjudicated (_research/2026-09-27-R12R-Rates-Review-Return.md). R1 and R2
   stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
-  R3 NEXT: JGBs and euro-area government bonds (MoF, ECB free data).
+  R3 STARTED 27 Sep (E-017): JGBs and euro-area government bonds, R1/R2's two questions on MoF, BoJ, ECB and Bundesbank free data.
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
    W1  Meet the leak objection ........ DONE 20 Sep -> 2026-09-20-W1-The-Leak-Objection.md (C-094)

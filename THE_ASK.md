@@ -30,6 +30,26 @@ principal and append a new entry.
 
 ---
 
+## E-017 · 27 September 2026 — the Singh briefing pushed again; the next work goes ahead
+
+Given in one message, answering the supervisor's reply to "What's next?". That reply recommended pushing the Singh briefing
+(due 30 Sep, already pushed once on 14 Sep under E-005) by about two weeks and sending an updated version with the quarter-end
+repo and ABCP prints, and it named R3 (JGBs and euro-area government bonds) as the next work.
+
+> *"Agreed, push and go with next work"*
+
+**Reading notes.** *"push"* moves the briefing about two weeks, to 14 Oct, as an update that carries the 30 Sep quarter-end
+prints. *"go with next work"* means R3 proceeds as proposed. The dated items (the 30 Sep quarter-end run, the 1 Oct QE RUN 2 and
+the 2 Oct design decision) are unchanged.
+
+**As applied, 27 Sep.**
+- The briefing row in `CALENDAR.tsv` moved from 30 Sep to 14 Oct. The update is named there: a v6 of the private draft, adding
+  the quarter-end prints, the household-row finding (C-124) and the revolver-drawdown sizing (RV1). The drafts stay in the
+  private companion, and the principal sends.
+- R3 started the same day, with three scouting agents (Japanese data, euro-area data, published outside estimates).
+
+---
+
 ## E-016 · 26 September 2026 — the mission confirmed; the revolver brief goes ahead
 
 Given in one message, after the supervisor asked again for the read-back of the E-015 mission statement and said the revolver
