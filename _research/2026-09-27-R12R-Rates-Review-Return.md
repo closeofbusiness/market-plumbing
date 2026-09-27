@@ -198,3 +198,53 @@ Counts: 30 sources listed. 24 opened in full, and all 24 say what is cited here.
 | UTEN basis | market price returns less fee approximate the index | ICE index total-return data (not free) |
 | KW and surveys | survey use limited to parameter estimation, so daily changes are yield-driven | the Board's current estimation notes |
 | residual after correction | rows fall $12bn short of net issuance; small but unexplained | a full N2c rebuild on the corrected pension line |
+
+## Supervisor adjudication (27 Sep 2026)
+
+**Verdict.** R1 and R2 stand on their measured claims. Grok's attacks succeeded on four framings, registered as C-122 to C-125.
+Every correction was re-derived by the supervisor before it was applied. No claim in the return was found wrong on a point that
+changes a conclusion. One figure, the par-weighted duration on own curves, is unresolved and changes nothing.
+
+**What the supervisor checked, and with what:**
+
+| Grok's claim | Supervisor's check | Result |
+|---|---|---|
+| SPF deadlines 6 Feb 2024, 11 Feb 2025, 2 Mar 2026 | Philadelphia Fed `spf-release-dates.txt`, read 27 Sep | confirmed; the 2026Q3 deadline was 11 Aug 2026 |
+| On the true deadlines: par −4, ACM −81, KW −33 against SPF +15 and +35 | re-run in `bin/r1_treasury_decomposition.py` (`data/r1_rates/survey_changes.csv`) | confirmed |
+| Horizon split: years 1–4 SPF −54, ACM −118, KW −72; years 5–10 SPF +62, ACM −56, KW −8 | same | confirmed; SPF years 5–10 is +61 on unrounded levels |
+| Quarterly SPF four-year path, 2026Q1 to Q3: SPF +35, ACM +58, KW +48 | same | confirmed; KW +47 |
+| FOMC longer-run median 2.5 → 3.0 → 3.1 | the Fed's projection tables for Dec 2023, Dec 2024, Dec 2025, Mar, Jun and Sep 2026 | confirmed; September 2026 is 3.2 |
+| 10y 4.98 (19 Oct 2023), 3.79 (27 Dec 2023), 5.17 (25 Sep 2026); after 13 Feb 2026, 2y +136 and 10y +97 | Treasury par-curve CSVs | confirmed |
+| Holder return +3.54% on full revaluation; bills 12.74–12.91% compounded | full revaluation added to the R1 script | confirmed: +3.536%; bills +12.911% |
+| Par-weighted duration +24.9% (fixed curves) and +26.5% (own curves); DV01 +20.0% | par-weighted and DV01 columns added to `bin/r2_duration_supply.py` | fixed curve +24.7% and DV01 +20.0% confirmed. Own curves +21.3%, not +26.5%: unresolved. Our DV01 matches Grok's, and durations fall as yields rise, which favours the lower figure. Either way par-weighted duration grew no faster than face value (+26.4%) |
+| SOMA Treasury par fell $602bn from 27 Dec 2023 to a trough on 3 Dec 2025, about $575bn of it coupons | New York Fed SOMA summary API | confirmed: $601.4bn excluding TIPS inflation compensation ($601.8bn including), $574.5bn coupons, trough 3 Dec 2025 |
+| Refinancing the runoff: 0.721 (0.557 aged) 10-year equivalents per dollar, so $0.32–0.43trn | plausibility only: the coupon auction mix has about 5.9 years' duration on the end-2023 curve, 0.72 of a 10-year's | not re-derived; R2 reports it as Grok's calculation |
+| The public's bill share fell from 25.3% to 24.6% as SOMA bills rose from $222bn to $542bn | R2's tables with the SOMA summary | confirmed |
+| Net Fed purchases began in mid-December 2025 | SOMA summary: bills $195.5bn on 10 Dec, $210.5bn on 17 Dec 2025 | confirmed |
+| A $144.2bn state and local pension double count; the rows then fall $12bn short | Z.1 of 11 Sep 2026: FU593061105 = FU573061105 + FU343061105 + FU223061143 in every quarter; N2c rebuilt | confirmed; the June-vintage table carried it too |
+| TIC misses about $1.4trn of Cayman hedge-fund Treasuries at end-2024, and Z.1 households are the residual | the FEDS Note (Barth, Beltran, Hoops, Kahn, Liu and Perozek, 15 Oct 2025), passages read in full | confirmed |
+| The September 2026 Z.1 still books those holdings in households (UNCERTAIN in the return) | Z.1 of 11 Jun and 11 Sep 2026 compared; the September release notes | supported. The September release added a domestic hedge-fund sector and a foreign hedge-fund table, but the rest of the world's Treasury level at end-2024 moved only $61bn |
+
+**Narrowed:**
+- **The QT counterfactual is a ceiling, not the Fed's share.** It assumes Treasury refinanced the runoff in the coupon mix. If it
+  refinanced with bills, the added duration is close to nil. R2 now gives the Fed's share as 4% on its own holdings, with a ceiling
+  of about 13%.
+- **Par weighting does not make market-value weighting wrong.** At constant yields, dollar duration is the rate risk actually held,
+  and it rose 36%. What died is the claim that the debt got longer per face dollar. R2 now reports all three weightings and says
+  which one each figure uses.
+
+**New from the check, not in the return.** The September 2026 Z.1 separates domestic hedge funds, which hold only about $0.1trn of
+Treasuries net of short sales. So the levered bid inside the household row is mostly offshore funds that TIC misses. The Z.1's new
+foreign-hedge-fund table puts their Treasuries at $1.30trn (end-2023), $2.07trn (end-2025) and $1.81trn (2026Q1), net of short
+sales.
+
+**Applied:**
+- C-122 to C-125 registered, with ban patterns.
+- R1, R2, both N2c notes, the ANSWER, CHARTER, `dossiers/rates.md`, CLAUDE.md and RESEARCH_STATE corrected.
+- Three scripts changed and re-run:
+  - `bin/r1_treasury_decomposition.py`: true deadlines, the horizon split and a full revaluation.
+  - `bin/r2_duration_supply.py`: par-weighted and DV01 columns, and a reworded docstring.
+  - `bin/build_closure_2026Q2.py`: the double count removed; it now fetches its own inputs and writes the committed CSVs.
+- The outputs that were not meant to change reproduced byte for byte: R1's levels, decomposition and monthly holder-return
+  columns; R2's supply columns and its 52 checks; every N2c row except insurers and pensions and the sums that depend on it.
+  R1's survey check was rebuilt on the true deadlines.

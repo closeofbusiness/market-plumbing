@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """R2 (supply side): a duration-weighted ("10-year-equivalent") measure of US Treasury
 marketable debt, split between the Federal Reserve (SOMA) and everyone else ("public"),
-at five month-ends. Duration, not face value, is what matters for yields: a $1 bill adds
-almost no duration; a $1 30-year bond adds a lot. The supervisor sets this supply against
-holders elsewhere in R2.
+at five month-ends. Duration, not face value, measures the interest-rate risk supplied: a
+$1 bill adds almost no duration; a $1 30-year bond adds a lot. (Whether that supply moved
+yields is not tested here; see C-122.) The supervisor sets this supply against holders
+elsewhere in R2.
 
 Method, security by security, at each date:
   - Remaining maturity in years = (maturity date - record date) / 365.25.
@@ -64,6 +65,15 @@ git):
     Board's own H.4.1 archive, data/a1_money_creation/FRB_h41.zip, already present
     locally from an unrelated task. Read best-effort, via a bounded text scan (not fetched
     by this script, and skipped with a note if absent).
+Three weightings of duration, because the choice changes the answer (C-122, 27 Sep 2026):
+  - 10-year equivalents (market value x duration / 10y duration): at market prices, and at
+    the fixed end-2023 curve (the quantity-only measure).
+  - Par-weighted duration (par x modified duration, in $bn-years; the NY Fed's SOMA
+    convention): on each date's own curve, and on the fixed end-2023 curve.
+  - DV01 at market prices (market value x modified duration x 0.0001, in $mn per basis point).
+The checks (checks.csv) test par totals, bills and the Fed's holdings against MSPD Table 1
+and the H.4.1. They do not test any duration figure; no published series was found to test
+those against.
 Outputs: data/r2_rates/duration_supply.csv, duration_supply_changes.csv, checks.csv.
 Requires: Python 3 stdlib only. Run from anywhere:
   python3 bin/r2_duration_supply.py
@@ -350,14 +360,16 @@ def price_one(kind, coupon_pct, T, nom_curve, real_curve):
 
 def aggregate(securities, kind, nom_curve, real_curve, d10):
     """securities: [(par_bn, coupon_pct_or_None, years_to_maturity), ...].
-    Returns (par_bn, mv_bn, tenyeq_bn, par_years_bn) -- the last is the numerator
-    (par x maturity) for a par-weighted average maturity."""
-    par_t = mv_t = eq10_t = pty_t = 0.0
+    Returns (par_bn, mv_bn, tenyeq_bn, par_years_bn, par_dur_bn_yrs, mv_dur_bn_yrs): par_years
+    is the numerator (par x maturity) for a par-weighted average maturity; par_dur is par x
+    modified duration; mv_dur is market value x modified duration (x 0.1 gives DV01 in $mn/bp)."""
+    par_t = mv_t = eq10_t = pty_t = pdur_t = mdur_t = 0.0
     for par_bn, coupon, T in securities:
         price, dur = price_one(kind, coupon, T, nom_curve, real_curve)
         mv = par_bn * price / 100.0
         par_t += par_bn; mv_t += mv; eq10_t += mv * dur / d10; pty_t += par_bn * T
-    return par_t, mv_t, eq10_t, pty_t
+        pdur_t += par_bn * dur; mdur_t += mv * dur
+    return par_t, mv_t, eq10_t, pty_t, pdur_t, mdur_t
 
 
 def load_series_tsv_latest(key):
@@ -425,18 +437,18 @@ def compute_date(record_date, nom_all, real_all, soma_all_dates, fixed=None):
         return [(rec["par"] / 1000.0, rec["coupon"], max((dt.date.fromisoformat(rec["maturity"]) - rd).days / 365.25, 0.0))
                 for rec in bucket.values()]
 
-    par_bn, mv_bn, eq10_bn, pty_bn = {}, {}, {}, {}
+    par_bn, mv_bn, eq10_bn, pty_bn, pdur_bn, mdur_bn = {}, {}, {}, {}, {}, {}
     for kind in ("bills", "coupons", "tips", "frn"):
-        par_bn[kind], mv_bn[kind], eq10_bn[kind], pty_bn[kind] = aggregate(
+        par_bn[kind], mv_bn[kind], eq10_bn[kind], pty_bn[kind], pdur_bn[kind], mdur_bn[kind] = aggregate(
             securities_for(buckets[kind]), kind, nom_curve, real_curve, d10)
     total_par, total_mv, total_eq10, total_pty = (sum(x.values()) for x in (par_bn, mv_bn, eq10_bn, pty_bn))
     wam_total = total_pty / total_par
 
     soma_asof = on_or_before(soma_all_dates, rd)
     soma_by_kind, soma_unmapped = soma_securities(load_soma_holdings(soma_asof.isoformat()), soma_asof)
-    s_par, s_mv, s_eq10, s_pty = {}, {}, {}, {}
+    s_par, s_mv, s_eq10, s_pty, s_pdur, s_mdur = {}, {}, {}, {}, {}, {}
     for kind in ("bills", "coupons", "tips", "frn"):
-        s_par[kind], s_mv[kind], s_eq10[kind], s_pty[kind] = aggregate(
+        s_par[kind], s_mv[kind], s_eq10[kind], s_pty[kind], s_pdur[kind], s_mdur[kind] = aggregate(
             soma_by_kind[kind], kind, nom_curve, real_curve, d10)
     soma_par, soma_eq10, soma_pty = sum(s_par.values()), sum(s_eq10.values()), sum(s_pty.values())
 
@@ -445,8 +457,15 @@ def compute_date(record_date, nom_all, real_all, soma_all_dates, fixed=None):
     # the FIXED_CURVE_DATE curve. Changes in it exclude the valuation effect of yield moves.
     f_nom, f_real, f_d10 = fixed
     kinds = ("bills", "coupons", "tips", "frn")
-    fx_total = sum(aggregate(securities_for(buckets[k]), k, f_nom, f_real, f_d10)[2] for k in kinds)
-    fx_soma = sum(aggregate(soma_by_kind[k], k, f_nom, f_real, f_d10)[2] for k in kinds)
+    fx_t = [aggregate(securities_for(buckets[k]), k, f_nom, f_real, f_d10) for k in kinds]
+    fx_s = [aggregate(soma_by_kind[k], k, f_nom, f_real, f_d10) for k in kinds]
+    fx_total, fx_soma = sum(a[2] for a in fx_t), sum(a[2] for a in fx_s)
+    # par-weighted duration, own curve and fixed curve; DV01 at market prices (C-122)
+    pdur_public = sum(pdur_bn.values()) - sum(s_pdur.values())
+    pdur_public_fx = sum(a[4] for a in fx_t) - sum(a[4] for a in fx_s)
+    dv01_public_mn = (sum(mdur_bn.values()) - sum(s_mdur.values())) * 0.1
+    pdur_soma, pdur_soma_fx = sum(s_pdur.values()), sum(a[4] for a in fx_s)
+    dv01_soma_mn = sum(s_mdur.values()) * 0.1
     wam_public = (total_pty - soma_pty) / public_par
 
     row = {"record_date": record_date, "soma_asof": soma_asof.isoformat(),
@@ -459,7 +478,10 @@ def compute_date(record_date, nom_all, real_all, soma_all_dates, fixed=None):
            "public_par_bn": round(public_par, 1), "public_10yeq_bn": round(public_eq10, 1),
            "wam_total_years": round(wam_total, 2), "wam_public_years": round(wam_public, 2),
            "d10_par_duration": round(d10, 3), "total_10yeq_fixed_bn": round(fx_total, 1),
-           "soma_10yeq_fixed_bn": round(fx_soma, 1), "public_10yeq_fixed_bn": round(fx_total - fx_soma, 1)}
+           "soma_10yeq_fixed_bn": round(fx_soma, 1), "public_10yeq_fixed_bn": round(fx_total - fx_soma, 1),
+           "public_pardur_bn_yrs": round(pdur_public, 1), "public_pardur_fixed_bn_yrs": round(pdur_public_fx, 1),
+           "public_dv01_mn": round(dv01_public_mn, 1), "soma_pardur_bn_yrs": round(pdur_soma, 1),
+           "soma_pardur_fixed_bn_yrs": round(pdur_soma_fx, 1), "soma_dv01_mn": round(dv01_soma_mn, 1)}
     ctx = {"table3_total_bn": table3_total_bn, "excluded": excluded, "class_totals": class_totals,
            "our_total_par_bn": total_par, "our_bills_par_bn": par_bn["bills"], "our_par_bn": par_bn,
            "table1_total_bn": total_t1_bn, "table1_bills_bn": bills_t1_bn,
@@ -625,7 +647,8 @@ def main():
                   "frn_par_bn", "total_mv_bn", "total_10yeq_bn", "bills_10yeq_bn", "coupons_10yeq_bn", "tips_10yeq_bn",
                   "soma_par_bn", "soma_10yeq_bn", "public_par_bn", "public_10yeq_bn", "wam_total_years",
                   "wam_public_years", "d10_par_duration", "total_10yeq_fixed_bn", "soma_10yeq_fixed_bn",
-                  "public_10yeq_fixed_bn"]
+                  "public_10yeq_fixed_bn", "public_pardur_bn_yrs", "public_pardur_fixed_bn_yrs", "public_dv01_mn",
+                  "soma_pardur_bn_yrs", "soma_pardur_fixed_bn_yrs", "soma_dv01_mn"]
     with open(os.path.join(OUT, "duration_supply.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames); w.writeheader()
         for d in DATES:
@@ -642,7 +665,9 @@ def main():
                     "d_total_10yeq_bn": d("total_10yeq_bn"), "d_public_par_bn": d("public_par_bn"),
                     "d_public_10yeq_bn": d("public_10yeq_bn"), "d_soma_par_bn": d("soma_par_bn"),
                     "d_soma_10yeq_bn": d("soma_10yeq_bn"), "d_total_10yeq_fixed_bn": d("total_10yeq_fixed_bn"),
-                    "d_public_10yeq_fixed_bn": d("public_10yeq_fixed_bn"), "d_soma_10yeq_fixed_bn": d("soma_10yeq_fixed_bn")})
+                    "d_public_10yeq_fixed_bn": d("public_10yeq_fixed_bn"), "d_soma_10yeq_fixed_bn": d("soma_10yeq_fixed_bn"),
+                    "d_public_pardur_bn_yrs": d("public_pardur_bn_yrs"), "d_public_pardur_fixed_bn_yrs": d("public_pardur_fixed_bn_yrs"),
+                    "d_public_dv01_mn": d("public_dv01_mn")})
     with open(os.path.join(OUT, "duration_supply_changes.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(chg[0])); w.writeheader(); w.writerows(chg)
 

@@ -179,11 +179,14 @@ industries are sized against the March 2020 precedent in [`2026-09-27-RV1-Drawdo
 (HYPOTHESIS). A drawdown would create deposits fast, but during stress and mostly held as cash, so it bears on fragility, not on
 what funded the run-up.
 
-**Rates, first pass (R1, 27 Sep).** The US 10-year yield rose on real yields and at the long end, mostly after February 2026. Whether
-that was a higher term premium or higher expected rates cannot be separated on free data: two models and a survey disagree, over
-2024–26 even in sign. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md). On the supply
-side, the public absorbed much more duration over the same months, supplied by Treasury issuance rather than the Fed's runoff; which
-buyers took it, and whether it raised term premia, is not measured. See
+**Rates, first pass (R1 and R2, 27 Sep; corrected the same day after outside review, C-122 to C-125).** The US 10-year yield
+rose 113bp, almost all of it in real yields, and most of it after February 2026, when the front end led. Whether the rise was a
+higher term premium or higher expected rates is not settled on free data. Two models and a survey agree that expected short rates
+for the next four years fell over 2024–26; they split on years 5 to 10, where the surveys say expectations rose and the models say
+they fell. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md). On the supply side,
+the public absorbed about 36% more rate risk at constant yields over the same months, though per face dollar the debt did not get
+longer. Treasury issuance supplied most of it; the Fed's share is 4% to about 13%, depending on the measure. Which buyers took it,
+and whether it raised term premia, is not measured. See
 [`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md). JGBs and
 euro-area bonds come next (R3).
 

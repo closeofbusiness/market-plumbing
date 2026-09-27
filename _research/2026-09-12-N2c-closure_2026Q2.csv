@@ -5,12 +5,12 @@ Treasury,Rest of world,728.2,630.2,545.0,128.8,21.4
 Treasury,Federal Reserve,-740.9,-515.3,-82.8,156.2,97.8
 Treasury,Banks (private depository),-100.1,197.4,202.7,95.4,-4.7
 Treasury,Mutual funds + ETFs + closed-end,117.4,205.8,256.3,133.6,44.4
-Treasury,Insurers + pensions (incl. S&L retirement),252.2,279.1,172.8,103.6,-4.6
+Treasury,Insurers + pensions (incl. S&L retirement),174.0,208.9,114.2,82.8,0.9
 Treasury,Broker-dealers,108.0,130.2,71.2,81.2,-51.3
 Treasury,"State & local govts, GSEs, corporates, other",111.0,282.0,52.2,-4.0,88.5
 Treasury,"Net issuance (Federal government liability, = all-sector absorption)",2381.6,1912.9,1930.2,571.9,236.7
 Treasury,"All-sector check (holder side, Treasury securities asset)",2381.6,1912.9,1930.2,571.9,236.7
-Treasury,[diagnostic] sum of 9 buyer rows,2463.1,1978.5,1985.9,589.9,229.5
+Treasury,[diagnostic] sum of 9 buyer rows,2384.9,1908.3,1927.3,569.1,235.0
 Equity,All sectors (total net issuance),33.5,905.0,1163.8,443.7,730.5
 Equity,"Nonfinancial corporate business (issuer, net buybacks)",-602.9,-397.0,-348.2,51.3,153.2
 Equity,Households and nonprofit organizations (holder),448.7,1404.9,824.0,490.0,350.5

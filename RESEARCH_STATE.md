@@ -576,8 +576,10 @@ Do not restate findings here. Status and detail stay in the home section named o
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
   R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
-  R2 follow-ups, undated: rest-of-world official vs private on matched windows; free maturity-by-holder sources.
-  R1/R2 OUTSIDE REVIEW: Parcel_R12R_Rates_Review_For_Grok_Cursor.md, ready 27 Sep (Grok in Cursor); the supervisor adjudicates the return.
+  R2 follow-ups, undated: rest-of-world official vs private on matched windows; free maturity-by-holder sources;
+  Treasury's attribution of issuance to Fed redemptions, which would narrow the Fed's 4-13% share.
+  R1/R2 OUTSIDE REVIEW DONE 27 Sep: Grok's R12R return adjudicated (_research/2026-09-27-R12R-Rates-Review-Return.md). R1 and R2
+  stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
   R3 NEXT: JGBs and euro-area government bonds (MoF, ECB free data).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:

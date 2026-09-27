@@ -32,6 +32,10 @@ GROUPING -- validated first against the June/2026Q1-vintage raw pull
     directory for that check (8 of 9 rows reproduce the published doc exactly;
     the 9th -- "State & local govts, GSEs, corporates, other" -- reproduces to
     within ~$5-10bn/yr; see CAVEATS below and the final report for why).
+    CORRECTED 27 Sep 2026 (C-124): that validation reproduced a double count.
+    Both published tables added state and local DB pension funds on top of a
+    pension aggregate that already contains them. The insurers-and-pensions row
+    now differs from both published docs by exactly that series.
 
 TWO CODES COULD NOT BE REPRODUCED VERBATIM (both resolved to like-for-like
 replacements, confirmed by description text, not by guessing):
@@ -55,19 +59,33 @@ FREE PUBLIC SOURCE, POLITE FETCHING
     no email address anywhere, >=0.6s between requests (well under 2 req/sec).
 """
 import csv
+import io
 import json
+import urllib.request
+import zipfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-RAW = HERE / "raw"
 PROJECT = Path(__file__).resolve().parent.parent  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
+# The three Z.1 tables, extracted from the dated release zip (27 Sep 2026: moved here from bin/raw/, which was never committed)
+RAW = PROJECT / "data/vintages/z1_20260911"
+Z1_ZIP_URL = "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip"
+Z1_TABLES = ("F3_2_t_tu", "S122_t_tu", "S129_t_tu")
 
 JUNE_RAW = PROJECT / "data/vintages/z1_closure/z1_closure_raw.json"
 JUNE_EXTRA = PROJECT / "data/vintages/z1_closure/z1_closure_extra.json"
 EQUITY_Q = PROJECT / "data/z1_equity_netbuyers/netbuyers_quarterly_2026Q2.csv"
 
-OUT_CLOSURE = HERE / "closure_2026Q2.csv"
-OUT_REVISIONS = HERE / "revisions.csv"
+# Written straight to the committed files the N2c refresh note cites (27 Sep 2026; they were copied by hand before)
+OUT_CLOSURE = PROJECT / "_research/2026-09-12-N2c-closure_2026Q2.csv"
+OUT_REVISIONS = PROJECT / "_research/2026-09-12-N2c-revisions.csv"
+
+if not all((RAW / f"{t}.csv").exists() for t in Z1_TABLES):
+    RAW.mkdir(parents=True, exist_ok=True)
+    req = urllib.request.Request(Z1_ZIP_URL, headers={"User-Agent": "Mozilla/5.0 (compatible; market-plumbing research)"})
+    with zipfile.ZipFile(io.BytesIO(urllib.request.urlopen(req, timeout=300).read())) as z:
+        for t in Z1_TABLES:
+            (RAW / f"{t}.csv").write_bytes(z.read(f"csv/{t}.csv"))
 
 
 def load_wide_csv(path):
@@ -161,11 +179,15 @@ ROWS = [
         ("ETFs", "FU563061103.Q"),
         ("Closed-end funds", "FU553061103.Q"),
     ]),
+    # C-124 (27 Sep 2026): the S129 pension aggregate already contains state and local DB pension funds
+    # (FU593061105 = FU573061105 + FU343061105 + FU223061143, exactly, every quarter), so FU223061143 is
+    # no longer added on top. Both vintages had counted it twice: in this vintage $78.2bn, $70.2bn and $58.6bn
+    # in 2023-2025, $20.8bn in 2026Q1 and -$5.5bn in 2026Q2. With it removed, the nine rows close on net
+    # issuance to within $5bn in every period.
     ("Insurers + pensions (incl. S&L retirement)", [
         ("Property-casualty insurers [replaces June's combined FU523061105]", "FU513061105.Q"),
         ("Life insurers [replaces June's combined FU523061105]", "FU543061105.Q"),
-        ("Pensions (S129 aggregate)", "FU593061105.Q"),
-        ("State & local govt employee DB pension funds", "FU223061143.Q"),
+        ("Pensions (S129 aggregate, includes state and local DB pension funds)", "FU593061105.Q"),
     ]),
     ("Broker-dealers", [("Security brokers and dealers [FU663061105, June used FU663061103]", "FU663061105.Q")]),
     ("State & local govts, GSEs, corporates, other", [

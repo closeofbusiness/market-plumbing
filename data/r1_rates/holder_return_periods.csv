@@ -1,7 +1,7 @@
-period,months,income_pct,rolldown_pct,price_pct,total_pct,bill3m_income_pct
-2024,12,4.208,0.116,-5.832,-1.508,5.264
-2025,12,4.273,0.543,3.156,7.972,4.232
-2026 to 30 Jun,6,2.11,0.291,-2.136,0.265,1.824
-30 Jun to latest,3,1.014,0.084,-4.532,-3.434,0.846
-end-2023 to 30 Jun 2026 (the equity window),30,10.591,0.95,-4.811,6.73,11.32
-end-2023 to latest,33,11.604,1.034,-9.344,3.294,12.166
+period,months,income_pct,rolldown_pct,price_pct,total_pct,bill3m_income_pct,total_compounded_pct,full_reval_compounded_pct,bill3m_compounded_pct
+2024,12,4.208,0.116,-5.832,-1.508,5.264,-1.775,-1.369,5.393
+2025,12,4.273,0.543,3.156,7.972,4.232,8.178,8.304,4.315
+2026 to 30 Jun,6,2.11,0.291,-2.136,0.265,1.824,0.2,0.273,1.838
+30 Jun to latest,3,1.014,0.084,-4.532,-3.434,0.846,-3.414,-3.339,0.849
+end-2023 to 30 Jun 2026 (the equity window),30,10.591,0.95,-4.811,6.73,11.32,6.471,7.113,11.961
+end-2023 to latest,33,11.604,1.034,-9.344,3.294,12.166,2.836,3.536,12.911

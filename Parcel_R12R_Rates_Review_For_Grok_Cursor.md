@@ -1,6 +1,7 @@
 # R12R — Attack R1 and R2, the first rates findings (Grok in Cursor)
 
-**Status: READY, 27 Sep 2026.** The principal asked for R1 and R2 to be documented for Grok to take. This is an adversarial
+**Status: RETURNED and ADJUDICATED, 27 Sep 2026.** The return and the supervisor's adjudication are in
+`_research/2026-09-27-R12R-Rates-Review-Return.md`; the corrections are C-122 to C-125. **Was: READY, 27 Sep 2026.** The principal asked for R1 and R2 to be documented for Grok to take. This is an adversarial
 review routed to Grok in Cursor, with web search, to judge claims and to find sources whose citations must hold. It was written
 by the supervisor. After the return, the supervisor revises, checks and adjudicates (THE_ASK E-008).
 

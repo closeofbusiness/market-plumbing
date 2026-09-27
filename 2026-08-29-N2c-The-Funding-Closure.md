@@ -33,9 +33,15 @@ created (N3: sources ×3) is levered to absorb more of it; and corporates conver
 | **Federal Reserve** | **−741** | −515 | −83 | **+156** |
 | Banks (private depository) | −100 | 197 | 203 | 95 |
 | Mutual funds + ETFs + closed-end | 102 | 207 | 270 | 96 |
-| Insurers + pensions (incl. S&L retirement) | 241 | 303 | 133 | 72 |
+| Insurers + pensions (incl. S&L retirement) | ~~241~~ 168 | ~~303~~ 231 | ~~133~~ 101 | ~~72~~ 54 |
 | Broker-dealers | 124 | 126 | 57 | **109** |
 | State & local govts, GSEs, corporates, other | 105 | 177 | 66 | 3 |
+
+**[C-124, 27 Sep: the insurers-and-pensions row counted state and local defined-benefit pension funds twice. The
+pension aggregate it used already contains them. Corrected values are shown; the September-vintage table is in the refresh,
+`2026-09-12-N2c-Closure-Refresh-2026Q2.md`, and it now closes on net issuance to within $5bn. The hedge funds inside
+"households" are mostly offshore funds whose Treasuries TIC misses, which Z.1's residual books to households, rather than
+domestic funds.]**
 
 **Read the columns as regimes.** *2023:* the ON RRP drain let money funds absorb half the issuance and
 hedge funds (inside "households") took another third — **existing money, reallocated and levered; nothing
@@ -109,6 +115,9 @@ what stops line 2 — bank capital, examiners, or a credit event in private cred
 - ~~**Stablecoins (engine 5)** — D6 parcel, queued.~~ **Closed 29 Aug** — see the row above and `2026-08-29-D6-Stablecoins-Fifth-Cash-Pool.md`. The 2026 stall completes the pattern: every private engine plateaued the year the Fed returned.
 - **Who exactly is behind "households +$276bn"** — in Z.1 that cell contains hedge funds and the residual;
   Form PF says hedge-fund cash Treasuries reached $2trn (OFR, 19 Aug 2026) — the split is partly derivable.
+  **[C-124, 27 Sep: largely offshore hedge funds. TIC misses most of their Treasuries (Fed staff: about $1.4trn at
+  end-2024), and Z.1's household residual books them. The September 2026 Z.1 separates domestic hedge funds, which hold
+  only about $0.1trn.]**
 - **The NDFI loan book's composition** — H.8 gives one line; the FR Y-14/call-report split (private credit
   vs REITs vs BDCs vs warehouse) exists in Fed research (e.g., FEDS work on bank–nonbank links) — locate.
 - **2026Q1 equity issuance turning positive (+$31bn)** — one quarter; if buybacks are rolling over while

@@ -765,6 +765,75 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-125 · R1's survey check: "February 2024 to February 2026 is the only span the survey covers", "the survey disputes even that" and "three measures give three answers"
+
+**Mine, in R1 (27 Sep), carried the same day into the ANSWER's rates paragraph, CHARTER, the rates dossier and CLAUDE.md. Killed 27 Sep by the R12R review (Grok in Cursor). Every figure below was re-derived by the supervisor from the Philadelphia Fed's deadline file and SPF workbook, the ACM workbook and the Kim-Wright file, and `bin/r1_treasury_decomposition.py` now produces them (`data/r1_rates/survey_check.csv`, `survey_changes.csv`).**
+
+- **Killed by:** `_research/2026-09-27-R12R-Rates-Review-Return.md` (T3 and Section 4), and the survey's own quarterly questions.
+- **What was wrong.**
+  - **Dates.** The check dated each survey 14 February. The response deadlines were 6 Feb 2024, 11 Feb 2025 and 2 Mar 2026 (the 2026 survey was delayed by the shutdown). On the true deadlines the 10-year par yield changed −4bp, not −23bp; ACM's expected rate −81bp, not −92bp; Kim-Wright's −33bp, not −39bp. The signs survive.
+  - **Coverage.** The SPF is quarterly. Only its 10-year questions (BILL10, BOND10) are asked in the first quarter alone. Its bill-rate forecasts for the current and next three calendar years are asked every quarter, and they cover 2026: from the 2026Q1 to the 2026Q3 survey their average rose 35bp, while ACM's four-year expected rate rose 58bp and Kim-Wright's 47bp.
+  - **Horizon.** Split at four years, the models and the survey agree on years 1–4: all fell between the 2024Q1 and 2026Q1 surveys (SPF −54bp, ACM −118bp, Kim-Wright −72bp). They disagree only on years 5–10, where the survey implies +61bp against ACM's −56bp and Kim-Wright's −8bp. The FOMC's median longer-run federal funds rate moved with the survey: 2.5% (Dec 2023), 3.0% (Dec 2024 and Dec 2025), 3.1% (Mar and Jun 2026), 3.2% (Sep 2026).
+  - **Curve.** "From the long end, concentrated after February 2026" joined two windows. Over the full window the 10-year rose more than the 2-year (113bp against 53bp). After 13 Feb 2026 the 2-year rose 136bp and the 10-year 97bp: the front end led.
+  - **Start date.** The window opens on 29 Dec 2023, just after a 119bp rally: the 10-year was 4.98% on 19 Oct 2023 and 3.79% on 27 Dec 2023. From 19 Oct 2023 to 18 Sep 2026 it rose 3bp.
+- **Correct position.**
+  - Real yields did almost all of the 10-year's rise over the window (MEASURED, unchanged). The long end led over the full window; the front end led after February 2026.
+  - All three measures say expected short rates for the next four years fell between the 2024 and 2026 first-quarter surveys. The dispute is over years 5–10: both surveys (the SPF and the FOMC's longer-run median) say long-horizon expectations rose, and both models say they fell. If the surveys are right, most of the models' term-premium rise is long-horizon expectations. The split stays HYPOTHESIS.
+  - Kim-Wright uses survey forecasts to estimate its parameters, but its daily changes are driven by yields. It is not a survey measure.
+  - **Also amended, the holder's return.** Fully revalued and compounded month by month, a constant-maturity 10-year position returned +3.5% from end-2023 to 18 Sep 2026 (R1 said about +3.3%, summed from a first-order approximation that leaves out convexity), against +12.9% for rolling three-month bills (R1: +12.2%, summed). The script now computes both. The gap of about nine points stands.
+- **Why it matters.** The survey section was the evidence for "cannot be separated on free data". The narrower truth is more useful: free data agree on the near term and split on the long horizon, which is where a term premium lives.
+- **Still standing at:** nowhere. R1, the ANSWER's rates paragraph, CHARTER, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place.
+
+---
+
+## C-124 · The N2c Treasury buyer table counted state and local pension funds twice — and R2's "the rest of the world includes hedge funds domiciled offshore"
+
+**Mine, as supervisor. The double count sat in the N2c table (29 Aug, June vintage), was reproduced by the refresh (12 Sep, September vintage) and was carried into R2 (27 Sep) as "the nine rows overlap slightly". Killed 27 Sep by the R12R review. The supervisor confirmed the identity in the 11 Sep 2026 Z.1 files and checked the vintage comparison and the Fed note, and the rebuilt table closes.**
+
+- **Killed by:** `_research/2026-09-27-R12R-Rates-Review-Return.md` (T8); the Fed Board's Z.1 releases of 11 Jun and 11 Sep 2026; Barth, Beltran, Hoops, Kahn, Liu and Perozek, "The Cross-Border Trail of the Treasury Basis Trade", FEDS Notes, 15 Oct 2025.
+- **What was wrong.**
+  - **The double count.** The insurers-and-pensions row added the pension aggregate (FU593061105) and state and local defined-benefit funds (FU223061143). The aggregate already contains them: FU593061105 = FU573061105 + FU343061105 + FU223061143, exactly, in every quarter. In the September vintage the row was overstated by $78.2bn (2023), $70.2bn (2024), $58.6bn (2025), $20.8bn (2026Q1) and −$5.5bn (2026Q2), $144.2bn over R2's window. The June-vintage table carried the same error ($72.5bn in 2023).
+  - **"Overlap".** R2 read the rows' $132bn excess over net issuance as an overlap. It was the double count. With it removed, the nine rows close on net issuance to within $5bn in every period, and fall $12bn short over R2's window.
+  - **Offshore hedge funds.** R2 placed offshore hedge funds in the rest of the world. They belong there in principle, but TIC, the source for the rest of the world, misses most of their Treasuries: Fed staff put the shortfall at about $1.4trn at end-2024. Z.1 computes households as a residual, so the missed holdings sit in the household row. The September 2026 Z.1 added a domestic hedge-fund sector and a supplementary table for foreign hedge funds, but its rest-of-the-world Treasury level at end-2024 is only $61bn above the June vintage's. The missed holdings were not moved.
+  - **Money funds.** "Money-market funds took bills" stated a composition nobody measured. Money funds hold bills, floating-rate notes and coupon securities within 397 days of maturity. Rule 2a-7 caps their duration, so the conclusion that they took little duration survives.
+- **Correct position.**
+  - Insurers and pensions, September vintage: $174.0bn (2023), $208.9bn (2024), $114.2bn (2025), $82.8bn (2026Q1), $0.9bn (2026Q2); $0.41trn over R2's window, not $0.55trn. June vintage: 168, 231, 101, 54.
+  - The household row, which N2c defines to include the new domestic hedge-fund sector (+$21bn over R2's window), is likely to be largely offshore hedge funds that TIC misses. The Z.1's new foreign-hedge-fund table puts their Treasuries, net of short sales, at $1.30trn at end-2023, $1.56trn at end-2024, $2.07trn at end-2025 and $1.81trn in 2026Q1. That the household row is mostly these funds is inferred, not measured: the table is supplementary and does not say how much of it TIC captures.
+  - Domestic hedge funds are small in this vintage: about $0.1trn of Treasuries, net of short sales, at end-2024. The levered bid N2c placed inside households is real, but it is mostly offshore funds.
+- **Why it matters.** A table that "closed with a small overlap" was taken as a sign it was right. The overlap was the defect.
+- **Still standing at:** nowhere. `bin/build_closure_2026Q2.py` was fixed and re-run; the refresh's two CSVs, both N2c notes and R2 were corrected in place.
+
+---
+
+## C-123 · R2's "Treasury issuance supplied it, not the Fed's runoff", about 96%
+
+**Mine, in R2 (27 Sep), carried into the ANSWER's rates paragraph, the rates dossier and CLAUDE.md. Killed 27 Sep by the R12R review (T7). The supervisor re-derived the runoff from the New York Fed's SOMA summary; the duration of the refinancing issues is Grok's figure, checked for plausibility only.**
+
+- **Killed by:** `_research/2026-09-27-R12R-Rates-Review-Return.md` (T7 and Section 4); the New York Fed's SOMA API.
+- **What was wrong.** R2 measured the Fed's part as the change in its own holdings of 10-year equivalents at constant prices: −$0.14trn, about 4% of the public's +$3.40trn. That nets ageing against reinvestment, and it does not count what Treasury had to raise from the public to repay the Fed. The Fed's Treasury holdings fell $601bn from 27 Dec 2023 to their trough on 3 Dec 2025, $575bn of it coupon securities. Refinanced in the coupon mix of those months, that runoff put about $0.32–0.43trn of 10-year equivalents on the public: 9–13%. Refinanced with bills, it added almost none. Which Treasury did is not established here.
+  - **Also:** "+$0.06trn in 2025–26" was credited to renewed buying. The Fed ended runoff on 1 Dec 2025, and its bill holdings began rising in the week to 17 Dec 2025. The 2025 gain came from reinvesting maturing coupons, which offset ageing.
+- **Correct position.** Treasury issuance supplied most of the public's extra duration on every measure. The Fed's share is 4% counting only the fall in its own holdings, and at most about 13% counting the refinancing of its runoff (BOUNDED, a ceiling). Treasury's own attribution of issuance to Fed redemptions would place it within that range.
+- **Why it matters.** The claim answered a counterfactual question with an accounting measure.
+- **Still standing at:** nowhere. R2, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place.
+
+---
+
+## C-122 · R2's "duration supply grew faster than face value"
+
+**Mine, in R2 (27 Sep), with the build agent's script docstring. Killed 27 Sep by the R12R review (T6). The supervisor re-derived it, and the script now reports all three weightings.**
+
+- **Killed by:** `_research/2026-09-27-R12R-Rates-Review-Return.md` (T6 and Section 4); `data/r2_rates/duration_supply.csv` as re-run.
+- **What was wrong.** The claim rests on one weighting. Priced on the fixed end-2023 curve and weighted by market value, the public's 10-year equivalents rose 35.7%, against 26.4% for face value. Much of the gap is coupons. New issues carry higher coupons, and on a fixed low curve a high-coupon bond is priced above par, so market-value weighting counts the premium as extra quantity. Weighted by par (the New York Fed's convention for SOMA duration), the public's duration rose 24.7% on the fixed curve and 21.3% on each date's own curve, no faster than face value. The public's average modified duration per face dollar fell from 4.22 to 4.05 years on its own curves. DV01 at market prices rose 20.0%.
+  - **Also:**
+    - "Every check passes" was cited in support of the duration figures. The 52 checks test par totals, bills and the Fed's holdings against MSPD and the H.4.1. No duration figure is tested, because no published series was found to test it against.
+    - "Issuance shifted toward bills" held for total marketable debt (21.5% to 22.8%), not for the public: its bill share fell from 25.3% to 24.6% as the Fed's bills rose from $222bn to $542bn.
+    - The script's docstring said duration "is what matters for yields", a causal premise the charter forbids.
+- **Correct position.** The public absorbed about 36% more rate risk at constant yields (10-year equivalents on the end-2023 curve; Grok's curve tests put it at 35.7–36.3%). Per face dollar the debt did not get longer. Whether duration grew faster than face value depends on the weighting, so every duration figure names its weighting.
+- **Why it matters.** A reader would take the claim to mean Treasury lengthened its issuance. It did not: coupons rose.
+- **Still standing at:** nowhere. R2 and the script's docstring were corrected in place; `data/r2_rates/` gained the par-weighted and DV01 columns.
+
+---
+
 ## C-121 · "Grok in Cursor has live X search" — and the supervisor's advice to run RUN 1 at grok.com
 
 **Assumed in the QE sentiment parcel (19 Sep), its two calendar rows, CLAUDE.md's read table and the supervisor's 24 Sep instructions to Grok. Killed 24 Sep by RUN 1 itself. The supervisor's grok.com advice, given the same day, was wrong too.**
@@ -1993,4 +2062,26 @@ C-120	652\.8 billion rolls into IRAs
 C-120	never leaves the market
 C-120	Low to medium on the premium
 C-121	Grok has live X search
+C-122	duration supply grew faster than face
+C-122	still outgrew face value
+C-122	derived, and every check passes
+C-122	is what matters for yields
+C-123	not the Fed.s runoff
+C-123	96% of (the public|it from Treasury)
+C-123	supplied about 96%
+C-123	in 2025.26 as it resumed buying
+C-124	overlap slightly
+C-124	Insurers and pensions[ |]{0,6}\$0\.55trn
+C-124	world includes hedge funds domiciled offshore
+C-124	money.market funds took bills
+C-125	only span the survey covers
+C-125	survey disputes even that
+C-125	three measures give three answers
+C-125	latest reading predates the 2026 rise
+C-125	long end, concentrated after February
+C-125	at the long end, mostly after February
+C-125	real yields and the long end
+C-125	survey disagree, over 2024.26 even in sign
+C-125	position returned about \+3\.3%
+C-122	public rose 26%, so .{0,4}duration supply grew
 ```

@@ -3,6 +3,12 @@
 **Status: DATA, with one structural finding.** The 12 Sep calendar obligation, done. Script
 `bin/build_closure_2026Q2.py`; data `_research/2026-09-12-N2c-closure_2026Q2.csv`, `-revisions.csv`.
 
+**Corrected 27 Sep (C-124).** The insurers-and-pensions row counted state and local defined-benefit pension funds twice:
+the pension aggregate (FU593061105) already contains them. The script was fixed and re-run, and the row, the sum-of-rows
+diagnostic and the revisions are corrected in place below. The nine rows now close on net issuance to within $5bn in
+every period. Separately, the household row is likely to hold most of the offshore hedge funds' Treasuries that TIC misses
+(see C-124).
+
 **The three watch items, answered:**
 - **The Fed is still a net buyer of Treasuries:** +$97.8bn in 2026Q2 after +$156.2bn in Q1 — about two-thirds the
   pace, but a continuation of the reversal from -$741bn (2023), -$515bn (2024) and -$83bn (2025).
@@ -46,11 +52,11 @@ households' Treasury line for 2024 was revised down $103bn.
 | **Federal Reserve** | −740.9 | −515.3 | −82.8 | **156.2** | **97.8** |
 | Banks (private depository) | −100.1 | 197.4 | 202.7 | 95.4 | −4.7 |
 | Mutual funds + ETFs + closed-end | 117.4 | 205.8 | 256.3 | 133.6 | 44.4 |
-| Insurers + pensions (incl. S&L retirement) | 252.2 | 279.1 | 172.8 | 103.6 | −4.6 |
+| Insurers + pensions (incl. S&L retirement) | ~~252.2~~ 174.0 | ~~279.1~~ 208.9 | ~~172.8~~ 114.2 | ~~103.6~~ 82.8 | ~~−4.6~~ 0.9 |
 | Broker-dealers | 108.0 | 130.2 | 71.2 | 81.2 | −51.3 |
 | State/local govts, GSEs, corporates, other | 111.0 | 282.0 | 52.2 | −4.0 | 88.5 |
 | **Net issuance (= all-sector absorption, check passes)** | **2,381.6** | **1,912.9** | **1,930.2** | **571.9** | **236.7** |
-| [diagnostic] sum of 9 buyer rows | 2,463.1 | 1,978.5 | 1,985.9 | 589.9 | 229.5 |
+| [diagnostic] sum of 9 buyer rows | ~~2,463.1~~ 2,384.9 | ~~1,978.5~~ 1,908.3 | ~~1,985.9~~ 1,927.3 | ~~589.9~~ 569.1 | ~~229.5~~ 235.0 |
 
 ### Equity side (Z.1 F51.1.t, $bn NSA flow; reused from already-pulled, supervisor-verified project data, re-aggregated to calendar years — no new HTTP fetch)
 
@@ -78,7 +84,7 @@ Largest: **Households + nonprofits** (Treasury row) revised down every period �
 
 Single largest component revision: **nonfinancial corporate business, as a Treasury holder**, 2024: 11.0 → 107.9 (**+96.9bn**) — this alone drives most of the "State/local/GSE/other" row's +105.4bn 2024 revision.
 
-Other notable: NFC net **equity** issuance 2025 −304.0→−348.2 (−44.2); household holder (equity) 2025 863.5→824.0 (−39.5); Insurers+pensions (Treasury) 2025 133.8→172.8 (+39.0); Mutual funds+ETFs+CEF 2026Q1 95.3→133.6 (+38.3); Rest of world (Treasury) 2025 509.6→545.0 (+35.4); Broker-dealers 2026Q1 109.4→81.2 (−28.2).
+Other notable: NFC net **equity** issuance 2025 −304.0→−348.2 (−44.2); household holder (equity) 2025 863.5→824.0 (−39.5); Insurers+pensions (Treasury) 2025 ~~133.8→172.8 (+39.0)~~ 101.4→114.2 (+12.8) [C-124]; Mutual funds+ETFs+CEF 2026Q1 95.3→133.6 (+38.3); Rest of world (Treasury) 2025 509.6→545.0 (+35.4); Broker-dealers 2026Q1 109.4→81.2 (−28.2).
 
 **Not revised** (worth flagging precisely because these feed watch items a/b): Federal Reserve row (−740.9/−515.3/−82.8/156.2 — matches the doc to rounding in all four periods) and Money market funds row (1,205.5/725.4/523.0/−91.4 — same). The Q1→Q2 comparisons above are on a clean, unrevised base.
 
@@ -87,7 +93,8 @@ Other notable: NFC net **equity** issuance 2025 −304.0→−348.2 (−44.2); h
 1. **Broker-dealers code changed.** June doc's `FU663061103.Q` does not exist anywhere in the 11-Sep-2026 release's data dictionaries. Only `FU663061105.Q` ("Security brokers and dealers; Treasury securities; asset") exists (in both F3.2.t and S125s3.t). Used it as the like-for-like replacement, confirmed by description text.
 2. **Insurers line discontinued quarterly.** June doc's combined `FU523061105.Q` ("Insurers") is not in any quarterly table in this release's bulk CSV package — only in `S128.i.a`, an **annual** integrated-account table. Substituted Property-casualty (`FU513061105.Q`) + Life insurers (`FU543061105.Q`), both genuinely quarterly.
 3. **"Banks" and "Pensions" aggregates aren't in the Treasury table at all.** F3.2.t only carries their sub-components; the aggregate lines live in the sector-specific tables `S122.t` and `S129.t` (same codes both vintages — a sourcing detail, not a comparability gap).
-4. **The catch-all "other" row cannot be reproduced exactly, and this is inherited, not new:** the original June-vintage doc's own 9 published rows do not sum to its own published total (gaps of $25–96bn/yr, worst in 2023 and Q1 2026) — the exact code list behind that row was never documented anywhere in the project. My 6-code reconstruction (GSEs, NFC, state/local govts, other-financial-business CCP-held Treasuries, ABS issuers, holding companies) matches the June-vintage published figures to within ~$5–10bn/yr, applied identically to both vintages so the revisions above are apples-to-apples.
+4. **The catch-all "other" row cannot be reproduced exactly, and this is inherited, not new:** the original June-vintage doc's own 9 published rows do not sum to its own published total (gaps of $25–96bn/yr, worst in 2023 and Q1 2026) — the exact code list behind that row was never documented anywhere in the project. **[C-124: part of that gap, about
+$72bn in each of 2023 and 2024, was the insurers row's double count of state and local pension funds.]** My 6-code reconstruction (GSEs, NFC, state/local govts, other-financial-business CCP-held Treasuries, ABS issuers, holding companies) matches the June-vintage published figures to within ~$5–10bn/yr, applied identically to both vintages so the revisions above are apples-to-apples.
 5. A newly-separate **"Hedge funds (domestic)" Treasury line** (`FU623061103.Q`) appears this release; it didn't exist separately in June (was inside the household residual then). Folded into "Households + nonprofits" per the doc's own definition; confirmed numerically it does not explain that row's much larger revision.
 6. Equity-side revision checking is limited to the 4 series/periods where the project already has a documented June-vintage comparator (`data/series.tsv`, 2026-09-11 entries): NFC issuance (2025, 2026Q1), rest-of-world holder (2025), household holder (2025). I did not fabricate comparators for ETFs, mutual funds, or domestic hedge funds as equity holders.
 
