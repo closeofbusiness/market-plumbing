@@ -174,7 +174,10 @@ unimportant in general; it says they are **not what carried this repricing**.
 **What this does not establish:** that shadow money or collateral played *no* role — N4 bounds rather than
 zeroes them — and it says nothing about whether the off-balance-sheet lease stack is itself the next source of
 fragility. That is a different question from the one the goal asks, and it is on the calendar (Oracle's
-guarantee maturity and hyperscaler free cash flow, 30 Sep).
+guarantee maturity and hyperscaler free cash flow, 30 Sep). The undrawn bank lines behind the nonbanks and the AI-adjacent
+industries are sized against the March 2020 precedent in [`2026-09-27-RV1-Drawdown-Sizing.md`](2026-09-27-RV1-Drawdown-Sizing.md)
+(HYPOTHESIS). A drawdown would create deposits fast, but during stress and mostly held as cash, so it bears on fragility, not on
+what funded the run-up.
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 

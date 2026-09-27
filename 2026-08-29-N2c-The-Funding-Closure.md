@@ -169,7 +169,8 @@ nonbank intermediaries on a $2trn stock, and — in 2026 — a stance-neutral bu
 The honest headline is not "the Fed is monetizing" or "banks are printing for the shadow system"; it is that
 **every layer is leverage-intensive intermediation of a savings pool nobody can locate in the accounts — the
 FWTW gap is the finding.** The two sharpest live questions this leaves: the foreign equity bid's persistence,
-and what stops the NDFI revolvers ($987bn undrawn) from being drawn all at once.
+and what stops the NDFI revolvers ($987bn undrawn) from being drawn all at once. *[Sized on 27 Sep against the March 2020
+precedent: `2026-09-27-RV1-Drawdown-Sizing.md`.]*
 
 ### 7.3 Process
 

@@ -51,7 +51,8 @@ was first posed in is a rounding error; money creation in the sense the goal mea
 outstanding AI-adjacent exposure at ~0.8% of bank total assets and ~9% of tier 1 capital on average, with delinquencies in
 line with the portfolio: modest on current data. The ~$300bn gap between commitments and outstanding is the one place
 drawdown could create deposits at speed — but it too is industry-wide, and whether it matters is the N2c §7 question on
-the calendar for 1 Oct. **HYPOTHESIS until that work is done.** D2's "fragility is duration and operating leverage" is carried
+the calendar for 1 Oct. **HYPOTHESIS until that work is done.** *It was sized on 27 Sep against the March 2020 precedent. See
+`2026-09-27-RV1-Drawdown-Sizing.md`, which owns the figures and keeps the industry-exposure caveat (C-115).* D2's "fragility is duration and operating leverage" is carried
 on the same footing.
 
 ---

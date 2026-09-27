@@ -571,6 +571,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  lines to AI-adjacent industries, plus N2c §7's undrawn NDFI commitments. The gate
                                  is arguably met — routing is the principal's call.
                                  APPROVED 25 Sep (E-015). Brief ready 26 Sep: Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md.
+                                 DONE 27 Sep: Grok's return verified at source; sized in 2026-09-27-RV1-Drawdown-Sizing.md.
    6  10 Oct N-MFP3 census ..... the trigger check for item 7 (D4). Nothing else waits on it.
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
 
