@@ -577,6 +577,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
   R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
   R2 follow-ups, undated: rest-of-world official vs private on matched windows; free maturity-by-holder sources.
+  R1/R2 OUTSIDE REVIEW: Parcel_R12R_Rates_Review_For_Grok_Cursor.md, ready 27 Sep (Grok in Cursor); the supervisor adjudicates the return.
   R3 NEXT: JGBs and euro-area government bonds (MoF, ECB free data).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
