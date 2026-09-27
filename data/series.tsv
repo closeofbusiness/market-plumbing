@@ -462,3 +462,22 @@ pulled_at	series_key	as_of	value	unit	source	note
 2026-09-21T06:30Z	w3_tax_pct_of_eps_growth	2015-2025	9.53	pct	dlog(1-ETR)/1.0613	
 2026-09-21T06:30Z	w3_eps_share_of_price_restated	2015-2025	74.5	pct	2025 EPS at 2015 ETR / Δlog P	was 82.3% actual
 2026-09-21T06:30Z	w3_w1_rebalance_share	2024Q1-2026Q2	0.725	share	Z.1 debt buys / $938.4bn W1 ceiling	residual ~$258bn
+2026-09-27T19:29Z	abcp_outstanding_bn	2026-09-23	501.7	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCKA.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-09-27T19:29Z	financial_cp_bn	2026-09-23	616.3	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCKF.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-09-27T19:29Z	cp_total_bn	2026-09-23	1461.9	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCK.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-09-27T19:29Z	h8_ci_loans_weekly_bn	2026-09-16	2965.3	$bn	Fed Board H.8, all commercial banks, SA, weekly, DDP package 17951c643555bee48d63bb6957a4a92e, series H8/H8/B1023NCBA	weekly, Wednesday level; C&I and loans to nondepository financial institutions
+2026-09-27T19:29Z	h8_ndfi_loans_weekly_bn	2026-09-16	2047.0	$bn	Fed Board H.8, all commercial banks, SA, weekly, DDP package 17951c643555bee48d63bb6957a4a92e, series H8/H8/B1030NCBA	weekly, Wednesday level; C&I and loans to nondepository financial institutions
+2026-09-27T19:29Z	large_time_deposits_bn	2026-08-01	2563.7	$bn	Fed Board H.8, all commercial banks, NSA, monthly, DDP package b89440cb2b2390a07f094fdeeed0d3cb, series H8/H8/B1072NCBDM	monthly; replaces FRED LTDACBM027NBOG
+2026-09-27T19:29Z	sofr_pct	2026-09-24	3.88	%	NY Fed Markets API rates/secured/sofr percentRate	daily reference rate
+2026-09-27T19:29Z	sofr_p1_pct	2026-09-24	3.81	%	NY Fed Markets API rates/secured/sofr percentPercentile1	daily reference rate
+2026-09-27T19:29Z	sofr_p99_pct	2026-09-24	3.96	%	NY Fed Markets API rates/secured/sofr percentPercentile99	daily reference rate
+2026-09-27T19:29Z	sofr_volume_bn	2026-09-24	2990.0	$bn	NY Fed Markets API rates/secured/sofr volumeInBillions	daily
+2026-09-27T19:29Z	tgcr_pct	2026-09-24	3.86	%	NY Fed Markets API rates/secured/tgcr percentRate	daily reference rate
+2026-09-27T19:29Z	bgcr_pct	2026-09-24	3.86	%	NY Fed Markets API rates/secured/bgcr percentRate	daily reference rate
+2026-09-27T19:29Z	fed_on_rrp_bn	2026-09-25	0.6	$bn	NY Fed Markets API rp/results (ON RRP fixed-rate overnight operations, Treasury accepted, summed by date)	daily; replaces FRED RRPONTSYD
+2026-09-27T19:29Z	fed_soma_tbills_bn	2026-09-23	554.4	$bn	NY Fed Markets API soma/summary bills	weekly, Wednesday; replaces FRED WSHOBL
+2026-09-27T19:31Z	ficc_sponsored_repo_bn	2026-09-23	1071.3	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members borrowing cash (hedge-fund side)
+2026-09-27T19:31Z	ficc_sponsored_reverse_repo_bn	2026-09-23	1359.2	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members lending cash (money-fund side)
+2026-09-27T19:31Z	ficc_sponsored_dvp_bn	2026-09-23	1659.8	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; DVP leg
+2026-09-27T19:31Z	ficc_sponsored_gc_bn	2026-09-23	770.8	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; GC leg
+2026-09-27T19:31Z	ficc_sponsored_total_bn	2026-09-23	2430.6	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; total sponsored activity

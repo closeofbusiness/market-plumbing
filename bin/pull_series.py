@@ -6,10 +6,15 @@ to data/series.tsv (append-only; never rewrite). Full histories go to data/histo
   bin/pull_series.py            # pull everything reachable, append latest obs as vintage rows
   bin/pull_series.py --list     # show what would be pulled
   bin/pull_series.py --only ofr # subset: fiscaldata | ofr | ofr_hf | fia | dtcc | finra | fdic | sec | fred | nyfed_pd
+                                #   | fed_cp | fed_h8 | nyfed_rates | nyfed_rrp | nyfed_soma
 
-FRED note: fred.stlouisfed.org is unreachable from the agent sandbox (curl returns 000); from a
-normal terminal it works. If a FRED pull fails, the script says so and moves on — the other
-sources are authoritative anyway (FRED is a mirror).
+FRED note: fred.stlouisfed.org refuses scripts from the agent's machine; from a normal terminal it
+works. If a FRED pull fails, the script says so and moves on. Since 27 Sep 2026 the FRED set is
+only the three series with no scriptable issuing source (reserve balances and foreign official
+reverse repo from the H.4.1, retail money funds from the H.6). Everything else FRED used to mirror
+comes from its issuer: commercial paper and the H.8 from the Fed Board's Data Download Program
+(its preformatted CSV packages), reverse repo, SOFR and SOMA from the New York Fed's API. Each
+replacement was checked against the last FRED value on file before the switch.
 """
 import sys, json, csv, io, os, re, ssl, time, datetime, urllib.request
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,8 +77,9 @@ def pull_sec():
             l=max(vals,key=lambda v:v["end"]); out.append((NOW,f"{name.lower()}_{lab}",l["end"],round(l["val"]/1e9,1),"$bn",f"SEC XBRL companyfacts CIK{cik} {c}",l.get("form","")))
             time.sleep(0.15)
     return out
-FRED={"RRPONTSYD":("fed_on_rrp_bn",1),"WRESBAL":("reserve_balances_bn",1e-3),"WSHOBL":("fed_soma_tbills_bn",1e-3),"WLRRAFOIAL":("foreign_official_rrp_bn",1e-3),
-      "ABCOMP":("abcp_outstanding_bn",1),"FINCP":("financial_cp_bn",1),"COMPOUT":("cp_total_bn",1),"LTDACBM027NBOG":("large_time_deposits_bn",1),"WRMFNS":("retail_mmf_h6_bn",1)}
+# Moved to issuing sources 27 Sep 2026: RRPONTSYD -> nyfed_rrp; WSHOBL -> nyfed_soma; ABCOMP, FINCP, COMPOUT -> fed_cp;
+# LTDACBM027NBOG -> fed_h8. Same series keys, so the vintage rows in data/series.tsv stay continuous.
+FRED={"WRESBAL":("reserve_balances_bn",1e-3),"WLRRAFOIAL":("foreign_official_rrp_bn",1e-3),"WRMFNS":("retail_mmf_h6_bn",1)}
 def pull_fred():
     out=[]
     for fid,(key,sc) in FRED.items():
@@ -82,6 +88,66 @@ def pull_fred():
         rows=[l.split(",") for l in t.strip().split("\n")[1:]]; pairs=[(d,round(float(v)*sc,1)) for d,v in rows if v not in(".","")]
         hist(key,pairs); a,v=pairs[-1]; out.append((NOW,key,a,v,"$bn",f"FRED {fid} (mirror of Fed release)",""))
     return out
+# Fed Board Data Download Program: preformatted CSV packages, each with a fixed id read from the release's
+# Choose.aspx page (27 Sep 2026). Checked on switching: the CP weekly SA package gives FRED's ABCOMP, FINCP and
+# COMPOUT exactly (488.4 / 623.0 / 1,441.2 on 2026-08-19); H.8 B1072NCBDM matches LTDACBM027NBOG in 640 of 643
+# months (the last three differ by <=1.5, H.8 revisions).
+FEDUA={"User-Agent":"Mozilla/5.0 (compatible; market-plumbing research)","Accept-Encoding":"identity"}
+DDP="https://www.federalreserve.gov/datadownload/Output.aspx?rel={rel}&series={sid}&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package"
+def _ddp(rel,sid):
+    t=urllib.request.urlopen(urllib.request.Request(DDP.format(rel=rel,sid=sid),headers=FEDUA),timeout=120,context=CTX).read().decode("utf-8-sig")
+    rows=list(csv.reader(io.StringIO(t))); hdr={r[0].strip():r[1:] for r in rows[:6] if r}
+    ids=[x.strip() for x in hdr["Unique Identifier:"]]; mult=[float(x) for x in hdr["Multiplier:"]]
+    return ids,mult,[r for r in rows if r and r[0][:4].isdigit()]
+def _ddp_rows(rel,sid,wanted,label,note,monthly=False):
+    ids,mult,data=_ddp(rel,sid); out=[]
+    for uid,key in wanted.items():
+        i=ids.index(uid)
+        pairs=[((d+"-01") if monthly else d,round(float(r[i+1])*mult[i]/1e9,1)) for r in data for d in [r[0]] if r[i+1] not in("","ND","NA")]
+        hist(key,pairs); a,v=pairs[-1]; out.append((NOW,key,a,v,"$bn",f"Fed Board {label}, DDP package {sid}, series {uid}",note))
+    return out
+def pull_fed_cp():
+    return _ddp_rows("CP","faf3b103a688c3c574d7e243d84decf4",{"CP/OUTST/DTBSPCKA.WW":"abcp_outstanding_bn","CP/OUTST/DTBSPCKF.WW":"financial_cp_bn",
+        "CP/OUTST/DTBSPCK.WW":"cp_total_bn"},"CP release, weekly outstandings, SA","weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT")
+def pull_fed_h8():
+    # The two weekly lines that would show a mass drawdown on committed lines first (CALENDAR 9 Oct; RV1). Item 1030's
+    # 2025 change contains H.8 reclassifications (C-064): read week-on-week moves against the H.8 notes, not raw.
+    out=_ddp_rows("H8","17951c643555bee48d63bb6957a4a92e",{"H8/H8/B1023NCBA":"h8_ci_loans_weekly_bn","H8/H8/B1030NCBA":"h8_ndfi_loans_weekly_bn"},
+        "H.8, all commercial banks, SA, weekly","weekly, Wednesday level; C&I and loans to nondepository financial institutions")
+    return out+_ddp_rows("H8","b89440cb2b2390a07f094fdeeed0d3cb",{"H8/H8/B1072NCBDM":"large_time_deposits_bn"},
+        "H.8, all commercial banks, NSA, monthly","monthly; replaces FRED LTDACBM027NBOG",monthly=True)
+# New York Fed Markets API (27 Sep 2026). Reverse repo = the ON RRP facility's fixed-rate overnight operations, Treasury
+# collateral accepted, summed by operation date. That is FRED RRPONTSYD's definition: it leaves out the full-allotment
+# operations that run alongside since 2025 and the 2013-15 multiple-price test operations (checked against FRED's history,
+# e.g. 131.9 on 2015-05-19, 1.25 on 2026-08-11). SOMA bills = the weekly summary's bills (FRED WSHOBL).
+NYF="https://markets.newyorkfed.org/api/"
+def _nyf(path,t=120):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(NYF+path,headers=FEDUA),timeout=t,context=CTX).read())
+def pull_nyfed_rates():
+    today=datetime.date.today().isoformat(); out=[]
+    for rate in ("sofr","tgcr","bgcr"):
+        rr=sorted(_nyf(f"rates/secured/{rate}/search.json?startDate=2018-04-02&endDate={today}")["refRates"],key=lambda r:r["effectiveDate"])
+        fields=[("percentRate",f"{rate}_pct")]+([("percentPercentile1","sofr_p1_pct"),("percentPercentile99","sofr_p99_pct")] if rate=="sofr" else [])
+        for f,key in fields:
+            pairs=[(r["effectiveDate"],r[f]) for r in rr if r.get(f) is not None]; hist(key,pairs); a,v=pairs[-1]
+            out.append((NOW,key,a,v,"%",f"NY Fed Markets API rates/secured/{rate} {f}","daily reference rate"))
+        if rate=="sofr":
+            pairs=[(r["effectiveDate"],float(r["volumeInBillions"])) for r in rr if r.get("volumeInBillions") is not None]; hist("sofr_volume_bn",pairs); a,v=pairs[-1]
+            out.append((NOW,"sofr_volume_bn",a,v,"$bn","NY Fed Markets API rates/secured/sofr volumeInBillions","daily"))
+        time.sleep(0.3)
+    return out
+def pull_nyfed_rrp():
+    today=datetime.date.today().isoformat(); by={}
+    for o in _nyf(f"rp/results/search.json?startDate=2013-09-01&endDate={today}&operationTypes=Reverse%20Repo",300)["repo"]["operations"]:
+        if o.get("term")=="Overnight" and o.get("operationMethod")=="Fixed Rate":
+            amt=sum(float(x.get("amtAccepted") or 0) for x in o.get("details",[]) if x.get("securityType")=="Treasury")
+            by[o["operationDate"]]=by.get(o["operationDate"],0)+amt
+    pairs=[(d,round(v/1e9,1)) for d,v in sorted(by.items())]; hist("fed_on_rrp_bn",pairs); a,v=pairs[-1]
+    return [(NOW,"fed_on_rrp_bn",a,v,"$bn","NY Fed Markets API rp/results (ON RRP fixed-rate overnight operations, Treasury accepted, summed by date)","daily; replaces FRED RRPONTSYD")]
+def pull_nyfed_soma():
+    ss=sorted(_nyf("soma/summary.json")["soma"]["summary"],key=lambda r:r["asOfDate"])
+    pairs=[(r["asOfDate"],round(float(r["bills"])/1e9,1)) for r in ss if r.get("bills") not in(None,"")]; hist("fed_soma_tbills_bn",pairs); a,v=pairs[-1]
+    return [(NOW,"fed_soma_tbills_bn",a,v,"$bn","NY Fed Markets API soma/summary bills","weekly, Wednesday; replaces FRED WSHOBL")]
 # OFR Hedge Fund Monitor (Form PF aggregates, Qualifying Hedge Funds, quarterly; same API shape, different base path).
 # Added 2026-08-23 for D3 §8. "Cash collateral" per Form PF Q43 INCLUDES Treasuries and agencies — it is cash-LIKE, not cash.
 HF_STRATS=["CREDIT","EQUITY","EVENT","FOF","FUTURES","MACRO","MULTI","OTHER","RV"]
@@ -134,9 +200,11 @@ def pull_fia():
 # From the SPONSORED MEMBER's perspective: TOTAL_REPO = sponsored members borrowing cash (hedge funds);
 # TOTAL_REVERSE_REPO = sponsored members lending cash (money funds). Rolling ~5-year window, from Aug 2021.
 def pull_dtcc():
+    # DTCC moved the file when it redesigned its site (found 27 Sep 2026: the old www.dtcc.com/data/ path returns 404).
+    # The chart at www.dtcc.com/market-index-data/charts/membership loads it from cms-prod.dtcc.com; same columns.
     import csv as _csv, io as _io
     h=dict(UA); h["User-Agent"]="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-    t=urllib.request.urlopen(urllib.request.Request("https://www.dtcc.com/data/SponsoredVolume.csv",headers=h),timeout=60,context=CTX).read().decode("utf-8","ignore")
+    t=urllib.request.urlopen(urllib.request.Request("https://cms-prod.dtcc.com/data/SponsoredVolume.csv",headers=h),timeout=60,context=CTX).read().decode("utf-8","ignore")
     rows=[]
     for r in _csv.DictReader(_io.StringIO(t)):
         bd=(r.get("BUSINESS_DATE") or "").strip()
@@ -152,7 +220,7 @@ def pull_dtcc():
     out=[]
     for k,i,note in keys:
         hist(k,[(r[0],r[i]) for r in rows]); a=rows[-1][0]; v=rows[-1][i]
-        out.append((NOW,k,a,v,"$bn","DTCC Sponsored Membership Volume CSV (dtcc.com/data/SponsoredVolume.csv)",f"daily; {note}"))
+        out.append((NOW,k,a,v,"$bn","DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)",f"daily; {note}"))
     return out
 # FINRA margin statistics (added 2026-08-24). ONE workbook at a fixed URL that FINRA OVERWRITES each month —
 # there is no vintage archive at source, so every run also saves a dated copy under data/vintages/finra/.
@@ -226,7 +294,8 @@ def pull_nyfed_pd():
         out.append((NOW,key,a,v,"$bn","NY Fed Primary Dealer statistics API (markets.newyorkfed.org/api/pd), SBN2024 break, UST ex-TIPS","weekly Wed; gross outstanding; PDs only; venue split per 2026-08-30-D10 doc"))
     return out
 
-SOURCES={"nyfed_pd":pull_nyfed_pd,"fiscaldata":pull_fiscaldata,"ofr":pull_ofr,"ofr_hf":pull_ofr_hf,"fia":pull_fia,"dtcc":pull_dtcc,"finra":pull_finra,"llama":pull_llama,"fdic":pull_fdic,"sec":pull_sec,"fred":pull_fred}
+SOURCES={"nyfed_pd":pull_nyfed_pd,"fiscaldata":pull_fiscaldata,"ofr":pull_ofr,"ofr_hf":pull_ofr_hf,"fia":pull_fia,"dtcc":pull_dtcc,"finra":pull_finra,"llama":pull_llama,"fdic":pull_fdic,"sec":pull_sec,
+         "fed_cp":pull_fed_cp,"fed_h8":pull_fed_h8,"nyfed_rates":pull_nyfed_rates,"nyfed_rrp":pull_nyfed_rrp,"nyfed_soma":pull_nyfed_soma,"fred":pull_fred}
 if __name__=="__main__":
     if "--list" in sys.argv: print("\n".join(f"  {k}" for k in SOURCES)); sys.exit()
     only=sys.argv[sys.argv.index("--only")+1].split(",") if "--only" in sys.argv else list(SOURCES)

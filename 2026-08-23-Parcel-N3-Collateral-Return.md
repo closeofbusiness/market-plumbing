@@ -60,7 +60,8 @@ SLATE (29 Mar 2027).
 
 ### 2.2 FICC sponsored repo, daily — the middle of the D8/D10 pipe
 
-DTCC publishes a daily CSV (`dtcc.com/data/SponsoredVolume.csv`, behind `dtcc.com/charts/membership`),
+DTCC publishes a daily CSV (`dtcc.com/data/SponsoredVolume.csv`, behind `dtcc.com/charts/membership`; **moved in DTCC's
+2026 site redesign to `cms-prod.dtcc.com/data/SponsoredVolume.csv`, found 27 Sep**),
 rolling five years from 16 Aug 2021, **from the sponsored member's perspective**: "repo" = sponsored members
 borrowing cash (the hedge-fund side), "reverse repo" = sponsored members lending cash (the money-fund side).
 Pulled 23 Aug; `bin/pull_series.py --only dtcc`; `data/history/ficc_sponsored_*.csv`.
