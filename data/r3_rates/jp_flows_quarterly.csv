@@ -1,0 +1,14 @@
+sector,codes,202401,202402,202403,202404,202501,202502,202503,202504,202601,202602
+Bank of Japan,110A,-1.36,-0.58,-1.0,-3.01,-4.46,-8.05,-9.83,-10.67,-12.03,-11.96
+Depository corporations (banks),120A,0.25,5.67,4.19,6.49,3.01,3.41,6.95,6.23,5.45,13.03
+Insurance,131A,-0.75,0.07,0.74,0.46,-0.37,-0.23,-1.44,-1.18,-3.17,0.09
+Pension funds (private),140A,0.97,0.18,0.56,0.54,0.35,0.33,0.03,0.27,1.13,0.46
+Public pensions (inside general government),424A,6.01,3.86,-1.57,2.97,-0.4,1.1,5.96,5.95,2.39,6.07
+Securities investment trusts,160A,0.69,-0.34,-0.23,0.66,-0.47,0.24,0.1,0.22,0.06,1.46
+Other financial intermediaries (nonbanks; public financial institutions; dealers),150A,2.68,0.95,1.84,-0.55,0.51,-0.99,2.45,-0.6,1.8,-4.5
+Financial auxiliaries and public captive financial institutions,300A+210A,0.45,0.38,0.35,0.1,-0.02,0.1,0.09,0.02,0.26,0.1
+Nonfinancial corporations,410A,-0.74,0.64,0.4,0.17,-0.03,1.0,0.53,0.32,0.24,0.52
+General government excluding public pensions,420A-424A,0.23,-0.07,-0.08,0.06,0.29,1.52,0.05,0.16,-0.03,-0.04
+Households and nonprofits,430A+440A,-0.03,0.54,0.76,0.58,0.85,1.25,0.96,0.84,1.95,2.0
+Overseas,500A,0.63,-3.84,3.16,-0.05,6.78,7.01,-0.8,3.63,7.58,-0.41
+Net issuance (issuers' liabilities),100L+400L,9.04,7.46,9.11,8.42,6.04,6.69,5.05,5.2,5.63,6.83

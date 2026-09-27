@@ -1,0 +1,13 @@
+holder,codes,2023-Q4,2026-Q2,change_eur_bn
+Eurosystem (national central banks and the ECB),S121,3419.6,2668.8,-750.9
+Banks (deposit-taking corporations),S122,1528.7,2253.8,725.1
+Money market funds,S123,53.6,99.9,46.3
+Investment funds (non-MMF),S124,952.2,1192.3,240.1
+"Other financial institutions, excluding investment funds",S12P-S124,61.8,141.3,79.5
+Insurance corporations,S128,1318.7,1448.9,130.2
+Pension funds,S129,445.1,548.4,103.3
+General government,S13,477.8,595.0,117.2
+Nonfinancial corporations,S11,95.6,125.2,29.7
+Households and nonprofits,S1M,383.3,482.7,99.4
+Rest of the world (total outstanding minus all euro-area holders),CSEC-S1,2248.3,3078.2,829.9
+"Total outstanding (CSEC, nominal value, all currencies)",CSEC,10984.7,12634.5,1649.8

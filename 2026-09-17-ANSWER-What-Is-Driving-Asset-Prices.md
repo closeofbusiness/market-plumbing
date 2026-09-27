@@ -187,8 +187,12 @@ they fell. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Tre
 the public absorbed about 36% more rate risk at constant yields over the same months, though per face dollar the debt did not get
 longer. Treasury issuance supplied most of it; the Fed's share is 4% to about 13%, depending on the measure. Which buyers took it,
 and whether it raised term premia, is not measured. See
-[`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md). JGBs and
-euro-area bonds come next (R3).
+[`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md).
+**JGBs and euro-area bonds, first pass (R3, 27 Sep; not yet reviewed from outside).** From end-2023 to 24 Sep 2026 the 10-year JGB rose
+243bp and the Bund 156bp. Japan's rise was split between real yields and inflation compensation; Germany's was almost all
+real, on a survey-based measure. The term premium is not measured for either. In both markets the central bank shrank its
+holdings while banks, pension funds and foreign investors absorbed the supply. See
+[`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 

@@ -25,3 +25,6 @@ data/vintages/r2_treasury/
 
 # N2c refresh input: three tables from the Fed Board Z.1 release of 11 Sep 2026, fetched by bin/build_closure_2026Q2.py
 data/vintages/z1_20260911/
+
+# R3 inputs (MoF, JSDA, BoJ, ECB and Bundesbank files): fetched by bin/r3_jgb_egb.py, not redistributed
+data/vintages/r3/
