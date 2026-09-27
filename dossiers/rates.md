@@ -6,7 +6,7 @@ The same three questions apply. First the price: carry, roll, the expected path 
 
 ## Status
 
-**Open.** Equity work is ahead of this. Do not treat Treasury holdings or Fed purchases as a yield result.
+**US 10-year: first pass done (R1, 27 Sep 2026). JGBs and euro-area bonds: open.** The price side is decomposed in [`2026-09-27-R1-Treasury-10y-Decomposition.md`](../2026-09-27-R1-Treasury-10y-Decomposition.md). Real yields and the long end did the work. The split between term premium and expected rates is not measurable on free data, because two models and a survey disagree (HYPOTHESIS). Who bought, against what duration supply, is next (R2). Do not treat Treasury holdings or Fed purchases as a yield result.
 
 ## Evidence
 
@@ -18,7 +18,7 @@ What exists is measurement, not the decomposition:
 - A synthesis of who buys Treasuries exists: [`2026-09-11-Who-Buys-Treasuries-Synthesis.md`](../2026-09-11-Who-Buys-Treasuries-Synthesis.md). Bill supply versus shadow money is an earlier test ([`2026-08-22-D1-Bill-Supply-vs-Shadow-Money.md`](../2026-08-22-D1-Bill-Supply-vs-Shadow-Money.md)): bill supply does not, on that test, shrink private shadow money. That is not a term-premium result.
 - Dealer and sponsored-repo stocks are large and are collateral and clearing facts. FICC sponsored total was about **$2.3trn** on 20 August 2026, down from the year-end 2025 reading cited on the calendar. Whether that is migration out of sponsored clearing is an open calendar question, not a curve attribution.
 
-**Not in the source, stated in the programme brief:** a net-supply identity for JGBs and for euro-area government bonds; a carry/roll/term-premium split for any of the three markets; a cross-currency basis regime used as a cause of yields.
+**Not in the source, stated in the programme brief:** a net-supply identity for JGBs and for euro-area government bonds; a carry/roll/term-premium split for JGBs and euro-area bonds (the US 10-year now has one, R1); a cross-currency basis regime used as a cause of yields.
 
 ## What would change the conclusion
 
