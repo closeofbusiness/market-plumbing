@@ -765,6 +765,52 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-128 · R3's "banks, pension funds and foreign investors absorbed the supply" in both markets, and the BoJ's "sales"
+
+**Mine, in R3 (27 Sep), carried into the ANSWER's rates paragraph, the rates dossier and CLAUDE.md. Killed 28 Sep by the R3R review (Grok in Cursor); the supervisor checked each point against R3's own tables.**
+
+- **Killed by:** `_research/2026-09-28-R3R-JGB-EGB-Review-Return.md` (targets 3 and 9); `data/r3_rates/`.
+- **What was wrong.**
+  - **The common pattern was stated too broadly.** Euro-area pension funds took €103bn of €1,650bn of new supply, 6%; investment funds (+€240bn) and insurers (+€130bn) took more. In Japan overseas buying was flat in 2024 and began in 2025, and insurers were net sellers (−¥5.8trn).
+  - **The BoJ did not sell.** R3 said the BoJ's "sales accelerated". Its holdings fell because redemptions exceeded purchases; the Flow of Funds line is a net reduction.
+  - **The BoJ's Chart 8 is not an independent check.** R3 said the BoJ's own estimate "points the same way". The BoJ builds it from the same Flow of Funds, so it corroborates the arithmetic, not the data.
+- **Correct position.** Japan: banks and public pensions absorbed most of the BoJ's net reduction (+¥54.7trn and +¥32.3trn against −¥63.0trn), overseas investors from 2025. Euro area: banks and the rest of the world absorbed most of the Eurosystem's (+€725bn and +€830bn against −€751bn), with investment funds and insurers next. The GPIF's disclosures (about ¥31trn of inflows to domestic bonds) are the independent check on public pensions.
+- **Why it matters.** A three-market "pattern" invites a single-cause story. The absorbers differ by market.
+- **Still standing at:** nowhere. R3, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place.
+
+---
+
+## C-127 · R3's "There is no free market breakeven for Bunds" and "Germany's rise was almost all real"; the ECB's term premium "fairly stable since" late 2023
+
+**Mine, in R3 (27 Sep), carried into the ANSWER, the rates dossier and CLAUDE.md. Killed 28 Sep by the R3R review; the supervisor read the Finanzagentur's series and the ECB's Economic Bulletin 6/2026 at source.**
+
+- **Killed by:** `_research/2026-09-28-R3R-JGB-EGB-Review-Return.md` (targets 6 and 8); the Deutsche Finanzagentur's page for inflation-linked Federal securities (daily real yields and breakevens for each issue, last twelve months); ECB Economic Bulletin 6/2026, "Financial market developments".
+- **What was wrong.**
+  - **A free market breakeven exists.** R3 said there was none and used the Bundesbank's survey-based expected real rate instead. That rate subtracts Consensus inflation forecasts, so it cannot see market inflation compensation or its risk premium.
+  - **2026 was not almost all real.** From 30 Dec 2025 to 24 Sep 2026 the breakevens of the 6.6-year and 19.6-year linkers rose 49bp and 34bp, the 3.6-year's 70bp, while the 10-year Bund rose 68bp. Inflation compensation did about half or more of 2026's rise; the survey measure put it near nil. The ECB has one-year-forward inflation swaps up about 15bp, to 2.3%, over June to September 2026.
+  - **The ECB quote was stale.** R3 said the ECB's 10-year term-premium estimate "has been fairly stable since" late 2023, quoting a speech whose data end on 10 Jun 2025. The ECB now says the rise in long-term yields since late 2024 was driven largely by higher real term premia.
+- **Correct position.** The Bund's rise over the window was mostly real, but not almost all. In 2026 market breakevens did about half or more. For 2024–25 no market breakeven was obtained; surveys, the ECB's decomposition of 2025 and the steady five-year-forward swap point to real rates (HYPOTHESIS). On the ECB's current reading, higher real term premia drove the rise since late 2024. Germany stopped issuing linkers in 2024, so their breakevens carry liquidity premia.
+- **Why it matters.** A survey-based measure was used as if it were a market measure, and it failed exactly when inflation compensation moved.
+- **Still standing at:** nowhere. R3, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place. `Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md` quotes the dead wording as an attack target and is allow-listed.
+
+---
+
+## C-126 · R3's "inflation compensation did about two-fifths of Japan's rise", on a breakeven that "follows the Ministry of Finance's own method"
+
+**Mine, in R3 (27 Sep). Killed 28 Sep by the R3R review; the supervisor re-derived the issue-by-issue breakevens with R3's own code.**
+
+- **Killed by:** `_research/2026-09-28-R3R-JGB-EGB-Review-Return.md` (target 2); `data/r3_rates/jp_breakeven_issues.csv` and `jp_changes.csv` as re-run.
+- **What was wrong.**
+  - **The change depends on the issue.** R3 followed the newest inflation-indexed JGB as the benchmark changed (#28 to #31), giving +97bp. Holding each period's starting issue and chaining the periods gives +82bp; holding #28 throughout gives +93bp. On a single day the issues disagree by up to 19bp: on 30 Jun 2026, #29 gives 1.80% and #31 1.99%.
+  - **The first half of 2026 was mostly a switch.** R3's +22bp for 2026 to 30 Jun is about 13bp of switching from #30 to #31; holding #30, the breakeven rose 9bp.
+  - **The method is close to the Ministry's, not the same.** The Ministry sets the JGBi against a 10-year coupon JGB of the same maturity; R3 used the constant-maturity curve at that maturity. They differ by 1 to 4bp.
+  - **The grade overstated it.** A derived, method-sensitive split was graded MEASURED.
+- **Correct position.** Inflation compensation did between a third and two-fifths of Japan's 243bp rise: 82 to 97bp, BOUNDED by the issue choice. Real yields did 145 to 161bp. The breakeven's level matches the Ministry's own chart within 3bp (R3R's same-day check, 17 Sep 2026).
+- **Why it matters.** A tiny market (about ¥10trn of JGBi outstanding) makes the benchmark choice a material assumption, and a point figure hid it.
+- **Still standing at:** nowhere. R3 was corrected in place; the script now writes both measures.
+
+---
+
 ## C-125 · R1's survey check: "February 2024 to February 2026 is the only span the survey covers", "the survey disputes even that" and "three measures give three answers"
 
 **Mine, in R1 (27 Sep), carried the same day into the ANSWER's rates paragraph, CHARTER, the rates dossier and CLAUDE.md. Killed 27 Sep by the R12R review (Grok in Cursor). Every figure below was re-derived by the supervisor from the Philadelphia Fed's deadline file and SPF workbook, the ACM workbook and the Kim-Wright file, and `bin/r1_treasury_decomposition.py` now produces them (`data/r1_rates/survey_check.csv`, `survey_changes.csv`).**
@@ -1595,6 +1641,7 @@ are suppressed per-id in the `allow` block. Anything firing outside those files 
 propagation**, which is the only thing this check exists to catch.
 
 ```allow
+C-127	Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md	# the review brief quotes R3's claim as an attack target
 C-089	direct-money-creation.md	# dossiers/ -- states the correct position and names the dead claim to kill it. NB allow entries match the BASENAME only (check.sh: base=${f##*/}); a path-style entry never matches, silently.
 C-116	CORRECTIONS.md	# names the dead phrasing to kill it
 C-117	CORRECTIONS.md	# names the dead phrasing to kill it
@@ -2084,4 +2131,14 @@ C-125	real yields and the long end
 C-125	survey disagree, over 2024.26 even in sign
 C-125	position returned about \+3\.3%
 C-122	public rose 26%, so .{0,4}duration supply grew
+C-126	did about two-fifths of Japan
+C-126	follows the Ministry of Finance.s own method
+C-127	no free market breakeven for Bunds
+C-127	almost all of it real
+C-127	Germany.s was almost all
+C-127	Bund \+156bp, almost all real
+C-127	fairly stable since
+C-128	Its sales accelerated
+C-128	banks, pension funds and foreign investors absorbed the supply
+C-128	face-value estimate for June 2024 to March 2026 points the same way
 ```

@@ -1,28 +1,42 @@
 # R3 — Japanese and euro-area government bonds: what moved the 10-year yields, and who bought (27 Sep 2026)
 
-**Status: FINDING, first pass. Supervisor, 27 Sep. Not yet reviewed from outside.** R1 and R2 asked two questions of US
+**Status: FINDING, first pass, corrected after outside review. Supervisor, 27–28 Sep.** R1 and R2 asked two questions of US
 Treasuries: what moved the 10-year yield (the charter's question 1, prices), and who bought against what net supply
 (question 2, money). This note asks both of Japanese government bonds (JGBs) and of euro-area government bonds, with the
-German Bund as the benchmark. Every major correction in this programme has come from outside review; R3 has had none yet.
+German Bund as the benchmark.
+- **Corrected 28 Sep (C-126 to C-128)** after Grok's adversarial review (R3R). The levels, both buyer tables and the holder
+  returns survived. Three things did not:
+  - Japan's breakeven share is a range, not two-fifths.
+  - Germany's rise was not almost all real: market breakevens exist, and in 2026 they did about half or more.
+  - The common pattern was stated too broadly.
+  The adjudication is at the end of [`_research/2026-09-28-R3R-JGB-EGB-Review-Return.md`](_research/2026-09-28-R3R-JGB-EGB-Review-Return.md).
 - **Script:** [`bin/r3_jgb_egb.py`](bin/r3_jgb_egb.py). **Tables:** [`data/r3_rates/`](data/r3_rates/).
 - **Inputs,** fetched by the script and not redistributed:
   - Japan: the Ministry of Finance's daily JGB yields and its auction history; the JSDA's daily reference prices; the Bank of
     Japan's Flow of Funds, through its data API.
-  - Euro area: the Bundesbank's daily Bund yields and its expected real rate; the ECB's yield curves, convergence yields,
-    Survey of Professional Forecasters, holdings by sector (SHSS) and debt outstanding (CSEC); the ECB's asset purchase
-    programme histories.
-- **Dates:** prices run from end-2023 to 24 Sep 2026, the latest date every price source covers. Holdings run to 2026Q2.
+  - Euro area: the Bundesbank's daily Bund yields and its expected real rate; the Deutsche Finanzagentur's daily linker
+    breakevens (last twelve months only); the ECB's yield curves, convergence yields, Survey of Professional Forecasters,
+    holdings by sector (SHSS) and debt outstanding (CSEC); the ECB's asset purchase programme histories.
+- **Dates:** prices run from end-2023 to 24 Sep 2026, pinned so that re-runs reproduce. Holdings run to 2026Q2.
 
 ## The answer
 
-1. **Both 10-year yields rose more than the US 10-year did.** The US 10-year rose 113bp to 18 Sep (R1).
-   - **Japan: 0.65% to 3.07%, +243bp. Real yields rose about 145bp and breakeven inflation about 97bp.** So inflation
-     compensation did about two-fifths of Japan's rise. In the US it did a sixth. *MEASURED; the breakeven is derived (method
-     below).*
-   - **Germany: 2.06% to 3.62%, +156bp, almost all of it real.** There is no free market breakeven for Bunds. On the
-     Bundesbank's survey-based measure, the expected real rate rose 135bp and the implied survey inflation expectation did
-     not move. The ECB's long-term inflation survey fell 10bp. The ECB's own reading of 2025 agrees: almost all of the rise
-     was in the real component (ECB blog, 16 Jan 2026). *MEASURED, on a survey-based split.*
+1. **Both 10-year yields rose more than the US 10-year did,** though to different end dates. The US 10-year rose 113bp to
+   18 Sep (R1), and about 129bp to 25 Sep (R3R).
+   - **Japan: 0.65% to 3.07%, +243bp.**
+     - Breakeven inflation rose 82 to 97bp, depending on how switches between inflation-indexed issues are handled. Real
+       yields took the rest, 145 to 161bp.
+     - So inflation compensation did between a third and two-fifths of Japan's rise. In the US it did a sixth.
+     - *BOUNDED*: 82bp chains fixed issues; 97bp follows the newest issue. The breakeven's level matches the Ministry of
+       Finance's own chart within 3bp (R3R, 17 Sep 2026).
+   - **Germany: 2.06% to 3.62%, +156bp, mostly real, but not almost all.**
+     - Market breakevens exist only for the last twelve months: the Deutsche Finanzagentur publishes a daily series for each
+       inflation-linked Bund. In 2026 the breakevens of the 6.6-year and 19.6-year linkers rose 49bp and 34bp (the 3.6-year's
+       rose 70bp), against the Bund's +68bp. So inflation compensation did about half or more of this year's rise.
+     - The Bundesbank's survey-based measure missed that. It subtracts Consensus inflation forecasts, and shows the expected
+       real rate up 135bp over the window with survey inflation flat.
+     - For 2024 and 2025 no market breakeven was obtained. Surveys and the ECB's decomposition of 2025 point to real rates.
+     - *HYPOTHESIS* for the full-window split; *MEASURED* for the 2026 linker breakevens as published.
    - The euro-area AAA curve rose 149bp at ten years, close to the Bund.
 2. **The front ends rose too, and in the latest quarter they led.**
    - Japan's 2-year rose 186bp, about three-quarters of the 10-year's rise, as the BoJ raised rates.
@@ -32,16 +46,19 @@ German Bund as the benchmark. Every major correction in this programme has come 
 3. **Italy's spread over Germany narrowed 92bp, to 80bp. France's widened 27bp, to 82bp.** These are monthly averages,
    December 2023 against August 2026. France now pays about what Italy pays. *MEASURED.*
 4. **Whether the rises were term premium or expected rates is not measured here.** No free, maintained term-premium series
-   exists for JGBs or Bunds; both scouting passes looked. Published estimates:
+   exists for JGBs or Bunds. Published readings:
    - **Japan.** The BoJ estimates that since summer 2024 expected short rates and the term premium have contributed "roughly
      the same degree" to the 10-year's rise. It puts the effect of its purchase cuts at about 25bp, of which about 10bp
      comes from its shrinking holdings (Bank of Japan Review 2026-E-10, August 2026).
-   - **Euro area.** The ECB's 10-year term-premium estimate rose through the first half of 2023, fell back, and "has been
-     fairly stable since" (Lane, 11 Jun 2025).
-   - *HYPOTHESIS for any split.* Both estimates come from models, which is the lesson of C-102 and C-125.
+   - **Euro area.** The ECB now says the rise in long-term yields since late 2024 was "driven largely by higher real term
+     premia" (Economic Bulletin 6/2026). Its model estimate had been stable from late 2023 to June 2025 (Lane, 11 Jun 2025),
+     so that earlier reading does not cover this window's largest moves. Over June to September 2026 the ECB puts
+     one-year-forward inflation swaps up about 15bp, to 2.3%, with the five-year-forward rate steady near 2.2%.
+   - *HYPOTHESIS for any split.* Both are model constructs, which is the lesson of C-102 and C-125.
 5. **Holders lost against cash.** A constant-maturity 10-year position, fully revalued and compounded month by month, returned
-   −13.9% in Japan against +1.6% for the 1-year. In Germany it returned −4.7% against +6.9%. *MEASURED; derived from the
-   yield curves by the method below.*
+   −13.9% in Japan against +1.6% for the 1-year. In Germany it returned −4.7% against +6.9%. The Japanese figure sits in line
+   with the NOMURA-BPI 7–11 year index on the sub-periods R3R could check. *MEASURED; derived from the yield curves by the
+   method below.*
 6. **Who bought JGBs as the BoJ stepped back.** Flow of Funds transactions, 2024Q1–2026Q2, in trillion yen:
 
    | Buyer | Net purchases |
@@ -62,11 +79,13 @@ German Bund as the benchmark. Every major correction in this programme has come 
 
    - Transactions exclude price changes, like the Z.1 flows in R2. The rows partition the holders, and the script checks
      that every quarter. *MEASURED.*
-   - The BoJ's share of JGBs, at market value, fell from 53.8% to 46.7%. Its sales accelerated: ¥6.0trn in 2024,
-     ¥33.0trn in 2025, ¥24.0trn in the first half of 2026.
+   - **The BoJ did not sell outright.** Its holdings fell because redemptions exceeded purchases. The net reduction grew:
+     ¥6.0trn in 2024, ¥33.0trn in 2025, ¥24.0trn in the first half of 2026. Its share of JGBs, at market value, fell from
+     53.8% to 46.7%.
    - Overseas buying began in 2025 (¥16.6trn); in 2024 it was flat. Insurers turned net sellers in 2025.
-   - The BoJ's own face-value estimate for June 2024 to March 2026 points the same way: its holdings −49, banks +36,
-     overseas +27, pensions +20, households +6, insurers −5 (trillion yen; BoJ Review 2026-E-10, Chart 8).
+   - The GPIF's disclosures imply about ¥31trn of inflows to domestic bonds over the window, against the public pensions'
+     +32.3 (R3R). The BoJ's own investor estimate (BoJ Review 2026-E-10, Chart 8) is built from the same Flow of Funds, so it
+     checks the arithmetic, not the data.
 7. **Who absorbed euro-area government debt.** Holdings at face value, 20 euro-area countries, 2023Q4 to 2026Q2, in € billions:
 
    | Holder | 2023Q4 | 2026Q2 | Change |
@@ -86,14 +105,22 @@ German Bund as the benchmark. Every major correction in this programme has come 
 
    - The rest of the world is total outstanding minus all euro-area holders. The euro-area rows partition those holders,
      and the script checks that. *MEASURED; stocks at face value, whose changes are net purchases at face value.*
+   - **The rest of the world's level is uncertain by about €0.28trn.** The ECB's euro-area total exceeds the sum of the
+     20 countries by that much at both dates, and nothing found explains it. Its change moves by under €10bn.
+   - Bulgaria's residents left the rest of the world when Bulgaria joined in 2026. That understates the rest of the world's
+     rise by roughly €10–17bn (R3R's estimate, not re-derived).
    - The Eurosystem's share fell from 31.1% to 21.1%. Its own programme holdings (PSPP and PEPP public-sector, at amortised
      cost) fell from €4,017bn to €2,983bn over the same months. That total also includes supranational bonds.
    - The ECB notes that the foreign segment increasingly reflects hedge funds, and that its data cannot split it (ECB
      Financial Stability Review, May 2026, box "Along the curve"). That is the same pattern C-124 found in US Treasuries.
-8. **The common pattern, and its limit.** In all three markets the central bank shrank its holdings while governments issued.
-   Banks absorbed much of it in Japan and the euro area; foreign investors did in the euro area and, from 2025, in Japan;
-   Japan's public pensions bought heavily. This is timing, not cause. The charter forbids claiming that flows or official
-   selling caused a yield move, and item 4 shows the premium split is not measured. *HYPOTHESIS.*
+8. **Who absorbed the supply differs by market.**
+   - **Japan:** banks and public pensions took most of the BoJ's net reduction. Overseas investors joined from 2025, and
+     insurers sold.
+   - **Euro area:** banks and the rest of the world took most of the Eurosystem's, with investment funds and insurers next.
+     Pension funds took 6%.
+   - In both, the central bank shrank while governments issued. That the shift in holders moved yields is not tested: the
+     charter forbids claiming that flows or official selling caused a yield move, and item 4 shows the premium split is not
+     measured. *HYPOTHESIS.*
 
 ## The price tables
 
@@ -107,6 +134,9 @@ German Bund as the benchmark. Every major correction in this programme has come 
 | 2026-06-30 | 2.690 | 1.382 | 3.873 | #31 | 0.66 | 1.99 | 0.70 |
 | 2026-09-24 | 3.073 | 1.912 | 4.115 | #31 | 0.80 | 2.20 | 0.88 |
 
+On any one date the outstanding JGBi issues disagree by up to 19bp: on 30 Jun 2026, #29 gives 1.80% and #31 gives 1.99%.
+Every issue at every key date is in [`data/r3_rates/jp_breakeven_issues.csv`](data/r3_rates/jp_breakeven_issues.csv).
+
 **Germany and the euro area** (percent):
 
 | date | Bund 10-year | Bund 2-year | AAA 10-year | expected real 10-year (survey) | implied survey inflation | Italy 10-year | France 10-year |
@@ -119,54 +149,73 @@ German Bund as the benchmark. Every major correction in this programme has come 
 
 The Italian and French yields are monthly averages for the month shown; the latest is August 2026.
 
+**German linker breakevens and real yields** (percent, Deutsche Finanzagentur; the series start in late September 2025):
+
+| linker (remaining maturity) | breakeven 30 Dec 2025 | 30 Jun 2026 | 24 Sep 2026 | real yield 30 Dec 2025 | 24 Sep 2026 |
+|---|---:|---:|---:|---:|---:|
+| DE0001030559 (3.6 years) | 1.64 | 1.71 | 2.34 | 0.75 | 1.03 |
+| DE0001030583 (6.6 years) | 1.74 | 1.83 | 2.22 | 0.90 | 1.22 |
+| DE0001030575 (19.6 years) | 1.96 | 2.04 | 2.30 | 1.41 | 1.56 |
+
 **By period, in basis points:**
 
-| period | JGB 10y | JGB 2y | JGB breakeven | Bund 10y | Bund 2y | Bund expected real | Italy–Germany spread |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| 2024 | +46 | +55 | +20 | +37 | −33 | +16 | −58 |
-| 2025 | +95 | +57 | +35 | +51 | +9 | +66 | −40 |
-| 2026 to 30 Jun | +62 | +21 | +22 | −1 | +39 | +14 | +3 |
-| 30 Jun to 24 Sep | +38 | +53 | +21 | +69 | +80 | +40 | +3 |
-| end-2023 to 24 Sep 2026 | **+243** | **+186** | **+97** | **+156** | **+95** | **+135** | **−92** |
+| period | JGB 10y | JGB 2y | JGB breakeven, newest issue | JGB breakeven, fixed issues | Bund 10y | Bund 2y | Bund expected real (survey) | Italy–Germany spread |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2024 | +46 | +55 | +20 | +23 | +37 | −33 | +16 | −58 |
+| 2025 | +95 | +57 | +35 | +29 | +51 | +9 | +66 | −40 |
+| 2026 to 30 Jun | +62 | +21 | +22 | +9 | −1 | +39 | +14 | +3 |
+| 30 Jun to 24 Sep | +38 | +53 | +21 | +21 | +69 | +80 | +40 | +3 |
+| end-2023 to 24 Sep 2026 | **+243** | **+186** | **+97** | **+82** | **+156** | **+95** | **+135** | **−92** |
+
+In the first half of 2026 most of the newest-issue breakeven's +22bp is the switch from issue #30 to #31; holding #30, it
+rose 9bp.
 
 **Method notes:**
-- **Japan's breakeven** follows the Ministry of Finance's own method: the newest 10-year inflation-indexed JGB against the
-  nominal curve at the same remaining maturity. The real yield is computed here, semiannual compound, from the JSDA's
-  reference price and the coupon in the Ministry's auction history. The deflation floor on principal is ignored. The
-  implied real 10-year subtracts that breakeven from the nominal 10-year, a maturity gap of about half a year.
-  - **Checked:** the Ministry's chart for 17 Sep 2026 shows a JGBi yield of 0.836%, a nominal yield at matched maturity of
-    2.925% and a breakeven of 2.089%. The same issue computed here gives 0.80% and 2.20% a week later, on 24 Sep, after
-    nominal yields rose. A same-day check waits on the JSDA file for 17 Sep, which the JSDA's rate limit has blocked so far.
-- **Germany's real yield** is the Bundesbank's expected real rate: the average 10-year Bund yield minus Consensus inflation
-  forecasts, monthly. The implied survey inflation uses the month's average Svensson 10-year as a stand-in for that
-  average yield.
+- **Japan's breakeven** is close to the Ministry of Finance's method, which sets the newest 10-year inflation-indexed JGB
+  against a 10-year coupon JGB of the same maturity. The nominal leg here is the Ministry's constant-maturity curve at that
+  maturity instead; the two differ by 1 to 4bp (R3R).
+  - The real yield is computed here, semiannual compound, from the JSDA's reference price and the coupon in the Ministry's
+    auction history. The deflation floor on principal is ignored; R3R's rough estimate of its value is under 1bp at these
+    yields.
+  - "Newest issue" follows the benchmark as it changes. "Fixed issues" holds, for each period between key dates, the issue
+    that was newest at the start, and chains the periods.
+  - The implied real 10-year subtracts the newest-issue breakeven from the nominal 10-year, a maturity gap of about half a
+    year.
+  - **Checked:** on 17 Sep 2026 R3R found this method within 3bp of the Ministry's chart (0.836% real, 2.089% breakeven).
+    The supervisor could not re-fetch that day's JSDA file, because of the JSDA's rate limit.
+- **Germany's survey real yield** is the Bundesbank's expected real rate: the average 10-year Bund yield minus Consensus
+  inflation forecasts, monthly. The implied survey inflation uses the month's average Svensson 10-year as a stand-in for
+  that average yield. It cannot see market inflation compensation or its risk premium, which is why it missed 2026.
+- **German linkers** are the Finanzagentur's published breakevens and real yields. Germany stopped issuing linkers in 2024,
+  so their breakevens carry liquidity premia. Their window rolls: the cached page is what reproduces the table.
 - **Holder's return:** buy a new 10-year bond at each month's start at that day's yield, price it at the month's end on the
   day's curve, and add the coupon accrued; compound the months. The cash leg is the 1-year yield. The Japanese and German
   curves are treated as par curves, an approximation of a few basis points.
 
 ## What this does and does not establish
 
-- **It establishes that** both 10-year yields rose more than the US 10-year. Japan's rise was split between real yields and
-  inflation compensation; Germany's was almost all real. Central banks shrank in both markets while banks, pension funds and
-  foreign investors absorbed the supply.
+- **It establishes that** both 10-year yields rose more than the US 10-year. In Japan inflation compensation did between a
+  third and two-fifths of the rise. In Germany the rise was mostly real over the window, but in 2026 inflation compensation
+  did about half or more. Central banks shrank in both markets: banks and public pensions absorbed Japan's supply, banks
+  and foreign investors the euro area's.
 - **It does not establish why.** The term premium is not measured, and published estimates are model constructs.
 - **It does not measure duration.** R2 measured the rate risk the US public had to absorb, bond by bond. The BoJ's holdings
-  by issue and the Ministry's maturity ladder would allow the same for JGBs; the euro area publishes only the
-  Eurosystem's weighted average maturity (8.57 years for the PSPP in August 2026).
+  by issue and the Ministry's maturity ladder would allow the same for JGBs. The euro area publishes only the Eurosystem's
+  weighted average maturity (8.57 years for the PSPP in August 2026).
 - **It makes no claim that flows caused the moves.**
 
 ## Next
 
-- **Outside review.** R3 has not been attacked. A review parcel for Grok in Cursor, as R12R was for R1 and R2, is next.
 - **Duration for JGBs:** the BoJ's holdings by issue (published every ten days) against the Ministry's maturity ladder.
-- **A same-day check of Japan's breakeven** against the Ministry's chart, once the JSDA's 17 Sep file can be fetched.
-- **A market breakeven for the euro area.** France's inflation-linked bonds are more liquid than Germany's; no free bulk
-  source was found in this pass.
+- **A market breakeven for Bunds before late 2025.** Candidates: archived Finanzagentur pages, France's inflation-linked
+  bonds, or an ECB inflation-swap series. Any of them would test the full-window split.
+- **The rest of the world's level:** an ECB explanation of the gap between its euro-area total and the country sum.
 
 ## Observed vs derived vs inferred
 
-**Observed:** every yield level, the survey values, the Flow of Funds transactions, SHSS holdings and CSEC debt outstanding.
-**Derived by a stated method** (graded MEASURED, and dependent on the method): Japan's JGBi real yields and breakevens,
-Germany's implied survey inflation, the holder's returns, and the rest of the world's holdings (a residual).
-**Inferred:** that the three front ends moved together for a common reason, and the reading of who absorbed the supply as a
-common pattern.
+**Observed:** every yield level, the survey values, the Finanzagentur's linker breakevens as published, the Flow of Funds
+transactions, SHSS holdings and CSEC debt outstanding.
+**Derived by a stated method:** Japan's JGBi real yields and breakevens (BOUNDED by the issue choice), Germany's implied
+survey inflation, the holder's returns, and the rest of the world's holdings (a residual).
+**Inferred:** the full-window real share for Bunds, that the three front ends moved together for a common reason, and that
+GPIF flows stand in for public pensions' JGB purchases.

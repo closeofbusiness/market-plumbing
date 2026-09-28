@@ -24,7 +24,8 @@ EURO AREA (the German Bund as the benchmark)
      No free market breakeven exists for Bunds, so the real part is survey-based: the Bundesbank's expected real rate (the
      average 10-year Bund yield minus Consensus inflation forecasts). The implied survey inflation expectation is the
      month's average Svensson 10-year minus that rate, a close stand-in for the average yield the Bundesbank uses. The ECB
-     Survey of Professional Forecasters' long-term inflation expectation is shown beside it.
+     Survey of Professional Forecasters' long-term inflation expectation is shown beside it. Market breakevens exist only
+     for the last twelve months: the Finanzagentur's daily series for each inflation-linked Bund (added after R3R, C-127).
   5. A holder's return on a constant-maturity 10-year Bund, fully revalued month by month, against the 1-year yield.
   6. Who holds. The ECB's Securities Holdings Statistics by Sector: euro-area residents' holdings of euro-area government
      debt securities at face value, summed over the 20 countries that were members for the whole window (Bulgaria, a member
@@ -43,11 +44,12 @@ Inputs (fetched into data/vintages/r3/ if missing; not redistributed, ignored by
   - ECB Data Portal API (data-api.ecb.europa.eu): YC, IRS, SPF, SHSS, CSEC. Bundesbank API (api.statistiken.bundesbank.de):
     BBSIS, BBSEI. The ECB's APP and PEPP history CSVs (www.ecb.europa.eu/mopo/pdf/).
 Outputs: data/r3_rates/jp_levels.csv, jp_changes.csv, jp_holder_return.csv, jp_flows_quarterly.csv, jp_flows_periods.csv,
-         jp_boj_stock.csv, ea_levels.csv, ea_changes.csv, ea_holder_return.csv, ea_holders.csv, ea_eurosystem.csv
+         jp_boj_stock.csv, jp_breakeven_issues.csv, ea_levels.csv, ea_changes.csv, ea_holder_return.csv, ea_holders.csv,
+         ea_eurosystem.csv, ea_linkers.csv
 Requires: Python 3 and xlrd (pip install -r requirements.txt). Run from anywhere:
   python3 bin/r3_jgb_egb.py
 """
-import csv, datetime as dt, io, json, math, os, sys, time, urllib.error, urllib.request
+import csv, datetime as dt, io, json, math, os, re, sys, time, urllib.error, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "vintages", "r3")
@@ -61,8 +63,10 @@ JSDA = "https://market.jsda.or.jp/shijyo/saiken/baibai/baisanchi/files/{y}/S{d}.
 BOJ_API = "https://www.stat-search.boj.or.jp/api/v1/getDataCode?format=csv&lang=en&db=FF&startDate={s}&endDate={e}&code={c}"
 TENORS = ["1Y", "2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "15Y", "20Y", "25Y", "30Y", "40Y"]
 
-# Key dates: the last JGB trading day of each year, the equity window's end, and the latest date both sources cover.
+# Key dates: the last JGB trading day of each year, the equity window's end, and the end date. The end date is pinned so
+# that a re-run reproduces the published tables (the R3R review found "latest" rolling forward); set R3_END to extend it.
 JP_KEY = [dt.date(2023, 12, 29), dt.date(2024, 12, 30), dt.date(2025, 12, 30), dt.date(2026, 6, 30)]
+END = dt.date.fromisoformat(os.environ.get("R3_END", "2026-09-24"))
 
 # Flow of Funds sectors for instrument 311. Rows must partition all holders; the identities below are asserted.
 FOF_ROWS = [
@@ -228,6 +232,10 @@ def check_fof_identities(f, q):
 ECB = "https://data-api.ecb.europa.eu/service/data/{flow}/{key}?format=csvdata&startPeriod={start}"
 BBK = "https://api.statistiken.bundesbank.de/rest/data/{flow}/{key}?format=csv&lang=en&startPeriod={start}"
 ECB_APP = "https://www.ecb.europa.eu/mopo/pdf/APP_breakdown_history.csv"
+# The Deutsche Finanzagentur's page for inflation-linked Federal securities embeds a year of daily real yields and
+# break-even inflation rates for each issue (chart data). Found by the R3R review; it is a rolling twelve-month window,
+# so the cached copy is what reproduces the table.
+DFA_ILB = "https://www.deutsche-finanzagentur.de/en/federal-securities/types-of-federal-securities/inflation-linked-federal-securities"
 ECB_PEPP = "https://www.ecb.europa.eu/mopo/pdf/PEPP_breakdown_history.csv"
 EA20 = ["AT", "BE", "CY", "DE", "EE", "ES", "FI", "FR", "GR", "HR", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PT", "SI", "SK"]
 EA_KEY = [dt.date(2023, 12, 29), dt.date(2024, 12, 31), dt.date(2025, 12, 31), dt.date(2026, 6, 30)]
@@ -281,6 +289,20 @@ def ecb_history_holdings(url, name, col):
     return out
 
 
+def load_linkers():
+    path = os.path.join(RAW, "dfa_inflation_linked.htm")
+    fetch(DFA_ILB, path, wait=1)
+    t = open(path, encoding="utf-8", errors="replace").read()
+    out = {}
+    for m in re.finditer(r'"yAxis":\{"title":\{"text":"([^"]+)"\}\},"series":(\[.*?\])\}\);', t, re.S):
+        kind = "breakeven" if "Break-even" in m.group(1) else "real_yield"
+        for ser in json.loads(m.group(2)):
+            for pnt in ser["data"]:        # points sit at local midnight; shift to the calendar day
+                day = (dt.datetime.fromtimestamp(pnt["x"] / 1000, dt.timezone.utc) + dt.timedelta(hours=12)).date()
+                out.setdefault((ser["name"], kind), {})[day] = pnt["y"]
+    return out
+
+
 def check_shss(h, q, country):
     g = lambda c: h.get((country, c), {}).get(q, 0.0)          # a sector a country does not report counts as zero
     tests = [("total = NFC + financial + government + households", g("S1"), g("S11") + g("S12") + g("S13") + g("S1M")),
@@ -307,7 +329,7 @@ def main_euro():
     dates = lambda ser: {dt.date.fromisoformat(k): v for k, v in ser.items()}
     b10, b9, b2, b1 = (dates(bund[t]) for t in ("R10XX", "R09XX", "R02XX", "R01XX"))
     aaa10, aaa2, all10 = (dates(yc[k]) for k in ("AAA_10Y", "AAA_2Y", "ALL_10Y"))
-    latest = min(max(b10), max(aaa10))
+    latest = min(on_or_before(b10, END), on_or_before(aaa10, END))
     keys = EA_KEY + [latest]
     last_m = lambda ser, d: max(k for k in ser if k <= f"{d:%Y-%m}")
     lv = []
@@ -346,6 +368,21 @@ def main_euro():
                    "d_spf_longterm_bp": dd("spf_longterm_hicp")})
     with open(os.path.join(OUT, "ea_changes.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(ch[0])); w.writeheader(); w.writerows(ch)
+
+    # ---- market breakevens for Bunds: the Finanzagentur's linker series, at the key dates inside its window
+    lk, lrows = load_linkers(), []
+    for (name, kind), ser in sorted(lk.items()):
+        if kind != "breakeven":
+            continue
+        rl = lk.get((name, "real_yield"), {})
+        for k in keys:
+            d = on_or_before(ser, k)
+            if d is None or (k - d).days > 5:
+                continue
+            lrows.append({"linker": name, "key_date": k.isoformat(), "date": d.isoformat(), "breakeven": ser[d],
+                          "real_yield": rl.get(d, ""), "window": f"{min(ser)} to {max(ser)}"})
+    with open(os.path.join(OUT, "ea_linkers.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(lrows[0])); w.writeheader(); w.writerows(lrows)
 
     # ---- a holder's return on a constant-maturity 10-year Bund (as for JGBs)
     start = on_or_before(b10, EA_KEY[0])
@@ -413,8 +450,26 @@ def main_japan():
     # ---- Japan: prices
     mof = load_mof_curve()
     issues = load_jgbi_issues()
-    latest = max(mof)
+    latest = on_or_before(mof, END)
     keys = JP_KEY + [latest]
+    # every JGBi issue on the market at every key date: the breakeven moves with the issue chosen (R3R, C-126)
+    bei, irows = {}, []
+    for k in keys:
+        d = on_or_before(mof, k)
+        for n, iv in sorted(issues.items()):
+            if n < 28 or iv["first_issue"] > d or iv["maturity"] <= d:
+                continue
+            p = jsda_price(d, n)
+            if p is None:
+                continue
+            T = (iv["maturity"] - d).days / 365.25
+            ry = real_yield(p, iv["coupon"], d, iv["maturity"])
+            nom = interp(mof[d], T)
+            bei[(k, n)] = nom - ry
+            irows.append({"key_date": k.isoformat(), "issue": n, "maturity": iv["maturity"].isoformat(), "price": p,
+                          "real_yield": round(ry, 4), "nominal_at_maturity": round(nom, 4), "breakeven": round(nom - ry, 4)})
+    with open(os.path.join(OUT, "jp_breakeven_issues.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(irows[0])); w.writeheader(); w.writerows(irows)
     lv = []
     for k in keys:
         d = on_or_before(mof, k)
@@ -439,12 +494,20 @@ def main_japan():
     periods = [("2024", ks[0], ks[1]), ("2025", ks[1], ks[2]), ("2026 to 30 Jun", ks[2], ks[3]),
                ("30 Jun to latest", ks[3], ks[4]), ("end-2023 to 30 Jun 2026 (the equity window)", ks[0], ks[3]),
                ("end-2023 to latest", ks[0], ks[4])]
+    # chained fixed issues: each leg between key dates holds the issue that was newest at the leg's start
+    kidx = {k.isoformat(): i for i, k in enumerate(keys)}
+    def fixed_leg(i):
+        n = L[keys[i].isoformat()]["jgbi_issue"]
+        a, b = bei.get((keys[i], n)), bei.get((keys[i + 1], n))
+        return None if a is None or b is None else b - a
     ch = []
     for name, a, b in periods:
         A, B = L[a], L[b]
         dd = lambda col: round(100 * (B[col] - A[col])) if A[col] != "" and B[col] != "" else ""
+        legs = [fixed_leg(i) for i in range(kidx[a], kidx[b])]
         ch.append({"period": name, "from": A["mof_date"], "to": B["mof_date"], "d_jgb10_bp": dd("jgb10"), "d_jgb2_bp": dd("jgb2"),
                    "d_slope_bp": dd("slope_10y_2y"), "d_jgb30_bp": dd("jgb30"), "d_breakeven_bp": dd("breakeven"),
+                   "d_breakeven_fixed_issues_bp": round(100 * sum(legs)) if legs and None not in legs else "",
                    "d_real10_implied_bp": dd("real10_implied")})
     with open(os.path.join(OUT, "jp_changes.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(ch[0])); w.writeheader(); w.writerows(ch)

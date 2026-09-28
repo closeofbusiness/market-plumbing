@@ -200,3 +200,39 @@ pension funds; no causal phrasing found, but five grade or wording errors.
 Finanzagentur pages (no snapshots available); the Ministry's holder breakdown (404); NOMURA-BPI levels for end-2023 (404);
 a quantitative ECB or NCB statement on banks' and ROW's gains (none found). Duration supply was out of scope, and its
 omission changes no conclusion above.
+
+## Supervisor adjudication (28 Sep 2026)
+
+**Verdict.** R3 stands on its levels, both buyer tables and the holder returns. Grok's attacks succeeded on three claims,
+registered as C-126 to C-128. The supervisor re-derived the load-bearing ones before applying them. Nothing Grok reported was
+found wrong. Four supporting figures are relayed on Grok's word, marked below.
+
+**What the supervisor checked, and with what:**
+
+| Grok's claim | Supervisor's check | Result |
+|---|---|---|
+| Japan's breakeven change runs from 79bp to 97bp depending on issue switches | R3's own code, every issue at every key date (`data/r3_rates/jp_breakeven_issues.csv`): newest issue +97.4bp; chained fixed issues +81.8bp; #28 held throughout +93.4bp, to 24 Sep | confirmed in substance. Grok's 78.5bp uses 25 Sep and the matched-coupon nominal leg; on R3's method and end date the range is 82–97bp. Both give a third to two-fifths |
+| 2026 to 30 Jun: +22bp, of which about 13bp is the switch from #30 to #31 | same | confirmed: +21.8bp newest issue, +8.9bp holding #30, switch gap 12.9bp |
+| Issues disagree by up to 19bp on one day | 30 Jun 2026: #29 1.804%, #31 1.990% | confirmed |
+| Same-day check against the Ministry's chart, 17 Sep 2026, within 3bp | the JSDA's 17 Sep file stayed rate-limited (HTTP 429) for the supervisor | not re-derived; relayed as Grok's check |
+| A free market breakeven for Bunds exists (Deutsche Finanzagentur) | parsed the page's chart data: 6.6-year linker 1.74% → 2.22% (+49bp), 19.6-year 1.96% → 2.30% (+34bp), 3.6-year +70bp, 30 Dec 2025 → 24 Sep 2026 | confirmed |
+| ECB EB 6/2026: the rise since late 2024 driven largely by higher real term premia; 1y1y swaps +15bp to 2.3%; 5y5y near 2.2% | read the Bulletin's text | confirmed |
+| Lane's "fairly stable since" uses data to 10 Jun 2025 | read the speech | confirmed |
+| The BoJ did not sell outright; its holdings fell as redemptions exceeded purchases | BoJ Review 2026-E-10 text | confirmed |
+| Chart 8 is estimated, so not independent | Chart 8's note: the breakdown by investor type is an estimate | confirmed as an estimate; that it is built from the Flow of Funds is relayed from Grok |
+| GPIF implies about ¥31trn of inflows to domestic bonds | not re-derived | relayed |
+| NOMURA-BPI 7–11 year sub-period returns | not re-derived | relayed |
+| The CSEC euro-area total exceeds the 20-country sum by about €280bn | not re-derived | relayed, and stated in R3 as an unexplained uncertainty in the rest of the world's level |
+| Bulgaria's residents leaving the residual understate the rest of the world's rise by €10–17bn | not re-derived | relayed as Grok's estimate |
+| The script's end date rolls forward, so re-runs differ | the script | confirmed and fixed: the end date is pinned at 24 Sep 2026 (override with `R3_END`) |
+
+**Narrowed:** none of Grok's findings was overruled. The Japanese breakeven's low end is 82bp on R3's method and end date,
+against Grok's 78.5bp on the Ministry's matched-coupon leg to 25 Sep. R3 states the range it can reproduce, 82–97bp.
+
+**Applied:**
+- C-126 to C-128 registered, with ban patterns. The R3R brief is allow-listed for C-127, because it quotes the dead wording
+  as an attack target.
+- R3 was rewritten in place. The ANSWER, CHARTER, `dossiers/rates.md`, CLAUDE.md and RESEARCH_STATE were corrected.
+- `bin/r3_jgb_egb.py` now pins its end date. It writes every JGBi issue's breakeven at every key date, and a chained
+  fixed-issue change beside the newest-issue one. It also writes the Finanzagentur's linker breakevens (`ea_linkers.csv`).
+- Every table that existed before reproduced unchanged, apart from the new columns.

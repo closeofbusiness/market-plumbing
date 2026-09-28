@@ -557,7 +557,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  quarter-end turn. Miss it and run 2 (1 Oct) has nothing to score against.
                                  24 Sep attempt BLOCKED (X sign-in wall in Cursor, C-121): its calls are placeholders.
                                  25 Sep: switched to public web sources (E-015). DONE 25 Sep: four SIMILAR calls, LOW weight
-                                 (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 on 1 Oct; the design decision on 2 Oct.
+                                 (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 moved to 3 Oct (Grok out of tokens until then, 28 Sep);
+                                 the design decision on 4 Oct.
    2  Goal read-back ........... 25 Sep, THE PRINCIPAL'S. The only check that has ever caught goal
                                  corruption; an agent restating the goal cannot detect it (E-000).
    3  Panel asks (C-097, d3) ... DONE 24 Sep. Grok landed data/w3_tax/firm_tax_panel.csv and data/eps_split/panel/;
@@ -581,7 +582,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   R1/R2 OUTSIDE REVIEW DONE 27 Sep: Grok's R12R return adjudicated (_research/2026-09-27-R12R-Rates-Review-Return.md). R1 and R2
   stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
   R3 DONE (first pass) 27 Sep (E-017): 2026-09-27-R3-JGB-And-Euro-Area-Bonds.md, JGBs and euro-area bonds on free MoF, JSDA,
-  BoJ, ECB and Bundesbank data. Not yet reviewed from outside: Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md is READY.
+  BoJ, ECB and Bundesbank data. REVIEWED 28 Sep (Grok, R3R) and adjudicated: three corrections, C-126 to C-128.
   R3 follow-ups, undated: duration for JGBs (BoJ holdings by issue); a same-day check of Japan's breakeven; a euro-area market breakeven.
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:

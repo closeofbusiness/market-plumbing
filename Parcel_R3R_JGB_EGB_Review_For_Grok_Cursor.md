@@ -1,6 +1,7 @@
 # R3R — Attack R3, the first findings on JGBs and euro-area government bonds (Grok in Cursor)
 
-**Status: READY, 27 Sep 2026.** The principal ruled on 27 Sep that the next work goes ahead (THE_ASK E-017). R3 was built the
+**Status: RETURNED and ADJUDICATED, 28 Sep 2026.** The return and the supervisor's adjudication are in
+`_research/2026-09-28-R3R-JGB-EGB-Review-Return.md`; the corrections are C-126 to C-128. **Was: READY, 27 Sep 2026.** The principal ruled on 27 Sep that the next work goes ahead (THE_ASK E-017). R3 was built the
 same day. This is an adversarial review routed to Grok in Cursor, with web search, to judge claims and to find sources whose
 citations must hold. It was written by the supervisor. After the return, the supervisor revises, checks and adjudicates
 (THE_ASK E-008), as it did for R1 and R2 (R12R).
