@@ -585,7 +585,8 @@ blocked on a purchase, do not cost one out. Free and online only.
   on disk (ZK2): flawless* — every figure reproduced to 4dp.
   *Grok asked to search and cite: reliable.* N3R 13/13, N2cR 25/25, D10R 13/13, N2aR ~19/20 with
   one mis-pull I caught by re-measuring, SB1 62 claims of which it correctly refuted 3 of mine, R12R (27 Sep) 13 of 15
-  checked claims re-derived exactly (one not re-derived, one figure not reproduced) and all four attacks landed (C-122–C-125).
+  checked claims re-derived exactly (one not re-derived, one figure not reproduced) and all four attacks landed (C-122–C-125);
+  R3R (28 Sep) all three attacks landed (C-126–C-128), every claim the supervisor checked held at source, four relayed unchecked.
   **Operational grade: Gemini search D, Gemini file-reading A, Grok search/research A-, Grok
   judgement A.** Never send Gemini to FIND a source; send it to READ one you name. Send Grok when
   the answer must arrive with citations that hold.
