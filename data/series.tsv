@@ -481,3 +481,16 @@ pulled_at	series_key	as_of	value	unit	source	note
 2026-09-27T19:31Z	ficc_sponsored_dvp_bn	2026-09-23	1659.8	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; DVP leg
 2026-09-27T19:31Z	ficc_sponsored_gc_bn	2026-09-23	770.8	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; GC leg
 2026-09-27T19:31Z	ficc_sponsored_total_bn	2026-09-23	2430.6	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; total sponsored activity
+2026-09-30T06:33Z	hf_qhf_net_assets_bn	2026-06-30	5511.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_NAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_qhf_gross_assets_bn	2026-06-30	13863.0	$bn	OFR Hedge Fund Monitor API FPF-ALLQHF_GAV_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_collateral_posted_cashlike_bn	2026-06-30	3137.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_CASH_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_collateral_posted_securities_bn	2026-06-30	5627.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_SECURITIES_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_collateral_posted_other_bn	2026-06-30	404.0	$bn	OFR Hedge Fund Monitor API FPF-COLLATERALTYPE_OTHER_COLLATERAL_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_repo_borrowing_bn	2026-06-30	3382.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_REPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_prime_brokerage_borrowing_bn	2026-06-30	3688.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_PRIMEBROKER_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_other_secured_borrowing_bn	2026-06-30	882.0	$bn	OFR Hedge Fund Monitor API FPF-BORROW_OTHERSECURED_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_reverse_repo_exposure_bn	2026-06-30	1320.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_REPO_REVERSEREPO_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_long_treasury_exposure_bn	2026-06-30	2362.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_LTREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_short_treasury_exposure_bn	2026-06-30	1498.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_STREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
+2026-09-30T06:33Z	hf_unencumbered_cash_bn	2026-06-30	685.0	$bn	OFR Hedge Fund Monitor API, sum over 9 strategies of FPF-STRATEGY_*_CASHRATIO_NAVWMEAN x FPF-STRATEGY_*_NAV_SUM	derived: Form PF Q33/Q9; NAV-weighted mean ratio x strategy NAV = strategy unencumbered cash
+2026-09-30T06:33Z	ccp_im_required_15ccp_fia_bn	2026-03-31	1071.0	$bn	FIA CCP Tracker API (PQD 6.1.1), sum over 15 CCPs of house_net+client_gross	quarter-end; derivatives CCPs only, no FICC; FIA USD conversion

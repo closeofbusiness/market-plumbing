@@ -39,7 +39,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 | `fed_on_rrp_bn` | New York Fed markets API (ON RRP fixed-rate operations; the FRED RRPONTSYD definition) | Daily | 0.6 on 2026-09-25 | Quarter-end cluster 2026-09-30 | official plumbing, shadow money |
 | `n4_private_repo_net_of_rrp_2024_bn` | N4 arithmetic on reviewed series | 2024 | −45.7 | Recompute after the next OFR print | shadow money |
 | `n4_handoff_adj_2024_bn` | same | 2024 | 136.2 | same | shadow money |
-| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 23.07 at 2026-03 | Gated on OFR Q2, still unpublished at 2026-09-24; next check 2026-10-01 | shadow money |
+| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 23.07 at 2026-03 | Recompute now: the OFR's Q2 hedge-fund data it waited on was published (seen 30 Sep) | shadow money |
 | `m2_h6_sa_bn` | H.6 | Monthly | 23,218 in 2026-07 | Unknown | direct money |
 | `reserve_balances_bn` | FRED WRESBAL | Weekly | 2,935.3 on 2026-08-19 | Unknown | direct money |
 | `bank_loans_to_nondepository_fis_bn` | H.8 | Monthly | Level 2,005.0 at 2026-07-31; 2025 flow annotated contaminated | Unknown | direct money |
@@ -48,7 +48,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 | `finra_margin_debit_balances_bn` | FINRA margin workbook | Monthly | 1,453.8 in 2026-08 | Next month’s edition; source file is overwritten, so the vintage copy matters | collateral |
 | `ficc_sponsored_total_bn` | DTCC sponsored volume CSV (moved to cms-prod.dtcc.com, Sep 2026) | Daily | 2,430.6 on 2026-09-23 | 2026-09-30 quarter-end pull | rates dossier, collateral |
 | `ccp_im_required_15ccp_fia_bn` | FIA CCP tracker | Quarterly | 1,071.0 at 2026-03-31 | Recheck 2026-10-06 | collateral |
-| `hf_collateral_posted_securities_bn` | Form PF via OFR | Quarterly | 4,924 at 2026-03-31 | Q2 still unpublished 2026-09-24 | collateral |
+| `hf_collateral_posted_securities_bn` | Form PF via OFR | Quarterly | 5,627 at 2026-06-30 | Q3 about early December (the Q2 release came about three months after quarter-end) | collateral |
 | `abcp_outstanding_bn` | Fed Board CP release via the Data Download Program (SA; identical to FRED ABCOMP) | Weekly | 501.7 on 2026-09-23 | Quarter-end row 2026-09-30 | shadow money |
 | `sofr_pct`, `sofr_p99_pct` | New York Fed markets API | Daily | 3.88 and 3.96 on 2026-09-24 | Quarter-end row 2026-09-30; RUN 2 scoring 2026-10-01 | shadow money, QE sentiment |
 | `stablecoin_total_outstanding_bn` | DeFiLlama free API | As pulled | 309.4 on 2026-08-29 | GENIUS rulemaking watch 2026-10-15 | shadow money |

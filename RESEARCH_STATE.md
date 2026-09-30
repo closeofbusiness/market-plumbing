@@ -565,7 +565,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  the supervisor re-derived both exactly (W3: 412 firms, ETR 27.351% and 19.615%;
                                  EPS split: 366 firms reproduce the published bounds, a ceiling of ~7-13% of the price
                                  gain, C-101). The optional Z.1 debt pulls did not land.
-   4  30 Sep quarter-end ....... point-in-time observations that cannot be made up afterwards; they also
+   4  30 Sep quarter-end ....... point-in-time observations that cannot be made up afterwards (the 30 Sep
+                                 prints publish on 1 Oct; the market-print rows in CALENDAR.tsv are dated then); they also
                                  score RUN 1.
    5  Revolver-drawdown parcel . 1 Oct. Its gate was "only after the synthesis names the fragility question
                                  precisely". W2 (23 Sep) now names it: ~$300bn of committed-but-undrawn bank
@@ -574,6 +575,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  APPROVED 25 Sep (E-015). Brief ready 26 Sep: Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md.
                                  DONE 27 Sep: Grok's return verified at source; sized in 2026-09-27-RV1-Drawdown-Sizing.md.
    6  10 Oct N-MFP3 census ..... the trigger check for item 7 (D4). Nothing else waits on it.
+   --  OFR Q2 PUBLISHED (seen 30 Sep; the OFR row in CALENDAR.tsv): unblocks the zk_v2 refresh (N2b) and D10's hedge-fund
+       collateral leg. Undated, the supervisor's; after the quarter-end run.
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
   R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
