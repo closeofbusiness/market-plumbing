@@ -30,6 +30,23 @@ principal and append a new entry.
 
 ---
 
+## E-018 · 3 October 2026 — the December quarter-end test runs on prints only; the public page is refreshed
+
+Given as two answers to the supervisor's questions after the RUN 2 check. The questions were how the December quarter-end
+sentiment test should run (two runs of generic web search had kept 1 usable item of 62 and 1 of 70, and the market prints did
+all the scoring), and whether to refresh the public page now with the reviewed rates work and the quarter-end readings.
+
+> *"Prints only (Recommended)"*
+>
+> *"Yes, refresh it"*
+
+**Reading notes.** The December quarter-end test drops the web-sentiment leg: no Grok parcel. It keeps the print test (SOFR
+and GC rates, ON RRP, FICC sponsored volume, ABCP), pulled by `bin/pull_series.py`. The page refresh means rebuilding
+`docs/index.html` from the answer note, auditing it against its sources (C-120), running the page check, and pushing, which
+republishes GitHub Pages.
+
+---
+
 ## E-017 · 27 September 2026 — the Singh briefing pushed again; the next work goes ahead
 
 Given in one message, answering the supervisor's reply to "What's next?". That reply recommended pushing the Singh briefing
