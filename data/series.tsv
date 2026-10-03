@@ -494,3 +494,18 @@ pulled_at	series_key	as_of	value	unit	source	note
 2026-09-30T06:33Z	hf_short_treasury_exposure_bn	2026-06-30	1498.0	$bn	OFR Hedge Fund Monitor API FPF-ASSETCLASS_STREASURY_SUM	Form PF, qualifying hedge funds, quarter-end
 2026-09-30T06:33Z	hf_unencumbered_cash_bn	2026-06-30	685.0	$bn	OFR Hedge Fund Monitor API, sum over 9 strategies of FPF-STRATEGY_*_CASHRATIO_NAVWMEAN x FPF-STRATEGY_*_NAV_SUM	derived: Form PF Q33/Q9; NAV-weighted mean ratio x strategy NAV = strategy unencumbered cash
 2026-09-30T06:33Z	ccp_im_required_15ccp_fia_bn	2026-03-31	1071.0	$bn	FIA CCP Tracker API (PQD 6.1.1), sum over 15 CCPs of house_net+client_gross	quarter-end; derivatives CCPs only, no FICC; FIA USD conversion
+2026-10-03T07:17Z	ficc_sponsored_repo_bn	2026-09-24	1043.4	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members borrowing cash (hedge-fund side)
+2026-10-03T07:17Z	ficc_sponsored_reverse_repo_bn	2026-09-24	1377.2	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members lending cash (money-fund side)
+2026-10-03T07:17Z	ficc_sponsored_dvp_bn	2026-09-24	1625.4	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; DVP leg
+2026-10-03T07:17Z	ficc_sponsored_gc_bn	2026-09-24	795.1	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; GC leg
+2026-10-03T07:17Z	ficc_sponsored_total_bn	2026-09-24	2420.6	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; total sponsored activity
+2026-10-03T07:17Z	abcp_outstanding_bn	2026-09-30	504.4	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCKA.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-10-03T07:17Z	financial_cp_bn	2026-09-30	578.2	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCKF.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-10-03T07:17Z	cp_total_bn	2026-09-30	1406.7	$bn	Fed Board CP release, weekly outstandings, SA, DDP package faf3b103a688c3c574d7e243d84decf4, series CP/OUTST/DTBSPCK.WW	weekly, Wednesday; replaces FRED ABCOMP/FINCP/COMPOUT
+2026-10-03T07:17Z	sofr_pct	2026-10-01	3.87	%	NY Fed Markets API rates/secured/sofr percentRate	daily reference rate
+2026-10-03T07:17Z	sofr_p1_pct	2026-10-01	3.83	%	NY Fed Markets API rates/secured/sofr percentPercentile1	daily reference rate
+2026-10-03T07:17Z	sofr_p99_pct	2026-10-01	3.97	%	NY Fed Markets API rates/secured/sofr percentPercentile99	daily reference rate
+2026-10-03T07:17Z	sofr_volume_bn	2026-10-01	3067.0	$bn	NY Fed Markets API rates/secured/sofr volumeInBillions	daily
+2026-10-03T07:17Z	tgcr_pct	2026-10-01	3.84	%	NY Fed Markets API rates/secured/tgcr percentRate	daily reference rate
+2026-10-03T07:17Z	bgcr_pct	2026-10-01	3.84	%	NY Fed Markets API rates/secured/bgcr percentRate	daily reference rate
+2026-10-03T07:17Z	fed_on_rrp_bn	2026-10-02	1.5	$bn	NY Fed Markets API rp/results (ON RRP fixed-rate overnight operations, Treasury accepted, summed by date)	daily; replaces FRED RRPONTSYD
