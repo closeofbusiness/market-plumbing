@@ -143,3 +143,24 @@ RUN 1 registered (all **SIMILAR**):
 ## Gates note
 
 Gates already green at start (parent): fresh clone HEAD `79f81a8`; Singh-Ask path empty; `bin/check.sh --handover` integrity ✓ (claude stamp 2026-09-30T08:39:43). This return does **not** re-block those gates.
+
+## Supervisor check (3 Oct 2026)
+
+**Verified against the repository's own series histories (`data/history/`):** every turn print in the table above matches. SOFR
+3.62 → 3.68 at the June turn and 3.88 → 3.90 at September's; the 99th percentile 3.71 → 3.80 and 3.97 → 3.99; ON RRP 26.9bn on
+30 Jun and 11.5bn on 30 Sep. ABCP 504.4bn on 30 Sep against 501.7bn a week earlier. The method matches RUN 1: the seven
+verbatim strings, the same lane, a dated window, and no widening mid-run.
+
+**Filled after the run:** DTCC posted 30 Sep later on 3 Oct. FICC sponsored activity rose 2,476.7 → 2,729.9bn on the turn day
+(+253bn, +10.2%), against 2,625.9 → 2,862.1bn at the June turn (+236bn, +9.0%). The sponsored leg of call 1 is therefore SIMILAR,
+and call 1 scores **right** on SOFR/GC, ON RRP and sponsored volume. Only the Actrix share stays unscoreable.
+
+**Scores as adjudicated:**
+- Call 1: right; the Actrix leg unscoreable.
+- Call 2: unscoreable, because no free AXW basis exists and FINRA's September edition is not out.
+- Call 3: right.
+- Call 4: right on every leg available.
+
+**Weight:** the scores come from the prints, not from the sentiment search, which kept one item of 70. RUN 1 kept one of 62. Two
+runs of generic web search have not seen practitioner chatter in either direction, so they cannot tell "quiet" from "invisible".
+That bears on the December design (calendar, 4 Oct).
