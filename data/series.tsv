@@ -509,3 +509,8 @@ pulled_at	series_key	as_of	value	unit	source	note
 2026-10-03T07:17Z	tgcr_pct	2026-10-01	3.84	%	NY Fed Markets API rates/secured/tgcr percentRate	daily reference rate
 2026-10-03T07:17Z	bgcr_pct	2026-10-01	3.84	%	NY Fed Markets API rates/secured/bgcr percentRate	daily reference rate
 2026-10-03T07:17Z	fed_on_rrp_bn	2026-10-02	1.5	$bn	NY Fed Markets API rp/results (ON RRP fixed-rate overnight operations, Treasury accepted, summed by date)	daily; replaces FRED RRPONTSYD
+2026-10-03T08:24Z	ficc_sponsored_repo_bn	2026-10-01	1129.4	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members borrowing cash (hedge-fund side)
+2026-10-03T08:24Z	ficc_sponsored_reverse_repo_bn	2026-10-01	1418.2	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; sponsored members lending cash (money-fund side)
+2026-10-03T08:24Z	ficc_sponsored_dvp_bn	2026-10-01	1746.3	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; DVP leg
+2026-10-03T08:24Z	ficc_sponsored_gc_bn	2026-10-01	801.3	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; GC leg
+2026-10-03T08:24Z	ficc_sponsored_total_bn	2026-10-01	2547.6	$bn	DTCC Sponsored Membership Volume CSV (cms-prod.dtcc.com/data/SponsoredVolume.csv)	daily; total sponsored activity

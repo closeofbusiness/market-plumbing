@@ -557,8 +557,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  quarter-end turn. Miss it and run 2 (1 Oct) has nothing to score against.
                                  24 Sep attempt BLOCKED (X sign-in wall in Cursor, C-121): its calls are placeholders.
                                  25 Sep: switched to public web sources (E-015). DONE 25 Sep: four SIMILAR calls, LOW weight
-                                 (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 moved to 3 Oct (Grok out of tokens until then, 28 Sep);
-                                 the design decision on 4 Oct.
+                                 (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 DONE 3 Oct by Grok (_research/2026-10-01-QE-Sentiment-Run2.md),
+                                 supervisor check and the design decision on 4 Oct.
    2  Goal read-back ........... 25 Sep, THE PRINCIPAL'S. The only check that has ever caught goal
                                  corruption; an agent restating the goal cannot detect it (E-000).
    3  Panel asks (C-097, d3) ... DONE 24 Sep. Grok landed data/w3_tax/firm_tax_panel.csv and data/eps_split/panel/;
@@ -566,8 +566,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  EPS split: 366 firms reproduce the published bounds, a ceiling of ~7-13% of the price
                                  gain, C-101). The optional Z.1 debt pulls did not land.
    4  30 Sep quarter-end ....... point-in-time observations that cannot be made up afterwards (the 30 Sep
-                                 prints publish on 1 Oct; the market-print rows in CALENDAR.tsv are dated then); they also
-                                 score RUN 1.
+                                 prints publish on 1 Oct). DONE 3 Oct: an orderly turn (CALENDAR.tsv, the 1 Oct print rows).
+                                 They also score RUN 1.
    5  Revolver-drawdown parcel . 1 Oct. Its gate was "only after the synthesis names the fragility question
                                  precisely". W2 (23 Sep) now names it: ~$300bn of committed-but-undrawn bank
                                  lines to AI-adjacent industries, plus N2c §7's undrawn NDFI commitments. The gate
