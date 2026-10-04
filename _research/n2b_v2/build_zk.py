@@ -8,7 +8,7 @@ Units: every input is converted to USD billions BEFORE use; the source unit is r
 import csv, os, sys, math
 from collections import OrderedDict
 
-SCR = "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n2b_v2"
+SCR = os.path.dirname(os.path.abspath(__file__))   # _research/n2b_v2/ inside the repo: inputs (h8.csv, m2.csv, formpf.csv, z1.csv) are read from here and zk_v2.csv is written here
 DBX = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 HIST = os.path.join(DBX, "history")
 ALF  = os.path.join(DBX, "vintages", "alfred", "alf_M2SL_2026-08-15.csv")
@@ -16,11 +16,11 @@ OUT  = os.path.join(SCR, "zk_v2.csv")
 
 # ---- sources / reproduce URLs / units (stated exactly as source states them) ----
 SOURCES = {
- "mmf_treasury_repo_bn":       ("OFR MMF Monitor MMF-MMF_RP_T_TOT-M (N-MFP, month-end, all US MMFs)", "https://data.financialresearch.gov/mmf/v1/series/full?mnemonic=MMF-MMF_RP_T_TOT-M", "$bn as stored in data/history (OFR reports $ millions; file already in bn)"),
- "mmf_agency_repo_bn":         ("OFR MMF Monitor MMF-MMF_RP_AG_TOT-M", "https://data.financialresearch.gov/mmf/v1/series/full?mnemonic=MMF-MMF_RP_AG_TOT-M", "$bn"),
- "mmf_repo_other_collateral_bn":("OFR MMF Monitor MMF-MMF_RP_OA_TOT-M", "https://data.financialresearch.gov/mmf/v1/series/full?mnemonic=MMF-MMF_RP_OA_TOT-M", "$bn"),
- "mmf_repo_with_fed_bn":       ("OFR MMF Monitor MMF-MMF_RP_wFR-M", "https://data.financialresearch.gov/mmf/v1/series/full?mnemonic=MMF-MMF_RP_wFR-M", "$bn"),
- "mmf_bank_related_assets_bn": ("OFR MMF Monitor MMF-MMF_BRA_TOT-M", "https://data.financialresearch.gov/mmf/v1/series/full?mnemonic=MMF-MMF_BRA_TOT-M", "$bn"),
+ "mmf_treasury_repo_bn":       ("OFR MMF Monitor MMF-MMF_RP_T_TOT-M (N-MFP, month-end, all US MMFs)", "https://data.financialresearch.gov/v1/series/full?mnemonic=MMF-MMF_RP_T_TOT-M", "$bn as stored in data/history (OFR reports $ millions; file already in bn)"),
+ "mmf_agency_repo_bn":         ("OFR MMF Monitor MMF-MMF_RP_AG_TOT-M", "https://data.financialresearch.gov/v1/series/full?mnemonic=MMF-MMF_RP_AG_TOT-M", "$bn"),
+ "mmf_repo_other_collateral_bn":("OFR MMF Monitor MMF-MMF_RP_OA_TOT-M", "https://data.financialresearch.gov/v1/series/full?mnemonic=MMF-MMF_RP_OA_TOT-M", "$bn"),
+ "mmf_repo_with_fed_bn":       ("OFR MMF Monitor MMF-MMF_RP_wFR-M", "https://data.financialresearch.gov/v1/series/full?mnemonic=MMF-MMF_RP_wFR-M", "$bn"),
+ "mmf_bank_related_assets_bn": ("OFR MMF Monitor MMF-MMF_BRA_TOT-M", "https://data.financialresearch.gov/v1/series/full?mnemonic=MMF-MMF_BRA_TOT-M", "$bn"),
  "ltd_h8_bn":                  ("H.8 B1072NCBAM Large time deposits, all commercial banks, SA, monthly (DDP package a01d1f4a5a65d77bcc3a3a97b8fbc03a, release 2026-08-28)", "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H8&series=a01d1f4a5a65d77bcc3a3a97b8fbc03a&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn", "source $ millions (Multiplier=1000000) -> /1000 = $bn"),
  "ltd_v1_bn":                  ("v1 vintage: FRED LTDACBM027NBOG mirror in data/history/large_time_deposits_bn.csv (pulled 2026-08-23)", "file: data/history/large_time_deposits_bn.csv (fred.stlouisfed.org unreachable from sandbox)", "$bn"),
  "dep_h8_bn":                  ("H.8 B1058NCBAM Deposits, all commercial banks, SA, monthly (same DDP package)", "same as ltd_h8_bn", "source $ millions -> /1000 = $bn"),

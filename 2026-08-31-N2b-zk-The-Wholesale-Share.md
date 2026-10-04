@@ -264,3 +264,27 @@ is "non-existent". The last is the weakest link in the not-a-bank check.
 `z_k` has now survived a perimeter widening, three denominators and three adversarial lenses.
 **It is ready to carry the N4 synthesis**, with two standing caveats: the level is
 perimeter-sensitive to about a point, and `W` is a floor by the bank-CP share.
+
+### Update, 4 October 2026: the 2026Q2 row
+
+The OFR published the Form PF hedge-fund data for 2026Q2 (update of 16 Sep), so the 2026-06 row of
+`_research/n2b_v2/zk_v2.csv` is now complete. **`z_k(W2, M2)` is 22.96% at 2026-06, against 23.07% at
+2026-03**, a fall of 0.11pp. Over H.8 deposits less large time it is 29.07% (from 29.22%). W2 is
+$6,902.0bn: the money-fund and bank leg W1 of $5,582.0bn plus hedge-fund reverse repo of $1,320.0bn,
+down from $1,399.0bn. So the plateau that W1 showed through 2026 now shows in W2 too. The supervisor
+re-read the Form PF value from the OFR API and the three Z.1 inputs from the Fed's dated zip.
+
+What was not done, and why it matters:
+- **Earlier quarters are frozen at their old vintages.** The sources have since revised them: Form PF
+  2026-03 from 1,399 to 1,405 and 2024-09 from 1,150 to 1,175 ($bn), and H.8 large time deposits from
+  2025-10 on. Applying every revision would move `z_W2_D1_pct` by at most 0.07pp in any quarter, and
+  2026-06 to 22.94%. That is within the stated perimeter sensitivity of about a point.
+- **The D4 columns mix two Z.1 vintages.** 2026Q2 D4 comes from the 11 Sep release; earlier quarters
+  come from an older one. On the new vintage 2026Q1 D4 is $14,998.0bn, not $15,105.6bn. So most of
+  D4's apparent fall into 2026Q2 is revision, not movement. **Do not read a quarter-on-quarter change
+  from the D4 columns until `z1.csv` is rebuilt on one vintage.** The headline D1 is unaffected.
+- **Rebuilding needs a file the public repo does not carry.** D1 uses the ALFRED M2 vintage of
+  15 Aug 2026, which is FRED data (E-011). Copy `alf_M2SL_2026-08-15.csv` from the private companion's
+  `data/vintages/alfred/` into the clone's `data/vintages/alfred/`, which is gitignored. Then run
+  `python3 _research/n2b_v2/build_zk.py`. Without it the script cannot reproduce the D1 columns.
+

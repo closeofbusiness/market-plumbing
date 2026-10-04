@@ -39,7 +39,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 | `fed_on_rrp_bn` | New York Fed markets API (ON RRP fixed-rate operations; the FRED RRPONTSYD definition) | Daily | 0.6 on 2026-09-25 | Quarter-end cluster 2026-09-30 | official plumbing, shadow money |
 | `n4_private_repo_net_of_rrp_2024_bn` | N4 arithmetic on reviewed series | 2024 | −45.7 | Recompute after the next OFR print | shadow money |
 | `n4_handoff_adj_2024_bn` | same | 2024 | 136.2 | same | shadow money |
-| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 23.07 at 2026-03 | Recompute now: the OFR's Q2 hedge-fund data it waited on was published (seen 30 Sep) | shadow money |
+| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 22.96 at 2026-06 (23.07 at 2026-03) | Mid-December: the OFR's Form PF 2026Q3 print and the Z.1 release of about 11 Dec. Rebuilding needs the private ALFRED file (N2b note, update of 4 Oct) | shadow money |
 | `m2_h6_sa_bn` | H.6 | Monthly | 23,218 in 2026-07 | Unknown | direct money |
 | `reserve_balances_bn` | FRED WRESBAL | Weekly | 2,935.3 on 2026-08-19 | Unknown | direct money |
 | `bank_loans_to_nondepository_fis_bn` | H.8 | Monthly | Level 2,005.0 at 2026-07-31; 2025 flow annotated contaminated | Unknown | direct money |

@@ -630,6 +630,8 @@ blocked on a purchase, do not cost one out. Free and online only.
 4. **Primary source only.** BIS, IMF, FSB, ECB, OFR, Fed, BoJ, NAIC, SEC directly.
 5. **Check for revisions; note the vintage.** Economic data is restated years back.
    FRED-carried series have free point-in-time history in **ALFRED** — do not rebuild it.
+   ALFRED files are FRED data, so they stay in the private companion (E-011): rebuilding `z_k`
+   needs `alf_M2SL_2026-08-15.csv` copied into the gitignored `data/vintages/alfred/` first.
    Only *capture-or-lose* sources (BIS full-dataset CSVs, OFR, ISLA, ICMA, vendor price
    boards, Fed FSR tables) need capturing, and there are ~25–40 of them.
 6. **Steelman the counter-argument** rather than omitting it.
