@@ -171,13 +171,16 @@ def pull_ofr_hf():
     return out
 # FIA CCP Tracker — public JSON API behind fia.org/fia/initial-margin-combined (added 2026-08-23, N3 return K2).
 # Carries PQD item 6.1.1 (initial margin required: house net / client net / client gross, USD) for 15 derivatives
-# CCPs, quarterly from Q3 2015. The Authorization value is the page-embedded key every visitor's browser sends;
-# if it stops working, re-read it from the page source (function setRequestHeader). FICC is NOT in this set.
-FIA_KEY="fcdb8393-c862-43b8-a6c2-f86a96f46f8a"
+# CCPs, quarterly from Q3 2015. FICC is NOT in this set.
+# SUSPENDED 8 Oct 2026: the API needs an Authorization value copied from the page's code, which breaches CLAUDE.md's
+# 'never use an API key found in page source'. The pull is skipped (CALENDAR.tsv, the FIA row). Until then the series stops at its last value (2026-03-31).
+FIA_KEY=None
 def _fia(u):
     h=dict(UA); h["Authorization"]=FIA_KEY; h["Accept"]="application/json"
     return json.loads(urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=60,context=CTX).read())
 def pull_fia():
+    if not FIA_KEY:
+        print("fia: SUSPENDED (page-embedded key; breaches the page-key rule) - skipped", file=sys.stderr); return []
     import urllib.parse
     qs=[q["name"] for q in _fia("https://fiadataapi.azurewebsites.net/api/Data/GetQuarters?Dataset=QtrsList")]
     def qkey(q): a,b=q.split(); return (int(b),int(a[1]))

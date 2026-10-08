@@ -575,8 +575,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  APPROVED 25 Sep (E-015). Brief ready 26 Sep: Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md.
                                  DONE 27 Sep: Grok's return verified at source; sized in 2026-09-27-RV1-Drawdown-Sizing.md.
    6  10 Oct N-MFP3 census ..... the trigger check for item 7 (D4). Nothing else waits on it.
-   --  OFR Q2 PUBLISHED (seen 30 Sep; the OFR row in CALENDAR.tsv): unblocks the zk_v2 refresh (N2b) and D10's hedge-fund
-       collateral leg. Undated, the supervisor's; after the quarter-end run.
+   --  OFR Q2 PUBLISHED (seen 30 Sep). The zk_v2 refresh is DONE 4 Oct (N2b note, update of 4 Oct: 22.96% at 2026-06).
+       D10's hedge-fund collateral leg is still open, the supervisor's, undated.
   DONE and off this list: W1 (20 Sep), W3 (21 Sep), W2 (23 Sep) — see the wave block below.
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
   R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
@@ -636,7 +636,8 @@ Do not restate findings here. Status and detail stay in the home section named o
        filings, Z.1) are re-fetchable. Triage before quoting any of those four.
    d2  Thirteen more docs carry a dead scratchpad citation ALONGSIDE a durable one. Cosmetic; the durable
        path is what a reader should use. Bulk-fix only if someone is editing those docs anyway.
-   d3  `data/eps_split/panel/` is an EMPTY DIRECTORY (22 Sep). The 385-firm diluted-share panel behind
+   d3  RESOLVED 24 Sep (verified 8 Oct: the folder holds README.md, diluted_waso_firm_year.csv and 23 more files; item 3 above).
+       WAS: `data/eps_split/panel/` is an EMPTY DIRECTORY (22 Sep). The 385-firm diluted-share panel behind
        C-093 and every accretion figure is not on disk, so none of it is locally reproducible. Same class as
        C-097. Ask Grok for it on the next contact, bundled with the W3 panel.
    d4  THE GATE'S BAN SCAN SKIPS `_research/` AND `CALENDAR.tsv`, by design (`bin/check.sh` line 306:
