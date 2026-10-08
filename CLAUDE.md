@@ -276,9 +276,8 @@ and the source collateral **"mines"** from which banks fund themselves via re-us
 collateral. Two mechanisms in most treatments; one interlock in theirs.
 
 - **The collateral leg** — covered, and the finding is largely *negative*: reuse intensity is
-  flat, the multiplier is down ~36% from its 2023 peak (UNVERIFIED since 8 Oct: that figure rests on an imputed weekly
-  series lost with a swept scratchpad; the durable published-total weeks give about 25% on unequal samples; rebuild
-  queued in CALENDAR.tsv), and this is a permissive condition
+  flat, the multiplier is down ~36% from its 2023 peak (annual means, 2026 to 12 Aug; reproduced 8 Oct by
+  `bin/build_collateral_multiplier.py`), and this is a permissive condition
   rather than a proximate source. See `Shadow_Debt_Channel_Map.md` (repo channel) and
   `2026-08-21-Singh-And-The-Two-Circuits.md`.
 - **The money leg** — **not covered.** `2026-08-21-Safe-Asset-Share-Reexamined.md:179` states it

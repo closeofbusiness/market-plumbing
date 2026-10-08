@@ -231,3 +231,37 @@ transactions, SHSS holdings and CSEC debt outstanding.
 survey inflation, the holder's returns, and the rest of the world's holdings (a residual).
 **Inferred:** the full-window real share for Bunds, that the three front ends moved together for a common reason, and that
 GPIF flows stand in for public pensions' JGB purchases.
+
+### Follow-up, 8 October 2026: JGB duration supply
+
+This follow-up measures the interest-rate risk Japan's public had to absorb, using R2's US method.
+Script `bin/r3b_jgb_duration.py`, outputs `data/r3_rates/jgb_duration_*.csv`. A Sonnet agent built it. The
+supervisor re-ran it (byte-identical, 72 checks, 0 failures) and checked the BoJ side against the Flow of
+Funds: about ¥580trn against ¥581.3trn at 2023Q4, ¥503trn against ¥503.0trn at 2025Q4, and ¥469trn
+against ¥470.0trn at 2026Q2, in market value.
+
+**Basis.** Fixed-coupon JGBs (2- to 40-year, plus the climate-transition bonds) at face value, FILP bonds
+included. Excluded: JGBi, the 15-year floater, retail JGBs and bills. Rate risk is in 10-year
+equivalents: market value × modified duration ÷ the duration of a par 10-year bond, priced on the
+Ministry of Finance par curve. "Fixed" holds the curve at 29 Dec 2023, so the change measures quantity.
+Public = total minus BoJ, an identity asserted in the script.
+
+| ¥trn | Total, face | BoJ, face | Public, face | Public, 10y-eq fixed curve | Public, 10y-eq own curve |
+|---|---:|---:|---:|---:|---:|
+| 29 Dec 2023 (total ESTIMATED) | 1,063.4 | 573.7 | 489.7 | 558.0 | 558.0 |
+| 31 Oct 2024 | 1,096.2 | 574.2 | 522.0 | 600.4 | 560.3 |
+| 31 Aug 2026 | 1,142.6 | 513.0 | 629.6 | 696.5 | 521.8 |
+
+- **At constant yields, the public took about a quarter more JGB rate risk:**
+  - +24.8% from end-2023 (BOUNDED: the end-2023 stock by issue is interpolated, so ±1–2pp);
+  - +16.0% from 31 Oct 2024 (MEASURED: both ends are observed by-issue snapshots).
+  The US figure was about +36% over a similar window (R2). The BoJ's holdings fell by ¥55.7trn of
+  10-year equivalents while the total rose by ¥82.8trn. So the public absorbed about 1.7 times the
+  increase in total supply.
+- **At each date's own yields the public's 10-year equivalents fell 6.5%.** Prices fell as the 10-year rose
+  from 0.65% to 2.94%. That is a valuation effect, not lower supply.
+- **There is no free by-issue market stock for end-2023.** The BoJ's JGB Handbook file is current-only, so
+  the Internet Archive copies (May 2022, Oct and Nov 2024) are the observed snapshots. A hold-out of
+  Oct 2024 erred by +0.17% on face value and +0.36% on 10-year equivalents.
+- Whether this supply moved yields is not measured; the charter forbids reading flows as cause.
+

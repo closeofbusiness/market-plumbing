@@ -3,6 +3,9 @@
 # Usage:  bin/check.sh FILE [FILE...]   |   bin/check.sh --all
 #         --goal | --latest | --todo | --handover [write <claude|grok>]
 # Exit 0 always. A blocking gate gets reworded around; a warning leaves a trail.
+# UTF-8 locale pinned 8 Oct 2026: under the C locale '.' matches one byte, so patterns spanning an en dash or
+# a curly quote silently missed (found by a sweep agent; this shell has no LANG set).
+export LC_ALL=en_US.UTF-8
 # bash 3.2 compatible (macOS default) — no mapfile, no associative arrays.
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 0

@@ -2074,9 +2074,9 @@ C-090	B6[^\n]{0,40}refuted
 C-091	blocked on[^\n]{0,30}payment.date
 C-091	blocked on[^\n]{0,30}pay.date
 C-091	free NYSE pay.date[^\n]{0,25}unblock
-C-092	JVZ[^\n]{0,40}not supported
+C-092	JVZ.{0,40}not supported
 C-092	not an underpowered false null
-C-092	sharpen[^\n]{0,30}NOT SUPPORTED
+C-092	sharpen.{0,30}NOT SUPPORTED
 C-093	aggregate profit growth[^\n]{0,25}68\.9
 C-093	68\.9%[^\n]{0,25}profit growth
 C-093	accretion[^\n]{0,15}13\.4%

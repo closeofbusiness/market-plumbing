@@ -586,7 +586,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
   R3 DONE (first pass) 27 Sep (E-017): 2026-09-27-R3-JGB-And-Euro-Area-Bonds.md, JGBs and euro-area bonds on free MoF, JSDA,
   BoJ, ECB and Bundesbank data. REVIEWED 28 Sep (Grok, R3R) and adjudicated: three corrections, C-126 to C-128.
-  R3 follow-ups, undated: duration for JGBs (BoJ holdings by issue); a same-day check of Japan's breakeven; a euro-area market breakeven (Germany 2024–25 DONE 8 Oct from the Bundesbank's files, C-127 update).
+  R3 follow-ups, undated: duration for JGBs DONE 8 Oct (R3 note, follow-up: public +16-25% at constant yields); a same-day check of Japan's breakeven; a euro-area market breakeven (Germany 2024–25 DONE 8 Oct from the Bundesbank's files, C-127 update).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
    W1  Meet the leak objection ........ DONE 20 Sep -> 2026-09-20-W1-The-Leak-Objection.md (C-094)
@@ -638,7 +638,9 @@ Do not restate findings here. Status and detail stay in the home section named o
        (a) Channel Map's multiplier: 2013-21 means, the 12 Aug 2026 week and the sponsored legs reproduce from
            data/history; 2022-26 means, the sponsored shares and "down ~36% from the 2023 peak" do NOT (imputed weeks
            lost; durable weeks give 13.74 -> 10.33, about 25%, on 26 vs 7 weeks). Copies: CLAUDE.md (flagged),
-           Shadow_Debt_Measurement_Handbook.md lines ~102-106. REBUILD running 8 Oct.
+           Shadow_Debt_Measurement_Handbook.md lines ~102-106. REBUILT 8 Oct: bin/build_collateral_multiplier.py reproduces
+           every figure from the NY Fed API (14 annual means, the 12 Aug week, sponsored shares as means of weekly shares, and
+           -36.1% on annual means, 2026 partial to 12 Aug). Series: data/history/collateral_multiplier_weekly.csv.
        (b) measurement_infrastructure_reviews.md: Handbook lines ~83, 171, 289, 345-347 quote it. ALFRED rows match the
            private vintages (4 of 8 checked); the 11 Jun Z.1 package has no copy. REBUILD narrowly, undated.
        (c) funding_identity_adversarial_reviews.md: the M2 half reproduces; GDP and Z.1 S11.1.t not on file; feeds row S1.

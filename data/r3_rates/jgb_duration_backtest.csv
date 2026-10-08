@@ -1,0 +1,6 @@
+test,target_date,snapshots_available,mode,observed_face_trn,estimated_face_trn,face_error_pct,observed_10yeq_own_trn,estimated_10yeq_own_trn,eq10_own_error_pct,eq10_fixed_error_pct,dv01_error_pct,issue_level_abs_error_trn,auction_only_face_trn,observed_issues_missing_from_estimate
+interior (snapshots on both sides),2024-10-31,2022-05-31 2026-08-31,interp,1096.2,1098.09,0.17,904.34,907.63,0.36,0.34,0.36,17.6,64.33,0
+interior (snapshots on both sides),2024-11-30,2022-05-31 2026-08-31,interp,1104.73,1106.45,0.16,902.11,905.37,0.36,0.34,0.36,17.99,61.38,0
+"interior, nearest-snapshot variant",2024-10-31,2022-05-31 2026-08-31,nearest,1096.2,1116.32,1.84,904.34,925.5,2.34,2.31,2.34,24.76,64.33,0
+edge (later snapshots only),2022-05-31,2024-10-31 2024-11-30 2026-08-31,interp,1019.13,1020.78,0.16,922.55,950.62,3.04,2.98,3.04,46.18,230.92,0
+edge (earlier snapshots only),2026-08-31,2022-05-31 2024-10-31,interp,1142.6,1117.79,-2.17,787.93,771.16,-2.13,-1.97,-2.13,24.81,207.6,0
