@@ -792,6 +792,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **Correct position.** The Bund's rise over the window was mostly real, but not almost all. In 2026 market breakevens did about half or more. For 2024–25 no market breakeven was obtained; surveys, the ECB's decomposition of 2025 and the steady five-year-forward swap point to real rates (HYPOTHESIS). On the ECB's current reading, higher real term premia drove the rise since late 2024. Germany stopped issuing linkers in 2024, so their breakevens carry liquidity premia.
 - **Why it matters.** A survey-based measure was used as if it were a market measure, and it failed exactly when inflation compensation moved.
 - **Still standing at:** nowhere. R3, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place. `Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md` quotes the dead wording as an attack target and is allow-listed.
+- **Update, 8 Oct 2026: the 2024–25 HYPOTHESIS is now measured.** The Bundesbank's monthly price-and-yield files give daily real yields for every linker. On the 2033 linker the breakeven fell 21bp over 2024–25 while the nominal yield rose 66bp, so that period's rise was real. The grade is MEASURED on a fixed issue; the attribution is BOUNDED because of the liquidity premium after issuance stopped in 2024 (R3, Germany).
 
 ---
 

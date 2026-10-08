@@ -581,12 +581,12 @@ Do not restate findings here. Status and detail stay in the home section named o
   RATES (charter scope, confirmed 25 Sep, E-015): R1 DONE 27 Sep (2026-09-27-R1-Treasury-10y-Decomposition.md, US 10-year prices).
   R2 DONE 27 Sep (2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md): duration supply measured; the split by buyer is HYPOTHESIS.
   R2 follow-ups, undated: rest-of-world official vs private on matched windows; free maturity-by-holder sources;
-  Treasury's attribution of issuance to Fed redemptions, which would narrow the Fed's 4-13% share.
+  Treasury's attribution of issuance to Fed redemptions: ANSWERED 8 Oct, Treasury publishes none (R2 note, follow-up of 8 Oct); the 4-13% stands.
   R1/R2 OUTSIDE REVIEW DONE 27 Sep: Grok's R12R return adjudicated (_research/2026-09-27-R12R-Rates-Review-Return.md). R1 and R2
   stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
   R3 DONE (first pass) 27 Sep (E-017): 2026-09-27-R3-JGB-And-Euro-Area-Bonds.md, JGBs and euro-area bonds on free MoF, JSDA,
   BoJ, ECB and Bundesbank data. REVIEWED 28 Sep (Grok, R3R) and adjudicated: three corrections, C-126 to C-128.
-  R3 follow-ups, undated: duration for JGBs (BoJ holdings by issue); a same-day check of Japan's breakeven; a euro-area market breakeven.
+  R3 follow-ups, undated: duration for JGBs (BoJ holdings by issue); a same-day check of Japan's breakeven; a euro-area market breakeven (Germany 2024–25 DONE 8 Oct from the Bundesbank's files, C-127 update).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
    W1  Meet the leak objection ........ DONE 20 Sep -> 2026-09-20-W1-The-Leak-Objection.md (C-094)
@@ -634,6 +634,17 @@ Do not restate findings here. Status and detail stay in the home section named o
        _research/funding_identity_adversarial_reviews.md, _research/paragon_burry_dossier.md (3).
        Severity: no live claim in the current answer rests on them, and the underlying sources (EDGAR
        filings, Z.1) are re-fetchable. Triage before quoting any of those four.
+       TRIAGED 8 Oct (Sonnet agent; the supervisor re-derived the multiplier check). None reaches the ANSWER or the page.
+       (a) Channel Map's multiplier: 2013-21 means, the 12 Aug 2026 week and the sponsored legs reproduce from
+           data/history; 2022-26 means, the sponsored shares and "down ~36% from the 2023 peak" do NOT (imputed weeks
+           lost; durable weeks give 13.74 -> 10.33, about 25%, on 26 vs 7 weeks). Copies: CLAUDE.md (flagged),
+           Shadow_Debt_Measurement_Handbook.md lines ~102-106. REBUILD running 8 Oct.
+       (b) measurement_infrastructure_reviews.md: Handbook lines ~83, 171, 289, 345-347 quote it. ALFRED rows match the
+           private vintages (4 of 8 checked); the 11 Jun Z.1 package has no copy. REBUILD narrowly, undated.
+       (c) funding_identity_adversarial_reviews.md: the M2 half reproduces; GDP and Z.1 S11.1.t not on file; feeds row S1.
+           REBUILD small, undated.
+       (d) paragon_burry_dossier.md is PRIVATE-ONLY since 24 Sep (private/_research/); 4 working files lost, no downstream
+           use. Keep; add a banner in the private copy.
    d2  Thirteen more docs carry a dead scratchpad citation ALONGSIDE a durable one. Cosmetic; the durable
        path is what a reader should use. Bulk-fix only if someone is editing those docs anyway.
    d3  RESOLVED 24 Sep (verified 8 Oct: the folder holds README.md, diluted_waso_firm_year.csv and 23 more files; item 3 above).

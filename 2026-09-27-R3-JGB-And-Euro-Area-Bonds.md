@@ -29,14 +29,26 @@ German Bund as the benchmark.
      - So inflation compensation did between a third and two-fifths of Japan's rise. In the US it did a sixth.
      - *BOUNDED*: 82bp chains fixed issues; 97bp follows the newest issue. The breakeven's level matches the Ministry of
        Finance's own chart within 3bp (R3R, 17 Sep 2026).
-   - **Germany: 2.06% to 3.62%, +156bp, mostly real, but not almost all.**
-     - Market breakevens exist only for the last twelve months: the Deutsche Finanzagentur publishes a daily series for each
-       inflation-linked Bund. In 2026 the breakevens of the 6.6-year and 19.6-year linkers rose 49bp and 34bp (the 3.6-year's
+   - **Germany: 2.06% to 3.62%, +156bp, mostly real, but not almost all. Real in 2024–25; about half or more inflation compensation in 2026.**
+     - The Deutsche Finanzagentur publishes a daily breakeven for each inflation-linked Bund, but only for the last twelve
+       months. Older history is in the Bundesbank's monthly price-and-yield files (see 2024–25 below). In 2026 the breakevens of the 6.6-year and 19.6-year linkers rose 49bp and 34bp (the 3.6-year's
        rose 70bp), against the Bund's +68bp. So inflation compensation did about half or more of this year's rise.
      - The Bundesbank's survey-based measure missed that. It subtracts Consensus inflation forecasts, and shows the expected
        real rate up 135bp over the window with survey inflation flat.
-     - For 2024 and 2025 no market breakeven was obtained. Surveys and the ECB's decomposition of 2025 point to real rates.
-     - *HYPOTHESIS* for the full-window split; *MEASURED* for the 2026 linker breakevens as published.
+     - **2024–25 (measured 8 Oct 2026):** all of the rise was real, and more. Take the 0.1% 2033 linker (DE0001030583), the
+       issue nearest ten years, in the Bundesbank's monthly price-and-yield files (free xlsx, one sheet per day). From
+       29 Dec 2023 to 30 Dec 2025:
+       - its real yield rose from 0.03% to 0.90%, +87bp;
+       - the nominal Bund yield at the same maturity rose from 2.00% to 2.66%, +66bp (interpolated between the Feb and
+         Aug 2033 Bunds);
+       - so its breakeven fell from 1.97% to 1.76%, −21bp (−17bp in 2024, −3bp in 2025).
+       The 2030 and 2046 linkers agree in sign (−20bp and −21bp). Caveats:
+       - this is a fixed issue, which shortens from 9.3 to 7.3 years;
+       - Germany stopped issuing linkers in 2024, so part of the fall may be a rising liquidity premium rather than
+         lower inflation compensation.
+       The Bundesbank's real yields equal the Finanzagentur's at 30 Dec 2025.
+     - *MEASURED* for the linker breakevens in 2024–25 and 2026 as quoted. *BOUNDED* for the attribution of the
+       full-window rise: liquidity premia sit inside every linker breakeven.
    - The euro-area AAA curve rose 149bp at ten years, close to the Bund.
 2. **The front ends rose too, and in the latest quarter they led.**
    - Japan's 2-year rose 186bp, about three-quarters of the 10-year's rise, as the BoJ raised rates.

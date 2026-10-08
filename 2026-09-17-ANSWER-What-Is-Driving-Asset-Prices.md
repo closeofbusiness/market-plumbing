@@ -190,8 +190,8 @@ and whether it raised term premia, is not measured. See
 [`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md).
 **JGBs and euro-area bonds, first pass (R3, 27 Sep; corrected 28 Sep after outside review, C-126 to C-128).** From end-2023 to
 24 Sep 2026 the 10-year JGB rose 243bp and the Bund 156bp. In Japan inflation compensation did between a third and two-fifths
-of the rise, depending on the inflation-indexed issue used. In Germany the rise was mostly real over the window, but market
-breakevens say inflation compensation did about half or more of 2026's rise. The term premium is not measured for either; the
+of the rise, depending on the inflation-indexed issue used. In Germany the rise was mostly real over the window: real in 2024–25, where a linker's
+breakeven fell (measured 8 Oct, liquidity caveat in R3), while market breakevens say inflation compensation did about half or more of 2026's rise. The term premium is not measured for either; the
 ECB reads the rise since late 2024 as largely higher real term premia. Banks and public pensions absorbed the BoJ's net
 reduction; banks and foreign investors absorbed the Eurosystem's. See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).

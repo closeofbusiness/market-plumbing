@@ -173,3 +173,31 @@ All of these are in the script's docstring.
 constant-price measure.
 **Inferred:** the refinancing range for the Fed's share; that the household row is largely offshore hedge funds; and that the extra
 duration went to buyers other than money-market funds.
+
+### Follow-up, 8 October 2026: does Treasury say how it refinanced the Fed's runoff?
+
+**No.** This was the follow-up that might have narrowed the Fed's 4–13% share (C-123). Treasury publishes
+the dollars, not the maturities. Its quarterly Sources and Uses tables carry a memo line of SOMA
+redemptions. Its advisory committee (TBAC) defines privately-held borrowing as total borrowing plus those
+redemptions. **Nothing it publishes says which maturities replaced them.** So the 13% upper bound stays a
+counterfactual about total issuance, not a datum.
+
+- **Redemptions, 2024Q1–2025Q4:** $621bn on Treasury's cash basis. The NY Fed shows a $601.4bn par
+  decline in the Fed's Treasury holdings (27 Dec 2023 to 3 Dec 2025, $26.9bn of it bills). The gap is
+  TIPS inflation compensation, about $20bn, which is an agent estimate. The supervisor re-derived the
+  $601.4bn and the bills figure from the NY Fed's SOMA summary.
+- **2026:** none. The Fed has rolled over all principal since 1 Dec 2025.
+- **What was redeemed:** about $599bn coupons, TIPS and FRNs, and about $22bn bills. This comes from the
+  gap between total and privately-held net issuance, which matches the memo in every quarter. It
+  describes what the Fed redeemed, not what Treasury issued in its place.
+- **Coupon auction sizes were held constant from February 2024** (refunding statements). Total net
+  issuance over the eight quarters was about $872bn of bills and $3,194bn of coupons, FRNs and TIPS.
+- **Sources** (gathered by a Sonnet agent; URLs in its working files, not committed):
+  - Treasury marketable-borrowing press releases, jy1851 (30 Oct 2023) to sb0584 (3 Aug 2026);
+  - the Sources and Uses tables and TBAC combined charts, 2023Q4 to 2026Q3;
+  - the Quarterly Release Data xls (16 Jul 2026);
+  - the NY Fed SOMA API.
+
+The only thing that would settle the maturity question is a written answer from Treasury's Office of
+Debt Management. That route is not taken.
+
