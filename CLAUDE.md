@@ -72,7 +72,8 @@
 >   pre-change tree. A guard that passes on the broken tree is worthless.
 > - **Everything in the working rules binds both agents** — never pay for data (E-005); the SEC
 >   User-Agent carrying the principal's address goes to **sec.gov hosts only**; never use an API key
->   found in page source; never defeat bot-detection; paid sources paraphrase-only with quotes of 15
+>   found in page source (one named exception: the FIA CCP Tracker key, ruled free by the principal in E-010; check
+>   THE_ASK.md before treating any key as forbidden); never defeat bot-detection; paid sources paraphrase-only with quotes of 15
 >   words or fewer; FERC claims come from the PDFs on disk, never eLibrary lookups (C-048).
 >
 > **No database, deliberately.** SQLite was considered and rejected: a binary file on a syncing SMB

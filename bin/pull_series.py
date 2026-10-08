@@ -16,14 +16,20 @@ comes from its issuer: commercial paper and the H.8 from the Fed Board's Data Do
 (its preformatted CSV packages), reverse repo, SOFR and SOMA from the New York Fed's API. Each
 replacement was checked against the last FRED value on file before the switch.
 """
-import sys, json, csv, io, os, re, ssl, time, datetime, urllib.request
+import sys, json, csv, io, os, re, ssl, time, datetime, urllib.request, urllib.parse
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TSV=os.path.join(ROOT,"data","series.tsv"); HIST=os.path.join(ROOT,"data","history")
-if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work").')
-UA={"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
+# User agents (fixed 8 Oct 2026). SEC_UA names a person, so it goes to sec.gov hosts ONLY; every other host gets the
+# neutral UA below. Before this fix every source sent SEC_UA, so DTCC, OFR, FIA and others received the contact string.
+UA={"User-Agent":"ThirdDerivativeResearch/1.0 (market-plumbing)","Accept-Encoding":"identity"}
+def _sec_ua():
+    if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work"). It is sent to sec.gov hosts only.')
+    return {"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
 CTX=ssl.create_default_context(); NOW=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
 def get(u,t=90):
-    return urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t,context=CTX).read()
+    host=urllib.parse.urlsplit(u).hostname or ""
+    h=_sec_ua() if (host=="sec.gov" or host.endswith(".sec.gov")) else UA
+    return urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=t,context=CTX).read()
 def append(rows):
     new=not os.path.exists(TSV)
     with open(TSV,"a",encoding="utf-8") as f:
@@ -171,16 +177,16 @@ def pull_ofr_hf():
     return out
 # FIA CCP Tracker — public JSON API behind fia.org/fia/initial-margin-combined (added 2026-08-23, N3 return K2).
 # Carries PQD item 6.1.1 (initial margin required: house net / client net / client gross, USD) for 15 derivatives
-# CCPs, quarterly from Q3 2015. FICC is NOT in this set.
-# SUSPENDED 8 Oct 2026: the API needs an Authorization value copied from the page's code, which breaches CLAUDE.md's
-# 'never use an API key found in page source'. The pull is skipped (CALENDAR.tsv, the FIA row). Until then the series stops at its last value (2026-03-31).
-FIA_KEY=None
+# CCPs, quarterly from Q3 2015. The Authorization value is the page-embedded key every visitor's browser sends;
+# if it stops working, re-read it from the page source (function setRequestHeader). FICC is NOT in this set.
+# PERMITTED by the principal's ruling E-010 (24 Sep 2026): "The API key is free, there is no issue here, but it should be
+# in the repo." This is the one named exception to CLAUDE.md's rule against keys found in page source. (A suspension on
+# 8 Oct missed E-010 and was reverted the same day.)
+FIA_KEY="fcdb8393-c862-43b8-a6c2-f86a96f46f8a"
 def _fia(u):
     h=dict(UA); h["Authorization"]=FIA_KEY; h["Accept"]="application/json"
     return json.loads(urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=60,context=CTX).read())
 def pull_fia():
-    if not FIA_KEY:
-        print("fia: SUSPENDED (page-embedded key; breaches the page-key rule) - skipped", file=sys.stderr); return []
     import urllib.parse
     qs=[q["name"] for q in _fia("https://fiadataapi.azurewebsites.net/api/Data/GetQuarters?Dataset=QtrsList")]
     def qkey(q): a,b=q.split(); return (int(b),int(a[1]))
