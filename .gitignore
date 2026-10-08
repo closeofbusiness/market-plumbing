@@ -31,3 +31,6 @@ data/vintages/r3/
 
 # ALFRED (FRED) vintages: third-party data kept in the private companion (E-011); copy locally to rebuild z_k (_research/n2b_v2/build_zk.py)
 data/vintages/alfred/
+
+# FINRA margin workbooks: bin/pull_series.py saves a dated copy each run; third-party, kept private (E-011)
+data/vintages/finra/

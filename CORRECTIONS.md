@@ -1894,6 +1894,7 @@ C-089	Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md	# the parcel that aske
 C-090	2026-09-15-B6-Phase1-Payment-Day-Mechanism.md	# the doc under correction, banner at top
 C-091	_research/2026-09-16-NYSE-Payment-Date-Scout.md	# the scout that answered the wrong question, kept
 C-092	2026-09-16-TierB-E005-Resolution-Limit.md	# the standing note, bannered
+C-091	2026-09-16-TierB-E005-Resolution-Limit.md	# its do-not-say table quotes the killed wording beside C-091 (surfaced 8 Oct when the [^\n] patterns were repaired)
 C-086	2026-09-16-TierB-E005-Resolution-Limit.md	# quoted only inside the note's own 'must not claim' table
 C-090	2026-09-16-TierB-E005-Resolution-Limit.md	# ditto - confined to that table, body checked 16 Sep
 C-078	2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md	# confined to the do-not-quote line in section 1
@@ -1953,10 +1954,10 @@ C-041	ultimate goal.{0,40}(substack|essay|publish|post)
 C-041	(essay|substack).{0,20}is the (ultimate )?goal
 C-042	is not double.counting.{0,40}phenomenon
 C-042	interlock is the phenomenon
-C-043	Divisia.{0,40}5[0-9](\.[0-9])?[[:space:]]?(trn|trillion)
+C-043	Divisia.{0,40}5[0-9](\.[0-9])?[ ]?(trn|trillion)
 C-043	DM4.{0,30}(trn|trillion)
-C-044	11/190.{0,60}\$6[[:space:]]?(trn|trillion)
-C-044	\$6[[:space:]]?(trn|trillion).{0,60}11/190
+C-044	11/190.{0,60}\$6[ ]?(trn|trillion)
+C-044	\$6[ ]?(trn|trillion).{0,60}11/190
 C-046	83\.7%.{0,40}equity.linked
 C-046	equity.linked.{0,40}83\.7
 C-048	six RTOs? filed.{0,40}17 August
@@ -1967,8 +1968,8 @@ C-050	Staff Report 1068.{0,60}(Afonso|RRP|Cipriani)
 C-050	TBACMB
 C-050	H41RESPALFOPHAORRP
 C-050	Roussanov.{0,40}(moneyness|private claims)
-C-052	uninsured deposits.{0,40}7\.1[0-9]?[[:space:]]?(trn|trillion)
-C-052	7\.1[0-9]?[[:space:]]?(trn|trillion).{0,40}uninsured
+C-052	uninsured deposits.{0,40}7\.1[0-9]?[ ]?(trn|trillion)
+C-052	7\.1[0-9]?[ ]?(trn|trillion).{0,40}uninsured
 C-053	96%.{0,40}(separate accounts|SMA)
 C-053	PIMCO.{0,40}0\.7[0-9]?bn
 C-053	2–4bn of the \$27bn
@@ -2054,38 +2055,38 @@ C-074	32% of the cash-like bucket
 C-074	his method is reconstructable
 C-075	84(\.0)?%.{0,40}five.bank
 C-075	five.bank.{0,40}84(\.0)?%
-C-076	Li (&|and) Lin[^\n]{0,60}bias[- ]corrected
-C-076	bias[- ]corrected[^\n]{0,25}(≈|~|about |roughly )?\$?5( |,|\.|\)|$)
+C-076	Li (&|and) Lin.{0,60}bias[- ]corrected
+C-076	bias[- ]corrected.{0,25}(≈|~|about |roughly )?\$?5( |,|\.|\)|$)
 C-077	aggregate multiplier M ?= ?5
 C-077	anchored near \$?5
-C-087	150%[^\n]{0,40}breakeven
-C-087	150%[^\n]{0,40}break-even
-C-087	breakeven[^\n]{0,40}150%
-C-087	break-even[^\n]{0,40}150%
+C-087	150%.{0,40}breakeven
+C-087	150%.{0,40}break-even
+C-087	breakeven.{0,40}150%
+C-087	break-even.{0,40}150%
 C-088	290\.5%
-C-088	81\.8%[^\n]{0,25}SOX
+C-088	81\.8%.{0,25}SOX
 C-088	-52\.0%
 C-089	too small to have funded
 C-089	channel is too small
 C-090	payment.day mechanism failed
-C-090	B6[^\n]{0,30}mechanism failed
-C-090	payment-day mechanism[^\n]{0,30}fail
-C-090	B6[^\n]{0,40}refuted
-C-091	blocked on[^\n]{0,30}payment.date
-C-091	blocked on[^\n]{0,30}pay.date
-C-091	free NYSE pay.date[^\n]{0,25}unblock
+C-090	B6.{0,30}mechanism failed
+C-090	payment-day mechanism.{0,30}fail
+C-090	B6.{0,40}refuted
+C-091	blocked on.{0,30}payment.date
+C-091	blocked on.{0,30}pay.date
+C-091	free NYSE pay.date.{0,25}unblock
 C-092	JVZ.{0,40}not supported
 C-092	not an underpowered false null
 C-092	sharpen.{0,30}NOT SUPPORTED
-C-093	aggregate profit growth[^\n]{0,25}68\.9
-C-093	68\.9%[^\n]{0,25}profit growth
-C-093	accretion[^\n]{0,15}13\.4%
-C-094	leak objection[^\n]{0,30}untested
-C-094	untested[^\n]{0,30}leak objection
+C-093	aggregate profit growth.{0,25}68\.9
+C-093	68\.9%.{0,25}profit growth
+C-093	accretion.{0,15}13\.4%
+C-094	leak objection.{0,30}untested
+C-094	untested.{0,30}leak objection
 C-094	load.bearing objection to the whole circuit
-C-095	SBC[^\n]{0,40}untested
-C-095	stock.based compensation[^\n]{0,30}untested
-C-095	untested[^\n]{0,35}R&D capitalisation
+C-095	SBC.{0,40}untested
+C-095	stock.based compensation.{0,30}untested
+C-095	untested.{0,35}R&D capitalisation
 C-096	overstates the contractual channel
 C-096	[Pp]lausible rebalancing share
 C-097	mirrored under project local

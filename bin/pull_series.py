@@ -212,7 +212,7 @@ def pull_dtcc():
     # DTCC moved the file when it redesigned its site (found 27 Sep 2026: the old www.dtcc.com/data/ path returns 404).
     # The chart at www.dtcc.com/market-index-data/charts/membership loads it from cms-prod.dtcc.com; same columns.
     import csv as _csv, io as _io
-    h=dict(UA); h["User-Agent"]="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    h=dict(UA)  # honest UA: DTCC serves the file to it (checked 8 Oct; the Chrome UA it used before was never needed)
     t=urllib.request.urlopen(urllib.request.Request("https://cms-prod.dtcc.com/data/SponsoredVolume.csv",headers=h),timeout=60,context=CTX).read().decode("utf-8","ignore")
     rows=[]
     for r in _csv.DictReader(_io.StringIO(t)):
