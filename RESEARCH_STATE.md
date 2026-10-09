@@ -604,6 +604,8 @@ Do not restate findings here. Status and detail stay in the home section named o
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions
    D7b  From-whom-to-whom pilot on repo alone .............. flagged directions
    --   Derivatives / options as a market-structure flow ... NO home section yet; goal names this channel
+   --   FX, COMMODITIES (and derivatives) ................ OPEN, PARKED by the principal 9 Oct (E-019): "to be adressed later";
+                                                       no date. In the mission; not dropped. The ANSWER and the page say so.
    --   Who funds the ~89% private share of record issuance  S1 / I1b raise it; nobody has taken it
    --   The persona capability, idle since 22 Aug .......... section 0.1; pending a decision (Tier A2)
    --   The missing-channel question .................... flagged directions, after N5; asked twice, no answer

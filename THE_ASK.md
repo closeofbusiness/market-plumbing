@@ -30,6 +30,22 @@ principal and append a new entry.
 
 ---
 
+## E-019 · 9 October 2026 — FX and commodities parked as open; tidy the old copies; work through the list
+
+Given in one message after the supervisor's 8 Oct audit of outstanding work. The audit asked whether to rank FX,
+commodities and derivatives (in the mission since E-015, almost untouched) or park them openly, and listed the old copies
+of the repository that only the principal had been asked to remove.
+
+> *"You tidy up the old repo etc... and the work thorugh all the items. Acknowledge that FX and Commodities open points, to be adressed later. Do we even have something interesting for Singh right now?"*
+
+**Reading notes.** FX and commodities stay in the mission. They are recorded as OPEN, to be addressed later, with no date:
+they are not dropped, and the answer note and the page must say so. Derivatives, which the audit grouped with them, are
+read the same way. The tidy-up is delegated to the supervisor, within what an agent may do. Old copies are moved or
+archived, never permanently deleted; emptying the macOS Trash stays the principal's single click. "Work through all the
+items" covers the 8 Oct audit list. The Singh question is answered in the session, not ruled here.
+
+---
+
 ## E-018 · 3 October 2026 — the December quarter-end test runs on prints only; the public page is refreshed
 
 Given as two answers to the supervisor's questions after the RUN 2 check. The questions were how the December quarter-end

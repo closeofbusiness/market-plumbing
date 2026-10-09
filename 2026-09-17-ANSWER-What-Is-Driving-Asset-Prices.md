@@ -193,8 +193,11 @@ and whether it raised term premia, is not measured. See
 of the rise, depending on the inflation-indexed issue used. In Germany the rise was mostly real over the window: real in 2024–25, where a linker's
 breakeven fell (measured 8 Oct, liquidity caveat in R3), while market breakevens say inflation compensation did about half or more of 2026's rise. The term premium is not measured for either; the
 ECB reads the rise since late 2024 as largely higher real term premia. Banks and public pensions absorbed the BoJ's net
-reduction; banks and foreign investors absorbed the Eurosystem's. See
+reduction; banks and foreign investors absorbed the Eurosystem's. At constant yields Japan's public took 16–25% more fixed-coupon
+JGB rate risk from end-2023 or Oct 2024 to Aug 2026 (8 Oct follow-up; the upper end rests on an estimated start stock). See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
+**FX and commodities are in the mission but not yet addressed. The principal parked them on 9 Oct (E-019): open, to be taken
+up later. Derivatives as a market-structure flow are open on the same footing.** Nothing in this note speaks for those markets.
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 
