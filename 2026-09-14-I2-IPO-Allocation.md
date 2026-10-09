@@ -90,3 +90,24 @@ gap in our searching — and that is worth saying in the answer rather than carr
   legal tests. Reported as observed, not reconciled.
 - Every syndicate's share counts summed to the filing's own stated total — which is how a transcription
   error on Jersey Mike's was caught and fixed.
+
+### Check, 9 October 2026: the lockup table against its own CSV and free sources
+
+A web check, by a Sonnet agent from free sources, found four places where this note's lockup table and its schedule file
+(`data/i2_ipo_allocation/i2_lockup_schedule.csv`) disagree, or where a source adds context. The CSV is the fuller record; the
+calendar now watches it (the IPO LOCKUP WATCH row).
+
+1. **Pershing Square USA** (lockup 26 Oct 2026) is in the CSV but missing from the table; it is the tenth of the ten deals.
+2. **SpaceX.** The table stops at day 105 and the final release on 8 Dec. The CSV also has these tranches:
+   - day 120 on 9 Oct;
+   - day 135 on 24 Oct, up to 328.4M shares each;
+   - a Q3-earnings tranche of up to 1.3bn shares.
+3. **Medline.** Affiliates of the sponsors sold 86.25M Class A shares at $41 on 10 Mar 2026 (Medline's own release). That was
+   three months before the 15 Jun expiry, so part of the fall in Carlyle's stake predates the expiry this table ties it to.
+4. **Cerebras.** The table says 171.1M shares were "released via sell-to-cover". The CSV shows sell-to-cover of about 0.2M and
+   0.4M shares, inside early-release exceptions of up to about 171.1M. **The CSV reading is the safer one.** It is
+   unverified against the prospectus.
+
+**SK hynix's lockup ended 7 or 8 Oct; free sources disagree on the day.** Seoul shares fell 1.5% on 8 Oct and the ADR about 4%.
+No insider selling was reported.
+
