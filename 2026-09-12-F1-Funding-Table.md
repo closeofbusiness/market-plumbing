@@ -49,8 +49,8 @@ cells are the agent's, each marked SOURCED with its tag or filing, or NOT AVAILA
 Built the AI build-out funding table for the six companies most consistently grouped in this project's own prior work (Alphabet, Amazon, Meta, Microsoft, Oracle, **NVIDIA** as the supported sixth — see rationale below). All SEC access used the declared `ThirdDerivativeResearch/1.0` User-Agent to sec.gov hosts only, ≥1s between the 18 requests made (6 XBRL company-facts pulls + 12 filing-index/document fetches), all in the foreground, all HTTP 200 — no 403/429 encountered, so no stop-and-report was triggered. Reading actual filing prose (not just XBRL) closed several gaps the project's prior passes had flagged as blocked or missing (Microsoft's entire purchase-obligation disclosure, Amazon's stale purchase-obligation tag, Alphabet's and Amazon's bank-credit-facility draw status, NVIDIA's bond issuance and the exact SB Energy/OpenAI guarantee).
 
 **Deliverables:**
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/f1/funding_table.csv` (125 data rows, long format)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/f1/gaps.csv` (9 gap rows)
+- `<session-scratchpad>/wave2/f1/funding_table.csv` (125 data rows, long format)
+- `<session-scratchpad>/wave2/f1/gaps.csv` (9 gap rows)
 - Supporting raw filings/XBRL and the two build scripts are in the same folder (`raw/`, `extract.py`, `build_csv.py`) for provenance — not deliverables themselves, no .md report written.
 
 **NVIDIA as the sixth company:** it's the consistent 6th name across this project's own D9, Guarantee-Stack, and DG passes. Flagging explicitly: NVIDIA is structurally unlike the other five — a capital-light chip/IP designer, not a data-center operator. Its own capex is tiny, but it is a major *financier/guarantor* of others' buildouts (see below).

@@ -2,7 +2,7 @@
 
 **Status: CLAIMS, not data.** Every number below is Green's (or a cited source's, as he relays it),
 anchored to an episode. None is verified against a primary source yet — that is ranked item D-G in
-`RESEARCH_STATE.md` section 5. Channel (d) of the goal (section 0.0); feeds explananda P and I.
+`RESEARCH_STATE.md` section 5. [As at 9 Oct: the D-G checks have since run; see `2026-09-11-DG-Green-Numbers-Checked.md` and `2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md`. Row G-014 (~150%/yr) did not reproduce: C-087.] Channel (d) of the goal (section 0.0); feeds explananda P and I.
 
 **Provenance.** Extracted 11 Sep 2026 by a Sonnet agent from Martin's private Hermes podcast corpus,
 read-only. Claim table: `_research/2026-09-11-Green-Claims.tsv` (38 claims, G-001..G-038). Raw
@@ -133,7 +133,7 @@ independently endorsing the framework).
 | ~$300 million/day | "normal" passive bid, largest-cap stocks | 2026-09-08 | Tier 1 Alpha's own model | G-012 |
 | ~$3 billion/day | peak single-stock (Micron) inflow, 2026 melt-up | 2026-09-08 (describing 2026) | Tier 1 Alpha's own model | G-012 |
 | ~50% | share of daily price move from mechanical flow (melt-up names) | 2026-09-08 | Tier 1 Alpha's own model | G-013 |
-| ~150%/year | required index return for 3x-ETF breakeven at observed volatility | 2026-09-08 | his own calculation | G-014 |
+| ~150%/year | required index return for 3x-ETF breakeven at observed volatility | 2026-09-08 | his own calculation. [C-087: did not reproduce; 24.0% log or 38.0% arithmetic at 49% vol] | G-014 |
 | $2bn/mo -> $4bn/mo | US Treasury debt buyback program size | 2026-09-08 | his own account of a Treasury announcement, uncited | G-015 |
 | 25-35% | passive share of incremental bond-market flow | 2026-09-08 | his own ("Tier 1") work, uncited | G-016 |
 | ~3,500 | ETFs tracked in his firm's database | 2026-09-08 | Tier 1 Alpha's own database | G-020 |

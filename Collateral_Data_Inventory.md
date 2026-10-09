@@ -11,13 +11,14 @@ you can build a series from. This file is the map.
 ## 1. People computing the multiplier
 
 ### Manmohan Singh (IMF) — originator
-Method: source collateral × velocity. Source collateral comes from the
-"collateral received permitted to be repledged/sold" footnote in the top ~15–20
-dealer-bank annual reports. Velocity ~3.0 pre-2008, ~1.8–2.2 post.
+Method: velocity = pledged collateral received ÷ source collateral (C-060). Pledged collateral
+received (the numerator) comes from the "collateral received permitted to be repledged/sold"
+footnote in the top ~15–20 dealer-bank annual reports; "source collateral" is the denominator,
+what hedge funds and securities lenders pledge in. Velocity ~3.0 pre-2008, ~1.8–2.2 post.
 
 - $9.4tn pledged collateral across the 18 largest dealer-banks at end-2020, up 50%+.
 - Position as of 2026: velocity stuck for two to three years on Basel III balance
-  sheet constraints.
+  sheet constraints. [C-015: this was said on 30 May 2022, so it is not a 2026 position. Cite Singh's Jan 2026 statement: about 2.0 for a decade, possibly an artefact. See C-061.]
 - Latest commentary: *Collateral velocity is disappearing behind a digital curtain*,
   Risk.net / Central Banking, January 2026 — argues tokenisation could raise reuse
   rates while making them harder to observe.

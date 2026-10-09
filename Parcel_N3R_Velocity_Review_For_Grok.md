@@ -1,5 +1,7 @@
 # Parcel N3R — adversarial review of the velocity finding · for Grok, chat window
 
+> [C-121: Grok is reached only through Cursor in this programme; there is no grok.com lane. This parcel was returned and adjudicated; its handoff line is kept as a record.]
+
 *25 August 2026. Eighth parcel; adjudication lane (the lane Grok is sanctioned for), not scouting. Written
 under C-045: the parcel asks for attack, never confirmation. Self-contained — every number travels inside
 the paste. On return: file under `_research/`, verify citations by fan-out (C-055), adjudicate into

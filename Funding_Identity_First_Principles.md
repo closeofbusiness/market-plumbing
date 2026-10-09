@@ -231,6 +231,8 @@ Ten links. **[E]** = established in the literature; **[C]** = contested; **[I]**
 > conclusion*. Name the denominator and recompute once before using it. What is NOT in dispute:
 > 12-month margin-debt growth hit **+53.7% into May 2026**, a top-ten expansion in a 355-month
 > record whose other members are all bubble peaks — and it turned in July.
+>
+> **[C-024: CLOSED 22 Aug. The three figures are three vintage × denominator pairs, all arithmetically right; the level is unsound, use the flow. See the Parcel B return, §1.]**
 
 **L5 [E in structure; UNMEASURED in magnitude].** The conversion of a valuation into an obligation happens at **pledging**. The load-bearing quantity is: *what fraction of the relevant market capitalisation has been pledged, at what haircut, to lenders who will re-mark it?* That fraction is the part of the illusion that has been made contractual. Public reading (margin only): **0.90% of NFC equity market value**. Everything else is dark. **This is the one place where your desk sees something the public data cannot, and it is the highest-value measurement available to you.**
 

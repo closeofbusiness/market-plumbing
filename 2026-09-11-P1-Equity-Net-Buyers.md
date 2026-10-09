@@ -89,7 +89,7 @@ Note: this instrument covers *all* US corporate equity, public and closely-held,
 - No cause-level interpretation attempted, per the brief's scope instruction.
 
 ### Deliverables
-All in `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p1/`:
+All in `<session-scratchpad>/wave1/p1/`:
 - `z1_equity_netbuyers.py` — reproducible, takes `current` or `YYYYMMDD`
 - `netbuyers_quarterly.csv` (1,748 data rows: 46 quarters × 38 series)
 - `netbuyers_periods.csv` (152 data rows: 4 periods × 38 series)

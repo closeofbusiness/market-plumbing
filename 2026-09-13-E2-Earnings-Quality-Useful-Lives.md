@@ -8,7 +8,7 @@
 Every conclusion this programme has reached rests on REPORTED earnings, and the large technology companies
 have repeatedly extended the assumed useful lives of their servers — which raises reported profit without
 changing a dollar of cash. If a large share of "earnings explain 70-80% of the price rise" were an accounting
-assumption, the main result would move. This was the cheapest test that could have overturned it.
+assumption, the main result would move. [C-100: the band is 71.0% to 82.3% across P2a's two endpoints, not 70-80%.] This was the cheapest test that could have overturned it.
 
 ## The answer
 
@@ -30,7 +30,7 @@ factor, not the dominant one.
 
 ## The denominator caveat, which matters for how this is used
 
-The 70-80% finding is about the **S&P 500**; this test covers **six companies**. These six are a large share
+The 70-80% [C-100: 71.0% to 82.3%] finding is about the **S&P 500**; this test covers **six companies**. These six are a large share
 of the index but not all of it, and the useful-life issue is concentrated precisely in them — so this bounds
 the effect where it actually lives, which is the right target. **It does not translate one-for-one into an
 index-level correction, and must not be quoted as though it does.**

@@ -46,7 +46,7 @@ Data: `_research/2026-09-11-P3-papers.csv` (13 papers read at source; the Li & L
 
 ## Summary
 
-I read 13 papers/chapters at source (free copies only — NBER, arXiv, author/institutional pages) and tabulated them in **`/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p3/papers.csv`** (columns: paper, year, version read, quantity, estimate, range, sample, identification, critique, free_url). Raw PDFs and extracted text are kept in the `papers/` subfolder there for traceability. All fetches used the required User-Agent, no email in any request, ≤2 req/s per host (spaced with `sleep`), and every command ran in the foreground.
+I read 13 papers/chapters at source (free copies only — NBER, arXiv, author/institutional pages) and tabulated them in **`<session-scratchpad>/wave1/p3/papers.csv`** (columns: paper, year, version read, quantity, estimate, range, sample, identification, critique, free_url). Raw PDFs and extracted text are kept in the `papers/` subfolder there for traceability. All fetches used the required User-Agent, no email in any request, ≤2 req/s per host (spaced with `sleep`), and every command ran in the foreground.
 
 **A finding that qualifies the brief's framing, stated explicitly:** most "aggregate multiplier" papers below (Gabaix-Koijen, Hahn-He-Liao-Zhou, Qian) re-use the *same* Flow-of-Funds 12-sector, 1993Q1–2018Q4 panel. That is not nine independent triangulating estimates — it's mostly one dataset re-analyzed with different estimators. The one fully independent aggregate-level design I found (Hartzmark & Solomon, using century-long dividend-reinvestment timing) gives a materially lower number. Treat convergence around "~5" with that caveat in mind.
 

@@ -100,4 +100,4 @@ A residual 2–8 companies per year (varies) still have no float match across al
 - `.../top10_by_year_corrected.csv` — corrected method's year table (all columns above plus `median_lag_days`, `max_lag_days`, and per-frame source counts `n_from_prevQ3`/`prevQ4`/`thisQ1`/`thisQ2`/`thisQ3`)
 - `.../float_outliers_excluded_corrected.csv` — corrected method's outlier log
 - `.../unmapped.csv` — unchanged (membership/mapping didn't change)
-- `.../cache/` — now also holds the 23 newly-fetched instant frames (`float_CY{2014..2024}{Q3I,Q4I}.json`, `float_CY{2015,2017,2019,2021,2025}Q1I.json`, `float_CY{2015,2017,2019,2021,2023,2025}Q3I.json`), all directly under `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p2b/cache/`
+- `.../cache/` — now also holds the 23 newly-fetched instant frames (`float_CY{2014..2024}{Q3I,Q4I}.json`, `float_CY{2015,2017,2019,2021,2025}Q1I.json`, `float_CY{2015,2017,2019,2021,2023,2025}Q3I.json`), all directly under `<session-scratchpad>/wave1/p2b/cache/`

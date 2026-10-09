@@ -65,6 +65,8 @@ There is one, it is coherent, and it is small. State it this precisely:
 > conclusion*. Name the denominator and recompute once before using it. What is NOT in dispute:
 > 12-month margin-debt growth hit **+53.7% into May 2026**, a top-ten expansion in a 355-month
 > record whose other members are all bubble peaks — and it turned in July.
+>
+> **[C-024: CLOSED 22 Aug. The three figures are three vintage × denominator pairs, all arithmetically right; the level is unsound, use the flow. See the Parcel B return, §1.]**
 
 Mean over the 45 quarters 2015Q1–2026Q1: 4.248%. The latest reading ranks **36th of 45** — near the bottom of its own range. Margin debt alone is 1.756% of nonfinancial corporate equity value, rank **57 of 117** quarters since 1997, essentially at the median (1.728%) and below the mean (1.770%); it was 2.348% in June 2007 and 1.844% at the March 2000 peak. On the broader all-sector corporate-equity denominator ($106.89trn, 2026Q1) margin debt is 1.142% against a 1.162% median — rank 64 of 117. [all re-derived from FINRA margin-statistics.xlsx, FRED NCBEILQ027S, BOGZ1LM893064105Q, AOLACBM027NBOG, LNFACBM027NBOG]
 
@@ -190,6 +192,6 @@ A competent critic wins on each of these. Cut or repair every one.
 
 ---
 
-**Working files (all absolute):** `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/` — `V_NCBEILQ027S.csv`, `V_NFCPATAX.csv`, `V_CPATAX.csv`, `V_A455RC1Q027SBEA.csv`, `V_TNWMVBSNNCB.csv`, `V_PSAVERT.csv`, `V_LNFACBM027NBOG.csv`, `V_AOLACBM027NBOG.csv`, `W_LNFACBW027NBOG.csv`, `W_AOLACBW027NBOG.csv`, `V_LOANINV.csv`, `V_DFII10.csv`, `BOGZ1LM893064105Q.csv`, `margin-statistics.xlsx`, `h8notes.html`, `h8cur.htm`.
+**Working files (all absolute):** `<session-scratchpad>/` — `V_NCBEILQ027S.csv`, `V_NFCPATAX.csv`, `V_CPATAX.csv`, `V_A455RC1Q027SBEA.csv`, `V_TNWMVBSNNCB.csv`, `V_PSAVERT.csv`, `V_LNFACBM027NBOG.csv`, `V_AOLACBM027NBOG.csv`, `W_LNFACBW027NBOG.csv`, `W_AOLACBW027NBOG.csv`, `V_LOANINV.csv`, `V_DFII10.csv`, `BOGZ1LM893064105Q.csv`, `margin-statistics.xlsx`, `h8notes.html`, `h8cur.htm`.
 
 **Sources used this session:** [FRED NCBEILQ027S](https://fred.stlouisfed.org/series/NCBEILQ027S) · [FRED NFCPATAX](https://fred.stlouisfed.org/series/NFCPATAX) · [FRED CPATAX](https://fred.stlouisfed.org/series/CPATAX) · [FRED A455RC1Q027SBEA](https://fred.stlouisfed.org/series/A455RC1Q027SBEA) · [FRED PSAVERT](https://fred.stlouisfed.org/series/PSAVERT) · [FRED LNFACBM027NBOG](https://fred.stlouisfed.org/series/LNFACBM027NBOG) · [FRED AOLACBM027NBOG](https://fred.stlouisfed.org/series/AOLACBM027NBOG) · [FRED DFII10](https://fred.stlouisfed.org/series/DFII10) · [Fed H.8 notes on the data](https://www.federalreserve.gov/releases/h8/h8notes.htm) · [Fed H.8 current release](https://www.federalreserve.gov/releases/h8/current/default.htm) · [FINRA Margin Statistics](https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics) · [Federal Register 2025-21626, eSLR final rule](https://www.federalregister.gov/documents/2025/12/01/2025-21626/regulatory-capital-rule-modifications-to-the-enhanced-supplementary-leverage-ratio-standards-for-us) · [OCC Bulletin 2025-41](https://www.occ.gov/news-issuances/bulletins/2025/bulletin-2025-41.html) · [CBO publication 58914](https://www.cbo.gov/publication/58914) *(secondary — 403 to automated fetch)*

@@ -16,7 +16,7 @@ TIC July 2026 foreign net purchases of US equities on the CSLT set were about **
 
 A European pensions scout exists ([`2026-09-14-E1-European-Pensions-Scout.md`](../2026-09-14-E1-European-Pensions-Scout.md)). Dutch pension asset stocks are in the monitor. They are not an EGB curve result. GPIF assets are in the monitor (about **¥320trn** at 30 June 2026). A claim that GPIF will buy a stated amount of JGBs is someone else’s call on the calendar; it is not a result of this programme.
 
-JGB and euro-area government-bond net supply, and cross-currency basis regimes as price drivers, are **stated in the programme brief, not yet tied to a source file.**
+JGB and euro-area government-bond holders by sector and the yield decompositions are in R3 ([`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](../2026-09-27-R3-JGB-And-Euro-Area-Bonds.md), tables in `data/r3_rates/`). Cross-currency basis regimes as price drivers are **stated in the programme brief, not yet tied to a source file.**
 
 A primary-source HTML note on the cross-border Treasury basis trade sits in the Dropbox tree and was not copied. The programme’s own N2a note is the citation.
 

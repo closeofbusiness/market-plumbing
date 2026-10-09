@@ -116,7 +116,7 @@ Re-running a script from raw inputs needs:
 - **An `SEC_UA` environment variable.** SEC EDGAR asks every automated request to identify its sender. Before running a script that calls it, run `export SEC_UA="Your Name you@example.com"`.
 - **Third-party inputs, which are not redistributed here.** These include Shiller's `ie_data.xls`, FRED's DGS10 and DFII10 series, and Damodaran's `ERPbymonth.xlsx`. Download them from their publishers to the path the script names; `.gitignore` keeps them out of commits. US federal primary sources, which are public domain, are kept under `_research/primary_sources/`.
 
-Some older notes cite paths beginning `/private/tmp/claude-501/`. That was an agent's temporary workspace at the time, and it has since been deleted. The durable copy is the repository path cited alongside it, and `python3 bin/check_scratchpad_refs.py` lists every such case.
+Some older notes cite paths beginning `<session-scratchpad>/` (before 9 Oct, `/private/tmp/claude-501/`). That was an agent's temporary workspace at the time, and it has since been deleted. The durable copy is the repository path cited alongside it. `python3 bin/check_scratchpad_refs.py` lists any path that still has the old `/private/tmp/` form.
 
 ## View the page
 
@@ -136,4 +136,4 @@ Then open http://localhost:8000. Opening `docs/index.html` directly in a browser
 
 The programme's own write-ups are © closeofbusiness under Creative Commons Attribution 4.0 International ([LICENSE](LICENSE)). Third-party and paywalled documents are summarised and cited, not copied, and quotations are kept short. Material that must not be public is kept outside this repository: the SEC contact string, paywalled originals, correspondence, simulations of named people, and third-party datasets.
 
-On 24 September 2026 nine files that should not have been published were removed. The history was rewritten, and the repository was then deleted and recreated, so GitHub holds no copy of the old commits. Nothing else changed. [THE_ASK.md](THE_ASK.md), E-011 and E-013, records the details.
+On 24 September 2026 nine files that should not have been published were removed. The history was rewritten, and the repository was then deleted and recreated, so GitHub no longer serves the old commits (they return 404). GitHub keeps a deleted repository for 90 days, visible only to organisation owners (E-013, "Limits"). Nothing else changed. [THE_ASK.md](THE_ASK.md), E-011 and E-013, records the details.

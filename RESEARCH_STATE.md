@@ -6,7 +6,7 @@ we currently *believe*, as opposed to what we have *written*.
 
 **Maintenance rule:** the orchestrating agent updates §2–§5 whenever a claim's status changes.
 If you finish a research pass and this file still says what it said before, you have not
-finished. Last updated **2026-09-11** (**GOAL AMENDED by the principal — `THE_ASK.md` E-003; §0.0 rewritten; §5 RE-PLANNED on the channel map and the Green corpus dossier**; step-ladder re-entry repair, then housekeeping: S-N2b settled row added; S4's gross-saving pair marked CONTESTED per C-047; §1.0 and Tier-N statuses turned into pointers; corrections registered since 3 Sep are C-066 to C-075 — read them with `bin/check.sh --latest`, not from this line). Previous update **2026-09-03** (housekeeping: C-047 marker finally placed; C-053 Beignet census; D1–D3 settled as S-D1/S-D2/S-D3; data layer + `bin/pull_series.py`; §5 statuses reconciled. **Afternoon:** Gemini's D3 file found on the share root and adjudicated — C-054; hedge-fund leg of D3 measured from the OFR Hedge Fund Monitor API, D3 v1.1 §8; D10 flagged. **Evening:** Gemini's N3 return verified by a 14-agent fan-out — C-055, and C-056 for my own FIA claim; margin leg of D3 measured (FIA API), FICC sponsored daily series (DTCC CSV), Singh & Goel WP/19/106 Table 2 read at source; `2026-08-23-Parcel-N3-Collateral-Return.md`).
+finished. Last full update-log entry **2026-09-11** [the log stops there; later edits are small and dated where they stand; the last-change date is `git log -1 --format=%cd -- RESEARCH_STATE.md`] (**GOAL AMENDED by the principal — `THE_ASK.md` E-003; §0.0 rewritten; §5 RE-PLANNED on the channel map and the Green corpus dossier**; step-ladder re-entry repair, then housekeeping: S-N2b settled row added; S4's gross-saving pair marked CONTESTED per C-047; §1.0 and Tier-N statuses turned into pointers; corrections registered since 3 Sep are C-066 to C-075 — read them with `bin/check.sh --latest`, not from this line). Previous update **2026-09-03** (housekeeping: C-047 marker finally placed; C-053 Beignet census; D1–D3 settled as S-D1/S-D2/S-D3; data layer + `bin/pull_series.py`; §5 statuses reconciled. **Afternoon:** Gemini's D3 file found on the share root and adjudicated — C-054; hedge-fund leg of D3 measured from the OFR Hedge Fund Monitor API, D3 v1.1 §8; D10 flagged. **Evening:** Gemini's N3 return verified by a 14-agent fan-out — C-055, and C-056 for my own FIA claim; margin leg of D3 measured (FIA API), FICC sponsored daily series (DTCC CSV), Singh & Goel WP/19/106 Table 2 read at source; `2026-08-23-Parcel-N3-Collateral-Return.md`).
 
 ---
 
@@ -137,7 +137,7 @@ which took their estimate of US shadow banking to **up to $25trn (YE2007)** and 
 > **The most important structural finding of the 22 Aug goal correction.** That $3.3trn
 > *is the denominator of Singh's velocity ratio* — the one our channel map reconstructed and
 > flagged in its own words as *"the weak link"* because it "has to be estimated separately".
-> We built the numerator to five significant figures (US-six source collateral $6,907bn FY2025)
+> We built the numerator to five significant figures (US-six pledged collateral received, the footnote figure, $6,907bn FY2025; C-060)
 > and left the denominator estimated. **The denominator is the nonbank side of the nexus.** We
 > have been computing a ratio whose denominator is the actual object of the research, and
 > recording it as a data-quality problem.
@@ -265,10 +265,11 @@ market capitalisation pledged at haircut H, a Y% price decline forces Z dollars 
 a market of elasticity E, producing a further decline of Z/E.* **The load-bearing unknown is
 X** — what fraction of market cap has actually been pledged.
 
-> ⚠ **C-024 — UNRESOLVED. The margin-debt ratio below is one of THREE conflicting figures for
-> the same quantity** (0.90%, 1.756%, 1.84%), produced by three passes of this project, all
-> claiming FINRA margin debt ÷ Z.1 NCBEILQ027S for 2026Q1, and disagreeing on the *sign of the
-> conclusion*. Name the denominator and recompute once before using it. What is NOT in dispute:
+> **C-024 — CLOSED 22 Aug (Parcel B return); this banner said UNRESOLVED until 9 Oct.** The three figures for the
+> margin-debt ratio (0.90%, 1.756%, 1.84%) are three (numerator vintage × denominator) combinations, all
+> arithmetically right for what they measure; the level is conceptually unsound (the numerator covers ETFs, ADRs
+> and bonds, the denominator only domestic non-financial corporate equity), so use the flow. See
+> `2026-08-22-Parcel-B-Numbers-Return.md` §1 and CORRECTIONS.md C-024. What is NOT in dispute:
 > 12-month margin-debt growth hit **+53.7% into May 2026**, a top-ten expansion in a 355-month
 > record whose other members are all bubble peaks — and it turned in July.
 
@@ -462,7 +463,7 @@ remains. `2026-08-23-Parcel-N3-Collateral-Return.md` §2.1.
 |---|---|---|---|---|
 | K1 | **RESOLVED — NEITHER.** Was: is the illusion monetary or a discount-rate artefact? | Prior answer: a discount-rate artefact | Rival: a financial-circuit mechanism | **Both fail.** The circuit fails on three independent observables. The discount-rate account fails **on sign**: 10y TIPS +339bp Dec-2021→Aug-2026 while equity valuation did *not* revert on any of three denominators — equity/profits +7.9%, equity/GVA flat to three decimals, Tobin's q +6.9% with 2025Q3 the highest of 304 quarters since 1945. "A discount-rate artefact, not a monetary one" becomes **"nor a discount-rate one either."** What does the work: factor-share reallocation to shareholders (Greenwald–Lettau–Ludvigson: 40.2% of the 1989–2017 real equity rise, vs 14.3% for interest rates), float retirement (−$1.90trn net equity issuance 2022Q1–2025Q4), and Gabaix–Koijen as amplifier |
 | K1b | *(superseded by K1)* **Is the illusion monetary or a discount-rate artefact?** | The funding-identity synthesis concluded it is *a discount-rate artefact, not a monetary one*, and that this is the *harder* problem | S5–S6 show a large, fast-growing intra-financial credit channel that no goods-price index would ever see | **The open Singh / two-circuits pass.** This is the single most important unresolved question in the project |
-| K2 | **What is collateral velocity actually doing?** | The inherited claim was "flat 2–3 years on Basel III" — **killed as unsourced, C-015** | FICC sponsored repo +150% in two years to $2.856trn; NCCBR revealed at ~$5.0trn. Reuse may have migrated into CCP netting, which no velocity metric captures | Same pass. If the measured series falls while the phenomenon grows, that is the project's most important measurement finding |
+| K2 | **What is collateral velocity actually doing?** | The inherited claim was "flat 2–3 years on Basel III" — **withdrawn as mis-dated, C-015 (amended 21 Aug: it was sourced to Singh, 30 May 2022; cite his Jan 2026 statement instead)** | FICC sponsored repo +150% in two years to $2.856trn; NCCBR revealed at ~$5.0trn. Reuse may have migrated into CCP netting, which no velocity metric captures | Same pass. If the measured series falls while the phenomenon grows, that is the project's most important measurement finding |
 | K4 | **RESOLVED — the null fails, but not by the proposed mechanism.** Does safe-asset supply drive valuation? | Operator: the constant share is a ratio, so it is no null on quantity — and if supply drives the denominator the constancy is mechanical | Rival: wealth drives safe-asset demand | **Operator right on the inference, wrong on the mechanism (C-022, C-023).** Numerator grew **177.8×**, denominator 239.1× — anyone using GLM as a quantity null is misusing it. But "drives" needs a *unit elasticity* and the realised one is **0.946**; and rising valuation pushes the share **down**, so it breaks the constancy rather than manufacturing it. **What replaces it is stronger and publishable:** revaluation as a share of the denominator's change went **18.1%** (GLM window) → **49.2%** (2011–26) → **66.6%** (2022Q4–2025Q4). *The constancy held while the denominator behaved like a quantity and failed once it began behaving like a valuation.* |
 | K4b | *(superseded)* **Does safe-asset supply drive valuation, or does wealth drive safe-asset demand?** *(raised by the operator, 21 Aug, correcting a project error — see C-017)* | **Wealth-driven demand:** investors hold a stable share of wealth in safe form, so a constant GLM ratio follows mechanically from any source of wealth growth. Safe assets are an *effect*. Closest to GLM's own reading | **Collateral-driven supply:** safe assets are the raw material for leverage — more Treasuries → more collateral → more repo → more capacity to hold risk assets → higher valuations. Safe assets are a *cause*. Geanakoplos's leverage cycle in GLM's accounting | **In flight.** The two predict the *same* correlation and *opposite* causality. Requires an identification strategy — candidates are debt-ceiling episodes, wartime finance, the 2023 bill deluge, and QE (which removes collateral while adding reserves). Without one there is no publishable claim |
 | K5 | **Was the KVJ sign-inversion claim publishable?** | We asserted it was a novel finding | It is KVJ's own Predictions 3 and 4, resting on a category error and a debt-ceiling-trough base effect | **RESOLVED — NO. C-018.** Do not publish in any form. A measurement critique survives: *a net measure that nets to zero the most run-prone part of the money-like stack cannot be the right summary statistic for fragility.* Makes no claim about any coefficient's sign |
@@ -513,7 +514,7 @@ item has a date or a trigger; an item with neither is a decision nobody has made
 - **3 — replace the velocity claim. DONE.** C-015 amended: the claim was traceable to Singh on
   Mercatus *Macro Musings*, 30 May 2022, and was mis-dated rather than unsourced. Superseded by
   his January 2026 statement. *Residual: the "velocity is X" phrasing is still live in three
-  documents and must become "Singh estimates" — folded into item 7 below.*
+  documents and must become "Singh estimates" — folded into item 7 below.* [9 Oct: a grep of the top-level docs found no unqualified "velocity is <number>" sentence; see item 7 and the C-040 update. The separate C-015 vintage statement stood in three files and now carries banners.]
 
 ### RANKED OPEN WORK (re-set 3 Sep housekeeping). Dependencies explicit; every item has a trigger
 
@@ -543,10 +544,10 @@ for data. Neither relaxes verification against source.
 
 THIS FENCE IS THE CURRENT WAVE ONLY — AN EMPTY FENCE DOES NOT MEAN THE PROGRAMME IS DONE (added 20 Sep,
 after the supervisor read the fence, found items 1-8 closed, and told the principal there was "no open work").
-Open work also sits in: Tier N (N2c engine 5; N3's sec-lending and pre-Form-PF legs); the flagged D-series
+Open work also sits in: Tier N (N3's sec-lending and pre-Form-PF legs; N2c's engine 5 closed 29 Aug); the flagged D-series
 directions below, of which D5 and D7 were never started; the numbered lists "Next" (items 2-7) and "Standing"
 (items 9-11; item 8, the leak objection, was answered 20 Sep - C-094); section 7's reviewing-agent checks; and
-CALENDAR.tsv, which carries 39 rows not yet done. Check all of those before reporting the list exhausted.
+CALENDAR.tsv, whose OPEN rows are the dated work (count them with the awk line at the foot of this fence; the number is not copied here: it was 39 on 20 Sep and went stale). Check all of those before reporting the list exhausted.
 
 OPEN-ITEM INVENTORY — complete, enumerated 20 Sep at the principal's request, and RANKED BY HIM.
 Every item below already lives in a tier section of this file; this is an INDEX, not a second copy.
@@ -559,7 +560,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                  25 Sep: switched to public web sources (E-015). DONE 25 Sep: four SIMILAR calls, LOW weight
                                  (1 usable item of 62); supervisor-checked 26 Sep. RUN 2 DONE 3 Oct by Grok (_research/2026-10-01-QE-Sentiment-Run2.md),
                                  supervisor check and the design decision on 4 Oct.
-   2  Goal read-back ........... 25 Sep, THE PRINCIPAL'S. The only check that has ever caught goal
+   2  Goal read-back ........... THE PRINCIPAL'S; the 25 Sep one is DONE (E-015, E-016), the next is a CALENDAR.tsv row. The only check that has ever caught goal
                                  corruption; an agent restating the goal cannot detect it (E-000).
    3  Panel asks (C-097, d3) ... DONE 24 Sep. Grok landed data/w3_tax/firm_tax_panel.csv and data/eps_split/panel/;
                                  the supervisor re-derived both exactly (W3: 412 firms, ETR 27.351% and 19.615%;
@@ -597,7 +598,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        this is an index, and restating is what caused C-081/C-089/C-092.
                                                        Supervisor review 21 Sep: every scalar reproduces; Task 2's verdict
                                                        rescoped (C-096 — a tighter ceiling, not an estimate); the firm
-                                                       panel and raw Z.1 pulls did not land (C-097).
+                                                       panel and raw Z.1 pulls did not land (C-097); the panel landed 24 Sep (item 3 above), the raw Z.1 pulls have not.
                                                        Spec: _research/2026-09-20-W3-Tax-Decomposition-Spec.md (C-095).
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
@@ -620,9 +621,9 @@ Do not restate findings here. Status and detail stay in the home section named o
    D1 foreign-official TIC netting / uninsured split / FR 2004 post-2021 ...... D1 block
    D2 full N-PORT census / insurer Schedule D / hyperscaler cash .............. D2 block
    D3 sec-lending leg (data starts Mar 2027) / fund-buffer leg ................ D3 block
-   D8 $13.3bn ABCP unattributed across five issuers .......................... D8 block
+   D8 $13.3bn ABCP unattributed across six issuers .......................... D8 block
    D10 second leg ............................................................ D10 block
-   N2c engine 5 · N3/Singh sec-lending leg and pre-Form-PF years ............. Tier N
+   N3/Singh sec-lending leg and pre-Form-PF years (N2c engine 5 closed 29 Aug) .. Tier N
    Holder-side split of the household residual (C-084) ....................... no free route found
 
   NUMBERED ITEMS FROM THE EARLIER PLAN (2-7)
@@ -649,9 +650,13 @@ Do not restate findings here. Status and detail stay in the home section named o
            REBUILD small, undated.
        (d) paragon_burry_dossier.md is PRIVATE-ONLY since 24 Sep (private/_research/); 4 working files lost, no downstream
            use. Keep; add a banner in the private copy.
-   d2  Thirteen more docs carry a dead scratchpad citation ALONGSIDE a durable one. Cosmetic; the durable
-       path is what a reader should use. Bulk-fix only if someone is editing those docs anyway.
-   d3  RESOLVED 24 Sep (verified 8 Oct: the folder holds README.md, diluted_waso_firm_year.csv and 23 more files; item 3 above).
+   d2  Fourteen docs (thirteen on 21 Sep; Shadow_Debt_Channel_Map.md joined after the 8 Oct rebuild of
+       bin/build_collateral_multiplier.py) carried a dead scratchpad citation ALONGSIDE a durable one. Cosmetic; the
+       durable path is what a reader should use. REWRITTEN 9 Oct: the /private/tmp/claude-501/... prefix, which also
+       held the macOS account name, became the placeholder `<session-scratchpad>/` in every tracked file outside data/,
+       so bin/check_scratchpad_refs.py no longer lists them. Exception left for the supervisor:
+       bin/rates_vs_premium.py:71 (a code constant; its logic was not touched).
+   d3  RESOLVED 24 Sep (verified 8 Oct: the folder holds README.md, diluted_waso_firm_year.csv and 21 more files, 23 in all; item 3 above).
        WAS: `data/eps_split/panel/` is an EMPTY DIRECTORY (22 Sep). The 385-firm diluted-share panel behind
        C-093 and every accretion figure is not on disk, so none of it is locally reproducible. Same class as
        C-097. Ask Grok for it on the next contact, bundled with the W3 panel.
@@ -665,7 +670,7 @@ Do not restate findings here. Status and detail stay in the home section named o
    S1 vs the SPV hole · attack the leak objection · re-derive "own computation" numbers ·
    look for false consensus · confirm corrections propagated
 
-  DATED ....................................................... CALENDAR.tsv, 39 rows not done
+  DATED ....................................................... CALENDAR.tsv (open rows by the awk line at the foot of this fence; no count copied)
   THE PRINCIPAL'S ............................................. Singh briefing · goal read-back · hermes-core
 
 1. ETF1 - identity net of ETF shares        DONE 15 Sep -> 2026-09-15-ETF1-Identity-Net-Of-ETF.md (C-083).
@@ -752,24 +757,26 @@ Do not restate findings here. Status and detail stay in the home section named o
                                             Do not open measurement on this route. Remaining free scouts (ICI/SOI tax
                                             look-through) stay optional and separate.
 
-8. EPS SPLIT — is 'earnings' partly buybacks?  DONE 18 Sep (Grok) -> 2026-09-18-EPS-Split.md. REVIEWED 19 Sep (C-093).
-   (goal row: the PRICE SIDE, and the join       Method VERIFIED: AAPL re-derived exactly from SEC. RESULT, AS A BAND: per-share
-   between its price and money halves)           accretion ~7-13% of the price gain since 2015; profit + index composition ~69-75%;
+8. EPS SPLIT — is 'earnings' partly buybacks?  DONE 18 Sep (Grok) -> 2026-09-18-EPS-Split.md. REVIEWED 19 Sep (C-093), re-read 22 Sep (C-101).
+   (goal row: the PRICE SIDE, and the join       Method VERIFIED: AAPL re-derived exactly from SEC. RESULT, AS A CEILING (C-101): per-share
+   between its price and money halves)           accretion is at most ~7-13% of the price gain since 2015 - a spread across weighting
+                                                 methods, one-sided because survivorship pushes every member up, NOT an interval;
+                                                 'profit + index composition ~69-75%' is its arithmetic complement, not a second result;
                                                  multiple ~18%. Lead claim SURVIVES - mostly real profit. The doc's point figure is
-                                                 the top of its own 7.1-13.4% weighting band and survivorship pushes it up; 'profit'
-                                                 is a residual that absorbs composition. Missing megas bias both ways (GOOGL buyer;
-                                                 TSLA/AVGO issuers). data/eps_split/panel/ is EMPTY - per-firm panel not saved.
+                                                 the top of its own 7.1-13.4% weighting band; 'profit' is a residual that absorbs
+                                                 composition. Missing megas bias both ways (GOOGL buyer; TSLA/AVGO issuers). The
+                                                 per-firm panel LANDED 24 Sep in data/eps_split/panel/ (d3 RESOLVED; item 3 above).
 
 7. D4 — re-cut channel map dealer-first     HOLD. Trigger is the conduit channel stopping; it has not (re-checked 11 Sep on
                                             the 31 Aug N-MFP3 census). Folds C-066 when it runs. NEXT CHECK: the 10 Oct
-                                            N-MFP3 census (30 Sep quarter-end) in CALENDAR.tsv. Full definition in Tier D below.
+                                            N-MFP3 census (30 Sep quarter-end) in CALENDAR.tsv. Full definition: D4 under "Flagged candidate directions" below.
                                             RESTORED 19 Sep: this entry was deleted by accident on 18 Sep when item 8 was
                                             rewritten, which left the 10 Oct census with no ranked item to route its result to.
 
 
 
-MARTIN'S, NOT MINE: the Singh briefing, pushed to 30 Sep by E-005 ("we don't have anything interesting to
-tell him yet"); the hermes-core fixes task.
+MARTIN'S, NOT MINE: the Singh briefing (pushed by E-005, then again by E-017; the date is the CALENDAR.tsv row, not
+this line); the hermes-core fixes task.
 
 OUTSIDE PARCELS (orchestrator_outside):
   Parcel_ATT1_Premium_Attack_For_Grok_Cursor.md   - RETURNED 13 Sep, VERIFIED 13 Sep -> C-078. Grok reproduced all
@@ -822,7 +829,7 @@ Closed 31 Aug - 15 Sep, with evidence — do NOT restate findings here, read the
   Green Substack+Ep61 2026-09-11-Green-Substack-And-Ep61-Synthesis.md      | 17 posts + Ep 61; 3 figures re-read in source
   Treasury demand     2026-09-11-Who-Buys-Treasuries-Synthesis.md          | 4 downloads vs Green; 3 claims + 4 series re-checked
   P1 net buyers       2026-09-11-P1-Equity-Net-Buyers.md                     | Z.1 2026Q2; identity holds; 93% of the rise is revaluation
-  P2a benchmark       2026-09-11-P2a-Return-Decomposition.md                 | 70-80% earnings since 2015; ERP 4pp -> 1.7pp
+  P2a benchmark       2026-09-11-P2a-Return-Decomposition.md                 | 71.0-82.3% earnings share since 2015 (C-100); ERP 4pp -> 1.7pp
   P2b top-10 test     2026-09-12-P2b-Top10-Earnings-vs-Weight.md             | earnings LED value to 2019; 4.3pp gap only in 2025
   P2c rates vs premium 2026-09-12-P2c-Rates-vs-Risk-Premium.md               | rates a DRAG; the premium did the work
   P3 + ATT0           2026-09-12-ATT0-First-Attribution.md                   | the multiplier approach refuted (C-077)
@@ -840,8 +847,8 @@ Closed 31 Aug - 15 Sep, with evidence — do NOT restate findings here, read the
   ZK2 return (Gemini) _research/ZK2_verification_2026-08-31.md             | stands-with-amendment
   SB1 return (Grok)   _research/SB1_verification_2026-08-31.md             | 56/62; C-072, C-073
   Model routing       CLAUDE.md working rules + ~/.claude/skills/orchestrator_outside/SKILL.md
-Martin's, not mine: the Singh send (v5 ready, due 16 Sep); the 25 Sep goal read-back (E-003 + E-004); the two
-outside parcels above; the hermes-core fixes task.
+Martin's, not mine: see "MARTIN'S, NOT MINE" above (the Singh send and the goal read-back are CALENDAR.tsv rows);
+the hermes-core fixes task.
 Scripted/dated — CALENDAR.tsv is authoritative, query it, never copy it here:
   awk -F'\t' '$NF=="OPEN"' CALENDAR.tsv | sort | head
 ```
@@ -865,7 +872,7 @@ works before this can start — that is the first concrete task, not the reading
 **N2. Build the money leg — institutional cash pools and non-M2 money demand.** Half the nexus. Our own text concedes the gap this item exists to close: institutional cash pools are *"the actual marginal demanders in the Pozsar account"* and *"were not measured by anyone here"* (`2026-08-21-Safe-Asset-Share-Reexamined.md:179`). *Status: no longer blocked by N1, and no longer "nothing" — its two identified subcomponents are BUILT and adversarially reviewed: N2a (`2026-08-30-N2a-Offshore-Dollar-Leg.md`) and N2b (`2026-08-31-N2b-zk-The-Wholesale-Share.md` §8, ready to carry the N4 synthesis).*
 
 **N3. Build Singh's denominator — primary source collateral.** We reconstructed the *numerator*
-to five significant figures (US-six source collateral $6,907bn FY2025) and left the denominator
+to five significant figures (US-six pledged collateral received, the footnote figure, $6,907bn FY2025; C-060) and left the denominator
 an estimate we ourselves called *"the weak link"* (`Shadow_Debt_Channel_Map.md:1196`). **That
 denominator is the nonbank side of the nexus.** Pozsar–Singh give the benchmark to extend:
 **$3.3trn (YE2007)**, **$2.4trn (YE2010)** — $1.6/$1.3trn hedge funds, $1.7/$1.1trn real money.
@@ -875,7 +882,7 @@ aggregates (D3 §8 / D10). Scouting parcel for the rest of the collateral leg wr
 `Parcel_N3_CollateralLeg_Scouting_For_Gemini.md` (sources by type, official re-use measures, per-CCP
 PQD files, re-use literature) — awaiting the principal's hand-off to Gemini; return expected at the
 Dropbox share root as `N3_Collateral_Scouting_Return.md`, to be filed under `_research/` and
-adjudicated under C-054 rules (identifiers deleted unread).** **RETURNED 19:27 and verified the same evening (C-055) — `2026-08-23-Parcel-N3-Collateral-Return.md`. What it opened: Singh & Goel WP/19/106 **Table 2** read at source — sources $3.4trn (2007) / 2.4 (2010) / **3.7 (2017: hedge funds 2.2, sec lending 1.5)**, pledged $10.0 / 6.0 / 7.5trn, velocity 3.0 / 2.5 / 2.0; no later Singh table exists (Jan 2026 Central Banking: "roughly $13trn", velocity ~2, paywalled). Fund-side hedge-fund source = Form PF Q43 collateral posted (tracks Singh to ~15% 2013–16, diverges 2017, $8.2trn 2026Q1); sec-lending source = ISLA €3.9tn on loan (31 Mar 2026, client-type split on the market-data page). **N3 is no longer blocked on method: the build is the concept reconciliation between Form PF Q43 / ISLA on-loan and Singh's Table 2, then the 2026 row.** No official re-use aggregate exists anywhere (FSB/BIS/ESMA confirmed; FSB Feb 2026 repo report cites third-party 50–90% / 65% / 85% rates).** *Status (11 Sep): the reconciliation is BUILT — `2026-08-31-N3v4-Singh-Reconciliation.md` (panel rebuilt from the 2017 filings; §6 back-test 4 Sep, C-074). What remains on this thread is ranked-block item 0.*
+adjudicated under C-054 rules (identifiers deleted unread).** **RETURNED 19:27 and verified the same evening (C-055) — `2026-08-23-Parcel-N3-Collateral-Return.md`. What it opened: Singh & Goel WP/19/106 **Table 2** read at source — sources $3.4trn (2007) / 2.4 (2010) / **3.7 (2017: hedge funds 2.2, sec lending 1.5)**, pledged $10.0 / 6.0 / 7.5trn, velocity 3.0 / 2.5 / 2.0; no later Singh table exists (Jan 2026 Central Banking: "roughly $13trn", velocity ~2, paywalled). Fund-side hedge-fund source = Form PF Q43 collateral posted (tracks Singh to ~15% 2013–16, diverges 2017, $8.2trn 2026Q1); sec-lending source = ISLA €3.9tn on loan (31 Mar 2026, client-type split on the market-data page). **N3 is no longer blocked on method: the build is the concept reconciliation between Form PF Q43 / ISLA on-loan and Singh's Table 2, then the 2026 row.** No official re-use aggregate exists anywhere (FSB/BIS/ESMA confirmed; FSB Feb 2026 repo report cites third-party 50–90% / 65% / 85% rates).** *Status (11 Sep): the reconciliation is BUILT — `2026-08-31-N3v4-Singh-Reconciliation.md` (panel rebuilt from the 2017 filings; §6 back-test 4 Sep, C-074). What remains on this thread is the N3/Singh sec-lending leg and the pre-Form-PF years, listed under "OPEN LEGS ON FINISHED WORK" in the ranked block (the "ranked-block item 0" this line used to cite no longer exists).*
 
 **N4. Harvest the interlock from material we already own.** *Status: RESULT 15 Sep — `2026-09-15-N4-Scale-Timing-Bound.md` (C-085). Ranked item 3 closed.* Each of the nine channels has a
 **"Double-counting risk"** section written to net the interlock *out*. Under Pozsar–Singh a
@@ -1042,8 +1049,8 @@ $1,384bn vs Form PF repo borrowing $3,379bn at YE2025 ≈ 41% sponsored; (iii) t
 (`data/vintages/ccp_pqd_2026Q1/`), FICC GSD 6.1.1 = $66.5bn; the 15-CCP IM series is in `data/series.tsv`. Remaining: (ii)
 re-use on this chain, and the concept reconciliation in N3.*
 
-**N2c. THE FUNDING CLOSURE — BUILT v1 same day, 29 Aug; result in §2 S-N2c.** Remaining: engine 5
-(stablecoins → D6 parcel), NDFI loan composition, household-cell split, RoW composition, the 2026Q1 equity
+**N2c. THE FUNDING CLOSURE — BUILT v1 same day, 29 Aug; result in §2 S-N2c.** Remaining: ~~engine 5
+(stablecoins → D6 parcel)~~ (CLOSED 29 Aug: D6 and S-N2c), NDFI loan composition, household-cell split, RoW composition, the 2026Q1 equity
 issuance sign-flip (watch at Z.1 Q2, ~11 Sep). Original framing: *(flagged 29 Aug at the principal's prompt.)* The programme has mapped pipes but never closed the
 sources-and-uses: 2023–2026 gross absorption (Treasury net issuance + corporate/data-centre debt + net equity
 demand at rising valuations) against the only five things that can pay for it: **(1) bank money creation** —
@@ -1116,7 +1123,9 @@ produced agreement with one of them, which is worth nothing (C-045).
 7. **Triage the unpromoted caveats (C-040).** Only 3 of 17 items from the 21 Aug do-not-say list
    reached the register; one of the remainder reached an external reviewer as a load-bearing
    claim. Highest-value unpromoted: velocity phrasing, Damodaran's near-circular 266bp, Bezemer
-   et al. used to characterise 2026 on a sample ending 2005.
+   et al. used to characterise 2026 on a sample ending 2005. [Status 9 Oct: still OPEN. "Only 3 of 17" was not re-measured.
+   Velocity phrasing: a grep of the top-level docs found no unqualified "velocity is <number>" sentence, so that item looks
+   closed (C-040 update). Damodaran's 266bp and the Bezemer item were not re-checked.]
    *Blocks: nothing directly — but it is the mechanism by which the next C-036 happens.*
 
 ### Standing, with triggers rather than dates
@@ -1135,8 +1144,8 @@ produced agreement with one of them, which is worth nothing (C-045).
 
 ### Tier A2 — the persona capability, pending a decision
 
-**A2a. Parcel C — RETURNED and then OVERTURNED 22 Aug (C-048): the 17 Aug filings do not exist; PJM and MISO obtained 90-day abeyances on 14 Aug. Three panel positions cannot resolve until ~12 Nov (calendar). The 30-day informational reports ARE real and unread (calendar 25 Aug).** *(serves A2.)*
-`Parcel_C_FERC_Dockets_For_Gemini.md`. **This is the overdue 17 Aug calendar item.** Asks, per
+**A2a. Parcel C — RETURNED and then OVERTURNED 22 Aug (C-048): the 17 Aug filings do not exist; PJM and MISO obtained 90-day abeyances on 14 Aug. Three panel positions cannot resolve until ~12 Nov (calendar). The 30-day informational reports ARE real and were READ 30 Aug (`2026-08-30-FERC-EL26-Informational-Reports.md`).** *(serves A2.)*
+`Parcel_C_FERC_Dockets_For_Gemini.md`. **This was the 17 Aug calendar item; RESOLVED 22 Aug (the filings do not exist, C-048); the event moved to the 12 Nov row of CALENDAR.tsv.** Asks, per
 RTO: does a *transferable* flexible-load service class appear, or do the RTOs defend
 firm-service-only tariffs — the two branches three pre-registered panel positions turn on. Also
 asks the parcel to correct our own unverified basics (the "six" RTOs, the docket numbers, whether

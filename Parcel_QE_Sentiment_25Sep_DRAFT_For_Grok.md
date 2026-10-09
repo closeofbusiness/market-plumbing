@@ -1,6 +1,6 @@
 # Quarter-end funding sentiment — public web sources, two runs (Grok in Cursor)
 
-**Status: FINAL.** The principal routed this to Grok in Cursor on 19 Sep 2026. It was switched from X to public web sources
+**Status: DONE (it was FINAL).** RUN 1 was done on 25 Sep and RUN 2 on 3 Oct (`_research/2026-10-01-QE-Sentiment-Run2.md`); E-018 (3 Oct) ended the series: the December test runs on prints only, so there is no further Grok parcel. The brief below is kept as it was sent. The principal routed this to Grok in Cursor on 19 Sep 2026. It was switched from X to public web sources
 by the principal on 25 Sep (THE_ASK E-015), because no lane we have reads X (C-121: the first RUN 1 attempt, 24 Sep, stopped at
 X's sign-in wall). The filename still says DRAFT only because renaming it would break the references to it.
 **Runs:** **RUN 1 as soon as possible, and before the 30 Sep turn** (expectations), and **RUN 2 on 1 Oct** (what happened at

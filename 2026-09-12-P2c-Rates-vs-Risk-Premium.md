@@ -51,7 +51,7 @@ collapsed, not because risk pricing eased.
 
 ## The agent's return (Sonnet)
 
-All four CSVs and the script are complete, verified, and reproducible (ran three times with identical output; exit code 0 each time). Deliverables are in `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/p2c/`: `rates_vs_premium.py`, `monthly_series.csv` (285 rows, 2003-01 to 2026-09), `decomposition_annual.csv` (46 rows), `decomposition_windows.csv` (4 rows), `damodaran_compare.csv` (5 rows). Nothing was written to the read-only project folder. Damodaran's site fetched successfully (HTTP 200) with the specified User-Agent; no fallback needed.
+All four CSVs and the script are complete, verified, and reproducible (ran three times with identical output; exit code 0 each time). Deliverables are in `<session-scratchpad>/wave2/p2c/`: `rates_vs_premium.py`, `monthly_series.csv` (285 rows, 2003-01 to 2026-09), `decomposition_annual.csv` (46 rows), `decomposition_windows.csv` (4 rows), `damodaran_compare.csv` (5 rows). Nothing was written to the read-only project folder. Damodaran's site fetched successfully (HTTP 200) with the specified User-Agent; no fallback needed.
 
 ## 1. Window decomposition (trailing E/P, primary measure)
 

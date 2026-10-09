@@ -8,4 +8,4 @@ What survives from the original delivery note, because it is not recorded elsewh
 
 - Scalars were appended to `data/series.tsv` and vintaged at `data/vintages/series_append_2026-09-18-eps-split.tsv`.
 - The note said the per-firm panel was at `data/eps_split/panel/*_v2.csv`. **That directory is empty** — the
-  panel was computed on the agent's box (`/workspace/tdr/`) and never landed here. See C-093.
+  panel was computed on the agent's box (`/workspace/tdr/`) and never landed here. See C-093. [Landed 24 Sep: `data/eps_split/panel/` now holds it; RESEARCH_STATE.md d3 is RESOLVED.]

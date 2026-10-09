@@ -37,7 +37,7 @@ The evidence there is not ambiguous:
 
 - Singh's own position is that velocity has been stuck for two to three years, because
   Basel III leaves no exemption for reserves or Treasuries — the dealer balance sheet
-  cannot pull more trucks.
+  cannot pull more trucks. [C-015: said 30 May 2022, not a 2026 position. Cite Singh's Jan 2026 statement: about 2.0 for a decade, possibly an artefact. See C-061.]
 - ECB SFTDS (WP 3147, Nov 2025): ~11.6% of European repo volume relies on reused
   securities, ~€49bn/day, and the paper finds *against* the liquidity-windfall
   hypothesis.

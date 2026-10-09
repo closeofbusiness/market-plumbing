@@ -210,7 +210,8 @@
 > of 35 distinct `/private/tmp/claude-501/...` paths cited across vault documents, **33 no longer existed**,
 > including deliverables named in P1, P2a, P2c, ATT0, F1, I1b, Oracle and N2c. Those thirteen docs survive
 > because they *also* cite a durable path under `_research/`, `data/` or `bin/` — that second citation is the
-> only reason the work is still reproducible. When a pass produces a table, a script or a CSV, land it in the
+> only reason the work is still reproducible. (On 9 Oct the surviving citations were rewritten to the placeholder
+> `<session-scratchpad>/`, because the prefix carried the macOS account name; the checker no longer lists them.) When a pass produces a table, a script or a CSV, land it in the
 > vault and cite THAT. Re-check with **`python3 bin/check_scratchpad_refs.py`**, which names every affected
 > document and whether it still has a durable copy. (The first inline one-liner written for this note
 > over-reported by two — its pattern swallowed trailing punctuation. Tested, then replaced by the script.)
@@ -281,14 +282,16 @@ collateral. Two mechanisms in most treatments; one interlock in theirs.
   `bin/build_collateral_multiplier.py`), and this is a permissive condition
   rather than a proximate source. See `Shadow_Debt_Channel_Map.md` (repo channel) and
   `2026-08-21-Singh-And-The-Two-Circuits.md`.
-- **The money leg** — **not covered.** `2026-08-21-Safe-Asset-Share-Reexamined.md:179` states it
-  outright: institutional cash pools, *"the actual marginal demanders in the Pozsar account,
-  were not measured by anyone here."*
-- **The interlock itself** — **not covered, and not currently visible in the structure.** The
-  channel map is nine silos each asked *"is it money creation?"*; the place where the interlock
-  actually surfaces is each channel's **"Double-counting risk"** section, where it is treated as
-  a measurement nuisance to be netted out. Under Pozsar–Singh the interlock *is the phenomenon*.
-  **Re-read those sections as findings, not as caveats.**
+- **The money leg** — **built and joined 15 Sep (N4).** Its status lives in `RESEARCH_STATE.md` §1.0, not here.
+  (`2026-08-21-Safe-Asset-Share-Reexamined.md:179` said institutional cash pools *"were not measured by anyone
+  here"*; that was true on 21 Aug.)
+- **The interlock itself** — **has a 15 Sep result (N4), mixed on 2024;** status in `RESEARCH_STATE.md` §1.0.
+  The channel map is nine silos each asked *"is it money creation?"*; the interlock surfaces in each channel's
+  **"Double-counting risk"** section. **C-042: whether the repetition is the phenomenon or the inflation to net
+  out depends on what is measured.** For reuse, velocity and chain length (Singh's object) the repetition *is* the
+  phenomenon and netting destroys it; for the stock of money claims (Pozsar's object) it is what he nets out.
+  **Net for stocks, never for velocity, and never report one number as serving both.** Re-read those sections as
+  findings about reuse, not as caveats.
 
 ## The two workstreams
 
@@ -383,12 +386,12 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-11-P1-Equity-Net-Buyers.md`** | 4k | if P attribution or any channel's net-buyer role | ✓ | ✓ |
 | **`2026-09-11-P3-Price-Impact-Multiplier.md`** | 4k | if pricing any flow (the M decision) | ✓ | ✓ |
 | **`2026-09-18-EPS-Split.md`** | 4k | if P2a / earnings share / buybacks — EPS split: 69% profit / 13% accretion / 18% multiple of price | ✓ | ✓ |
-| **`2026-09-22-W2-AI-Paper-Composition.md`** | 4k | **READ ITS ADJUDICATION BANNER FIRST** — if AI debt / who funds the build-out / bank money creation. Long money holds the bulk; money funds ~$4bn; bank C&I is industry exposure, ~$250bn of it pre-dating the boom (C-115). Grok drafted, supervisor adjudicated (E-008) | ✓ | ✓ |
+| **`2026-09-22-W2-AI-Paper-Composition.md`** | 4k | **READ ITS ADJUDICATION BANNER FIRST** — if AI debt / who funds the build-out / bank money creation. Long money holds the bulk; money funds ~$4bn, mostly as repo collateral financing dealers rather than the companies (C-120); bank C&I is industry exposure, ~$250bn of it pre-dating the boom (C-115). Grok drafted, supervisor adjudicated (E-008) | ✓ | ✓ |
 | **`2026-09-27-RV1-Drawdown-Sizing.md`** | 2k | if undrawn bank lines / fragility / fast money creation. Sizes a 2020-type drawdown on the $987bn NDFI and ~$300bn AI-adjacent undrawn stocks (HYPOTHESIS); the precedent figures were re-read at source | ✓ | ✓ |
 | **`2026-09-27-R1-Treasury-10y-Decomposition.md`** | 3k | if rates / Treasury yields / term premium. The first rates pass, corrected after the R12R review (C-125): real yields did almost all of the 10-year's rise, and the front end led after February 2026. The term-premium split is HYPOTHESIS: models and surveys agree on the next four years and disagree on years 5–10. Tables in `data/r1_rates/` | ✓ | ✓ |
 | **`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`** | 3k | if Treasury supply / duration / who bought Treasuries. Corrected after the R12R review (C-122 to C-124): the public absorbed ~36% more 10-year equivalents at constant prices, though par-weighted duration grew no faster than face value; the Fed's share is 4% to ~13% by measure; the buyer table's household row is likely to be largely offshore hedge funds that TIC misses. Which buyers took the duration is HYPOTHESIS. Tables in `data/r2_rates/` | ✓ | ✓ |
-| **`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`** | 4k | if JGBs / euro-area or German government bonds / BoJ or ECB balance sheets. First pass, corrected after the R3R review (C-126 to C-128): the 10-year JGB +243bp, of which breakeven 82-97bp (a third to two-fifths, by issue choice); the Bund +156bp, mostly real over the window but about half or more inflation compensation in 2026 (linker breakevens); term premium not measured. Banks and public pensions absorbed the BoJ's net reduction; banks and foreign investors the Eurosystem's. Tables in `data/r3_rates/` | ✓ | ✓ |
-| **`2026-09-21-W3-Tax-Decomposition.md`** | 4k | **READ ITS C-096 BANNER FIRST** — if earnings / tax act / W1 leak. ETR 27.4%→19.6%; tax 9.5% of EPS growth; restated claim 74.5%. Task 1 stands; Task 2's verdict is rescoped to a tighter ceiling, and its panel did not land (C-097) | ✓ | ✓ |
+| **`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`** | 4k | if JGBs / euro-area or German government bonds / BoJ or ECB balance sheets. First pass, corrected after the R3R review (C-126 to C-128): the 10-year JGB +243bp, of which breakeven 82-97bp (a third to two-fifths, by issue choice); the Bund +156bp, mostly real over the window (real in 2024–25, measured 8 Oct; C-127 update) but about half or more inflation compensation in 2026 (linker breakevens); Japan's public took 16–25% more JGB rate risk at constant yields (8 Oct follow-up); term premium not measured. Banks and public pensions absorbed the BoJ's net reduction; banks and foreign investors the Eurosystem's. Tables in `data/r3_rates/` | ✓ | ✓ |
+| **`2026-09-21-W3-Tax-Decomposition.md`** | 4k | **READ ITS C-096 BANNER FIRST** — if earnings / tax act / W1 leak. ETR 27.4%→19.6%; tax 9.5% of EPS growth; restated claim 74.5%. Task 1 stands; Task 2's verdict is rescoped to a tighter ceiling, and its firm panel landed 24 Sep (C-097 update; the raw Z.1 pulls did not) | ✓ | ✓ |
 | **`2026-09-20-W1-The-Leak-Objection.md`** | 2k | if the leak / two-circuits / who sold — the ceiling is the $3,643.7bn seller-side flow, and the pension+insurance channel is $938.4bn (C-094) | ✓ | ✓ |
 | `2026-09-18-EPS-Split-POINTER.md` | <1k | pointer only, no figures — read the EPS-Split doc and its C-093 banner | — | — |
 | **`2026-09-11-P2a-Return-Decomposition.md`** | 4k | if the fundamentals benchmark (e) or P attribution | ✓ | ✓ |
@@ -406,7 +409,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-13-S1-Supply-Decomposition.md`** | 5k | if supply, issuance, buybacks or the AI build-out — the record issuance is PRIVATE | ✓ | ✓ |
 | **`2026-09-13-P5ii-Growth-Versus-Risk.md`** | 4k | **always, with P2c — whether the compression is risk or growth is UNRESOLVED** | ✓ | ✓ |
 | **`2026-09-13-P5iii-Concentration-And-JVZ.md`** | 4k | if concentration, the passive bid or Green — the pattern is there, the flow link is not | ✓ | ✓ |
-| **`2026-09-13-E2-Earnings-Quality-Useful-Lives.md`** | 3k | if earnings quality or the 70-80% finding — 5-12%, main finding survives | ✓ | ✓ |
+| **`2026-09-13-E2-Earnings-Quality-Useful-Lives.md`** | 3k | if earnings quality or the earnings-share finding (71.0% to 82.3% across the two endpoints, C-100) — 5-12%, main finding survives | ✓ | ✓ |
 | **`2026-09-14-P5iv-Third-Premium-Measure.md`** | 4k | **always, with P2c and P5ii — the third measure; its SPLIT is dead (C-082), the direction is not** | ✓ | ✓ |
 | **`2026-09-14-E1-European-Pensions-Scout.md`** | 4k | if European pensions, the long end or duration demand — the transition is a RELABELLING | ✓ | ✓ |
 | **`2026-09-14-P5i-Event-Study-Result.md`** | 4k | **always, with P5ii and P5iv — 2024 accrued as DRIFT, not on news** | ✓ | ✓ |
@@ -421,8 +424,8 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-14-F1r-AI-Funding-Remainder.md`** | 4k | if AI build-out financing — NVIDIA's tables reconcile; 4 of 6 firms name no vehicle | ✓ | ✓ |
 | **`2026-09-14-I2-IPO-Allocation.md`** | 4k | if the IPO boom or forward supply — 77-93% of proceeds go to unnamed buyers; lockup schedule | ✓ | ✓ |
 | **`Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md`** | 2k | if running the adversarial check on the synthesis | ✓ | ✓ |
-| `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` | 2k | **FINAL (filename says DRAFT). Two runs, 25 Sep and 1 Oct, same queries; calls pre-registered against the 30 Sep prints.** Routed to Grok in Cursor, which **cannot read X** (the first RUN 1 attempt was blocked on 24 Sep, C-121); switched to **public web sources** by the principal on 25 Sep (E-015) | — | — |
-| `Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md` | 2k | **READY 26 Sep** (E-015, E-016): what draws committed credit lines all at once. It covers the March-2020 precedent, drawdown rates by facility type (NDFI lines included), triggers, brakes and free monitor series. Routed to Grok in Cursor; the supervisor applies any rate to today's exposures | — | — |
+| `Parcel_QE_Sentiment_25Sep_DRAFT_For_Grok.md` | 2k | **DONE (filename says DRAFT; it was FINAL). Two runs, 25 Sep and 3 Oct, same queries; calls scored against the 30 Sep prints. E-018 ended the series: the December test is prints only, so no further Grok parcel.** Routed to Grok in Cursor, which **cannot read X** (the first RUN 1 attempt was blocked on 24 Sep, C-121); switched to **public web sources** by the principal on 25 Sep (E-015) | — | — |
+| `Parcel_RV1_Revolver_Drawdown_For_Grok_Cursor.md` | 2k | **RETURNED 27 Sep and SIZED** (it was READY 26 Sep; E-015, E-016; return in `_research/2026-10-01-RV1-Revolver-Drawdown-Return.md`, sizing in `2026-09-27-RV1-Drawdown-Sizing.md`): what draws committed credit lines all at once. It covers the March-2020 precedent, drawdown rates by facility type (NDFI lines included), triggers, brakes and free monitor series. Routed to Grok in Cursor; the supervisor applies any rate to today's exposures | — | — |
 | `Parcel_R12R_Rates_Review_For_Grok_Cursor.md` | 2k | **RETURNED and ADJUDICATED 27 Sep**: Grok's adversarial review of R1 and R2. Return and the supervisor's adjudication in `_research/2026-09-27-R12R-Rates-Review-Return.md`; four corrections, C-122 to C-125 | — | — |
 | `Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md` | 2k | **RETURNED and ADJUDICATED 28 Sep**: Grok's adversarial review of R3. Return and the supervisor's adjudication in `_research/2026-09-28-R3R-JGB-EGB-Review-Return.md`; three corrections, C-126 to C-128 | — | — |
 | **`_research/SYN1_return_2026-09-15.md`** | 2k | if SYN — Grok hostile return: earnings ok-amended; money-side assembly fails | ✓ | ✓ |
@@ -431,7 +434,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`_research/2026-09-13-B5-FirstStage-Spec.md`** | 3k | if running or reading the Tier B first stage — pre-registered, read before touching results | ✓ | ✓ |
 | **`_research/2026-09-14-P5i-EventStudy-Frame.md`** | 3k | if running or reading the 2024 event study — pre-registered frame and decision rule | ✓ | ✓ |
 | **`_research/2026-09-14-N4-Frame.md`** | 2k | historical — restated questions answered in N4 (C-085); read if reconstructing why the percentage form died | ✓ | ✓ |
-| **`Parcel_BR1_Multiplier_Census_For_Gemini_DeepResearch.md`** | 2k | if running the Tier B literature census | ✓ | ✓ |
+| **`Parcel_BR1_Multiplier_Census_For_Gemini_DeepResearch.md`** | 2k | RUN 13 Sep (Gemini Deep Research; cited in C-077 and C-079; no return file is in this repo). Read only if re-running the Tier B literature census | ✓ | ✓ |
 | **`Parcel_BR2_Cross_The_Bridge_For_Grok_Cursor.md`** | 2k | if running the Tier B design challenge | ✓ | ✓ |
 | **`_research/BR2_return_2026-09-15.md`** | 3k | if Tier B / BR2 — Grok return: payment-day IV; aggregate M subset only | ✓ | ✓ |
 | **`2026-09-15-B6-Phase1-Payment-Day-Mechanism.md`** | 4k | if B6 — Phase 1 FAILS kill switch; mechanism absent on free calendar-true dates | ✓ | ✓ |

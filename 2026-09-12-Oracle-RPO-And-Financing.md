@@ -40,7 +40,7 @@ disclosed as maturing in September 2026 is not mentioned anywhere in this 10-Q.
 
 Both filings were fetched successfully (one request each, 1-second spacing, no 403/429). Findings below; full sourced detail is in the CSV.
 
-**Deliverable:** `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/oracle/oracle_rpo.csv` (44 data rows: item, value, period, source filing+section, note). No .md files written.
+**Deliverable:** `<session-scratchpad>/wave2/oracle/oracle_rpo.csv` (44 data rows: item, value, period, source filing+section, note). No .md files written.
 
 **1. RPO**
 - As of Aug 31, 2026 (Q1 FY2027, the 10-Q under review): RPO = **$664 billion**. Filing's own stated prior-year comparative: $455 billion as of Aug 31, 2025 (+46% YoY, both figures stated together in one sentence).

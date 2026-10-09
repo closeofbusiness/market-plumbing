@@ -51,7 +51,7 @@ change is a price change whose risk-versus-growth composition is exactly the amb
 
 ## How it sits with this week's other results
 
-- **P5(iv), the survey premium:** roughly two-fifths of the compression is risk, three-fifths growth.
+- **P5(iv), the survey premium:** roughly two-fifths of the compression is risk, three-fifths growth. [C-082: this split is withdrawn. The survey premium fell because the bond leg rose; forecasters expected more from equities, not less. Do not quote it.]
 - **This test:** of the part that arrived on *scheduled news*, the Fed channel dominates the earnings
   channel — which leans risk, consistent with the above.
 - **Both:** the dominant share arrived on neither. **Three independent routes this week have now pointed at

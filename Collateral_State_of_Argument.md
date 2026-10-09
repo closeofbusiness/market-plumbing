@@ -39,7 +39,7 @@ Heads I Win, Tails You Lose*, August 2026 (Gallo, Aney, Pan, Koor).
 
 **1. Collateral velocity is not the growth engine.** Singh's own position is that
 velocity has been stuck for two to three years because Basel III leaves no exemption
-for reserves or Treasuries — the dealer balance sheet cannot pull more trucks. ECB
+for reserves or Treasuries — the dealer balance sheet cannot pull more trucks. [C-015: said 30 May 2022, not a 2026 position. Cite Singh's Jan 2026 statement: about 2.0 for a decade, possibly an artefact. See C-061.] ECB
 SFTDS evidence: ~11.6% of European repo volume relies on reused securities, roughly
 €49bn/day, and the paper finds *against* the liquidity-windfall hypothesis.
 

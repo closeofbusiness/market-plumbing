@@ -21,11 +21,13 @@ JAPAN
 EURO AREA (the German Bund as the benchmark)
   4. Prices. The Bundesbank's daily Svensson yields for listed Federal securities (10-year, 2-year, 1-year, 9-year) and the
      ECB's euro-area AAA and all-issuer curves; monthly 10-year convergence yields for Italy, France and Germany (spreads).
-     No free market breakeven exists for Bunds, so the real part is survey-based: the Bundesbank's expected real rate (the
-     average 10-year Bund yield minus Consensus inflation forecasts). The implied survey inflation expectation is the
-     month's average Svensson 10-year minus that rate, a close stand-in for the average yield the Bundesbank uses. The ECB
-     Survey of Professional Forecasters' long-term inflation expectation is shown beside it. Market breakevens exist only
-     for the last twelve months: the Finanzagentur's daily series for each inflation-linked Bund (added after R3R, C-127).
+     The survey-based real part is the Bundesbank's expected real rate (the average 10-year Bund yield minus Consensus
+     inflation forecasts). It cannot see market inflation compensation (C-127), so it is not a market breakeven. The implied
+     survey inflation expectation is the month's average Svensson 10-year minus that rate, a close stand-in for the average
+     yield the Bundesbank uses. The ECB Survey of Professional Forecasters' long-term inflation expectation is shown beside
+     it. A free market breakeven DOES exist for Bunds: the Finanzagentur's daily series for each inflation-linked Bund covers
+     the last twelve months (added after R3R, C-127; this script reads only that series). Older history, back to 2023, is in
+     the Bundesbank's monthly price-and-yield files (used for Germany 2024-25 on 8 Oct 2026; see the R3 note and C-127).
   5. A holder's return on a constant-maturity 10-year Bund, fully revalued month by month, against the 1-year yield.
   6. Who holds. The ECB's Securities Holdings Statistics by Sector: euro-area residents' holdings of euro-area government
      debt securities at face value, summed over the 20 countries that were members for the whole window (Bulgaria, a member

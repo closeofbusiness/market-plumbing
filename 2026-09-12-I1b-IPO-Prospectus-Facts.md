@@ -31,8 +31,8 @@ a closed-end fund and is kept out of the totals.
 ## Summary
 
 I pulled the final 424B4 prospectuses (or F-1/424B4 for the ADS deal) directly from EDGAR for all 4 named deals, plus discovered 6 additional 2026 US IPOs above $1bn via `efts.sec.gov` full-text search. All SEC requests used the declared `ThirdDerivativeResearch/1.0` User-Agent on sec.gov hosts only, spaced ≥1 second apart, run in the foreground; no 403/429 was ever encountered, so no stop-and-report was triggered. The email string was never written to a file (verified by grep against my own output). Deliverables are at:
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/i1b/ipo_prospectus_facts.csv` (10 rows)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/i1b/cornerstones.csv` (17 rows)
+- `<session-scratchpad>/wave1/i1b/ipo_prospectus_facts.csv` (10 rows)
+- `<session-scratchpad>/wave1/i1b/cornerstones.csv` (17 rows)
 
 ## Deal table — primary vs. secondary (base offering, no over-allotment)
 

@@ -133,7 +133,7 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
   stale**. Two method traps: never splice the 2010 "churning factor of 4" to the later velocity
   series (different construction), and the series is **not vintage-stable** (WP/19/106 revised
   2010–2015 upward after adding Canadian banks). Do not drop the claim — The ECB SFTDS finding (~11.6% of European repo volume relies on reused securities, ~€49bn/day, rejecting the liquidity-windfall hypothesis) is separately sourced and survives — do not conflate the two.
-- **Still standing at:** `Collateral_State_of_Argument.md` · `Where_The_Two_Workstreams_Meet.md` §1 · `Shadow_Debt_Measurement_Handbook.md`
+- **Still standing at:** ~~`Collateral_State_of_Argument.md` · `Where_The_Two_Workstreams_Meet.md` §1 · `Collateral_Data_Inventory.md`~~ — all three carry a [C-015] banner as of 9 Oct 2026 (the Inventory worded it as a 2026 position, which was worse than the vintage defect). `Shadow_Debt_Measurement_Handbook.md` no longer carries the statement. `RESEARCH_STATE.md` §3 K2 ("killed as unsourced") was corrected the same day.
 
 ## C-016 · Z.1 table identifier `L.207` for repo
 
@@ -209,6 +209,8 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
 
 ## C-024 · ⚠ UNRESOLVED CONFLICT — the margin-debt ratio, our single load-bearing number
 
+> **CLOSED 22 Aug 2026 by the Parcel B return (`2026-08-22-Parcel-B-Numbers-Return.md` §1); this entry was not updated until 9 Oct. The text below is the 21 Aug record, kept as written. See the last two bullets.**
+
 **Do not use either figure until reconciled. Two of our own agents disagree on the same series.**
 
 - **Raised:** 21 Aug 2026, inbox-harvest synthesis, recomputing what C-021 had just established
@@ -219,7 +221,8 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
 - **And our record's own figure is a third number.** `RESEARCH_STATE.md` carried **0.90%**, which is roughly half both. That is probably a different denominator — total US market cap including financials and foreign issues would roughly halve it — but it was never named.
 - **Correct position:** **three different numbers for the one quantity we designated load-bearing.** Before any further use: name the denominator explicitly (NFC equity only, all-sector corporate equity, or total market cap), fix the vintage, and recompute once. Until then the pledged-fraction claim in either direction is unsupported.
 - **What is NOT in conflict, and is the more useful finding:** the **flow**. 12-month margin-debt growth was **+53.7% into May 2026** and +49.0% into June — placing 2026 in the **top ten expansions of the 355-month record**, alongside March 2000 (+80.5%), July 2007 (+62.6%) and April 2021 (+61.5%). *Every other member of that list is a recognised bubble peak.* June 2026 was the all-time peak at $1,502bn; July fell **−$84.8bn, −5.65%, the 7th percentile of monthly changes.* **We recorded a level and called the channel uninformative. The level is contested; the growth rate is informative, and it has already turned.**
-- **Still standing at:** `RESEARCH_STATE.md` §1 (0.90%) and C-021 (1.756%) — both flagged pending reconciliation
+- **Resolved 22 Aug 2026 (propagated 9 Oct):** the three figures are three (numerator vintage × denominator) combinations, all arithmetically right for what they measure (the table is in Parcel B §1). The level is conceptually unsound: the numerator covers ETFs, ADRs and bonds, the denominator only domestic non-financial corporate equity. Use the flow, not the level.
+- **Still standing at:** the UNRESOLVED banners were replaced or bannered on 9 Oct in `RESEARCH_STATE.md` §1.1, `2026-08-21-Singh-And-The-Two-Circuits.md` and `Funding_Identity_First_Principles.md`. Open for the supervisor: C-021's "deflating" conclusion (`RESEARCH_STATE.md` §1.1) rests on the level this closure calls unsound; whether to amend it is a judgement not made here.
 
 ## C-025 · "There is no aggregate external funding gap, so no monetary explanation is required"
 
@@ -348,7 +351,7 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
 - **Found:** 22 Aug 2026, while propagating C-036.
 - **What happened.** On 21 Aug our own Singh pass produced a **17-item "do not say this" list**, including item 13: *the Z.1 Tobin's-q denominator does not capitalise intangibles, so measured q drifts up mechanically; the arithmetic is right, the interpretation is not survivable.* **Only 3 of those 17 items were ever promoted into `CORRECTIONS.md`.** The next day I put "Tobin's q, highest of 304 quarters since 1945" into an external-review parcel as a load-bearing belief. An external reviewer then independently re-found the same defect.
 - **Why the guard did not fire.** `bin/check.sh` greps against the ban list in this file. A caveat raised *inside a research document* and never promoted is **invisible to it by construction**. The detection existed, one day old, in a document I had read. Detection was never the problem — it is the same failure the register was built for, one level up.
-- **Confirmed still live:** "collateral velocity is X" phrasing appears in **3 current documents** despite item 10 of that list ruling it out (say *"Singh estimates"*, never *"velocity is"* — no independently verifiable ratio exists after 2017).
+- **Confirmed still live:** "collateral velocity is X" phrasing appears in **3 current documents** despite item 10 of that list ruling it out (say *"Singh estimates"*, never *"velocity is"* — no independently verifiable ratio exists after 2017). **Update 9 Oct:** a grep of the top-level docs found no unqualified "velocity is <number>" sentence, so this item looks closed. The "only 3 of 17" count, Damodaran's 266bp (item 14) and the Bezemer item (15) were not re-checked.
 - **Correct practice, now binding:** when a research pass produces a *do-not-say* list, **promoting it to `CORRECTIONS.md` is part of landing that pass, not an optional follow-up.** A caveat that lives only in the document that raised it will be violated by the next document.
 - **Outstanding:** the remaining unpromoted items from the 21 Aug list need triage. Highest-value ones spotted so far — velocity phrasing (item 10), Damodaran's near-circular 266bp (item 14), Bezemer et al. used to characterise 2026 when the sample ends 2005 (item 15).
 - **Still standing at:** `2026-08-21-Singh-And-The-Two-Circuits.md` holds the full list
@@ -383,7 +386,7 @@ ranked by the wrong criterion. Raised by the principal, not by a verifier.**
 - **Correct position:** **net for stocks, never net for velocity, and never report one number as though it served both.** State which object is being measured *before* stating whether an overlap counts.
 - **Why this is the signature error again.** The four logged instances were all *normalised statistic read as a quantity*; the fifth (C-037) was a net regression coefficient read as gross. This one is **gross-vs-net at the level of a research frame** rather than a figure — the same confusion, one level up, which is why the existing ban patterns could never have caught it.
 - **Reinforces:** invariant 8 ("a normalised statistic is not a quantity") now has a companion — *an aggregate is not defined until you say whether it nets*.
-- **Still standing at:** nothing — `RESEARCH_STATE.md` §1.0 amended in the same pass, 22 Aug 2026.
+- **Still standing at:** nothing — `RESEARCH_STATE.md` §1.0 amended in the same pass, 22 Aug 2026. **Not quite (found by the 8 Oct audit, fixed 9 Oct):** `CLAUDE.md`'s nexus block repeated the unqualified claim together with a pre-N4 status (now the condition plus a pointer to `RESEARCH_STATE.md` §1.0), and `Report/Nexus_Decisions_Brief_2026-08-22.html` still recommended it (bannered). The gate saw neither: italics split the phrase in CLAUDE.md, and the HTML is outside the scan.
 
 ## C-043 · "CFS Divisia DM4 is ~$53–55trn of money-like claims outside M2"
 
@@ -584,7 +587,7 @@ ranked by the wrong criterion. Raised by the principal, not by a verifier.**
 - **The collision.** Singh's velocity = *"the total pledged collateral received by the large banks, divided by the primary sources of collateral"* (WP/19/106). **"Sources" is his denominator** — what hedge funds and securities lenders pledge *in*. `Shadow_Debt_Channel_Map.md` uses "DEALER SOURCE COLLATERAL" for the **statutory footnote figure**, which is his **numerator** ($6,907bn US-six FY2025). Same phrase, opposite ends of the same ratio.
 - **Not a wrong number.** The channel map's own source table already says the footnote is *"the numerator of Singh's velocity measure"* and its caveats are right (the sum double-counts across dealers by construction; correct for chain length, meaningless as a stock). Only the findings prose is mislabelled — but that is the half a later reader quotes.
 - **Correct usage from here:** the footnote figure is **"pledged collateral received"** (numerator). **"Source collateral" / "primary sources"** is reserved for the denominator — hedge funds via prime brokerage plus real-money securities lending. Never use "source" for both in one document.
-- **Still standing at:** ~~`Shadow_Debt_Channel_Map.md` findings prose~~ — relabelled 25 Aug; the source table needed no change.
+- **Still standing at:** ~~`Shadow_Debt_Channel_Map.md` findings prose~~ — relabelled 25 Aug; the source table needed no change. Found 9 Oct and fixed: `RESEARCH_STATE.md` §1.0 and N3 ("US-six source collateral $6,907bn") and `Collateral_Data_Inventory.md` ("Method: source collateral × velocity"). C-060 has no ban pattern, so the gate cannot catch the term.
 
 ---
 
@@ -715,7 +718,7 @@ ranked by the wrong criterion. Raised by the principal, not by a verifier.**
 - **The pagination:** WP/19/106's own table of contents places Figure 3 on printed **p.14** ("Pledged Collateral Received by U.S. Banks and European Banks ...... 14"). I cited p.15, which is the PDF viewer page; printed p.15 opens Table 2. Citing a paper's figure by viewer page to its author is exactly the error that reads as carelessness.
 - **Addendum (SB1 claim 48):** my perimeter question conflated two sources. WP/19/106 Box 1 names 10–15 dealers plus recent Canadian entrants and Nomura; "the top 20 banks" is the January 2026 article's phrase. Asking whether "the top-20 perimeter is still the WP/19/106 list" presumes they are the same list. Question rewritten.
 - **Lesson:** when a number will be shown to the person who produced the original, recompute the comparison arithmetic explicitly rather than reaching for a percentage, and cite by the source's OWN pagination, not the viewer's.
-- **Still standing at:** ~~N3v4 §2b~~, ~~2026-08-30-Singh-Ask.md~~, ~~RESEARCH_STATE.md~~ — all corrected in place 31 Aug.
+- **Still standing at:** ~~N3v4 §2b~~, ~~2026-08-30-Singh-Ask.md~~, ~~RESEARCH_STATE.md~~ — all corrected in place 31 Aug. The series note in `data/series.tsv` (`jpm_collateral_permitted_sep2025_bn`, "to 0.5%") was missed; a superseding row with the corrected note was appended 9 Oct (the value 1829.9 stands, so the row was not withdrawn).
 
 ---
 
@@ -802,7 +805,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
   - **The ECB quote was stale.** R3 said the ECB's 10-year term-premium estimate "has been fairly stable since" late 2023, quoting a speech whose data end on 10 Jun 2025. The ECB now says the rise in long-term yields since late 2024 was driven largely by higher real term premia.
 - **Correct position.** The Bund's rise over the window was mostly real, but not almost all. In 2026 market breakevens did about half or more. For 2024–25 no market breakeven was obtained; surveys, the ECB's decomposition of 2025 and the steady five-year-forward swap point to real rates (HYPOTHESIS). On the ECB's current reading, higher real term premia drove the rise since late 2024. Germany stopped issuing linkers in 2024, so their breakevens carry liquidity premia.
 - **Why it matters.** A survey-based measure was used as if it were a market measure, and it failed exactly when inflation compensation moved.
-- **Still standing at:** nowhere. R3, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place. `Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md` quotes the dead wording as an attack target and is allow-listed.
+- **Still standing at:** nowhere. R3, the ANSWER's rates paragraph, `dossiers/rates.md` and CLAUDE.md's read table were corrected in place. `Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md` quotes the dead wording as an attack target and is allow-listed. Found 9 Oct: the docstring of `bin/r3_jgb_egb.py` still said no free market breakeven exists for Bunds (a script docstring, outside the .md scan); fixed. `dossiers/rates.md` and `CLAUDE.md`'s R3 row now also carry the 8 Oct results.
 - **Update, 8 Oct 2026: the 2024–25 HYPOTHESIS is now measured.** The Bundesbank's monthly price-and-yield files give daily real yields for every linker. On the 2033 linker the breakeven fell 21bp over 2024–25 while the nominal yield rose 66bp, so that period's rise was real. The grade is MEASURED on a fixed issue; the attribution is BOUNDED because of the liquidity premium after issuance stopped in 2024 (R3, Germany).
 
 ---
@@ -859,7 +862,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
   - The household row, which N2c defines to include the new domestic hedge-fund sector (+$21bn over R2's window), is likely to be largely offshore hedge funds that TIC misses. The Z.1's new foreign-hedge-fund table puts their Treasuries, net of short sales, at $1.30trn at end-2023, $1.56trn at end-2024, $2.07trn at end-2025 and $1.81trn in 2026Q1. That the household row is mostly these funds is inferred, not measured: the table is supplementary and does not say how much of it TIC captures.
   - Domestic hedge funds are small in this vintage: about $0.1trn of Treasuries, net of short sales, at end-2024. The levered bid N2c placed inside households is real, but it is mostly offshore funds.
 - **Why it matters.** A table that "closed with a small overlap" was taken as a sign it was right. The overlap was the defect.
-- **Still standing at:** nowhere. `bin/build_closure_2026Q2.py` was fixed and re-run; the refresh's two CSVs, both N2c notes and R2 were corrected in place.
+- **Still standing at:** nowhere. `bin/build_closure_2026Q2.py` was fixed and re-run; the refresh's two CSVs, both N2c notes and R2 were corrected in place. Found 9 Oct: the `CALENDAR.tsv` row for the 14 Oct Singh update stated the household-row finding without "inferred, not measured"; fixed.
 
 ---
 
@@ -906,7 +909,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
   - RUN 1 needs either a lane that demonstrably reads X posts, or a switch to public web sources with the same seven queries. That choice is the principal's.
   - Whichever lane is used, RUN 2 (1 Oct) must use the same.
 - **Why it matters.** RUN 1 decays: it cannot be taken after the 30 Sep turn. The routing assumption was never tested before the run it gated.
-- **Still standing at:** nowhere. The parcel's status line, `CLAUDE.md`'s read-table row, the RUN 1 and RUN 2 rows of `CALENDAR.tsv` and `RESEARCH_STATE.md` §5 item 1 were corrected in place.
+- **Still standing at:** nowhere. The parcel's status line, `CLAUDE.md`'s read-table row, the RUN 1 and RUN 2 rows of `CALENDAR.tsv` and `RESEARCH_STATE.md` §5 item 1 were corrected in place. Five returned Grok parcels (D10R, N2aR, N2bR, N2cR, N3R) still told the reader to paste into grok.com; bannered 9 Oct. The principal's routing rule has no verbatim entry in `THE_ASK.md` (left for the supervisor).
 
 ---
 
@@ -924,7 +927,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
   - A seventh row, the Dutch pension transition, was right but named no source; it now cites the E1 scout.
 - **Correct position.** Large-bank exposure to AI-adjacent industries is ~$450bn committed and ~$150bn outstanding, and ~$250bn of the commitments predates the build-out. Rollovers are an IRA-side count set against a different universe from the DOL boxes, and the diagram now says so. Money funds hold ~$4bn, mostly as repo collateral. The premium story is graded medium, and lower than it reads.
 - **Why it matters.** This is shape 5 of the page's own §11 (a summary stronger than its source), on the page that names the shape. The page check scans for banned wording. It cannot see a comparison that mixes measures, a subset drawn across two datasets, or a dropped qualifier. **Only reading the page against its sources finds these**, and that audit has now been run once. Re-run it before any republish that changes numbers.
-- **Still standing at:** nowhere. `docs/index.html` was corrected in place and republished; the ANSWER row gained the W2 qualifier.
+- **Still standing at:** nowhere. `docs/index.html` was corrected in place and republished; the ANSWER row gained the W2 qualifier. Found 9 Oct: `dossiers/long-money-holders.md` and `CLAUDE.md`'s W2 read-table row still said "money funds ~$4bn" without the repo-collateral qualifier; fixed.
 
 ---
 
@@ -1038,7 +1041,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 - **What is wrong.** The arithmetic is exact (94.64%). The **denominator is not a stable quantity**. Run the identical method on the other three periods in the same file: **2015–19 = −54.6%; 2020–21 = +119.6%; 2022–23 = +387.5%; 2024–26 = +94.6%.** All four verified. A share that swings from minus fifty-five to plus three hundred and eighty-eight on adjacent windows is not measuring a stable economic fact — it is a small, sign-changing denominator (net issuance) doing the moving.
 - **And the fix is not simply a better denominator.** The audit recommended switching to a gross base. Gross bases stay inside [0,100] but are not stable either: household over gross buy-side runs **15.9% / 56.2% / 54.2% / 44.6%** across the same four periods. **Report the dollar figure ($3,069.4bn) and name the base explicitly every time; there is no percentage here that travels.**
-- **Still standing at:** `2026-09-14-HR-The-Household-Residual.md` and `2026-09-17-ANSWER` §3.
+- **Still standing at:** `2026-09-14-HR-The-Household-Residual.md` and `2026-09-17-ANSWER` §3. The series row `z1_household_share_of_net_new_equity_pct` (94.6) carried no flag and `bin/check.sh --todo` printed it to every session; a WITHDRAWN row was appended 9 Oct. `2026-09-14-I2-IPO-Allocation.md` repeated the 94.6% (bannered 9 Oct).
 
 ---
 
@@ -1149,6 +1152,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **What I do NOT accept from the audit that found this.** It proposed that the **tightest ceiling is the equal-weight 7.1%**, on the grounds that all four are upward-biased so the smallest binds. **Rejected.** The four are not four estimates of one quantity with a shared bias — they are different estimands. The index is market-cap weighted, so the mcap constructions are the relevant ones and equal-weight is the wrong estimator for this question, not a tighter bound on it. Taking a minimum across definitions is not a bound.
 - **Also found and separately true:** `data/eps_split/panel/` **is an empty directory** — the 385-firm panel behind every number above is not on disk, so none of it is locally reproducible. Same defect class as C-097. Recorded as **d3**.
 - **Still standing at:** `2026-09-18-EPS-Split.md`; `2026-09-17-ANSWER` §1 and §6, corrected in place.
+- **Update 24 Sep, noted 9 Oct:** `data/eps_split/panel/` is no longer empty. The panel landed on 24 Sep and the supervisor re-derived the published bounds from it (`RESEARCH_STATE.md` §5 item 3; d3 RESOLVED). `RESEARCH_STATE.md` item 8, the ANSWER and `monitor/DATA.md` said "empty" or "missing" until 9 Oct.
 
 ---
 
@@ -1160,7 +1164,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **What is wrong.** P2a computes **two** cumulative rows: to Dec-2025 the earnings share is **71.0%**, to Jun-2026 it is **82.3%**. Re-derived independently: `log(295.3881/102.31) / log(7450.032857/2054.27) = 0.82301`. The document then states the headline as "roughly 70–80%", which **excludes its own second row by 2.3 points**. It does say the split is "sensitive to the endpoint" and that the Jun-2026 run pulls the EPS share up — but it never says how far, and the number that leaves the band is the more recent one.
 - **Correct position.** The measured range across the two computed endpoints is **71.0%–82.3%**. Say that, or name the endpoint with the figure. The ANSWER (§6, 21 Sep) already notes 82.3% sits above the band; **P2a itself was never corrected** and it is the document everything cites.
 - **Correction to my own brief.** I briefed the audit that 82.3% came from "a separate calculation". It does not — it is P2a's own row, in the same table, in the same document as the headline. The inconsistency is internal, which makes it worse, not better.
-- **Still standing at:** `2026-09-11-P2a-Return-Decomposition.md` lines 13 and 58, corrected in place.
+- **Still standing at:** `2026-09-11-P2a-Return-Decomposition.md` lines 13 and 58, corrected in place. The "70-80%" shorthand also stood in `CLAUDE.md`'s E2 read-table row, `RESEARCH_STATE.md`'s P2a index line and `2026-09-13-E2-Earnings-Quality-Useful-Lives.md` (lines 10 and 33); fixed or bannered 9 Oct. Still using the shorthand, left for the supervisor: `2026-09-18-EPS-Split.md` line 32 and `2026-09-21-W3-Tax-Decomposition.md` lines 88 and 98.
 
 ---
 
@@ -1250,7 +1254,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **Verified first:** AAPL re-derived independently from SEC companyfacts — FY2015 diluted WASO 5,793,069,000 × 4 (Aug-2020 split) = **23,172,276,000**; FY2025 **15,004,697,000**; Δlog **−0.4346**. Both endpoints match the panel exactly, on the largest weight and the largest buyer.
 - **What is wrong, three ways.** (1) **"Aggregate profit" is not measured — it is a residual.** It is inferred as Shiller index EPS, which moves when firms enter and leave the index, plus the panel's share change, which covers current constituents only. So **index-composition effects land in the "profit" bucket by construction.** The doc's statement that composition is "not folded into either bucket" is incorrect. (2) **13.4% is the highest of four weightings**: equal-weight 7.1%, latest-mcap 8.3%, Laspeyres share-index 10.6%, 2015-mcap mean of firm Δlogs 13.4%. Survivorship pushes every one of them *up* (survivors are the buyers), so quoting the maximum as the point estimate overstates twice. (3) The missing megas bias in **opposite** directions: Alphabet, a large buyer, would raise accretion; TSLA and AVGO, large issuers, would lower it. The net is unsigned.
 - **Correct position.** Per-share accretion is **~7–13% of the S&P 500 price gain since 2015**, most likely toward the lower-middle once survivorship is weighed. **Profit plus index composition is ~69–75%**; the multiple **~18%**. Of EPS growth alone, accretion is roughly **one-tenth to one-sixth**. **"Earnings did most of the work" survives, and it is mostly real profit** — but carry the band, and call the ~69% "profit and composition", not profit.
-- **Reproducibility gap:** `data/eps_split/panel/` is **empty**. The per-firm panel was computed and not saved — the same failure as P5(iii)'s per-ticker residuals. Only the mega-coverage file and the annual share index survive.
+- **Reproducibility gap:** `data/eps_split/panel/` is **empty**. The per-firm panel was computed and not saved — the same failure as P5(iii)'s per-ticker residuals. Only the mega-coverage file and the annual share index survive. **Update 24 Sep:** the panel landed (see the C-101 update).
 - **Still standing at:** `2026-09-18-EPS-Split.md`, bannered and allow-listed.
 
 ## C-092 · "JVZ sharpen returned NOT SUPPORTED — not an underpowered false null" / Tier B's standing finding as written
@@ -1271,7 +1275,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **The root cause, which is the reusable part.** Stage A computed the MDE as **2σ/√N** on **3,936 firm-quarters**, giving 0.451pp, and cleared. The **realised** two-way-clustered SE was 0.811, an MDE of **1.622pp** — 3.6× larger. The implied effective n is **304, not 3,936.** The identifying shock is quarter-level (aggregate flow) interacted with a near-time-invariant cross-sectional characteristic, so precision is governed by the number of shock periods, not the number of rows. **σ/√N is the wrong formula for this design class, and "effective n" declared rather than demonstrated is not a gate.**
 - **Correct position.** The JVZ legs are **uninformative on free data** — the same class as B6 (C-090/C-091) and P5(iii), for the third time. Do **not** say JVZ was not supported, was refuted, or was tested with its holes closed. Do not read the wrong-signed idio point estimate as mild evidence against the mechanism. Whether free data *could* carry this design is **still open**: the binding constraints are the N-PORT span (23–26 quarters) and mega-firm coverage, and mega-firm coverage was a Yahoo rate-limit problem, which is fixable.
 - **What still stands.** B5 and P4 closed on **data** (C-086). B6 closed on **arithmetic** (C-090/C-091) and that one is genuinely permanent — 386 years. No scalar M was invented anywhere; C-077/C-080 retractions stand. The within-quarter variation finding is real and is a genuine advance over P5(iii)'s collapsed design. Tier B's standing finding survives **on the B5/P4/B6 legs**; it is **overstated on the JVZ leg** and must not be quoted as "every free route failed."
-- **Still standing at:** the three JVZ docs and `2026-09-16-TierB-E005-Resolution-Limit.md`, all bannered and allow-listed.
+- **Still standing at:** the three JVZ docs and `2026-09-16-TierB-E005-Resolution-Limit.md`, all bannered and allow-listed. `data/series.tsv` `corr_etfflow_idiovol_gap` (note: "flow link not supported") was superseded by a row with a corrected note on 9 Oct.
 
 ## C-091 · "B6 is blocked on free NYSE payment-date coverage"
 
@@ -1323,7 +1327,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **What is wrong.** The constant-leverage breakeven for L=3 is `g_be = (L−1)/2 · σ²`. At `^SOX` 2026YTD realized vol of **49.0%** that is **24.0%**, not ~150%. A 150%/yr hurdle needs **σ ≈ 122%** annualized; on the alternative reading that 150% is the *drag* term `L(L−1)/2 · σ²`, it needs **σ ≈ 71%**. Observed `^SOX` vol is 45–55% across the YTD, H1, trailing-60d and 1y windows. Neither is in reach.
 - **State the convention with the number.** 24.0% is the underlying's **log (geometric)** return. On the arithmetic-drift convention, `μ_be = L/2 · σ²`, the same vol gives **38.0%**. A breakeven quoted without its convention is not checkable.
 - **Correct position.** The daily-rebalance mechanism is **supported** — issuer prospectus and holdings put gross exposure at ≈3.00× AUM on 15 Sep 2026, and the rebalance moves notional with no new cash. The drag is real but shows up as the **gap to the 3×-daily path**, not as a hurdle: 2026YTD SOXL **+140.6%** against a 3×-daily-compounded SOXX **+162.6%**, a −22.0pt gap. Do not restate ~150%/yr as fact; if quoting Green, attribute it and say it did not reproduce at observed vol.
-- **Still standing at:** the G-014 mechanism finding, and the Green corpus dossier as a record of what he said.
+- **Still standing at:** the G-014 mechanism finding, and the Green corpus dossier as a record of what he said (a pointer to C-087 was added to its G-014 row and its status line on 9 Oct).
 
 ## C-086 · "P4 recovered a Russell elasticity / IWB holdings are the Russell list"
 
@@ -1389,7 +1393,7 @@ N4's original form.
   be attributed.
 - **Still standing at:** `2026-09-14-SYN-What-We-Can-Say.md` (one-paragraph money sentence and
   §2 "the hole"; bannered), `2026-09-14-HR-The-Household-Residual.md` (headline and conclusion;
-  bannered), `_research/2026-09-14-N4-Frame.md` (bannered), `2026-09-14-I2-IPO-Allocation.md:75`,
+  bannered), `_research/2026-09-14-N4-Frame.md` (bannered), `2026-09-14-I2-IPO-Allocation.md:75` (bannered 9 Oct, with the C-081 sentence at :68),
   `Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md` and
   `Parcel_LIT1_Residual_Literature_For_Gemini_DeepResearch.md` (the briefs that posed the claim).
 
@@ -1419,6 +1423,7 @@ stated to the principal as the best estimate of the risk-versus-growth split.
   split must not be quoted.** The direction is corroborated across three constructions; the decomposition is
   not. Surveys also extrapolate past returns (Greenwood-Shleifer), which the earlier write-up noted and then
   under-weighted.
+- **Still standing at:** nowhere known. Found 9 Oct: `2026-09-14-P5i-Event-Study-Result.md` restated the split (bannered) and `data/series.tsv` `spf_survey_erp_change_bp` carried it in its note (superseded by a new row; the value -19.1bp stands). The P5(iv) note and the public page were already corrected.
 
 ## C-081 · "The equity base grew ~$1trn a year" and "households absorbed 94.6% of net new equity issued"
 
@@ -1568,6 +1573,7 @@ RESEARCH_STATE §5, the ranked list and the ATT1 parcel.
   valuation to it without also stating the baseline band.
 - **RESOLVED 9 Oct 2026 (re-derived by a Sonnet agent from Treasury's daily real yield curve and the Fed's H.15, which agree on all 934 overlapping days):** Grok's FII30 1.95% -> 2.72% is the H.15 monthly average, Dec 2023 to Jun 2026, and reproduces. On R1's window (29 Dec 2023 to 18 Sep 2026) the 30-year real yield rose 1.90% -> 3.09% (+119bp) against the 10-year's 1.72% -> 2.68% (+96bp). WAS: **Unresolved and NOT relied on:** Grok's 30-year TIPS point (FII30 1.95% -> 2.72%). FRED refuses scripted
   requests, so it is unverified; it was a supporting remark, not load-bearing.
+- **Propagation to data (9 Oct):** the row `sp500_valuation_excess_vs_constant_premium_pct` (35.4) in `data/series.tsv` carried no flag; a WITHDRAWN row was appended.
 
 ## C-077 · "Carry an aggregate multiplier M = 5 (range 2-9) and apply it to the Z.1 sector purchase lines"
 

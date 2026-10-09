@@ -6,7 +6,7 @@ Earnings, rates, and risk premia explain the equity move first. A liquidity or f
 
 ## Status
 
-**Sized** for the recent US equity window, and still a hypothesis under the charter. **Open** for rates and commodities.
+**Sized** for the recent US equity window, and still a hypothesis under the charter. **Open** for commodities (parked by the principal, E-019). Rates: first passes for the US, Japan and Germany are done and reviewed; see the rates dossier.
 
 ## Evidence
 
@@ -19,7 +19,7 @@ Earnings, rates, and risk premia explain the equity move first. A liquidity or f
 
 ## What would change the conclusion
 
-A new print that puts the multiple, not earnings, in the lead. A sustained reversal of the premium. A revenue-recognition result large enough to move the earnings share out of the band. A rates or commodity decomposition that this file does not yet have.
+A new print that puts the multiple, not earnings, in the lead. A sustained reversal of the premium. A revenue-recognition result large enough to move the earnings share out of the band. A commodity decomposition, which does not exist yet; the rates decompositions are in the rates dossier.
 
 ## Data used
 

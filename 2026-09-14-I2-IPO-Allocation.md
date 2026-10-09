@@ -66,13 +66,15 @@ money and named zero cornerstones, so its presence in the denominator changes th
 
 **This is real forward supply and it lands mostly in Q4 2026**, which connects directly to the supply-side
 work: the equity base is still growing and a large tranche becomes freely tradeable in the next quarter.
+[C-081: over 2024:Q1–2026:Q2 operating companies retired equity on net; the growth in the Z.1 equity aggregate is ETF share creation. Say which layer grew.]
 
 ## The pattern this makes, and it is the third instance
 
 **The buyers of the IPO boom are unnamed by construction — exactly like the buyers of equity generally.**
+[C-083: "unnamed by construction" fails for equity issuance, which was attributable (it was ETF shares). See C-083 for what still stands.]
 That is now three findings of the same shape in two days:
 
-1. **The household residual** — 94.6% of net new equity absorbed by a sector computed as a leftover.
+1. **The household residual** — 94.6% of net new equity absorbed by a sector computed as a leftover. [C-081, C-110: not a stable share (−54.6% to +387.5% across periods) and mostly ETF shares; quote the dollar figure and name the base.]
 2. **AI financing vehicles** — four of six firms name no entity; one explicitly denies having any.
 3. **IPO allocation** — 77–93% of proceeds to buyers nobody discloses.
 

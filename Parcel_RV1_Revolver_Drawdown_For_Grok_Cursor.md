@@ -1,8 +1,8 @@
 # RV1 — What draws committed credit lines all at once? (Grok in Cursor)
 
-**Status: READY, 26 Sep 2026.** The principal approved it on 25 Sep (THE_ASK E-015) and said to go ahead on 26 Sep (E-016).
+**Status: RETURNED 27 Sep 2026 and SIZED (it was READY 26 Sep).** Grok's return is `_research/2026-10-01-RV1-Revolver-Drawdown-Return.md` (written 27 Sep; the supervisor re-read its four load-bearing sources) and the sizing is `2026-09-27-RV1-Drawdown-Sizing.md`. The brief below is kept as it was sent. The principal approved it on 25 Sep (THE_ASK E-015) and said to go ahead on 26 Sep (E-016).
 It is routed to Grok in Cursor, with web search, to find sources whose citations must hold, and was written by the supervisor.
-It does not decay; send it by 1 Oct.
+It did not decay; it was sent and returned.
 
 ## Why this exists
 

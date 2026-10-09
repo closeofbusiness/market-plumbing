@@ -81,8 +81,8 @@ Oracle's 10-Q for fiscal Q1 2027 (2026-06-01 to 2026-08-31) was filed **today, 2
 - "Offerings not filed with the SEC" is a real possibility I flagged but could not resolve for Alphabet's $30.5bn common-stock and $19.1bn preferred-stock proceeds (no matching public offering document found under Alphabet's own CIK).
 
 ## Deliverables
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/dg1/offerings.csv`
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/dg1/capex.csv`
+- `<session-scratchpad>/wave1/dg1/offerings.csv`
+- `<session-scratchpad>/wave1/dg1/capex.csv`
 
 Both include an added `notes` column carrying the caveats above per row (e.g., which rows are unread-filing citations vs. XBRL aggregates). Raw downloaded JSON and scripts are in the `raw/` subfolder of the same directory.
 
@@ -134,4 +134,4 @@ Chinco & Sammon definition (verified directly from the PDF): each time a stock i
 | ~55% of US fund assets (project note) | **SUPPORTED** | ICI Fig 2.5 directly: index MF+ETF = 52% of long-term fund assets at YE2025 — same denominator, within a few points. |
 | Chinco & Sammon: true passive roughly double conventional | **SUPPORTED** | Confirmed directly from the paper: 33.5% vs 16.0% = 2.09×, both against the same US-stock-market-cap denominator, 2021. |
 
-Files written: `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/dg2/passive_share.csv` and `.../buybacks.csv`.
+Files written: `<session-scratchpad>/wave1/dg2/passive_share.csv` and `.../buybacks.csv`.

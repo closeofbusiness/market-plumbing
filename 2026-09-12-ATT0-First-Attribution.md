@@ -60,7 +60,7 @@ recorded in `benchmarks.csv`.
 ## Attribution v0 — computed and cross-checked
 
 Output written (read-only project folder untouched):
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/att0/attribution_v0.csv` (18 rows)
+- `<session-scratchpad>/wave1/att0/attribution_v0.csv` (18 rows)
 - `.../att0/benchmarks.csv` (2 rows, one per window, all inputs included)
 - `.../att0/attribution_v0.py` (reproducible; reads only the three named source files; re-derives everything from `netbuyers_quarterly_2026Q2.csv` rather than trusting the pre-aggregated periods file, then cross-checks against it — all 16 cross-checks passed to the 4th decimal)
 

@@ -67,8 +67,8 @@ Three specific consequences, all of which have already bitten:
   accretion from shrinking share counts is **at most roughly a tenth to a sixth** — **a ceiling, not an interval**
   [BOUNDED, one-sided]. The 7–13% spread is across **aggregation methods**, not endpoints and not statistical
   uncertainty, and C-093 finds survivorship pushes **every** member of it upward, so the truth sits below the band
-  rather than inside it (**C-101**). The missing-mega correction is unsigned. The panel behind it is **not on disk**
-  (**d3**) — [`2026-09-18-EPS-Split.md`](2026-09-18-EPS-Split.md).
+  rather than inside it (**C-101**). The missing-mega correction is unsigned. The per-firm panel behind it landed on 24 Sep
+  in `data/eps_split/panel/` (**d3** resolved) and the supervisor re-derived the bounds from it — [`2026-09-18-EPS-Split.md`](2026-09-18-EPS-Split.md).
 - **It survived its disconfirming test.** Depreciation-life extensions explain only 5–11% of six megacaps'
   net-income growth → [`2026-09-13-E2-Earnings-Quality-Useful-Lives.md`](2026-09-13-E2-Earnings-Quality-Useful-Lives.md). Amazon reversed; the finding held.
 - **The earnings yield barely moved while real yields rose** [MEASURED] — Dec-2023 → Jun-2026 real yields **rose 0.34
@@ -174,7 +174,7 @@ unimportant in general; it says they are **not what carried this repricing**.
 **What this does not establish:** that shadow money or collateral played *no* role — N4 bounds rather than
 zeroes them — and it says nothing about whether the off-balance-sheet lease stack is itself the next source of
 fragility. That is a different question from the one the goal asks, and it is on the calendar (Oracle's
-guarantee maturity and hyperscaler free cash flow, 30 Sep). The undrawn bank lines behind the nonbanks and the AI-adjacent
+guarantee maturity and hyperscaler free cash flow; dates in CALENDAR.tsv). The undrawn bank lines behind the nonbanks and the AI-adjacent
 industries are sized against the March 2020 precedent in [`2026-09-27-RV1-Drawdown-Sizing.md`](2026-09-27-RV1-Drawdown-Sizing.md)
 (HYPOTHESIS). A drawdown would create deposits fast, but during stress and mostly held as cash, so it bears on fragility, not on
 what funded the run-up.
@@ -240,8 +240,8 @@ buying. Each is a live ban pattern — `bin/check.sh --all` enforces them.
    index EPS — **C-098**]. Restating 2025 EPS at the 2015
    rate moves the earnings share of the price gain from **82.3% to 74.5%** — the unadjusted figure sits *above* the
    70–80% band and the restated one inside it, so the top of that band is tax-assisted →
-   [`2026-09-21-W3-Tax-Decomposition.md`](2026-09-21-W3-Tax-Decomposition.md). Every scalar was re-derived and matches; the firm-level panel did not
-   land, so the derivation is not auditable here (**C-097**). **And under E-007 the decomposition's third term is
+   [`2026-09-21-W3-Tax-Decomposition.md`](2026-09-21-W3-Tax-Decomposition.md). Every scalar was re-derived and matches; the firm-level panel landed
+   on 24 Sep and re-derives them exactly (**C-097** update); the raw Z.1 debt pulls have not landed. **And under E-007 the decomposition's third term is
    withdrawn (C-098):** "pre-tax profit is 74.2% of EPS growth" was never measured — it was solved for as the residual,
    which is why its "sum check" was exact. Measured directly from the same panel the term is **0.8603, not 0.7875** — a
    **0.073 log (7.6%)** gap, most plausibly survivorship in a panel of *current* constituents, but **that is a hypothesis

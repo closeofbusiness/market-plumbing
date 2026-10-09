@@ -2,7 +2,7 @@
 
 > **An extract.** The live sources are [`data/series.tsv`](../data/series.tsv) and [`CALENDAR.tsv`](../CALENDAR.tsv); where this file and they differ, they win.
 
-Only series identified in the source and used by a claim this repository carries. Latest row is the last observation in [`data/series.tsv`](../data/series.tsv) (parent of the [`_research`](../_research) folder; file modified 21 September 2026; 463 rows, 387 keys). Frequency is taken from that file’s note when it says so, otherwise from the release the source names. Next print is from [`CALENDAR.tsv`](../CALENDAR.tsv) when a row exists. If the next print is unknown, the cell says so.
+Only series identified in the source and used by a claim this repository carries. Latest row is the last observation in [`data/series.tsv`](../data/series.tsv) (parent of the [`_research`](../_research) folder; the file's row and key counts and its date are not copied here: see `git log -1 -- data/series.tsv`). Frequency is taken from that file’s note when it says so, otherwise from the release the source names. Next print is from [`CALENDAR.tsv`](../CALENDAR.tsv) when a row exists. If the next print is unknown, the cell says so.
 
 This is not the full monitor. The 11 September channel map counted 175 series and is stale against the file.
 
@@ -14,7 +14,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 |---|---|---|---|---|---|
 | Earnings share of the US equity move | Decomposition in [`2026-09-11-P2a-Return-Decomposition.md`](../2026-09-11-P2a-Return-Decomposition.md) | Window, not a ticker | 71.0% to Dec 2025; 82.3% to Jun 2026 | Re-run when the next earnings window is built | [`answer/LIVE.md`](../answer/LIVE.md), fundamentals dossier |
 | Tax-restated earnings share | [`2026-09-21-W3-Tax-Decomposition.md`](../2026-09-21-W3-Tax-Decomposition.md); keys `w3_etr_2015`, `w3_etr_2025`, `w3_eps_share_of_price_restated` | Annual window | Effective rate 27.4% (2015) to 19.6% (2025); restated share 74.5% | Unknown | fundamentals dossier |
-| EPS split | [`2026-09-18-EPS-Split.md`](../2026-09-18-EPS-Split.md); keys `eps_split_*` | Window through Dec 2025 | Carried claim is the one-sided tenth-to-sixth band. The key `eps_split_accretion_share_of_price` is 0.134 and is the top of a weighting range, not the figure to quote | Firm panel still missing on disk upstream (C-097) | fundamentals dossier |
+| EPS split | [`2026-09-18-EPS-Split.md`](../2026-09-18-EPS-Split.md); keys `eps_split_*` | Window through Dec 2025 | Carried claim is the one-sided tenth-to-sixth band. The key `eps_split_accretion_share_of_price` is 0.134 and is the top of a weighting range, not the figure to quote | None scheduled. The firm panel landed 24 Sep in `data/eps_split/panel/` (RESEARCH_STATE.md d3); the C-097 cite that stood here concerns the W3 panel | fundamentals dossier |
 | Real-yield versus earnings-yield window | [`2026-09-12-P2c-Rates-vs-Risk-Premium.md`](../2026-09-12-P2c-Rates-vs-Risk-Premium.md) | Dec 2023–Jun 2026 | Real yields +0.34pt; earnings yield −0.14 | Unknown | fundamentals dossier |
 | Trailing S&P PE | key `sp500_trailing_pe` | As pulled | 25.22 at 2026-06-01 | Unknown | context only; the answer does not rest on this point |
 
@@ -36,21 +36,21 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 
 | Series | Free source | Frequency | Last observation | Next print | Used by |
 |---|---|---|---|---|---|
-| `fed_on_rrp_bn` | New York Fed markets API (ON RRP fixed-rate operations; the FRED RRPONTSYD definition) | Daily | 0.6 on 2026-09-25 | Quarter-end cluster 2026-09-30 | official plumbing, shadow money |
+| `fed_on_rrp_bn` | New York Fed markets API (ON RRP fixed-rate operations; the FRED RRPONTSYD definition) | Daily | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | official plumbing, shadow money |
 | `n4_private_repo_net_of_rrp_2024_bn` | N4 arithmetic on reviewed series | 2024 | −45.7 | Recompute after the next OFR print | shadow money |
 | `n4_handoff_adj_2024_bn` | same | 2024 | 136.2 | same | shadow money |
-| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 22.96 at 2026-06 (23.07 at 2026-03) | Mid-December: the OFR's Form PF 2026Q3 print and the Z.1 release of about 11 Dec. Rebuilding needs the private ALFRED file (N2b note, update of 4 Oct) | shadow money |
+| `zk_v2_W2_M2_pct` | N2b v2 | Quarterly | 22.96 at 2026-06 (23.07 at 2026-03) | The Z.1 release of about 11 Dec (CALENDAR.tsv). The OFR's Form PF 2026Q3 print has no calendar row; the Q2 print came three months after quarter-end. Rebuilding needs the private ALFRED file (N2b note, update of 4 Oct) | shadow money |
 | `m2_h6_sa_bn` | H.6 | Monthly | 23,218 in 2026-07 | Unknown | direct money |
 | `reserve_balances_bn` | FRED WRESBAL | Weekly | 2,935.3 on 2026-08-19 | Unknown | direct money |
 | `bank_loans_to_nondepository_fis_bn` | H.8 | Monthly | Level 2,005.0 at 2026-07-31; 2025 flow annotated contaminated | Unknown | direct money |
 | `h8_ndfi_loans_weekly_bn` | H.8 via the Fed Board's Data Download Program (all commercial banks, SA, B1030NCBA) | Weekly, Wednesday | 2,047.0 on 2026-09-16 | Each Friday's H.8; watch quarter-end week | drawdown monitor (RV1) |
 | `h8_ci_loans_weekly_bn` | same (B1023NCBA) | Weekly, Wednesday | 2,965.3 on 2026-09-16 | same | drawdown monitor (RV1) |
 | `finra_margin_debit_balances_bn` | FINRA margin workbook | Monthly | 1,453.8 in 2026-08 | Next month’s edition; source file is overwritten, so the vintage copy matters | collateral |
-| `ficc_sponsored_total_bn` | DTCC sponsored volume CSV (moved to cms-prod.dtcc.com, Sep 2026) | Daily | 2,430.6 on 2026-09-23 | 2026-09-30 quarter-end pull | rates dossier, collateral |
-| `ccp_im_required_15ccp_fia_bn` | FIA CCP tracker | Quarterly | 1,071.0 at 2026-03-31 | Recheck 2026-10-06 | collateral |
-| `hf_collateral_posted_securities_bn` | Form PF via OFR | Quarterly | 5,627 at 2026-06-30 | Q3 about early December (the Q2 release came about three months after quarter-end) | collateral |
-| `abcp_outstanding_bn` | Fed Board CP release via the Data Download Program (SA; identical to FRED ABCOMP) | Weekly | 501.7 on 2026-09-23 | Quarter-end row 2026-09-30 | shadow money |
-| `sofr_pct`, `sofr_p99_pct` | New York Fed markets API | Daily | 3.88 and 3.96 on 2026-09-24 | Quarter-end row 2026-09-30; RUN 2 scoring 2026-10-01 | shadow money, QE sentiment |
+| `ficc_sponsored_total_bn` | DTCC sponsored volume CSV (moved to cms-prod.dtcc.com, Sep 2026) | Daily | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | rates dossier, collateral |
+| `ccp_im_required_15ccp_fia_bn` | FIA CCP tracker | Quarterly | Latest row in `data/series.tsv` (2026Q2 landed 8 Oct) | Next quarterly release; not yet calendared | collateral |
+| `hf_collateral_posted_securities_bn` | Form PF via OFR | Quarterly | 5,627 at 2026-06-30 | Q3 not calendared; the Q2 release came about three months after quarter-end, so late December is more likely than early December | collateral |
+| `abcp_outstanding_bn` | Fed Board CP release via the Data Download Program (SA; identical to FRED ABCOMP) | Weekly | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | shadow money |
+| `sofr_pct`, `sofr_p99_pct` | New York Fed markets API | Daily | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | shadow money, QE sentiment |
 | `stablecoin_total_outstanding_bn` | DeFiLlama free API | As pulled | 309.4 on 2026-08-29 | GENIUS rulemaking watch 2026-10-15 | shadow money |
 | `collateral_velocity_range` | N3v4 | Range, not a date | 1.3–1.5 | No official aggregate; FINRA SLATE public data 2027-03-29 | collateral |
 
@@ -74,13 +74,13 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 
 | Series | Free source | Frequency | Last observation | Next print | Used by |
 |---|---|---|---|---|---|
-| Lease stack versus guarantees | Hand-read 10-Ks, [`2026-08-22-Guarantee-Stack.md`](../2026-08-22-Guarantee-Stack.md) | Quarterly hand-read | 1,122.9 versus 228.3 contracted; 86.2 live at 22 Aug | 2026-11-15 for the lease note; 2026-09-30 for two guarantee maturities | AI dossier |
+| Lease stack versus guarantees | Hand-read 10-Ks, [`2026-08-22-Guarantee-Stack.md`](../2026-08-22-Guarantee-Stack.md) | Quarterly hand-read | 1,122.9 versus 228.3 contracted; 86.2 live at 22 Aug | 2026-11-15 for the lease note; the two guarantee maturities were re-dated to 2026-12-15 (CALENDAR.tsv) | AI dossier |
 | `oracle_internal_cash_vs_capex_gap_bn` | Oracle filing | Quarterly | −34.9 at 2026-08-31 | Next 10-Q | AI dossier |
 | `oracle_rpo_bn` | Oracle filing | Quarterly | 664 at 2026-08-31 | same | AI dossier |
 | `oracle_offbs_lease_commitments_bn` | Oracle filing | Quarterly | 288 at 2026-08-31 | same | AI dossier |
-| `amazon_delayed_draw_term_loan_bn` | Amazon filing | Point | 17.5 undrawn at 2026-06-30 | Window 2026-09-30; 10-Q is later | AI dossier |
+| `amazon_delayed_draw_term_loan_bn` | Amazon filing | Point | 17.5 undrawn at 2026-06-30 | Draw window closed 2026-09-30; UNRESOLVED on 8 Oct, so read the Q3 10-Q (CALENDAR.tsv, row 2026-10-31) | AI dossier |
 | `spacex_ipo_primary_bn` | Prospectus fact table | Deal | 75.0 on 2026-06-11 | Unknown | IPO dossier |
 
 ## Explicitly absent
 
-No series in this extract for JGB net supply, euro-area government-bond net supply, a cross-currency basis, commodity inventories, producer hedges, or managed-money futures positions. They are not omitted by accident. They were not identified as worked series in the notes this monitor is drawn from.
+No series in this extract for a cross-currency basis, commodity inventories, producer hedges, or managed-money futures positions. They are not omitted by accident. They were not identified as worked series in the notes this monitor is drawn from. JGB and euro-area government-bond series now exist (R3: `data/r3_rates/`, and the `jp_public_10yeq_fixed_trn` and `de_linker2033_*` keys in `data/series.tsv`) but this extract does not carry them yet.

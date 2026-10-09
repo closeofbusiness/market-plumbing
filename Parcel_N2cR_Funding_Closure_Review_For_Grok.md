@@ -1,5 +1,7 @@
 # Parcel N2cR — adversarial review of the funding closure · for Grok, chat window
 
+> [C-121: Grok is reached only through Cursor in this programme; there is no grok.com lane. This parcel was returned and adjudicated; its handoff line is kept as a record.]
+
 *29 August 2026. Tenth parcel; judging lane (the lane that materially improved N3 via parcel N3R). Written
 under C-045: attack, never confirmation. Self-contained. **Handoff: grok.com CHAT WINDOW — explicitly NOT
 Cursor** (the N3R return landed as a stray PR on an unrelated repo; do not repeat). Highest reasoning; leave

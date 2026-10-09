@@ -13,6 +13,7 @@
 > MMF shares, deposits and repo would tighten it further. Read Task 2 as *the interval narrowed*, not as *W1 was 3–4× too big*.
 > The measurement that would settle it: Z.1 benefits paid minus contributions received, per sector. **C-097:** the firm panel
 > and the raw Z.1 pulls did not land — scalars reproduce, the source derivation is not auditable here.
+> [C-097 update, 24 Sep: the firm panel landed as `data/w3_tax/firm_tax_panel.csv` and re-derives the aggregate scalars exactly; the raw Z.1 debt pulls have not landed.]
 > **C-098 (22 Sep, under E-007):** the decomposition's pre-tax term was **solved for, not measured**, so "sum check: exact" is arithmetic and not corroboration. Measured directly from this parcel's own panel it is **0.8603**, not 0.7875 — a **0.073 log (7.6%)** gap the identity was absorbing. "74.2%" is withdrawn. Task 1's conclusion holds; its
 > precision does not.
 

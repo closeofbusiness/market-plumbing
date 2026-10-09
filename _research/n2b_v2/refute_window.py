@@ -1,5 +1,5 @@
 import csv, os
-SCR="/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/n2b_v2"
+SCR="<session-scratchpad>/n2b_v2"
 DBX=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 def rd(p): return list(csv.DictReader(open(p)))
 def hist(n):

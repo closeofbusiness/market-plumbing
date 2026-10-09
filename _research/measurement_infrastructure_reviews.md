@@ -379,10 +379,10 @@ So "2026:Q1 state and local government financial assets" is an extrapolation fro
 6. **Any code beginning `x4023005` or `x4123005` in an existing pipeline is dead as of 11 June 2026**, and its successor `x4035005` / `x4135005` includes repo. Re-baseline before comparing.
 
 **Files retained locally for the parent agent:**
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/z1csv/` — full unpacked 11 June 2026 release (286 CSVs + 286 dictionary files)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/z1_table_mapping.csv` — old→new table crosswalk
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/z1_code_changes.txt` — full mnemonic change log, 2009q4–2026q1
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/fwtw_data.csv` — FWTW issuer-to-holder, 921,121 rows through 2026Q1
+- `<session-scratchpad>/z1csv/` — full unpacked 11 June 2026 release (286 CSVs + 286 dictionary files)
+- `<session-scratchpad>/z1_table_mapping.csv` — old→new table crosswalk
+- `<session-scratchpad>/z1_code_changes.txt` — full mnemonic change log, 2009q4–2026q1
+- `<session-scratchpad>/fwtw_data.csv` — FWTW issuer-to-holder, 921,121 rows through 2026Q1
 
 ---
 
@@ -986,4 +986,4 @@ Since 2021:Q4: **M2 +1.66%/yr against nominal GDP +6.16%/yr.** Money is shrinkin
 - H.6 current release and notes: `https://www.federalreserve.gov/releases/h6/current/default.htm`
 - H.8 methodology: `https://www.federalreserve.gov/releases/h8/about.htm`
 
-Working files retained at `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/` (Z.1 package unzipped at `z1/`, FSB text at `fsb.txt`, ALFRED vintage pairs at `alf_*.csv`, computation scripts at `/tmp/z1calc.py`, `/tmp/z1r.py`, `/tmp/vint.py`, `/tmp/macro.py`).
+Working files retained at `<session-scratchpad>/` (Z.1 package unzipped at `z1/`, FSB text at `fsb.txt`, ALFRED vintage pairs at `alf_*.csv`, computation scripts at `/tmp/z1calc.py`, `/tmp/z1r.py`, `/tmp/vint.py`, `/tmp/macro.py`).

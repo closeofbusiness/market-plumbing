@@ -221,8 +221,8 @@ rose 9bp.
 
 ## Next
 
-- **Duration for JGBs:** the BoJ's holdings by issue (published every ten days) against the Ministry's maturity ladder.
-- **A market breakeven for Bunds before late 2025.** Candidates: archived Finanzagentur pages, France's inflation-linked
+- **Duration for JGBs (DONE 8 Oct, follow-up below):** the BoJ's holdings by issue (published every ten days) against the Ministry's maturity ladder.
+- **A market breakeven for Bunds before late 2025 (DONE 8 Oct for 2024–25, from the Bundesbank's monthly files; see Germany above; the other candidates were not tried).** Candidates: archived Finanzagentur pages, France's inflation-linked
   bonds, or an ECB inflation-swap series. Any of them would test the full-window split.
 - **The rest of the world's level:** an ECB explanation of the gap between its euro-area total and the country sum.
 

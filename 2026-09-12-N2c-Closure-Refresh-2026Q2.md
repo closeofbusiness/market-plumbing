@@ -99,10 +99,10 @@ $72bn in each of 2023 and 2024, was the insurers row's double count of state and
 6. Equity-side revision checking is limited to the 4 series/periods where the project already has a documented June-vintage comparator (`data/series.tsv`, 2026-09-11 entries): NFC issuance (2025, 2026Q1), rest-of-world holder (2025), household holder (2025). I did not fabricate comparators for ETFs, mutual funds, or domestic hedge funds as equity holders.
 
 ### Deliverables (scratch directory only — project folder untouched)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/n2c/closure_2026Q2.csv`
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/n2c/revisions.csv`
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/n2c/build_closure_2026Q2.py` (the script; docstring documents method + both substitutions)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/n2c/validate_june_vintage.py` (pre-flight check: reproduces the published June-vintage table from the raw pull before touching new data)
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/n2c/raw/` (fetched evidence: release page HTML, the one bulk zip, extracted tables)
+- `<session-scratchpad>/wave2/n2c/closure_2026Q2.csv`
+- `<session-scratchpad>/wave2/n2c/revisions.csv`
+- `<session-scratchpad>/wave2/n2c/build_closure_2026Q2.py` (the script; docstring documents method + both substitutions)
+- `<session-scratchpad>/wave2/n2c/validate_june_vintage.py` (pre-flight check: reproduces the published June-vintage table from the raw pull before touching new data)
+- `<session-scratchpad>/wave2/n2c/raw/` (fetched evidence: release page HTML, the one bulk zip, extracted tables)
 
 No summary/report .md files were written, per instructions.

@@ -6,7 +6,7 @@ Official balance sheets — the Federal Reserve’s reverse repo and Treasury po
 
 ## Status
 
-**Sized for the 2024 reverse-repo handoff. Open as a rates result.** Do not read a Fed purchase or a foreign-official holding change as the cause of a yield or equity move.
+**Sized for the 2024 reverse-repo handoff. As a rates result this file's measurements are not a curve attribution; the rates decompositions (R1, R2, R3) are in the rates dossier.** Do not read a Fed purchase or a foreign-official holding change as the cause of a yield or equity move.
 
 ## Evidence
 
@@ -18,7 +18,7 @@ TIC Table 5, end-July 2026: foreign official US Treasuries **$3,773.1bn** (down 
 
 ## What would change the conclusion
 
-A rates decomposition (carry, roll, expected path, term premium) that leaves a residual, and a demand table on the same denominator that can be compared with that residual without calling the residual a cause. That decomposition is not in the source.
+A rates decomposition (carry, roll, expected path, term premium) that leaves a residual, and a demand table on the same denominator that can be compared with that residual without calling the residual a cause. That decomposition is not in this file's source; for the US 10-year it is R1, with the duration-supply side in R2 (see the rates dossier).
 
 ## Data used
 

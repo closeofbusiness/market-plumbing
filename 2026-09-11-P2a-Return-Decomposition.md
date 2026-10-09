@@ -20,7 +20,7 @@ risk premium fell from ~4pp (2015-22) to ~1.7pp (2024-26) as real yields rose to
 
 ## The agent's return (Sonnet)
 
-All three deliverables are in place at `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p2a/`: `decomp.py`, `decomp_annual.csv`, `decomp_cumulative.csv`. Supporting cached source data sits alongside them (see "Sourcing" below) plus a `.venv/` with the one extra dependency (`xlrd`) needed to read the legacy `.xls` format.
+All three deliverables are in place at `<session-scratchpad>/wave1/p2a/`: `decomp.py`, `decomp_annual.csv`, `decomp_cumulative.csv`. Supporting cached source data sits alongside them (see "Sourcing" below) plus a `.venv/` with the one extra dependency (`xlrd`) needed to read the legacy `.xls` format.
 
 ## Two findings that contradict the brief, stated up front
 
@@ -100,6 +100,6 @@ Checked quantity: `price_return + dividend_return` vs. actual compounded `total_
 
 *These paths were an agent's temporary workspace on 11 Sep 2026 and no longer exist. The durable copies are the script [`bin/decomp_sp500_shiller.py`](bin/decomp_sp500_shiller.py) and the tables in [`data/p2a_decomposition/`](data/p2a_decomposition/). Shiller's and FRED's input files are third-party and are not redistributed here (README, "Checking the work").*
 
-- `/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave1/p2a/decomp.py`
+- `<session-scratchpad>/wave1/p2a/decomp.py`
 - `.../decomp_annual.csv`, `.../decomp_cumulative.csv`
 - Supporting caches (not required deliverables, kept for reproducibility/evidence): `ie_data.xls` (stale original), `ie_data_current.xls` (current, used), `DGS10.csv`, `DFII10.csv`, `.venv/` (has `xlrd`; run via `.venv/bin/python decomp.py`)

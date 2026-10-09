@@ -1,5 +1,7 @@
 # Parcel D10R — adversarial review of the dealer re-use construct (for Grok, chat window)
 
+> [C-121: Grok is reached only through Cursor in this programme; there is no grok.com lane. This parcel was returned and adjudicated; its handoff line is kept as a record.]
+
 Copy everything below the line into grok.com. Do NOT run in Cursor — this is a judging
 parcel, no repo access needed or wanted.
 
