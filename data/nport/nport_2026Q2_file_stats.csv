@@ -1,0 +1,27 @@
+key,value
+tag,2026Q2
+zip,2026q2_nport.zip
+zip_sha256,077cc836a978a593b29012219395fbe9c303d5e930f5be3b5f4353c3b02296fc
+holding_rows,5347869
+holding_rows_matched_any_group,3614
+filings_total,14416
+filings_NPORT-P,14064
+filings_NPORT-P/A,352
+registrants_distinct_cik,1947
+series_distinct,12944
+filings_without_series_id,729
+filing_date_min,2026-04-01
+filing_date_max,2026-06-30
+report_date_min,2022-11-30
+report_date_max,2026-05-31
+report_date_top3,2026-03-31:6894; 2026-04-30:4146; 2026-02-28:2490
+share_filings_in_top3_report_dates,0.9385
+net_assets_sum_all_filings_bn,43938.4
+net_assets_note,"sum over filings, not de-duplicated, as-of dates differ: a scale, not a stock"
+filings_surviving_amend_dedup,14322
+filings_surviving_one_per_series,13647
+value_check_lines,3614
+value_check_max_abs_dev_usd,3797.83
+value_check_lines_off_by_over_5usd_plus_0.01pct,4
+value_check_meaning,CURRENCY_VALUE vs PERCENTAGE/100*NET_ASSETS on matched lines; ~0 means CURRENCY_VALUE is USD fair value
+stream_seconds,83.8

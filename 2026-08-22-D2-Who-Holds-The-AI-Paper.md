@@ -231,3 +231,36 @@ corrected here, in RESEARCH_STATE S-D2, and in the 23 Aug briefing.
 filings that held 60% of the value. **A search sample is not a census; the bulk dataset is.** It is
 free, quarterly, and ~440MB. The 15 Sep calendar row becomes: re-run on the 2026Q3 bulk file when
 SEC posts it (~early Oct).
+
+## 10. Amendment, 9 Oct 2026: the census as a script, and the 2026Q3 file
+
+`bin/census_nport_bulk.py` makes section 9's census reproducible. It reproduces the 2026Q2 table on six of the seven rows
+exactly, and on filings and registrants on all seven. Aligned's value comes out at $1.0549bn, which rounds to 1.05, not
+1.06. Its matching rules are stated in the script:
+- match on the issuer name (Beignet also on CUSIP);
+- for listed issuers, drop equity and keep everything else;
+- section 9's value counts USD lines only;
+- no de-duplication of amendments.
+Outputs (aggregates only) are in `data/nport/`. The supervisor independently re-summed the Beignet CUSIP in the 2026Q3 file:
+$10.34bn across 385 filings, matching the script.
+
+**2026Q3 file** (filed Jul–Sep 2026; mostly 30 Jun, 31 May and 31 Jul report dates):
+
+| Name | 2026Q2 | 2026Q3 | Like-for-like (one report per fund) |
+|---|---:|---:|---|
+| Beignet 6.581% 2049 | $9.81bn | $10.34bn | **flat: $9.73bn to $9.72bn** |
+| CoreWeave | $2.87bn | $5.21bn ($5.38bn all currencies) | **up: $2.73bn to $5.08bn** |
+| Vantage | $1.09bn ($1.33bn all currencies) | $1.10bn ($1.43bn) | flat |
+| Aligned | $1.05bn | $1.15bn | up slightly |
+| Hut 8 | $0.23bn | $0.87bn | up; partly coverage |
+
+- **The headline Beignet rise is an artefact.** Q3 holds amended re-filings of earlier periods. Counted once per fund, registered
+  funds hold the same ~$9.7bn, so the daily-redeemable share of the $27bn deal stays at **about 36%**.
+- **CoreWeave's paper doubled in registered funds,** on every basis. That includes a new delayed-draw term loan line of about
+  $0.6bn.
+- **Section 9's convention understates some names.**
+  - Vantage's euro, sterling and Canadian-dollar tranches add about $0.24bn.
+  - TeraWulf's and Cipher's AI-hosting debt sits in subsidiaries (WULF Compute, Cipher Compute; Cipher Mining is renamed
+    Cipher Digital). By name that is $1.92bn and $1.13bn in Q2, against section 9's $0.48bn and $0.005bn. These are
+    name-evident groupings, not confirmed parent links.
+
