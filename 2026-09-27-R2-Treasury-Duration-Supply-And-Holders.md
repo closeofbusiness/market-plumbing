@@ -201,3 +201,26 @@ counterfactual about total issuance, not a datum.
 The only thing that would settle the maturity question is a written answer from Treasury's Office of
 Debt Management. That route is not taken.
 
+### Follow-up, 9 October 2026: hedge funds' Treasury-futures positioning (CFTC)
+
+The basis-trade test the programme prescribed now has data. `bin/pull_cftc_tff.py` pulls the CFTC's Traders in Financial Futures
+(futures only, free) for the six CBOT Treasury contracts, weekly from 2018. Leveraged funds' aggregate net short:
+
+| report date | contract face | 10-year equivalents (fixed CME DV01s) |
+|---|---:|---:|
+| 26 Dec 2023 | −$774bn | −$533bn |
+| 30 Dec 2025 | −$1,154bn | −$711bn |
+| 30 Jun 2026 | −$918bn | −$666bn |
+| 29 Sep 2026 | −$774bn | −$599bn |
+
+- **Pattern.** The short built through 2024–25 and has since unwound by about a third on face value (by a sixth in 10-year
+  equivalents). On face value it is back to its end-2023 level.
+- **Form PF.** Qualifying hedge funds' Treasury long-minus-short rose from $350bn to $864bn between end-2023 and 30 Jun 2026.
+  Their repo borrowing rose from $2.0trn to $3.4trn.
+- **Caveats.** The 10-year equivalents carry about ±25% from the DV01 source. They come second-hand from CME material, because
+  cmegroup.com refused a scripted fetch. No causation is read from the comparison.
+- **What it does not test.** C-124's inference, that the Z.1 household row is largely offshore hedge funds, needs holder-side data
+  this series does not have.
+
+An older ratio in the register did not reproduce on this data; it is C-129.
+

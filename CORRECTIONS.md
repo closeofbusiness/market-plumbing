@@ -160,7 +160,7 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
 - **Why (2) — there was never a sign to invert.** KVJ's coefficient on **GROSS** short-term debt is **−0.042, t = −0.52** (SE ≈0.081, 95% CI ≈ −0.20 to +0.12). They never found crowding-out of gross private money.
 - **Why (3) — the claim is KVJ's own published result.** The +0.223 (t=6.19), +0.453 (t=8.16) and +1.15 figures we treated as embarrassing footnotes are **Predictions 3 and 4** — explicitly derived, explicitly tested. Treasury collateral backing money claims is *in their model by name*. We were claiming as novel what the paper says on purpose.
 - **The evidence was also broken.** (a) Δrepo/Δrunnable is **positive whenever repo grows**, regardless of Treasury supply — a statistic that cannot take the falsifying sign is not a test. (b) The two windows do not match: repo +19.1% is Q4-24→Q4-25; bills +16.6% is Jul-25→Jul-26. Five months of twelve overlap. (c) The bill figure is measured from a **debt-ceiling trough**: 39.7% merely restores the pre-ceiling level and the Fed absorbed +$342.3bn. **Bills outside the Fed grew +$256.6bn, +4.1% over 20 months (~2.5%/yr)** — the headline overstates private-hands supply by **~3.9× in level and 6.6× in rate**. (d) The **bill share of marketable debt is flat** (22.2% Jul-26 vs 22.6% Nov-24) — there is no shift toward bill financing.
-- **A large rival explains the repo growth.** Over the identical window, hedge-fund repo borrowing rose **+$882bn (+35.3%)** — the same order as the entire increase in the FSR repo line — with relative-value strategy borrowing +70.7%. Leveraged funds' net short Treasury futures ≈ **−$923bn**, roughly 2.2–2.8× the pre-March-2020 peak; the Fed's June 2026 FEDS Note puts the basis trade at **$830bn**. A hedge fund is the cash **borrower**; it issues no money-like claim to any saver. That is demand for **leverage**, not moneyness.
+- **A large rival explains the repo growth.** Over the identical window, hedge-fund repo borrowing rose **+$882bn (+35.3%)** — the same order as the entire increase in the FSR repo line — with relative-value strategy borrowing +70.7%. Leveraged funds' net short Treasury futures ≈ **−$923bn**, roughly 2.2–2.8× the pre-March-2020 peak; **[C-129: the ratio is about 1.5–1.9×, not 2.2–2.8×]** the Fed's June 2026 FEDS Note puts the basis trade at **$830bn**. A hedge fund is the cash **borrower**; it issues no money-like claim to any saver. That is demand for **leverage**, not moneyness.
 - **And the evidence points the other way.** ABCP **+23.4% y/y** is the fastest-growing private money line and is backed by **private** assets; MMF repo against **non**-Treasury collateral +42.0%; financial CP −4.0%. Under our thesis the Treasury-collateralised lines should be the fast growers. They are the slow ones. Meanwhile MMFs put **82.1%** of AUM growth into outright Treasuries while bank paper **fell 9.3%** — Treasury supply displacing bank-issued money claims, i.e. the KVJ direction.
 - **Out of sample, and the wrong way.** The only re-estimation covering the current regime (Phillot & Wenger, ASSA 2025, 1998–2023) finds crowding-out **larger**, not inverted. Separately, JPE debt/GDP averaged 0.439 over 1919–2008; it is ~0.994 today — a level reached in-sample only in 1945–46, years KVJ explicitly quarantine.
 - **Correct position:** what survives is a **measurement critique**, making no claim about any coefficient's sign — *a net measure that nets to zero the most run-prone part of the money-like stack cannot be the right summary statistic for fragility, as March 2020 demonstrated.* Words that must never appear: "the sign has inverted", "crowding in rather than out", "regime change in Treasury supply", and any use of Δrepo/Δrunnable as evidence about a supply elasticity.
@@ -762,6 +762,17 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
   multipliers. Its level-wise estimates stand: 1.73 idiosyncratic, 3.12 granular style, 6.98 coarse style.
 - **Rule:** a number attributed to a paper must be quoted from the paper, not inferred from what the paper implies.
 - **Still standing at:** nowhere — `_research/2026-09-11-P3-papers.csv` and `2026-09-11-P3-Price-Impact-Multiplier.md` were fixed on 12 Sep.
+
+---
+
+## C-129 · "Leveraged funds' net short Treasury futures roughly 2.2–2.8× the pre-March-2020 peak"
+
+**Mine, in the KVJ correction's evidence (C-018 entry, 21 Aug) and the Grok review prompt (`Review_Prompt_For_Grok.md` item 5). Found 9 Oct 2026 when the CFTC TFF series was first built (`bin/pull_cftc_tff.py`); the supervisor re-fetched the 10-year contract's 29 Sep 2026 row from the CFTC API and it matched.**
+
+- **Killed by:** the CFTC Traders in Financial Futures data, futures only (Socrata `gpe5-46if`), six CBOT Treasury contracts, leveraged-funds class.
+- **What was wrong.** The level is right; the ratio is not. Leveraged funds' aggregate net short was −$923.5bn of contract face on 14 Jul 2026. The pre-March-2020 peak on the same basis was −$612bn (6 Aug 2019), so the ratio is **about 1.5×**. In 10-year equivalents it is about 1.7×, and the 10-year contract alone about 1.8×. "2.2×" is the 10-year contract's post-2020 peak, not its 2026 level. No basis gives 2.2–2.8× for 2026.
+- **Correct position.** Leveraged funds' net short across the six Treasury futures was about −$920bn of face in mid-2026 and −$774bn on 29 Sep 2026, **roughly 1.5–1.9× the pre-2020 peak** depending on the measure. That is still large and still supports the point it was used for, that hedge-fund repo growth is demand for leverage.
+- **Still standing at:** nowhere live. The C-018 evidence line and `Review_Prompt_For_Grok.md` carry banners. The ANSWER and the page never used the ratio.
 
 ---
 
@@ -1904,6 +1915,7 @@ C-081	2026-09-14-SYN-What-We-Can-Say.md	# ditto - preserved banners only, body i
 C-093	2026-09-18-EPS-Split.md	# the doc under correction; banner at top, tables report the raw figures
 C-094	2026-09-20-W1-The-Leak-Objection.md	# confined to the status line and the do-not-say list
 C-095	CORRECTIONS.md	# the entry quotes the dead framing
+C-129	Review_Prompt_For_Grok.md	# a dated prompt, bannered 9 Oct
 ```
 
 ```banned
@@ -2143,4 +2155,5 @@ C-127	fairly stable since
 C-128	Its sales accelerated
 C-128	banks, pension funds and foreign investors absorbed the supply
 C-128	face-value estimate for June 2024 to March 2026 points the same way
+C-129	2[.]2.{0,3}2[.]8.{0,40}pre-March-2020
 ```

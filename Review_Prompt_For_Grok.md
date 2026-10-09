@@ -73,7 +73,7 @@ Attack any of these. They are load-bearing.
    average. Repo is the largest contributor (+19.1%, 32.6% of the increase). BUT hedge-fund
    repo borrowing rose +$882bn over the same window — the same ORDER as the entire increase
    in the FSR repo line — with relative-value strategy borrowing +70.7% and leveraged-fund
-   net short Treasury futures roughly 2.2–2.8× the pre-March-2020 peak. A hedge fund is the
+   net short Treasury futures roughly 2.2–2.8× the pre-March-2020 peak [C-129: about 1.5–1.9×]. A hedge fund is the
    cash BORROWER; it issues no money-like claim to any saver.
 
 6. THE MECHANISM I DID NOT EXPECT: CREATED CREDITWORTHINESS, NOT CREATED MONEY. Nvidia
