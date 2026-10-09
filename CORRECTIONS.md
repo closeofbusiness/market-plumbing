@@ -1929,6 +1929,7 @@ C-082	2026-09-14-P5i-Event-Study-Result.md	# dated record; the split at line 54 
 C-015	Collateral_State_of_Argument.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 C-015	Where_The_Two_Workstreams_Meet.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 C-015	Collateral_Data_Inventory.md	# the 2022 quote carries a [C-015] banner (9 Oct)
+C-129	Parcel_R4R_Oct_Additions_Review_For_Grok_Cursor.md	# the attack brief quotes the killed ratio so Grok can test it (target 3)
 ```
 
 ```banned
