@@ -32,7 +32,7 @@ Retirements-M&A, plus a monthly file splitting part of gross issuance into IPO a
 | Retirements — M&A | 90.49 | 76.83 | 129.68 | 78.78 | **160.15** |
 
 **Gross issuance of $361.45bn in 2026:Q1 is the highest quarter in the series' 118-quarter history**, and not
-narrowly: the previous record was $251.82bn (2021:Q2), so this is **43.5% above it**. I re-sorted the full
+narrowly: the previous record was $251.82bn (2021:Q2), so this is **43.5% above it**. **[Revised 9 Oct 2026: on the Fed's 18 Sep EFA revision 2026:Q1 gross issuance is $424.55bn (net +$45.35bn, repurchases $216.33bn, M&A $162.86bn) and the prior record is $265.4bn (2021:Q4), so 60% above it. The record stands; the figures in this note are the 13 Sep vintage.]** I re-sorted the full
 series to confirm. Repurchases at $176.10bn are *below* their own top five (2022:Q1 $222.35bn is the peak)
 and fell both quarter-on-quarter (−10.0%) and year-on-year (−20.4%).
 
@@ -60,7 +60,7 @@ This matters for three separate threads and should be carried into all of them:
 
 1. **2026:Q2 is not covered.** The EFA series ends at 2026:Q1; the headline Z.1 already has Q2. So the
    +$204.5bn H1-2026 NFC net figure **cannot yet be decomposed into quarters from any source reached.**
-2. **The two Fed series do not reconcile, and I have not resolved it.** EFA net is defined as
+2. **[RESOLVED 9 Oct 2026: on the same vintage the two series differ by a stable offset, mean +$5.3bn a quarter (sd 7.4, correlation 0.993 over 119 quarters); the +25.20 was a stale EFA vintage, revised to +45.35 on 18 Sep, against Z.1's +51.27. Seasonal adjustment is ruled out (Z.1's FA/4 equals FU); the eREIT exclusion is the likely but unisolated rest. Keep the two series in separate tables.]** **The two Fed series do not reconcile, and I have not resolved it.** EFA net is defined as
    `FA103164155.Q ÷ 4` (seasonally adjusted, quarterly rate, excluding eREITs). Our N2c figure of +$51.3bn
    for 2026:Q1 is `FU103164105.Q` (unadjusted, quarterly). EFA gives +$25.20bn for the same quarter. The
    difference is some combination of seasonal adjustment, the eREIT exclusion and a different series

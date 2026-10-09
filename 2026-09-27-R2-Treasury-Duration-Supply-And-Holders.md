@@ -62,7 +62,7 @@ measured in duration. How duration is weighted changes the answer (C-122), so th
    | Buyer | Net purchases |
    |---|---|
    | Rest of the world | $1.33trn |
-   | Money-market funds | $1.01trn: bills, floating-rate notes and coupon securities within 397 days of maturity |
+   | Money-market funds | $1.01trn: bills, floating-rate notes and coupon securities within 397 days of maturity. Z.1 splits it: bills +$451.6bn (45%), other Treasuries +$560.5bn (55%) (FU633061110 / FU633061120, 9 Oct) |
    | Mutual funds, ETFs and closed-end funds | $0.64trn |
    | Banks | $0.49trn |
    | Households and nonprofits: a Z.1 residual, plus the new domestic hedge-fund sector (see item 5) | $0.46trn |
@@ -71,7 +71,7 @@ measured in duration. How duration is weighted changes the answer (C-122), so th
    | Broker-dealers | $0.23trn |
    | The Fed | −$0.34trn |
 
-   Net issuance was $4.65trn. The nine rows sum to $4.64trn, $12bn short, which is the table's own diagnostic. An earlier
+   Net issuance was $4.65trn. The nine rows sum to $4.64trn, $12bn short, which is the table's own diagnostic. **[9 Oct: the $12bn is one omitted sector, nonfinancial noncorporate business (Z.1 FU113061003, +$12.3bn over the window; re-derived by an agent and checked by the supervisor against the 11 Sep Z.1 file). With it the rows close to within $0.4bn.]** An earlier
    version counted state and local pension funds twice, and its rows exceeded issuance by $132bn (C-124). *MEASURED, dollar flows
    at the stated vintage (large revisions happen; see the N2c refresh).*
 5. **Which buyers took the duration is not measured.** Z.1 gives dollars, not maturities. Rule 2a-7 caps the maturities money
@@ -126,7 +126,7 @@ measured in duration. How duration is weighted changes the answer (C-122), so th
 | **change, end-2023 to 31 Aug 2026** | **+21.3%** | **+24.7%** | **+20.0%** |
 
 Against these, the public's face value rose 26.4% and its 10-year equivalents 35.7% at constant prices and 25.1% at market
-prices. Grok's review got a par-weighted rise of 24.9% on fixed curves and 26.5% on own curves; the own-curve gap is unresolved,
+prices. Grok's review got a par-weighted rise of 24.9% on fixed curves and 26.5% on own curves; the own-curve gap is unresolved **[9 Oct: an independent engine reproduces our +21.3% on own curves and gets +24.8% on fixed curves; Grok's 26.5% does not reproduce on any curve, and lies on the wrong side, since rising yields shorten own-curve duration]**,
 and on either figure par-weighted duration grew no faster than face value.
 
 The Fed's holdings are the New York Fed's weekly figures on the Wednesday on or before each month-end.

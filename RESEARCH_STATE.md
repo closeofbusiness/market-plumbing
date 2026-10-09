@@ -777,7 +777,7 @@ OUTSIDE PARCELS (orchestrator_outside):
       P/E path (24.35->28.60->28.48->25.22), corr(real yield, residual) = -0.6991 (n=282), the baseline band
       (10.9%/16.5%/28.4%/35.4%/43.1%), and Damodaran's growth 8.74%->13.69% with ERP 4.60%->4.20% from
       ERPbymonth.xlsx. Five for five, plus the external file. The WINDOW compression survives and is corroborated;
-      the LEVEL claim is dead. Its 30y TIPS point (FII30) is UNVERIFIED - FRED refuses scripted requests.
+      the LEVEL claim is dead. Its 30y TIPS point (FII30) was UNVERIFIED; RESOLVED 9 Oct: Grok's 1.95 -> 2.72 is the H.15 monthly average Dec-2023 to Jun-2026 and reproduces; on R1's window the 30y real yield rose +119bp vs +96bp for the 10y.
   Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md - RETURNED 15 Sep -> _research/SYN1_return_2026-09-15.md.
       Earnings survives-amended; risk/growth split FAILS (C-082); unattributable FAILS (C-083); money-scale FAILS.
       Load-bearing: Z.1 equities = mostly ETF wrapper not operating-company demand. Rebuild money side from ETF1/A1.

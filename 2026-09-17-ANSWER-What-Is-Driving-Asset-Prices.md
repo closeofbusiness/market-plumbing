@@ -101,7 +101,7 @@ total and bond columns alike.
 
 **So net new operating-company equity supply over the window was negative.** *"Retired" does not mean "bought back"* — **the net retirement is predominantly M&A**, companies disappearing into
 cash acquisitions. On the window this claim is about, **2024:Q1–2026:Q1** (all the Enhanced Financial Accounts covers):
-**M&A retirement $858.0bn against net retirement $679.1bn — 126.3%**, so M&A more than accounts for the whole of it.
+**M&A retirement $911.3bn against net retirement $704.0bn — 129.4%** (EFA vintage of 18 Sep; $858.0bn against $679.1bn on the 13 Sep pull), so M&A more than accounts for the whole of it.
 M&A retirement is a **published EFA line, not a residual** (re-checked 22 Sep: [`2026-09-13-S1-Supply-Decomposition.md`](2026-09-13-S1-Supply-Decomposition.md)
 reads it from the Fed's quarterly CSV, sourced to LSEG SDC, and all five annual totals re-sum exactly).
 

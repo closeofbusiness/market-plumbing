@@ -236,3 +236,19 @@ against Grok's 78.5bp on the Ministry's matched-coupon leg to 25 Sep. R3 states 
 - `bin/r3_jgb_egb.py` now pins its end date. It writes every JGBi issue's breakeven at every key date, and a chained
   fixed-issue change beside the newest-issue one. It also writes the Finanzagentur's linker breakevens (`ea_linkers.csv`).
 - Every table that existed before reproduced unchanged, apart from the new columns.
+
+### Supervisor follow-up, 9 October 2026: the relayed figures re-derived
+
+A Sonnet agent re-derived the figures this adjudication had relayed on Grok's word. The supervisor read its results; the table
+above marks six rows as relayed, not four.
+
+| Figure | Result |
+|---|---|
+| 17 Sep same-day check against the Ministry's chart | Real yield 0.864%, breakeven 2.065% (Ministry method) against the chart's 0.836% and 2.089%. That is 2.4bp on the breakeven by the Ministry's method and 3.2bp by R3's: "about 3bp". |
+| Chart 8 | Built from the Flow of Funds: the chart's own note says so, and the Flow of Funds sums tie to the chart within ¥0.4trn. |
+| GPIF | About ¥31.4trn of implied net inflow to domestic bonds. A proxy only: GPIF's domestic bonds include yen-hedged foreign bonds. |
+| NOMURA-BPI returns | Still relayed. Nomura's site refused the connection. A constant-maturity 9-year JGB is within 0.12pp. |
+| The ECB's ~€280bn gap | Explained by the series perimeter: it includes euro-area institutions. See R3. |
+| Bulgaria | €17bn re-derived. The €10–17bn range becomes a bound of at most €25bn (R3). |
+| The deflation floor's "under 1bp" | Holds only if cumulative inflation volatility is about 10% or less; about 6bp at 15%. Read it as a condition, not a fact. |
+

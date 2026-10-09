@@ -1066,6 +1066,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **UNSETTLED, and it matters:** whether the repurchase leg is public-only. No methodology doc is on disk. If repurchases also include private buybacks the mismatch narrows. Settle it from the Fed's FEDS Note before quoting either version.
 - **SETTLED 23 Sep, and in the direction that sharpens it.** The Fed's FEDS Note (Kuchinski, Ogden, Thomas, Warusawitharana, 16 Jun 2017 — still the methodology the live EFA page links) defines repurchases as equity bought back *by public nonfinancial firms*, while gross issuance covers *publicly and privately held* firms, and M&A covers public and private targets. So the repurchase leg is public-only and there is no private-buyback component to narrow anything: the decade comparison set public buybacks against a mostly-private total. Verified by the supervisor against the page itself: https://www.federalreserve.gov/econres/notes/feds-notes/equity-issuance-and-retirement-by-nonfinancial-corporations-20170616.html. The residual doubt is only whether Compustat's "public" means exchange-listed or SEC-registrant — marginal.
 - **Correct position, and it is STRONGER than what it replaces.** Drop the decade aggregate and use the window the claim is about. On **2024:Q1–2026:Q1** (9 quarters, all EFA covers): gross issuance $1,856.61bn, repurchases $1,677.73bn, **M&A retirement $858.00bn against net retirement $679.13bn = 126.3%**. M&A more than accounts for net retirement on the actual window. That is better evidence for "predominantly M&A" than the decade figure ever was, and it was sitting in the same file.
+- **Update, 9 Oct 2026: the Fed revised the EFA on 18 Sep.** On the revised file, 2024:Q1–2026:Q1 M&A retirement is $911.3bn against net retirement of $704.0bn (129.4%, was 126.3%); 2026:Q1 net issuance is +$45.35bn (was +$25.20bn), gross $424.55bn. The conclusion is unchanged and slightly stronger. Re-fetched by the supervisor from federalreserve.gov.
 - **Still standing at:** `2026-09-17-ANSWER` §2, rewritten in place.
 
 ---
@@ -1565,7 +1566,7 @@ RESEARCH_STATE §5, the ranked list and the ATT1 parcel.
   40-50bp on two independent constructions, and that compression — not the real-rate move, which was a drag —
   is what held the multiple up.* Do not attach a level, a counterfactual multiple, or a percentage of
   valuation to it without also stating the baseline band.
-- **Unresolved and NOT relied on:** Grok's 30-year TIPS point (FII30 1.95% -> 2.72%). FRED refuses scripted
+- **RESOLVED 9 Oct 2026 (re-derived by a Sonnet agent from Treasury's daily real yield curve and the Fed's H.15, which agree on all 934 overlapping days):** Grok's FII30 1.95% -> 2.72% is the H.15 monthly average, Dec 2023 to Jun 2026, and reproduces. On R1's window (29 Dec 2023 to 18 Sep 2026) the 30-year real yield rose 1.90% -> 3.09% (+119bp) against the 10-year's 1.72% -> 2.68% (+96bp). WAS: **Unresolved and NOT relied on:** Grok's 30-year TIPS point (FII30 1.95% -> 2.72%). FRED refuses scripted
   requests, so it is unverified; it was a supporting remark, not load-bearing.
 
 ## C-077 · "Carry an aggregate multiplier M = 5 (range 2-9) and apply it to the Z.1 sector purchase lines"

@@ -14,7 +14,7 @@ Z.1 “corporate equities” issuance over 2024:Q1–2026:Q2 is mostly ETF share
 
 ETF buying and mutual-fund selling offset by **81.6%** (**+$2,460.9bn** versus **−$2,009.0bn**). Consistent with rotation. Not a measurement of it (C-111). Source: [`2026-09-13-S1-Supply-Decomposition.md`](../2026-09-13-S1-Supply-Decomposition.md).
 
-Retirement was predominantly M&A, not buybacks alone, on 2024:Q1–2026:Q1 (**$858.0bn** M&A retirement versus **$679.1bn** net retirement).
+Retirement was predominantly M&A, not buybacks alone, on 2024:Q1–2026:Q1 (**$911.3bn** M&A retirement versus **$704.0bn** net retirement on the Fed's 18 Sep 2026 revision; $858.0bn / $679.1bn on the 13 Sep pull).
 
 Green’s own numbers were checked where free data allowed ([`2026-09-11-DG-Green-Numbers-Checked.md`](../2026-09-11-DG-Green-Numbers-Checked.md), [`2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md`](../2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md)). Some mechanism sketches reproduced. Several magnitudes are blocked on proprietary data and were not filled in. Older Substack posts were left unpulled by a 11 September ruling.
 

@@ -87,3 +87,30 @@ from the Fed's Data Download Program because FRED refuses scripts here (calendar
 - applying 2020 rates to populations from 2025–26;
 - the judgment that the nonbank draw falls in the lower half of its range;
 - that drawn money would be held as cash, which is how firms behaved in 2020, not a law.
+
+### Supervisor follow-up, 9 October 2026: the unverified numbers re-derived
+
+A Sonnet agent re-derived every load-bearing number in this note from free primary sources: FFIEC Call Report bulk files,
+the Fed's May 2020 Financial Stability Report, real-time and current H.8 vintages, NBER w27945, the Chicago, Richmond and San
+Francisco Fed papers. The supervisor read the results. Most MATCH. What changes:
+
+- **The NDFI unused base is three quarters stale.** RC-L PV11 was $986.6bn at 3Q25 (matches) and **$1,089.8bn at 2Q26**. At
+  this note's own rates the range scales from $97–269bn to about **$107–297bn**.
+- **Unused NDFI commitments are now split by subtype.** In 2Q26 the shares are:
+  - mortgage credit 9.7%;
+  - business credit 20.0%;
+  - private-equity funds 25.6%;
+  - consumer credit 8.3%;
+  - other 36.4%.
+  So warehouse plus capital-call lines are about 35% of the unused stock. This note's "about half" is true of *funded* loans
+  only, so its argument for the lower half of the range is weaker than stated.
+- **The 9.7% low-end rate mixes two populations.** Its numerator is a Y-14 sample; its denominator is the FSR total. A like-for-like
+  anchor from the Call Reports: unused C&I commitments at all banks fell 12.7% in 2020Q1 ($2,135.8bn to $1,864.6bn). That sits
+  inside the 9.7–27.1% range.
+- **Deposits.** Over 11 Mar–1 Apr 2020 deposits rose +$0.78trn, about 1.75 times the new lending, not "about +$1trn, twice".
+  The +$1trn appears only by 15 Apr.
+- **The "~$480bn" C&I rise** is the real-time NSA figure; the current SA vintage gives $447bn.
+- **The "~$300bn" AI-adjacent undrawn figure** is the difference of two rounded Chicago Fed figures, so about ±$50bn.
+
+The sizing's conclusion, a bounded and modest drawdown channel, is unchanged.
+

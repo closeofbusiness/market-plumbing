@@ -118,9 +118,12 @@ German Bund as the benchmark.
    - The rest of the world is total outstanding minus all euro-area holders. The euro-area rows partition those holders,
      and the script checks that. *MEASURED; stocks at face value, whose changes are net purchases at face value.*
    - **The rest of the world's level is uncertain by about €0.28trn.** The ECB's euro-area total exceeds the sum of the
-     20 countries by that much at both dates, and nothing found explains it. Its change moves by under €10bn.
+     20 countries by €279.8bn (Dec 2023) and €300.9bn (Jun 2026, of which Bulgaria €29.6bn). [9 Oct: the series' own title
+     explains it: "Member States and Institutions of the Euro Area", so the total includes debt of euro-area institutions
+     (likely the ESM and EFSF; that attribution is inference). The rest-of-the-world line uses the 20-country sum, so this is a
+     perimeter difference, not an error in that line.] Its change moves by under €10bn.
    - Bulgaria's residents left the rest of the world when Bulgaria joined in 2026. That understates the rest of the world's
-     rise by roughly €10–17bn (R3R's estimate, not re-derived).
+     rise by at most about €25bn [9 Oct: Bulgarian residents held €17.0bn at end-2023 (R3R's figure, re-derived) and €25.3bn at 2026Q2, but the 2026 figure includes Bulgaria's own debt, so the €10–17bn range cannot be pinned; €25bn is the bound].
    - The Eurosystem's share fell from 31.1% to 21.1%. Its own programme holdings (PSPP and PEPP public-sector, at amortised
      cost) fell from €4,017bn to €2,983bn over the same months. That total also includes supranational bonds.
    - The ECB notes that the foreign segment increasingly reflects hedge funds, and that its data cannot split it (ECB
