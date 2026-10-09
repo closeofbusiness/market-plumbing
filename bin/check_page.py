@@ -17,7 +17,9 @@ if len(sys.argv) != 2:
     print("usage: bin/check_page.py <page.html>"); sys.exit(0)
 C = io.open('CORRECTIONS.md', encoding='utf-8').read()
 pats = [l.split('\t', 1) for l in re.search(r'```banned\n(.*?)\n```', C, re.S).group(1).split('\n') if '\t' in l]
-raw = re.sub(r'(?is)<style.*?</style>', '', io.open(sys.argv[1], encoding='utf-8').read())
+# Blank the <style> block but KEEP its newlines, so the line numbers below are the page's own (a plain '' replacement
+# made every hit point ~170-220 lines early, by the size of the stylesheet).
+raw = re.sub(r'(?is)<style.*?</style>', lambda m: '\n' * m.group(0).count('\n'), io.open(sys.argv[1], encoding='utf-8').read())
 ATTR = re.compile(r'''\b(?:aria-label|alt|title)\s*=\s*(?:"([^"]*)"|'([^']*)')''', re.I)
 entries = []  # (line number, text): visible text, then each reader-facing attribute separately
 for n, l in enumerate(raw.split('\n'), 1):

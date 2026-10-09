@@ -27,7 +27,7 @@ Inputs (not redistributed; fetched into data/vintages/r1_treasury/ if missing, a
      (10 x BILL10 - 4 x years 1-4) / 6. The models give the same split from their 4- and 10-year expected rates.
 Outputs: data/r1_rates/levels.csv, decomp_10y.csv, holder_return_monthly.csv, holder_return_periods.csv,
          survey_check.csv, survey_changes.csv.
-Requires: Python 3 and xlrd (pip install -r requirements.txt). Run from anywhere:
+Requires: Python 3, xlrd and openpyxl (pip install -r requirements.txt). Run from anywhere:
   python3 bin/r1_treasury_decomposition.py
 """
 import csv, datetime as dt, math, os, sys, urllib.request

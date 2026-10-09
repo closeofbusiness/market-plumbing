@@ -1,5 +1,5 @@
 import csv, os
-SCR="<session-scratchpad>/n2b_v2"
+SCR=os.path.dirname(os.path.abspath(__file__))   # _research/n2b_v2/ inside the repo, as in build_zk.py: h8.csv, m2.csv, formpf.csv, z1.csv and zk_v2.csv are tracked there (was a swept scratchpad path)
 DBX=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 def rd(p): return list(csv.DictReader(open(p)))
 def hist(n):

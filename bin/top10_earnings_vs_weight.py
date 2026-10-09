@@ -80,10 +80,14 @@ METHOD (as specified by the research brief):
   few large losses distorting -- or flipping the sign of -- the ratio.
 
 COMPLIANCE BUILT INTO THIS SCRIPT:
-  - User-Agent is EXACTLY
-      "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"
-    on every request. No email address is ever put in a request (header,
-    query string, or body).
+  - The User-Agent depends on the host (see http_get):
+      sec.gov hosts (www.sec.gov, data.sec.gov): the declared contact in the SEC_UA
+        environment variable (name plus email, SEC's fair-access format); the script
+        exits at start-up if SEC_UA is unset. This is the ONLY place an email address
+        is sent.
+      every other host (GitHub): EXACTLY
+        "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"
+        with no email address in the header, query string or body.
   - A minimum 1.0s gap is enforced between successive requests to any
     *.sec.gov host -- under the 2 req/s ceiling in the brief, since the
     egress IP is shared with other agents.
@@ -99,8 +103,8 @@ COMPLIANCE BUILT INTO THIS SCRIPT:
   - Non-sec.gov sources (GitHub, for the S&P 500 membership history) are not
     subject to the sec.gov rate rule, but requests are still minimal (one
     directory listing + one file download, plus at most a couple of
-    subdirectory listings if the file isn't at repo root) and identify
-    themselves with the same User-Agent.
+    subdirectory listings if the file isn't at repo root) and carry the
+    no-email User-Agent above.
 
 USAGE (run each stage separately in the FOREGROUND and inspect its output
 before moving on -- do not background any of these):

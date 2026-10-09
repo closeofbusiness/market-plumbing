@@ -171,6 +171,8 @@ duplicate_correction_check() {
 #      then build it READ-ONLY and DERIVED, rebuilt from the text on demand, never the
 #      source of truth.
 #
+TODAY="${CHECK_TODAY:-$(date +%F)}"
+
 # HANDOVER.tsv columns: stamped_at  agent  parcel  status  fields  next
 handover_fields() {
   local corr maxc ask series docs cal
@@ -180,7 +182,9 @@ handover_fields() {
   ask=$(grep -cE '^## E-0[0-9]+' THE_ASK.md 2>/dev/null || echo 0)
   series=$(( $(wc -l < data/series.tsv 2>/dev/null || echo 1) - 1 ))
   docs=$(find . -mindepth 1 -maxdepth 1 -name '*.md' | wc -l | tr -d ' ')
-  cal=$(( $(wc -l < CALENDAR.tsv 2>/dev/null || echo 1) - 1 ))
+  # Data rows (5 tab-separated fields), not newlines: CALENDAR.tsv has a blank line 56 and no trailing newline, so
+  # wc -l - 1 was right only by coincidence and would flip to 56 the day an editor added the final newline.
+  cal=$(awk -F'\t' 'NR>1 && NF>=5' CALENDAR.tsv 2>/dev/null | wc -l | tr -d ' ')
   printf 'corrections=%s max=C-%03d ask=%s series=%s docs=%s calendar=%s' \
     "$corr" "$maxc" "$ask" "$series" "$docs" "$cal"
 }
@@ -252,7 +256,24 @@ if [ "${1:-}" = "--handover" ]; then
   [ -z "$NEWC" ] && echo "  (none)" || printf '%s\n' "$NEWC"
   echo
   echo "-- due now --"
-  awk -F'\t' -v d=$(date +%F) 'NR>1 && $1<=d && tolower($5)!="done" {print "  DUE "$1"  "substr($2,1,80)}' CALENDAR.tsv 2>/dev/null | head -10
+  # A row is FINISHED when its status BEGINS with "done" in any case: "done", "DONE", "DONE 3 Oct",
+  # "DONE 4 Oct (unverified by supervisor)". The old filter (tolower($5)!="done") listed every annotated DONE row as
+  # due, so 8 of 9 lines on 8 Oct were finished work, and head -10 would have cut off a real overdue row.
+  # A row needs a date in column 1 and 5 fields: the blank line 56 of CALENDAR.tsv printed an empty "DUE" line.
+  # The count is printed from the same pass, so it is the true number, not the number that fit under the cap.
+  # CHECK_TODAY=YYYY-MM-DD overrides today's date (testing: "what would be due on the 16th?").
+  awk -F'\t' -v d="$TODAY" -v cap=15 '
+    NR>1 && NF>=5 && $1 ~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$/ {
+      rows++
+      if (tolower($5) !~ /^[ ]*done/) {
+        open++
+        if ($1<=d) { due++; if (due<=cap) print "  DUE "$1"  "substr($2,1,80) }
+      }
+    }
+    END {
+      if (due>cap) printf "  ... %d more due, not shown (see bin/check.sh --todo)\n", due-cap
+      printf "  (%d due now; %d of %d calendar rows are not done)\n", due, open, rows
+    }' CALENDAR.tsv 2>/dev/null
   echo
   echo "  (then: bin/check.sh --todo for the ranked list. Write a handover after EVERY parcel.)"
   exit 0
@@ -279,7 +300,15 @@ if [ "${1:-}" = "--todo" ]; then
     fi
   fi
   echo; echo "== CALENDAR.tsv -- next 45 days =="
-  awk -F'\t' -v d=$(date +%F) -v e=$(date -v+45d +%F 2>/dev/null || date -d "+45 days" +%F) 'NR>1 && $5!="done" && $1<=e {print "  "$1"  "substr($2,1,100)}' CALENDAR.tsv | sort
+  # Same status rule as the handover's due-now list: "done"/"DONE"/"DONE 3 Oct" are finished (this used a case-sensitive
+  # $5!="done", so every annotated DONE row listed as upcoming); blank lines are not rows; the count is the true one.
+  E45=$(date -j -v+45d -f %F "$TODAY" +%F 2>/dev/null || date -d "$TODAY +45 days" +%F)
+  awk -F'\t' -v e="$E45" '
+    NR>1 && NF>=5 && $1 ~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$/ && tolower($5) !~ /^[ ]*done/ {
+      open++
+      if ($1<=e) { n++; print "  "$1"  "substr($2,1,100) | "sort" }
+    }
+    END { close("sort"); printf "  (%d rows due within 45 days; %d rows not done in all)\n", n, open }' CALENDAR.tsv
   echo; echo "== data/series.tsv -- latest vintage per series =="
   [ -f data/series.tsv ] && awk -F'\t' 'NR>1{last[$2]=$1"  as_of "$3"  "$4" "$5} END{for(k in last) printf "  %-42s %s\n",k,last[k]}' data/series.tsv | sort || echo "  (no data/series.tsv yet -- run bin/pull_series.py)"
   exit 0
@@ -347,6 +376,16 @@ if [ "$badpat" -gt 0 ]; then
   echo
 fi
 
+# Speed (9 Oct 2026). This loop was pattern x file: 237 x 136 = 32,232 pairs, each spawning an allow-list grep and a scan
+# grep (~6 ms a pair, about 195 s of the 197 s a full --all run took; the structural checks and the page check take
+# under 3 s together). Now ONE grep -l per pattern over every file names the few files that match at all; the per-file
+# allow test and line scan below are unchanged and run only for those, so output, order and attribution are identical.
+# Files that do not exist are dropped up front (the old loop skipped them with [ -f ]).
+FILES=()
+while IFS= read -r f; do
+  [ -f "$f" ] && FILES+=("$f")
+done <<< "$FILELIST"
+
 hits=0
 while IFS=$'\t' read -r id rx; do
   [ -z "${rx:-}" ] && continue
@@ -359,7 +398,7 @@ while IFS=$'\t' read -r id rx; do
       printf '  [%s] %s:%s  %s\n' "$id" "${f#./}" "$ln" "$(printf '%s' "$text" | cut -c1-86)"
       hits=$((hits+1))
     done < <(grep -nEi -e "$rx" "$f" 2>/dev/null | grep -vE '^[0-9]+:[[:space:]]*>' || true)
-  done <<< "$FILELIST"
+  done < <(grep -lEi -e "$rx" ${FILES[@]+"${FILES[@]}"} 2>/dev/null || true)
 done <<< "$BANNED"
 
 echo

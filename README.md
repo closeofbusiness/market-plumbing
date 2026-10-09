@@ -112,7 +112,7 @@ Read its ✓ lines. The exit code is always 0 by design, so it proves nothing. I
 
 Re-running a script from raw inputs needs:
 
-- **Python 3.** Most scripts use only the standard library; `pip install -r requirements.txt` covers the two that read spreadsheets.
+- **Python 3.** Most scripts use only the standard library; `pip install -r requirements.txt` covers the five in `bin/` that read spreadsheets (`xlrd` for `.xls`, `openpyxl` for `.xlsx`, and `pandas` for one of them) and the numpy scripts under `_research/`.
 - **An `SEC_UA` environment variable.** SEC EDGAR asks every automated request to identify its sender. Before running a script that calls it, run `export SEC_UA="Your Name you@example.com"`.
 - **Third-party inputs, which are not redistributed here.** These include Shiller's `ie_data.xls`, FRED's DGS10 and DFII10 series, and Damodaran's `ERPbymonth.xlsx`. Download them from their publishers to the path the script names; `.gitignore` keeps them out of commits. US federal primary sources, which are public domain, are kept under `_research/primary_sources/`.
 

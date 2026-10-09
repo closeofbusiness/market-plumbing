@@ -1923,6 +1923,12 @@ C-093	2026-09-18-EPS-Split.md	# the doc under correction; banner at top, tables 
 C-094	2026-09-20-W1-The-Leak-Objection.md	# confined to the status line and the do-not-say list
 C-095	CORRECTIONS.md	# the entry quotes the dead framing
 C-129	Review_Prompt_For_Grok.md	# a dated prompt, bannered 9 Oct
+C-015	2026-08-21-Singh-And-The-Two-Circuits.md	# its amendment note (line 89) quotes the killed claim in order to correct it; allowed 9 Oct when the pattern was widened to match the en-dash wording
+C-082	Parcel_SYN1_Attack_The_Synthesis_For_Grok_Cursor.md	# the attack brief quotes the claim it asked Grok to attack (line 40); C-082 is the result; allowed 9 Oct when the pattern was widened
+C-082	2026-09-14-P5i-Event-Study-Result.md	# dated record; the split at line 54 carries a [C-082] banner (9 Oct)
+C-015	Collateral_State_of_Argument.md	# the 2022 quote carries a [C-015] banner (9 Oct)
+C-015	Where_The_Two_Workstreams_Meet.md	# the 2022 quote carries a [C-015] banner (9 Oct)
+C-015	Collateral_Data_Inventory.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 ```
 
 ```banned
@@ -1935,7 +1941,7 @@ C-085	2024 private[- ]repo.{0,40}new cash
 C-084	residual HAS been decomposed|has been decomposed
 C-084	Rosenthal & Burke \(2024\)|Rosenthal and Burke \(2024\)
 C-083	irreducibly unattributable|unattributable by design|do not know who bought essentially any|genuinely unattributable with free data|nearly half the buying is unattributable
-C-082	two-fifths (of the compression )?is (genuinely )?cheaper risk|2/5 risk,? 3/5 growth|~2/5 risk
+C-082	two-fifths (of the compression )?is (genuinely )?(cheaper )?risk|2/5 risk,? 3/5 growth|~2/5 risk
 C-081	equity base grew.{0,24}(trillion|\$1trn|a year)|supply boom is overwhelmingly private|households absorbed 94\.6%
 C-080	no published multiplier reaches 13|implied multiplier would be 13\.47|flows explain 11%-70%|11% *. *70% of the repric
 C-079	Hahn et al|Hahn'?s (12-sector|own) (GIV|J-test)|rejected by (its|their) own J-test
@@ -1952,7 +1958,7 @@ C-011	ACH matrix|analysis of competing hypotheses.*build
 C-012	sqlite.*project folder|WAL.*dropbox|dropbox.*breaks.*rename
 C-013	outside every monetary aggregate|in no aggregate anywhere in the world
 C-014	unambiguously money creation
-C-015	velocity (has been |is )?flat.{0,30}(2-3|two to three) years
+C-015	velocity (has been |is )?(flat|stuck).{0,40}(2.3|2 to 3|two to three|two, three) years
 C-017	safe-asset share.{0,90}composition
 C-017	safe-asset share.{0,90}quantity
 C-017	33\.2%.{0,60}null
@@ -2078,10 +2084,8 @@ C-076	Li (&|and) Lin.{0,60}bias[- ]corrected
 C-076	bias[- ]corrected.{0,25}(≈|~|about |roughly )?\$?5( |,|\.|\)|$)
 C-077	aggregate multiplier M ?= ?5
 C-077	anchored near \$?5
-C-087	150%.{0,40}breakeven
-C-087	150%.{0,40}break-even
-C-087	breakeven.{0,40}150%
-C-087	break-even.{0,40}150%
+C-087	150%.{0,40}break.?even
+C-087	break.?even.{0,40}150%
 C-088	290\.5%
 C-088	81\.8%.{0,25}SOX
 C-088	-52\.0%
@@ -2103,9 +2107,10 @@ C-093	accretion.{0,15}13\.4%
 C-094	leak objection.{0,30}untested
 C-094	untested.{0,30}leak objection
 C-094	load.bearing objection to the whole circuit
-C-095	SBC.{0,40}untested
-C-095	stock.based compensation.{0,30}untested
+C-095	\bSBC\b.{0,120}untested
+C-095	stock.based compensation.{0,100}untested
 C-095	untested.{0,35}R&D capitalisation
+C-095	R&D capitalisation.{0,40}untested
 C-096	overstates the contractual channel
 C-096	[Pp]lausible rebalancing share
 C-097	mirrored under project local
@@ -2144,14 +2149,16 @@ C-124	world includes hedge funds domiciled offshore
 C-124	money.market funds took bills
 C-125	only span the survey covers
 C-125	survey disputes even that
-C-125	three measures give three answers
+C-125	measures give three answers
 C-125	latest reading predates the 2026 rise
 C-125	long end, concentrated after February
 C-125	at the long end, mostly after February
 C-125	real yields and the long end
-C-125	survey disagree, over 2024.26 even in sign
+C-125	models and a survey disagree
+C-125	2024.26 even in sign
 C-125	position returned about \+3\.3%
 C-122	public rose 26%, so .{0,4}duration supply grew
+C-122	duration supply grew( faster( than( face)?)?)?[* ]*$
 C-126	did about two-fifths of Japan
 C-126	follows the Ministry of Finance.s own method
 C-127	no free market breakeven for Bunds

@@ -7,7 +7,7 @@ component and an implied equity-risk-premium (residual) component, and
 attribute the CHANGE in that yield -- annually and across two windows
 (2015-2019 and 2024-2026) -- to real yields vs. the premium.
 
-Reads ONLY these three source files (read-only project folder, absolute paths):
+Reads ONLY these three source files (read-only; paths are resolved from this script's location, so any clone works):
   - .../data/vintages/shiller_2026-09-02/ie_data.xls      (Shiller: P, D, E, CAPE)
   - .../data/vintages/shiller_2026-09-02/FRED_DGS10.csv   (10y nominal Treasury, daily)
   - .../data/vintages/shiller_2026-09-02/FRED_DFII10.csv  (10y TIPS real yield, daily)
@@ -16,7 +16,10 @@ Also fetches (HTTP GET, declared non-commercial-research User-Agent, no API key)
 two free public workbooks from Damodaran's NYU Stern page for an independent
 forward-looking ERP cross-check, then deletes the raw downloads once parsed.
 
-Writes ONLY into this scratch directory (absolute paths):
+Writes ONLY into data/p2c_rates_vs_premium/ at the repo root (created if absent; was a swept scratchpad path until
+9 Oct 2026). The copies cited by the findings note are the frozen _research/2026-09-12-P2c-<same name>.csv, so a re-run
+can be compared with `diff`; it does not overwrite them. The Damodaran downloads are transient and go to the
+gitignored data/vintages/damodaran_rates_vs_premium/.
   - monthly_series.csv
   - decomposition_annual.csv
   - decomposition_windows.csv
@@ -61,14 +64,15 @@ import pandas as pd
 import xlrd
 
 # ---------------------------------------------------------------------------
-# Absolute paths. Inputs are READ-ONLY. Outputs go only to this scratch dir.
+# Paths, all derived from this file's location. Inputs are READ-ONLY. Outputs go only to OUT_DIR.
 # ---------------------------------------------------------------------------
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root, wherever it is cloned (was the author's Dropbox path before 24 Sep 2026)
 SHILLER_XLS = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/ie_data.xls")
 FRED_DGS10 = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/FRED_DGS10.csv")
 FRED_DFII10 = os.path.join(PROJECT_DIR, "data/vintages/shiller_2026-09-02/FRED_DFII10.csv")
 
-OUT_DIR = "/private/tmp/claude-501/-Users-martinschroeder-Downloads/c58870c4-abdd-4920-bbdd-957d69c89922/scratchpad/wave2/p2c"
+OUT_DIR = os.path.join(PROJECT_DIR, "data", "p2c_rates_vs_premium")  # was an absolute /private/tmp/.../scratchpad path (swept)
+RAW_DIR = os.path.join(PROJECT_DIR, "data", "vintages", "damodaran_rates_vs_premium")  # transient downloads; gitignored by data/vintages/damodaran_*/
 OUT_MONTHLY = os.path.join(OUT_DIR, "monthly_series.csv")
 OUT_ANNUAL = os.path.join(OUT_DIR, "decomposition_annual.csv")
 OUT_WINDOWS = os.path.join(OUT_DIR, "decomposition_windows.csv")
@@ -226,7 +230,7 @@ def fetch_damodaran_annual():
     ]
     last_err = None
     for url in candidates:
-        local_path = os.path.join(OUT_DIR, "_damodaran_annual.xls")
+        local_path = os.path.join(RAW_DIR, "_damodaran_annual.xls")
         try:
             fetch_url(url, local_path)
             return local_path, url, None
@@ -245,7 +249,7 @@ def fetch_damodaran_monthly():
     ]
     last_err = None
     for url in candidates:
-        local_path = os.path.join(OUT_DIR, "_damodaran_monthly.xlsx")
+        local_path = os.path.join(RAW_DIR, "_damodaran_monthly.xlsx")
         try:
             fetch_url(url, local_path)
             return local_path, url, None
@@ -256,6 +260,8 @@ def fetch_damodaran_monthly():
 
 
 def main():
+    os.makedirs(OUT_DIR, exist_ok=True)
+    os.makedirs(RAW_DIR, exist_ok=True)
     print("=" * 70)
     print("Loading Shiller monthly data:", SHILLER_XLS)
     shiller = load_shiller(SHILLER_XLS)

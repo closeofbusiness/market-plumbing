@@ -1,5 +1,12 @@
-# Only the two scripts that read spreadsheets need these: xlrd for
-# bin/decomp_sp500_shiller.py and bin/rates_vs_premium.py, pandas for the second only.
-# Every other script in bin/ uses the Python standard library.
-pandas
+# Third-party packages. Every other import in bin/ is the Python standard library.
+# Five scripts in bin/ read spreadsheets (checked 9 Oct by parsing every tracked .py file's imports):
+#   xlrd      legacy .xls files (Shiller, NY Fed ACM, Damodaran's annual file, MoF JGB workbooks):
+#             decomp_sp500_shiller.py, r1_treasury_decomposition.py, r3_jgb_egb.py, r3b_jgb_duration.py, rates_vs_premium.py
+#   openpyxl  .xlsx files (the SPF mean-level workbook, BoJ workbooks; pandas reads Damodaran's ERPbymonth.xlsx through it):
+#             r1_treasury_decomposition.py, r3b_jgb_duration.py, rates_vs_premium.py
+#   pandas    bin/rates_vs_premium.py, and the _research/session_scripts_2026-08/an*.py scripts
+#   numpy     the same an*.py scripts import it directly (pandas installs it anyway; listed so they do not depend on that)
 xlrd
+openpyxl
+pandas
+numpy
