@@ -775,7 +775,7 @@ Do not restate findings here. Status and detail stay in the home section named o
 
 
 
-MARTIN'S, NOT MINE: the Singh briefing (pushed by E-005, then again by E-017; the date is the CALENDAR.tsv row, not
+MARTIN'S, NOT MINE: the Singh briefing (pushed by E-005, then again by E-017, then held for the Q3 bank filings by E-020; the date is the CALENDAR.tsv row, not
 this line); the hermes-core fixes task.
 
 OUTSIDE PARCELS (orchestrator_outside):

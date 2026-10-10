@@ -30,6 +30,22 @@ principal and append a new entry.
 
 ---
 
+## E-020 · 9 October 2026 — the Singh update waits for the Q3 bank filings
+
+Given as an answer to the supervisor's question. The principal had asked whether we had anything interesting for Singh. The
+supervisor's answer: nothing since the 12 Sep draft changes what we would tell him. A Form-PF-only refresh moves the velocity
+range only by mixing input dates, and the 27 Sep additions are not his subject. The options were to hold for the Q3 filings,
+send the 12 Sep draft, or park it.
+
+> *"Hold for Q3 filings (Recommended)"*
+
+**Reading notes.** The send is re-dated to about 16 Nov. After the early-November Q3 10-Qs, the supervisor refreshes the bank
+collateral numerator (the 5 Nov repledge census) and the Form PF denominator on one date, re-runs the Grok read-only check on
+the changed claims, and the principal sends. This ends the two-weekly re-push. The household-row inference (C-124) and the RV1
+sizing stay out of the note unless outside review upgrades them.
+
+---
+
 ## E-019 · 9 October 2026 — FX and commodities parked as open; tidy the old copies; work through the list
 
 Given in one message after the supervisor's 8 Oct audit of outstanding work. The audit asked whether to rank FX,
