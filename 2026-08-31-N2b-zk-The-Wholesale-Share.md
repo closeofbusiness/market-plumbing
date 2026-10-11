@@ -269,7 +269,7 @@ perimeter-sensitive to about a point, and `W` is a floor by the bank-CP share.
 
 The OFR published the Form PF hedge-fund data for 2026Q2 (update of 16 Sep), so the 2026-06 row of
 `_research/n2b_v2/zk_v2.csv` is now complete. **`z_k(W2, M2)` is 22.96% at 2026-06, against 23.07% at
-2026-03**, a fall of 0.11pp. Over H.8 deposits less large time it is 29.07% (from 29.22%). W2 is
+2026-03** [C-130: a plateau, not a demonstrable fall: a 0.6% (about $145bn) revision to June M2 would erase the 0.11pp gap]. Over H.8 deposits less large time it is 29.07% (from 29.22%). W2 is
 $6,902.0bn: the money-fund and bank leg W1 of $5,582.0bn plus hedge-fund reverse repo of $1,320.0bn,
 down from $1,399.0bn. So the plateau that W1 showed through 2026 now shows in W2 too. The supervisor
 re-read the Form PF value from the OFR API and the three Z.1 inputs from the Fed's dated zip.

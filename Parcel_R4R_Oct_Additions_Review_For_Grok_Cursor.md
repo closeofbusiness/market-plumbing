@@ -1,6 +1,6 @@
 # R4R — Attack the October additions: JGB duration, the German split, CFTC, N-PORT, EFA, the multiplier, RV1, z_k (Grok in Cursor)
 
-**Status: READY, 9 Oct 2026.** Written by the supervisor after the 8 Oct audit found that everything landed since the R3R review
+**Status: RETURNED and ADJUDICATED, 11 Oct 2026** (return and adjudication in `_research/2026-10-11-R4R-Oct-Additions-Review-Return.md`; correction C-130). **Was: READY, 9 Oct 2026.** Written by the supervisor after the 8 Oct audit found that everything landed since the R3R review
 (28 Sep) had been checked only internally (THE_ASK E-019: "work through all the items"). Routed to Grok in Cursor, with web
 search, to judge claims and to find sources whose citations must hold. After the return, the supervisor revises, checks and
 adjudicates (THE_ASK E-008), as for R12R and R3R.

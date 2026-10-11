@@ -100,8 +100,8 @@ cannot fail. **The real corroboration is ICI Fact Book Table 13**, which matches
 total and bond columns alike.
 
 **So net new operating-company equity supply over the window was negative.** *"Retired" does not mean "bought back"* — **the net retirement is predominantly M&A**, companies disappearing into
-cash acquisitions. On the window this claim is about, **2024:Q1–2026:Q1** (all the Enhanced Financial Accounts covers):
-**M&A retirement $911.3bn against net retirement $704.0bn — 129.4%** (EFA vintage of 18 Sep; $858.0bn against $679.1bn on the 13 Sep pull), so M&A more than accounts for the whole of it.
+cash acquisitions. On the window this claim is about, **2024:Q1–2026:Q2** (from the start of 2024 to the latest quarter the Fed's Enhanced Financial Accounts carries, 2026:Q2):
+**M&A retirement $1,044.8bn against net retirement $552.1bn — 189%**, so M&A more than accounts for the whole of it (to 2026:Q1: $911.3bn against $704.0bn, 129.4%; C-108 updates). Through 2025:Q4 the two were level ($748.5bn against $749.4bn); the excess comes from 2026. Net issuance turned positive in 2026, so the window's net retirement is shrinking.
 M&A retirement is a **published EFA line, not a residual** (re-checked 22 Sep: [`2026-09-13-S1-Supply-Decomposition.md`](2026-09-13-S1-Supply-Decomposition.md)
 reads it from the Fed's quarterly CSV, sourced to LSEG SDC, and all five annual totals re-sum exactly).
 
@@ -194,7 +194,8 @@ of the rise, depending on the inflation-indexed issue used. In Germany the rise 
 breakeven fell (measured 8 Oct, liquidity caveat in R3), while market breakevens say inflation compensation did about half or more of 2026's rise. The term premium is not measured for either; the
 ECB reads the rise since late 2024 as largely higher real term premia. Banks and public pensions absorbed the BoJ's net
 reduction; banks and foreign investors absorbed the Eurosystem's. At constant yields Japan's public took 16–25% more fixed-coupon
-JGB rate risk from end-2023 or Oct 2024 to Aug 2026 (8 Oct follow-up; the upper end rests on an estimated start stock). See
+JGB rate risk from end-2023 or Oct 2024 to Aug 2026 on the method used for the US figure, and 11–18% on an unpriced face-times-maturity
+measure (8 Oct follow-up; R4R found the size curve-dependent; the upper ends rest on an estimated start stock). See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
 **FX and commodities are in the mission but not yet addressed. The principal parked them on 9 Oct (E-019): open, to be taken
 up later. Derivatives as a market-structure flow are open on the same footing.** Nothing in this note speaks for those markets.

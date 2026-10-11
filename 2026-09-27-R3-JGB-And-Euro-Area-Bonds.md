@@ -258,7 +258,10 @@ Public = total minus BoJ, an identity asserted in the script.
 - **At constant yields, the public took about a quarter more JGB rate risk:**
   - +24.8% from end-2023 (BOUNDED: the end-2023 stock by issue is interpolated, so ±1–2pp);
   - +16.0% from 31 Oct 2024 (MEASURED: both ends are observed by-issue snapshots).
-  The US figure was about +36% over a similar window (R2). The BoJ's holdings fell by ¥55.7trn of
+  [R4R, 11 Oct: WEAKENED on size. The end-2023 curve, with the 10-year at 0.65%, gives long issues high duration and so
+  weights them up. An unpriced measure, public face × years to maturity, grows +18.2% from end-2023 and +10.9% from Oct 2024
+  (re-derived by the supervisor from `jgb_duration_issues.csv`). Say 11–25% depending on the measure; direction stands.]
+  The US figure was about +36% over a similar window (R2), on the same fixed-curve method. The BoJ's holdings fell by ¥55.7trn of
   10-year equivalents while the total rose by ¥82.8trn. So the public absorbed about 1.7 times the
   increase in total supply.
 - **At each date's own yields the public's 10-year equivalents fell 6.5%.** Prices fell as the 10-year rose

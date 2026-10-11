@@ -30,6 +30,8 @@ CONVERSIONS (kept deliberately simple; constants below). Per-contract DV01 in do
 contract, held CONSTANT over the sample:
   * PRIMARY set = the CME Group's worked example of deliverable Treasury futures DV01s labelled January 2024 (CME
     education material on yield futures): 2Y $34, 5Y $42, 10Y $63, Ultra 10Y $91, Bond $137, Ultra Bond $215.
+    (R4R, 11 Oct: CME's current micro-futures page gives Ultra 10Y $88 and Ultra Bond $204.68; close, and it touches only
+    the 10-year-equivalent columns, never the face figures.)
   * ALT set = the figures in CME's "Introduction to Treasuries" course table (undated; larger, probably from a lower-yield
     period): 2Y $36.97, 5Y $47.94, 10Y $76.55, Ultra 10Y $115.84, Bond $213.14, Ultra Bond $289.34. Used only as a
     sensitivity, reported next to the primary set.

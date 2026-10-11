@@ -768,6 +768,27 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-130 · "The EFA and Z.1 equity-issuance series differ by a stable offset" and "z_k fell 0.11pp to June 2026"
+
+**Mine, written 4 Oct (z_k) and 9 Oct (the offset). Killed 11 Oct by the R4R review (Grok in Cursor); the supervisor re-derived both.**
+
+- **Killed by:** `_research/2026-10-11-R4R-Oct-Additions-Review-Return.md`, targets 5 and 8.
+- **What was wrong.**
+  - **The offset is not stable.** Z.1 `FU103164105` minus EFA net (`FA103164155`/4) on the September vintages averages +$5.3bn a
+    quarter over 119 quarters (sd 7.4; both statistics right). But its yearly mean swings: +$20.2bn in 2021, +$12.6bn in 2022, and
+    −$1.9bn to +$3.6bn in 2023–26. "Stable" was wrong, and the eREIT explanation is unproven. EFA net is by definition a Z.1 series
+    code divided by 4, so the gap is between two Z.1 series, not two methods.
+  - **z_k did not demonstrably fall.** 22.96% at June against 23.07% at March cannot be told from zero. A June M2 revision of
+    about $145bn (0.6%) would flip the sign; the Form PF revision seen so far widens the gap to 0.13pp. It is a plateau.
+- **Correct position.**
+  - The two equity series reconcile in level (correlation 0.993) with a varying offset of unidentified cause. Keep them in separate
+    tables.
+  - z_k has plateaued at about 23% since March 2026.
+- **Still standing at:** nowhere live. The S1 banner, the N2b update and the series notes carry the correction; the page's
+  shadow-money row was reworded.
+
+---
+
 ## C-129 · "Leveraged funds' net short Treasury futures roughly 2.2–2.8× the pre-March-2020 peak"
 
 **Mine, in the KVJ correction's evidence (C-018 entry, 21 Aug) and the Grok review prompt (`Review_Prompt_For_Grok.md` item 5). Found 9 Oct 2026 when the CFTC TFF series was first built (`bin/pull_cftc_tff.py`); the supervisor re-fetched the 10-year contract's 29 Sep 2026 row from the CFTC API and it matched.**
@@ -776,6 +797,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **What was wrong.** The level is right; the ratio is not. Leveraged funds' aggregate net short was −$923.5bn of contract face on 14 Jul 2026. The pre-March-2020 peak on the same basis was −$612bn (6 Aug 2019), so the ratio is **about 1.5×**. In 10-year equivalents it is about 1.7×, and the 10-year contract alone about 1.8×. "2.2×" is the 10-year contract's post-2020 peak, not its 2026 level. No basis gives 2.2–2.8× for 2026.
 - **Correct position.** Leveraged funds' net short across the six Treasury futures was about −$920bn of face in mid-2026 and −$774bn on 29 Sep 2026, **roughly 1.5–1.9× the pre-2020 peak** depending on the measure. That is still large and still supports the point it was used for, that hedge-fund repo growth is demand for leverage.
 - **Still standing at:** nowhere live. The C-018 evidence line and `Review_Prompt_For_Grok.md` carry banners. The ANSWER and the page never used the ratio.
+- **Likely origin (R4R, 11 Oct, inferred from arithmetic):** −$923.5bn against the weekly March 2020 levels ($343–437bn) gives 2.1–2.7×, so the old figure probably compared 2026 with the March 2020 trough of the short, not with the pre-2020 peak. Quote the date and the measure beside any ratio.
 
 ---
 
@@ -1070,6 +1092,7 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 - **SETTLED 23 Sep, and in the direction that sharpens it.** The Fed's FEDS Note (Kuchinski, Ogden, Thomas, Warusawitharana, 16 Jun 2017 — still the methodology the live EFA page links) defines repurchases as equity bought back *by public nonfinancial firms*, while gross issuance covers *publicly and privately held* firms, and M&A covers public and private targets. So the repurchase leg is public-only and there is no private-buyback component to narrow anything: the decade comparison set public buybacks against a mostly-private total. Verified by the supervisor against the page itself: https://www.federalreserve.gov/econres/notes/feds-notes/equity-issuance-and-retirement-by-nonfinancial-corporations-20170616.html. The residual doubt is only whether Compustat's "public" means exchange-listed or SEC-registrant — marginal.
 - **Correct position, and it is STRONGER than what it replaces.** Drop the decade aggregate and use the window the claim is about. On **2024:Q1–2026:Q1** (9 quarters, all EFA covers): gross issuance $1,856.61bn, repurchases $1,677.73bn, **M&A retirement $858.00bn against net retirement $679.13bn = 126.3%**. M&A more than accounts for net retirement on the actual window. That is better evidence for "predominantly M&A" than the decade figure ever was, and it was sitting in the same file.
 - **Update, 9 Oct 2026: the Fed revised the EFA on 18 Sep.** On the revised file, 2024:Q1–2026:Q1 M&A retirement is $911.3bn against net retirement of $704.0bn (129.4%, was 126.3%); 2026:Q1 net issuance is +$45.35bn (was +$25.20bn), gross $424.55bn. The conclusion is unchanged and slightly stronger. Re-fetched by the supervisor from federalreserve.gov.
+- **Update, 11 Oct 2026 (R4R):** the EFA now carries 2026Q2. Over 2024:Q1–2026:Q2, M&A retirement is $1,044.8bn against net retirement of $552.1bn (189%): stronger still. Net issuance turned positive in 2026 (+$45.35bn Q1, +$151.95bn Q2), so the window's net retirement is shrinking.
 - **Still standing at:** `2026-09-17-ANSWER` §2, rewritten in place.
 
 ---
@@ -1930,6 +1953,7 @@ C-015	Collateral_State_of_Argument.md	# the 2022 quote carries a [C-015] banner 
 C-015	Where_The_Two_Workstreams_Meet.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 C-015	Collateral_Data_Inventory.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 C-129	Parcel_R4R_Oct_Additions_Review_For_Grok_Cursor.md	# the attack brief quotes the killed ratio so Grok can test it (target 3)
+C-130	Parcel_R4R_Oct_Additions_Review_For_Grok_Cursor.md	# the attack brief quotes the claims it asked Grok to attack (targets 5 and 8)
 ```
 
 ```banned
@@ -2171,4 +2195,6 @@ C-128	Its sales accelerated
 C-128	banks, pension funds and foreign investors absorbed the supply
 C-128	face-value estimate for June 2024 to March 2026 points the same way
 C-129	2[.]2.{0,3}2[.]8.{0,40}pre-March-2020
+C-130	stable.{0,20}offset
+C-130	fall of 0[.]11 ?pp
 ```

@@ -8,6 +8,11 @@ coming from" at its fastest edge: undrawn committed lines are where bank money c
 
 ## The answer
 
+[R4R, 11 Oct: WEAKENED. These are 2020-behaviour bands, not bounds; the low ends have no anchor in bank lines to NDFIs. Scaling
+the March 2020 H.8 NDFI-loan jump (+13.7% real-time, +15.3% current vintage) to today's $2,079bn H.8 book gives about
+$285–318bn, at or above the top of the rescaled $107–297bn band (supervisor's arithmetic, 11 Oct). Read the upper half as the
+better guide, and treat warehouse and capital-call lines (about 35% of the unused stock) as untested by 2020.]
+
 In a shock like March 2020, draws on today's undrawn lines would probably come to:
 - **roughly $100–270bn** of the **$987bn** undrawn at nonbank financial institutions (NDFIs);
 - **roughly $30–80bn** of the **~$300bn** undrawn at AI-adjacent industries, with outer bounds of $26bn and $117bn.

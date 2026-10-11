@@ -129,3 +129,28 @@ Repo state read: HEAD 34b1d4a. Grades follow the charter: nothing here says flow
 | UNCERTAIN: DE lines inside the N-PORT debt-only rule | raw rows not in repo | rerun with DE excluded |
 | UNCERTAIN: whether linker liquidity premia rose in 2024-25 | no free direct series found | a bid-ask history |
 | NOTE: the handover integrity check shows a mismatch against the 9 Oct 18:42:45 stamp (ask 21 against 20, series 562 against 559). Read as later commits (E-020 and H.8 data); the principal approved proceeding. | known | n/a |
+
+---
+
+## Supervisor adjudication, 11 October 2026
+
+Read in full. The supervisor re-derived the two weakenings that change published wording:
+- **Target 1:** public face × years to maturity grows +18.2% and +10.9%, recomputed from `data/r3_rates/jgb_duration_issues.csv`.
+- **Target 5:** the yearly Z.1-minus-EFA offset is +20.2 (2021), +12.6 (2022), and −1.9 to +3.6 in 2023–26; 119 quarters, mean
+  +5.3, sd 7.4, on the September Z.1 and live EFA.
+
+| Target | Verdict accepted | Action |
+|---|---|---|
+| 1 JGB duration | WEAKENED (size) | R3, the ANSWER and the page now say 11–25% depending on the measure (16–25% on the fixed-curve method used for the US 36%). |
+| 2 German split | STANDS | No change; the liquidity caveat already grades the attribution BOUNDED. |
+| 3 CFTC / C-129 | STANDS | C-129 gains the likely origin of 2.2–2.8× (March 2020 trough, inferred); the docstring notes CME's current Ultra DV01s. |
+| 4 N-PORT | STANDS | D2 §10 records the single-date and common-registrant cuts. |
+| 5 EFA | WEAKENED (the offset story) | **C-130** kills "stable offset". The C-108 window is extended to 2026Q2 (M&A $1,044.8bn vs net $552.1bn, 189%) in the ANSWER, the page and the dossier. |
+| 6 Multiplier | STANDS | No change. |
+| 7 RV1 | WEAKENED (bands, not bounds) | The RV1 note is bannered. The supervisor's H.8 cross-check uses the $2,079bn H.8 NDFI book, not the $1.7trn secondary figure. It gives $285–318bn, at or above the top, which strengthens Grok's point. |
+| 8 z_k | WEAKENED (plateau) | **C-130** kills "a fall of 0.11pp". The N2b note, the page row and the series note now say plateau. |
+
+**Not reproduced: the gate's 11 orphans in the handover.** At HEAD 31d8fca on the M4, `bash bin/check.sh --all` shows "✓ no orphans".
+Next time, paste the raw ✗ lines and the working directory. Grok did not re-derive the 119-quarter offset statistics; the
+supervisor did, above. The RC-L $1,089.8bn was read at source by the 9 Oct re-derivation agent from FFIEC bulk files.
+

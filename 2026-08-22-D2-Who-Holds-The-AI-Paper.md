@@ -263,4 +263,8 @@ $10.34bn across 385 filings, matching the script.
   - TeraWulf's and Cipher's AI-hosting debt sits in subsidiaries (WULF Compute, Cipher Compute; Cipher Mining is renamed
     Cipher Digital). By name that is $1.92bn and $1.13bn in Q2, against section 9's $0.48bn and $0.005bn. These are
     name-evident groupings, not confirmed parent links.
+- **R4R (11 Oct) confirms, by another cut:** on a single report date (31 Mar against 30 Jun) Beignet is $8.76bn and $8.73bn. The
+  139 registrants present in both quarters went from $9.69bn to $9.39bn (−3%); the rest of the Q3 total is new entrants. PIMCO
+  Funds alone is about 64%. Grok checked the subsidiary groupings against company releases: WULF Compute LLC issued $3.2bn of
+  notes, Cipher Compute LLC $1.4bn. Still open: the derivative lines kept by the debt-only rule, and fair value against par.
 

@@ -58,9 +58,9 @@ This matters for three separate threads and should be carried into all of them:
 
 ## What is NOT settled — read before quoting
 
-1. **2026:Q2 is not covered.** The EFA series ends at 2026:Q1; the headline Z.1 already has Q2. So the
+1. **[11 Oct 2026: the Fed's EFA file now carries 2026Q2: net +$151.95bn, M&A $133.5bn.]** **2026:Q2 is not covered.** The EFA series ends at 2026:Q1; the headline Z.1 already has Q2. So the
    +$204.5bn H1-2026 NFC net figure **cannot yet be decomposed into quarters from any source reached.**
-2. **[RESOLVED 9 Oct 2026: on the same vintage the two series differ by a stable offset, mean +$5.3bn a quarter (sd 7.4, correlation 0.993 over 119 quarters); the +25.20 was a stale EFA vintage, revised to +45.35 on 18 Sep, against Z.1's +51.27. Seasonal adjustment is ruled out (Z.1's FA/4 equals FU); the eREIT exclusion is the likely but unisolated rest. Keep the two series in separate tables.]** **The two Fed series do not reconcile, and I have not resolved it.** EFA net is defined as
+2. **[RESOLVED 9 Oct 2026: on the same vintage the two series differ by an offset averaging +$5.3bn a quarter (sd 7.4; NOT stable by year, +20 in 2021 to about 0 in 2023-26, C-130; correlation 0.993 over 119 quarters); the +25.20 was a stale EFA vintage, revised to +45.35 on 18 Sep, against Z.1's +51.27. Seasonal adjustment is ruled out (Z.1's FA/4 equals FU); the eREIT exclusion is the likely but unisolated rest. Keep the two series in separate tables.]** **The two Fed series do not reconcile, and I have not resolved it.** EFA net is defined as
    `FA103164155.Q ÷ 4` (seasonally adjusted, quarterly rate, excluding eREITs). Our N2c figure of +$51.3bn
    for 2026:Q1 is `FU103164105.Q` (unadjusted, quarterly). EFA gives +$25.20bn for the same quarter. The
    difference is some combination of seasonal adjustment, the eREIT exclusion and a different series

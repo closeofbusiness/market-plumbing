@@ -587,7 +587,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   stand on their measured claims; four corrections (C-122 to C-125), and both N2c tables fixed (C-124).
   R3 DONE (first pass) 27 Sep (E-017): 2026-09-27-R3-JGB-And-Euro-Area-Bonds.md, JGBs and euro-area bonds on free MoF, JSDA,
   BoJ, ECB and Bundesbank data. REVIEWED 28 Sep (Grok, R3R) and adjudicated: three corrections, C-126 to C-128.
-  R3 follow-ups, undated: duration for JGBs DONE 8 Oct (R3 note, follow-up: public +16-25% at constant yields); a same-day check of Japan's breakeven; a euro-area market breakeven (Germany 2024–25 DONE 8 Oct from the Bundesbank's files, C-127 update).
+  R3 follow-ups, undated: duration for JGBs DONE 8 Oct (R3 note, follow-up: public +11-25% depending on the measure; R4R); a same-day check of Japan's breakeven; a euro-area market breakeven (Germany 2024–25 DONE 8 Oct from the Bundesbank's files, C-127 update).
 
   THE PRINCIPAL'S CURRENT WAVE (ranked by him, 20 Sep) — these three run now:
    W1  Meet the leak objection ........ DONE 20 Sep -> 2026-09-20-W1-The-Leak-Objection.md (C-094)
