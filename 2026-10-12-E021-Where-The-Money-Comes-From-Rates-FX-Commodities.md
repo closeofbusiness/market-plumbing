@@ -49,8 +49,10 @@ shock.**
   Gold roughly doubled over the same period, and fund length peaked at 219,029 in Sep 2024.
 - **Central banks, reported:** IMF data show +262 tonnes (2024), +306 t (2025), +337 t (Dec 2025–Aug 2026). China reports 2,410 t,
   +106 t in 12 months.
-- **Central banks, estimated:** the World Gold Council puts purchases at 1,092 t and 863 t for 2024 and 2025. The 2.5–4× gap includes the WGC's estimate of
-  unreported buying; why the two differ by that much is not established here.
+- **Central banks, estimated:** the World Gold Council puts purchases at 1,092 t and 863 t for 2024 and 2025. [Gold ledger, 12 Oct: the gap is
+  volatile, not a stable signature of unreported buying. By quarter it runs from −67 t to +276 t. The WGC revises its own quarterly
+  figure by up to 187 t between vintages (Q1 2026: 244 t to 57 t). BIS swings move the IMF total. Russia (2,327 t) has not
+  reported since Nov 2025. Treat the WGC figure as an estimate with a wide band.]
 - **US gold ETFs:** of the $119bn rise in GLD and IAU assets since end-2023, 77% is price and 23% is flows.
 - **Crude:** managed money left WTI over the last four weeks (−58 mb). The Strategic Petroleum Reserve fell 130 mb since end-2025
   while the price went from $60 to about $97. The drivers are physical (supply disruption, stock draws), not financial inflow.
@@ -124,8 +126,15 @@ what to read, and verify every number it gives.
    (sponsor price licences). Positions move with the same week's price but do not predict the next week (n=145): gold +0.30/−0.01,
    WTI +0.38/−0.08, copper +0.60/−0.07. Since end-2023, almost all of the rise in managed money's gold exposure came from price on
    contracts already held, not new buying.
-3. **Gold tonnes ledger:** IMF reported official buying, SAFE, GLD and IAU, and LBMA vaults, against the WGC aggregates. Report
-   the unexplained residual.
+3. **Gold tonnes ledger: BUILT 12 Oct** (`bin/build_gold_ledger.py`; `data/gold/`), monthly from 2019.
+   - **Official sector:** IMF official gold for 142 reporters, carry-forward, with the IMF's own world change reproduced to
+     under 0.01 t in 88 of 92 months. China per SAFE matches the IMF to the ounce.
+   - **Reconciled each quarter:** against the WGC's free release tables.
+   - **The first-pass framing is corrected:** the WGC-minus-IMF gap is volatile (see above).
+   - **ETFs:** GLD+IAU are about 36% of global ETF flows and are no proxy quarter by quarter.
+   - **Value:** 96% of the rise in official gold's value since end-2023 is price.
+   - **What is public:** IMF and SAFE series plus per-quarter cited aggregates. Sponsor daily and monthly series are local only
+     (licences; the WGC allows limited extracts with citation).
 4. **Primary-market duration by investor class** (rates): R2's pricing applied to Treasury's investor-class allotments, to get
    10-year equivalents taken at auction per class.
 5. **A like-for-like FX-swap dollar-debt tracker:** the same half-year each year. The end-June 2026 BIS print is due in November.
