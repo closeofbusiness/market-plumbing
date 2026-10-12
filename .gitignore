@@ -34,3 +34,7 @@ data/vintages/alfred/
 
 # FINRA margin workbooks: bin/pull_series.py saves a dated copy each run; third-party, kept private (E-011)
 data/vintages/finra/
+
+# Gold ledger and COT price inputs from sponsors (SPDR, iShares, LBMA, WGC, LME mirrors): third-party, kept local (E-011)
+data/vintages/gold/
+data/vintages/cot_prices/
