@@ -30,6 +30,23 @@ principal and append a new entry.
 
 ---
 
+## E-021 · 12 October 2026 — rates, FX and commodities taken up: where is the money coming from?
+
+Given after the supervisor reported nothing due before the 16 Oct read-back. It reverses E-019's parking of FX and commodities.
+
+> *"If nothing to do, start digging more into the Rates and FX and Commmodities topics, same principle, where is the money coming from. Is money flowing in or out? What can we measure? how can we measure change? What is research on the topic saying. Also run /orchestrator_gemini  in addition (not as substitute) for online research purposes since Goolge has better corpus knowledge access (in theory)"*
+
+**Reading notes.** The principle is the mission's own. For each market:
+- who buys, who sells, and how the purchase is funded;
+- whether money is flowing in or out, on free data, with the series named;
+- how change is measured (frequency, vintage, stock against flow);
+- what the published research says, with citations that are opened and checked.
+FX and commodities are no longer parked; derivatives come with them where they carry the flow. Gemini is used through the
+Antigravity CLI (`agy`) as an additional online-research lane, never a substitute. Its returns are leads until every citation
+resolves and says what it is cited for. In-house Sonnet agents run the same questions independently.
+
+---
+
 ## E-020 · 9 October 2026 — the Singh update waits for the Q3 bank filings
 
 Given as an answer to the supervisor's question. The principal had asked whether we had anything interesting for Singh. The
