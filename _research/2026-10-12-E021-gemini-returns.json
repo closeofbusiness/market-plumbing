@@ -1,0 +1,1571 @@
+{
+ "note": "Gemini (gemini-3.1-pro-high via agy) structured returns for E-021, 12 Oct 2026, with the supervisor's citation check. Leads, not findings.",
+ "returns": {
+  "rates": {
+   "model": "gemini-3.1-pro-high",
+   "wall_s": 1060.2,
+   "quota_delta": {
+    "gemini-weekly": 0.038428,
+    "gemini-5h": 0.223306,
+    "3p-weekly": 0,
+    "3p-5h": 0
+   },
+   "tool_counts": {
+    "search_web": 55,
+    "read_url_content": 12,
+    "view_file": 45
+   },
+   "outward": [],
+   "structured_output": {
+    "flows": [
+     {
+      "buyer_or_inflow": "Hedge Funds (predominantly Cayman Islands-domiciled relative value arbitrageurs)",
+      "flow": "Cash-futures basis trade Treasury absorption",
+      "funding": "Bilateral and sponsored repo via primary dealers; cash-futures relative value arbitrage funded at near-SOFR repo rates.",
+      "magnitude_and_period": "Amassed over $317B–$1.4T in Treasury positions across 2022–2024, absorbing ~37% of net Treasury note and bond issuance; continued high activity through 2024–2026.",
+      "recent_direction": "Inflow (heavy marginal net buyer)",
+      "seller_or_outflow": "Central bank QT run-off and sovereign debt issuance (US Treasury)",
+      "source_ids": [
+       "barth_kahn_mann_2023",
+       "glicoes_et_al_2024",
+       "barth_et_al_2025"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Private market participants (dealers, institutional funds, households, hedge funds)",
+      "flow": "Central Bank Balance Sheet Reduction (Quantitative Tightening run-off and active sales)",
+      "funding": "Central banks decline to reinvest maturing principal (redemptions) or execute outright asset sales, forcing primary dealers and private markets to absorb public debt.",
+      "magnitude_and_period": "Fed SOMA Treasury runoff peaked at $60B/mo (tapered to $25B/mo in June 2024); ECB APP runoff and PEPP phaseout (~€1T cumulative impact); BoE APF active gilt sales and runoffs (£100B/yr).",
+      "recent_direction": "Outflow (sustained net seller / passive redemption)",
+      "seller_or_outflow": "Federal Reserve (SOMA), European Central Bank (Eurosystem APP/PEPP), Bank of England (APF)",
+      "source_ids": [
+       "diercks_asnani_2024",
+       "akkaya_et_al_2024",
+       "harrison_2024"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Foreign Private Investors vs Foreign Official Institutions",
+      "flow": "Cross-border Sovereign Bond Flows (US Treasuries, European Sovereigns, JGBs)",
+      "funding": "Foreign exchange reserves, commercial bank deposits, FX hedging via cross-currency basis swaps.",
+      "magnitude_and_period": "Foreign private buyers (especially offshore funds in Cayman/UK) surged, offsetting flat-to-modest foreign official reserve accumulation from 2023 to 2026; Japanese domestic investors selectively repatriating foreign debt into JGBs.",
+      "recent_direction": "Inflow into US Treasuries (dominated by private accounts); modest outflows/repatriation from select foreign sovereign sectors",
+      "seller_or_outflow": "Sovereign issuers issuing new debt",
+      "source_ids": [
+       "us_treasury_tic",
+       "mof_its_2026",
+       "barth_et_al_2025"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Money Market Funds (MMFs)",
+      "flow": "Treasury Bill supply absorption via ON RRP liquidity drainage",
+      "funding": "Reallocation of cash balances from the Federal Reserve's Overnight Reverse Repo Facility (ON RRP) into newly issued short-term Treasury bills.",
+      "magnitude_and_period": "Over $2 trillion drained from Fed ON RRP between mid-2023 and 2024–2025 to absorb heavy US Treasury T-bill issuance with minimal upward pressure on repo rates.",
+      "recent_direction": "Inflow into short-duration sovereign debt (T-bills)",
+      "seller_or_outflow": "US Treasury (issuing high share of T-bills)",
+      "source_ids": [
+       "diercks_asnani_2024",
+       "barth_et_al_2025"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Pension Funds and Life Insurance Companies",
+      "flow": "Long-duration liability matching sovereign purchases",
+      "funding": "Institutional premium income, pension contributions, and reinvestment of maturing fixed income coupons.",
+      "magnitude_and_period": "Steady structural buyer of 10Y–30Y sovereign debt across US, UK, and Eurozone to match liability benchmarks; constrained in Japan by domestic yield levels until BoJ normalized yield curve controls.",
+      "recent_direction": "Inflow (structural long-end demand)",
+      "seller_or_outflow": "Debt Management Offices / Treasuries issuing long bonds",
+      "source_ids": [
+       "harrison_2024",
+       "akkaya_et_al_2024"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Domestic Commercial Banks",
+      "flow": "Bank balance sheet holdings of government securities (AFS / HTM portfolios)",
+      "funding": "Customer deposits and wholesale bank funding.",
+      "magnitude_and_period": "Subdued net demand following 2023 regional banking turmoil; cautious duration extension under Basel III endgame / liquidity coverage ratios, shifting marginally from HTM to shorter AFS / floating paper in 2024–2026.",
+      "recent_direction": "Neutral to modest inflow (constrained by unrealized mark-to-market portfolio losses)",
+      "seller_or_outflow": "Secondary market / Primary issuance",
+      "source_ids": [
+       "diercks_asnani_2024"
+      ],
+      "uncertain": true
+     },
+     {
+      "buyer_or_inflow": "Household and Retail Sector",
+      "flow": "Direct Retail and Wealth Management Sovereign Bond Purchases",
+      "funding": "Bank deposit disintermediation seeking higher yield (TreasuryDirect, brokerages).",
+      "magnitude_and_period": "Reported retail Treasury purchases surged in Fed Z.1 data during 2023–2024, though empirical research demonstrates this residual sector is heavily inflated by misclassified offshore hedge fund repo positions.",
+      "recent_direction": "Inflow (statistically inflated by residual accounting)",
+      "seller_or_outflow": "Primary sovereign issuance",
+      "source_ids": [
+       "barth_et_al_2025",
+       "diercks_asnani_2024"
+      ],
+      "uncertain": true
+     }
+    ],
+    "free_measures": [
+     {
+      "caveats": "Custodial bias reallocates offshore hedge fund Treasury holdings to custodian locations (UK, Cayman, Belgium, Luxembourg); Form SLT captures stocks at market value whereas Form S records transactions at purchase price. TIC SLT undercounts Cayman basis trade holdings by ~$1.4T due to repo collateral transfer reporting.",
+      "frequency": "Monthly",
+      "how_to_measure_change": "Track monthly net purchases in Form S transactions to isolate clean transaction flows; contrast with changes in Form SLT aggregate holdings, stripping out estimated benchmark valuation effects from yield curve shifts.",
+      "lag": "~45 days (transactions and SLT released mid-month for two months prior)",
+      "provider": "U.S. Department of the Treasury",
+      "series": "Treasury International Capital (TIC) System: Form SLT (Aggregate Holdings) and Form S (Cross-Border Transactions)",
+      "stock_or_flow": "Both (SLT is stock; Form S is flow)",
+      "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system/",
+      "what_it_measures": "Foreign holdings and cross-border net purchases/sales of US Treasury debt, broken down by country and by official vs private foreign institutions."
+     },
+     {
+      "caveats": "The 'Household and Nonprofit Organizations' sector is derived as a statistical residual (Issuance minus measured holdings of all other sectors), causing errors and unmeasured offshore repo holdings to erroneously manifest as retail household purchases. Quarterly revisions occur as benchmark census data arrives.",
+      "frequency": "Quarterly",
+      "how_to_measure_change": "Use Table F.209 (Transactions / Net Acquisition of Financial Assets) rather than Table L.209 (Levels) to eliminate holding gains/losses caused by interest rate movements; observe cumulative net investment across sectors.",
+      "lag": "~75 days (released ~10 weeks after quarter-end)",
+      "provider": "Board of Governors of the Federal Reserve System",
+      "series": "Financial Accounts of the United States (Z.1): Table L.209 and Table F.209 (Treasury Securities)",
+      "stock_or_flow": "Both (L.209 is stock/levels; F.209 is transaction flows)",
+      "url": "https://www.federalreserve.gov/releases/z1/",
+      "what_it_measures": "Comprehensive sectoral breakdown of US Treasury holdings and net acquisition flows across monetary authorities, depository institutions, rest of the world, mutual funds, pension funds, money market funds, and households."
+     },
+     {
+      "caveats": "Reflects face value / par value of SOMA portfolio rather than market price; does not distinguish secondary market interventions from non-reinvestment of maturing principal except via auction settlement dates.",
+      "frequency": "Weekly (released Thursdays as of Wednesday close)",
+      "how_to_measure_change": "Compute weekly differences in the par value of SOMA Treasury notes, bonds, and bills held outright to track the realized rate of Quantitative Tightening runoff relative to the Fed cap ($60B/mo cut to $25B/mo).",
+      "lag": "1 day",
+      "provider": "Board of Governors of the Federal Reserve System",
+      "series": "Fed H.4.1 Factors Affecting Reserve Balances: Line item 'U.S. Treasury securities held outright'",
+      "stock_or_flow": "Stock (par value)",
+      "url": "https://www.federalreserve.gov/releases/h41/",
+      "what_it_measures": "Weekly balance sheet holdings of US Treasury securities held outright by the Federal Reserve System Open Market Account (SOMA)."
+     },
+     {
+      "caveats": "Covers exchange-traded futures on CME/CBOT, not the cash Treasury or bilateral repo legs. Leveraged Fund short positions proxy cash-futures basis trade scale, but also include macro directional shorts and curve relative-value trades.",
+      "frequency": "Weekly (compiled Tuesday, published Friday)",
+      "how_to_measure_change": "Compute week-on-week changes in net short positions of Leveraged Funds across 2-Year, 5-Year, 10-Year, and Ultra Treasury bond contracts to measure basis trade expansion or unwinding.",
+      "lag": "3 business days",
+      "provider": "Commodity Futures Trading Commission (CFTC)",
+      "series": "CFTC Traders in Financial Futures (TFF) Report: CBOT U.S. Treasury Futures (2Y, 5Y, 10Y, Ultra 10Y, 30Y, Ultra Bond)",
+      "stock_or_flow": "Stock (open interest contracts)",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "what_it_measures": "Open interest and net positioning of Leveraged Funds (hedge funds), Asset Managers/Institutions, Dealers, and Other Reportables in US Treasury futures contracts."
+     },
+     {
+      "caveats": "Weekly data reflects 'designated major investors' and is subject to monthly comprehensive revisions; does not differentiate between cash purchases and FX hedged structures directly.",
+      "frequency": "Weekly (with subsequent monthly benchmark series)",
+      "how_to_measure_change": "Track weekly net balance of Japanese outward purchases of foreign bonds and foreign inward purchases of Japanese Government Bonds (JGBs) to monitor cross-border sovereign flow rotations.",
+      "lag": "4 business days",
+      "provider": "Ministry of Finance Japan (MoF)",
+      "series": "International Transactions in Securities (Weekly / Monthly Reports based on Designated Major Investors)",
+      "stock_or_flow": "Flow (gross purchases, gross sales, and net transactions)",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/index.htm",
+      "what_it_measures": "Cross-border capital transactions: Japanese acquisition and disposal of foreign bonds/notes, and foreign investors' acquisition and disposal of Japanese Government Bonds (JGBs)."
+     },
+     {
+      "caveats": "Valuation changes reflect both changes in bond yields and exchange rate swings for non-euro sovereign paper; confidential security-level granularity is aggregated to broad institutional sectors.",
+      "frequency": "Quarterly",
+      "how_to_measure_change": "Calculate quarterly transaction flows adjusted for valuation effects across institutional sectors (monetary financial institutions, investment funds, insurance/pensions, households, non-euro residents).",
+      "lag": "~70 days",
+      "provider": "European Central Bank (ECB)",
+      "series": "ECB Securities Holdings Statistics by Sector (SHSS) / Eurosystem Financial Statements",
+      "stock_or_flow": "Both (stocks at market value and transaction flows)",
+      "url": "https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/securities_holdings/html/index.en.html",
+      "what_it_measures": "Holdings and net transactions of euro-area sovereign debt (Bunds, OATs, BTPs, Bonos) broken down by holding sector and geography, tracking Eurosystem QT run-off and private absorption."
+     },
+     {
+      "caveats": "Valuation of holdings is reported at purchase price / nominal cost rather than mark-to-market market value; gilt sales operations are conducted via auctions and subject to reserve prices.",
+      "frequency": "Weekly (data release on APF operations and holdings)",
+      "how_to_measure_change": "Measure weekly and monthly reductions in the APF nominal gilt stock across maturity buckets (3-7y, 7-20y, 20y+) separated into maturing bonds vs outright auction sales.",
+      "lag": "1 business day",
+      "provider": "Bank of England",
+      "series": "Asset Purchase Facility (APF): Total Gilt Holdings and Weekly APF Sales Operations Reports",
+      "stock_or_flow": "Stock (par/cost) and flow (auction sales volume)",
+      "url": "https://www.bankofengland.co.uk/markets/market-notices/",
+      "what_it_measures": "The pace and sectoral distribution of Bank of England active gilt sales and passive redemptions under its quantitative tightening framework."
+     },
+     {
+      "caveats": "Covers registered investment companies (open-end mutual funds and ETFs), omitting direct retail, hedge funds, and separately managed accounts; weekly data is an industry estimate based on sample reporting.",
+      "frequency": "Weekly (estimates) and Monthly (comprehensive)",
+      "how_to_measure_change": "Measure weekly net cash flows into taxable government/sovereign bond mutual funds and ETFs to observe retail and wealth management reallocation.",
+      "lag": "~1 week (weekly estimate); ~4 weeks (monthly)",
+      "provider": "Investment Company Institute (ICI)",
+      "series": "ICI Weekly Estimated Aggregate Mutual Fund and ETF Flows (Taxable Bond / Government Focus)",
+      "stock_or_flow": "Flow (net dollar subscriptions/redemptions)",
+      "url": "https://www.ici.org/research/stats/flows",
+      "what_it_measures": "Net dollar inflows and outflows of retail and institutional capital into US-domiciled government bond mutual funds and ETFs."
+     }
+    ],
+    "literature": [
+     {
+      "authors_year": "Barth, Kahn & Mann (2023)",
+      "finding": "Identified the resurgence of the hedge fund Treasury cash-futures basis trade, establishing that hedge funds accumulate substantial short futures positions funded via bilateral and sponsored repo, exposing the Treasury market to vulnerability if repo financing dries up.",
+      "source_ids": [
+       "barth_kahn_mann_2023"
+      ]
+     },
+     {
+      "authors_year": "Glicoes, Siani, Song & Zhou (2024)",
+      "finding": "Quantified the aggregate size of the Treasury basis trade, demonstrating that hedge funds amassed at least $317B in cash Treasury holdings through mid-2023, predominantly concentrated in 2-year to 10-year notes, funded in the repo market.",
+      "source_ids": [
+       "glicoes_et_al_2024"
+      ]
+     },
+     {
+      "authors_year": "Barth, Juelsrud, Kahn & Mann (2025)",
+      "finding": "Uncovered the cross-border trail of the basis trade, proving that Cayman Islands hedge funds absorbed 37% of net US Treasury note and bond issuance between 2022 and 2024. Custodial reporting conventions undercount Cayman Treasury holdings by ~$1.4 trillion in TIC data, inadvertently biasing Federal Reserve Z.1 residual household sector demand upwards.",
+      "source_ids": [
+       "barth_et_al_2025"
+      ]
+     },
+     {
+      "authors_year": "Diercks & Asnani (2024)",
+      "finding": "Analyzed the surge in Treasury yields and concluded that the rise was primarily driven by term premiums reacting to heavy fiscal supply, central bank QT runoff, and macro uncertainty rather than purely shifting policy rate expectations.",
+      "source_ids": [
+       "diercks_asnani_2024"
+      ]
+     },
+     {
+      "authors_year": "Akkaya et al. (2024)",
+      "finding": "Showed that Eurosystem QT raises long-term risk-free rates and term premia as private investors absorb sovereign duration, estimating that a €1 trillion reduction in Eurosystem bond holdings increases long-term yields by ~35-50 bps, with disproportionate impacts on peripheral spreads.",
+      "source_ids": [
+       "akkaya_et_al_2024"
+      ]
+     },
+     {
+      "authors_year": "Harrison (2024)",
+      "finding": "Demonstrated via a New Keynesian portfolio-friction framework that central bank QT removes duration extraction subsidies, shifting supply absorption to private investors with finite balance sheet capacity and expanding sovereign bond term premia.",
+      "source_ids": [
+       "harrison_2024"
+      ]
+     }
+    ],
+    "market": "Government bond markets (US Treasuries first; then JGBs, Bunds/euro-area sovereigns, and Gilts), spanning 2024 to October 2026. This period is characterized by simultaneous global Quantitative Tightening (QT) and sovereign supply absorption by private market intermediaries, hedge funds, money market funds, and cross-border investors.",
+    "open_questions": [
+     "How much of the cross-border basis trade repo financing remains completely invisible in FICC-sponsored repo vs bilateral repo data, and how will the SEC mandatory clearing rule alter basis trade capacity in 2026?",
+     "To what exact extent has the Z.1 residual accounting error distorted reported US household saving rates and retail wealth estimates through the misclassification of Cayman Islands hedge fund Treasury repo?",
+     "As the Bank of Japan normalizes policy and tapers JGB purchases, will negative FX-hedging yields cause Japanese life insurers and banks to accelerate the repatriation of foreign sovereign holdings (US Treasuries, Bunds) into domestic JGBs?",
+     "What is the exact clearing and balance sheet capacity of primary dealers to absorb ongoing sovereign duration if offshore hedge fund basis trades face margin or repo shocks?"
+    ],
+    "sources": [
+     {
+      "date": "2023-08-30",
+      "id": "barth_kahn_mann_2023",
+      "primary": true,
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "quote": "The cash-futures basis trade is an arbitrage trade that involves a short Treasury futures position",
+      "title": "Recent Developments in Hedge Funds’ Treasury Futures and Repo Positions: is the Basis Trade “Back”?",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/recent-developments-in-hedge-funds-treasury-futures-and-repo-positions-20230830.html"
+     },
+     {
+      "date": "2025-10-15",
+      "id": "barth_et_al_2025",
+      "primary": true,
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "quote": "Cayman Islands hedge funds are, increasingly, the marginal foreign buyers of U.S. Treasury",
+      "title": "The Cross-Border Trail of the Treasury Basis Trade",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-cross-border-trail-of-the-treasury-basis-trade-20251015.html"
+     },
+     {
+      "date": "2024-03-08",
+      "id": "glicoes_et_al_2024",
+      "primary": true,
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "quote": "We estimate that hedge funds have amassed at least $317 billion in Treasury holdings",
+      "title": "Quantifying Treasury Cash-Futures Basis Trades",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/quantifying-treasury-cash-futures-basis-trades-20240308.html"
+     },
+     {
+      "date": "2024-09-03",
+      "id": "diercks_asnani_2024",
+      "primary": true,
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "quote": "rise in yields was primarily driven by an increase in term premiums",
+      "title": "The Treasury Tantrum of 2023",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-treasury-tantrum-of-2023-20240903.html"
+     },
+     {
+      "date": "2024-11-14",
+      "id": "akkaya_et_al_2024",
+      "primary": true,
+      "publisher": "European Central Bank",
+      "quote": "an expected €1 trillion reduction in bond holdings may raise long-term risk-free interest rates",
+      "title": "Quantitative Tightening: How do shrinking Eurosystem bond holdings affect long-term interest rates?",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2024/html/ecb.blog241114~6a3182c0bd.en.html"
+     },
+     {
+      "date": "2024-03-22",
+      "id": "harrison_2024",
+      "primary": true,
+      "publisher": "Bank of England",
+      "quote": "This paper studies optimal monetary policy in a New Keynesian model with portfolio frictions",
+      "title": "Optimal quantitative easing and tightening",
+      "url": "https://www.bankofengland.co.uk/working-paper/2024/optimal-quantitative-easing-and-tightening"
+     },
+     {
+      "date": "2026-10-08",
+      "id": "mof_its_2026",
+      "primary": true,
+      "publisher": "Ministry of Finance Japan",
+      "quote": "Weekly; based on reports from designated major investors",
+      "title": "International Transactions in Securities",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/index.htm"
+     },
+     {
+      "date": "2026-06-10",
+      "id": "us_treasury_tic",
+      "primary": true,
+      "publisher": "U.S. Department of the Treasury",
+      "quote": "International capital flows and holdings data.",
+      "title": "Treasury International Capital (TIC) System",
+      "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system/"
+     }
+    ]
+   }
+  },
+  "fx": {
+   "model": "gemini-3.1-pro-high",
+   "wall_s": 1170.6,
+   "quota_delta": {
+    "gemini-weekly": 0.042693,
+    "gemini-5h": 0.23616,
+    "3p-weekly": 0,
+    "3p-5h": 0
+   },
+   "tool_counts": {
+    "search_web": 38,
+    "read_url_content": 22,
+    "view_file": 35,
+    "run_command": 12,
+    "manage_task": 1
+   },
+   "outward": [
+    {
+     "tool": "manage_task",
+     "params": {
+      "Action": "status",
+      "TaskId": "e20a491d-5a02-462b-8367-eff43b87d575/task-224"
+     }
+    }
+   ],
+   "structured_output": {
+    "flows": [
+     {
+      "buyer_or_inflow": "Foreign institutional investors, global pension funds, mutual funds, and private wealth managers in Europe, the UK, Japan, and Canada.",
+      "flow": "US Portfolio Investment Inflows (Foreign purchases of US Equities and Corporate Bonds)",
+      "funding": "Domestic savings abroad, foreign currency conversion into spot USD, or synthetic dollar funding via short-term rolling FX swaps.",
+      "magnitude_and_period": "Net private purchases averaged $100B–$160B per month across 2024–2025 (e.g. $124.0B in Nov 2024; total foreign portfolio holdings expanded from $30.88T in June 2024 to $35.35T in June 2025).",
+      "recent_direction": "Inflow into the US Dollar",
+      "seller_or_outflow": "US corporate issuers and US domestic equity/bond holders.",
+      "source_ids": [
+       "src-us-treasury-tic-202411",
+       "src-us-treasury-tic-system"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Central banks and sovereign wealth funds purchasing nontraditional reserve currencies (AUD, CAD, SGD, KRW) and physical gold for yield and sanction resilience.",
+      "flow": "Official Reserve Allocation & Diversification Flows (Global Central Bank FX Reserves)",
+      "funding": "Maturing US Treasuries and re-investment of sovereign trade and current account surpluses.",
+      "magnitude_and_period": "USD share of allocated global reserves hovered around 56–58% in 2024–2025, continuing a multi-decade gradual drift lower (~0.5–1.0 percentage points per year) toward nontraditional currencies. Foreign official institutions posted net long-term US security sales of $50.9B in Dec 2024 and $8.3B in Nov 2024.",
+      "recent_direction": "Outflow / gradual diversification out of USD dominance into nontraditional currencies; flat/declining renminbi share.",
+      "seller_or_outflow": "Foreign official sector reducing marginal allocation to traditional US dollar reserve assets.",
+      "source_ids": [
+       "src-imf-cofer-2024",
+       "src-us-treasury-tic-202411"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Bank of Japan acting as operational agent for the Ministry of Finance buying Japanese Yen.",
+      "flow": "Official Foreign Exchange Intervention Flows (Japan MoF Yen Defence)",
+      "funding": "Liquidating US dollar deposits and short-term holdings within Japan's Foreign Exchange Fund Special Account (FEFSA).",
+      "magnitude_and_period": "Historic record interventions in April–May 2024 (¥9,788.5B / ~$62B) and July 2024 (¥5,534.8B / ~$35B), totaling over ¥15.3 trillion (~$98B) of direct USD selling against JPY buying in Q2 and Q3 2024.",
+      "recent_direction": "Direct outflow from the US Dollar into Japanese Yen",
+      "seller_or_outflow": "Ministry of Finance selling US dollars into the spot foreign exchange market to commercial bank counterparties.",
+      "source_ids": [
+       "src-mof-japan-feio-2024q2",
+       "src-mof-japan-feio-2024q3",
+       "src-mof-japan-feio-index"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Non-US institutional investors (pension funds, insurers) hedging US dollar asset portfolios; non-US banks financing international dollar lending.",
+      "flow": "Hedging & Synthetic Dollar Funding Flows (Off-Balance-Sheet FX Swaps and Forwards)",
+      "funding": "Foreign currency collateral pledged in spot leg of FX swap to receive USD, rolled forward at short maturities (predominantly under 3 months).",
+      "magnitude_and_period": "Global off-balance-sheet dollar payment obligations exceeded $80 trillion to $90+ trillion in 2024–2025. Non-US non-banks owe over $25 trillion and non-US banks owe $35+ trillion; daily OTC FX turnover reached $9.6 trillion in the April 2025 BIS Triennial Survey, with FX swaps remaining the dominant instrument.",
+      "recent_direction": "Persistent high structural demand for synthetic US dollar funding and hedging by foreign holders of US assets.",
+      "seller_or_outflow": "US dealer and global custodian banks supplying synthetic dollar liquidity against foreign currency collateral.",
+      "source_ids": [
+       "src-bis-fxswaps-debt",
+       "src-bis-triennial-2025",
+       "src-bis-wp1273-nenova-2025",
+       "src-sfi-ranaldo-2024"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "International commercial banks and foreign bank branches in the US borrowing short-term interbank dollars.",
+      "flow": "Cross-Border Interbank Banking Flows (Locational Banking Statistics)",
+      "funding": "Wholesale certificates of deposit (CDs), commercial paper (CP), and cross-border interoffice transfers.",
+      "magnitude_and_period": "Monthly US bank-reported liabilities to foreign residents swing by $40B–$60B+ (e.g. +$42.8B in Oct 2024, +$60.3B in Nov 2024, -$6.8B in Dec 2024). Cross-border claims fluctuate heavily around regulatory reporting dates.",
+      "recent_direction": "Net positive interbank dollar borrowing, subject to sharp quarter-end balance-sheet contractions.",
+      "seller_or_outflow": "US domestic money market funds (MMFs), corporate treasuries, and non-bank financial depositors.",
+      "source_ids": [
+       "src-us-treasury-tic-202411",
+       "src-bis-stats-portal",
+       "src-sfi-ranaldo-2024"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Foreign central banks (ECB, BoJ, SNB, BoE, BoC) drawing dollar funds to backstop local banking systems.",
+      "flow": "Central Bank Liquidity Swap Line Flows (Federal Reserve Standing Swap Facilities)",
+      "funding": "Bilateral standing central bank credit facilities funded at OIS plus a fixed spread against foreign central bank currency deposits.",
+      "magnitude_and_period": "Quiescent standing swap line balances maintained at baseline residual levels (approx $200M–$500M, e.g. $207M as of October 2026), compared to peak crisis draws of >$400B in 2020.",
+      "recent_direction": "Stable / standby capacity acting as a ceiling on private cross-currency funding spreads.",
+      "seller_or_outflow": "Federal Reserve Bank of New York supplying US dollars.",
+      "source_ids": [
+       "src-fed-h41"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Leveraged macro hedge funds and trend-following Commodity Trading Advisors (CTAs).",
+      "flow": "Speculative and Leveraged Positioning Flows (CME Currency Futures and Options)",
+      "funding": "Margin borrowing and leveraged financing through futures commission merchants (FCMs).",
+      "magnitude_and_period": "Tens of billions in net notional futures exposure; record short JPY positioning accumulated in mid-2024 prior to the July/August 2024 BoJ rate hike and carry trade unwind, alternating with net long USD positioning against EUR and JPY.",
+      "recent_direction": "Highly cyclical; net dollar buying during US rate outperformance, followed by sharp liquidation during carry trade unwinds.",
+      "seller_or_outflow": "Commercial hedgers, institutional asset managers, and swap dealers taking offsetting positions.",
+      "source_ids": [
+       "src-cftc-cot"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Euro area institutional investors purchasing US dollar equities/bonds; foreign investors purchasing euro area sovereign and corporate debt.",
+      "flow": "Euro Area Two-Way Portfolio Investment Flows (ECB BoP Financial Account)",
+      "funding": "Euro area current account surplus (€255B–€419B annual surplus across 2024–2025) and corporate overseas earnings reinvestment.",
+      "magnitude_and_period": "Euro area residents' annual net acquisitions of foreign portfolio securities reached €700B–€767B+ in 2024–2025, while non-residents' net acquisitions of euro area portfolio securities reached €800B–€838B+.",
+      "recent_direction": "Two-way cross-border capital integration; current account surplus funneled into foreign asset accumulation.",
+      "seller_or_outflow": "Non-euro area debt and equity issuers selling securities to European buyers.",
+      "source_ids": [
+       "src-ecb-bop-portal"
+      ],
+      "uncertain": false
+     }
+    ],
+    "free_measures": [
+     {
+      "caveats": "Suffers from custodial bias (flows attributed to financial intermediary jurisdictions like London, Belgium, Cayman Islands rather than beneficial owner); captures on-balance-sheet cash transactions only, completely omitting FX swap hedges.",
+      "frequency": "Monthly",
+      "how_to_measure_change": "Net monthly cross-border purchases (purchases minus sales at market transaction value) by asset class, plus annual reconciliation against June 30 benchmark surveys.",
+      "lag": "~45 days (published mid-month for data two months prior)",
+      "provider": "U.S. Department of the Treasury / Federal Reserve Board",
+      "series": "Treasury International Capital (TIC) Monthly System & S-Form Securities Transactions",
+      "stock_or_flow": "Flow (monthly transactions) and Stock (annual benchmark surveys)",
+      "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system",
+      "what_it_measures": "Gross and net foreign purchases and sales of U.S. long-term securities (Treasury bonds, agency debt, corporate bonds, corporate stocks), short-term Treasury bills, and banking claims/liabilities."
+     },
+     {
+      "caveats": "Voluntary reporting published only as world and broad group aggregates; confidential at country level; excludes central bank gold reserves and sovereign wealth funds.",
+      "frequency": "Quarterly",
+      "how_to_measure_change": "Quarter-on-quarter changes in currency percentages of allocated reserves, adjusted for spot exchange rate fluctuations between quarters to isolate active rebalancing from passive valuation drift.",
+      "lag": "~1 quarter (~3 months)",
+      "provider": "International Monetary Fund (IMF) Statistics Department",
+      "series": "Currency Composition of Official Foreign Exchange Reserves (COFER)",
+      "stock_or_flow": "Stock",
+      "url": "https://data.imf.org/",
+      "what_it_measures": "Global allocated foreign exchange reserves broken down across major currencies (USD, EUR, JPY, GBP, CNY, AUD, CAD, CHF, and other currencies)."
+     },
+     {
+      "caveats": "Conducted only once every three years in April; measures daily transaction turnover during the survey month rather than outstanding debt stocks; trading can be distorted by temporary volatility spikes in April.",
+      "frequency": "Triennial (every 3 years in April)",
+      "how_to_measure_change": "Percentage change in average daily turnover adjusted for local and cross-border double-counting across three-year survey intervals; changes in instrument market share (spot vs swap vs forwards).",
+      "lag": "~5 months for preliminary release (September), ~8 months for full structural analysis",
+      "provider": "Bank for International Settlements (BIS)",
+      "series": "Triennial Central Bank Survey of Foreign Exchange and OTC Derivatives Markets (2025 & 2022)",
+      "stock_or_flow": "Flow (average daily turnover in April)",
+      "url": "https://www.bis.org/statistics/rpfx25.htm",
+      "what_it_measures": "Daily OTC turnover and market structure in global foreign exchange (spot, forwards, FX swaps, currency swaps, options) and OTC interest rate derivatives across 50+ jurisdictions."
+     },
+     {
+      "caveats": "Captures only on-balance-sheet bank claims; completely misses off-balance-sheet dollar payment obligations from FX swaps unless combined with synthetic debt modeling.",
+      "frequency": "Quarterly",
+      "how_to_measure_change": "Quarter-on-quarter changes calculated on an exchange-rate-adjusted and break-adjusted basis (flows) alongside outstanding credit levels (stocks).",
+      "lag": "~3 to 4 months",
+      "provider": "Bank for International Settlements (BIS)",
+      "series": "BIS Locational Banking Statistics (LBS) and Global Liquidity Indicators (GLIs)",
+      "stock_or_flow": "Stock and exchange-rate-adjusted Flow",
+      "url": "https://www.bis.org/statistics/index.htm",
+      "what_it_measures": "Cross-border banking claims and liabilities by currency and counterparty sector (LBS); total foreign currency credit (bank loans and debt securities) denominated in USD, EUR, and JPY extended to non-bank borrowers abroad (GLIs)."
+     },
+     {
+      "caveats": "Discretionary policy actions; intra-day operations between monthly reports must be inferred by market analysts via daily BoJ current account projection variances.",
+      "frequency": "Monthly (aggregate amount) and Quarterly (daily transaction-level breakdown)",
+      "how_to_measure_change": "Total volume of currency bought and sold in billions of yen across specific intervention days.",
+      "lag": "Monthly release published end of reporting month (~2-day lag); quarterly daily breakdown published ~1.5 months post-quarter",
+      "provider": "Ministry of Finance, Japan (executed by Bank of Japan)",
+      "series": "Japan Foreign Exchange Intervention Operations (FEIO)",
+      "stock_or_flow": "Flow",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html",
+      "what_it_measures": "Official spot currency intervention operations conducted by Japanese authorities using the Foreign Exchange Fund Special Account (FEFSA), detailing date, daily amount, and currency pair."
+     },
+     {
+      "caveats": "Covers designated major financial institutions rather than the entire universe of Japanese investors; classification is by residence of issuer rather than currency of denomination; hedge ratios are not disclosed.",
+      "frequency": "Weekly and Monthly",
+      "how_to_measure_change": "Net weekly and monthly acquisitions (purchases minus sales; + indicates net acquisition, - indicates net disposition).",
+      "lag": "Weekly release has ~5-day lag; monthly release has ~1-month lag (published one month prior to official BOP).",
+      "provider": "Ministry of Finance, Japan",
+      "series": "International Transactions in Securities (ITS)",
+      "stock_or_flow": "Flow",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/faq_its_english.html",
+      "what_it_measures": "Weekly and monthly cross-border transactions and positions in foreign equities and bonds by Japanese designated major investors, and foreign transactions in Japanese securities."
+     },
+     {
+      "caveats": "Covers the euro area as a consolidated bloc; monthly releases do not provide full granular currency denomination breakdowns (available in quarterly accounts).",
+      "frequency": "Monthly (BoP) and Quarterly (BoP and IIP)",
+      "how_to_measure_change": "Net monthly financial account flows (net acquisitions of external assets minus net incurrence of external liabilities); quarterly IIP reconciles change in stock = flows + price changes + FX changes + other volume changes.",
+      "lag": "~7 weeks for monthly release (e.g. December released mid-February)",
+      "provider": "European Central Bank (ECB)",
+      "series": "Euro Area Balance of Payments (BoP) and International Investment Position (IIP)",
+      "stock_or_flow": "Flow (BoP) and Stock (IIP)",
+      "url": "https://www.ecb.europa.eu/press/stats/bop/html/index.en.html",
+      "what_it_measures": "Current account transactions and financial account capital flows (direct, portfolio, financial derivatives, other investment) between euro area residents and non-residents."
+     },
+     {
+      "caveats": "Covers only exchange-traded futures on US exchanges (CME), representing less than 5% of global foreign exchange market activity; completely excludes bilateral OTC FX swaps and forwards.",
+      "frequency": "Weekly",
+      "how_to_measure_change": "Week-on-week change in net non-commercial / leveraged fund contract positioning (long contracts minus short contracts) and percentage of total open interest.",
+      "lag": "3 days (Tuesday market close data released Friday afternoon at 3:30 PM ET)",
+      "provider": "Commodity Futures Trading Commission (CFTC)",
+      "series": "Commitments of Traders (COT) / Traders in Financial Futures (TFF)",
+      "stock_or_flow": "Stock (open interest and position commitments at Tuesday close)",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "what_it_measures": "Open interest and trader positioning (long, short, spreading) across currency futures (EUR, JPY, GBP, AUD, CAD, CHF, MXN) broken down by dealer, asset manager, leveraged funds, and other reportables."
+     },
+     {
+      "caveats": "Measures only official standing liquidity swap draws with the Fed; does not capture commercial pricing or private market FX swap spreads, nor does it identify end-borrowers.",
+      "frequency": "Weekly (Wednesday close, published Thursday afternoon)",
+      "how_to_measure_change": "Week-on-week and year-on-year change in the outstanding balance of central bank liquidity swaps ($ millions).",
+      "lag": "1 day",
+      "provider": "Board of Governors of the Federal Reserve System",
+      "series": "Factors Affecting Reserve Balances (H.4.1 Release, Table 1)",
+      "stock_or_flow": "Stock (weekly average and Wednesday level)",
+      "url": "https://www.federalreserve.gov/releases/h41/current/",
+      "what_it_measures": "Federal Reserve balance sheet line item 'Central bank liquidity swaps' representing dollar funds delivered to foreign central banks against foreign currency collateral."
+     }
+    ],
+    "literature": [
+     {
+      "authors_year": "Nenova, Schrimpf, and Shin (2025)",
+      "finding": "Establishes that outstanding volumes in FX swaps serve as a direct indicator of the hedging activity associated with advanced economy bond investors holding US dollar assets; reveals that yield curve slopes and cross-currency hedging costs drive FX derivative usage by non-bank financial institutions, directly transmitting US financial conditions internationally.",
+      "source_ids": [
+       "src-bis-wp1273-nenova-2025"
+      ]
+     },
+     {
+      "authors_year": "Arslanalp, Eichengreen, and Simpson-Bell (2024)",
+      "finding": "Documents an ongoing, gradual decline in the US dollar's share of global allocated FX reserves, showing that diversification flows have moved predominantly into nontraditional reserve currencies (AUD, CAD, KRW, SGD, Nordic currencies) rather than traditional major currencies, while the Chinese renminbi's share has plateaued and edged lower since 2022.",
+      "source_ids": [
+       "src-imf-cofer-2024"
+      ]
+     },
+     {
+      "authors_year": "Kloks, Mattille, and Ranaldo (2024)",
+      "finding": "Demonstrates that balance-sheet and regulatory constraints (such as Basel III leverage ratios) induce non-US banks to substitute cash repo borrowing with synthetic dollar funding via FX swaps around quarter-ends, creating inelastic demand that widens the cross-currency basis and drives persistent deviations from Covered Interest Parity (CIP).",
+      "source_ids": [
+       "src-sfi-ranaldo-2024"
+      ]
+     },
+     {
+      "authors_year": "Borio, McCauley, and McGuire (2022)",
+      "finding": "Identifies that FX swaps and forwards create over $80 trillion in forward dollar payment obligations that remain off-balance-sheet and missing from standard debt statistics, with non-banks outside the US owing over $25 trillion and non-US banks owing $35+ trillion, generating severe rollover vulnerabilities that require central bank swap lines during liquidity squeezes.",
+      "source_ids": [
+       "src-bis-fxswaps-debt"
+      ]
+     },
+     {
+      "authors_year": "Allen, Bems, Boer, and Moussa (2025)",
+      "finding": "Demonstrates that flight-to-safety shocks driving the safe-haven 'dollar smile' and global dollar cycle inflict disproportionate negative real-sector spillovers on emerging markets, particularly commodity exporters due to the dollar-commodity price inverse link, while anchored inflation expectations and flexible exchange rates cushion the impact.",
+      "source_ids": [
+       "src-imf-wp2565-allen-2025"
+      ]
+     },
+     {
+      "authors_year": "Bank for International Settlements (2025)",
+      "finding": "Reports preliminary findings showing that global OTC foreign exchange trading expanded to $9.6 trillion per day in April 2025, with the US dollar remaining on one side of 89.2% of all trades, and FX swaps and forwards remaining the predominant instruments used for synthetic cross-border funding and portfolio hedging.",
+      "source_ids": [
+       "src-bis-triennial-2025"
+      ]
+     }
+    ],
+    "market": "foreign exchange and cross-border dollar funding, 2024 to October 2026",
+    "open_questions": [
+     "What is the precise counterparty and geographic breakdown of the >$80 trillion in off-balance-sheet FX swap dollar debt, given that standard derivative statistics cannot trace obligations to ultimate non-bank end-users?",
+     "How dynamically do foreign institutional investors adjust their hedge ratios in real time when US-foreign interest rate differentials and FX volatility shift, given that commercial and public flow data track cash securities but omit derivative hedging overlays?",
+     "To what extent will private credit funds, sovereign wealth funds, and alternative asset managers expand synthetic dollar intermediation outside the regulated banking system, and how would central bank liquidity facilities backstop them during an acute liquidity squeeze?",
+     "How will the ongoing gradual diversification of official FX reserves into nontraditional currencies and physical gold interact over the medium term with massive private sector demand for US dollar financial assets?"
+    ],
+    "sources": [
+     {
+      "date": "2024-06-11",
+      "id": "src-imf-cofer-2024",
+      "primary": true,
+      "publisher": "International Monetary Fund",
+      "quote": "The US dollar continues to cede ground to nontraditional currencies in global foreign exchange reserves",
+      "title": "Dollar Dominance in the International Reserve System: An Update",
+      "url": "https://www.imf.org/en/Blogs/Articles/2024/06/11/dollar-dominance-in-the-international-reserve-system-an-update"
+     },
+     {
+      "date": "2022-12-05",
+      "id": "src-bis-fxswaps-debt",
+      "primary": true,
+      "publisher": "Bank for International Settlements",
+      "quote": "FX swaps, forwards and currency swaps create forward dollar payment obligations that do not appear",
+      "title": "Dollar debt in FX swaps and forwards: huge, missing and growing",
+      "url": "https://www.bis.org/publications/qr-202212/dollar-debt-fx-swaps-and-forwards-huge-missing-and-growing"
+     },
+     {
+      "date": "2025-09-30",
+      "id": "src-bis-triennial-2025",
+      "primary": true,
+      "publisher": "Bank for International Settlements",
+      "quote": "Preliminary results were released on 30 September 2025.",
+      "title": "Triennial Central Bank Survey of foreign exchange and Over-the-counter (OTC) derivatives markets in 2025",
+      "url": "https://www.bis.org/statistics/rpfx25.htm"
+     },
+     {
+      "date": "2024-08-07",
+      "id": "src-mof-japan-feio-2024q2",
+      "primary": true,
+      "publisher": "Ministry of Finance, Japan",
+      "quote": "the US dollar (sold) the Japanese yen (bought)",
+      "title": "Foreign Exchange Intervention Operations (April – June 2024)",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_2Qe.html"
+     },
+     {
+      "date": "2024-11-08",
+      "id": "src-mof-japan-feio-2024q3",
+      "primary": true,
+      "publisher": "Ministry of Finance, Japan",
+      "quote": "the US dollar (sold) the Japanese yen (bought)",
+      "title": "Foreign Exchange Intervention Operations (July – September 2024)",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_3Qe.html"
+     },
+     {
+      "date": "2024-01-24",
+      "id": "src-mof-japan-its",
+      "primary": true,
+      "publisher": "Ministry of Finance, Japan",
+      "quote": "ITS is compiled from the reports of the major financial institutions",
+      "title": "Frequently Asked Questions : Ministry of Finance",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/faq_its_english.html"
+     },
+     {
+      "date": "2025-01-17",
+      "id": "src-us-treasury-tic-202411",
+      "primary": true,
+      "publisher": "U.S. Department of the Treasury",
+      "quote": "The U.S. Department of the Treasury today released Treasury International Capital (TIC) data for November 2024.",
+      "title": "Treasury International Capital Data for November",
+      "url": "https://home.treasury.gov/news/press-releases/jy2795"
+     },
+     {
+      "date": "2026-10-12",
+      "id": "src-us-treasury-tic-system",
+      "primary": true,
+      "publisher": "U.S. Department of the Treasury",
+      "quote": "International capital flows and holdings data.",
+      "title": "Treasury International Capital (TIC) System | U.S. Department of the Treasury",
+      "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system"
+     },
+     {
+      "date": "2026-10-12",
+      "id": "src-ecb-bop-portal",
+      "primary": true,
+      "publisher": "European Central Bank",
+      "quote": "Browse all euro area balance of payments by month.",
+      "title": "Euro area balance of payments",
+      "url": "https://www.ecb.europa.eu/press/stats/bop/html/index.en.html"
+     },
+     {
+      "date": "2026-10-12",
+      "id": "src-cftc-cot",
+      "primary": true,
+      "publisher": "Commodity Futures Trading Commission",
+      "quote": "Specifically, the COT reports provide a breakdown of each Tuesday’s open interest",
+      "title": "Commitments of Traders | CFTC",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
+     },
+     {
+      "date": "2026-10-08",
+      "id": "src-fed-h41",
+      "primary": true,
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "quote": "Federal Reserve Balance Sheet: Factors Affecting Reserve Balances - H.4.1",
+      "title": "Federal Reserve Balance Sheet: Factors Affecting Reserve Balances - H.4.1 - October 08, 2026",
+      "url": "https://www.federalreserve.gov/releases/h41/current/"
+     },
+     {
+      "date": "2026-10-12",
+      "id": "src-bis-stats-portal",
+      "primary": true,
+      "publisher": "Bank for International Settlements",
+      "quote": "The statistics published by the BIS are a unique source of information about the structure",
+      "title": "Statistics | Bank for International Settlements",
+      "url": "https://www.bis.org/statistics/index.htm"
+     },
+     {
+      "date": "2025-06-20",
+      "id": "src-bis-wp1273-nenova-2025",
+      "primary": true,
+      "publisher": "Bank for International Settlements",
+      "quote": "FX swaps serve as a key barometer of risk-taking and global financial conditions.",
+      "title": "Global portfolio investments and FX derivatives",
+      "url": "https://www.bis.org/publications/working-paper-1273-global-portfolio-investments-and-fx-derivatives"
+     },
+     {
+      "date": "2024-10-01",
+      "id": "src-sfi-ranaldo-2024",
+      "primary": true,
+      "publisher": "Swiss Finance Institute",
+      "quote": "Segmented Dollar Funding",
+      "title": "N°24-52: Segmented Dollar Funding",
+      "url": "https://www.sfi.ch/en/publications/n-24-52-hunting-for-dollars"
+     },
+     {
+      "date": "2025-04-04",
+      "id": "src-imf-wp2565-allen-2025",
+      "primary": true,
+      "publisher": "International Monetary Fund",
+      "quote": "US dollar appreciations can inflict sizable negative cross-border spillovers.",
+      "title": "Demand for Safe Assets and Spillovers from the Global Dollar Cycle",
+      "url": "https://www.imf.org/en/publications/wp/issues/2025/04/04/demand-for-safe-assets-and-spillovers-from-the-global-dollar-cycle-565749"
+     },
+     {
+      "date": "2026-09-30",
+      "id": "src-mof-japan-feio-index",
+      "primary": true,
+      "publisher": "Ministry of Finance, Japan",
+      "quote": "Latest Press Release: August 27, 2026 - September 28, 2026",
+      "title": "Foreign Exchange Intervention Operations",
+      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html"
+     }
+    ]
+   }
+  },
+  "commodities": {
+   "model": "gemini-3.1-pro-high",
+   "wall_s": 998.0,
+   "quota_delta": {
+    "gemini-weekly": 0.038039,
+    "gemini-5h": 0.220977,
+    "3p-weekly": 0,
+    "3p-5h": 0
+   },
+   "tool_counts": {
+    "search_web": 37,
+    "read_url_content": 14,
+    "view_file": 34
+   },
+   "outward": [],
+   "structured_output": {
+    "flows": [
+     {
+      "buyer_or_inflow": "Emerging market central banks (notably National Bank of Poland, People's Bank of China, Reserve Bank of India, Central Bank of Turkey)",
+      "flow": "Official sector physical gold purchases",
+      "funding": "Foreign exchange reserve reallocation away from USD/EUR sovereign debt into unencumbered physical bullion",
+      "magnitude_and_period": "Net purchases exceeded 1,000 tonnes annually for three consecutive years (1,082t in 2022, 1,037t in 2023, 1,045t in 2024; annualized >850t through 2025-2026)",
+      "recent_direction": "Strong inflow",
+      "seller_or_outflow": "Secondary bullion market, international mints, and mining producers",
+      "source_ids": [
+       "src_wgc_gdt_2024",
+       "src_imf_gold_wp",
+       "src_imf_irfcl_guide"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Western institutional and retail wealth managers, family offices, and individual investors",
+      "flow": "Physically backed Gold ETFs and ETPs",
+      "funding": "Portfolio cash allocations and rotation out of fixed income as central banks began monetary easing cycles",
+      "magnitude_and_period": "Stabilized in 2024 (holdings flat after three years of heavy outflows) before turning to net positive inflows across mid-2024 to 2026 (over 1,180t total investment demand in 2024)",
+      "recent_direction": "Shifted from persistent outflows (2022-early 2024) to net positive inflows (mid-2024 to 2026)",
+      "seller_or_outflow": "Liquidating retail and institutional holders during the 2022-2023 high-yield plateau",
+      "source_ids": [
+       "src_wgc_gdt_2024",
+       "src_spdr_gld"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Global retail consumers, primarily in India, China, the Middle East, and Southeast Asia",
+      "flow": "Physical Gold Jewellery Consumption",
+      "funding": "Household discretionary income and bridal/festival savings",
+      "magnitude_and_period": "Volume contracted 11% year-on-year to 1,877 tonnes in 2024 due to record prices, though nominal expenditure rose 9% to US$144 billion",
+      "recent_direction": "Outflow in physical tonnage; nominal dollar value increased due to price appreciation",
+      "seller_or_outflow": "Jewellery retailers and fabricators",
+      "source_ids": [
+       "src_wgc_gdt_2024"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Managed money (hedge funds, CTAs, algorithmic trend followers) on COMEX/NYMEX",
+      "flow": "Futures and options financial positioning (Gold, WTI Crude Oil, Copper)",
+      "funding": "Leveraged margin capital from institutional prime brokers and clearing members",
+      "magnitude_and_period": "Gold managed-money net longs expanded to multi-year highs in 2024-2026; WTI crude net length fluctuated between 150,000 and 350,000 contracts amid geopolitical risk and OPEC+ supply decisions",
+      "recent_direction": "Net long expansion in gold; cyclical fluctuations in crude oil and copper",
+      "seller_or_outflow": "Commercial hedgers (producers, merchants, refiners) taking short hedging positions against physical inventory",
+      "source_ids": [
+       "src_cftc_cot",
+       "src_tang_xiong_2010",
+       "src_singleton_2014"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Global refineries and Strategic Petroleum Reserve (SPR) replenishment buyers",
+      "flow": "Crude oil physical inventory accumulation and refinery inputs",
+      "funding": "Commercial operating cash flows and US Department of Energy strategic procurement funds",
+      "magnitude_and_period": "US commercial crude inventories averaged ~420-440 million barrels (excluding SPR) through 2024-2026; refinery inputs held near 16-17 million barrels per day",
+      "recent_direction": "Balanced to mild inventory draws offset by non-OPEC supply expansion (US crude output ~13.4-13.5 mb/d)",
+      "seller_or_outflow": "Upstream oil producers and international suppliers",
+      "source_ids": [
+       "src_eia_wpsr",
+       "src_singleton_2014"
+      ],
+      "uncertain": false
+     },
+     {
+      "buyer_or_inflow": "Energy transition sectors (electric vehicle manufacturing, grid modernization, renewable power generation) and AI data center infrastructure",
+      "flow": "Industrial physical copper demand",
+      "funding": "Corporate capital expenditure and government clean-energy infrastructure subsidies",
+      "magnitude_and_period": "Structural demand growth (~2-3% annually) counterbalanced by weakness in Chinese residential property sector; global refined copper demand ~26 million metric tons annually",
+      "recent_direction": "Inflow in green technology sectors; stagnant to mild contraction in traditional construction",
+      "seller_or_outflow": "Primary smelters, refined copper producers, and secondary scrap recyclers",
+      "source_ids": [
+       "src_usgs_copper"
+      ],
+      "uncertain": true
+     },
+     {
+      "buyer_or_inflow": "Global gold mining operations and scrap recycling facilities",
+      "flow": "Gold physical market supply",
+      "funding": "Mining capital expenditure and consumer recycling driven by record high bullion prices",
+      "magnitude_and_period": "Total annual supply reached 4,974 tonnes in 2024 (+1% y/y), with mine production at ~3,650 tonnes and recycled gold supply growing strongly to ~1,320 tonnes",
+      "recent_direction": "Steady modest expansion in mine output; elastic surge in recycling supply",
+      "seller_or_outflow": "Gold miners, refiners, and consumers liquidating scrap gold at record prices",
+      "source_ids": [
+       "src_wgc_gdt_2024"
+      ],
+      "uncertain": false
+     }
+    ],
+    "free_measures": [
+     {
+      "caveats": "Tuesday position snapshot is published on Friday (3-day lag); trader categories are based on self-reported primary business purpose on CFTC Form 40 rather than individual trade intentions; does not capture non-US cleared OTC bilateral derivatives.",
+      "frequency": "Weekly (Tuesday data released Friday at 3:30 pm ET)",
+      "how_to_measure_change": "Compute the weekly first difference in net positioning: Delta Net = (Managed Money Long - Short)_t - (Managed Money Long - Short)_(t-1). Multiply by contract unit (100 troy oz for gold; 1,000 bbl for crude; 25,000 lbs for copper) and settlement price to obtain equivalent physical and notional dollar flows.",
+      "lag": "3 days (data as of Tuesday close released Friday afternoon)",
+      "provider": "U.S. Commodity Futures Trading Commission (CFTC)",
+      "series": "Disaggregated Commitments of Traders (COT) - Futures Only & Combined (Gold, Crude Oil Light Sweet, Copper)",
+      "stock_or_flow": "Stock of open contracts (convertible to net flow via weekly differencing)",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "what_it_measures": "Open interest and positions held across four reportable trader categories: Producer/Merchant/Processor/User, Swap Dealers, Managed Money, and Other Reportables."
+     },
+     {
+      "caveats": "Quarterly frequency cannot capture weekly or intra-month market turning points; incorporates a balancing item ('OTC and other') reflecting unallocated institutional OTC buying, stock movements, and statistical discrepancies.",
+      "frequency": "Quarterly and Annual",
+      "how_to_measure_change": "Measure physical flow changes as quarter-on-quarter or year-on-year differences in metric tonnes. Measure valuation impact by comparing volume change at constant base prices against nominal dollar demand (P_t * Q_t - P_(t-1) * Q_(t-1)).",
+      "lag": "4 to 6 weeks after quarter end",
+      "provider": "World Gold Council (WGC) / Goldhub",
+      "series": "Gold Demand Trends (GDT) Historical Data Tables - Supply and Demand",
+      "stock_or_flow": "Flow (quarterly metric tonnes and total USD value)",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024",
+      "what_it_measures": "Global physical gold supply (mine production, recycling) and sector demand (jewellery, technology, central banks, bar & coin, ETFs, OTC)."
+     },
+     {
+      "caveats": "Reporting by member central banks is subject to varying national delays (1-3 months); some sovereign entities and sovereign wealth funds do not report to IFS; gold swaps and repurchase operations may obscure encumbered holdings.",
+      "frequency": "Monthly",
+      "how_to_measure_change": "Take the first difference of physical volume: Delta Reserves = Fine Troy Ounces_t - Fine Troy Ounces_(t-1). Never use changes in total reported dollar reserve value as a proxy for buying, as dollar values fluctuate with mark-to-market gold prices.",
+      "lag": "1 to 3 months depending on country reporting timelines",
+      "provider": "International Monetary Fund (IMF)",
+      "series": "International Financial Statistics (IFS) / International Reserves and Foreign Currency Liquidity (IRFCL) - Monetary Gold",
+      "stock_or_flow": "Stock (millions of fine troy ounces and USD market value)",
+      "url": "https://www.imf.org/external/np/sta/ir/IRProcessWeb/dataguide.htm",
+      "what_it_measures": "Official monetary gold holdings owned by monetary authorities (central banks and finance ministries) held as reserve assets without counterparty risk."
+     },
+     {
+      "caveats": "Represents only a single fund vehicle (SPDR Gold Trust); changes reflect authorized participant creation/redemption arbitrage rather than entire retail ETF ecosystem.",
+      "frequency": "Daily (business days)",
+      "how_to_measure_change": "Daily physical flow in metric tonnes = Tonnes_t - Tonnes_(t-1). Dollar flow = Delta Shares Outstanding * NAV per Share. Price-driven value change = Shares Outstanding_(t-1) * Delta NAV per Share.",
+      "lag": "0 days (end-of-day update for current trading session)",
+      "provider": "World Gold Trust Services / State Street Global Advisors",
+      "series": "SPDR Gold Shares (GLD) Daily Physical Gold Holdings & NAV",
+      "stock_or_flow": "Stock of physical bullion held in custodian vaults (metric tonnes and fine ounces)",
+      "url": "https://www.spdrgoldshares.com/usa/",
+      "what_it_measures": "Daily physical gold allocated in trust vaults (HSBC, JPMorgan) backing GLD shares outstanding."
+     },
+     {
+      "caveats": "Weekly production figures are partially modeled and re-benchmarked monthly against the Petroleum Supply Monthly (PSM); includes a weekly balancing adjustment factor to reconcile supply, disposition, and refinery runs.",
+      "frequency": "Weekly (released Wednesdays at 10:30 am ET)",
+      "how_to_measure_change": "Weekly physical stock change = Stocks_t - Stocks_(t-1) in thousand barrels. Implied product demand ('product supplied') = Production + Net Imports - Delta Stocks.",
+      "lag": "5 days (measures week ending the preceding Friday)",
+      "provider": "U.S. Energy Information Administration (EIA)",
+      "series": "Weekly Petroleum Status Report (WPSR) - Table 1 & Table 4 (U.S. Crude Oil and Petroleum Products Stocks)",
+      "stock_or_flow": "Both: Stocks (commercial inventories, SPR in thousand barrels) and Flows (weekly production, net imports, refinery inputs in kb/d)",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/",
+      "what_it_measures": "U.S. crude oil production, commercial crude stocks (excluding SPR), Strategic Petroleum Reserve stocks, refinery utilization, and product inventories."
+     },
+     {
+      "caveats": "Data focuses predominantly on U.S. domestic supply chain; global production tables have longer reporting lags (multi-month to annual); does not track bonded private warehouse stockpiles in China.",
+      "frequency": "Monthly (Mineral Industry Surveys) and Annual (Mineral Commodity Summaries)",
+      "how_to_measure_change": "Calculate monthly net inventory shifts (Delta Consumer + Producer + Exchange Stocks in metric tons) and compare against monthly mine output and net import volumes.",
+      "lag": "2 to 4 months for monthly surveys; annual summary published in January/February",
+      "provider": "U.S. Geological Survey (USGS) - National Minerals Information Center",
+      "series": "Copper Mineral Industry Surveys - U.S. Production, Stocks, and Trade",
+      "stock_or_flow": "Both: Stocks (refined copper stocks at producers, consumers, and COMEX warehouses) and Flows (mine and refinery production, trade)",
+      "url": "https://www.usgs.gov/centers/national-minerals-information-center/copper-statistics-and-information",
+      "what_it_measures": "U.S. and global copper mine production, refined copper output, scrap consumption, inventories, and foreign trade."
+     },
+     {
+      "caveats": "Yield measures financial market pricing of risk-free inflation-indexed debt; while historically gold moved inversely to real yields, sovereign risk and sanctions hedging can structurally weaken this inverse correlation.",
+      "frequency": "Daily (business days)",
+      "how_to_measure_change": "Measure basis point changes: Delta Real Rate = (Yield_t - Yield_(t-1)) * 100. Evaluate against percentage changes in commodity spot prices to test correlation breakdowns.",
+      "lag": "1 business day",
+      "provider": "Federal Reserve Bank of St. Louis (FRED) / Federal Reserve Board",
+      "series": "10-Year Treasury Inflation-Indexed Security, Constant Maturity (DFII10)",
+      "stock_or_flow": "Price/Rate indicator (% per annum)",
+      "url": "https://fred.stlouisfed.org/series/DFII10",
+      "what_it_measures": "Market yield on 10-year US Treasury Inflation-Protected Securities (TIPS), representing the real risk-free opportunity cost of holding non-yielding physical commodities."
+     },
+     {
+      "caveats": "Aggregated balance sheet statistics reflect national accounting frameworks; valuation conventions for gold reserves vary across central banks (some mark to market quarterly, others at historical cost or statutory parity).",
+      "frequency": "Monthly / Quarterly",
+      "how_to_measure_change": "Examine quarterly change in foreign exchange and international asset holdings across central banks as percentage of GDP to evaluate reserve accumulation trends.",
+      "lag": "1 to 3 months",
+      "provider": "Bank for International Settlements (BIS)",
+      "series": "BIS Central Bank Total Assets & International Banking Statistics",
+      "stock_or_flow": "Stock of central bank assets (local currency, USD, % of GDP)",
+      "url": "https://www.bis.org/statistics/index.htm",
+      "what_it_measures": "Size, composition, and evolution of central bank balance sheets globally across advanced and emerging economies."
+     }
+    ],
+    "literature": [
+     {
+      "authors_year": "Tang and Xiong (2012)",
+      "finding": "Concurrent with the rapid growth of index investment since the early 2000s, futures prices of non-energy commodities became increasingly correlated with oil and each other. This financialization trend was significantly more pronounced for commodities included in major indexes (S&P GSCI, DJ-UBS) and helped explain the synchronized 2006-2008 boom and bust, while such comovements were absent in China, refuting physical emerging market demand as the sole driver.",
+      "source_ids": [
+       "src_tang_xiong_2010"
+      ]
+     },
+     {
+      "authors_year": "Cheng and Xiong (2014)",
+      "finding": "Rather than treating financialization simply as a binary speculative bubble, the paper evaluates how financial investors structurally transformed commodity markets through two core mechanisms: risk sharing (absorbing long risk, altering traditional Keynesian hedging pressure discounts) and information discovery (introducing macro financial sentiment and liquidity shocks into localized price discovery).",
+      "source_ids": [
+       "src_cheng_xiong_2013"
+      ]
+     },
+     {
+      "authors_year": "Singleton (2014)",
+      "finding": "Empirically showed that financial investor flows—specifically intermediate-term growth rates in commodity index positions and managed-money spread positions—exerted an economically and statistically significant effect on crude oil futures prices during the 2008 boom/bust, demonstrating that informational frictions and institutional flow dynamics can drive commodity prices away from fundamentals.",
+      "source_ids": [
+       "src_singleton_2014"
+      ]
+     },
+     {
+      "authors_year": "Arslanalp, Eichengreen, and Simpson-Bell (2023)",
+      "finding": "Documented that the post-GFC surge in central bank gold accumulation was driven by 'active diversifiers' that are exclusively emerging market central banks. Found that the imposition of financial sanctions by major reserve-issuing economies (US, UK, EU, Japan) statistically increases the share of reserves held in gold, with multilateral sanctions having the strongest effect due to eliminating alternative currency havens.",
+      "source_ids": [
+       "src_imf_gold_wp"
+      ]
+     },
+     {
+      "authors_year": "Habib, Schwartz Blicke, Siciliano, and Wendelborn / ECB (2025)",
+      "finding": "Identified the structural decoupling of gold from its traditional inverse correlation with real interest rates during 2023-2025. Analyzed how record gold prices signaled elevated geopolitical fragmentation, policy uncertainty, and official-sector physical reserve accumulation, which overrode the opportunity cost of elevated real yields while concentrating liquidity risks in derivatives markets.",
+      "source_ids": [
+       "src_ecb_fsr",
+       "src_fred_dfii10"
+      ]
+     }
+    ],
+    "market": "commodities (gold, crude oil, industrial metals: 2024 to October 2026)",
+    "open_questions": [
+     "What is the exact proportion of central bank gold purchases conducted anonymously or over-the-counter (OTC) that remains uncaptured in monthly IMF IFS reports and is only reconciled ex-post by World Gold Council field estimates?",
+     "To what extent are sovereign wealth funds and non-monetary state entities (e.g. Russia's National Wealth Fund or Chinese state-owned enterprises) accumulating industrial metals and crude oil stockpiles outside of official reporting channels?",
+     "What threshold of 10-year TIPS real yields or US fiscal debt issuance would be required to re-establish the traditional negative correlation between real interest rates and gold prices?",
+     "How can free public data best overcome the 2- to 3-day reporting lag in CFTC COT reports and the private paywall barriers around LME off-warrant and Asian bonded warehouse stocks?"
+    ],
+    "sources": [
+     {
+      "date": "2023-01-27",
+      "id": "src_imf_gold_wp",
+      "primary": true,
+      "publisher": "International Monetary Fund",
+      "quote": "Active diversifiers into gold are exclusively emerging markets",
+      "title": "Gold as International Reserves: A Barbarous Relic No More?",
+      "url": "https://www.imf.org/en/Publications/WP/Issues/2023/01/27/Gold-as-International-Reserves-A-Barbarous-Relic-No-More-528089"
+     },
+     {
+      "date": "2010-09-23",
+      "id": "src_tang_xiong_2010",
+      "primary": true,
+      "publisher": "National Bureau of Economic Research",
+      "quote": "This finding reflects a financialization process of commodities markets",
+      "title": "Index Investment and Financialization of Commodities",
+      "url": "https://www.nber.org/papers/w16385"
+     },
+     {
+      "date": "2013-11-14",
+      "id": "src_cheng_xiong_2013",
+      "primary": true,
+      "publisher": "National Bureau of Economic Research",
+      "quote": "financialization has substantially changed commodity markets through these mechanisms",
+      "title": "The Financialization of Commodity Markets",
+      "url": "https://www.nber.org/papers/w19642"
+     },
+     {
+      "date": "2013-10-23",
+      "id": "src_singleton_2014",
+      "primary": true,
+      "publisher": "INFORMS",
+      "quote": "Investor Flows and the 2008 Boom/Bust in Oil Prices",
+      "title": "Investor Flows and the 2008 Boom/Bust in Oil Prices",
+      "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2013.1756"
+     },
+     {
+      "date": "2025-02-05",
+      "id": "src_wgc_gdt_2024",
+      "primary": true,
+      "publisher": "World Gold Council",
+      "quote": "buying exceeded 1,000t for the third year in a row",
+      "title": "Gold Demand Trends: Full Year 2024",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024"
+     },
+     {
+      "date": "2022-10-01",
+      "id": "src_cftc_cot",
+      "primary": true,
+      "publisher": "U.S. Commodity Futures Trading Commission",
+      "quote": "The COT Report is generally published each Friday at 3:30 pm Eastern Time",
+      "title": "Commitments of Traders | CFTC",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
+     },
+     {
+      "date": "2013-01-01",
+      "id": "src_imf_irfcl_guide",
+      "primary": true,
+      "publisher": "International Monetary Fund",
+      "quote": "enhance data transparency among its member countries and to provide international methodological standards.",
+      "title": "International Reserves and Foreign Currency Liquidity: Guidelines for a Data Template",
+      "url": "https://www.imf.org/external/np/sta/ir/IRProcessWeb/dataguide.htm"
+     },
+     {
+      "date": "2026-02-26",
+      "id": "src_spdr_gld",
+      "primary": true,
+      "publisher": "World Gold Trust Services / State Street Global Advisors",
+      "quote": "offer investors an innovative, relatively cost efficient and secure way to access the gold market",
+      "title": "SPDR® Gold Shares - USA Products",
+      "url": "https://www.spdrgoldshares.com/usa/"
+     },
+     {
+      "date": "2026-10-07",
+      "id": "src_eia_wpsr",
+      "primary": true,
+      "publisher": "U.S. Energy Information Administration",
+      "quote": "Stocks of Crude Oil by PAD District, and Stocks of Petroleum Products",
+      "title": "Weekly Petroleum Status Report",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/"
+     },
+     {
+      "date": "2024-01-01",
+      "id": "src_usgs_copper",
+      "primary": true,
+      "publisher": "U.S. Geological Survey",
+      "quote": "worldwide supply of, demand for, and flow of the mineral commodity copper.",
+      "title": "Copper Statistics and Information",
+      "url": "https://www.usgs.gov/centers/national-minerals-information-center/copper-statistics-and-information"
+     },
+     {
+      "date": "2026-10-09",
+      "id": "src_fred_dfii10",
+      "primary": true,
+      "publisher": "Federal Reserve Bank of St. Louis",
+      "quote": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity",
+      "title": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Inflation-Indexed",
+      "url": "https://fred.stlouisfed.org/series/DFII10"
+     },
+     {
+      "date": "2025-11-27",
+      "id": "src_ecb_fsr",
+      "primary": true,
+      "publisher": "European Central Bank",
+      "quote": "Euro area financial stability vulnerabilities remain elevated as geoeconomic shock unfolds.",
+      "title": "Financial Stability Review",
+      "url": "https://www.ecb.europa.eu/pub/financial-stability/fsr/html/index.en.html"
+     },
+     {
+      "date": "2025-01-01",
+      "id": "src_bis_stats",
+      "primary": true,
+      "publisher": "Bank for International Settlements",
+      "quote": "information about the structure of and activity in the global financial system.",
+      "title": "Statistics | Bank for International Settlements",
+      "url": "https://www.bis.org/statistics/index.htm"
+     }
+    ]
+   }
+  }
+ },
+ "citation_check": [
+  {
+   "market": "rates",
+   "id": "barth_kahn_mann_2023",
+   "url": "https://www.federalreserve.gov/econres/notes/feds-notes/recent-developments-in-hedge-funds-treasury-futures-and-repo-positions-20230830.html",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "date": "2023-08-30",
+   "primary": true,
+   "quote": "The cash-futures basis trade is an arbitrage trade that involves a short Treasury futures position",
+   "status": 200,
+   "quote_found": true,
+   "chars": 26584
+  },
+  {
+   "market": "rates",
+   "id": "barth_et_al_2025",
+   "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-cross-border-trail-of-the-treasury-basis-trade-20251015.html",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "date": "2025-10-15",
+   "primary": true,
+   "quote": "Cayman Islands hedge funds are, increasingly, the marginal foreign buyers of U.S. Treasury",
+   "status": 200,
+   "quote_found": true,
+   "chars": 40825
+  },
+  {
+   "market": "rates",
+   "id": "glicoes_et_al_2024",
+   "url": "https://www.federalreserve.gov/econres/notes/feds-notes/quantifying-treasury-cash-futures-basis-trades-20240308.html",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "date": "2024-03-08",
+   "primary": true,
+   "quote": "We estimate that hedge funds have amassed at least $317 billion in Treasury holdings",
+   "status": 200,
+   "quote_found": true,
+   "chars": 36402
+  },
+  {
+   "market": "rates",
+   "id": "diercks_asnani_2024",
+   "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-treasury-tantrum-of-2023-20240903.html",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "date": "2024-09-03",
+   "primary": true,
+   "quote": "rise in yields was primarily driven by an increase in term premiums",
+   "status": 200,
+   "quote_found": true,
+   "chars": 40283
+  },
+  {
+   "market": "rates",
+   "id": "akkaya_et_al_2024",
+   "url": "https://www.ecb.europa.eu/press/blog/date/2024/html/ecb.blog241114~6a3182c0bd.en.html",
+   "publisher": "European Central Bank",
+   "date": "2024-11-14",
+   "primary": true,
+   "quote": "an expected €1 trillion reduction in bond holdings may raise long-term risk-free interest rates",
+   "status": 200,
+   "quote_found": true,
+   "chars": 20967
+  },
+  {
+   "market": "rates",
+   "id": "harrison_2024",
+   "url": "https://www.bankofengland.co.uk/working-paper/2024/optimal-quantitative-easing-and-tightening",
+   "publisher": "Bank of England",
+   "date": "2024-03-22",
+   "primary": true,
+   "quote": "This paper studies optimal monetary policy in a New Keynesian model with portfolio frictions",
+   "status": 200,
+   "quote_found": true,
+   "chars": 6132
+  },
+  {
+   "market": "rates",
+   "id": "mof_its_2026",
+   "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/index.htm",
+   "publisher": "Ministry of Finance Japan",
+   "date": "2026-10-08",
+   "primary": true,
+   "quote": "Weekly; based on reports from designated major investors",
+   "status": 200,
+   "quote_found": true,
+   "chars": 2398
+  },
+  {
+   "market": "rates",
+   "id": "us_treasury_tic",
+   "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system/",
+   "publisher": "U.S. Department of the Treasury",
+   "date": "2026-06-10",
+   "primary": true,
+   "quote": "International capital flows and holdings data.",
+   "status": 200,
+   "quote_found": false,
+   "word_overlap": "4/5",
+   "chars": 12993
+  },
+  {
+   "market": "fx",
+   "id": "src-imf-cofer-2024",
+   "url": "https://www.imf.org/en/Blogs/Articles/2024/06/11/dollar-dominance-in-the-international-reserve-system-an-update",
+   "publisher": "International Monetary Fund",
+   "date": "2024-06-11",
+   "primary": true,
+   "quote": "The US dollar continues to cede ground to nontraditional currencies in global foreign exchange reserves",
+   "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "market": "fx",
+   "id": "src-bis-fxswaps-debt",
+   "url": "https://www.bis.org/publications/qr-202212/dollar-debt-fx-swaps-and-forwards-huge-missing-and-growing",
+   "publisher": "Bank for International Settlements",
+   "date": "2022-12-05",
+   "primary": true,
+   "quote": "FX swaps, forwards and currency swaps create forward dollar payment obligations that do not appear",
+   "status": 200,
+   "quote_found": true,
+   "chars": 22911
+  },
+  {
+   "market": "fx",
+   "id": "src-bis-triennial-2025",
+   "url": "https://www.bis.org/statistics/rpfx25.htm",
+   "publisher": "Bank for International Settlements",
+   "date": "2025-09-30",
+   "primary": true,
+   "quote": "Preliminary results were released on 30 September 2025.",
+   "status": 200,
+   "quote_found": false,
+   "word_overlap": "6/6",
+   "chars": 16505
+  },
+  {
+   "market": "fx",
+   "id": "src-mof-japan-feio-2024q2",
+   "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_2Qe.html",
+   "publisher": "Ministry of Finance, Japan",
+   "date": "2024-08-07",
+   "primary": true,
+   "quote": "the US dollar (sold) the Japanese yen (bought)",
+   "status": 200,
+   "quote_found": true,
+   "chars": 1698
+  },
+  {
+   "market": "fx",
+   "id": "src-mof-japan-feio-2024q3",
+   "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/quarter/2024_3Qe.html",
+   "publisher": "Ministry of Finance, Japan",
+   "date": "2024-11-08",
+   "primary": true,
+   "quote": "the US dollar (sold) the Japanese yen (bought)",
+   "status": 200,
+   "quote_found": true,
+   "chars": 1721
+  },
+  {
+   "market": "fx",
+   "id": "src-mof-japan-its",
+   "url": "https://www.mof.go.jp/english/policy/international_policy/reference/itn_transactions_in_securities/faq_its_english.html",
+   "publisher": "Ministry of Finance, Japan",
+   "date": "2024-01-24",
+   "primary": true,
+   "quote": "ITS is compiled from the reports of the major financial institutions",
+   "status": 200,
+   "quote_found": true,
+   "chars": 4434
+  },
+  {
+   "market": "fx",
+   "id": "src-us-treasury-tic-202411",
+   "url": "https://home.treasury.gov/news/press-releases/jy2795",
+   "publisher": "U.S. Department of the Treasury",
+   "date": "2025-01-17",
+   "primary": true,
+   "quote": "The U.S. Department of the Treasury today released Treasury International Capital (TIC) data for November 2024.",
+   "status": 200,
+   "quote_found": true,
+   "chars": 15991
+  },
+  {
+   "market": "fx",
+   "id": "src-us-treasury-tic-system",
+   "url": "https://home.treasury.gov/data/treasury-international-capital-tic-system",
+   "publisher": "U.S. Department of the Treasury",
+   "date": "2026-10-12",
+   "primary": true,
+   "quote": "International capital flows and holdings data.",
+   "status": 200,
+   "quote_found": false,
+   "word_overlap": "4/5",
+   "chars": 12993
+  },
+  {
+   "market": "fx",
+   "id": "src-ecb-bop-portal",
+   "url": "https://www.ecb.europa.eu/press/stats/bop/html/index.en.html",
+   "publisher": "European Central Bank",
+   "date": "2026-10-12",
+   "primary": true,
+   "quote": "Browse all euro area balance of payments by month.",
+   "status": 200,
+   "quote_found": false,
+   "word_overlap": "5/6",
+   "chars": 13042
+  },
+  {
+   "market": "fx",
+   "id": "src-cftc-cot",
+   "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+   "publisher": "Commodity Futures Trading Commission",
+   "date": "2026-10-12",
+   "primary": true,
+   "quote": "Specifically, the COT reports provide a breakdown of each Tuesday’s open interest",
+   "status": 200,
+   "quote_found": true,
+   "chars": 23055
+  },
+  {
+   "market": "fx",
+   "id": "src-fed-h41",
+   "url": "https://www.federalreserve.gov/releases/h41/current/",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "date": "2026-10-08",
+   "primary": true,
+   "quote": "Federal Reserve Balance Sheet: Factors Affecting Reserve Balances - H.4.1",
+   "status": 200,
+   "quote_found": true,
+   "chars": 34576
+  },
+  {
+   "market": "fx",
+   "id": "src-bis-stats-portal",
+   "url": "https://www.bis.org/statistics/index.htm",
+   "publisher": "Bank for International Settlements",
+   "date": "2026-10-12",
+   "primary": true,
+   "quote": "The statistics published by the BIS are a unique source of information about the structure",
+   "status": 200,
+   "quote_found": true,
+   "chars": 21872
+  },
+  {
+   "market": "fx",
+   "id": "src-bis-wp1273-nenova-2025",
+   "url": "https://www.bis.org/publications/working-paper-1273-global-portfolio-investments-and-fx-derivatives",
+   "publisher": "Bank for International Settlements",
+   "date": "2025-06-20",
+   "primary": true,
+   "quote": "FX swaps serve as a key barometer of risk-taking and global financial conditions.",
+   "status": 200,
+   "quote_found": true,
+   "chars": 11936
+  },
+  {
+   "market": "fx",
+   "id": "src-sfi-ranaldo-2024",
+   "url": "https://www.sfi.ch/en/publications/n-24-52-hunting-for-dollars",
+   "publisher": "Swiss Finance Institute",
+   "date": "2024-10-01",
+   "primary": true,
+   "quote": "Segmented Dollar Funding",
+   "status": 200,
+   "quote_found": true,
+   "chars": 1942
+  },
+  {
+   "market": "fx",
+   "id": "src-imf-wp2565-allen-2025",
+   "url": "https://www.imf.org/en/publications/wp/issues/2025/04/04/demand-for-safe-assets-and-spillovers-from-the-global-dollar-cycle-565749",
+   "publisher": "International Monetary Fund",
+   "date": "2025-04-04",
+   "primary": true,
+   "quote": "US dollar appreciations can inflict sizable negative cross-border spillovers.",
+   "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "market": "fx",
+   "id": "src-mof-japan-feio-index",
+   "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html",
+   "publisher": "Ministry of Finance, Japan",
+   "date": "2026-09-30",
+   "primary": true,
+   "quote": "Latest Press Release: August 27, 2026 - September 28, 2026",
+   "status": 200,
+   "quote_found": true,
+   "chars": 1330
+  },
+  {
+   "market": "commodities",
+   "id": "src_imf_gold_wp",
+   "url": "https://www.imf.org/en/Publications/WP/Issues/2023/01/27/Gold-as-International-Reserves-A-Barbarous-Relic-No-More-528089",
+   "publisher": "International Monetary Fund",
+   "date": "2023-01-27",
+   "primary": true,
+   "quote": "Active diversifiers into gold are exclusively emerging markets",
+   "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "market": "commodities",
+   "id": "src_tang_xiong_2010",
+   "url": "https://www.nber.org/papers/w16385",
+   "publisher": "National Bureau of Economic Research",
+   "date": "2010-09-23",
+   "primary": true,
+   "quote": "This finding reflects a financialization process of commodities markets",
+   "status": 200,
+   "quote_found": true,
+   "chars": 6208
+  },
+  {
+   "market": "commodities",
+   "id": "src_cheng_xiong_2013",
+   "url": "https://www.nber.org/papers/w19642",
+   "publisher": "National Bureau of Economic Research",
+   "date": "2013-11-14",
+   "primary": true,
+   "quote": "financialization has substantially changed commodity markets through these mechanisms",
+   "status": 200,
+   "quote_found": true,
+   "chars": 5930
+  },
+  {
+   "market": "commodities",
+   "id": "src_singleton_2014",
+   "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2013.1756",
+   "publisher": "INFORMS",
+   "date": "2013-10-23",
+   "primary": true,
+   "quote": "Investor Flows and the 2008 Boom/Bust in Oil Prices",
+   "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "market": "commodities",
+   "id": "src_wgc_gdt_2024",
+   "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-full-year-2024",
+   "publisher": "World Gold Council",
+   "date": "2025-02-05",
+   "primary": true,
+   "quote": "buying exceeded 1,000t for the third year in a row",
+   "status": 200,
+   "quote_found": true,
+   "chars": 9639
+  },
+  {
+   "market": "commodities",
+   "id": "src_cftc_cot",
+   "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+   "publisher": "U.S. Commodity Futures Trading Commission",
+   "date": "2022-10-01",
+   "primary": true,
+   "quote": "The COT Report is generally published each Friday at 3:30 pm Eastern Time",
+   "status": 200,
+   "quote_found": true,
+   "chars": 23055
+  },
+  {
+   "market": "commodities",
+   "id": "src_imf_irfcl_guide",
+   "url": "https://www.imf.org/external/np/sta/ir/IRProcessWeb/dataguide.htm",
+   "publisher": "International Monetary Fund",
+   "date": "2013-01-01",
+   "primary": true,
+   "quote": "enhance data transparency among its member countries and to provide international methodological standards.",
+   "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "market": "commodities",
+   "id": "src_spdr_gld",
+   "url": "https://www.spdrgoldshares.com/usa/",
+   "publisher": "World Gold Trust Services / State Street Global Advisors",
+   "date": "2026-02-26",
+   "primary": true,
+   "quote": "offer investors an innovative, relatively cost efficient and secure way to access the gold market",
+   "status": 200,
+   "quote_found": false,
+   "word_overlap": "3/10",
+   "chars": 968
+  },
+  {
+   "market": "commodities",
+   "id": "src_eia_wpsr",
+   "url": "https://www.eia.gov/petroleum/supply/weekly/",
+   "publisher": "U.S. Energy Information Administration",
+   "date": "2026-10-07",
+   "primary": true,
+   "quote": "Stocks of Crude Oil by PAD District, and Stocks of Petroleum Products",
+   "status": 200,
+   "quote_found": true,
+   "chars": 9874
+  },
+  {
+   "market": "commodities",
+   "id": "src_usgs_copper",
+   "url": "https://www.usgs.gov/centers/national-minerals-information-center/copper-statistics-and-information",
+   "publisher": "U.S. Geological Survey",
+   "date": "2024-01-01",
+   "primary": true,
+   "quote": "worldwide supply of, demand for, and flow of the mineral commodity copper.",
+   "status": 200,
+   "quote_found": true,
+   "chars": 9130
+  },
+  {
+   "market": "commodities",
+   "id": "src_fred_dfii10",
+   "url": "https://fred.stlouisfed.org/series/DFII10",
+   "publisher": "Federal Reserve Bank of St. Louis",
+   "date": "2026-10-09",
+   "primary": true,
+   "quote": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity",
+   "status": 200,
+   "quote_found": true,
+   "chars": 4881
+  },
+  {
+   "market": "commodities",
+   "id": "src_ecb_fsr",
+   "url": "https://www.ecb.europa.eu/pub/financial-stability/fsr/html/index.en.html",
+   "publisher": "European Central Bank",
+   "date": "2025-11-27",
+   "primary": true,
+   "quote": "Euro area financial stability vulnerabilities remain elevated as geoeconomic shock unfolds.",
+   "status": 200,
+   "quote_found": true,
+   "chars": 15968
+  },
+  {
+   "market": "commodities",
+   "id": "src_bis_stats",
+   "url": "https://www.bis.org/statistics/index.htm",
+   "publisher": "Bank for International Settlements",
+   "date": "2025-01-01",
+   "primary": true,
+   "quote": "information about the structure of and activity in the global financial system.",
+   "status": 200,
+   "quote_found": true,
+   "chars": 21872
+  }
+ ]
+}

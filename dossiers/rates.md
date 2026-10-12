@@ -27,3 +27,5 @@ Running step 1 of the update cycle on a stated window for each market, with band
 ## Data used
 
 Z.1 Treasury flows, FiscalData bill supply, TIC Table 5, SOMA, FICC and primary-dealer repo. The monitor extract does not yet carry the R3 series (`data/r3_rates/`, and the `jp_public_10yeq_fixed_trn` and `de_linker2033_*` keys in `data/series.tsv`).
+
+**Flows map, 12 Oct 2026 (E-021):** who absorbs sovereign supply now, the funding behind it, and the free series to measure change: `2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md` (raw: `_research/2026-10-12-E021-rates-inhouse-return.md`).

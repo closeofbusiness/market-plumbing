@@ -1,23 +1,12 @@
-# Commodities — energy, metals, softs
+# Commodities — dossier
 
-## Hypothesis
+**Status, 12 Oct 2026:** first measurement map done (E-021), nothing measured into the ANSWER beyond it yet. The programme had no
+commodity work before 12 Oct; FX and commodities were parked by E-019 and taken up by E-021.
 
-Price moves decompose into physical balance, inventory, and curve shape, versus a risk premium. Financial demand (producer and consumer hedges, merchant and trader books, managed money, index and ETP flows) is then measured against that, and is either new money or rotation through wrappers. It is not assumed to be the cause.
-
-## Status
-
-**Open.** No inventory path, term structure, or producer-hedging result is in the source. Stated in the programme brief, not yet tied to a source file, except the wrapper line below.
-
-## Evidence
-
-The only commodity figure identified in the equity-instrument work is commodity-ETF share issuance of **$60.1bn** over 2024:Q1–2026:Q2 (`z1_etf_commodity_fund_issuance_bn`). That is the same wrapper problem as bond ETFs inside an equity line. It is not a statement about oil, metals, or softs balances, and it is not a claim that financial commodity flows moved a yield or a curve.
-
-OPEC+ decisions, metals supply, inventory shocks, and index or ETP demand waves are the stress cases named for this market. They have not been run.
-
-## What would change the conclusion
-
-A free inventory and curve series for one market, a physical-balance decomposition on a stated window, and only then a paper-demand table that separates new money from wrapper rotation.
-
-## Data used
-
-None beyond the Z.1 commodity-fund issuance key. No inventory or futures-position series was identified in the notes this repository is seeded from.
+- **The map:** `2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`. It covers gold, crude and copper: who buys,
+  who sells, the funding, flow direction on free data, how to measure change, and the literature.
+- **Raw agent return (full tables, series codes, latest values):** `_research/2026-10-12-E021-commodities-inhouse-return.md`.
+- **Next builds:** a weekly COT ledger (gold, WTI, copper) on the CFTC disaggregated report, adapting `bin/pull_cftc_tff.py`; a
+  gold tonnes ledger (IMF official, SAFE, GLD/IAU, LBMA) against the WGC aggregates; a crude physical ledger.
+- **Free-data gaps:** commodity index investment (CFTC discontinued it in 2015), the WTI futures curve (EIA series ends Apr 2024),
+  unreported central-bank gold buying.

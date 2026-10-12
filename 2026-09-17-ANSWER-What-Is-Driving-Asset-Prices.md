@@ -197,8 +197,15 @@ reduction; banks and foreign investors absorbed the Eurosystem's. At constant yi
 JGB rate risk from end-2023 or Oct 2024 to Aug 2026 on the method used for the US figure, and 11–18% on an unpriced face-times-maturity
 measure (8 Oct follow-up; R4R found the size curve-dependent; the upper ends rest on an estimated start stock). See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
-**FX and commodities are in the mission but not yet addressed. The principal parked them on 9 Oct (E-019): open, to be taken
-up later. Derivatives as a market-structure flow are open on the same footing.** Nothing in this note speaks for those markets.
+**Rates, FX and commodities flows: first measurement map, 12 Oct (E-021, which took up what E-019 had parked).** See
+[`2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`](2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md). Three first-pass findings, not yet reviewed from
+outside:
+- the marginal buyer of US Treasuries has shifted from foreigners (44% of net issuance in the year to 2025Q2, 12% in the year to
+  2026Q2) to money funds and the Fed;
+- money is still flowing into US securities from private foreigners, while official holders shrink their Treasuries and Japan sold
+  about $172bn of dollars in 2026;
+- gold's rise came through official, household and ETF buying, not futures length, and oil's through a physical shock.
+Derivatives as a market-structure flow remain open.
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 

@@ -143,7 +143,7 @@ The gross exposure is large and has a current vintage, contrary to what three of
 | **2025-S1** | **$113.87trn** |
 | **2025-S2** | **$113.50trn** |
 
-**+$15.57trn in H1 2025 alone** — a 15.8% jump in six months, the largest in the series. The narrative release covering 2025-S2 could not be located by two researchers; the data is in the database and I have pulled it. Cite the vintage, not the release.
+**+$15.57trn in H1 2025 alone** — a 15.8% jump in six months, the largest in the series. [C-132: a seasonal half-on-half change; year on year +15.5% at 2025-S2, against +8.0% the year before; a record only in absolute dollars.] The narrative release covering 2025-S2 could not be located by two researchers; the data is in the database and I have pulled it. Cite the vintage, not the release.
 
 - All currency pairs: $129.30trn, of which **$98.10trn (75.9%) matures within one year** (end-Dec 2025).
 - Off-balance-sheet dollar debt of non-banks outside the US, on the BIS's own Borio-McCauley-McGuire method (half of USD-leg positions with customers): **$35.89trn**, from $26.02trn at end-June 2022 — **+38% in three and a half years**.

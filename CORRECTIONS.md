@@ -768,6 +768,33 @@ bias-corrected market-level multiplier of roughly $5, which made the $5 centre l
 
 ---
 
+## C-131 · "TIC July 2026: equities +$2.8bn (CSLT) against −$10.6bn (classic), two measures not to be substituted"
+
+**Mine, in `dossiers/cross-border-and-fx.md` and its source note (17 Sep). Found 12 Oct by the E-021 FX agent; the supervisor
+re-fetched TIC SLT Table 1.**
+
+- **What was wrong.** The two figures are not rival measures; they differ in scope and reconcile to the million. SLT Table 1,
+  July 2026, equities: Non-Official −10,596, Official +14,301, international and regional organisations +927; All Countries
+  +2,778; Grand Total +3,705 ($mn). The press-release line is the private-only line.
+- **Correct position.** Foreign private investors were net sellers of US equities in July 2026 (−$10.6bn), and official investors
+  net buyers (+$14.3bn).
+- **Still standing at:** nowhere live; the dossier line is corrected in place.
+
+---
+
+## C-132 · "+$15.57trn of FX-swap dollar debt in H1 2025, the largest jump in the series"
+
+**Mine, in `2026-08-21-Offshore-Dollar-And-Money-Like.md` (§1.5) and the N2a notes. Found 12 Oct by the E-021 FX agent from the BIS
+OTC derivatives data (`WS_OTC_DERIV2`).**
+
+- **What was wrong.** It is a half-on-half change in a seasonal series: end-June exceeds the prior end-December in 13 of the 14
+  years since 2012. In percentage terms 2016-S1 was +15.3%. "Largest" holds only in absolute dollars.
+- **Correct position.** Compare like half-years. The dollar-leg notional was $113.5trn at 2025-S2, +15.5% y/y, against +8.0% and
+  +9.5% in the two prior years. That is a real acceleration, but not a record jump.
+- **Still standing at:** the offshore-dollar note, bannered.
+
+---
+
 ## C-130 · "The EFA and Z.1 equity-issuance series differ by a stable offset" and "z_k fell 0.11pp to June 2026"
 
 **Mine, written 4 Oct (z_k) and 9 Oct (the offset). Killed 11 Oct by the R4R review (Grok in Cursor); the supervisor re-derived both.**
@@ -1954,6 +1981,8 @@ C-015	Where_The_Two_Workstreams_Meet.md	# the 2022 quote carries a [C-015] banne
 C-015	Collateral_Data_Inventory.md	# the 2022 quote carries a [C-015] banner (9 Oct)
 C-129	Parcel_R4R_Oct_Additions_Review_For_Grok_Cursor.md	# the attack brief quotes the killed ratio so Grok can test it (target 3)
 C-130	Parcel_R4R_Oct_Additions_Review_For_Grok_Cursor.md	# the attack brief quotes the claims it asked Grok to attack (targets 5 and 8)
+C-132	2026-08-21-Offshore-Dollar-And-Money-Like.md	# the claim at line 146 carries a [C-132] banner (12 Oct)
+C-132	2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md	# its corrections section quotes the killed claim to correct it
 ```
 
 ```banned
@@ -2197,4 +2226,5 @@ C-128	face-value estimate for June 2024 to March 2026 points the same way
 C-129	2[.]2.{0,3}2[.]8.{0,40}pre-March-2020
 C-130	stable.{0,20}offset
 C-130	fall of 0[.]11 ?pp
+C-132	15[.]57.{0,60}largest in the series
 ```

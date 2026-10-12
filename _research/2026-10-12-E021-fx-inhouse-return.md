@@ -1,0 +1,105 @@
+# E-021 first pass — fx: in-house Sonnet agent's return (raw record)
+
+*12 Oct 2026. The return of a Sonnet research agent, kept verbatim as a record; the supervisor's synthesis and checks are in `2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`. Agent output is a claim until re-derived; the supervisor re-derived one load-bearing number per market (stated in the synthesis). Scratch files it cites lived in a session scratchpad and are not kept.*
+
+---
+
+I fetched the data below on 12 Oct 2026 and kept it all as scratch files in `<session-scratchpad>/inh_fx/`. The repo was not touched. The CFTC currency pull reuses the `bin/pull_cftc_tff.py` method (`cftc/pull_fx_tff.py`, same dataset `gpe5-46if`, selected by contract code).
+
+**Quotes.** My copyright rules allow one short quote per response, so section C has one verbatim quote, not one per paper. For the other papers it gives a paraphrase plus the place in the page I read.
+
+## Conflicts with the repo
+
+1. **TIC July equities (`dossiers/cross-border-and-fx.md`).** The dossier treats the −$10.6bn "classic" figure and the CSLT +$2.8bn as two disagreeing measures. They reconcile to the $mn. SLT Table 1 gives Non-Official −10,596, Official +14,301, Total IROs +927, All Countries +2,778 and Grand Total +3,705. The press-release line 8 is the *private-only* line, so the gap is a scope difference, not a method difference.
+2. **FX-swap notional (`N2a` §5 and `Offshore-Dollar` §1.5).** The "+$15.57trn in H1 2025, largest in the series" is a half-on-half change. The series is seasonal: end-June exceeds the prior end-December in 13 of 14 years since 2012. The like-for-like y/y comparison is 2025-S2 $113.5trn vs 2024-S2 $98.3trn, +15.5%, against +8.0% the year before and +9.5% the year before that. The acceleration is real, but 2016-S1 was +15.3% half-on-half, so "largest" holds only in absolute dollars.
+3. **"August 2026 intervention" (Who-Buys synthesis).** The MoF confirms it, with two refinements. The joint action was Friday 31 July (US Eastern). The MoF release covers 30 Jul–26 Aug and gives only the total of ¥15,399.3bn. The "rent balance sheet" idea is, in the MoF's own words, a *future* FIMA repo plan. H.4.1 FIMA repo was $0 in the week ended 7 Oct.
+
+## (A) Flows
+
+All numbers are USD unless stated. The 12m window is Aug 2025–Jul 2026 and the 4m window is Apr–Jul 2026, unless stated.
+
+| Flow | Buyer | Seller | Funding | Direction | Size and period | Grade | Source |
+|---|---|---|---|---|---|---|---|
+| Foreign private net purchases of US long-term securities | Foreign funds, insurers, pensions, banks' clients (via Cayman, UK, Lux, Ireland) | US residents | Foreign saving, cross-border bank and fund credit; hedge overlay unmeasured | IN | $1,599.6bn 12m (equities 802.3, corporate bonds 392.3, Treasuries 263.4, agency 141.7); 4m $580.3bn; prior 12m $1,544.6bn | MEASURED flows, attribution BOUNDED (custodial; Cayman undercount about $1.4trn at end-2024) | TIC `slt_table1.txt`; press release sb0631 |
+| Foreign official net purchases | Central banks, sovereign funds, public pensions | US residents | Reserves and sovereign savings | IN in total, OUT of Treasuries and agency | Total $154.8bn 12m (equities 139.6, corporate 59.7, Treasuries −16.8, agency −27.7); 4m $139.5bn | BOUNDED (official/private split has transaction bias) | same |
+| Foreign official Treasury custody at the Fed | Not applicable | Reserve managers (or custody moves) | n/a | OUT | $2,579.1bn face on 7 Oct 2026; −$209.1bn (−7.5%) y/y; −$19.2bn vs 4 weeks ago; −$11.3bn vs 12 weeks ago | MEASURED, but custody is not ownership (BOUNDED) | Fed H.4.1, weekly releases |
+| US purchases of foreign securities | US mutual funds, ETFs, pensions | Foreign residents | US saving; sales of US assets | OUT | $477.5bn 12m (bonds 337.6, equities 139.9) vs $286.1bn prior 12m; 4m $236.8bn | MEASURED | TIC press release lines 14–18 |
+| Net dollar portfolio inflow to the US (all instruments, incl. short-term and banks) | Foreigners | US | n/a | IN, shrinking | $1,311.1bn 12m (private 1,221.8, official 89.3) vs $1,676.6bn prior 12m; 4m $427.7bn | MEASURED | TIC press release line 30 |
+| Japan yen purchases (31 Jul joint with the US Treasury) | MoF buys yen, with the US Treasury | Market participants selling yen (unidentified) | Japan's FX reserves; yen proceeds go to the Special Account | OUT of dollar, INTO yen | Q2 2026 ¥11,734.9bn (30 Apr ¥6,278.7bn; 4 May ¥780.2bn; 6 May ¥4,675.9bn) ≈ $75bn; 30 Jul–26 Aug ¥15,399.3bn ≈ $97bn; 2025 zero; 27 Aug–28 Sep ¥0. Year to date ¥27.13trn ≈ $172bn | MEASURED in yen; dollar conversion BOUNDED (my BIS daily rates); US-side amount not disclosed | MoF CSV and monthly pages; Katayama statement 3 Aug |
+| Japan reserves (funding side) | n/a | MoF sells dollar assets | n/a | OUT | Total $1,178.4bn Sep 2026 vs peak $1,410.7bn Feb 2026 and $1,341.3bn Sep 2025; Aug −$79.6bn, Sep −$29.1bn (includes valuation) | MEASURED | MoF `official_reserve_assets/historical.csv` |
+| Japanese private portfolio flows (designated major investors) | Residents buying foreign securities; non-residents buying Japanese securities | n/a | n/a | 52 weeks: net INTO yen (repatriation); last 12 weeks: OUT | Residents' net foreign purchases −¥3.60trn over 52 weeks (prior 52 weeks +¥6.34trn; 12 weeks −¥0.60trn; 4 weeks +¥0.38trn). Non-residents' net Japanese purchases +¥5.11trn over 52 weeks, −¥13.86trn over 12 weeks (equities −3.97, short-term −10.23), −¥6.69trn over 4 weeks | MEASURED, coverage BOUNDED | MoF `week.csv`, released 8 Oct |
+| Euro-area portfolio flows (extra-euro-area, € unadjusted) | Non-residents buying euro-area securities | n/a | n/a | INTO euro | Residents bought €815.0bn abroad 12m; non-residents bought €1,155.9bn; net inflow €340.9bn vs outflow €46.9bn prior 12m. 4m net inflow €212.9bn (June liabilities €258.4bn) | MEASURED; the US share is unknown | Eurostat `ei_bpm6fa_m` |
+| China customer FX settlement | Banks buy FX from exporters, who convert to RMB | Exporters (net RMB buyers) | Current-account surplus Q2 $193.7bn, H1 $378.0bn; financial account −$157.1bn Q2, −$345.2bn H1 | Net conversion into RMB, recycled out by banks | Net settlement Aug +$48.5bn; Jan–Aug +$337.9bn (settlement 2,083.4 vs sales 1,745.5). Reserves $3,438.3bn at end-Aug. China Treasuries (TIC) −$35.3bn 4m, −$77.6bn 12m, to $618.0bn | MEASURED; "banks absorb the dollars" is BOUNDED (Treasury report's reading for 2025: settlement +$323bn, PBoC FX assets −$105bn) | SAFE English releases; Treasury FX Report Jul 2026 |
+| Bank credit by currency | Non-bank borrowers (NBFIs 35.9% of the USD claims flow, per repo S6) | Banks (UK, Japan, France and others) | NBFI deposits, intragroup, FX swaps (Japan) | USD, EUR credit expanding | USD cross-border claims, all reporters, FX- and break-adjusted +$2,375bn 4q (prior 4q +$903bn); EUR +$1,615bn (prior $403bn); JPY +$210bn | MEASURED; this is the all-reporter cut, not the repo's non-US-bank cut (see C-014) | BIS `WS_LBS_D_PUB` |
+| Non-bank credit outside the issuer's economy | Non-banks | Banks and bond holders | n/a | Expanding | USD $14.75trn at 2026-Q1, +$1.01trn 4q (+7.3% y/y, from +2.8% at 2024-Q4); EUR €5.12trn, +11.6% y/y; JPY ¥65.9trn, +0.3% y/y | MEASURED | BIS `WS_GLI` |
+| FX swaps and forwards (off-balance-sheet dollar debt) | Dealers vs other financials and corporates | Same | The swap is the funding; 75.9% of all-currency notional matures within 1 year | USD obligations rising; net hedge-selling of USD is not directly observed | USD-leg notional $113.5trn at 2025-S2, +15.5% y/y; EUR leg $39.3trn, JPY leg $17.6trn | Stock MEASURED; hedging as the cause HYPOTHESIS | BIS `WS_OTC_DERIV2` |
+| Speculative FX futures (G6 = EUR, JPY, GBP, CHF, CAD, AUD, in USD notional) | Asset managers and leveraged funds | Dealers | Margin only | Leveraged funds net long USD | Leveraged funds −$10.7bn (vs −$18.4bn 12w ago, −$2.3bn 52w ago); asset managers +$4.8bn (vs +$42.2bn 52w ago); dealers +$0.4bn (vs −$54.7bn 52w ago) | MEASURED positions, tiny against $9.5trn/day turnover | CFTC TFF, 6 Oct |
+| Central-bank dollar swap lines | Foreign central banks | Fed | Fed | No stress | $207mn outstanding on 7 Oct. ECB 7-day operations $70–210mn; largest since 2024 is $1.12bn (18 Dec 2024) | MEASURED | H.4.1; NY Fed `markets.newyorkfed.org/api/fxs` |
+| Reserve composition (COFER) | Reserve managers | n/a | n/a | Slowly OUT of the dollar | USD $7,494.6bn = 56.705% of $13,216.8bn at 2026-Q2 | Share MEASURED; valuation split BOUNDED (below) | IMF COFER |
+
+## (B) Measures
+
+Latest values are as fetched; lag is the observed delay.
+
+| Series | Code / URL | Freq, lag | Stock or flow | Latest, with date | In or out (4p / 12p) | How to measure change |
+|---|---|---|---|---|---|---|
+| TIC SLT Table 1 | `ticdata.treasury.gov/.../Documents/slt_table1.txt` | Monthly, 6.5 weeks; August due 16 Oct | Net flow, holdings, valuation | Jul 2026 net $40.6bn; holdings $38.82trn | IN: $719.8bn / $1,754.4bn | Use the "net" and "valchg" columns. 12m holdings change +$4.86trn = net 1.75 + valuation 2.88 + residual 0.23 |
+| TIC Table 5 | `slt_table5.txt` | Monthly | Stock | Jul 2026: Japan $1,103.9bn, China $618.0bn, UK $998.3bn, Cayman $460.1bn, foreign official $3,773.1bn | Japan −$87.7bn / −$51.5bn; China −$35.3bn / −$77.6bn; official −$129.9bn / −$113.4bn | Market-value stocks; compare with Table 1 flows |
+| IMF COFER | `api.imf.org/external/sdmx/2.1/data/IMF.STA,COFER/G001.AFXRA.CI_USD.SHRO_PT.Q` (also CI_EUR, CI_CNY, CI_JPY) | Quarterly, 3 months | Stock | USD 56.705%, EUR 20.602%, JPY 4.965%, CNY 2.114% (2026-Q2, vintage of 30 Sep) | USD −0.24pp / −3.12pp from 59.82% at 2023-Q2 | Rebuild shares at constant FX using BIS quarter-end rates: 4q −0.94pp (reported −0.24), 8q −1.28pp (reported −2.16), since 2024-Q4 −0.36pp (reported −1.70). OTHC left unadjusted |
+| BIS GLI | `WS_GLI` `Q.USD.3P.N.A.I.B.USD` (EUR, JPY alike) | Quarterly, about 3.5 months; Q2 not yet out | Stock, y/y | USD $14.748trn, 2026-Q1 | Expanding: +$1.012trn / +$2.031trn | Use the y/y series (`771`) |
+| BIS LBS | `WS_LBS_D_PUB` `Q.F.C.A.USD.A.5J.A.5A.A.5J.N` (F = flows, S = stocks; L for liabilities) | Quarterly, same lag | Flow (FX- and break-adjusted) | USD claims $21.80trn stock, flow +$956bn in 2026-Q1 | Expanding | Always state the perimeter (cross-border only or plus local; includes US reporters or not) |
+| BIS OTC derivatives | `WS_OTC_DERIV2` `H.A.{D,I}.B.5J.A.5J.A.USD.TO1.A.A.3.C` | Semiannual, about 5 months; end-June 2026 due about Nov | Notional stock | $113.5trn, 2025-S2 | y/y +15.5% (2 half-years: −0.3%) | Compare the same half-year only |
+| BIS Triennial turnover | `WS_DER_OTC_TOV` `A.U.A.B.5J.A.5J.A.TO1.TO1.A.A.3.C` | Every 3 years; next 2028 | Flow per day | $9.51trn/day, Apr 2025, +27% vs 2022. Currency shares of total (sum 200%): USD 89.1 (88.4 in 2022), EUR 28.5, JPY 16.9, CNY 8.6 (7.0), GBP 10.2 (12.9). FX swaps $4.02trn/day, spot $2.95trn, forwards $1.75trn | n/a | Gap vs the BIS headline of 89.2 / 28.9 / 16.8 is under 0.5pp |
+| BIS broad dollar index | `WS_EER` `M.N.B.US` | Monthly, 6 weeks | Index (2020 = 100) | 101.72, Aug 2026 | Flat: −0.2% vs Apr / −1.8% vs Aug 2025 | Trough-to-peak: 110.49 in Jan 2025 → −7.9% |
+| Japan MoF intervention | `.../reference/feio/foreign_exchange_intervention_operations.csv`; monthly pages `feio/monthly/YYYYMMDDe.html` | Monthly total at month-end; daily detail quarterly (Q3 due about early Nov) | Flow | ¥15,399.3bn in the 30 Jul–26 Aug window; ¥0 in 27 Aug–28 Sep | OUT of dollar: ¥15.40trn (4 releases) / ¥27.13trn (12 months) | Convert at the day's USD/JPY (BIS `WS_XRU` D.JP): USD/JPY 162.9 (30 Jul) → 160.2 (31 Jul) → 156.7 (3 Aug) → 158.1 (6 Oct), so about half retraced |
+| Japan MoF weekly flows | `https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/week.csv` (no `/english/`) | Weekly, 5 days | Flow, in ¥100mn, "+" = net acquisition | Week to 3 Oct: residents +¥0.82trn, non-residents +¥2.54trn | See table A | Sum the "Net" columns |
+| Japan reserves | `.../official_reserve_assets/historical.csv` | Monthly, 1 week | Stock, $mn | $1,178.4bn, Sep 2026 | OUT: −$109.1bn vs Jun / −$162.9bn vs Sep 2025 | Split intervention from valuation using the MoF total |
+| CFTC TFF currencies | Socrata `gpe5-46if`; codes EUR 099741, JPY 097741, GBP 096742, CHF 092741, CAD 090741, AUD 232741, MXN 095741, NZD 112741, BRL 102741, ICE USD Index 098662 | Weekly: Tuesday positions, Friday release | Stock of positions | 6 Oct 2026. Leveraged funds net: EUR −44,261, JPY −25,043, GBP +12,432, CHF −11,350, CAD −79,625, AUD +54,133, MXN +74,927 contracts. Dollar Index futures: leveraged +864, asset managers +19,096, dealers −19,790 contracts; open interest 51,095 | Leveraged funds: 4w −$2.3bn (more long USD), 12w +$7.7bn. Asset managers: 4w −$12.0bn, 12w +$1.4bn | Convert contracts with the contract size and BIS daily rate; change the positions, not the notional |
+| Fed H.4.1 | `federalreserve.gov/releases/h41/YYYYMMDD/default.htm` | Weekly, 1 day | Stock, $mn | Swaps $207mn; foreign-official reverse-repo pool $328.3bn (−$31.2bn y/y); FIMA repo $0 (week ended 7 Oct) | See above | Custody is at face value, so it carries no mark-to-market |
+| SAFE (China) | `safe.gov.cn/en/` (settlement monthly, BoP quarterly, reserves monthly) | 2 weeks to 3 months | Flow | Aug 2026 settlement $251.8bn vs sales $203.3bn | Net conversion +$48.5bn in Aug | Read net settlement beside Treasury's two proxies |
+| Euro-area BoP | Eurostat `ei_bpm6fa_m`, `FA__P__F`, partner `EXT_EA21` | Monthly, 7 weeks | Flow | Jul 2026 net −€21.8bn | INTO euro: €212.9bn / €340.9bn | Geography changes from EA20 to EA21 in Jan 2026 (Bulgaria) |
+
+## (C) Literature since 2022 (all opened)
+
+The one verbatim quote is from Shin, Wooldridge and Xia: "an important contribution to the weakness of the dollar in April and May 2025". Everything else is paraphrased with the location I read.
+
+| Finding | Authors, year | URL opened | Where read |
+|---|---|---|---|
+| April–May 2025 dollar weakness plausibly reflects hedging by non-US holders of US securities, not an exit; Asian-hours moves point to Asian investors | Shin, Wooldridge, Xia, BIS Bulletin 105, 2025 | `bis.org/publ/bisbull105.htm` | Key takeaways box (PDF body not opened) |
+| April 2025 FX turnover $9.5trn/day, +27%; about $1.5trn from tariff news; investors entered with low hedge ratios; no dollar funding strain | Huang, Krohn, Sushko, BIS QR Dec 2025 | `bis.org/publ/qtrpdf/r_qt2512b.htm` | Key takeaways and the first section |
+| Non-banks outside the US owe $26trn in off-balance-sheet dollars via swaps and forwards, double their on-balance-sheet debt; banks $39trn | Borio, McCauley, McGuire, BIS QR Dec 2022 | `bis.org/publ/qtrpdf/r_qt2212h.htm` | Key takeaways box |
+| FX-swap volumes track hedging of advanced-economy bond investors and US portfolio debt flows | Nenova, Schrimpf, Shin, BIS WP 1273, 20 Jun 2025 | `bis.org/publ/work1273.htm` | Abstract page |
+| Natural hedge broke from March 2025; Danish funds' hedge ratio rose from about 60% to over 70% (Jan to Dec 2025); Finnish stable at about 70%; the JPY 3-month basis hit 35bp on 9 Apr 2025 and was 15–20bp in early 2026. Foreigners kept buying US assets | Le, El Dahaby, Banque de France Eco Notepad 444, 13 Apr 2026 | `banque-france.fr/system/files/2026-04/Billet_444_VE.pdf` | Whole note (8.8k characters) |
+| Dollar's international role about unchanged over 5 years; 58% of disclosed reserves in 2024, same as 2022 | Bertaut, von Beschwitz, Curcuru, FEDS Note, 18 Jul 2025 | `federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html` | Reserves section and conclusion |
+| Reserve diversification away from the dollar is active, not valuation; a quarter went to RMB, three quarters to small currencies | Arslanalp, Eichengreen, Simpson-Bell, IMF WP/22/58, 2022 | `ideas.repec.org/p/imf/imfwpa/2022-058.html` | Abstract page only; IMF PDF returned 403/429 |
+| Gold's share of reserves rising; RMB share stalling | Arslanalp, Eichengreen, Simpson-Bell, NBER WP 34478, Nov 2025 | `nber.org/papers/w34478` | Abstract page |
+| Dollar appreciation shocks follow tighter US policy and dollar-funding stress and predict EMDE downturns | Obstfeld, Zhou, Brookings BPEA, Fall 2022 | `brookings.edu/wp-content/uploads/2022/09/BPEA-FA22_WEB_Obstfeld-Zhou.pdf` | Abstract and Section IV |
+| CIP deviations are priced by dollar-funding and hedging demand (Section 5.1 "Demand Side of the FX Swap Market") | Du, Schreger, Handbook of International Economics vol. 6, 2022 (opened the May 2021 preprint) | `business.columbia.edu/sites/default/files-efs/pubfiles/27363/Handbook_Du_Schreger_May2021.pdf` | Introduction and Section 5.1 |
+| TIC undercounts Cayman hedge-fund Treasuries by about $1.4trn; those funds hold $1.85trn (end-2024, +$1trn since 2022) | Barth, Beltran, Hoops, Kahn, Liu, Perozek, FEDS Note, 15 Oct 2025 | Repo copy `_research/primary_sources/offshore_dollar/barth_etal_feds_note_2025-10-15_cross_border_basis_trade.html` | Introduction and Figure 2 text |
+| Dollar on one side of 89% of FX trades (Apr 2025); FX swaps $4trn/day, +5%; spot +42%; outright forwards +60% | BIS press release, 30 Sep 2025 | `bis.org/press/p250930.htm` | Body text |
+| Joint yen purchase on 31 Jul; Japan plans to use FIMA repo | Katayama, MoF statement, 3 Aug 2026 | `mof.go.jp/english/public_relations/statement/others/20260803073000.html` | Full statement |
+| No Japanese intervention in the 2025 report window; China's PBoC FX assets −$105bn and net settlement +$323bn in 2025 | US Treasury, FX Report, Jul 2026 | `home.treasury.gov/system/files/206/July-2026-FX-Report.pdf` | Japan and China sections |
+| Q1 2026 dollar share rise about half valuation | IMF Data Brief, 1 Jul 2026 | `data.imf.org/en/news/imf data brief july 1` | Opened through the WebFetch tool only; curl got 403 and I did not retry. Wording not independently verified |
+
+I found no Japan-intervention paper from 2024–26. The recent write-ups were market commentary, so I did not cite them.
+
+## (D) Three measurements to build next
+
+1. **Intervention-to-holdings bridge.** Method: reconcile MoF intervention dollars, MoF reserves (−$79.6bn in Aug), TIC Table 5 Japan Treasuries and H.4.1 custody. Prediction to test on 16 Oct: Japan's August TIC Treasury holdings fall by roughly $50–100bn (HYPOTHESIS). The Q2 analogue was −$66.8bn in May against about $75bn of intervention.
+2. **Like-for-like FX-swap dollar debt tracker.** Method: take the BIS USD-leg notional by sector at the same half-year each year and compute y/y. Apply the (other financials + non-financials)/2 rule, then compare with the GLI on-balance-sheet stock. Test: does the end-June 2026 print (due about Nov) stay near +15% y/y, or fall back toward +8%?
+3. **Foreign-holder hedge-ratio panel with a bound.** Method: collect public hedge ratios (Danish, Finnish, Australian, plus Japanese lifers if disclosed). Weight them by TIC SHL holdings by country. Multiply the hedge-ratio change by those holdings to bound the possible dollar-selling hedge flow. Compare that bound with BIS notional growth and the broad dollar index. This is the only way to test the hedging story with free data.
+
+I have already prototyped the constant-FX COFER split (`imf/`, `bis/xru_*.csv`).
+
+## (E) Uncertain items
+
+- **ECB blocked.** The ECB Data Portal API returned a branded "access blocked" HTTP 400 page on the `BOP` flow (three requests). I stopped and did not route around it. Euro-area flows with the US as counterparty are therefore missing, and I used Eurostat's unadjusted series instead.
+- **Intervention detail.** The daily split and the US-side amount are unpublished until the Q3 quarterly release. The dollar conversions are mine. A press report that the NY Fed sold euros and that the total was about $53bn is unverified. The ESF monthly statements were not fetched.
+- **MoF weekly data** cover only designated major investors, not the full balance of payments.
+- **COFER vintage.** The 1 Jul brief had Q1 2026 at 57.13% and Q4 2025 at 56.42%. The 30 Sep vintage I pulled has 57.18% and 56.52%. In this vintage unallocated reserves are zero (total = allocated), and I could not confirm whether that is a methodology change.
+- **Constant-FX COFER.** My version ignores the "other currencies" bucket and uses quarter-end BIS daily averages.
+- **Cross-currency basis.** I found no free series. The only free datapoints are Banque de France's (35bp on 9 Apr 2025; 15–20bp early 2026).
+- **Hedge ratios.** The Danish, Australian and Finnish figures are secondary, from Banque de France; I did not open the RBA speech or the Danish primary sources.
+- **CFTC** futures are a thin slice of FX positioning, and BIS "average of observations" rates stand in for Tuesday closes.
+- **Not yet out.** GLI and LBS 2026-Q2, TIC August (16 Oct), and the BIS end-June 2026 OTC data.
+- **Minor revisions.** LBS all-country non-bank USD liabilities now read $7,658.2bn against the repo's $7,644.2bn, and the Cayman values reproduce exactly.

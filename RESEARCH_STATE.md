@@ -607,7 +607,9 @@ Do not restate findings here. Status and detail stay in the home section named o
    --   Derivatives / options as a market-structure flow ... NO home section yet; goal names this channel
    --   FX, COMMODITIES (and derivatives), and RATES flows .. TAKEN UP 12 Oct (E-021; reverses E-019's parking). First pass: a
                                                        measurement map per market (buyer/seller/funding, flow direction, free series, change,
-                                                       literature), in-house Sonnet agents plus a Gemini (agy) research lane.
+                                                       literature), in-house Sonnet agents plus a Gemini (agy) research lane. FIRST PASS DONE 12 Oct:
+                                                       2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md (builds 1-6 listed there;
+                                                       C-131, C-132). Next: TIC closure ledger (test 16 Oct), COT ledger, gold tonnes ledger.
    --   Who funds the ~89% private share of record issuance  S1 / I1b raise it; nobody has taken it
    --   The persona capability, idle since 22 Aug .......... section 0.1; pending a decision (Tier A2)
    --   The missing-channel question .................... flagged directions, after N5; asked twice, no answer
