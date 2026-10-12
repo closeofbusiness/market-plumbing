@@ -1,0 +1,110 @@
+validated: 3 contracts x 875 weekly reports (2010-01-05 to 2026-10-06) x 2 report types = 5,250 rows; one report in every ISO week, none missing; contract sizes match the data's contract_units on every row
+IDENTITY asserted on every row (CFTC: aggregate long open interest = aggregate short open interest; spreading counted on both sides; non-reportables = open interest minus reportable):
+   sum(pm,sw,mm,ot long + spreading) = total reportable long; same short;  reportable + non-reportable = open interest on each side;  =>  sum over 5 classes of (long - short) = 0
+   futures only: held EXACTLY on all 2,625 rows (maximum absolute difference anywhere = 0 contracts)
+   futures+options combined: held within rounding on all 2,625 rows; maxima in contracts: classes vs reportable total long/short 2/3, reportable + non-reportable vs OI 1/1, sum of all classes vs OI 2/3, sum of the five nets 3 (allowed 4 per side, 8 for the net sum)
+
+PRICES, one per report date (carried back to the last earlier quote only where the source has none; lag stops the script above 5 days):
+   wti    EIA Cushing WTI spot, $/bbl; 14 of 875 weeks carried back (max 4 day(s)); range 8.91 to 123.64
+          carried back on report dates: 2011-04-12, 2011-04-19, 2011-05-24, 2011-06-07, 2011-06-14, 2011-07-05, 2011-07-12, 2013-05-07, 2013-12-10, 2014-10-14, 2015-01-27, 2017-07-03, 2018-12-24, 2018-12-31
+   gold and copper: no price or dollar figure in the public outputs (LICENSING in the script's docstring). They are in data/vintages/cot_prices/derived/ (local, gitignored), with the full report, when the sponsor files are present.
+   split identity (volume + price + cross = total change) held every week; largest residual over all weeks and both report types (WTI) = $0.000004
+
+=== COMEX GOLD (088691), FUTURES ONLY: managed money, net = long - short, spreading excluded
+checkpoint  report date   MM long  MM short    MM net     MM net t  MM net/OI MM long/OI MM sht/OI        OI        OI t
+                        contracts contracts contracts          (t)  (% of OI)  (% of OI) (% of OI) contracts         (t)
+end-2023    2023-12-26    152,801    46,347   106,454        331.1      21.7%      31.1%      9.4%   491,343     1,528.2
+end-2024    2024-12-31    182,128    15,959   166,169        516.8      36.2%      39.7%      3.5%   458,584     1,426.4
+end-2025    2025-12-30    148,642    22,602   126,040        392.0      26.2%      30.9%      4.7%   481,866     1,498.8
+2026-06-30  2026-06-30    134,577    14,486   120,091        373.5      32.5%      36.4%      3.9%   369,541     1,149.4
+latest      2026-10-06    127,101    16,114   110,987        345.2      28.0%      32.1%      4.1%   396,109     1,232.0
+  changes in managed-money net (contracts and physical units) and its share of open interest at each end
+          window       from  MM net chg       chg t  MM net/OI at from  MM net/OI at to
+                              contracts         (t)          (% of OI)        (% of OI)
+         4 weeks 2026-09-08     -23,985       -74.6              32.8%            28.0%
+        12 weeks 2026-07-14      -9,792       -30.5              31.5%            28.0%
+        52 weeks 2025-10-07     -18,772       -58.4              26.7%            28.0%
+  since end-2023 2023-12-26      +4,533       +14.1              21.7%            28.0%
+
+=== COMEX GOLD (088691), FUTURES+OPTIONS COMBINED: managed money, net = long - short, spreading excluded
+checkpoint  report date   MM long  MM short    MM net     MM net t  MM net/OI MM long/OI MM sht/OI        OI        OI t
+                        contracts contracts contracts          (t)  (% of OI)  (% of OI) (% of OI) contracts         (t)
+end-2023    2023-12-26    178,676    43,169   135,507        421.5      19.8%      26.1%      6.3%   685,284     2,131.5
+end-2024    2024-12-31    195,936    13,552   182,384        567.3      27.7%      29.8%      2.1%   658,591     2,048.4
+end-2025    2025-12-30    148,128    21,255   126,873        394.6      17.1%      19.9%      2.9%   743,107     2,311.3
+2026-06-30  2026-06-30    133,471    16,654   116,817        363.3      23.4%      26.7%      3.3%   500,141     1,555.6
+latest      2026-10-06    130,247    15,427   114,820        357.1      21.8%      24.7%      2.9%   527,641     1,641.2
+  changes in managed-money net (contracts and physical units) and its share of open interest at each end
+          window       from  MM net chg       chg t  MM net/OI at from  MM net/OI at to
+                              contracts         (t)          (% of OI)        (% of OI)
+         4 weeks 2026-09-08     -24,728       -76.9              23.9%            21.8%
+        12 weeks 2026-07-14      -4,327       -13.5              22.8%            21.8%
+        52 weeks 2025-10-07     -19,107       -59.4              15.8%            21.8%
+  since end-2023 2023-12-26     -20,687       -64.3              19.8%            21.8%
+
+=== NYMEX WTI (067651), FUTURES ONLY: managed money, net = long - short, spreading excluded; price = EIA Cushing WTI spot, $/bbl
+checkpoint  report date      price   MM long  MM short    MM net  MM net Mbbl  MM net $bn  MM net/OI MM long/OI MM sht/OI        OI     OI Mbbl   OI $bn
+                             $/bbl contracts contracts contracts       (Mbbl)  (at price)  (% of OI)  (% of OI) (% of OI) contracts      (Mbbl)    ($bn)
+end-2023    2023-12-26       75.84   204,638    97,235   107,403        107.4        8.15       6.9%      13.2%      6.2% 1,554,682     1,554.7    117.9
+end-2024    2024-12-31       72.44   255,707    52,659   203,048        203.0       14.71      10.8%      13.7%      2.8% 1,872,970     1,873.0    135.7
+end-2025    2025-12-30       57.79   146,234   130,491    15,743         15.7        0.91       0.8%       7.7%      6.9% 1,898,257     1,898.3    109.7
+2026-06-30  2026-06-30       70.56   203,601   122,319    81,282         81.3        5.74       4.2%      10.6%      6.4% 1,914,443     1,914.4    135.1
+latest      2026-10-06       96.24   178,353   124,755    53,598         53.6        5.16       2.8%       9.4%      6.6% 1,889,422     1,889.4    181.8
+  changes in managed-money net, chained weekly volume/price split (endpoint-only split in brackets); $bn at each week's price
+          window       from  MM net chg    chg Mbbl price chg  total $bn  volume $bn  price $bn  cross $bn   [endpoint vol / price / cross $bn]
+         4 weeks 2026-09-08     -58,133       -58.1     +2.2%      -5.37       -5.63      +0.28      -0.02   [-5.48 / +0.23 / -0.12]
+        12 weeks 2026-07-14      -8,376        -8.4    +19.6%      +0.17       -1.21      +1.42      -0.04   [-0.67 / +0.98 / -0.13]
+        52 weeks 2025-10-07     +71,079       +71.1    +53.9%      +6.25       +3.65      +2.34      +0.26   [+4.44 / -0.59 / +2.40]
+  since end-2023 2023-12-26     -53,805       -53.8    +26.9%      -2.99       -7.66      -0.80      +5.47   [-4.08 / +2.19 / -1.10]
+
+=== NYMEX WTI (067651), FUTURES+OPTIONS COMBINED: managed money, net = long - short, spreading excluded; price = EIA Cushing WTI spot, $/bbl
+checkpoint  report date      price   MM long  MM short    MM net  MM net Mbbl  MM net $bn  MM net/OI MM long/OI MM sht/OI        OI     OI Mbbl   OI $bn
+                             $/bbl contracts contracts contracts       (Mbbl)  (at price)  (% of OI)  (% of OI) (% of OI) contracts      (Mbbl)    ($bn)
+end-2023    2023-12-26       75.84   213,450    88,251   125,199        125.2        9.50       6.2%      10.6%      4.4% 2,016,183     2,016.2    152.9
+end-2024    2024-12-31       72.44   247,113    47,972   199,141        199.1       14.43       8.8%      11.0%      2.1% 2,250,148     2,250.1    163.0
+end-2025    2025-12-30       57.79   149,020   129,309    19,711         19.7        1.14       0.9%       6.5%      5.6% 2,295,914     2,295.9    132.7
+2026-06-30  2026-06-30       70.56   199,357   105,644    93,713         93.7        6.61       3.6%       7.8%      4.1% 2,568,532     2,568.5    181.2
+latest      2026-10-06       96.24   198,618    94,127   104,491        104.5       10.06       4.1%       7.8%      3.7% 2,533,937     2,533.9    243.9
+  changes in managed-money net, chained weekly volume/price split (endpoint-only split in brackets); $bn at each week's price
+          window       from  MM net chg    chg Mbbl price chg  total $bn  volume $bn  price $bn  cross $bn   [endpoint vol / price / cross $bn]
+         4 weeks 2026-09-08     -34,848       -34.8     +2.2%      -3.07       -3.29      +0.31      -0.09   [-3.28 / +0.28 / -0.07]
+        12 weeks 2026-07-14     +18,108       +18.1    +19.6%      +3.11       +1.35      +1.74      +0.01   [+1.46 / +1.36 / +0.29]
+        52 weeks 2025-10-07    +120,162      +120.2    +53.9%     +11.04       +6.38      +3.43      +1.22   [+7.51 / -0.53 / +4.05]
+  since end-2023 2023-12-26     -20,708       -20.7    +26.9%      +0.56       -5.85      +0.56      +5.85   [-1.57 / +2.55 / -0.42]
+
+=== COMEX COPPER (085692), FUTURES ONLY: managed money, net = long - short, spreading excluded
+checkpoint  report date   MM long  MM short    MM net    MM net kt  MM net/OI MM long/OI MM sht/OI        OI       OI kt
+                        contracts contracts contracts         (kt)  (% of OI)  (% of OI) (% of OI) contracts        (kt)
+end-2023    2023-12-26     59,378    45,180    14,198        161.0       7.5%      31.3%     23.8%   189,731     2,151.5
+end-2024    2024-12-31     65,055    69,374    -4,319        -49.0      -2.0%      29.6%     31.6%   219,739     2,491.8
+end-2025    2025-12-30     78,320     7,301    71,019        805.3      27.3%      30.1%      2.8%   260,139     2,949.9
+2026-06-30  2026-06-30     75,881    16,178    59,703        677.0      23.5%      29.8%      6.4%   254,335     2,884.1
+latest      2026-10-06     76,836    15,702    61,134        693.2      20.1%      25.3%      5.2%   304,033     3,447.7
+  changes in managed-money net (contracts and physical units) and its share of open interest at each end
+          window       from  MM net chg      chg kt  MM net/OI at from  MM net/OI at to
+                              contracts        (kt)          (% of OI)        (% of OI)
+         4 weeks 2026-09-08     -21,020      -238.4              27.6%            20.1%
+        12 weeks 2026-07-14        +949       +10.8              23.2%            20.1%
+        52 weeks 2025-10-07      +4,685       +53.1              22.5%            20.1%
+  since end-2023 2023-12-26     +46,936      +532.2               7.5%            20.1%
+
+=== COMEX COPPER (085692), FUTURES+OPTIONS COMBINED: managed money, net = long - short, spreading excluded
+checkpoint  report date   MM long  MM short    MM net    MM net kt  MM net/OI MM long/OI MM sht/OI        OI       OI kt
+                        contracts contracts contracts         (kt)  (% of OI)  (% of OI) (% of OI) contracts        (kt)
+end-2023    2023-12-26     60,083    45,127    14,956        169.6       7.3%      29.4%     22.1%   204,082     2,314.3
+end-2024    2024-12-31     64,576    69,214    -4,638        -52.6      -1.9%      26.0%     27.9%   247,950     2,811.7
+end-2025    2025-12-30     77,657     7,224    70,433        798.7      24.3%      26.8%      2.5%   289,657     3,284.7
+2026-06-30  2026-06-30     77,327    15,960    61,367        695.9      22.1%      27.8%      5.8%   277,806     3,150.3
+latest      2026-10-06     77,381    15,916    61,465        697.0      19.3%      24.3%      5.0%   318,808     3,615.2
+  changes in managed-money net (contracts and physical units) and its share of open interest at each end
+          window       from  MM net chg      chg kt  MM net/OI at from  MM net/OI at to
+                              contracts        (kt)          (% of OI)        (% of OI)
+         4 weeks 2026-09-08     -20,552      -233.1              26.3%            19.3%
+        12 weeks 2026-07-14        -467        -5.3              21.9%            19.3%
+        52 weeks 2025-10-07      +2,817       +31.9              19.8%            19.3%
+  since end-2023 2023-12-26     +46,509      +527.4               7.3%            19.3%
+
+LEAD-LAG, weekly change in managed-money net CONTRACTS vs price change (%), report dates from 2024-01-01 (first 2024-01-02, last 2026-10-06); 'same' = the change in the same week, 'next' = the following week, 'prev' = the preceding week (extra); r = correlation coefficient (unitless); band = +/-1.96/sqrt(n); WTI only here, gold and copper are local (LICENSING)
+  contract report    n same Pearson same Spearman same abs $ same n next Pearson next Spearman next abs $ next Pearson prev Spearman prev   band (n=same/next)
+  wti      fo           145       +0.380        +0.475     +0.324    144       -0.078        -0.103     -0.078       -0.032        -0.002     0.163/0.163    
+  wti      combined     145       +0.412        +0.524     +0.362    144       -0.012        -0.038     -0.015       -0.019        +0.024     0.163/0.163    

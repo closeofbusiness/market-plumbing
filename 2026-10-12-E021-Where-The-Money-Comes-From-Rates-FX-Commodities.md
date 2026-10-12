@@ -118,8 +118,12 @@ what to read, and verify every number it gives.
 1. **A TIC closure ledger** (rates and FX): monthly change in holdings = net + valuation + residual for official, private and the
    five custody centres. Anchor it to the annual survey and H.4.1, with the Cayman overlay as a range. **First test: the August TIC
    release on 16 Oct.** HYPOTHESIS: Japan's Treasury holdings fall by roughly $50–100bn after the Jul–Aug intervention.
-2. **Weekly COT ledger for gold, WTI and copper** (commodities): `bin/pull_cftc_tff.py` adapted to the disaggregated report. Split
-   volume from price, and assert that the class nets sum to zero.
+2. **Weekly COT ledger for gold, WTI and copper: BUILT 12 Oct** (`bin/pull_cftc_cot.py`; `data/cftc_cot/`). Weekly from 2010, futures-only
+   and combined, five classes. The long = short identity holds on all 5,250 rows (exact for futures-only, within rounding for
+   combined). Positions and physical units are public; WTI dollars are public (EIA). Gold and copper dollar splits are local only
+   (sponsor price licences). Positions move with the same week's price but do not predict the next week (n=145): gold +0.30/−0.01,
+   WTI +0.38/−0.08, copper +0.60/−0.07. Since end-2023, almost all of the rise in managed money's gold exposure came from price on
+   contracts already held, not new buying.
 3. **Gold tonnes ledger:** IMF reported official buying, SAFE, GLD and IAU, and LBMA vaults, against the WGC aggregates. Report
    the unexplained residual.
 4. **Primary-market duration by investor class** (rates): R2's pricing applied to Treasury's investor-class allotments, to get
