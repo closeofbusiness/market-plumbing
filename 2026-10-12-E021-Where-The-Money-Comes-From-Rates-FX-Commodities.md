@@ -47,14 +47,17 @@ reading and HYPOTHESIS here.*
 shock.**
 - **Gold futures:** managed-money net long on COMEX is 110,987 contracts (6 Oct 2026), about where it was at end-2023 (106,454).
   Gold roughly doubled over the same period, and fund length peaked at 219,029 in Sep 2024.
-- **Central banks, reported:** IMF data show +262 tonnes (2024), +306 t (2025), +337 t (Dec 2025–Aug 2026). China reports 2,410 t,
+- **Central banks, reported:** IMF data show +262 tonnes (2024), +306 t (2025), +337 t (Dec 2025–Aug 2026) for all reporters, and
+  305/328 t for countries only. The WGC's own reported-share statements imply about 355/371 t. The reported floor is about 260–370 t
+  a year, depending on the definition (Grok check, 13 Oct). China reports 2,410 t,
   +106 t in 12 months.
 - **Central banks, estimated:** the World Gold Council puts purchases at 1,092 t and 863 t for 2024 and 2025. [Gold ledger, 12 Oct: the gap is
   volatile, not a stable signature of unreported buying. By quarter it runs from −67 t to +276 t. The WGC revises its own quarterly
   figure by up to 187 t between vintages (Q1 2026: 244 t to 57 t). BIS swings move the IMF total. Russia (2,327 t) has not
   reported since Nov 2025. Treat the WGC figure as an estimate with a wide band.]
 - **US gold ETFs:** of the $119bn rise in GLD and IAU assets since end-2023, 77% is price and 23% is flows.
-- **Crude:** managed money left WTI over the last four weeks (−58 mb). The Strategic Petroleum Reserve fell 130 mb since end-2025
+- **Crude:** managed money left WTI over the last four weeks (−58 mb). Over the whole rise, fund length was net long but did not grow
+  (107k contracts at end-2023, 54k now): positions moved with price rather than leading it. The Strategic Petroleum Reserve fell 130 mb since end-2025
   while the price went from $60 to about $97. The drivers are physical (supply disruption, stock draws), not financial inflow.
 - **Copper:** a record price with LME stocks drawing and managed money flat over 12 weeks.
 
@@ -144,8 +147,9 @@ what to read, and verify every number it gives.
      - the world drew 424 mb (Jan–Sep, STEO), after building 688 mb in 2025.
      So the price rise ran with large stock draws: a physical squeeze, not financial inflow.
    - **No free futures curve:** EIA's NYMEX series ends Apr 2024.
-   - **An open data anomaly:** EIA's Brent print jumped $114.8 → $135.5 on 2 Oct, a Brent–WTI spread of $37.6, a record outside
-     2020. It persisted for three prints. It is unverified as a market price and has not been adjusted.
+   - **EIA's Brent print of 2 Oct is a data error, not a market price** (Grok check, 13 Oct). EIA showed $135.5, then about $125.5;
+     ICE front-month Brent settled about $102, and Kalshi's weekly contract priced Brent near $100. Brent-priced ledger columns from
+     2 Oct are unreliable until EIA revises.
 4. **Primary-market duration by investor class** (rates): R2's pricing applied to Treasury's investor-class allotments, to get
    10-year equivalents taken at auction per class.
 5. **A like-for-like FX-swap dollar-debt tracker:** the same half-year each year. The end-June 2026 BIS print is due in November.
