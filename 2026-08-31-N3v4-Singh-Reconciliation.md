@@ -83,6 +83,9 @@ would need the European panel rebuilt, which we have not done.
 
 ## 3. What that does to the velocity question — it isolates the denominator
 
+> **[C-135, 13 Oct 2026: the velocity range below is not signed.** Repo borrowing exceeding the cash-like bucket does not show that the bucket is extra source collateral; if anything, repo collateral too large for that bucket sits in the securities bucket. On Form PF securities posted alone ($4.96trn, 2026Q1) plus the $1.6trn lending leg, velocity is about 1.98, which is Singh's figure. Carry about 1.3–2.0 until his source concept is known. Found by Grok's J4 review.]
+
+
 This is the analytical payoff. If our rebuilt **numerator** agrees with his (and the US-share
 cross-check says it does), then the disagreement between his velocity ≈2.0 and our mechanism-
 signed **1.3–1.5** (N3 §8) cannot live in the numerator. It must live in the **denominator — the

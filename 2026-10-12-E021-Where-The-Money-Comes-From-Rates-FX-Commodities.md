@@ -20,8 +20,8 @@ MEASURED, BOUNDED, HYPOTHESIS. Nothing here has had outside review yet.*
 $2,360bn (2025Q3–2026Q2). The rest of the world's share fell from $709bn (44%) to $294bn (12%). Money-market funds took $668bn
 (28%, from $164bn), and the Fed went from −$266bn to +$264bn as it began buying bills. Mutual funds and ETFs took $378bn (from
 $176bn). *MEASURED, Z.1 dollars, re-summed by the supervisor from the 11 Sep release.*
-- **Funding changed too.** The ON RRP drain that funded money funds in 2024–25 is exhausted ($969bn in Dec 2023, $7bn in Jun
-  2026). In July–August 2026 money funds added $415bn of Treasuries by cutting Treasury repo lending ($221bn) and from new assets
+- **Funding changed too.** Money funds' ON RRP balance, which they ran down in 2024–25 to buy bills (an asset swap inside their
+  own balance sheets, not new funding), is exhausted ($969bn in Dec 2023, $7bn in Jun 2026). In July–August 2026 money funds added $415bn of Treasuries by cutting Treasury repo lending ($221bn) and from new assets
   (OFR N-MFP).
 - **Foreign official holders are leaving Treasuries.** TIC official holdings fell $236bn from Feb to Jul 2026: net sales of $103bn
   (bills $99bn), valuation −$107bn, residual −$27bn.
@@ -31,7 +31,9 @@ $176bn). *MEASURED, Z.1 dollars, re-summed by the supervisor from the 11 Sep rel
 
 **FX — money is still flowing into US securities, but less, and official money is leaving the dollar at the margin.**
 - **Private buyers:** foreign private net purchases of US long-term securities were $1,600bn over Aug 2025–Jul 2026 (equities $802bn).
-- **Net inflow:** the all-instrument net inflow shrank from $1,677bn to $1,311bn year on year.
+- **Net inflow:** the all-instrument net inflow shrank from $1,677bn to $1,311bn year on year. The fall is mostly banks' own
+  dollar liabilities (+$162.9bn to −$138.3bn, TIC line 29); foreign net purchases of long-term US securities *rose*, to
+  $1,754.4bn (J2, Grok, 13 Oct; line 29 re-read by the supervisor at Treasury).
 - **US buyers abroad:** US residents' purchases of foreign securities rose to $478bn (from $286bn).
 - **Japan:** the MoF sold about $172bn of dollars for yen in 2026 (Apr–May ¥11.73trn; 30 Jul–26 Aug ¥15.40trn).
 - **Reserves:** the dollar's share of allocated reserves is 56.7% (2026Q2). At constant exchange rates it fell 0.94pp in four
@@ -43,10 +45,13 @@ $176bn). *MEASURED, Z.1 dollars, re-summed by the supervisor from the 11 Sep rel
 *MEASURED flows. Attribution by country BOUNDED (custodial). Hedging as the driver of the 2025 dollar weakness is the BIS's
 reading and HYPOTHESIS here.*
 
-**Commodities — gold's money came from official and household buyers and global ETFs, not from futures; oil's price is a physical
-shock.**
+**Commodities — gold rose alongside official buying, bar-and-coin demand and ETF inflows, while fund futures length ended where it
+began; oil's rise ran with large physical stock draws, and funds added futures length on the way up (C-141, C-142; Grok's K1
+review, 13 Oct).**
 - **Gold futures:** managed-money net long on COMEX is 110,987 contracts (6 Oct 2026), about where it was at end-2023 (106,454).
-  Gold roughly doubled over the same period, and fund length peaked at 219,029 in Sep 2024.
+  Gold roughly doubled over the same period, and fund length peaked at 219,029 in Sep 2024. Across all COMEX groups, swap dealers'
+  net short deepened by 37,694 contracts (about 117 t), so other futures holders added net length (producers covered 25,512). The
+  COT covers US reportable positions only; Shanghai, OTC forwards and Asian ETFs are outside it (C-141).
 - **Central banks, reported:** IMF data show +262 tonnes (2024), +306 t (2025), +337 t (Dec 2025–Aug 2026) for all reporters, and
   305/328 t for countries only. The WGC's own reported-share statements imply about 355/371 t. The reported floor is about 260–370 t
   a year, depending on the definition (Grok check, 13 Oct). China reports 2,410 t,
@@ -56,12 +61,15 @@ shock.**
   figure by up to 187 t between vintages (Q1 2026: 244 t to 57 t). BIS swings move the IMF total. Russia (2,327 t) has not
   reported since Nov 2025. Treat the WGC figure as an estimate with a wide band.]
 - **US gold ETFs:** of the $119bn rise in GLD and IAU assets since end-2023, 77% is price and 23% is flows.
-- **Crude:** managed money left WTI over the last four weeks (−58 mb). Over the whole rise, fund length was net long but did not grow
-  (107k contracts at end-2023, 54k now): positions moved with price rather than leading it. The Strategic Petroleum Reserve fell 130 mb since end-2025
-  while the price went from $60 to about $97. The drivers are physical (supply disruption, stock draws), not financial inflow.
-- **Copper:** a record price with LME stocks drawing and managed money flat over 12 weeks.
+- **Crude:** managed money left WTI over the last four weeks (−58 mb). During the 2026 rise it had *added* length: net long 15,743
+  contracts on 30 Dec 2025 ($57.79), 111,731 on 8 Sep 2026 ($94.21), then 53,598 on 6 Oct (C-142; an earlier comparison with
+  end-2023 hid this). The Strategic Petroleum Reserve fell 130 mb since end-2025 while the price went from $60 to about $97. The
+  stock draws are measured; how the rise splits between supply disruption and financial demand is not.
+- **Copper:** about $14,800 a tonne (12 Oct; whether this is a record was not verified). LME stocks fell over the last month but are
+  up about 93 kt on the year (relayed by Grok). Managed money was flat end to end over 12 weeks (60,185 to 61,134 contracts) after
+  peaking at 82,522 on 22 Sep.
 
-*MEASURED positions, stocks and reported reserves. WGC estimates BOUNDED. The cause of the oil price is HYPOTHESIS.*
+*MEASURED positions, stocks and reported reserves. WGC estimates BOUNDED. The causes of the oil and gold moves are HYPOTHESIS.*
 
 ## What can be measured on free data, and how to measure change
 
@@ -88,7 +96,7 @@ shock.**
   - TIC records holdings by the custodian's residence and undercounts Cayman hedge funds by about $1.4trn.
   - Sources: Du, Forbes and Luzzetti 2024; Beltran and Li 2026; Barth et al. 2025; Judson and Kim 2026; Fang, Hardy and Lewis
     2023; BoJ 2026; BoE MPR 2025; Akkaya et al. 2024.
-- **FX.** Hedging, not an exit, is the best-supported reading of the April–May 2025 dollar fall (BIS Bulletin 105). The
+- **FX.** Hedging appears to have made an important contribution to the April–May 2025 dollar fall (BIS Bulletin 105; an earlier line here called it the best-supported reading and "not an exit", which overstated the BIS: C-136). The
   off-balance-sheet swap debt is of the order of the on-balance-sheet dollar debt (Borio, McCauley and McGuire 2022). Reserve
   diversification is real but slow, and gold's reserve share rose mostly through price (Arslanalp, Eichengreen and Simpson-Bell
   2022, 2025; Bertaut et al. 2025).
@@ -126,26 +134,33 @@ what to read, and verify every number it gives.
 2. **Weekly COT ledger for gold, WTI and copper: BUILT 12 Oct** (`bin/pull_cftc_cot.py`; `data/cftc_cot/`). Weekly from 2010, futures-only
    and combined, five classes. The long = short identity holds on all 5,250 rows (exact for futures-only, within rounding for
    combined). Positions and physical units are public; WTI dollars are public (EIA). Gold and copper dollar splits are local only
-   (sponsor price licences). Positions move with the same week's price but do not predict the next week (n=145): gold +0.30/−0.01,
-   WTI +0.38/−0.08, copper +0.60/−0.07. Since end-2023, almost all of the rise in managed money's gold exposure came from price on
-   contracts already held, not new buying.
+   (sponsor price licences). Positions move with the same week's price and show no detectable one-week lead (n=145): gold +0.30/−0.01,
+   WTI +0.38/−0.08, copper +0.60/−0.07. The test can detect correlations above about 0.16; the report is as of Tuesday and
+   published Friday, so a longer-horizon regression is the proper test (Grok K1). On the end-points, almost all of the rise in
+   managed money's gold exposure came from price on contracts already held; in between, funds built and sold about 113k contracts.
 3. **Gold tonnes ledger: BUILT 12 Oct** (`bin/build_gold_ledger.py`; `data/gold/`), monthly from 2019.
    - **Official sector:** IMF official gold for 142 reporters, carry-forward, with the IMF's own world change reproduced to
      under 0.01 t in 88 of 92 months. China per SAFE matches the IMF to the ounce.
    - **Reconciled each quarter:** against the WGC's free release tables.
    - **The first-pass framing is corrected:** the WGC-minus-IMF gap is volatile (see above).
-   - **ETFs:** GLD+IAU are about 36% of global ETF flows and are no proxy quarter by quarter.
-   - **Value:** 96% of the rise in official gold's value since end-2023 is price.
+   - **ETFs:** GLD+IAU's tonnage change is about 36% of the WGC's global ETF change on the ledger's basis, and no proxy quarter by
+     quarter (in 2026, UK-listed funds out-gathered North America, WGC).
+   - **Value:** about 96% of the rise in official gold's value since end-2023 is price, on IMF-reported tonnes. It excludes unreported
+     buying, and the share depends on how the price-quantity cross term is assigned.
    - **What is public:** IMF and SAFE series plus per-quarter cited aggregates. Sponsor daily and monthly series are local only
      (licences; the WGC allows limited extracts with citation).
 3b. **Crude physical ledger: BUILT 13 Oct** (`bin/build_crude_ledger.py`; `data/crude/`). US weekly since 2001 and world monthly (STEO).
    - **The weekly balance is asserted:** stock change = production + transfers + imports − exports + unaccounted − refinery input.
-     It closes within 11 thousand barrels on 508 of 509 weeks since 2017 (EIA added a transfers line in Nov 2023).
+     Our parse reproduces EIA's table arithmetic within 11 thousand barrels on 508 of 509 weeks since 2017 (EIA added a transfers
+     line in Nov 2023). EIA's adjustment line is its balancing item, so this checks our parsing, not the data (Grok K1).
    - **2026 to date (40 weeks):**
      - the Strategic Petroleum Reserve fell 130.2 mb, about $12.0bn at weekly WTI spot;
      - commercial stocks were roughly flat (+1.2 mb);
      - the world drew 424 mb (Jan–Sep, STEO), after building 688 mb in 2025.
-     So the price rise ran with large stock draws: a physical squeeze, not financial inflow.
+     So the price rise ran with large stock draws, while funds added futures length (C-142); the attribution is HYPOTHESIS.
+     Outside counts point the same way on the draw, not on its size: the IEA's observed global stocks fell 507 mb over Feb–Aug, while
+     OPEC's OECD commercial stocks rose 36.6 mb in August, and IEA members released about 325 mb under the March collective action
+     (all relayed by Grok, not re-read).
    - **No free futures curve:** EIA's NYMEX series ends Apr 2024.
    - **EIA's Brent print of 2 Oct is a data error, not a market price** (Grok check, 13 Oct). EIA showed $135.5, then about $125.5;
      ICE front-month Brent settled about $102, and Kalshi's weekly contract priced Brent near $100. Brent-priced ledger columns from
@@ -157,7 +172,75 @@ what to read, and verify every number it gives.
    lead-lag test with bootstrap ranges.
 
 Open questions carried forward:
-- In 2026 the CFTC leveraged short fell while Form PF's net long rose. Why?
+- ~~In 2026 the CFTC leveraged short fell while Form PF's net long rose. Why?~~ Mis-posed; resolved 13 Oct, see "The levered bid,
+  re-read" below.
 - Did Japan's intervention fund the official bill sales?
 - How large is unreported central-bank gold buying?
 - What is the hedged share of foreign demand?
+
+## The levered bid, re-read (13 Oct)
+
+The two measures do not conflict. OFR's Form PF Treasury exposures "include both cash securities and derivatives, such as Treasury
+futures" (OFR chart notes, re-read by the supervisor). So a smaller futures short *raises* Form PF's net long by construction.
+Quarter by quarter, the supervisor's computation from the CFTC file on disk (six contracts, face value) and OFR's API:
+
+| Date | CFTC leveraged-fund net | CFTC leveraged-fund short | CFTC asset-manager net | Form PF long | Form PF short | Form PF net |
+|---|---:|---:|---:|---:|---:|---:|
+| 30 Dec 2025 | −$1,154bn | $1,400bn | +$1,253bn | $2,465bn | $1,645bn | $820bn |
+| 31 Mar 2026 | −$1,020bn | $1,234bn | +$1,231bn | $2,359bn | $1,568bn | $791bn |
+| 30 Jun 2026 | −$918bn | $1,124bn | +$1,156bn | $2,362bn | $1,498bn | $864bn |
+| 29 Sep 2026 | −$774bn | $1,079bn | +$1,087bn | (due about late Nov) | | |
+
+- **Q1 2026:** both legs of the basis shrank. The Form PF long fell $106bn and its short $77bn, while the futures short fell $165bn.
+- **Q2 2026:** the Form PF long held while its short fell $70bn, against $110bn on the CFTC. That is why its net rose.
+- **The futures short shrank inside the Form PF window.** So "different dates" is not the explanation (Grok K6's explanation 2
+  fails on this test).
+- **Asset managers' net futures long fell with the leveraged short** ($1,253bn to $1,087bn), the pattern of a basis unwind rather than
+  a trend-follower covering (K6's test).
+- **Open:** whether the Q2 long held because funds swapped their futures hedge for a pay-fixed swap (the swap-spread trade, which
+  Form PF does not count as a Treasury short; BIS, Dec 2025). The test is OFR's interest-rate-derivatives aggregate for the same
+  quarters: it should turn more pay-fixed if so. The magnitudes differ because the populations differ: CFTC leveraged funds include
+  trend-followers and exclude basis funds classed as asset managers, and Form PF covers qualifying hedge funds only.
+- **Grade:** the alignment is MEASURED; the unwind reading and the swap substitution are HYPOTHESIS.
+
+## Grok's source hunt, 13 Oct: what it adds
+
+Six research parcels went to Grok in Cursor; the full returns and the URLs it fetched are in
+[`_research/2026-10-13-Grok-Wave-Reviews-Return.md`](_research/2026-10-13-Grok-Wave-Reviews-Return.md). One figure from each was
+checked at source by the supervisor, and all matched except the PNC catalogue, which would not download.
+
+- **Hedge ratios: no single number exists.** The published ratios cover identifiable books, from about 20% to about 75%:
+  - Danish insurers and pensions, dollar book: 61.8% at the start of 2025, 73.5% at end-May, 72.2% at end-2025 (Nationalbanken;
+    the 61.8% to 73.5% re-read by the supervisor).
+  - Taiwan's life insurers: 66% to 50% over 2025 (regulator, via press).
+  - Japan's nine major life insurers: about 60% in 2021, 40% in 2024 (BIS reading of a BoJ chart).
+  - Australian superannuation: about one-fifth of overseas listed equity.
+  - Korea's NPS: a 0% target, with up to 10% allowed.
+
+  The Danish rise fits the BIS account of hedging in April–May 2025 (C-136); the Taiwanese and Japanese falls do not. Grok also
+  flags two BIS Quarterly Review figures (Dutch 30% to 25%, Danish 55% to 50%) that it could not match to the central-bank
+  releases. They stay unresolved.
+- **Unreported gold: the envelope moves.** The WGC's own residual (Metals Focus estimate minus IMF-reported buying) has the
+  following points:
+  - 2024: reported buying was 34% of total demand.
+  - 2025: unreported buying was 57% of 863t.
+  - Q1 2026: revised from 244t to 57t (re-read by the supervisor at gold.org).
+
+  The IMF (Oct 2025) says some central banks appear to hold new gold outside reported reserves. Our own ledger's finding that
+  the gap is volatile stands. A free cap on one channel exists:
+  - **Source:** HMRC's trade data (Open Government Licence) gives UK exports of 400-ounce bars to China, CN8 7108.12, in kilograms.
+  - **Status:** candidate build 7. A cap, not proof of the buyer.
+- **Term premia outside the US: confirmed absent.** No central bank publishes a maintained free series for JGBs, Bunds or gilts.
+  The ECB, BoE, Bundesbank and BIS publish charts or one-off articles. One researcher file exists for Japan: Nakajima's
+  shadow-rate decomposition, Jan 1995 to Sep 2026, revised each quarter. It is not the BoJ, and no open licence is stated.
+  - **Status:** candidate build 8, kept local; R3's "no free term premium" caveat stands for the euro area and the UK.
+- **Cross-currency basis: one free academic panel.** Du, Keerati and Schreger (V4, Oct 2025) is a daily panel, for researchers,
+  ending June 2025. There is no official basis series, so the FX lane can describe the basis to mid-2025 but not track it.
+- **Derivatives as a flow: volume only.** OCC and Cboe publish options volume free; the OCC's site terms ban robots and
+  commercial copying. There is no free dealer-gamma or 0DTE history. On average, the research finds 0DTE hedging dampens
+  volatility rather than amplifying it:
+  - Bank of Canada-affiliated authors (2026): volatility about 7% lower on 0DTE expiry days.
+  - Cboe-published study (2025): small effects.
+
+  The IMF (Apr 2026) links leveraged-ETF exposure to intraday volatility on stressed days only. The project's leveraged-ETF
+  rebalance estimate (DG, 15 Sep) still needs a dated AUM path.

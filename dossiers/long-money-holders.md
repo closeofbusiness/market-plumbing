@@ -6,7 +6,7 @@ The marginal buyer of equity, of duration, and of AI-related debt is long money 
 
 ## Status
 
-**Sized for AI-related debt. Open for duration and for commodity paper.** The equity holder table is a separate measurement and is mostly a wrapper-and-residual result. See the passive dossier.
+**Sized at sector level for corporate bonds; for the AI names, measured only for registered funds (one deal) and money funds (a name search), so HYPOTHESIS (C-139). Open for duration and for commodity paper.** The equity holder table is a separate measurement and is mostly a wrapper-and-residual result. See the passive dossier.
 
 ## Evidence
 
@@ -18,7 +18,8 @@ Pensions were net sellers of the equity instrument over 2024:Q1–2026:Q2 on dir
 
 ## What would change the conclusion
 
-A free census that puts a large share of the AI paper in cash pools or in leveraged holders. The next N-PORT pass is on the calendar (around 10 October 2026 for the 2026:Q3 bulk file). A duration holder table on the same basis does not exist yet.
+No free census allocates the 2026 hyperscaler deals by investor type; order books are published, allocations are not (Grok K4,
+13 Oct, in `_research/2026-10-13-Grok-Wave-Reviews-Return.md`). Insurer holdings by issuer (NAIC Schedule D) are not free. A free census that puts a large share of the AI paper in cash pools or in leveraged holders. The next N-PORT pass is on the calendar (around 10 October 2026 for the 2026:Q3 bulk file). A duration holder table on the same basis does not exist yet.
 
 ## Data used
 

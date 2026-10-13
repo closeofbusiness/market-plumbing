@@ -52,7 +52,7 @@ Values are hypotheses about the world even when the pull is exact. Bands are use
 | `abcp_outstanding_bn` | Fed Board CP release via the Data Download Program (SA; identical to FRED ABCOMP) | Weekly | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | shadow money |
 | `sofr_pct`, `sofr_p99_pct` | New York Fed markets API | Daily | Latest row in `data/series.tsv` (the 30 Sep quarter-end was pulled 3 Oct) | December quarter-end row in CALENDAR.tsv | shadow money, QE sentiment |
 | `stablecoin_total_outstanding_bn` | DeFiLlama free API | As pulled | 309.4 on 2026-08-29 | GENIUS rulemaking watch 2026-10-15 | shadow money |
-| `collateral_velocity_range` | N3v4 | Range, not a date | 1.3–1.5 | No official aggregate; FINRA SLATE public data 2027-03-29 | collateral |
+| `collateral_velocity_range` | N3v4 | Range, not a date | 1.3–2.0 (C-135) | No official aggregate; FINRA SLATE public data 2027-03-29 | collateral |
 
 ## Rates and cross-border measurements
 

@@ -206,6 +206,9 @@ sits below it.
 
 ## 8. Re-derivation under challenge (29 Aug) — the bracket position is signable, and the range was lazy
 
+> **[C-135, 13 Oct 2026: the velocity range below is not signed.** Repo borrowing exceeding the cash-like bucket does not show that the bucket is extra source collateral; if anything, repo collateral too large for that bucket sits in the securities bucket. On Form PF securities posted alone ($4.96trn, 2026Q1) plus the $1.6trn lending leg, velocity is about 1.98, which is Singh's figure. Carry about 1.3–2.0 until his source concept is known. Found by Grok's J4 review.]
+
+
 *The principal challenged §6's "the position is unidentified in 2026, so the range is the honest answer" as
 unscientific: the regime changes between the fitting window and today — end of ZIRP, Covid, the basis trade,
 the growth of the shadow system — are known mechanisms, and known mechanisms can SIGN a drift even when they

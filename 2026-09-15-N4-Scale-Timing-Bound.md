@@ -46,7 +46,7 @@ measured wholesale-repo leg is a **counterparty switch**, not new cash in the mo
 complex. (The same cash did not leave MMFs — N2bR already had this; the quarterly path now
 dates it to the compression year.)
 
-**Collateral re-use intensity: no.** Mechanism-signed velocity remains **≈1.3–1.5** against
+**Collateral re-use intensity: no.** Velocity **≈1.3–1.5** [C-135: unsigned, about 1.3–2.0] against
 Singh's ≈2.0 (C-061 range; the point estimate "1.5 and falling" is dead). Six-bank permitted-stock
 utilization was **83.2%** at Jun-2026 — nearly saturated on the measured hop (D10R). The
 growth in the pledged pool is more *source* collateral, not faster reuse (N3). The US-five

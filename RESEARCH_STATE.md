@@ -393,7 +393,7 @@ bound $631bn) drove hedge-fund Treasury growth after the basis trade stalled in 
 questions: persistence of the foreign equity bid; what draws the $987bn of undrawn NDFI revolvers.
 `2026-08-29-N2c-The-Funding-Closure.md` §7.
 
-**S-N3 (v3, 29 Aug 2026 — v2's symmetric range overturned by the principal's first-principles challenge; C-061 addendum; N3 doc §8).** *Corrected verdict: **velocity ≈1.3–1.5**, mechanism-signed (bracket-position floor 0.73: repo borrowing alone exceeds the cash-like bucket; downward wedges ≤$0.88trn sized from FICC PQD + ISDA); Singh's 2.0 is a conflicting direct measurement with a named ~$2.5–3trn reconciliation gap — askable of the author on LinkedIn.* Superseded v2 text follows: *The collateral leg grows by MORE
+**S-N3 (v3, 29 Aug 2026 — [C-135, 13 Oct: the signing step failed outside review; velocity is carried as about 1.3–2.0, unsigned] v2's symmetric range overturned by the principal's first-principles challenge; C-061 addendum; N3 doc §8).** *Corrected verdict: **velocity ≈1.3–1.5**, mechanism-signed (bracket-position floor 0.73: repo borrowing alone exceeds the cash-like bucket; downward wedges ≤$0.88trn sized from FICC PQD + ISDA); Singh's 2.0 is a conflicting direct measurement with a named ~$2.5–3trn reconciliation gap — askable of the author on LinkedIn.* Superseded v2 text follows: *The collateral leg grows by MORE
 SOURCE COLLATERAL, not faster re-use — and that mechanism claim survived external attack under every reading,
 including the reviewer's own alternative.* Velocity itself is now stated as a **range, not a point**: Singh
 (Risk.net, 12 Jan 2026 — **free**, read in full, archived; the Central Banking twin we had logged as paywalled)

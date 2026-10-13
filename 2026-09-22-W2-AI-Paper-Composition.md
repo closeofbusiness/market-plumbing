@@ -23,8 +23,9 @@
 
 ## Verdict
 
-**AI-company debt is held mainly by long money; bank credit is a real channel but smaller than its headline; money-market
-funds are negligible.** Three legs, each against JPMorgan analysts' ~$1.2trn estimate of AI-company-issued debt — an
+[**C-139**: the first leg is measured for corporate bonds as a class, not for the AI names, so for them it is a HYPOTHESIS; and the
+money-fund leg is a name-search floor, C-138.] **AI-company debt sits in a bond market held mainly by long money; bank credit is
+a real channel but smaller than its headline; money-market funds hold little that a name search finds.** Three legs, each against JPMorgan analysts' ~$1.2trn estimate of AI-company-issued debt — an
 estimate relayed by the Chicago Fed (Feb 2026), not a measurement of ours.
 
 | Leg | Size | Against ~$1.2trn | Grade |
@@ -44,10 +45,12 @@ figure. So credit to the build-out itself is **some smaller, unmeasured part of 
 Oracle/Vantage ($38bn, press-sourced) in their pre-distribution months (D2 §3).
 
 **Money-market funds** hold AI paper mostly as repo collateral, which finances **dealers' inventories of AI bonds**, not the
-companies. A complete money-fund withdrawal is bounded at ~$4bn. The "money-like leg" in the narrow sense the question
+companies. [**C-138**] A complete money-fund withdrawal would pull about $3.4bn of AI-name paper found by a July 2026 name search
+(about $4.25bn with Apple). The search is a floor, not a bound. The "money-like leg" in the narrow sense the question
 was first posed in is a rounding error; money creation in the sense the goal means is not.
 
-**Fragility.** An MMF run on AI paper is not a channel — it is bounded at ~$4bn. On the bank side the Chicago Fed puts
+**Fragility.** An MMF run on AI paper is not shown to be a channel: the holdings found are about $3.4bn,
+a floor from a name search (C-138). On the bank side the Chicago Fed puts
 outstanding AI-adjacent exposure at ~0.8% of bank total assets and ~9% of tier 1 capital on average, with delinquencies in
 line with the portfolio: modest on current data. The ~$300bn gap between commitments and outstanding is the one place
 drawdown could create deposits at speed — but it too is industry-wide, and whether it matters is the N2c §7 question on
@@ -96,7 +99,7 @@ The six AI-capex firms held ~**$630bn** cash and short-term investments at mid-2
 
 ## 5. How this sits with F1 / ANSWER §3a
 
-Hyperscaler **capex** is mostly self-funded from operating cash (five of six); the large financing stock that matters is **off-balance lease commitments**, not a money-fund bid for AI bonds. W2's holder picture is consistent with that: the bonds that do exist are long-money held; the money-like system is not the marginal buyer.
+Hyperscaler **capex** is mostly self-funded from operating cash (four of six on mid-2026 data; Amazon and Oracle fall short, C-134); the large financing stock that matters is **off-balance lease commitments**, not a money-fund bid for AI bonds. W2's holder picture is consistent with that: the bonds that do exist are long-money held; the money-like system is not the marginal buyer.
 
 ---
 

@@ -782,6 +782,176 @@ re-fetched TIC SLT Table 1.**
 
 ---
 
+## C-133 · "Net retirement came mostly through M&A, not buybacks"; "M&A more than accounts for" net retirement
+
+**Mine, in C-108's correct position (22 Sep), the ANSWER §2, the page and the passive-and-ETF dossier. Killed 13 Oct by Grok's J1 review (target H4); the supervisor re-summed the Fed's live EFA file.**
+
+- **Killed by:** `_research/2026-10-13-Grok-Wave-Reviews-Return.md` (J1, H4); Fed EFA quarterly CSV (vintage of 18 Sep 2026).
+- **What was wrong.** It attributes a net to one gross component. Over 2024:Q1–2026:Q2:
+  - gross retirement was $2,979.4bn: repurchases $1,934.6bn (65%) and M&A $1,044.8bn (35%);
+  - gross issuance was $2,427.4bn, offsetting 81.5% of retirement;
+  - the net is −$552.1bn.
+  M&A exceeds the net, but so do buybacks. "Mostly through M&A, not buybacks" reverses the gross picture.
+- **Correct position.** Operating companies retired equity on net. Gross retirement was mostly buybacks. Gross issuance is not on
+  the same basis (it includes private placements; repurchases are public firms only, C-108), so "offset" comparisons are avoided.
+  No single channel accounts for the net.
+- **Still standing at:** nowhere live; the ANSWER, the page and the dossier were corrected in place. C-108's own entry carries this
+  narrowing. *Update, 13 Oct:* the pre-publish page audit found the killed wording still live in a figure caption and a chart label
+  ("mostly through cash acquisitions"); both corrected, and that wording is now banned. The 18 Sep EFA vintage is saved at
+  `data/vintages/efa/2026-09-18-equity-issuance-retirement-quarterly-historical.csv` and reproduces every figure above.
+
+---
+
+## C-134 · "Five of six hyperscalers out-earn their capex; only Oracle cannot (about $35bn)"
+
+**Mine, in the ANSWER (one-paragraph answer and §3a), the page, W2 and the AI-funding dossier. The F1 funding table's own figures contradict it. Found 13 Oct by Grok's J3 review (target A1).**
+
+- **Killed by:** `2026-09-12-F1-Funding-Table.md` (Amazon: capex 173.0, operating cash 161.4, twelve months to 30 Jun 2026);
+  Amazon's Q2 2026 earnings exhibit (free cash flow −$7.6bn).
+- **What was wrong.** On mid-2026 trailing data, Amazon's operating cash flow ($161.4bn) is below its capex ($173.0bn). The count is
+  four of six (Alphabet, Meta, Microsoft, NVIDIA). Oracle's gap is $28.8bn on operating cash ($46.9bn against $75.7bn); the "about
+  $35bn" is its internal-cash measure ($40.8bn against $75.7bn).
+- **Correct position.** Four of the six firms in the funding table out-earn their capex. Amazon falls short by about $12bn and Oracle
+  by about $29bn (operating-cash basis). The build-out is still mostly self-funded in aggregate; the real financing is off balance
+  sheet. *Narrowed 13 Oct by the pre-publish page audit:* NVIDIA's capex is $7.4bn, so it is not a large spender. Among the five
+  large spenders the count is **three of five** (Alphabet, Meta, Microsoft). The twelve-month windows end June to August 2026 by
+  company.
+- **Still standing at:** nowhere live; corrected in place.
+
+---
+
+## C-135 · "Collateral velocity about 1.3–1.5, mechanism-signed; Singh's 2.0 is in open conflict with the signed proxies"
+
+**Mine, in N3 §8 (29 Aug, under the principal's challenge), N3v4, N4, RESEARCH_STATE S-N3, the collateral dossier and the monitor. Killed 13 Oct by Grok's J4 review (targets V3, V4); the supervisor re-read N3 §8 and accepts the logic.**
+
+- **Killed by:** `_research/2026-10-13-Grok-Wave-Reviews-Return.md` (J4); the OFR's Form PF collateral and repo series; the OFR
+  hedge-fund chart note on repo collateral.
+- **What was wrong.** The signing step reasons: repo borrowing ($3.24trn) exceeds the cash-like bucket ($2.92trn), so the bucket
+  cannot be mostly cash, so most of it is source collateral. That does not follow. Repo borrowing is cash borrowed against
+  securities. If repo collateral is too large to fit in the cash-like bucket, it sits in the securities bucket. The inequality does
+  not show that the bucket adds source collateral on top of securities. Velocity under the two readings:
+  - Form PF securities posted alone ($4.956trn, 2026Q1) plus the $1.6trn lending leg gives about 1.98, Singh's own figure;
+  - treating most of the bracket as source gives 1.30–1.46.
+- **Correct position.** Velocity is about 1.3–2.0, unsigned. It depends on how Form PF's cash-like bucket (and Singh's source
+  concept) treats Treasuries posted as collateral. Singh's 2.0 is consistent with the securities-only reading; it is not in conflict
+  with public data. The mechanism finding that sources grew about threefold while re-use did not intensify does not depend on
+  the level and stands.
+- **Still standing at:** N3 and N3v4, bannered; N4, RESEARCH_STATE, the dossier and the monitor corrected. The Singh calendar row
+  (16 Nov) is rewritten: ask the question; do not assert a conflict.
+
+---
+
+## C-136 · "Hedging, not an exit, is the best-supported reading of the April–May 2025 dollar fall (BIS Bulletin 105)"
+
+**Mine, in the E-021 map (12 Oct). Killed 13 Oct by Grok's J2 review (target R8).**
+
+- **What was wrong.** BIS Bulletin 105 says hedging "appears to have made an important contribution". It does not rank it as the
+  best explanation, and its key takeaways do not say the move was "not an exit".
+- **Correct position.** Hedging by non-US holders appears to have contributed importantly (BIS); the relative weight of hedging and
+  selling is not established.
+- **Still standing at:** nowhere live; the E-021 map is corrected.
+
+---
+
+## C-137 · "Earnings did most of the work (71–82% of the 2024–26 gain)"
+
+**Mine, in the Bassman comparison note (12 Oct, claim 11). Found 13 Oct by Grok's J1 review (target H1), which reproduced the
+71.0% and 82.3% only on the Dec 2014 start.**
+
+- **What was wrong.** The 71.0–82.3% earnings share is measured from December 2014 (P2a's two cumulative rows). It is not the
+  share of the 2024–26 gain. The ANSWER and the page say "since 2015" or give the endpoints only; the Bassman note gave the wrong
+  window. The supervisor's claims file sent to Grok repeated the error.
+- **Correct position.** 71.0% to Dec 2025 and 82.3% to Jun 2026, both from Dec 2014. Over Dec 2023 to Jun 2026, earnings are about
+  **92.4%** of the log price gain (P 4,685.05 to 7,450.03; E 192.43 to 295.39; `_research/2026-09-12-P2c-monthly_series.csv`,
+  re-derived by the supervisor). A higher in-window share strengthens, not weakens, the note's verdict on claim 11.
+- **Still standing at:** nowhere live; the Bassman note is corrected, and the ANSWER now names the start date and the in-window
+  figure.
+
+
+---
+
+## C-138 · "A complete money-fund withdrawal is bounded at ~$4bn"; "money funds hold at least about $4bn" of AI paper
+
+**Mine, in W2 (22 Sep), the ANSWER §3a and the page; the "at least" wording was added 13 Oct and caught the same day by the
+pre-publish page audit (Sonnet).**
+
+- **What was wrong.** The ~$4bn is D2's July 2026 money-fund name search (direct $0.26bn plus repo collateral $3.99bn). D2 calls it
+  a floor, because subsidiaries and SPVs can escape the name strings, so it bounds nothing from above, and W2's "bounded at" read it
+  as a ceiling. It also includes Apple ($0.154bn of commercial paper and $0.665bn as collateral), which is not an AI spender, so
+  "at least about $4bn" of AI paper was not shown either.
+- **Correct position.** Under AI names the search finds about $3.4bn (about $4.25bn with Apple), mostly as repo collateral that
+  finances dealers. It is a floor for the names searched; the true holding is unmeasured above it.
+- **Still standing at:** nowhere live; W2, the ANSWER, the page and CLAUDE.md's read table are corrected.
+
+---
+
+## C-139 · "AI debt is held mainly by long money" graded Measured
+
+**Mine, on the page (the claims ledger row and two summaries), condensed from W2 (22 Sep), which itself said "MEASURED at sector
+level; AI names are not a separate Z.1 line". Found 13 Oct by Grok's K4 source hunt, which found no free allocation or holder census
+for the 2026 hyperscaler deals.**
+
+- **What was wrong.** Corporate bonds as a class are held mostly by insurers, pensions, funds and foreign investors (Z.1, sector
+  level). For the AI names themselves, the free measurements cover only two holder groups:
+  - registered funds hold 36% of one deal (Beignet, $27bn), from N-PORT;
+  - money funds hold about $3.4bn on a name search (C-138).
+  Insurer holdings by issuer (NAIC Schedule D) are not free, and the 2026 deals publish order books, not allocations. A sector-level
+  measurement was presented as a measurement of the AI names.
+- **Correct position.** The AI debt sits in a bond market held mainly by long money; for the AI names this is HYPOTHESIS, consistent
+  with the sector picture and the two security-level counts. Grok's own verdict ("untestable on free data") goes too far: N-PORT
+  can count registered funds by security, and the next pass can be run on the 2026 hyperscaler CUSIPs.
+- **Still standing at:** nowhere live; the page, the ANSWER, W2, both dossiers and CLAUDE.md's read table are corrected.
+
+---
+
+## C-140 · Bassman claim 6 ("insurers and pensions are running out of gas") graded CONTRADICTED
+
+**Mine, in the Bassman comparison note (12 Oct). Found 13 Oct by Grok's K2 review ("too harsh"); the supervisor re-summed Z.1 F.3.2.**
+
+- **What was wrong.** The verdict rested on the all-sector total: insurers and pensions bought $205bn of Treasuries in the year to
+  2026Q2. Most of that is buyers the claim is not about:
+  - defined-contribution plans, +$61.3bn;
+  - state and local pensions, +$71.6bn;
+  - property-casualty insurers, mostly bills (+$30.6bn of $40.0bn).
+  The liability-matching long-end buyers he means were weak: private defined-benefit plans sold $2.7bn, and life insurers bought
+  $28.2bn of notes and bonds.
+- **Correct position.** PARTLY. The all-sector total rose, but the liability-matching buyers were weak; the 30-year itself is
+  untested on free data.
+- **Still standing at:** nowhere live; the Bassman note is corrected. The page does not carry this verdict.
+
+---
+
+## C-141 · "Gold's money came from official and household buyers and global ETFs, not from futures"
+
+**Mine, in the E-021 map's commodities headline (12 Oct) and on the page. Killed 13 Oct by Grok's K1 review (C2); the supervisor
+re-read the group nets from `data/cftc_cot/gold_ledger.csv`.**
+
+- **What was wrong.** It rested on one futures group: managed money's net long, which ended where it began (106,454 to 110,987
+  contracts) after a round trip to 219,029 in Sep 2024. Other COMEX groups moved: swap dealers' net short deepened by 37,694 contracts
+  (about 117 t), so other futures holders added net length, and producers covered 25,512. The COT covers US reportable positions
+  only; Shanghai, OTC forwards and Asian ETFs are outside it. The sentence also attributed the price rise to buyers, which the
+  programme grades as HYPOTHESIS without a test.
+- **Correct position.** Gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length
+  ended where it began. The sources of the price rise are not attributed.
+- **Still standing at:** nowhere live; the E-021 map, the page and the commodities dossier are corrected.
+
+---
+
+## C-142 · "Over the whole rise, fund length did not grow (107k at end-2023, 54k now)"; oil was "a physical squeeze, not financial inflow"
+
+**Mine, in the E-021 map (12–13 Oct), the crude ledger's summary and the Bassman note (claim 15). Killed 13 Oct by Grok's K1 review
+(C7, C8); the supervisor re-read `data/cftc_cot/wti_ledger.csv`. The earlier Grok check of 13 Oct had already flagged net length of
+70–112k contracts through Apr–Sep, and the supervisor kept the end-2023 comparison anyway.**
+
+- **What was wrong.** The price rise was 2026 ($60 to $97), and over it managed money's WTI net long rose from 15,743 contracts
+  (30 Dec 2025, $57.79) to 111,731 (8 Sep 2026, $94.21) before halving to 53,598 by 6 Oct. Comparing end-2023 with now hid that
+  build. Stock draws plus one fund category cannot show "not financial inflow".
+- **Correct position.** The rise ran with large measured stock draws (SPR −130 mb, world about −424 mb Jan–Sep on STEO), while funds
+  added futures length on the way up and cut it in the last four weeks. How the rise splits between supply disruption and financial
+  demand is HYPOTHESIS.
+- **Still standing at:** nowhere live; the E-021 map, the page, the commodities dossier and the Bassman note are corrected.
+---
+
 ## C-132 · "+$15.57trn of FX-swap dollar debt in H1 2025, the largest jump in the series"
 
 **Mine, in `2026-08-21-Offshore-Dollar-And-Money-Like.md` (§1.5) and the N2a notes. Found 12 Oct by the E-021 FX agent from the BIS
@@ -1120,6 +1290,7 @@ OTC derivatives data (`WS_OTC_DERIV2`).**
 - **Correct position, and it is STRONGER than what it replaces.** Drop the decade aggregate and use the window the claim is about. On **2024:Q1–2026:Q1** (9 quarters, all EFA covers): gross issuance $1,856.61bn, repurchases $1,677.73bn, **M&A retirement $858.00bn against net retirement $679.13bn = 126.3%**. M&A more than accounts for net retirement on the actual window. That is better evidence for "predominantly M&A" than the decade figure ever was, and it was sitting in the same file.
 - **Update, 9 Oct 2026: the Fed revised the EFA on 18 Sep.** On the revised file, 2024:Q1–2026:Q1 M&A retirement is $911.3bn against net retirement of $704.0bn (129.4%, was 126.3%); 2026:Q1 net issuance is +$45.35bn (was +$25.20bn), gross $424.55bn. The conclusion is unchanged and slightly stronger. Re-fetched by the supervisor from federalreserve.gov.
 - **Update, 11 Oct 2026 (R4R):** the EFA now carries 2026Q2. Over 2024:Q1–2026:Q2, M&A retirement is $1,044.8bn against net retirement of $552.1bn (189%): stronger still. Net issuance turned positive in 2026 (+$45.35bn Q1, +$151.95bn Q2), so the window's net retirement is shrinking.
+- **Narrowed 13 Oct 2026 by C-133:** "M&A more than accounts for the net" is arithmetic, not attribution. Gross retirement was 65% buybacks; read C-133.
 - **Still standing at:** `2026-09-17-ANSWER` §2, rewritten in place.
 
 ---
@@ -2227,4 +2398,19 @@ C-129	2[.]2.{0,3}2[.]8.{0,40}pre-March-2020
 C-130	stable.{0,20}offset
 C-130	fall of 0[.]11 ?pp
 C-132	15[.]57.{0,60}largest in the series
+C-133	Net retirement came mostly through M&A
+C-133	net retirement is predominantly M&A
+C-134	five of six hyperscalers
+C-136	Hedging, not an exit, is the best-supported
+C-137	of the 2024–26 gain
+C-133	mostly through cash acquisitions
+C-134	four of six large AI spenders
+C-138	bounded at ~\$4bn
+C-138	at least about \$4bn
+C-139	is held mainly by long money
+C-140	CONTRADICTED for US dollars across all maturities
+C-141	not from futures
+C-141	rather than futures
+C-142	not financial inflow
+C-142	fund length was net long but did not grow
 ```
