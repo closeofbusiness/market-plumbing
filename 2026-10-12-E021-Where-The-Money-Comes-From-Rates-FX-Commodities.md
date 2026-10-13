@@ -135,6 +135,17 @@ what to read, and verify every number it gives.
    - **Value:** 96% of the rise in official gold's value since end-2023 is price.
    - **What is public:** IMF and SAFE series plus per-quarter cited aggregates. Sponsor daily and monthly series are local only
      (licences; the WGC allows limited extracts with citation).
+3b. **Crude physical ledger: BUILT 13 Oct** (`bin/build_crude_ledger.py`; `data/crude/`). US weekly since 2001 and world monthly (STEO).
+   - **The weekly balance is asserted:** stock change = production + transfers + imports − exports + unaccounted − refinery input.
+     It closes within 11 thousand barrels on 508 of 509 weeks since 2017 (EIA added a transfers line in Nov 2023).
+   - **2026 to date (40 weeks):**
+     - the Strategic Petroleum Reserve fell 130.2 mb, about $12.0bn at weekly WTI spot;
+     - commercial stocks were roughly flat (+1.2 mb);
+     - the world drew 424 mb (Jan–Sep, STEO), after building 688 mb in 2025.
+     So the price rise ran with large stock draws: a physical squeeze, not financial inflow.
+   - **No free futures curve:** EIA's NYMEX series ends Apr 2024.
+   - **An open data anomaly:** EIA's Brent print jumped $114.8 → $135.5 on 2 Oct, a Brent–WTI spread of $37.6, a record outside
+     2020. It persisted for three prints. It is unverified as a market price and has not been adjusted.
 4. **Primary-market duration by investor class** (rates): R2's pricing applied to Treasury's investor-class allotments, to get
    10-year equivalents taken at auction per class.
 5. **A like-for-like FX-swap dollar-debt tracker:** the same half-year each year. The end-June 2026 BIS print is due in November.

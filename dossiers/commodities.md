@@ -9,6 +9,7 @@ commodity work before 12 Oct; FX and commodities were parked by E-019 and taken 
 - **COT ledger built 12 Oct:** `bin/pull_cftc_cot.py`, outputs in `data/cftc_cot/` and `data/history/cftc_cot_*` (weekly row in CALENDAR.tsv).
 - **Gold tonnes ledger built 12 Oct:** `bin/build_gold_ledger.py`, outputs in `data/gold/`. The IMF-reported official buying
   against the WGC estimate is a volatile gap, not a stable unreported-buying signal.
-- **Next build:** a crude physical ledger.
+- **Crude physical ledger built 13 Oct:** `bin/build_crude_ledger.py`, outputs in `data/crude/`. US weekly balance asserted;
+  SPR −130 mb in 2026; world draw 424 mb Jan–Sep (STEO). EIA's Brent print of 2 Oct is an unverified anomaly.
 - **Free-data gaps:** commodity index investment (CFTC discontinued it in 2015), the WTI futures curve (EIA series ends Apr 2024),
   unreported central-bank gold buying.
