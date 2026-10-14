@@ -43,6 +43,13 @@ for profit; DISCLAIMER.md now says so, and keeps the route for a rights-holder t
 ruling covers the files already in the manifest. It does not lift the standing rules on what stays private: paywalled originals,
 correspondence, personal data, and the sponsor series kept local under their licences (GLD, IAU, LBMA, WGC, LME mirrors).
 
+Confirmed the same day, when the supervisor asked whether the ruling reached further:
+
+> *"Yes, agree licensed stuff stays off, as does paywall stuff"*
+
+So licensed third-party material and paywalled material stay out of the public repository; the ruling keeps only what is already
+committed.
+
 ---
 
 ## E-022 · 14 October 2026 — the page is the authoritative overview; the answer note is the evidence behind it
