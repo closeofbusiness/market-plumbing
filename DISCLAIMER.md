@@ -18,7 +18,7 @@ Free public source data can be revised, delayed or wrong. Figures are as at stat
 
 ## Third parties and licence
 
-Third-party data, text, names and trademarks belong to their owners and keep their own terms, outside CC BY 4.0. Some third-party files are included so results can be rebuilt; [data/THIRD_PARTY_MANIFEST.tsv](data/THIRD_PARTY_MANIFEST.tsv) lists them and what is known of their terms. Naming anyone implies no affiliation or endorsement.
+Third-party data, text, names and trademarks belong to their owners and keep their own terms, outside CC BY 4.0. This is a non-commercial, not-for-profit project. Some third-party files are included so results can be rebuilt and checked; [data/THIRD_PARTY_MANIFEST.tsv](data/THIRD_PARTY_MANIFEST.tsv) lists them and what is known of their terms. Naming anyone implies no affiliation or endorsement.
 
 The repository's own write-ups are © closeofbusiness under CC BY 4.0, whose disclaimer of warranties and limitation of liability also applies. It gives no right to suggest endorsement by closeofbusiness or the author.
 

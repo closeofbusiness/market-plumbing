@@ -30,6 +30,21 @@ principal and append a new entry.
 
 ---
 
+## E-023 · 14 October 2026 — committed third-party files stay; the project is not for profit
+
+Given after the supervisor reported that about a hundred third-party files are committed (listed in
+`data/THIRD_PARTY_MANIFEST.tsv`), some with terms never read (GPIF and NBIM tables, a New York Fed staff report PDF), and asked
+whether they should stay or move to the private companion.
+
+> *"We keep them committed, this is non for profit"*
+
+**Reading notes.** The files already committed stay where they are. The ground given is that the project is non-commercial and not
+for profit; DISCLAIMER.md now says so, and keeps the route for a rights-holder to ask for removal through a repository issue. The
+ruling covers the files already in the manifest. It does not lift the standing rules on what stays private: paywalled originals,
+correspondence, personal data, and the sponsor series kept local under their licences (GLD, IAU, LBMA, WGC, LME mirrors).
+
+---
+
 ## E-022 · 14 October 2026 — the page is the authoritative overview; the answer note is the evidence behind it
 
 Given in two messages, after the principal asked whether the answer note was still up to date and the supervisor found that it had
