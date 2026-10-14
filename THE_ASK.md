@@ -30,6 +30,26 @@ principal and append a new entry.
 
 ---
 
+## E-024 · 14 October 2026 — script the DTCC swap tape despite its site terms; derived figures only, non-commercial
+
+Given after the supervisor reported that DTCC's website terms forbid automated extraction ("you may not use any automated device
+… to mine or systematically scrape or extract data from the DTCC Site") and republishing its content, while the swap data
+itself is public under CFTC rules. The supervisor offered three options for the swap-tape ledger: (a) script the downloads anyway,
+non-commercial, publishing derived medians only and citing DTCC, against DTCC's stated terms; (b) the principal downloads a
+handful of dated files by hand and the outputs stay local; (c) drop the ledger. The supervisor recommended (b).
+
+> *"(a)"*
+
+**Reading notes.** The principal chose to script the DTCC public price dissemination (PPD) cumulative files despite the terms.
+The ruling covers the swap-tape ledger (Grok g4 item 3) only. Its conditions are the ones stated in option (a). The use is
+non-commercial. No raw DTCC file or row is committed or redistributed; only derived statistics (medians, quartiles, counts) are
+published, and they cite DTCC. The supervisor adds two conditions as practice, not as the principal's words: requests are
+sequential and paced, and carry the neutral project User-Agent; and any technical refusal (a block, a rate limit, a login) ends
+the run rather than being routed around. The ruling does not extend to ICE's Brent COT files, whose terms forbid robots on the
+same grounds. That question was raised in the same message and was not answered.
+
+---
+
 ## E-023 · 14 October 2026 — committed third-party files stay; the project is not for profit
 
 Given after the supervisor reported that about a hundred third-party files are committed (listed in
