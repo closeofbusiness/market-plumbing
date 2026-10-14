@@ -1,0 +1,12 @@
+FU554090005.Q	Closed-end funds; total financial assets 	Line 1	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554022005.Q	Closed-end funds; debt securities; asset	Line 2	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU553061103.Q	Closed-end funds; Treasury securities; asset	Line 3	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU553062003.Q	Closed-end funds; municipal securities; asset	Line 4	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU553063003.Q	Closed-end funds; corporate and foreign bonds; asset	Line 5	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU553064103.Q	Closed-end funds; corporate equities; asset	Line 6	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554090005.Q	Closed-end funds; total financial assets 	Line 7	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554091603.Q	Closed-end funds; total financial assets in domestic equity funds 	Line 8	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554092603.Q	Closed-end funds; total financial assets in world equity funds 	Line 9	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554091303.Q	Closed-end funds; total financial assets in domestic taxable bond funds 	Line 10	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554091203.Q	Closed-end funds; total financial assets in municipal bond funds 	Line 11	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted
+FU554092303.Q	Closed-end funds; total financial assets in world bond funds 	Line 12	S124.2.t Closed-end funds	Millions of dollars; transactions, not seasonally adjusted

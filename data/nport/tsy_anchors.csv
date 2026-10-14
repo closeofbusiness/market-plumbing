@@ -1,0 +1,55 @@
+anchor_id,scope,key,value,tolerance,source
+A001,2024q1,zip_sha256,7f391a05a71cec3fde5ce382e8ca8af9b11606ae85c465f99d98846e2d695254,exact,"[S] spec 14 Oct 2026, check C1"
+A002,2024q2,zip_sha256,N/A (no anchor),,
+A003,2024q3,zip_sha256,N/A (no anchor),,
+A004,2024q4,zip_sha256,N/A (no anchor),,
+A005,2025q1,zip_sha256,N/A (no anchor),,
+A006,2025q2,zip_sha256,N/A (no anchor),,
+A007,2025q3,zip_sha256,N/A (no anchor),,
+A008,2025q4,zip_sha256,N/A (no anchor),,
+A009,2026q1,zip_sha256,N/A (no anchor),,
+A010,2026q2,zip_sha256,077cc836a978a593b29012219395fbe9c303d5e930f5be3b5f4353c3b02296fc,exact,committed census stats (data/nport/nport_2026Q2_file_stats.csv)
+A011,2026q3,zip_sha256,2f5ee059234d2e28f16d0451d9fcb405aab3dad5d92cded74c8ea9ffc4b66c38,exact,"[S] spec 14 Oct 2026, check C1"
+A012,2024q1,filings_total,12576,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A013,2024q1,report_date:2023-12-31,5602,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A014,2024q1,report_date:2023-12-29,838,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A015,2024q2,filings_total,N/A (no anchor),,
+A016,2024q3,filings_total,N/A (no anchor),,
+A017,2024q4,filings_total,N/A (no anchor),,
+A018,2025q1,filings_total,N/A (no anchor),,
+A019,2025q2,filings_total,N/A (no anchor),,
+A020,2025q3,filings_total,N/A (no anchor),,
+A021,2025q4,filings_total,N/A (no anchor),,
+A022,2026q1,filings_total,N/A (no anchor),,
+A023,2026q2,filings_total,N/A (no anchor),,
+A024,2026q3,filings_total,14066,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A025,2026q3,report_date:2026-06-30,7063,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A026,2026q3,report_date:2026-07-31,4195,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A027,2026q3,report_date:2026-05-31,2516,exact,"[S] spec 14 Oct 2026, checks C3/C4 (SUBMISSION.tsv)"
+A028,2023Q4,matched_funds,12126,exact,"[S] spec 14 Oct 2026, check C5 (matched vintage, section 3.1 rule, no ISIN recovery)"
+A029,2023Q4,matched_value_bn,1776.0,0.1,"[S] spec 14 Oct 2026, check C5"
+A030,2024Q1,matched_funds,N/A (no anchor),,
+A031,2024Q1,matched_value_bn,N/A (no anchor),,
+A032,2024Q2,matched_funds,N/A (no anchor),,
+A033,2024Q2,matched_value_bn,N/A (no anchor),,
+A034,2024Q3,matched_funds,N/A (no anchor),,
+A035,2024Q3,matched_value_bn,N/A (no anchor),,
+A036,2024Q4,matched_funds,N/A (no anchor),,
+A037,2024Q4,matched_value_bn,N/A (no anchor),,
+A038,2025Q1,matched_funds,N/A (no anchor),,
+A039,2025Q1,matched_value_bn,N/A (no anchor),,
+A040,2025Q2,matched_funds,N/A (no anchor),,
+A041,2025Q2,matched_value_bn,N/A (no anchor),,
+A042,2025Q3,matched_funds,N/A (no anchor),,
+A043,2025Q3,matched_value_bn,N/A (no anchor),,
+A044,2025Q4,matched_funds,N/A (no anchor),,
+A045,2025Q4,matched_value_bn,N/A (no anchor),,
+A046,2026Q1,matched_funds,N/A (no anchor),,
+A047,2026Q1,matched_value_bn,N/A (no anchor),,
+A048,2026Q2,matched_funds_min,13907,exact,"[S] spec 14 Oct 2026, check C6"
+A049,2026Q2,matched_funds_max,13910,exact,"[S]/[L] spec 14 Oct 2026, check C6 (range allows 3 early-May filings)"
+A050,2026Q2,matched_value_bn,2596.4,0.5,"[S] spec 14 Oct 2026, check C6"
+A051,ALL,d10_fixed,8.2233,0.0001,"[S] spec 14 Oct 2026, check C9"
+A052,ALL,factor_10y,1.0000,0.0001,"[S] spec 14 Oct 2026, check C9"
+A053,ALL,factor_2y,0.2309,0.0001,"[S] spec 14 Oct 2026, check C9"
+A054,ALL,factor_30y,2.1059,0.0001,"[S] spec 14 Oct 2026, check C9"

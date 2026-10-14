@@ -1,0 +1,51 @@
+key,value
+scope,cash Treasuries only
+population,"registered funds filing Form N-PORT (mutual funds, ETFs, closed-end and interval funds); money market funds (Form N-MFP) and every other holder are outside S"
+basis,"10-year equivalents at the fixed end-2023 curve (R2 public_10yeq_fixed_bn), line by line"
+period,2023Q4 (2023-12-31) to 2026Q2 (2026-06-30)
+p_start_bn,9539.1
+p_end_bn,12757.4
+delta_p_bn,3218.3
+line_first_order_bn,460.0
+line_first_order_note,one-seventh of delta_p = 459.76; the item's rounder $500bn is printed beside it and does not decide
+line_item_round_bn,500.0
+line_bystander_bn,100.0
+lines_source,"E-021 item 7 research item of 14 Oct 2026, written before any N-PORT file was opened"
+disclosure,the spec author and a reviewer saw provisional numbers before the build; the dollar lines predate both
+measured_arm,"N-PORT's own lines, base vintage (variant M0)"
+measured_s_start_bn,1387.745524
+measured_s_end_bn,1936.986234
+measured_ds_bn,549.24071
+measured_r,0.170662
+measured_s0,0.14548
+measured_excess_pp,2.518204
+measured_excess_bn,81.043352
+measured_label,FIRST-ORDER SINK
+z1scaled_arm,Z.1-scaled: the band over P1 and P2
+z1scaled_p1_s_start_bn,1453.292146
+z1scaled_p1_s_end_bn,1903.026948
+z1scaled_p1_ds_bn,449.734802
+z1scaled_p1_r,0.139743
+z1scaled_p1_s0,0.152351
+z1scaled_p1_excess_pp,-1.260811
+z1scaled_p1_excess_bn,-40.576665
+z1scaled_p2_s_start_bn,1453.753251
+z1scaled_p2_s_end_bn,1903.417045
+z1scaled_p2_ds_bn,449.663793
+z1scaled_p2_r,0.139721
+z1scaled_p2_s0,0.152399
+z1scaled_p2_excess_pp,-1.267851
+z1scaled_p2_excess_bn,-40.803241
+z1scaled_band_lo_bn,449.663793
+z1scaled_band_hi_bn,449.734802
+z1scaled_margin_to_first_order_line_bn,-10.336207
+z1scaled_label,PARTICIPANT
+verdict,NOT ESTABLISHED
+verdict_note,"the arms give different labels, so the published verdict is NOT ESTABLISHED; both rows are printed"
+excess_over_pro_rata,sign not established (the arms differ)
+sensitivity_M1_label,FIRST-ORDER SINK
+sensitivity_M1_ds_bn,568.312733
+sensitivity_M8_label,FIRST-ORDER SINK
+sensitivity_M8_ds_bn,517.131642
+futures,not measured in this landing
+holder_share_not_price_effect,"r is a holder share of cash Treasuries; it says nothing about whether the funds' buying moved yields (C-122), and P - S is a residual (C-098)"

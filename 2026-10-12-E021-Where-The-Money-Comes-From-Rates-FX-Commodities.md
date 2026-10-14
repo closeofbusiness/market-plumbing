@@ -83,7 +83,10 @@ review, 13 Oct).**
 | Commodities | CFTC disaggregated COT; GLD/IAU holdings; IMF official gold; SAFE; LBMA vaults; EIA stocks, SPR and STEO; LME stocks (mirror); World Bank prices | Futures positioning by class, ETF tonnes, official tonnes, physical inventories | Split every dollar change into volume × price. A futures long funds nothing physical: only margin moves, and the class nets sum to zero. Weekly managed-money changes move with the same week's price but do not predict the next week (WTI, 2 Jan 2024 to 6 Oct 2026: 145 same-week and 144 next-week pairs; the n=148 printed here until 14 Oct did not match `data/cftc_cot/leadlag.csv`, Grok g4 item 2). |
 
 **What cannot be measured for free:**
-- the cross-currency basis (hedging cost), and with it whether foreign demand is funded hedged or unhedged;
+- whether foreign demand is funded hedged or unhedged. The cross-currency basis, one part of the hedging cost, has been measured
+  since 15 Oct from the public swap tape (DTCC; [`2026-10-15-ST1-Swap-Spreads-Inflation-Gap-And-Basis.md`](2026-10-15-ST1-Swap-Spreads-Inflation-Gap-And-Basis.md)):
+  the JPY/USD basis went from about −48bp to −22bp in two years, and EUR/USD and GBP/USD sit near zero. That gives the premium,
+  not the hedge ratio;
 - ICI's weekly fund flows (blocked to scripts);
 - commodity index investment (discontinued by the CFTC in 2015). Nor can the COT swap-dealer line stand in for it: on the
   33 monthly changes of the 2013–15 archive, its correlation with index investment is at most 0.42 (WTI swap longs), and about
@@ -244,7 +247,8 @@ checked at source by the supervisor, and all matched except the PNC catalogue, w
   shadow-rate decomposition, Jan 1995 to Sep 2026, revised each quarter. It is not the BoJ, and no open licence is stated.
   - **Status:** candidate build 8, kept local; R3's "no free term premium" caveat stands for the euro area and the UK.
 - **Cross-currency basis: one free academic panel.** Du, Keerati and Schreger (V4, Oct 2025) is a daily panel, for researchers,
-  ending June 2025. There is no official basis series, so the FX lane can describe the basis to mid-2025 but not track it.
+  ending June 2025. There is no official basis series, so the FX lane can describe the basis to mid-2025 but not track it (superseded 15 Oct: the
+  public swap tape now tracks it daily, ST1).
 - **Derivatives as a flow: volume only.** OCC and Cboe publish options volume free; the OCC's site terms ban robots and
   commercial copying. There is no free dealer-gamma or 0DTE history. On average, the research finds 0DTE hedging dampens
   volatility rather than amplifying it:
@@ -269,7 +273,7 @@ tests. None of them makes a flow the cause of a price.
 |---:|---|---|---|
 | 1 | Japan intervention funding | Across the seven completed intervention months, the change in Japan's Treasury holdings (after an R1 valuation) per dollar of intervention runs from 0.58 of a dollar of buying to 1.91 dollars of selling. There is no stable ratio. Sep 2022's −$79.6bn was 80% revaluation; May 2026's −$66.8bn was quantity. **Pre-registered** for the 16 Oct TIC print: August's adjusted change between −$190bn and +$60bn (`CALENDAR.tsv`, committed 14 Oct) | yes: every input, and the valuation recomputed with the R1 code |
 | 2 | COT horizons, ICE Brent | The four-week halving of WTI fund length is futures-only (−52%); counting options it is −25%. The page now says so. On all 875 weeks the test could see a one-week correlation of about 0.07, against 0.16 on the 2024–26 sample, so "no detectable lead" is not yet tested at full size | yes: CFTC rows; E-021's n=148 corrected to 145/144 |
-| 3 | Swap-tape ledger | Grok could not open the DTCC files. The supervisor can: the cumulative-rates archive starts 14 Oct 2024 (11 Oct 2024 is a 404) and the 13 Oct 2026 file is a 15 MB CSV. The build is unblocked. DTCC's reuse terms are still unread, so only derived medians will be published | yes: Treasury rows; DTCC reached |
+| 3 | Swap-tape ledger | Grok could not open the DTCC files. The supervisor can: the cumulative-rates archive starts 14 Oct 2024 (11 Oct 2024 is a 404) and the 13 Oct 2026 file is a 15 MB CSV. The build is unblocked. DTCC's reuse terms were still unread at the time (read 14 Oct; the principal's ruling is E-024), so only derived medians will be published | yes: Treasury rows; DTCC reached |
 | 4 | Yen against rate gaps | The "1.3pp narrowing" mixes two end dates. On one date both tenors narrowed about 1.1–1.2pp. Inside the window the 10y gap and USD/JPY moved together in 2024–25 and apart in 2026. The weekly regression has not been run | yes: BIS yen prints |
 | 5 | Copper visible stocks | Cochilco publishes LME, COMEX and SHFE stocks free in tonnes. COMEX held 70.9% of the three-exchange total on 9 Oct 2026, against 56.5% a year earlier. Cochilco's printed weekly year-on-year column uses a frozen base and is wrong | yes: both 9 Oct weeklies |
 | 6 | R1 second opinions | The Cleveland Fed model's inflation compensation rose 25bp (October run; 27bp on the September run) against TIPS +17bp. That is inside the 10bp trigger, so the breakeven row stands. Added to R1 | yes: the Cleveland workbook and GSW |
@@ -285,9 +289,11 @@ tests. None of them makes a flow the cause of a price.
 
 **Builds, in order** (specs in the returns file; each commits its script and derived tables, never a licensed or Refinitiv-sourced
 series):
-1. **Swap-tape ledger** (item 3): `pddata.dtcc.com` cumulative rates, three in-window dates first. Read DTCC's terms before
-   anything derived is published.
-2. **N-PORT Treasury maturity buckets** (item 7): supervisor-run, because sec.gov needs the declared contact.
+1. **Swap-tape ledger** (item 3): DONE 15 Oct. The principal ruled to script it despite DTCC's terms (E-024). The result is in ST1.
+   The ledger runs weekly from a CALENDAR row.
+2. **N-PORT Treasury maturity buckets** (item 7): DONE 15 Oct. The result is in R2b
+   ([`2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md`](2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md)).
+   Registered funds took $549bn on their own filings and $450bn scaled to Z.1, so the first-order verdict is not established.
 3. **Full-sample COT horizons** (item 2), CFTC only. ICE's site terms forbid automated retrieval, so the Brent leg stays as
    relayed figures.
 4. **Yen and euro against rate gaps, weekly regression** (item 4), the three windows pre-registered in the return.

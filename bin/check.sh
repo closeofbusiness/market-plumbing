@@ -147,6 +147,29 @@ duplicate_correction_check() {
   fi
 }
 
+# --- M9: SWAP-TAPE LEAK GUARD (warn only) -----------------------------------
+# data/swap_tape/ may hold only statistics derived from DTCC's public price dissemination, never a DTCC record (THE_ASK.md E-024:
+# "no raw DTCC file or row is committed or redistributed"). Two things would break that, and neither is visible to M5-M8:
+#   1. an output field that is a whole string of 8-19 digits -- a Dissemination Identifier (19 digits; the legacy ids had 8-18);
+#      the anchors make the digits a whole CSV field, so a date, a count or a hash does not match;
+#   2. a DTCC zip or CSV (CFTC_CUMULATIVE_*, *.zip) among the files of the folder. `git ls-files -co` lists tracked AND untracked
+#      files (-o without --exclude-standard also lists ignored ones), so a zip dropped in before `git add` is caught too.
+# The script's own writers refuse such fields; this is the second, independent look. It warns and never blocks (header doctrine).
+swaptape_leak_check() {
+  echo "-- M9: swap-tape leak guard (DTCC identifiers or zips under data/swap_tape/) --"
+  [ -d data/swap_tape ] || { echo "  ✓ data/swap_tape/ is absent -- nothing to leak."; return; }
+  local ids files
+  ids=$(grep -rEn '(^|,)[0-9]{8,19}(,|$)' data/swap_tape/ 2>/dev/null | cut -c1-110)
+  files=$( { git ls-files -co data/swap_tape 2>/dev/null || find data/swap_tape -type f; } | grep -iE 'CFTC_CUMULATIVE|\.zip$' )
+  if [ -z "$ids" ] && [ -z "$files" ]; then
+    echo "  ✓ no 8-19 digit field and no CFTC_CUMULATIVE or .zip file under data/swap_tape/."
+  else
+    [ -n "$ids" ] && printf '%s\n' "$ids" | sed 's/^/  ✗ digit field (a Dissemination Identifier?): /'
+    [ -n "$files" ] && printf '%s\n' "$files" | sed 's/^/  ✗ DTCC file or zip: /'
+    echo "  -> a DTCC record must never be committed (E-024). Remove it before any commit; if it already left this folder, tell the principal."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -343,6 +366,8 @@ if [ "$TARGET" = "--all" ]; then
   unregistered_correction_check
   echo
   duplicate_correction_check
+  echo
+  swaptape_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

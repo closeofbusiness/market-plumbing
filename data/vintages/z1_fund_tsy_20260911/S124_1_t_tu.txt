@@ -1,0 +1,22 @@
+FU656006403.Q	Mutual funds; undistributed corporate profits; gross saving; net saving	Line 1	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654090000.Q	Mutual funds; total financial assets 	Line 2	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654022005.Q	Mutual funds; debt securities; asset (market value)	Line 3	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653069100.Q	Mutual funds; commercial paper; asset	Line 4	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653061105.Q	Mutual funds; Treasury securities; asset (market value)	Line 5	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653061703.Q	Mutual funds; agency- and GSE-backed securities; asset (market value)	Line 6	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653062003.Q	Mutual funds; municipal securities; asset (market value)	Line 7	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653063005.Q	Mutual funds; corporate and foreign bonds; asset (market value)	Line 8	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654041005.Q	Mutual funds; short-term loans; asset	Line 9	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU652051003.Q	Mutual funds; security repurchase agreements (net); asset	Line 10	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653069803.Q	Mutual funds; syndicated loans to nonfinancial corporate business; asset	Line 11	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653064100.Q	Mutual funds; corporate equities; asset	Line 12	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653034003.Q	Mutual funds; money market fund shares; asset	Line 13	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653093005.Q	Mutual funds; unidentified miscellaneous assets	Line 14	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU653164205.Q	Mutual funds; mutual fund shares; liability	Line 15	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU657005005.Q	Mutual funds; sector discrepancy	Line 16	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654090500.Q	Variable annuity mutual funds; total financial assets (market value)	Line 17	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654091600.Q	Mutual funds; total financial assets in domestic equity funds 	Line 18	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654092603.Q	Mutual funds; total financial assets in world equity funds 	Line 19	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654091403.Q	Mutual funds; total financial assets in hybrid funds 	Line 20	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654091303.Q	Mutual funds; total financial assets in taxable bond funds 	Line 21	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted
+FU654091203.Q	Mutual funds; total financial assets in municipal bond funds 	Line 22	S124.1.t Mutual funds	Millions of dollars; transactions, not seasonally adjusted

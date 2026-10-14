@@ -1,6 +1,6 @@
 # R2 — How much Treasury duration the public had to absorb, and who bought (27 Sep 2026)
 
-**Status: FINDING, corrected after outside review. Supervisor, 27 Sep.** This is the second rates pass: the charter's question 2
+**Status: FINDING, corrected after outside review. Supervisor, 27 Sep.** **Follow-up 15 Oct:** registered funds' share of the duration is now measured from their own filings in [`2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md`](2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md): about a sixth of it, with the first-order verdict not established. This is the second rates pass: the charter's question 2
 (money, as measurement) for US Treasuries. It follows R1 ([`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md)).
 - **Corrected 27 Sep** after Grok's adversarial review (R12R). The headline survived: about 36% more rate risk at constant
   yields. Three framings did not:
@@ -153,7 +153,7 @@ All of these are in the script's docstring.
 
 - **It establishes how much rate risk the public had to absorb at constant yields, and that Treasury issuance supplied most of
   it.** The Fed's share is 4%, and at most about 13% (a ceiling, C-123).
-- **It does not establish who took the duration,** or that absorbing it raised term premia.
+- **It does not establish who took the duration** (R2b, 15 Oct, now measures registered funds' part), or that absorbing it raised term premia.
 - **It covers the US only.** JGBs and euro-area government bonds are next (R3).
 
 ## Next

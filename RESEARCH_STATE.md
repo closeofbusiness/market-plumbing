@@ -615,7 +615,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        FIFTEEN FOLLOW-UP ITEMS, first tests 14 Oct (Grok batch g4, every item checked at source by
                                                        the supervisor): see the E-021 note's last section and _research/2026-10-14-Grok-G4-Returns.md.
                                                        Pre-registered in CALENDAR.tsv: 16 Oct (Japan TIC), 4 Nov (refunding), by 16 Nov (BIS). Build
-                                                       queue there; first: swap-tape ledger (DTCC reachable), N-PORT maturity buckets.
+                                                       queue there. Builds 1-2 DONE 15 Oct: ST1 (swap tape, E-024) and R2b (N-PORT duration, verdict NOT ESTABLISHED).
+                                                       Next builds: full-sample COT horizons, yen regression, gold break, four-country comovement.
    --   Who funds the ~89% private share of record issuance  S1 / I1b raise it; nobody has taken it
    --   The persona capability, idle since 22 Aug .......... section 0.1; pending a decision (Tier A2)
    --   The missing-channel question .................... flagged directions, after N5; asked twice, no answer

@@ -202,7 +202,12 @@ from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell 
 Derivatives as a market-structure flow remain open. Fifteen follow-up items had first tests on 14 Oct, each checked at source
 (the E-021 note's last section). Three tests are written down before their data: Japan's August Treasury holdings (16 Oct), the
 refunding statement (4 Nov) and the BIS stock of dollar FX forwards and swaps (by 16 Nov). The swap-dealer line failed as a stand-in for commodity index
-investment. Gold's link to real yields is not established on public monthly data (HYPOTHESIS).
+investment. Gold's link to real yields is not established on public monthly data (HYPOTHESIS). Two builds followed on 15 Oct.
+Registered funds took about a sixth of the new Treasury duration on their own filings: $549bn of $3,218bn, or $450bn scaled to
+Z.1. The first-order verdict is not established, but in 2026H1 they took 23–29%, well above their 15% share (R2b; the measured arm
+is MEASURED, the Z.1-scaled arm HYPOTHESIS). A daily ledger from the public swap tape (DTCC) shows US swap spreads negative at
+every maturity on every day with a figure, and about 4–16bp less negative than two years ago. It also shows the 1–5-year
+yen–dollar basis roughly halved over two years (ST1; MEASURED).
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 
