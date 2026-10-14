@@ -1,6 +1,8 @@
 # Market Plumbing
 
-**What is driving asset prices, and where is the money coming from?** This repository is an open research record on that question: the current answer, the evidence behind it, every claim the work has since retracted, and the scripts that check it. The programme's own write-ups are licensed CC BY 4.0.
+What is actually holding asset prices up, and whose money is behind it?
+
+Market Plumbing is an open research notebook on that question. It follows the money through equities, government bonds, currencies and commodities using free public data. Alongside the current answer it publishes the evidence, the scripts that reproduce it, and every claim it has since withdrawn. The written work is licensed CC BY 4.0.
 
 ## Start here
 
@@ -12,17 +14,14 @@
 
 Equities are the furthest along. Rates, FX and commodities are in scope, and where their work has not been done, the files say so.
 
-## Who does the work, and how
+## Who does the work
 
-The research is done by AI models under the direction of one person. The newer files call that person **the principal**; older files say **the operator**, and some notes use the principal's first name. The principal sets the question and rules on scope and on standards of evidence.
+The research is carried out by AI models and directed by one person, called **the principal** in the files (older ones say *the operator*). The principal sets the questions and the standard of evidence.
 
-- **Claude** (Anthropic) is the lead analyst. It writes the answer, and when it reviews or adjudicates another agent's work, the notes call it **the supervisor**.
-- **GrokBot** (Grok, from xAI) is a second agent working in the same repository.
-- **Gemini** (Google) is consulted too. Both outside models receive self-contained briefs called **parcels**.
+- **Claude** (Anthropic) is the lead analyst. It writes the answer and, as **the supervisor**, checks and rules on the other agents' work.
+- **Grok** (xAI) and **Gemini** (Google) are brought in from outside. They work from self-contained briefs called **parcels**, and their job is to break the findings, not to confirm them.
 
-Outside review is adversarial on purpose: a finding stands only while attacks on it keep failing.
-
-Three conventions follow from this, and you will meet them everywhere:
+A finding stands only for as long as those attacks fail. Three house rules follow from that:
 
 - **The principal's instructions are recorded verbatim**, never paraphrased, in [THE_ASK.md](THE_ASK.md) as E-000, E-001, and so on. When a note cites a standard such as E-005 or E-007, that is where it is defined.
 - **Every claim carries a grade**: IDENTITY, MEASURED, BOUNDED or HYPOTHESIS, defined in [CHARTER.md](CHARTER.md#grades). The default is HYPOTHESIS. Surviving a review raises confidence but does not settle a claim.
