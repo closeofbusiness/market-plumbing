@@ -199,7 +199,10 @@ from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell 
 - gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length ended where it
   began; oil's rise ran with large stock draws, and funds added futures length on the way up (positions and stocks MEASURED;
   what caused either price move is HYPOTHESIS).
-Derivatives as a market-structure flow remain open.
+Derivatives as a market-structure flow remain open. Fifteen follow-up items had first tests on 14 Oct, each checked at source
+(the E-021 note's last section). Three tests are written down before their data: Japan's August Treasury holdings (16 Oct), the
+refunding statement (4 Nov) and the BIS stock of dollar FX forwards and swaps (by 16 Nov). The swap-dealer line failed as a stand-in for commodity index
+investment. Gold's link to real yields is not established on public monthly data (HYPOTHESIS).
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason
 

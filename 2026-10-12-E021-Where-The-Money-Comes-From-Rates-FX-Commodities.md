@@ -66,7 +66,10 @@ review, 13 Oct).**
   end-2023 hid this). The Strategic Petroleum Reserve fell 130 mb since end-2025 while the price went from $60 to about $97. The
   stock draws are measured; how the rise splits between supply disruption and financial demand is not.
 - **Copper:** about $14,800 a tonne (12 Oct; whether this is a record was not verified). LME stocks fell over the last month but are
-  up about 93 kt on the year (relayed by Grok). Managed money was flat end to end over 12 weeks (60,185 to 61,134 contracts) after
+  up 93.6 kt on the year (139,475 t on 9 Oct 2025 to 233,025 t on 9 Oct 2026, Cochilco weekly report, re-read by the supervisor 14 Oct;
+  +87.7 kt since 2 Jan). COMEX held 70.9% of the three-exchange visible stock on 9 Oct 2026, against 56.5% a year earlier (both re-read) and 19.7%
+  at end-2024 (relayed; Grok g4 item 5). That is where exchange-visible metal sits, not a share of world stocks; Cochilco's printed weekly
+  year-on-year column uses a frozen base and should not be quoted. Managed money was flat end to end over 12 weeks (60,185 to 61,134 contracts) after
   peaking at 82,522 on 22 Sep.
 
 *MEASURED positions, stocks and reported reserves. WGC estimates BOUNDED. The causes of the oil and gold moves are HYPOTHESIS.*
@@ -77,12 +80,15 @@ review, 13 Oct).**
 |---|---|---|---|
 | Rates | Z.1 F.210 by holder; TIC SLT Tables 1, 3, 4, 5; H.4.1; H.8; Treasury investor-class allotments; OFR N-MFP and Form PF; CFTC TFF; BoJ Flow of Funds; MoF weekly securities; ECB APP/PEPP, SHSS, BSI; ONS HEWD | Holdings and transactions by buyer, foreign official and private, primary allotments, levered positions | Change in holdings = net purchases + valuation + residual. TIC does not close on its own columns (official residual about ±$100bn a year), so publish the residual. Net is 0.5% of gross. H.4.1 custody is not ownership (custody −$401bn while TIC official −$23bn, Dec 2023–2026). |
 | FX | TIC; IMF COFER; BIS GLI, LBS, OTC derivatives, Triennial; MoF intervention and reserves; MoF weekly; Eurostat BoP; SAFE; CFTC TFF currencies; H.4.1 swaps | Portfolio, official, bank and hedging flows; reserve shares; off-balance-sheet dollar debt | Separate flows from FX valuation (constant-FX COFER). Compare the FX-swap notional only across the same half-year, because the series is seasonal (C-132). Futures positions are tiny against $9.5trn of daily turnover. |
-| Commodities | CFTC disaggregated COT; GLD/IAU holdings; IMF official gold; SAFE; LBMA vaults; EIA stocks, SPR and STEO; LME stocks (mirror); World Bank prices | Futures positioning by class, ETF tonnes, official tonnes, physical inventories | Split every dollar change into volume × price. A futures long funds nothing physical: only margin moves, and the class nets sum to zero. Weekly managed-money changes move with the same week's price but do not predict the next week (n=148). |
+| Commodities | CFTC disaggregated COT; GLD/IAU holdings; IMF official gold; SAFE; LBMA vaults; EIA stocks, SPR and STEO; LME stocks (mirror); World Bank prices | Futures positioning by class, ETF tonnes, official tonnes, physical inventories | Split every dollar change into volume × price. A futures long funds nothing physical: only margin moves, and the class nets sum to zero. Weekly managed-money changes move with the same week's price but do not predict the next week (WTI, 2 Jan 2024 to 6 Oct 2026: 145 same-week and 144 next-week pairs; the n=148 printed here until 14 Oct did not match `data/cftc_cot/leadlag.csv`, Grok g4 item 2). |
 
 **What cannot be measured for free:**
 - the cross-currency basis (hedging cost), and with it whether foreign demand is funded hedged or unhedged;
 - ICI's weekly fund flows (blocked to scripts);
-- commodity index investment (discontinued by the CFTC in 2015);
+- commodity index investment (discontinued by the CFTC in 2015). Nor can the COT swap-dealer line stand in for it: on the
+  33 monthly changes of the 2013–15 archive, its correlation with index investment is at most 0.42 (WTI swap longs), and about
+  zero for gold and copper, against a pass mark of 0.50 fixed in advance (Grok g4 item 8; re-derived by the supervisor 14 Oct).
+  So the gold swap-dealer short above cannot be read as index or passive supply;
 - the WTI futures curve (EIA's series ends in Apr 2024);
 - unreported central-bank gold buying.
 
@@ -104,7 +110,10 @@ review, 13 Oct).**
   move prices is weak outside 2007–09 (Hamilton and Wu; Sanders and Irwin), against Singleton. The 2003–08 oil surge was demand,
   not speculation (Kilian and Murphy). The 2024–26 rise in gold's reserve value was price-driven and private demand jumped in late
   2024 (Weiss, FEDS Note, Sep 2026). Gold's sensitivity to real yields collapsed in 2024–25 and came back in 2026 (in-house
-  regression; HYPOTHESIS, window-dependent).
+  regression; HYPOTHESIS, window-dependent). On public monthly data the return is not established (Grok g4 item 9, inputs
+  re-derived by the supervisor 14 Oct): across Jan–Sep 2026 the levels slope is −20% per percentage point of the 10y real yield (R²
+  0.66, with residuals in blocks), but on monthly changes the 95% interval runs from −75% to +11%, and across 2025Q1–2026Q3 the
+  quarterly slope is about zero.
 
 ## The two lanes compared
 
@@ -244,3 +253,44 @@ checked at source by the supervisor, and all matched except the PNC catalogue, w
 
   The IMF (Apr 2026) links leveraged-ETF exposure to intraday volatility on stressed days only. The project's leveraged-ETF
   rebalance estimate (DG, 15 Sep) still needs a dated AUM path.
+
+## The fifteen follow-up items, first tests (Grok batch g4, 14 Oct)
+
+On 14 Oct the principal asked for every item on the ranked list of further rates, FX and commodities research to be started.
+Each item went to Grok 4.7 through the fenced Cursor lane, with the instruction to run its first test on free public data. The
+supervisor then re-fetched at least one figure per item at source with the neutral User-Agent, and re-derived the arithmetic
+where the inputs allowed. All fifteen returns, verbatim apart from quotes cut to twelve words, with the supervisor's check at the
+head of each, are in [`_research/2026-10-14-Grok-G4-Returns.md`](_research/2026-10-14-Grok-G4-Returns.md). These are first
+tests. None of them makes a flow the cause of a price.
+
+**What the first tests found**
+
+| # | Item | First test | Checked at source |
+|---:|---|---|---|
+| 1 | Japan intervention funding | Across the seven completed intervention months, the change in Japan's Treasury holdings (after an R1 valuation) per dollar of intervention runs from 0.58 of a dollar of buying to 1.91 dollars of selling. There is no stable ratio. Sep 2022's −$79.6bn was 80% revaluation; May 2026's −$66.8bn was quantity. **Pre-registered** for the 16 Oct TIC print: August's adjusted change between −$190bn and +$60bn (`CALENDAR.tsv`, committed 14 Oct) | yes: every input, and the valuation recomputed with the R1 code |
+| 2 | COT horizons, ICE Brent | The four-week halving of WTI fund length is futures-only (−52%); counting options it is −25%. The page now says so. On all 875 weeks the test could see a one-week correlation of about 0.07, against 0.16 on the 2024–26 sample, so "no detectable lead" is not yet tested at full size | yes: CFTC rows; E-021's n=148 corrected to 145/144 |
+| 3 | Swap-tape ledger | Grok could not open the DTCC files. The supervisor can: the cumulative-rates archive starts 14 Oct 2024 (11 Oct 2024 is a 404) and the 13 Oct 2026 file is a 15 MB CSV. The build is unblocked. DTCC's reuse terms are still unread, so only derived medians will be published | yes: Treasury rows; DTCC reached |
+| 4 | Yen against rate gaps | The "1.3pp narrowing" mixes two end dates. On one date both tenors narrowed about 1.1–1.2pp. Inside the window the 10y gap and USD/JPY moved together in 2024–25 and apart in 2026. The weekly regression has not been run | yes: BIS yen prints |
+| 5 | Copper visible stocks | Cochilco publishes LME, COMEX and SHFE stocks free in tonnes. COMEX held 70.9% of the three-exchange total on 9 Oct 2026, against 56.5% a year earlier. Cochilco's printed weekly year-on-year column uses a frozen base and is wrong | yes: both 9 Oct weeklies |
+| 6 | R1 second opinions | The Cleveland Fed model's inflation compensation rose 25bp (October run; 27bp on the September run) against TIPS +17bp. That is inside the 10bp trigger, so the breakeven row stands. Added to R1 | yes: the Cleveland workbook and GSW |
+| 7 | N-PORT duration holders | Not run: the bulk files are on sec.gov, which only the supervisor may fetch. Z.1's fund rows re-derive $640bn of net purchases (2024–2026Q2). That is enough at either end of the maturity range to make funds anything from bystanders to a first-order duration sink, so N-PORT is needed | yes: R2 rows, Z.1 ETF line |
+| 8 | Index-investment proxy | **Negative.** On the 2013–15 CFTC archive, swap-dealer changes do not track index investment for gold, copper or WTI. The best is 0.42 (WTI), against a 0.50 pass mark fixed in advance. Gold's swap-dealer short cannot be read as passive supply | yes: all nine correlations, CFTC rows |
+| 9 | Gold against real yields | In 2026 alone the levels slope is −20% per point, but on monthly changes the interval covers zero, and across 2025Q1–2026Q3 the slope is about zero. "Came back in 2026" is not established | yes: Treasury real yields, Pink Sheet, the regression |
+| 10 | US external balance sheet | In 2026Q2, price changes were 81% of the $4.87trn rise in US liabilities; transactions were $979bn. "Money flowing in" describes the transactions slice, not the stock. The net position is −$22.42trn | yes: the BEA release |
+| 11 | BIS pre-registration | **Pre-registered** for the BIS release due by 16 Nov: FX forwards and swaps dollar notional at 2026-S1 +11% to +18% June on June (last two: +8.2%, +14.5%). The +15.5% the calendar used to quote was December on December, and included currency swaps | yes: the BIS series |
+| 12 | IMF currency composition | Germany's dollar share of its debt claims on non-residents fell from 14.6% (2019) to 12.9% (2026Q2) because its euro-denominated book grew faster. Within foreign-currency claims the dollar's share rose, from 59.1% to 60.3%. Across six reporters with a dollar line there is no common fall (Canada +7.3pp, Switzerland −1.7pp). The fall in the dollar's share of official reserves is not repeated in these private books, which say nothing about hedging | yes: the IMF Germany series |
+| 13 | Dealer DV01, repo dispersion | Dealers' net Treasury book rose $176bn (fair value) from end-2023. Their over-7-year coupons on 30 Sep 2026 were 2.1× the 2022–23 maximum. On large cash days, SOFR dispersion was 3bp narrower after June 2026 than before, but the two sets of days are not matched, so that is not a test | yes: NY Fed dealer series, SOFR |
+| 14 | Refunding event study | From Nov 2023 no clean refunding statement moved both the 10y and the 30y outside the Wednesday band (±8bp) in the direction of its supply news. The coupon increases all fell on FOMC days. The 19 Aug 2026 buyback doubling moved the 30y −9bp but the 10y only −6bp. **Pre-registered** for 4 Nov, already marked unclean because it is the day after the US election | yes: event-day yields, the Treasury buyback release |
+| 15 | Global yield comovement | Jan–Jul 2026: weekly changes in the US 10y and the Bund correlate 0.76, while the US level rose 56bp against the Bund's 25bp. Only two countries and part of the window have been read, so the term-premium split is not yet set in a global-factor frame | yes: all 30 US weekly changes |
+
+**Builds, in order** (specs in the returns file; each commits its script and derived tables, never a licensed or Refinitiv-sourced
+series):
+1. **Swap-tape ledger** (item 3): `pddata.dtcc.com` cumulative rates, three in-window dates first. Read DTCC's terms before
+   anything derived is published.
+2. **N-PORT Treasury maturity buckets** (item 7): supervisor-run, because sec.gov needs the declared contact.
+3. **Full-sample COT horizons** (item 2), CFTC only. ICE's site terms forbid automated retrieval, so the Brent leg stays as
+   relayed figures.
+4. **Yen and euro against rate gaps, weekly regression** (item 4), the three windows pre-registered in the return.
+5. **Gold against real yields with HAC errors and a break date** (item 9), once the World Bank monthly workbook downloads.
+6. **Four-country comovement** (item 15), adding the UK and JGB legs.
+7. **Copper ledger** (item 5), kept local (Refinitiv-sourced), with only the shares published.

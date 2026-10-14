@@ -97,6 +97,24 @@ the 10-year par yield rose 65bp. All levels are in [`data/r1_rates/survey_check.
 "~0.52% to 0.82–0.85%" the Treasury-buyers synthesis quoted from a secondary source ([`2026-09-11-Who-Buys-Treasuries-Synthesis.md`](2026-09-11-Who-Buys-Treasuries-Synthesis.md)),
 which is now re-pulled from the Fed Board's own file.
 
+## Second opinions, added 14 Oct
+
+These come from Grok batch g4, item 6. The supervisor re-read them at source; the record is in
+[`_research/2026-10-14-Grok-G4-Returns.md`](_research/2026-10-14-Grok-G4-Returns.md).
+
+- **The Cleveland Fed's model.** Its 10-year expected inflation plus inflation risk premium rose **25.1bp** from Dec 2023 to
+  Sep 2026, from 2.759% to 3.010%. That is its own workbook in the October 2026 run. The TIPS breakeven above rose +17bp. The
+  September run, which FRED still carried on 14 Oct, gave +27.2bp: the model revises recent months. On the current run the two
+  measures differ by 8bp, inside the ~10bp the item set as the trigger for turning the breakeven row into a range. **So the row
+  stays +17bp, with the model's +25bp beside it.** The model's 10-year real rate rose about 57bp against TIPS +96bp. The note
+  already reads that gap as liquidity, taxes and the embedded option in TIPS. The four model components are model outputs, not a
+  split of the +113bp par move, and they do not add to it.
+- **The 5y5y forward.** On the Fed Board's Gürkaynak-Sack-Wright curve it is 5.17% (continuously compounded) on 18 Sep 2026.
+  Only the end of the window was read, so it cannot yet be set against ACM's −56bp and the SPF's +61bp for years 5–10 (C-125
+  stays open).
+- **The FOMC's longer-run funds rate** (SEP median) went from 2.5% (Dec 2023) to 3.2% (Sep 2026), +70bp. That points the same way
+  as the SPF. It is a policy-path median, not the market's 5y5y.
+
 ## A holder's return, in percent
 
 | period | income | roll-down | price | total, first-order | total, full revaluation | three-month bills |

@@ -612,6 +612,10 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        literature), in-house Sonnet agents plus a Gemini (agy) research lane. FIRST PASS DONE 12 Oct:
                                                        2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md (builds 1-6 listed there;
                                                        C-131, C-132). Next: TIC closure ledger (test 16 Oct), COT ledger, gold tonnes ledger.
+                                                       FIFTEEN FOLLOW-UP ITEMS, first tests 14 Oct (Grok batch g4, every item checked at source by
+                                                       the supervisor): see the E-021 note's last section and _research/2026-10-14-Grok-G4-Returns.md.
+                                                       Pre-registered in CALENDAR.tsv: 16 Oct (Japan TIC), 4 Nov (refunding), by 16 Nov (BIS). Build
+                                                       queue there; first: swap-tape ledger (DTCC reachable), N-PORT maturity buckets.
    --   Who funds the ~89% private share of record issuance  S1 / I1b raise it; nobody has taken it
    --   The persona capability, idle since 22 Aug .......... section 0.1; pending a decision (Tier A2)
    --   The missing-channel question .................... flagged directions, after N5; asked twice, no answer
