@@ -20,8 +20,6 @@ The working name is Third Derivative Research. The byline is closeofbusiness. Ci
 
 Each file in [dossiers/](dossiers/) gives the current status of its line of work.
 
-On 24 September 2026, nine private files (correspondence and draft briefings that should not have been public) were removed from the repository and its history; the owner's instructions for that day are recorded in [THE_ASK.md](THE_ASK.md), entries E-011 and E-013.
-
 ## Finding your way
 
 - [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/) is the one-page answer.

@@ -1,6 +1,6 @@
 # The answer — what is driving asset prices, and where the money came from (17 September 2026)
 
-**Status: THE ANSWER as it stands. Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
+**Status: THE ANSWER as it stands, revised in place; last revised 14 October 2026 (first written 17 September). Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
 Serves the canonical goal in [`THE_ASK.md`](THE_ASK.md). Standard of evidence is **E-005**: a rough understanding with
 bands, not proof to the last cent. We never pay for data. New to this repository? Its codes (C-, E-, P2a …) and abbreviations are
 explained in the [glossary](GLOSSARY.md).
@@ -201,14 +201,16 @@ reduction; banks and foreign investors absorbed the Eurosystem's. At constant yi
 JGB rate risk from end-2023 or Oct 2024 to Aug 2026 on the method used for the US figure, and 11–18% on an unpriced face-times-maturity
 measure (8 Oct follow-up; R4R found the size curve-dependent; the upper ends rest on an estimated start stock). See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
-**Rates, FX and commodities flows: first measurement map, 12 Oct (E-021, which took up what E-019 had parked).** See
-[`2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`](2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md). Three first-pass findings, not yet reviewed from
-outside:
-- the marginal buyer of US Treasuries has shifted from foreigners (44% of net issuance in the year to 2025Q2, 12% in the year to
-  2026Q2) to money funds and the Fed;
-- money is still flowing into US securities from private foreigners, while official holders shrink their Treasuries and Japan sold
-  about $172bn of dollars in 2026;
-- gold's rise came through official, household and ETF buying, not futures length, and oil's through a physical shock.
+**Rates, FX and commodities flows: first measurement map, 12 Oct (E-021, which took up what E-019 had parked); reviewed
+from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell (C-141) and two were corrected (C-142).** See
+[`2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`](2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md), which owns the figures. What stands:
+- the marginal buyer of US Treasuries has shifted from foreigners to money funds and, in bills, the Fed; in notes and bonds
+  alone the foreign share of net issuance also fell, while the Fed only stopped selling (MEASURED, Z.1);
+- private foreigners still buy US securities, while official holders shrink their Treasuries and Japan sold dollars for yen in
+  2026; most of the fall in the all-instrument net inflow is banks' own dollar liabilities, not securities (MEASURED, TIC);
+- gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length ended where it
+  began; oil's rise ran with large stock draws, and funds added futures length on the way up (positions and stocks MEASURED;
+  what caused either price move is HYPOTHESIS).
 Derivatives as a market-structure flow remain open.
 
 ## 4. The bridge — closed, and each leg closed for a different, stated reason

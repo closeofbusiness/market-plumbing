@@ -413,3 +413,5 @@ scratchpad paths; viewing the page locally. No timing in seconds.
   how solid a claim is and what happens to claims that fail; who or what did the work; how to cite it and under what
   licence. Pass: all five answered correctly by both, and neither names a sentence that reads as written by an amateur;
   each also quotes the weakest sentence, which the supervisor fixes or justifies.
+
+*Amendment, 14 Oct (principal):* the 24 September removal sentence is taken off the README. Constraint 7 above was the supervisor's own rule, not a ruling; the record stays in THE_ASK.md (E-011, E-013).

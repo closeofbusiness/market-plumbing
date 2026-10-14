@@ -934,6 +934,9 @@ re-read the group nets from `data/cftc_cot/gold_ledger.csv`.**
 - **Correct position.** Gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length
   ended where it began. The sources of the price rise are not attributed.
 - **Still standing at:** nowhere live; the E-021 map, the page and the commodities dossier are corrected.
+  *Update, 14 Oct:* that was wrong. The answer note's E-021 paragraph still carried the framing in other words ("not futures
+  length", "through a physical shock"), so the ban patterns missed it. Found when the principal asked whether the answer note was up
+  to date; the paragraph is rewritten, and both phrasings are now banned.
 
 ---
 
@@ -950,6 +953,9 @@ re-read the group nets from `data/cftc_cot/gold_ledger.csv`.**
   added futures length on the way up and cut it in the last four weeks. How the rise splits between supply disruption and financial
   demand is HYPOTHESIS.
 - **Still standing at:** nowhere live; the E-021 map, the page, the commodities dossier and the Bassman note are corrected.
+  *Update, 14 Oct:* that was wrong. The answer note's E-021 paragraph still carried the framing in other words ("not futures
+  length", "through a physical shock"), so the ban patterns missed it. Found when the principal asked whether the answer note was up
+  to date; the paragraph is rewritten, and both phrasings are now banned.
 
 ---
 
@@ -2432,4 +2438,6 @@ C-142	not financial inflow
 C-142	fund length was net long but did not grow
 C-143	held up by a \*?compressing
 C-143	not where the equity money came
+C-141	not futures length
+C-142	through a physical shock
 ```
