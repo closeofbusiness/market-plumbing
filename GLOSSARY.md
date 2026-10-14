@@ -65,7 +65,8 @@ File names and folders in this repository follow the patterns below.
 | [answer/](answer/), [corrections/](corrections/) | Pointer folders. |
 | [dossiers/](dossiers/) | One short file per channel. A file states its own status. |
 | [monitor/](monitor/) | The series the live claims use, and when the next observation is released. |
-| [docs/](docs/) | The source of [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/). The file is `index.html`. GitHub Pages publishes this folder from `main`. |
+| [docs/](docs/) | The source of [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/), the authoritative overview. The file is `index.html`. GitHub Pages publishes this folder from `main`. |
+| [2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) | The evidence behind the page: each claim's grade, the findings note that owns it, and its caveats. |
 | [data/](data/), [bin/](bin/) | Derived tables and the scripts that pull, compute, and check. [data/series.tsv](data/series.tsv) is the registry of series. |
 | [_research/](_research/) | Working notes, replies, and extracted primary sources. |
 | [Analysis/](Analysis/), [Report/](Report/) | Outputs of the earlier workstreams, including a forward-prediction register and HTML reports. |

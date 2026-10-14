@@ -42,7 +42,7 @@ measured in duration. How duration is weighted changes the answer (C-122), so th
      from 4.22 to 4.05 years.
    - The constant-price measure rose faster than face value because new issues carry higher coupons. On a fixed low curve a
      high-coupon bond is priced above par, and market-value weighting counts that premium as extra rate risk.
-2. **Treasury issuance supplied most of it. The Fed's share is 4% to about 13%, depending on the measure.**
+2. **Treasury issuance supplied most of it. The Fed's share is 4%, and at most about 13%** [C-123: the 13% is a ceiling that depends on how Treasury refinanced the runoff].
    - **Counting only the Fed's own holdings:** at constant prices its 10-year equivalents fell $0.14trn over the window, about 4%
      of the public's +$3.4trn. They fell $0.20trn in 2024 and rose $0.06trn in 2025–26. Runoff ended on 1 Dec 2025. In 2025,
      reinvested maturing coupons offset ageing; the Fed's bill purchases began in mid-December 2025.
@@ -152,7 +152,7 @@ All of these are in the script's docstring.
 ## What this does and does not establish
 
 - **It establishes how much rate risk the public had to absorb at constant yields, and that Treasury issuance supplied most of
-  it.** The Fed's share is between 4% and about 13%, depending on the measure.
+  it.** The Fed's share is 4%, and at most about 13% (a ceiling, C-123).
 - **It does not establish who took the duration,** or that absorbing it raised term premia.
 - **It covers the US only.** JGBs and euro-area government bonds are next (R3).
 

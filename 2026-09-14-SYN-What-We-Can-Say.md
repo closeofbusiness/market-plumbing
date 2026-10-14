@@ -1,6 +1,6 @@
 # SYN — superseded (14 September 2026)
 
-**THIS DOCUMENT IS NO LONGER THE ANSWER. Read `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md`.**
+**THIS DOCUMENT IS NO LONGER THE ANSWER. The answer is the page `docs/index.html` (https://closeofbusiness.github.io/market-plumbing/; E-022), and the evidence behind it is `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md`.**
 
 It is kept as a pointer, not deleted, because four corrections were written against it and the record of
 what was believed on 14 Sep — and how it was wrong — is worth more than the prose was.

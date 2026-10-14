@@ -2,7 +2,7 @@
 
 What is holding asset prices up, and whose money is behind it?
 
-Market Plumbing is an open research record on that question. It covers US equities first, and government bonds, currencies and commodities as the work reaches them. The current answer is the page [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/). The page renders [the answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md), which is revised in place and is the authority wherever the two differ.
+Market Plumbing is an open research record on that question. It covers US equities first, and government bonds, currencies and commodities as the work reaches them. The current answer is the page [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/), which is the authoritative overview. The evidence behind each of its claims is set out in [the answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) and the findings notes it names.
 
 ## How claims are handled
 
@@ -16,14 +16,14 @@ AI models do the research and the writing: Claude (Anthropic) and Grok (xAI) wor
 
 The repository's own write-ups are © closeofbusiness and are licensed under CC BY 4.0. The licence text is in [LICENSE](LICENSE). Reuse requires attribution. Third-party data and paywalled text are summarised and cited, and they are not redistributed.
 
-The working name is Third Derivative Research. The byline is closeofbusiness. Cite the answer note by its title and path: "The answer — what is driving asset prices, and where the money came from", [2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md). Cite the page [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/) separately, as the rendering of that note.
+The working name is Third Derivative Research. The byline is closeofbusiness. Cite the page: Third Derivative Research, "What Holds the Market Up", https://closeofbusiness.github.io/market-plumbing/, with the date shown on the page. For a single claim, cite the findings note named beside it in [the answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md).
 
 Each file in [dossiers/](dossiers/) gives the current status of its line of work.
 
 ## Finding your way
 
-- [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/) is the one-page answer.
-- [The answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) is the document the page renders.
+- [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/) is the one-page answer and the authority.
+- [The answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) sets out the evidence behind the page, claim by claim.
 - [dossiers/](dossiers/) holds one short file for each channel and market.
 - [CORRECTIONS.md](CORRECTIONS.md) is the register of withdrawn claims.
 - [RESEARCH_STATE.md](RESEARCH_STATE.md) records what is settled, what is contested, and what is open.

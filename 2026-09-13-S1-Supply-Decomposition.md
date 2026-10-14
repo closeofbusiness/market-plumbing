@@ -155,3 +155,11 @@ real filings to 200 "hits". Count from `full-index/{year}/QTR{n}/form.idx`, neve
 | EFA annual M&A and repurchase sums (5 years) | re-summed from the quarterly file | ALL FIVE EXACT |
 | 2015 filing counts, 4 form types | re-counted from EDGAR full-index, ~995k rows | ALL FOUR EXACT |
 | A free dollar aggregate for M&A retirement exists | read the EFA series and its scope note | YES — contradicts the brief I wrote, correctly |
+
+## Update, 14 October 2026: public share of gross issuance on the 18 September vintage
+
+On the Fed's 18 Sep EFA vintage (quarterly and monthly files saved under `data/vintages/efa/`), public offerings (IPO plus SEO,
+summed from the monthly file) were **$38.98bn of $424.55bn gross in 2026:Q1 (about 9%)** and **$188.44bn of $501.85bn in 2026:Q2
+(about 38%)**; 2026:Q2 is the largest gross quarter in the series. The 10.6% for 2026:Q1 above is the 13 Sep vintage. The
+monthly file is not seasonally adjusted, so the shares are approximate. [MEASURED]
+

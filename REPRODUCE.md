@@ -20,7 +20,7 @@ It works with macOS grep and with ugrep.
 
 ## Recomputing a figure
 
-Start with the answer note, [2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md). Beside each claim it names the findings note behind it, and that note names its script in `bin/` and its table in `data/`.
+Start with the page, or for the full trail with the answer note, [2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md). Beside each claim the note names the findings note behind it, and that note names its script in `bin/` and its table in `data/`.
 
 For example, the earnings share of the S&P 500 gain recomputes from [data/p2a_decomposition/decomp_cumulative.csv](data/p2a_decomposition/decomp_cumulative.csv); the figure itself is stated in its findings note.
 

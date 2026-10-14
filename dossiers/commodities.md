@@ -1,7 +1,7 @@
 # Commodities — dossier
 
-**Status, 13 Oct 2026:** first measurement map done (E-021) and reviewed from outside (Grok K1): two headline framings fell: gold's
-attribution away from futures (C-141) and crude's fund-length comparison and its physical-only reading (C-142). Nothing measured into the ANSWER beyond it yet. The programme had no
+**Status, 13 Oct 2026:** first measurement map done (E-021) and reviewed from outside (Grok K1): gold's attribution away from futures
+fell outright (C-141), and crude's fund-length comparison and its physical-only reading were withdrawn after being weakened (C-142). Nothing measured onto the page beyond it yet. The programme had no
 commodity work before 12 Oct; FX and commodities were parked by E-019 and taken up by E-021.
 
 - **The map:** `2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`. It covers gold, crude and copper: who buys,

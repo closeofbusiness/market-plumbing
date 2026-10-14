@@ -5,7 +5,9 @@
 alternative is not a real paper. The real one is **Eric Qian, "Heterogeneity-robust granular instruments"**
 (arXiv 2304.01273v4); this document splits it into two authorities, "Qian" and "Hahn et al.", and only one
 exists. The 8.7-9.4 range appears in no paper checked. **Everything attributed to "Hahn" below is dead.**
-Claims attributed to "Qian" are UNVERIFIED, not dead — his results table has not been read.
+Claims attributed to "Qian" are UNVERIFIED, not dead — his results table has not been read. **[C-145, 14 Oct]** The "$2 to $9"
+envelope below was anchored at its top by the dead 8.7–9.4; checked estimates span about 1.5 (Hartzmark–Solomon) to 15 (Gabaix–Koijen's own
+specifications run 5.0–15; their headline is about 5); no central value.
 
 
 **SUPERVISOR DECISION, REVISED 12 Sep after an adversarial review (C-077): carry NO central value.**

@@ -973,6 +973,41 @@ Grok's fidelity review of the README rewrite spec (step ladder, rung 4).**
   carry the repricing (re-use intensity did not rise); shadow money did not in 2024 and stays in the picture as a ceiling over
   the whole window.
 - **Still standing at:** nowhere live; the answer note's paragraph is rewritten to match its body and the page.
+
+---
+
+## C-144 · "The page is a dated rendering of the answer note; where they disagree, the note wins"
+
+**Mine and the record's, in README, the page, CLAUDE.md, RESEARCH_STATE.md and answer/LIVE.md since 24 Sep. Found 14 Oct when the
+principal asked whether the answer note was still up to date; superseded the same day by E-022.**
+
+- **What was wrong.** No script renders the page from the note. Both were edited by hand, and the page ran ahead: on 13–14 Oct the
+  note still carried framings the page had already withdrawn (C-143; the C-141 and C-142 update). "The note wins" therefore pointed
+  readers at the less current document, and "dated rendering" described a process that did not exist.
+- **Correct position.** The page is the authoritative overview (E-022). The answer note is the evidence behind it, without a headline
+  of its own; findings notes own every figure. Where the page and the note differ, one of them is wrong and is corrected.
+- **Still standing at:** nowhere live; every file that described the arrangement was changed in the same commit.
+
+---
+
+## C-145 · "At the top of the published envelope, M=9.4, B6 needs 16 years; its re-open trigger is about 2030"
+
+**Mine. The number re-entered in B0 (13 Sep, "1.5 to 9.4"), then C-091 and the Tier B note (16 Sep), RESEARCH_STATE, C-117 (22 Sep),
+the answer note's §4 and the page, all after C-079 had withdrawn the 8.7–9.4 range on 13 Sep. Found 14 Oct by the consistency audit
+for E-022.**
+
+- **What was wrong.** M=9.4 is the top of the 8.7–9.4 "passing specification", which C-079 and the C-077 amendment traced to a
+  citation that does not exist and said must not be repeated. C-117 reintroduced it as "the top of the published envelope", and the
+  page's multiplier box carried "$2–$9", whose top rests on the same range.
+- **Correct position.** Checked estimates span about 1.5 (Hartzmark–Solomon, 1.5–2.3) to 15: Gabaix–Koijen's headline is about 5 and
+  their own specifications run 5.0–15 (C-077 amendment); Li and Lin's aggregate figure is 6.98. B6's requirement scales with 1/M²:
+  about 386 years at M≈1.9, about 56 at 5, about 28 at 7, about 12 at 10.9 and about 6 at 15. On the 11.7 years free data provide,
+  B6 reopens only above M≈11, which only the two highest aggregate specifications reach; and B6 is a stock-level test, where checked
+  values are about 1.5–2.3. Its re-open trigger is a value of M, not a date. (A first version of this entry said no checked
+  estimate reaches M≈11; the C-077 amendment's 10.9 and 15 show otherwise.)
+- **Still standing at:** nowhere live once this commit lands. The page, the answer note's §4 and table, RESEARCH_STATE.md and the P3
+  banner are corrected; B0 and the Tier B note carry a C-145 banner and keep their 13–16 Sep text as written; C-117 and C-091
+  stay as written (append-only) and are superseded here.
 ---
 
 ## C-132 · "+$15.57trn of FX-swap dollar debt in H1 2025, the largest jump in the series"
@@ -1206,6 +1241,8 @@ OTC derivatives data (`WS_OTC_DERIV2`).**
 - **A tension worth naming.** C-077 banned borrowing a multiplier from the literature *to attribute*. Borrowing one *to size a test* is legitimate — but the closure then inherits the parameter's uncertainty, and the headline carried the 386 without the 16.
 - **Correct position.** Closed on free data at every M in the envelope. Its re-open trigger is a number, like JVZ's: **about 2030**, if M sits at the envelope top.
 - **Still standing at:** `2026-09-17-ANSWER` §4, rewritten in place. C-092's "genuinely permanent" stays as written (append-only) and is superseded here.
+  *Update, 14 Oct:* the "about 2030" trigger and the "16 years at the envelope top" rest on M=9.4, which comes from the
+  withdrawn 8.7–9.4 citation (C-079). Superseded by C-145: on 11.7 years of free data B6 reopens only above M≈11.
 
 ---
 
@@ -1382,6 +1419,8 @@ OTC derivatives data (`WS_OTC_DERIV2`).**
 - **And the "independent corroboration" is structural, not independent.** All three constructions compress because a **rate or bond leg rose faster than the equity leg** over the same window: our real yield **+34.35bp**, Damodaran's own nominal T-Bond **+57bp**, SPF's BOND10 **+34.52bp**. The SPF case is the clearest: STOCK10 **rose +15.43bp** — forecasters expected **more** from equities, not less (C-082 already said this) — and the premium "fell" only because BOND10 rose more. "Three constructions agree on direction" is true and far more mechanical than it reads.
 - **Correct position.** What is MEASURED: the earnings yield barely moved while real yields rose 34bp, so the multiple held up. What is NOT measured: that investors repriced risk. P2c itself says *"a backward accounting residual, not a forward premium"* and *"stop calling the residual a risk premium"* — **the three source documents are disciplined about this and the one-line summary standing on them is not.** Third instance of that pattern today (see also §3a vs N4).
 - **Still standing at:** `2026-09-17-ANSWER` §1 and §7, rewritten in place.
+  *Update, 14 Oct:* `2026-09-12-P2c-Rates-vs-Risk-Premium.md` still stated the claim unmarked (its header covered only C-078); a C-102
+  banner now sits under its status line.
 
 ---
 
@@ -1907,6 +1946,8 @@ propagation**, which is the only thing this check exists to catch.
 C-127	Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md	# the review brief quotes R3's claim as an attack target
 C-089	direct-money-creation.md	# dossiers/ -- states the correct position and names the dead claim to kill it. NB allow entries match the BASENAME only (check.sh: base=${f##*/}); a path-style entry never matches, silently.
 C-116	CORRECTIONS.md	# names the dead phrasing to kill it
+C-145	2026-09-16-TierB-E005-Resolution-Limit.md	# bannered C-145 on 14 Oct; its 16 Sep text is kept as written
+C-145	2026-09-13-B0-The-Bridge-Frame.md	# bannered C-145 on 14 Oct; its 13 Sep text is kept as written
 C-117	CORRECTIONS.md	# names the dead phrasing to kill it
 C-114	CORRECTIONS.md	# names the dead phrasing to kill it
 C-111	CORRECTIONS.md	# names the dead phrasing to kill it
@@ -2440,4 +2481,14 @@ C-143	held up by a \*?compressing
 C-143	not where the equity money came
 C-141	not futures length
 C-142	through a physical shock
+C-144	dated rendering
+C-144	the note wins
+C-144	the document wins
+C-144	is the authority wherever
+C-145	16 at M=9.4
+C-145	top of the published (envelope|range)
+C-145	published \$2–\$9
+C-145	M=9\.4
+C-145	envelope top
+C-145	\$2–\$9 published
 ```

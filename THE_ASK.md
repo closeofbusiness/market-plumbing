@@ -30,6 +30,24 @@ principal and append a new entry.
 
 ---
 
+## E-022 · 14 October 2026 — the page is the authoritative overview; the answer note is the evidence behind it
+
+Given in two messages, after the principal asked whether the answer note was still up to date and the supervisor found that it had
+lagged the page twice in two days (C-143; the C-141 and C-142 update).
+
+> *"Isn't this the actual overview: "https://closeofbusiness.github.io/market-plumbing/"?"*
+
+> *"Agreed, but make sure it is all consistent"*
+
+**Reading notes.** The supervisor had recommended making the page the authority, because it is what readers use and it had run
+ahead of the note, which no script renders it from. "Agreed" accepts that recommendation and reverses part (3) of E-011, which
+kept the answer note authoritative. The answer note becomes the evidence document behind the page: each claim's grade, the
+findings note that owns it, and its caveats. Its one-paragraph answer becomes a pointer to the page, so that only one headline
+exists. Findings notes still own every figure. "All consistent" means every file that describes the arrangement says the same
+thing, and the page, the note and the dossiers do not contradict one another on any claim.
+
+---
+
 ## E-021 · 12 October 2026 — rates, FX and commodities taken up: where is the money coming from?
 
 Given after the supervisor reported nothing due before the 16 Oct read-back. It reverses E-019's parking of FX and commodities.

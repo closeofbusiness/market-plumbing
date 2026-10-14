@@ -6,7 +6,7 @@ The passive bid and ETF creation, as argued by Michael Green, are a large part o
 
 ## Status
 
-**Sized as a measurement. Failed as a causal price impact.** Green’s claims are hypotheses. The measurement that survived is about wrappers and supply, not about a multiplier.
+**Sized as a measurement. The causal price-impact tests closed without an answer; the thesis is not refuted.** Green’s claims are hypotheses. The measurement that survived is about wrappers and supply, not about a multiplier.
 
 ## Evidence
 

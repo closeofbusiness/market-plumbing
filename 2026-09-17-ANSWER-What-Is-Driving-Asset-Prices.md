@@ -1,35 +1,21 @@
-# The answer — what is driving asset prices, and where the money came from (17 September 2026)
+# The evidence behind the answer — what is driving asset prices, and where the money came from
 
-**Status: THE ANSWER as it stands, revised in place; last revised 14 October 2026 (first written 17 September). Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
+**Status: the evidence document behind the page [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/), which is the authoritative overview since 14 October 2026 (E-022). Revised in place; last revised 14 October 2026 (first written 17 September, as the answer itself). Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
 Serves the canonical goal in [`THE_ASK.md`](THE_ASK.md). Standard of evidence is **E-005**: a rough understanding with
 bands, not proof to the last cent. We never pay for data. New to this repository? Its codes (C-, E-, P2a …) and abbreviations are
 explained in the [glossary](GLOSSARY.md).
 
-> **This document restates almost no numbers on purpose.** Every figure below lives in one findings doc,
-> named inline, and that doc is the authority. Three of this fortnight's corrections (C-081, C-089, C-092)
+> **Every figure below is owned by one findings doc, named inline; where they differ, the findings doc is right.** Three of this fortnight's corrections (C-081, C-089, C-092)
 > were caused by a figure being copied into a second place and then going stale there. Read the pointer,
 > not a copy. Run `bin/check.sh --latest` before quoting anything.
 
 ---
 
-## The answer in one paragraph
+## The answer in one paragraph — on the page
 
-**Prices rose mostly because earnings rose.** The multiple held up because the earnings yield barely moved while
-real yields rose. Calling that a compressing risk premium adds less than it seems: the premium is defined as the earnings
-yield minus the real yield, so most of its fall is the same rate rise, restated (**C-102**; this paragraph said otherwise
-until 14 Oct, **C-143**). **On the money side the headline finding is a
-measurement result, not an economic one:** the line everyone reads as "equity issuance" in the Financial
-Accounts is mostly **ETF wrapper creation**. Strip the wrapper and US operating companies **retired** equity
-over 2024:Q1–2026:Q2. So the money arriving met a **shrinking float** of operating-company equity. What we
-**cannot** say is how much of the price move that money *caused*: four designs to measure it have now closed,
-and we can say precisely why each one closed.
-
-**Across the channels the goal names, the honest verdict is mostly negative, and that is a result.** The
-collateral channel did not carry this repricing: collateral re-use intensity did not rise. Shadow money did not in 2024,
-when wholesale-repo growth was a handoff out of the Fed's reverse-repo facility, not new cash; over the whole window it
-stays in the picture as a ceiling (**C-118**, **C-143**). The **AI build-out is funded mostly from operating cash
-flow** — three of the five large AI spenders out-earn their capex (Amazon and Oracle do not; NVIDIA, the sixth firm in the table, spends little; C-134) — with the real financing innovation sitting **off
-balance sheet** in lease commitments. The **IPO boom** is between half and two-thirds a single deal, depending on the census (SpaceX). See §3a.
+The headline answer is the opening of [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/), under "Where the argument stands". It is not repeated
+here, so that it cannot drift: twice in two days this paragraph lagged the page (C-143; the C-141 and C-142 update), and E-022
+made the page the authority. The sections below are the evidence for each claim on the page.
 
 ---
 
@@ -39,7 +25,7 @@ The principal's ruling: *"Nothing here is certain if not clearly mathematically 
 looked at as potential hypothesis that needs testing."*
 
 **The default grade of every claim below is HYPOTHESIS.** A claim is only something stronger where it says so
-explicitly. That inversion is the point: nothing here earns certainty by sitting in the authoritative document.
+explicitly. That inversion is the point: nothing earns certainty by sitting on the page or in this document.
 
 | Grade | What it means | What it does NOT mean |
 |---|---|---|
@@ -85,7 +71,7 @@ Three specific consequences, all of which have already bitten:
   [`2026-09-12-P2c-Rates-vs-Risk-Premium.md`](2026-09-12-P2c-Rates-vs-Risk-Premium.md).
   **Read that doc's C-078 header first:** the *window compression* survives, the *level/counterfactual* claim
   is dead. Do not quote a "% above a constant-premium counterfactual".
-- **It arrived as drift, not as events.** Ordinary days carry the bulk; FOMC beats earnings head-to-head
+- **In 2024 it arrived as drift, not as events.** Ordinary days carry the bulk; FOMC beats earnings head-to-head
   → [`2026-09-14-P5i-Event-Study-Result.md`](2026-09-14-P5i-Event-Study-Result.md).
 - **What did NOT resolve:** whether the compression was cheaper risk or better growth expectations. The split
   is withdrawn (**C-082**) — the survey premium fell on its **bond** leg while equity expectations *rose*.
@@ -164,13 +150,13 @@ points at the doc that owns it.*
 | **Direct money creation** | Weak positive association with equity buying; **not** a funding ceiling — the deposit *stock* is several times the purchases (C-089) | [`2026-09-14-A1-Money-Creation-Link.md`](2026-09-14-A1-Money-Creation-Link.md) |
 | **Shadow banking / shadow money creation** | **In 2024, a handoff, not fresh money** — the 2024 increase in wholesale repo came out of the Fed's reverse-repo facility (C-085). **Over the full 2024–26 window it is not ruled out** (**C-118**): N4 finds raw wholesale growth (~$1.8trn against ~$3.1trn of purchases) the same order of magnitude, and even stripped of the handoff about a quarter of purchases — a ceiling that stays in the picture. No share of equity purchases can be attributed to nonbank money — that number would be manufactured, since the purchases were wrapper purchases and the household mix is unsized | [`2026-09-15-N4-Scale-Timing-Bound.md`](2026-09-15-N4-Scale-Timing-Bound.md); [`2026-08-31-N2b-zk-The-Wholesale-Share.md`](2026-08-31-N2b-zk-The-Wholesale-Share.md) §8 |
 | **The collateral channel** | Collateral **re-use intensity did not rise**; the dated step in the six-bank collateral stock is **H1 2026** — after most of the price rise | [`2026-09-15-N4-Scale-Timing-Bound.md`](2026-09-15-N4-Scale-Timing-Bound.md); [`2026-08-30-D10-Reuse-On-The-Measured-Chain.md`](2026-08-30-D10-Reuse-On-The-Measured-Chain.md) |
-| **Passive bid / ETF creation** | **The dominant finding** — the wrapper *is* the issuance (§2); the bid is mostly rotation (§3) | [`2026-09-15-ETF1-Identity-Net-Of-ETF.md`](2026-09-15-ETF1-Identity-Net-Of-ETF.md) |
+| **Passive bid / ETF creation** | **The dominant finding** — the wrapper *is* the issuance (§2); ETF buying and mutual-fund selling largely offset, consistent with rotation (§3; the mechanism is HYPOTHESIS, C-111) | [`2026-09-15-ETF1-Identity-Net-Of-ETF.md`](2026-09-15-ETF1-Identity-Net-Of-ETF.md) |
 | **AI build-out funding** | **Mostly self-funded**: three of the five large AI spenders (Alphabet, Meta, Microsoft) generate more operating cash than their capex; **Amazon (−$11.6bn) and Oracle (−$28.8bn on operating cash; −$35bn on internal cash) do not** (each firm's latest twelve months, ending June to August 2026; NVIDIA, the table's sixth firm, spends little; C-134). The financing that matters is **off balance sheet** — lease commitments signed but not yet commenced sum to **$1,122.9bn, about 4.9× the $228.3bn of guarantees contracted** — future against future; the "13×" this row carried until 23 Sep divided future leases by *live* guarantees only (**C-116**). **The AI debt that does exist sits in a corporate bond market held mainly by long money** (W2; Z.1 sector level; the AI names are not a separate Z.1 line and free data count only two holder groups for them, so for them this is HYPOTHESIS, **C-139**): a July 2026 name search finds money funds holding about $3.4bn under AI names (about $4.25bn with Apple), mostly as repo collateral that finances dealers rather than the companies; the search is a floor (**C-138**). The $4.25bn with Apple is ~0.35% of JPMorgan analysts' ~$1.2trn *estimate* of AI-company-issued debt; large-bank C&I exposure to AI-adjacent industries is ~$450bn committed / ~$150bn outstanding, but that classification already stood at ~$250bn of commitments in 2015, so build-out lending is some smaller, unmeasured part of it (**C-115**) | [`2026-09-12-F1-Funding-Table.md`](2026-09-12-F1-Funding-Table.md); [`2026-08-22-Guarantee-Stack.md`](2026-08-22-Guarantee-Stack.md); [`2026-09-12-Oracle-RPO-And-Financing.md`](2026-09-12-Oracle-RPO-And-Financing.md); [`2026-09-22-W2-AI-Paper-Composition.md`](2026-09-22-W2-AI-Paper-Composition.md) |
-| **IPO boom** | About **$112bn of new money** in 2026 to date across the eight 2026-priced operating-company deals among the ten prospectuses read, **two-thirds of it one deal** (SpaceX, $75bn); $36.9bn excluding it. On Renaissance Capital's broader census ($146bn, $71bn ex-SpaceX) the one deal is about half. **Who bought is not recoverable on free data** — cornerstones are named in 3 of 10 deals | [`2026-09-12-I1b-IPO-Prospectus-Facts.md`](2026-09-12-I1b-IPO-Prospectus-Facts.md); [`2026-09-14-I2-IPO-Allocation.md`](2026-09-14-I2-IPO-Allocation.md) |
+| **IPO boom** | About **$112bn of new money** in 2026, to 12 September, across the eight 2026-priced operating-company deals among the ten prospectuses read, **two-thirds of it one deal** (SpaceX, $75bn); $36.9bn excluding it. On Renaissance Capital's total of $146bn, a vendor figure the programme did not verify, the one deal is about half. **Who bought is not recoverable on free data** — cornerstones are named in 3 of 10 deals | [`2026-09-12-I1b-IPO-Prospectus-Facts.md`](2026-09-12-I1b-IPO-Prospectus-Facts.md); [`2026-09-14-I2-IPO-Allocation.md`](2026-09-14-I2-IPO-Allocation.md) |
 
 **Read together, this is a real result about the original hypothesis, not a gap in it.** E-003 named these
 channels as things to test — "potential" factors, in the principal's word. Over 2024–26 the money that bought
-equities was mostly **already inside the system** (the deposit stock, and rotation between fund types) rather
+equities was mostly **already inside the system** (the deposit stock, and offsetting flows between fund types, consistent with rotation) rather
 than newly created through shadow or collateral channels, and the largest capex programme in the market was
 funded mainly from **profits and leases** rather than from either. That does not make those channels
 unimportant in general; it says they are **not what carried this repricing**.
@@ -189,7 +175,7 @@ higher term premium or higher expected rates is not settled on free data. Two mo
 for the next four years fell over 2024–26; they split on years 5 to 10, where the surveys say expectations rose and the models say
 they fell. See [`2026-09-27-R1-Treasury-10y-Decomposition.md`](2026-09-27-R1-Treasury-10y-Decomposition.md). On the supply side,
 the public absorbed about 36% more rate risk at constant yields over the same months, though per face dollar the debt did not get
-longer. Treasury issuance supplied most of it; the Fed's share is 4% to about 13%, depending on the measure. Which buyers took it,
+longer. Treasury issuance supplied most of it; the Fed's share is 4%, and at most about 13% (a ceiling that depends on how Treasury refinanced the runoff, C-123). Which buyers took it,
 and whether it raised term premia, is not measured. See
 [`2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md`](2026-09-27-R2-Treasury-Duration-Supply-And-Holders.md).
 **JGBs and euro-area bonds, first pass (R3, 27 Sep; corrected 28 Sep after outside review, C-126 to C-128).** From end-2023 to
@@ -202,10 +188,12 @@ JGB rate risk from end-2023 or Oct 2024 to Aug 2026 on the method used for the U
 measure (8 Oct follow-up; R4R found the size curve-dependent; the upper ends rest on an estimated start stock). See
 [`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](2026-09-27-R3-JGB-And-Euro-Area-Bonds.md).
 **Rates, FX and commodities flows: first measurement map, 12 Oct (E-021, which took up what E-019 had parked); reviewed
-from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell (C-141) and two were corrected (C-142).** See
+from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell outright (C-141) and two more were withdrawn after being weakened (C-142).** See
 [`2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`](2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md), which owns the figures. What stands:
-- the marginal buyer of US Treasuries has shifted from foreigners to money funds and, in bills, the Fed; in notes and bonds
-  alone the foreign share of net issuance also fell, while the Fed only stopped selling (MEASURED, Z.1);
+- over the year to 2026:Q2, against the year before, the marginal buyer of US Treasuries shifted from the rest of the world to
+  money funds (all of it in late 2025; they were net sellers in 2026) and, in bills, the Fed (in 2026); in notes and bonds alone the
+  foreign share of net issuance also fell, while the Fed only stopped selling (MEASURED, Z.1; offshore hedge funds sit in the
+  household row, C-124);
 - private foreigners still buy US securities, while official holders shrink their Treasuries and Japan sold dollars for yen in
   2026; most of the fall in the all-instrument net inflow is banks' own dollar liabilities, not securities (MEASURED, TIC);
 - gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length ended where it
@@ -222,10 +210,10 @@ taxonomy matters more than the verdict — [`2026-09-16-TierB-E005-Resolution-Li
 |---|---|---|
 | **B5** sovereign mandate IV | data — bands never bound; monthly triggers unobservable | first stage weak, n=9 |
 | **P4** Russell RD | data — free substitutes never assigned treatment (**C-086**) | first stage *F*≈2.6 |
-| **B6** payment-day IV | **arithmetic, conditional on a borrowed multiplier** — ~2.5bp signal inside ~111bp of daily noise at Hartzmark–Solomon's M≈1.9 (**C-090/C-091/C-117**) | **~386 years** at M≈1.9; **16 years** at the envelope top (M=9.4), against 11.7 of free data |
+| **B6** payment-day IV | **arithmetic, conditional on a borrowed multiplier** — ~2.5bp signal inside ~111bp of daily noise at Hartzmark–Solomon's M≈1.9 (**C-090/C-091/C-117**) | **~386 years** at M≈1.9; 11.7 years of free data suffice only above M≈11 (**C-145**) |
 | **JVZ** mega-firm test | resolution — 26 free N-PORT quarters (**C-092**) | MDE 1.097 vs 0.528 predicted, **0.48×** |
 
-**B6 is the leg furthest from reopening, not a permanent closure** (**C-117**): at the central multiplier it needs ~386 years, but at the top of the published envelope it needs 16 against the 11.7 free data provides — so its re-open trigger is also a number, **about 2030**, if M sits at the envelope top. JVZ's re-open trigger is a number,
+**B6 is the leg furthest from reopening, not a permanent closure** (**C-117**): at the multiplier the test was sized on (Hartzmark and Solomon's M≈1.9) it needs ~386 years; the 11.7 years free data provide would suffice only above M≈11, which only the two highest aggregate specifications in Gabaix and Koijen reach (10.9 and 15; at their headline ~5 it needs about 56 years), and B6 is a stock-level test, where checked values are about 1.5–2.3. Its re-open trigger is therefore a value of M, not a date (**C-145**; the "about 2030" this paragraph carried rested on a multiplier taken from a withdrawn citation, C-079). JVZ's re-open trigger is a number,
 not a word: parity needs **~113 quarters, about 2048**. Coverage is not the constraint; it is already 40/40
 megas. **We never borrowed a multiplier from the literature and applied it** — that approach died at C-077,
 and C-080 killed the bound built on the wrong denominator.

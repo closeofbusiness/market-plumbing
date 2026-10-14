@@ -521,8 +521,10 @@ item has a date or a trigger; an item with neither is a decision nobody has made
 ```ranked
 RE-PLANNED 11 Sep under E-003 (THE_ASK.md; the charter is section 0.0).
 
-STATE OF THE ARGUMENT, 17 Sep — **DO NOT READ IT FROM HERE. Read `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md`,
-which is the single authoritative statement of what we believe. It deliberately restates no numbers — each claim points at its findings doc, because copying figures into a second place is what caused C-081, C-089 and C-092.**
+STATE OF THE ARGUMENT — **DO NOT READ IT FROM HERE. Read the page, `docs/index.html` (served at
+https://closeofbusiness.github.io/market-plumbing/), which is the single authoritative statement of what we believe (E-022, 14 Oct),
+and `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` for the evidence behind each claim. Findings docs own every figure, because
+copying figures into a second place is what caused C-081, C-089 and C-092.**
 This block used to restate the argument and went stale within a day; it is now a pointer by design.
 
 Three things a cold reader needs before anything else:
@@ -723,8 +725,8 @@ Do not restate findings here. Status and detail stay in the home section named o
                                             THE REAL LIMIT IS ARITHMETIC. SPY daily sd = 111bp. Top-minus-bottom payment-yield
                                             spread = 1.32bp on a sample that ALREADY contains every S&P500 payer via imputed
                                             dates. At M=1.9 the predicted gap is 2.51bp against 111bp of noise -> 15,632 days
-                                            per quintile = ~97,300 trading days = 386 YEARS. At M=9.4 it needs 16 years; we
-                                            have 11.7. True pay dates remove timing noise, they do not widen the spread.
+                                            per quintile = ~97,300 trading days = 386 YEARS. On our 11.7 years it needs M
+                                            above ~11 (C-145). True pay dates remove timing noise, they do not widen the spread.
                                             DO NOT re-run B6, do not widen tickers, do not run the Nasdaq-only subsample -
                                             fewer payers is a SMALLER spread and strictly less power than the run that failed.
                                             SCREENING RULE THIS GENERALISES TO (now in CLAUDE.md): any design whose effect is

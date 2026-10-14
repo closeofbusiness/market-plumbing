@@ -1,6 +1,11 @@
 # P2c — what holds the valuation up: real rates or the risk premium (12 Sep 2026)
 
-**Status: PARTLY RETRACTED 13 Sep — see [C-078]. Read this header before quoting anything below.**
+**Status: PARTLY RETRACTED 13 Sep — see [C-078] — and the support claim retracted 22 Sep, see [C-102]. Read this header before quoting anything below.**
+
+> **[C-102]** The sentences below that say premium compression "held the multiple up" are retracted. The premium is defined as
+> the earnings yield minus the real yield, so most of its fall is the same rate rise, restated. What survives is the measurement:
+> the earnings yield barely moved while real yields rose. (Banner added 14 Oct, when a consistency audit found the claim still
+> unmarked here.)
 The arithmetic stands; the level claim does not. Ranked item 2. Script `bin/rates_vs_premium.py`; data
 `_research/2026-09-12-P2c-*.csv`. Attacked by ATT1 (Grok in Cursor) and verified by me, 13 Sep.
 

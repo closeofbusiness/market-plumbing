@@ -6,11 +6,11 @@ Earnings, rates, and risk premia explain the equity move first. A liquidity or f
 
 ## Status
 
-**Sized** for the recent US equity window, and still a hypothesis under the charter. **Open** for commodities (parked by the principal, E-019). Rates: first passes for the US, Japan and Germany are done and reviewed; see the rates dossier.
+**Sized** for the recent US equity window, and still a hypothesis under the charter. **First measurement map** for commodities (12 Oct, E-021; reviewed 13 Oct, C-141 and C-142); no decomposition yet. Rates: first passes for the US, Japan and Germany are done and reviewed; see the rates dossier.
 
 ## Evidence
 
-- Earnings share **71.0% to December 2025 and 82.3% to June 2026** [MEASURED]. Source: [`2026-09-11-P2a-Return-Decomposition.md`](../2026-09-11-P2a-Return-Decomposition.md), as carried in the 17 September answer.
+- Earnings share **71.0% to December 2025 and 82.3% to June 2026** [MEASURED]. Source: [`2026-09-11-P2a-Return-Decomposition.md`](../2026-09-11-P2a-Return-Decomposition.md), as carried on the page.
 - Real yields **+0.34 points**, earnings yield **−0.14**, December 2023 to June 2026 [MEASURED]. The multiple held. Source: [`2026-09-12-P2c-Rates-vs-Risk-Premium.md`](../2026-09-12-P2c-Rates-vs-Risk-Premium.md).
 - Per-share accretion is at most about a tenth to a sixth of the price gain since 2015 [BOUNDED]. Source: [`2026-09-18-EPS-Split.md`](../2026-09-18-EPS-Split.md).
 - Useful-life extensions are **5–11%** of six megacaps’ net-income growth. Source: [`2026-09-13-E2-Earnings-Quality-Useful-Lives.md`](../2026-09-13-E2-Earnings-Quality-Useful-Lives.md).

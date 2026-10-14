@@ -186,15 +186,16 @@
 > run reported as green carried a live killed-claim hit that only surfaced when the ✓ lines were printed. The pass
 > condition is five ✓ guard lines **and** `✓ no killed claims found` **and** `✓ page clean` — a positive signal, not silence.
 >
-> **The published page ("What Holds the Market Up", claude.ai artifact) is a dated rendering OUTSIDE the gate.**
-> `check.sh --all` never sees it, and it carried C-083's retracted "irreducibly unattributable" for four days before
+> **The published page ("What Holds the Market Up", `docs/index.html`) is the authoritative overview since 14 Oct (E-022), and it is
+> inside the gate.** Before 24 Sep it was a claude.ai artifact that `check.sh --all` never saw, and it carried C-083's retracted "irreducibly unattributable" for four days before
 > anyone looked. **It went stale a second time on 23 Sep:** three claims killed on 22–23 Sep stayed live because a
 > pre-publish check only covers claims already dead at publish time — nothing re-scanned the page after a new kill.
 > **Its source now lives at `docs/index.html`** (moved 24 Sep, E-012). **GitHub Pages serves that file at https://closeofbusiness.github.io/market-plumbing/** (E-014), so
 > **a push to `main` that changes it republishes the public page.** Publish the claude.ai artifact FROM that file too. `check.sh --all` scans
 > it on every run (the `page check` line). For a one-off, use `bin/check_page.py <html>`, not `bin/check.sh <html>`: the
-> raw scan caught 2 of the 3 dead claims and missed C-116, whose phrase an HTML tag split. The answer document is the
-> authority; the page must say so and must not be used as a source.
+> raw scan caught 2 of the 3 dead claims and missed C-116, whose phrase an HTML tag split. The page is the
+> authority for the answer; the ANSWER note is the evidence behind it, and findings docs own every figure. Change a claim on the page
+> and its section in the note in the same commit; never let the note carry a headline of its own (C-143, C-144).
 > **The ban scan cannot see drift.** On 24 Sep a cold reader found, and an audit then confirmed, six places where the v12 page
 > had drifted from its sources, all of them phrased cleanly (C-120). They were a comparison mixing *outstanding* with *committed*, a
 > subset drawn across two datasets, and dropped qualifiers. **Before any republish that changes numbers, read the page against the
@@ -348,11 +349,11 @@ the improvised-channel problem. The extracted source text sits in
 | `GLOSSARY.md` | 2k | public glossary — roles, codes, market terms, file-name patterns (the answer note links here) | — | ✓ |
 | `REPRODUCE.md` | 1k | public how-to — run the checks, recompute a figure, set SEC_UA, inputs not redistributed, view the page locally | — | ✓ |
 | **`CHARTER.md`** | 2k | public charter — the question, markets in scope, rules. It quotes the goal; the goal's authority is `THE_ASK.md` | — | ✓ |
-| `answer/` | — | POINTER to `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` (E-011) | — | — |
+| `answer/` | — | POINTER to the page `docs/index.html` and the evidence note `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` (E-022; was E-011) | — | — |
 | `corrections/` | — | POINTER to `CORRECTIONS.md` (E-011) | — | — |
 | `dossiers/` | 13 files | public per-channel summaries; each points at the findings doc that owns its numbers | — | ✓ |
 | `monitor/` | 1 file | public extract of `data/series.tsv` and `CALENDAR.tsv`; those win where they differ | — | — |
-| `docs/` | 1 page | the public web page "What Holds the Market Up" (`index.html`). It is a dated rendering of the ANSWER note and the source the claude.ai artifact is published from (E-012). GitHub Pages serves it at https://closeofbusiness.github.io/market-plumbing/ (E-014) | — | if presenting |
+| `docs/` | 1 page | the public web page "What Holds the Market Up" (`index.html`). It is the authoritative overview (E-022, 14 Oct); the ANSWER note is the evidence behind it. It is also the source the claude.ai artifact is published from (E-012). GitHub Pages serves it at https://closeofbusiness.github.io/market-plumbing/ (E-014) | — | if presenting |
 | `data/series.tsv` · `bin/pull_series.py` | — | **query** | **query** | **query** |
 | `data/vintages/` (FINRA, ALFRED snapshots) · `Report/*.html` (outputs) | — | if vintage | if vintage | if presenting |
 | `CORRECTIONS.md` | **query only — never whole** (exceeds the Read cap; `bin/check.sh --latest` for the newest, `grep -n '^## C-0'` to locate one) | **always** | **always** | **always** |
@@ -421,7 +422,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`2026-09-15-LIT1-Residual-Literature.md`** | 4k | **always, with HR — tax recoding is not an entity census of the plug (C-084)** | ✓ | ✓ |
 | **`2026-09-15-N4-Scale-Timing-Bound.md`** | 4k | **always, with SYN — 2024 wholesale expansion was the RRP handoff; C-085** | ✓ | ✓ |
 | **`2026-09-15-P4-Russell-Elasticity-Pilot.md`** | 4k | **always, with B0/P3 — free-data Russell RD first stage fails; C-086** | ✓ | ✓ |
-| **`2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md`** | 3k | **ALWAYS — START HERE. The answer as it stands; restates no numbers, points at each findings doc** | **always** | **always** |
+| **`2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md`** | 3k | **ALWAYS. The evidence behind the page (E-022): each claim's grade, owning findings doc and caveats. The answer itself is the page, `docs/index.html`, "Where the argument stands"** | **always** | **always** |
 | `2026-09-14-SYN-What-We-Can-Say.md` | <1k | SUPERSEDED — a pointer plus the record of four corrections written against it (C-081/082/084/089) | — | — |
 | **`2026-09-14-A1-Money-Creation-Link.md`** | 3k | if money creation, deposits or the Fed — tested, WEAK, and too small on the recent window | ✓ | ✓ |
 | **`2026-09-14-F1r-AI-Funding-Remainder.md`** | 4k | if AI build-out financing — NVIDIA's tables reconcile; 4 of 6 firms name no vehicle | ✓ | ✓ |
