@@ -98,7 +98,7 @@ Checked quantity: `price_return + dividend_return` vs. actual compounded `total_
 
 ## Files
 
-*These paths were an agent's temporary workspace on 11 Sep 2026 and no longer exist. The durable copies are the script [`bin/decomp_sp500_shiller.py`](bin/decomp_sp500_shiller.py) and the tables in [`data/p2a_decomposition/`](data/p2a_decomposition/). Shiller's and FRED's input files are third-party and are not redistributed here (README, "Checking the work").*
+*These paths were an agent's temporary workspace on 11 Sep 2026 and no longer exist. The durable copies are the script [`bin/decomp_sp500_shiller.py`](bin/decomp_sp500_shiller.py) and the tables in [`data/p2a_decomposition/`](data/p2a_decomposition/). Shiller's and FRED's input files are third-party and are not redistributed here ([REPRODUCE.md](REPRODUCE.md), "Inputs not redistributed").*
 
 - `<session-scratchpad>/wave1/p2a/decomp.py`
 - `.../decomp_annual.csv`, `.../decomp_cumulative.csv`

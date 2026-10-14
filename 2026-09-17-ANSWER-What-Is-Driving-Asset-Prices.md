@@ -3,7 +3,7 @@
 **Status: THE ANSWER as it stands. Supersedes [`2026-09-14-SYN-What-We-Can-Say.md`](2026-09-14-SYN-What-We-Can-Say.md), which is now a pointer.**
 Serves the canonical goal in [`THE_ASK.md`](THE_ASK.md). Standard of evidence is **E-005**: a rough understanding with
 bands, not proof to the last cent. We never pay for data. New to this repository? Its codes (C-, E-, P2a …) and abbreviations are
-explained in the [README glossary](README.md#glossary).
+explained in the [glossary](GLOSSARY.md).
 
 > **This document restates almost no numbers on purpose.** Every figure below lives in one findings doc,
 > named inline, and that doc is the authority. Three of this fortnight's corrections (C-081, C-089, C-092)
@@ -14,8 +14,10 @@ explained in the [README glossary](README.md#glossary).
 
 ## The answer in one paragraph
 
-**Prices rose mostly because earnings rose.** What the multiple added on top was held up by a *compressing
-risk premium against rising real rates* — not by cheaper money. **On the money side the headline finding is a
+**Prices rose mostly because earnings rose.** The multiple held up because the earnings yield barely moved while
+real yields rose. Calling that a compressing risk premium adds less than it seems: the premium is defined as the earnings
+yield minus the real yield, so most of its fall is the same rate rise, restated (**C-102**; this paragraph said otherwise
+until 14 Oct, **C-143**). **On the money side the headline finding is a
 measurement result, not an economic one:** the line everyone reads as "equity issuance" in the Financial
 Accounts is mostly **ETF wrapper creation**. Strip the wrapper and US operating companies **retired** equity
 over 2024:Q1–2026:Q2. So the money arriving met a **shrinking float** of operating-company equity. What we
@@ -23,9 +25,9 @@ over 2024:Q1–2026:Q2. So the money arriving met a **shrinking float** of opera
 and we can say precisely why each one closed.
 
 **Across the channels the goal names, the honest verdict is mostly negative, and that is a result.** The
-shadow-money and collateral channels the original hypothesis centred on are **not where the equity money came
-from over this window**: 2024 wholesale-repo growth was a handoff out of the Fed's reverse-repo facility, not
-new cash, and collateral re-use intensity did not rise. The **AI build-out is funded mostly from operating cash
+collateral channel did not carry this repricing: collateral re-use intensity did not rise. Shadow money did not in 2024,
+when wholesale-repo growth was a handoff out of the Fed's reverse-repo facility, not new cash; over the whole window it
+stays in the picture as a ceiling (**C-118**, **C-143**). The **AI build-out is funded mostly from operating cash
 flow** — three of the five large AI spenders out-earn their capex (Amazon and Oracle do not; NVIDIA, the sixth firm in the table, spends little; C-134) — with the real financing innovation sitting **off
 balance sheet** in lease commitments. The **IPO boom** is between half and two-thirds a single deal, depending on the census (SpaceX). See §3a.
 

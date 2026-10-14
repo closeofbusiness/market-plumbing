@@ -344,7 +344,9 @@ the improvised-channel problem. The extracted source text sits in
 | File | ~tok | Investigator | Verifier | Synthesist |
 |---|---:|:---:|:---:|:---:|
 | **`THE_ASK.md`** | **1k** | **always** | **always** | **always** |
-| **`README.md`** | 1k | public front page — how to read the repo; points at the authorities | — | ✓ |
+| **`README.md`** | 1k | public front page — a door: the question, where the answer lives, how to cite; restates no findings | — | ✓ |
+| `GLOSSARY.md` | 2k | public glossary — roles, codes, market terms, file-name patterns (the answer note links here) | — | ✓ |
+| `REPRODUCE.md` | 1k | public how-to — run the checks, recompute a figure, set SEC_UA, inputs not redistributed, view the page locally | — | ✓ |
 | **`CHARTER.md`** | 2k | public charter — the question, markets in scope, rules. It quotes the goal; the goal's authority is `THE_ASK.md` | — | ✓ |
 | `answer/` | — | POINTER to `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` (E-011) | — | — |
 | `corrections/` | — | POINTER to `CORRECTIONS.md` (E-011) | — | — |

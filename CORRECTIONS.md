@@ -950,6 +950,23 @@ re-read the group nets from `data/cftc_cot/gold_ledger.csv`.**
   added futures length on the way up and cut it in the last four weeks. How the rise splits between supply disruption and financial
   demand is HYPOTHESIS.
 - **Still standing at:** nowhere live; the E-021 map, the page, the commodities dossier and the Bassman note are corrected.
+
+---
+
+## C-143 · The answer's own headline paragraph: the multiple "held up by a compressing risk premium against rising real rates — not by cheaper money"; the shadow-money and collateral channels "not where the equity money came from over this window"
+
+**Mine, in the answer note's one-paragraph answer, unchanged since 17 Sep while its body and the page moved on. Found 14 Oct by
+Grok's fidelity review of the README rewrite spec (step ladder, rung 4).**
+
+- **What was wrong.** The note's own §1 says the premium restatement "is not a second fact" (C-102), and the page lists "the
+  premium, not rates, held the multiple up" as retracted. The note's channel table says the full 2024–26 window is not ruled
+  out for shadow money (C-118). The headline paragraph, the most-read lines in the record, still said both things. The killed
+  framings survived in paraphrase, so no ban pattern caught them.
+- **Correct position.** The multiple held up because the earnings yield barely moved while real yields rose; calling that a
+  compressing risk premium adds little, because the premium is defined against the real yield. The collateral channel did not
+  carry the repricing (re-use intensity did not rise); shadow money did not in 2024 and stays in the picture as a ceiling over
+  the whole window.
+- **Still standing at:** nowhere live; the answer note's paragraph is rewritten to match its body and the page.
 ---
 
 ## C-132 · "+$15.57trn of FX-swap dollar debt in H1 2025, the largest jump in the series"
@@ -2413,4 +2430,6 @@ C-141	not from futures
 C-141	rather than futures
 C-142	not financial inflow
 C-142	fund length was net long but did not grow
+C-143	held up by a \*?compressing
+C-143	not where the equity money came
 ```

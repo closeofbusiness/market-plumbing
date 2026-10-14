@@ -8,7 +8,7 @@ dividend D, earnings E, all nominal/as-reported) and FRED's 10-year TIPS
 yield (DFII10) and nominal 10-year yield (DGS10).
 
 Inputs (third-party, not redistributed; download them to this folder first --
-README, "Checking the work"):
+REPRODUCE.md, "Inputs not redistributed"):
   data/vintages/shiller_2026-09-02/ie_data.xls      Shiller, saved 2026-09-02
   data/vintages/shiller_2026-09-02/FRED_DGS10.csv   FRED DGS10
   data/vintages/shiller_2026-09-02/FRED_DFII10.csv  FRED DFII10
