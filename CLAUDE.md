@@ -347,6 +347,7 @@ the improvised-channel problem. The extracted source text sits in
 | **`THE_ASK.md`** | **1k** | **always** | **always** | **always** |
 | **`README.md`** | 1k | public front page — a door: the question, where the answer lives, how to cite; restates no findings | — | ✓ |
 | `GLOSSARY.md` | 2k | public glossary — roles, codes, market terms, file-name patterns (the answer note links here) | — | ✓ |
+| `DISCLAIMER.md` | 1k | public disclaimer — personal opinion unconnected to any employer, not advice, academic and entertainment purposes, no warranty or liability (principal's request, 14 Oct) | — | ✓ |
 | `REPRODUCE.md` | 1k | public how-to — run the checks, recompute a figure, set SEC_UA, inputs not redistributed, view the page locally | — | ✓ |
 | **`CHARTER.md`** | 2k | public charter — the question, markets in scope, rules. It quotes the goal; the goal's authority is `THE_ASK.md` | — | ✓ |
 | `answer/` | — | POINTER to the page `docs/index.html` and the evidence note `2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md` (E-022; was E-011) | — | — |

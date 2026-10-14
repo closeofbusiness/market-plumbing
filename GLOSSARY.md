@@ -74,5 +74,6 @@ File names and folders in this repository follow the patterns below.
 | [requirements.txt](requirements.txt) | Libraries for the spreadsheet scripts in `bin/` and the numpy scripts under `_research/`. |
 | [.gitignore](.gitignore) | Paths kept out of git, including third-party inputs that are not redistributed. |
 | [README.md](README.md) | The front page. |
+| [DISCLAIMER.md](DISCLAIMER.md) | Personal opinion, not advice, academic and entertainment purposes only; no warranty or liability; third-party terms. |
 | [GLOSSARY.md](GLOSSARY.md) | This glossary. |
 | [REPRODUCE.md](REPRODUCE.md) | How to run the checks, recompute a figure, and read the page locally. |

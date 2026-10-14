@@ -4,6 +4,8 @@ What is holding asset prices up, and whose money is behind it?
 
 Market Plumbing is an open research record on that question. It covers US equities first, and government bonds, currencies and commodities as the work reaches them. The current answer is the page [What Holds the Market Up](https://closeofbusiness.github.io/market-plumbing/), which is the authoritative overview. The evidence behind each of its claims is set out in [the answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md) and the findings notes it names.
 
+*Personal opinion, not investment advice, and published for academic and entertainment purposes only. See the [disclaimer](DISCLAIMER.md).*
+
 ## How claims are handled
 
 Every claim carries one of four grades, defined in [CHARTER.md](CHARTER.md#grades): IDENTITY, MEASURED, BOUNDED, or HYPOTHESIS. Most claims remain hypotheses until they are tested. Claims that fail are withdrawn and kept on record in [CORRECTIONS.md](CORRECTIONS.md), rather than deleted. The record uses free public data only.
@@ -14,7 +16,7 @@ AI models do the research and the writing: Claude (Anthropic) and Grok (xAI) wor
 
 ## Using and citing it
 
-The repository's own write-ups are © closeofbusiness and are licensed under CC BY 4.0. The licence text is in [LICENSE](LICENSE). Reuse requires attribution. Third-party data and paywalled text are summarised and cited, and they are not redistributed.
+The repository's own write-ups are © closeofbusiness and are licensed under CC BY 4.0. The licence text is in [LICENSE](LICENSE). Reuse requires attribution. Paywalled text is summarised and cited, not copied. Some third-party data and documents are included so results can be rebuilt; they keep their owners' terms and are listed in [data/THIRD_PARTY_MANIFEST.tsv](data/THIRD_PARTY_MANIFEST.tsv).
 
 The working name is Third Derivative Research. The byline is closeofbusiness. Cite the page: Third Derivative Research, "What Holds the Market Up", https://closeofbusiness.github.io/market-plumbing/, with the date shown on the page. For a single claim, cite the findings note named beside it in [the answer note](2026-09-17-ANSWER-What-Is-Driving-Asset-Prices.md).
 
@@ -40,3 +42,7 @@ export SEC_UA="Your Name you@example.com"
 ```
 
 [REPRODUCE.md](REPRODUCE.md) explains how to recompute a figure, run the record's checks and obtain the inputs that are not redistributed.
+
+## Disclaimer
+
+This project is the personal opinion of the person who directs it, has nothing to do with any employer, and is not investment, financial, legal, accounting or tax advice. It is published for academic and entertainment purposes only, AI models write it, and errors are expected, so take your own professional advice before acting on anything here. Read the full [DISCLAIMER.md](DISCLAIMER.md).
