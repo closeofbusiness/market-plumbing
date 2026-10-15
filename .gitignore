@@ -49,3 +49,6 @@ data/nport/_FAILED/
 # Treasury CMT CSVs are fetched by bin/swap_tape_ledger.py, not redistributed
 CFTC_CUMULATIVE_RATES_*
 data/vintages/swap_tape_ust/
+
+# ICE Brent COT ledger (E-025): the ICE COTHist files are never committed (the cache is ~/ice_cot/, outside the repo; the script refuses a cache inside it)
+COTHist*.csv

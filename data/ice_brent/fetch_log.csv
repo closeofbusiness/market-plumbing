@@ -1,0 +1,19 @@
+# source: request log for ICE Futures Europe Commitments of Traders historical files (www.ice.com) and the EIA Europe Brent spot price file (www.eia.gov); each row carries its own UTC time; non-commercial research (THE_ASK.md E-025)
+requested_at_utc,host,path,http_status,outcome,bytes,sha256
+2026-10-15T06:25:17.791Z,www.ice.com,/publicdocs/futures/COTHist2026.csv,,adopted_from_cache,304244,d8a61d0f311ea9d97589fac214bb16ed3ab369a5aea5ba234ed04d7e60d2dedb
+2026-10-15T06:29:41.228Z,www.ice.com,/publicdocs/futures/COTHist2011.csv,,adopted_from_cache,151297,552c2d00ea9356117b9a66eb7d2ebb944feb3ecffe567deed9398ee8a3adc69d
+2026-10-15T06:29:53.649Z,www.ice.com,/publicdocs/futures/COTHist2018.csv,,adopted_from_cache,456402,ca735d1475afdd61e81999e5a2225dc4fdb2e2dcf6b91cb6b94dde8be35de744
+2026-10-15T06:56:22.600Z,www.ice.com,/publicdocs/futures/COTHist2012.csv,200,saved,157360,1b0b7a91286376c065d60b11bacb188ddfbf031d1727e1e8b2fa192330d359e9
+2026-10-15T06:56:27.603Z,www.ice.com,/publicdocs/futures/COTHist2013.csv,200,saved,156320,892c5183267c03eac56f0aa22b0fc7439618c0a83b295ab7620236617e9177e2
+2026-10-15T06:56:32.605Z,www.ice.com,/publicdocs/futures/COTHist2014.csv,200,saved,227878,ee0cabcea29dec2b909118359595420dea14220c55ed0a38dda2010a21faff15
+2026-10-15T06:56:37.611Z,www.ice.com,/publicdocs/futures/COTHist2015.csv,200,saved,421533,27d9c7a71115eba31288513377c90828db5329a5040c66ad5d6363faabf35ca7
+2026-10-15T06:56:42.614Z,www.ice.com,/publicdocs/futures/COTHist2016.csv,200,saved,422387,395cfcd399a268b3f622bf7181f9da19e230d80d099fa782a6d5916417aba2e5
+2026-10-15T06:56:47.620Z,www.ice.com,/publicdocs/futures/COTHist2017.csv,200,saved,425669,f95bf030a902e819b2dd1c99f3d1780110db94f37c6ce144cbb925cc3109953b
+2026-10-15T06:56:52.620Z,www.ice.com,/publicdocs/futures/COTHist2019.csv,200,saved,423357,4bd84e035234af4ae6fb56b573e44f9f942a8640fa2c1b8b8efd4852b1d61554
+2026-10-15T06:56:57.623Z,www.ice.com,/publicdocs/futures/COTHist2020.csv,200,saved,400370,67142ee5e67d9cb2e4a2680f42de5394690c0880a8f477ccbda0bbc732de468e
+2026-10-15T06:57:02.626Z,www.ice.com,/publicdocs/futures/COTHist2021.csv,200,saved,358209,cd538f9c17f9d9d37b33da30501ea3f6ea2086d7749a974bc7eb145f7b1060e2
+2026-10-15T06:57:07.631Z,www.ice.com,/publicdocs/futures/COTHist2022.csv,200,saved,356908,756075ed760fdefa0504bf56854548e843b5f5da2710ef07b881e473e7f924c7
+2026-10-15T06:57:12.637Z,www.ice.com,/publicdocs/futures/COTHist2023.csv,200,saved,389193,bb1a3d3887392afeab23a7b9efc97b90f204d8d1701a2218f8a3a9b01e803582
+2026-10-15T06:57:17.638Z,www.ice.com,/publicdocs/futures/COTHist2024.csv,200,saved,398590,9803282779cf537806fe8ca08d46b74db9763931bb06598affcfcc2b07c10f39
+2026-10-15T06:57:22.639Z,www.ice.com,/publicdocs/futures/COTHist2025.csv,200,saved,391541,d7fbd09d29561b0249c44f2ce61f9197c6a0e876157e6291ff510cae34b0d00f
+2026-10-15T06:57:27.643Z,www.eia.gov,/dnav/pet/hist_xls/RBRTEd.xls,200,saved,452096,a7b7074cb3e1e4b7418cdc7f73ccf831226d55f9365c136be56c8edc3a1e2182

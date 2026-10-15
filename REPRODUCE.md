@@ -15,6 +15,7 @@ The command checks the following.
 - Retracted wording is scanned in the notes outside `_research/` and on the page.
 - No DTCC record sits under [data/swap_tape/](data/swap_tape/README.md): no field of 8 to 19 digits (a Dissemination Identifier) and no `CFTC_CUMULATIVE` file or zip. The label on that check is M9; like the others it warns and never blocks.
 - Every User-Agent literal in `bin/*.py` is the one neutral string [CLAUDE.md](CLAUDE.md) sets for hosts other than sec.gov, or reads the SEC contact from the `SEC_UA` environment variable, and no User-Agent line carries an `@`. The label on that check is M10.
+- No ICE record sits in the repository: no `COTHist*` file anywhere in it (in any letter case), no file outside `bin/` and `_research/` that holds ICE's header line (the first two column names of a COTHist file, run together), and no header in [data/ice_brent/](data/ice_brent/README.md) that names a gross position column (a long, short, spread or open-interest figure). The label on that check is M11; like the others it warns and never blocks.
 
 It works with macOS grep and with ugrep.
 
@@ -47,6 +48,8 @@ The gate is `data/nport/tsy_checks.csv`: read its FAIL count, not the exit code.
 The Z.1 tables it reconciles against are fetched once by `python3 bin/nport_fetch_z1.py` (Federal Reserve Board, public domain) and are committed under `data/vintages/z1_fund_tsy_20260911/`.
 
 The swap-tape ledger's inputs are not redistributed either. [bin/swap_tape_ledger.py](bin/swap_tape_ledger.py) downloads DTCC's public price dissemination zips into `~/dtcc_ppd/`, outside the repository (the script refuses a cache inside it), and the Treasury CSVs into `data/vintages/swap_tape_ust/`, which `.gitignore` keeps out. The scripted DTCC download is non-commercial and rests on a ruling of the principal that goes against DTCC's website terms ([THE_ASK.md](THE_ASK.md), E-024): any refusal from the server ends the run and writes `~/dtcc_ppd/STOP`, which only a person deletes. `python3 bin/swap_tape_ledger.py selftest` needs no network. [data/swap_tape/README.md](data/swap_tape/README.md) has the commands, the columns and the caveats.
+
+The ICE Brent positioning ledger's inputs are not redistributed either. [bin/pull_ice_brent_cot.py](bin/pull_ice_brent_cot.py) downloads ICE Futures Europe's Commitments of Traders history files into `~/ice_cot/`, outside the repository (the script refuses a cache inside it, and `.gitignore` keeps any `COTHist*.csv` out), and the EIA Brent spot file, which is public domain and is committed as `data/ice_brent/raw/eia_RBRTEd.xls`. The scripted ICE download is non-commercial and rests on a ruling of the principal that goes against ICE's website terms ([THE_ASK.md](THE_ASK.md), E-025, extending E-024): any refusal from either server ends the run and writes `~/ice_cot/STOP`, which only a person deletes. Only net positions and one share of open interest are published, never ICE's gross figures. `python3 bin/pull_ice_brent_cot.py selftest` needs no network, and `build` runs offline from the cache. [data/ice_brent/README.md](data/ice_brent/README.md) has the commands, the columns and the caveats.
 
 ## Old scratchpad paths
 

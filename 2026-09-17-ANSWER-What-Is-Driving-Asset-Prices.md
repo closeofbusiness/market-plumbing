@@ -197,7 +197,9 @@ from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell 
 - private foreigners still buy US securities, while official holders shrink their Treasuries and Japan sold dollars for yen in
   2026; most of the fall in the all-instrument net inflow is banks' own dollar liabilities, not securities (MEASURED, TIC);
 - gold rose alongside official buying, bar-and-coin demand and ETF inflows, while managed-money futures length ended where it
-  began; oil's rise ran with large stock draws, and funds added futures length on the way up (positions and stocks MEASURED;
+  began; oil's rise ran with large stock draws, and funds added futures length on the way up in NYMEX WTI. In ICE Brent (measured since
+  15 Oct) they added it in two legs, futures only: 126,906 contracts on 30 Dec 2025, 382,072 on 31 Mar, 96,437 on 7 Jul and
+  275,879 on 15 Sep (positions and stocks MEASURED;
   what caused either price move is HYPOTHESIS).
 Derivatives as a market-structure flow remain open. Fifteen follow-up items had first tests on 14 Oct, each checked at source
 (the E-021 note's last section). Three tests are written down before their data: Japan's August Treasury holdings (16 Oct), the

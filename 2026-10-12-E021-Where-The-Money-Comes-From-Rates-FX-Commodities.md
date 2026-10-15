@@ -61,10 +61,31 @@ review, 13 Oct).**
   figure by up to 187 t between vintages (Q1 2026: 244 t to 57 t). BIS swings move the IMF total. Russia (2,327 t) has not
   reported since Nov 2025. Treat the WGC figure as an estimate with a wide band.]
 - **US gold ETFs:** of the $119bn rise in GLD and IAU assets since end-2023, 77% is price and 23% is flows.
-- **Crude:** managed money left WTI over the last four weeks (−58 mb). During the 2026 rise it had *added* length: net long 15,743
-  contracts on 30 Dec 2025 ($57.79), 111,731 on 8 Sep 2026 ($94.21), then 53,598 on 6 Oct (C-142; an earlier comparison with
-  end-2023 hid this). The Strategic Petroleum Reserve fell 130 mb since end-2025 while the price went from $60 to about $97. The
-  stock draws are measured; how the rise splits between supply disruption and financial demand is not.
+- **Crude, NYMEX WTI:** managed money left WTI over the last four weeks (−58 mb, futures only). During the 2026 rise it had
+  *added* length: net long 15,743 contracts on 30 Dec 2025 ($57.79), 111,731 on 8 Sep 2026 ($94.21), then 53,598 on 6 Oct
+  (futures only; C-142; an earlier comparison with end-2023 hid this). The Strategic Petroleum Reserve fell 130 mb since
+  end-2025 while the WTI price went from $60 to about $97. The stock draws are measured; how the rise splits between supply
+  disruption and financial demand is not.
+- **Crude, ICE Brent.** Measured since 15 Oct by [`bin/pull_ice_brent_cot.py`](bin/pull_ice_brent_cot.py) into `data/ice_brent/`,
+  under E-025. Only derived statistics are published (nets, their changes and one share of open interest), and ICE is cited.
+  - **Managed money's futures-only net long moved in two legs.**
+    - 126,906 contracts on 30 Dec 2025;
+    - 382,072 on 31 Mar 2026, the 2026 high;
+    - 96,437 on 7 Jul. That is below its end-2025 level, while the EIA Brent spot was 15% above its own;
+    - 259,481 on 8 Sep;
+    - 275,879 on 15 Sep;
+    - 186,288 on 6 Oct.
+  - **The last four weeks.** From 8 Sep to 6 Oct it fell 28%, after rising in the first week. With options it went from 265,753
+    to 201,052, a fall of 24%.
+  - **The same week.** Weekly changes in the managed-money net long move with the same week's percentage change in the spot price
+    (EIA Brent spot for Brent, EIA Cushing spot for WTI).
+    - Pooled over 2024–26 (145 weeks), futures only: ICE Brent r = 0.58, NYMEX WTI 0.38.
+    - In 2026's 40 weeks alone: Brent 0.60, WTI 0.04.
+  - **No lead is detected** in the next week's price change.
+    - Futures only, over 144 weeks: −0.01 (ICE Brent) and −0.08 (NYMEX WTI).
+    - Both are inside the ±0.16 band, the smallest correlation this sample can tell from zero.
+    - The Brent figures include the flagged 6 Oct EIA print; without it they are 0.59 and 0.00.
+    - *MEASURED in sample; coincident, no lead detected.*
 - **Copper:** about $14,800 a tonne (12 Oct; whether this is a record was not verified). LME stocks fell over the last month but are
   up 93.6 kt on the year (139,475 t on 9 Oct 2025 to 233,025 t on 9 Oct 2026, Cochilco weekly report, re-read by the supervisor 14 Oct;
   +87.7 kt since 2 Jan). COMEX held 70.9% of the three-exchange visible stock on 9 Oct 2026, against 56.5% a year earlier (both re-read) and 19.7%
@@ -294,8 +315,8 @@ series):
 2. **N-PORT Treasury maturity buckets** (item 7): DONE 15 Oct. The result is in R2b
    ([`2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md`](2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md)).
    Registered funds took $549bn on their own filings and $450bn scaled to Z.1, so the first-order verdict is not established.
-3. **Full-sample COT horizons** (item 2), CFTC only. ICE's site terms forbid automated retrieval, so the Brent leg stays as
-   relayed figures.
+3. **Full-sample COT horizons** (item 2). The ICE Brent leg was BUILT on 15 Oct, after the principal extended E-024's terms to
+   it (E-025). The multi-horizon regressions over the full sample are still to do, for WTI and Brent.
 4. **Yen and euro against rate gaps, weekly regression** (item 4), the three windows pre-registered in the return.
 5. **Gold against real yields with HAC errors and a break date** (item 9), once the World Bank monthly workbook downloads.
 6. **Four-country comovement** (item 15), adding the UK and JGB legs.

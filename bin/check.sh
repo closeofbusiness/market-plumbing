@@ -209,6 +209,51 @@ ua_check() {
   fi
 }
 
+# --- M11: ICE BRENT LEAK GUARD (warn only) ----------------------------------
+# data/ice_brent/ may hold only statistics derived from ICE Futures Europe's Brent Commitments-of-Traders files, never an ICE file or a gross
+# position column (THE_ASK.md E-025, which extends E-024: "no raw ICE file or row is committed or redistributed"). Three things would break that,
+# and none is visible to M5-M9:
+#   1. a COTHist* file anywhere in the repository, in any letter case (COTHist2026.csv, cothist2026.csv, COTHIST2026.CSV). `git ls-files -co`
+#      lists tracked AND untracked files (-o without --exclude-standard also lists ignored ones), so a file dropped in before `git add`, or one
+#      the .gitignore rule hides, is caught too;
+#   2. ICE's header line, Market_and_Exchange_Names,As_of_Date_In_Form_YYMMDD, inside any tracked or untracked file outside bin/ and _research/
+#      (a COTHist file renamed, saved as .txt or pasted into a note). bin/ holds this script and the ICE parser, and _research/ the spec; both
+#      name the columns, so they are left out;
+#   3. a header cell in a data/ice_brent/*.csv that names a gross column: the word long, short, spread, spreading or gross, the string
+#      open_interest, or the word oi outside pct_oi. bin/pull_ice_brent_cot.py refuses any header that is not on its exact allowlist; this is
+#      the second, independent look, and it reads the files as committed.
+# It warns and never blocks (header doctrine). (Numbered M11 because another session landed an M10, the User-Agent check, upstream.)
+icebrent_leak_check() {
+  echo "-- M11: ICE Brent leak guard (COTHist files in any letter case; ICE's header line outside bin/ and _research/; gross column names in data/ice_brent/ headers) --"
+  local files sig sigfiles names f hit
+  files=$( { git ls-files -co 2>/dev/null || find . -type f | sed 's|^\./||'; } | grep -Ei '(^|/)cothist[^/]*$' )
+  sig='Market_and_Exchange_Names,As_of_Date_In_Form_YYMMDD'
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    sigfiles=$(git grep -I --untracked -l -F -e "$sig" -- . ':(exclude)bin' ':(exclude)_research' 2>/dev/null)
+  else
+    sigfiles=$(grep -rIlF -e "$sig" --exclude-dir=.git --exclude-dir=bin --exclude-dir=_research . 2>/dev/null | sed 's|^\./||')
+  fi
+  names=""
+  if [ -d data/ice_brent ]; then
+    for f in data/ice_brent/*.csv; do
+      [ -f "$f" ] || continue
+      hit=$(grep -v '^#' "$f" | head -1 | tr -d '\r' | awk -F, '{ n = split(tolower($0), h, ",");
+        for (i = 1; i <= n; i++) { c = h[i];
+          if (c ~ /(^|_)(long|short|spread|spreading|gross)(_|$)/ || c ~ /open_interest/ || (c ~ /(^|_)oi(_|$)/ && c !~ /pct_oi/)) print c } }')
+      [ -n "$hit" ] && names="${names}${f}: $(printf '%s' "$hit" | tr '\n' ' ')
+"
+    done
+  fi
+  if [ -z "$files" ] && [ -z "$sigfiles" ] && [ -z "$names" ]; then
+    echo "  ✓ no COTHist file in the repository (any letter case), no ICE header line outside bin/ and _research/, no gross column name in a data/ice_brent/ header."
+  else
+    [ -n "$files" ] && printf '%s\n' "$files" | sed 's/^/  ✗ ICE file in the repository: /'
+    [ -n "$sigfiles" ] && printf '%s\n' "$sigfiles" | sed 's/^/  ✗ ICE header line in a file (a COTHist file renamed or pasted?): /'
+    [ -n "$names" ] && printf '%s' "$names" | sed 's/^/  ✗ gross column name in header: /'
+    echo "  -> an ICE record must never be committed (E-025). Remove it before any commit; if it already left this folder, tell the principal."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -409,6 +454,7 @@ if [ "$TARGET" = "--all" ]; then
   swaptape_leak_check
   echo
   ua_check
+  icebrent_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
