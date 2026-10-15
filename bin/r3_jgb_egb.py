@@ -56,7 +56,7 @@ import csv, datetime as dt, io, json, math, os, re, sys, time, urllib.error, url
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "vintages", "r3")
 OUT = os.path.join(ROOT, "data", "r3_rates")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; market-plumbing research)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"}
 
 MOF_ALL = "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
 MOF_CUR = "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv"

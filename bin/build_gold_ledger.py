@@ -115,7 +115,7 @@ VINT = os.path.join(ROOT, "data", "vintages", "gold")
 VWGC = os.path.join(VINT, "wgc")
 DERIVED = os.path.join(VINT, "derived")          # local only: series derived from sponsor/vendor data
 LOG = os.path.join(RAWG, "pull_log.tsv")
-UA = {"User-Agent": "ThirdDerivativeResearch/1.0", "Accept-Encoding": "identity"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)", "Accept-Encoding": "identity"}
 
 OZ = 32150.7466                      # troy ounces per tonne
 IMF_BASE = "https://api.imf.org/external/sdmx/2.1"

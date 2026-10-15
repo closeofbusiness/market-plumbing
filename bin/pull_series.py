@@ -21,7 +21,7 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TSV=os.path.join(ROOT,"data","series.tsv"); HIST=os.path.join(ROOT,"data","history")
 # User agents (fixed 8 Oct 2026). SEC_UA names a person, so it goes to sec.gov hosts ONLY; every other host gets the
 # neutral UA below. Before this fix every source sent SEC_UA, so DTCC, OFR, FIA and others received the contact string.
-UA={"User-Agent":"ThirdDerivativeResearch/1.0 (market-plumbing)","Accept-Encoding":"identity"}
+UA={"User-Agent":"Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)","Accept-Encoding":"identity"}
 def _sec_ua():
     if not os.environ.get("SEC_UA"): raise SystemExit('Set SEC_UA first, e.g. export SEC_UA="Your Name you@example.com" -- SEC asks automated requests to name their sender (README, "Checking the work"). It is sent to sec.gov hosts only.')
     return {"User-Agent":os.environ["SEC_UA"],"Accept-Encoding":"identity"}
@@ -98,10 +98,9 @@ def pull_fred():
 # Choose.aspx page (27 Sep 2026). Checked on switching: the CP weekly SA package gives FRED's ABCOMP, FINCP and
 # COMPOUT exactly (488.4 / 623.0 / 1,441.2 on 2026-08-19); H.8 B1072NCBDM matches LTDACBM027NBOG in 640 of 643
 # months (the last three differ by <=1.5, H.8 revisions).
-FEDUA={"User-Agent":"Mozilla/5.0 (compatible; market-plumbing research)","Accept-Encoding":"identity"}
 DDP="https://www.federalreserve.gov/datadownload/Output.aspx?rel={rel}&series={sid}&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package"
 def _ddp(rel,sid):
-    t=urllib.request.urlopen(urllib.request.Request(DDP.format(rel=rel,sid=sid),headers=FEDUA),timeout=120,context=CTX).read().decode("utf-8-sig")
+    t=urllib.request.urlopen(urllib.request.Request(DDP.format(rel=rel,sid=sid),headers=UA),timeout=120,context=CTX).read().decode("utf-8-sig")
     rows=list(csv.reader(io.StringIO(t))); hdr={r[0].strip():r[1:] for r in rows[:6] if r}
     ids=[x.strip() for x in hdr["Unique Identifier:"]]; mult=[float(x) for x in hdr["Multiplier:"]]
     return ids,mult,[r for r in rows if r and r[0][:4].isdigit()]
@@ -128,7 +127,7 @@ def pull_fed_h8():
 # e.g. 131.9 on 2015-05-19, 1.25 on 2026-08-11). SOMA bills = the weekly summary's bills (FRED WSHOBL).
 NYF="https://markets.newyorkfed.org/api/"
 def _nyf(path,t=120):
-    return json.loads(urllib.request.urlopen(urllib.request.Request(NYF+path,headers=FEDUA),timeout=t,context=CTX).read())
+    return json.loads(urllib.request.urlopen(urllib.request.Request(NYF+path,headers=UA),timeout=t,context=CTX).read())
 def pull_nyfed_rates():
     today=datetime.date.today().isoformat(); out=[]
     for rate in ("sofr","tgcr","bgcr"):
@@ -212,7 +211,7 @@ def pull_dtcc():
     # DTCC moved the file when it redesigned its site (found 27 Sep 2026: the old www.dtcc.com/data/ path returns 404).
     # The chart at www.dtcc.com/market-index-data/charts/membership loads it from cms-prod.dtcc.com; same columns.
     import csv as _csv, io as _io
-    h=dict(UA)  # honest UA: DTCC serves the file to it (checked 8 Oct; the Chrome UA it used before was never needed)
+    h=dict(UA)  # honest UA: DTCC serves the file to it (checked 8 Oct, and 15 Oct with the CLAUDE.md string; the Chrome UA it used before was never needed)
     t=urllib.request.urlopen(urllib.request.Request("https://cms-prod.dtcc.com/data/SponsoredVolume.csv",headers=h),timeout=60,context=CTX).read().decode("utf-8","ignore")
     rows=[]
     for r in _csv.DictReader(_io.StringIO(t)):

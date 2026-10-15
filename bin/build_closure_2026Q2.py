@@ -70,6 +70,7 @@ PROJECT = Path(__file__).resolve().parent.parent  # repo root, wherever it is cl
 # The three Z.1 tables, extracted from the dated release zip (27 Sep 2026: moved here from bin/raw/, which was never committed)
 RAW = PROJECT / "data/vintages/z1_20260911"
 Z1_ZIP_URL = "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip"
+UA = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"  # CLAUDE.md: every non-sec.gov host, no address
 Z1_TABLES = ("F3_2_t_tu", "S122_t_tu", "S129_t_tu")
 
 JUNE_RAW = PROJECT / "data/vintages/z1_closure/z1_closure_raw.json"
@@ -82,7 +83,7 @@ OUT_REVISIONS = PROJECT / "_research/2026-09-12-N2c-revisions.csv"
 
 if not all((RAW / f"{t}.csv").exists() for t in Z1_TABLES):
     RAW.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(Z1_ZIP_URL, headers={"User-Agent": "Mozilla/5.0 (compatible; market-plumbing research)"})
+    req = urllib.request.Request(Z1_ZIP_URL, headers={"User-Agent": UA})
     with zipfile.ZipFile(io.BytesIO(urllib.request.urlopen(req, timeout=300).read())) as z:
         for t in Z1_TABLES:
             (RAW / f"{t}.csv").write_bytes(z.read(f"csv/{t}.csv"))

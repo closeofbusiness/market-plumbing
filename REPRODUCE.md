@@ -14,6 +14,7 @@ The command checks the following.
 - No numbered to-do sits outside the ranked list in [RESEARCH_STATE.md](RESEARCH_STATE.md). The label on that check is M6.
 - Retracted wording is scanned in the notes outside `_research/` and on the page.
 - No DTCC record sits under [data/swap_tape/](data/swap_tape/README.md): no field of 8 to 19 digits (a Dissemination Identifier) and no `CFTC_CUMULATIVE` file or zip. The label on that check is M9; like the others it warns and never blocks.
+- Every User-Agent literal in `bin/*.py` is the one neutral string [CLAUDE.md](CLAUDE.md) sets for hosts other than sec.gov, or reads the SEC contact from the `SEC_UA` environment variable, and no User-Agent line carries an `@`. The label on that check is M10.
 
 It works with macOS grep and with ugrep.
 

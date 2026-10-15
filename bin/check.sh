@@ -170,6 +170,45 @@ swaptape_leak_check() {
   fi
 }
 
+# --- M10: USER-AGENT CHECK (warn only) ---------------------------------------
+# CLAUDE.md (ruled 12 Sep): sec.gov hosts get the declared contact, read from the SEC_UA environment variable and
+# never written into a file; every other host gets ONE neutral string with no address. On 15 Oct bin/ was found
+# sending four other neutral strings beside it (pull_series.py had also sent SEC_UA to every host until 8 Oct), and
+# nothing in M5-M9 could see either drift. This takes every line of bin/*.py holding a User-Agent literal -- a string
+# set as a User-Agent header, assigned to a *UA / USER_AGENT name, or carrying a browser or tool token -- and warns on
+#   1. a literal that is not the canonical string. Lines reading SEC_UA from os.environ are the one exemption;
+#   2. any '@' on a line that touches a User-Agent, the SEC_UA lines included. Addresses at example.com, .org and
+#      .net are reserved for documentation (RFC 2606) and pass: the SEC_UA error messages quote one as the format
+#      to follow. A flagged line is located (file:line) and its text is never printed.
+# The canonical string is copied from CLAUDE.md, so the first test is that CLAUDE.md still carries it verbatim.
+# Limit, stated plainly: grep sees literals only. A request sent with no User-Agent at all (urllib then sends
+# Python-urllib) or with a string built at run time is invisible here.
+ua_check() {
+  echo "-- M10: user-agent check (bin/*.py: CLAUDE.md's neutral string off sec.gov, SEC_UA on it, no address) --"
+  local canon='Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)'
+  local q="[\"']" rx crx bad addr
+  rx="Mozilla/[0-9]|ThirdDerivativeResearch|AppleWebKit|Chrome/[0-9]|Firefox/[0-9]|curl/[0-9]|Wget/|python-requests|Python-urllib|--user-agent"
+  rx="$rx|[Uu]ser-[Aa]gent${q}?[[:space:]]*[:,][[:space:]]*[rbuRBU]?${q}"
+  rx="$rx|(^|[^A-Za-z0-9_])([A-Z_]*UA|ua|USER_AGENT[A-Z_]*|user_agent)[[:space:]]*=[[:space:]]*[(]?[[:space:]]*[rbuRBU]?${q}"
+  crx=$(printf '%s' "$canon" | sed 's/[.()]/\\&/g')
+  grep -qF "$canon" CLAUDE.md 2>/dev/null \
+    || echo "  ✗ CLAUDE.md no longer carries the string this check enforces -- copy CLAUDE.md's into ua_check(); do not reword it."
+  # 1. drop the SEC_UA lines, blank out the canonical string and its quotes; whatever still matches is another literal
+  bad=$(grep -nE -e "$rx" bin/*.py 2>/dev/null | grep -vE 'SEC_UA.*os[.]environ|os[.]environ.*SEC_UA' \
+        | sed -E "s#${q}?${crx}${q}?#CANON#g" | grep -E -e "$rx" \
+        | sed -E "s#[^[:space:]\"']+@[^[:space:]\"']+#<address>#g" | sort -t: -k1,1 -k2,2n | cut -c1-140)
+  # 2. every line that matched above or names a User-Agent or SEC_UA; documentation addresses removed first
+  addr=$(grep -nE -e "$rx|[Uu]ser[-_][Aa]gent|USER_AGENT|SEC_UA" bin/*.py 2>/dev/null \
+        | sed -E 's/[A-Za-z0-9._%+-]+@example[.](com|org|net)//g' | grep -F '@' | cut -d: -f1,2 | sort -t: -k1,1 -k2,2n)
+  if [ -z "$bad" ] && [ -z "$addr" ]; then
+    echo "  ✓ every User-Agent literal in bin/*.py is the CLAUDE.md string or reads SEC_UA; no '@' on any User-Agent line."
+  else
+    [ -n "$bad" ] && printf '%s\n' "$bad" | sed 's/^/  ✗ not the CLAUDE.md string: /'
+    [ -n "$addr" ] && printf '%s\n' "$addr" | sed "s/^/  ✗ '@' on a User-Agent line (text not printed): /"
+    echo "  -> non-sec.gov hosts get CLAUDE.md's string, defined once per script; sec.gov reads os.environ[\"SEC_UA\"]; no address in any file."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -368,6 +407,8 @@ if [ "$TARGET" = "--all" ]; then
   duplicate_correction_check
   echo
   swaptape_leak_check
+  echo
+  ua_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

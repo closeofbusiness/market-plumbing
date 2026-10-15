@@ -60,7 +60,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R3RAW = os.path.join(ROOT, "data", "vintages", "r3")
 RAW = os.path.join(R3RAW, "dur")
 OUT = os.path.join(ROOT, "data", "r3_rates")
-UA = {"User-Agent": "ThirdDerivativeResearch/1.0"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"}
 
 MOF_ALL = "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
 MOF_CUR = "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv"

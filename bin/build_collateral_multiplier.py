@@ -18,13 +18,14 @@ markets.newyorkfed.org/api/pd, US Treasuries excluding TIPS, $ millions, weekly 
 
 Usage:  bin/build_collateral_multiplier.py [--cache DIR] [--no-fetch]
   Fetches go to DIR (default: $TMPDIR/pd_api_cache), one request per second, User-Agent
-  "ThirdDerivativeResearch/1.0".  A cached file is reused, so an interrupted run resumes.
+  "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)", no address.
+  A cached file is reused, so an interrupted run resumes.
   Writes data/history/collateral_multiplier_weekly.csv and prints diagnostics.  Run from the repo root.
 """
 import csv, json, os, sys, time, tempfile, urllib.request, urllib.error
 
 BASE = "https://markets.newyorkfed.org/api/pd"
-UA = "ThirdDerivativeResearch/1.0"
+UA = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"
 OUT = "data/history/collateral_multiplier_weekly.csv"
 SB22_START, SB24_START = "2022-01-05", "2024-07-03"
 MATS = ("", "TAL30", "TAG30")

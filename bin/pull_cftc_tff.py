@@ -65,7 +65,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HIST = os.path.join(ROOT, "data", "history")
 OUT = os.path.join(ROOT, "data", "cftc_tff")
 RAW = os.path.join(OUT, "raw_tff_futonly_treasury.csv")
-UA = {"User-Agent": "ThirdDerivativeResearch/1.0", "Accept-Encoding": "identity"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)", "Accept-Encoding": "identity"}
 URL = "https://publicreporting.cftc.gov/resource/gpe5-46if.json"
 START = "2018-01-01"
 

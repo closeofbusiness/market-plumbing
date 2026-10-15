@@ -35,7 +35,7 @@ import csv, datetime as dt, math, os, sys, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "vintages", "r1_treasury")
 OUT = os.path.join(ROOT, "data", "r1_rates")
-UA = {"User-Agent": "Mozilla/5.0 (research; free public data)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"}
 YEARS = [2023, 2024, 2025, 2026]
 TSY = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/"
        "{y}/all?type={t}&field_tdr_date_value={y}&page&_format=csv")

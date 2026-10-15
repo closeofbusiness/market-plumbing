@@ -138,7 +138,7 @@ VINT = os.path.join(ROOT, "data", "vintages", "crude")
 DER = os.path.join(VINT, "derived")
 LOG = os.path.join(RAW, "pull_log.tsv")
 WB_X = os.path.join(VINT, "worldbank_CMO-Historical-Data-Monthly.xlsx")
-UA = {"User-Agent": "ThirdDerivativeResearch/1.0", "Accept-Encoding": "identity"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)", "Accept-Encoding": "identity"}
 Dt = datetime.date
 ONE_WEEK = datetime.timedelta(days=7)
 

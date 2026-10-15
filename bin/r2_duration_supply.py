@@ -86,7 +86,7 @@ R1RAW = os.path.join(ROOT, "data", "vintages", "r1_treasury")
 OUT = os.path.join(ROOT, "data", "r2_rates")
 SERIES_TSV = os.path.join(ROOT, "data", "series.tsv")
 H41_ZIP = os.path.join(ROOT, "data", "a1_money_creation", "FRB_h41.zip")
-UA = {"User-Agent": "Mozilla/5.0 (research; free public data)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial research)"}
 
 DATES = ["2023-12-31", "2024-12-31", "2025-12-31", "2026-06-30", "2026-08-31"]
 BILLS_CHECK_DATE = "2026-07-31"          # check 3 only; not one of the 5 report dates
