@@ -30,6 +30,25 @@ principal and append a new entry.
 
 ---
 
+## E-025 · 15 October 2026 — script ICE's Brent COT files on the same terms as the DTCC swap tape
+
+Given after the supervisor reported that E-024 covered the swap tape only. The ICE Brent positioning files were not ruled on,
+because ICE's website terms also forbid robots and automated retrieval. Brent was left as figures relayed by Grok.
+
+> *"Do the same for Brent"*
+
+**Reading notes.** "The same" means E-024's conditions, applied to ICE Futures Europe's historical Commitments of Traders files
+for Brent:
+- the use is non-commercial;
+- no raw ICE file or row is committed or redistributed;
+- only derived statistics are published, and they cite ICE;
+- requests are sequential and paced;
+- any technical refusal ends the run rather than being routed around.
+
+The ruling covers the Brent COT files only. It does not extend to other ICE data, such as prices or settlement files.
+
+---
+
 ## E-024 · 14 October 2026 — script the DTCC swap tape despite its site terms; derived figures only, non-commercial
 
 Given after the supervisor reported that DTCC's website terms forbid automated extraction ("you may not use any automated device
