@@ -1,4 +1,4 @@
-# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-10-15
+# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-10-17; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-10-17
 contract,report_type,first_week,last_week,n_same,pearson_same_pct,spearman_same_pct,pearson_same_abs,band95_same,n_next,pearson_next_pct,spearman_next_pct,pearson_next_abs,band95_next,n_prev,pearson_prev_pct,spearman_prev_pct,pearson_prev_abs,band95_prev
-brent,fo,2024-01-02,2026-10-06,145,0.581,0.674,0.523,0.163,144,-0.008,-0.017,0.010,0.163,145,0.089,0.136,0.076,0.163
-brent,combined,2024-01-02,2026-10-06,145,0.661,0.713,0.596,0.163,144,0.015,-0.026,0.031,0.163,145,0.041,0.082,0.027,0.163
+brent,fo,2024-01-02,2026-10-13,146,0.580,0.673,0.522,0.162,145,-0.008,-0.018,0.010,0.163,146,0.093,0.141,0.082,0.162
+brent,combined,2024-01-02,2026-10-13,146,0.660,0.711,0.595,0.162,145,0.015,-0.027,0.031,0.163,146,0.048,0.090,0.036,0.162

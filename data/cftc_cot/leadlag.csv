@@ -1,3 +1,3 @@
 contract,report_type,first_week,last_week,n_same,pearson_same_pct,spearman_same_pct,pearson_same_abs,band95_same,n_next,pearson_next_pct,spearman_next_pct,pearson_next_abs,band95_next,n_prev,pearson_prev_pct,spearman_prev_pct,pearson_prev_abs,band95_prev
-wti,fo,2024-01-02,2026-10-06,145,0.380,0.475,0.324,0.163,144,-0.078,-0.103,-0.078,0.163,145,-0.032,-0.002,-0.023,0.163
-wti,combined,2024-01-02,2026-10-06,145,0.412,0.524,0.362,0.163,144,-0.012,-0.038,-0.015,0.163,145,-0.019,0.024,-0.009,0.163
+wti,fo,2024-01-02,2026-10-13,146,0.376,0.466,0.319,0.162,145,-0.084,-0.112,-0.084,0.163,146,-0.032,-0.001,-0.023,0.162
+wti,combined,2024-01-02,2026-10-13,146,0.410,0.520,0.361,0.162,145,-0.016,-0.046,-0.020,0.163,146,-0.018,0.025,-0.009,0.162

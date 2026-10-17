@@ -36,6 +36,12 @@ $176bn). *MEASURED, Z.1 dollars, re-summed by the supervisor from the 11 Sep rel
   $1,754.4bn (J2, Grok, 13 Oct; line 29 re-read by the supervisor at Treasury).
 - **US buyers abroad:** US residents' purchases of foreign securities rose to $478bn (from $286bn).
 - **Japan:** the MoF sold about $172bn of dollars for yen in 2026 (Apr–May ¥11.73trn; 30 Jul–26 Aug ¥15.40trn).
+  The 16 Oct TIC release was scored on 17 Oct against the pre-registration. Japan's holdings fell from $1,103.9bn to $1,068.3bn
+  in August: −$35.6bn raw, or −$40.4bn after the $4.8bn valuation.
+  - The wide range (−$190bn to +$60bn) held.
+  - The sharper guess, a raw fall of $50–100bn, missed.
+  - That is 0.41–0.43 dollars of adjusted sales per dollar of intervention, inside the earlier months' spread.
+  - It is an accounting comparison, not evidence that the intervention was paid for by selling Treasuries.
 - **Reserves:** the dollar's share of allocated reserves is 56.7% (2026Q2). At constant exchange rates it fell 0.94pp in four
   quarters.
 - **Euro area:** net portfolio inflow of €341bn over 12 months, against an outflow of €47bn a year earlier.

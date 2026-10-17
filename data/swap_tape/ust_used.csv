@@ -1,4 +1,4 @@
-# source: DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024); U.S. Treasury CMT par and real yield curve CSVs (home.treasury.gov, public domain) retrieved 2026-10-14; Treasury CMT values joined by date
+# source: DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024); U.S. Treasury CMT par and real yield curve CSVs (home.treasury.gov, public domain) retrieved 2026-10-14 to 2026-10-17; Treasury CMT values joined by date
 date_utc,par_2y,par_5y,par_10y,par_30y,real_5y,real_10y,real_30y,par_csv_sha256,real_csv_sha256,par_fetched,real_fetched
 2024-10-15,3.95,3.86,4.03,4.32,1.64,1.75,2.05,6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d,d3ff00a9287ebf68fdc80e72fb2d1895a73c84b3ff2a6ca8c6d64648cb470f16,2026-10-14,2026-10-14
 2024-10-16,3.93,3.84,4.02,4.30,1.65,1.75,2.05,6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d,d3ff00a9287ebf68fdc80e72fb2d1895a73c84b3ff2a6ca8c6d64648cb470f16,2026-10-14,2026-10-14
@@ -498,3 +498,6 @@ date_utc,par_2y,par_5y,par_10y,par_30y,real_5y,real_10y,real_30y,par_csv_sha256,
 2026-10-08,4.75,4.99,5.22,5.60,2.62,2.87,3.31,bec74a6c0f118755eee4855ab6dc4fa924e6c08b6361e23b6c2e2590f2cb271c,3e610c72eb0bc3679fc5fd45f3186877986bf8873751b3e519f5f5ec6e07c9e9,2026-10-14,2026-10-14
 2026-10-09,4.80,5.02,5.24,5.60,2.68,2.91,3.32,bec74a6c0f118755eee4855ab6dc4fa924e6c08b6361e23b6c2e2590f2cb271c,3e610c72eb0bc3679fc5fd45f3186877986bf8873751b3e519f5f5ec6e07c9e9,2026-10-14,2026-10-14
 2026-10-13,4.79,5.00,5.21,5.56,2.67,2.88,3.28,bec74a6c0f118755eee4855ab6dc4fa924e6c08b6361e23b6c2e2590f2cb271c,3e610c72eb0bc3679fc5fd45f3186877986bf8873751b3e519f5f5ec6e07c9e9,2026-10-14,2026-10-14
+2026-10-14,4.82,5.00,5.19,5.52,2.64,2.84,3.24,b06702248327bb7aa652e3be1d104649bb7cce199bf04c176e4d62a9ff6803d8,f160851077b914fc3b2e2010a23e100a774a68ca7da21884add0466961120d5b,2026-10-17,2026-10-17
+2026-10-15,4.77,4.91,5.10,5.43,2.58,2.78,3.18,b06702248327bb7aa652e3be1d104649bb7cce199bf04c176e4d62a9ff6803d8,f160851077b914fc3b2e2010a23e100a774a68ca7da21884add0466961120d5b,2026-10-17,2026-10-17
+2026-10-16,4.74,4.89,5.09,5.43,2.52,2.74,3.16,b06702248327bb7aa652e3be1d104649bb7cce199bf04c176e4d62a9ff6803d8,f160851077b914fc3b2e2010a23e100a774a68ca7da21884add0466961120d5b,2026-10-17,2026-10-17

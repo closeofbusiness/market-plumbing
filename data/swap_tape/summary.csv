@@ -1,17 +1,17 @@
-# source: DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024); DTCC files retrieved 2026-10-14; recomputed from the ledger files at every build
+# source: DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024); DTCC files retrieved 2026-10-14 to 2026-10-17; recomputed from the ledger files at every build
 key,value,n
-ledger_dates,522,522
-cmt_dates_in_ledger,498,498
-share_cmt_dates_headline_10y_n_ge_10,0.9719,498
-share_30y_quoted_spread_negative,1.0000,481
-dod_sd_quoted_bp_2y,1.695,274
-ols_slope_dspread_on_dcmt_2y,-0.0846,274
-dod_sd_quoted_bp_5y,1.148,469
-ols_slope_dspread_on_dcmt_5y,-0.0716,469
-dod_sd_quoted_bp_10y,1.208,469
-ols_slope_dspread_on_dcmt_10y,-0.0840,469
-dod_sd_quoted_bp_10y_cmt_move_le_2bp,0.932,185
-share_dod_abs_change_10y_lt_10bp,1.0000,469
+ledger_dates,525,525
+cmt_dates_in_ledger,199,199
+share_cmt_dates_headline_10y_n_ge_10,0.9799,199
+share_30y_quoted_spread_negative,1.0000,194
+dod_sd_quoted_bp_2y,1.238,137
+ols_slope_dspread_on_dcmt_2y,-0.0879,137
+dod_sd_quoted_bp_5y,0.985,189
+ols_slope_dspread_on_dcmt_5y,-0.0957,189
+dod_sd_quoted_bp_10y,1.100,191
+ols_slope_dspread_on_dcmt_10y,-0.1257,191
+dod_sd_quoted_bp_10y_cmt_move_le_2bp,0.871,82
+share_dod_abs_change_10y_lt_10bp,1.0000,191
 dod_outliers_10y_ge_10bp,,0
-dod_sd_quoted_bp_30y,1.396,463
-ols_slope_dspread_on_dcmt_30y,-0.1452,463
+dod_sd_quoted_bp_30y,1.307,189
+ols_slope_dspread_on_dcmt_30y,-0.1990,189
