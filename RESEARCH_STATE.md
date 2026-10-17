@@ -696,8 +696,8 @@ Do not restate findings here. Status and detail stay in the home section named o
 
 3. N4 — the interlock synthesis (b+c)       DONE 15 Sep -> 2026-09-15-N4-Scale-Timing-Bound.md (C-085).
                                             2024 private-repo growth was the ON RRP handoff (net -$45.7bn). Handoff-adjusted
-                                            ceiling $136.2bn vs $1,404.9bn 2024 household purchases of the wrapper. Collateral
-                                            re-use intensity did not rise; the dated six-bank stock step is H1 2026. No
+                                            ceiling $136.2bn vs $1,404.9bn 2024 household purchases of the wrapper. Collateral:
+                                            no measure shows re-use rising first (C-152); the dated six-bank stock step is H1 2026. No
                                             funded-share percentage. 1 Oct revolver parcel stays on the calendar (fragility, not this).
 
 4. P4 — the elasticity pilot (= Tier B B3)   DONE 15 Sep -> 2026-09-15-P4-Russell-Elasticity-Pilot.md (C-086).

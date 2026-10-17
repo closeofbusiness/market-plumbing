@@ -1,6 +1,6 @@
 # ETF1 — the issuance identity net of ETF shares (15 September 2026)
 
-**Status: RESULT. Supervisor arithmetic, two independent censuses.** Ranked item 1, opened by C-081.
+**Status: RESULT. Supervisor arithmetic, checked against ICI's own census (the Fed's ETF table appears to be built on it, so it is a transcription check, not a second source; C-148).** Ranked item 1, opened by C-081.
 Data `data/etf1/` and `data/vintages/z1_etf1_2026Q2/`. ICI Fact Book tables 11 and 13 saved at
 `data/vintages/ici_etf_2026/`. Window **2024:Q1–2026:Q2**, Z.1 release of 11 September 2026.
 
@@ -62,7 +62,7 @@ Flows over the window, `S124.3.t_tu`, $bn:
 Technical Q&A (the C-081 source) says this outright: some ETF shares are based on underlying debt
 securities, and data limitations force those shares into the corporate-equities instrument.
 
-Independent check, ICI Fact Book Table 13 (annual, millions, downloaded 15 Sep 2026 from
+Transcription check, ICI Fact Book Table 13 (annual, millions, downloaded 15 Sep 2026 from
 `icifactbook.org/xls/26-fb-table-13.xlsx`):
 
 | year | ICI total | Z.1 four-quarter sum | ICI bond | Z.1 bond funds |
@@ -70,7 +70,7 @@ Independent check, ICI Fact Book Table 13 (annual, millions, downloaded 15 Sep 2
 | 2024 | 1,144.8 | 1,144.8 | 295.4 | 295.3 |
 | 2025 | 1,468.2 | 1,468.0 | 443.4 | 443.5 |
 
-The two censuses agree. 2026:H1 is Z.1 only (Fact Book stops at 2025): $991.0bn of ETF issuance, of
+The figures agree. 2026:H1 is Z.1 only (Fact Book stops at 2025): $991.0bn of ETF issuance, of
 which $326.2bn bond funds. ICI's June 2026 monthly release puts year-to-date net issuance at
 $991.6bn — sixty basis points of a trillion apart.
 

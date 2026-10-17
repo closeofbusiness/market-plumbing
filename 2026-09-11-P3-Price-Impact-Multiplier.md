@@ -6,8 +6,7 @@ alternative is not a real paper. The real one is **Eric Qian, "Heterogeneity-rob
 (arXiv 2304.01273v4); this document splits it into two authorities, "Qian" and "Hahn et al.", and only one
 exists. The 8.7-9.4 range appears in no paper checked. **Everything attributed to "Hahn" below is dead.**
 Claims attributed to "Qian" are UNVERIFIED, not dead — his results table has not been read. **[C-145, 14 Oct]** The "$2 to $9"
-envelope below was anchored at its top by the dead 8.7–9.4; checked estimates span about 1.5 (Hartzmark–Solomon) to 15 (Gabaix–Koijen's own
-specifications run 5.0–15; their headline is about 5); no central value.
+envelope below was anchored at its top by the dead 8.7–9.4; checked estimates span about 1.5 (Hartzmark–Solomon) to about 11 (Gabaix–Koijen's estimates run about 3.5 to 10.9, the 10.9 is a column they do not recommend, their four-factor estimate is 7.7 and their headline about 5; the 15 once attributed to them is the microstructure literature's figure, which they quote, C-147); no central value.
 
 
 **SUPERVISOR DECISION, REVISED 12 Sep after an adversarial review (C-077): carry NO central value.**

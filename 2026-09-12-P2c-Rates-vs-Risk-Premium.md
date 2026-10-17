@@ -4,7 +4,7 @@
 
 > **[C-102]** The sentences below that say premium compression "held the multiple up" are retracted. The premium is defined as
 > the earnings yield minus the real yield, so most of its fall is the same rate rise, restated. What survives is the measurement:
-> the earnings yield barely moved while real yields rose. (Banner added 14 Oct, when a consistency audit found the claim still
+> the earnings yield ended the window close to where it began while real yields rose (it fell 0.61 point in 2024 and regained 0.45 in the first half of 2026, C-151). (Banner added 14 Oct, when a consistency audit found the claim still
 > unmarked here.)
 The arithmetic stands; the level claim does not. Ranked item 2. Script `bin/rates_vs_premium.py`; data
 `_research/2026-09-12-P2c-*.csv`. Attacked by ATT1 (Grok in Cursor) and verified by me, 13 Sep.

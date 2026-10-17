@@ -5,7 +5,7 @@ instruction of 13 Sep: *"let's also dig into the 'bridge we cannot cross'... We 
 it, we just have not figure out how. Make this a core sub-project."*
 
 > **[C-145]** The "1.5 to 9.4" envelope below rests on the stitched 8.7–9.4 range (C-079). Checked estimates span about 1.5
-> (Hartzmark–Solomon) to 15 (Gabaix–Koijen's own specifications run 5.0–15). The 9.4 rows are kept as written; do not quote them
+> (Hartzmark–Solomon) to about 11 (Gabaix–Koijen's estimates run about 3.5 to 10.9; the 15 is not theirs, C-147). The 9.4 rows are kept as written; do not quote them
 > as the envelope top. (Banner added 14 Oct.)
 
 ## The question, stated so it can be answered

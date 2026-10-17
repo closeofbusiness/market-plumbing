@@ -1,7 +1,7 @@
 # Tier B / E-005 — resolution limit on the money→price bridge (16 September 2026)
 
 > **[C-145]** "Envelope top M=9.4" below comes from the stitched 8.7–9.4 range (C-079). On 11.7 years B6 needs M above about 11;
-> checked estimates span about 1.5 to 15, and B6 is a stock-level test, where checked values are about 1.5–2.3. (Banner added 14 Oct.)
+> checked estimates span about 1.5 to 11 (C-147), and B6 is a stock-level test, where checked values are about 1.5–2.3. (Banner added 14 Oct.)
 
 > **[C-092 + Gate Rerun] JVZ is UNINFORMATIVE underpower, not a rejection.** Prior Stage B / sharpen are **UNINFORMATIVE**, not NOT SUPPORTED (C-092). Stage A's gate used **2σ/√N on 3,936 firm-quarters** (MDE 0.451pp) when the realised two-way-clustered SE gives **1.622pp** — effective n was **304**. Corrected placebo gate (`_research/2026-09-16-JVZ-Gate-Rerun.md`): **FAIL** — medSE_ret=0.548 → MDE_ret=1.097pp (0.48× vs 0.528); medSE_idio=0.239 → MDE_idio=0.478pp (0.90× vs 0.43); SD_with=0.579; **26** time clusters bind; **no real-flow regression**. Principal cleared permanent close on that FAIL. Do **not** say JVZ was not supported / refuted / mechanism false.
 

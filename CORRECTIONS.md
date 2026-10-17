@@ -990,6 +990,143 @@ principal asked whether the answer note was still up to date; superseded the sam
 
 ---
 
+## C-154 · The lead figure's alt text: "Revaluation splits into earnings growth and a net multiple change of +0.87 P/E"
+
+**Mine, the screen-reader text of the §01 decomposition figure. Found 17 Oct by Grok's page attack (batch g6, parcel A); checked by
+the supervisor against the figure.**
+
+- **What was wrong.** The alt text said the Z.1 revaluation of US corporate equity held ($43.7trn, 2024Q1–2026Q2) "splits into"
+  earnings growth and a multiple change of +0.87 P/E points. Those two boxes come from different data and windows: earnings growth
+  is 71–82% of the S&P 500's gain since 2015, and the +0.87 is the S&P 500 trailing P/E from Dec 2023 to Jun 2026. The drawn
+  figure marks this ("other windows as marked"); the alt text did not, so a screen-reader user heard one identity where there are
+  two sources.
+- **Correct position.** The alt text now says those boxes sit beside the Z.1 identity, from the S&P 500 and other windows.
+- **Still standing at:** nowhere live.
+
+---
+
+## C-153 · "36–60% of our 49bp unexplained by growth … a range, not a split" read as bounds
+
+**Mine, the page's §01 sentence on C-104. Found 17 Oct by Grok's page attack (batch g6, parcel E); checked by an independent Sonnet
+verifier against P5ii and by the supervisor.**
+
+- **What was wrong.** 36% and 60% are the results on two rate bases (17.4/48.59 and 29.31/48.59). 36% is not a floor on the
+  unexplained part. `2026-09-13-P5ii-Growth-Versus-Risk.md` (its items 2 and 3) shows that the 2015–19 control window's growth
+  sensitivity, applied to the main window, implies growth did all of the work and more; P5ii says the growth share "could exceed
+  100%". A reader could take 36% as the least that growth leaves unexplained.
+- **Correct position.** 36–60% is the spread across two bases, and 36% is not a floor; on the control window's sensitivity growth
+  could account for all of the 49bp, though P5ii does not believe that as a point estimate (two windows). P5ii's own floor of
+  about 40% growth-consistent still makes 60% a ceiling on the unexplained part. C-104 is unchanged.
+- **Still standing at:** nowhere live.
+
+---
+
+## C-152 · "Collateral re-use intensity did not rise" and "the collateral channel did not carry this repricing"
+
+**Mine, the page (§00 verdict, §04 table and summary, §11) and the answer note. Found 17 Oct by Grok's page attack (batch g6,
+parcels A, B and E); checked by an independent Sonnet verifier and by the supervisor.**
+
+- **What was wrong.** Two things.
+  - "Re-use intensity" was never defined on the page. The project's velocity figure is an unsigned range (about 1.3–2.0, C-135),
+    and the one utilisation measure, the six banks' re-pledged share of collateral they may re-use, rose from 81.7% (Dec 2025,
+    from D10's components: 5,061.8/6,192.0) to 83.2% (Jun 2026, D10 §6), in the same half-year as the step in their collateral
+    stock. No utilisation figure exists on disk for Dec 2023.
+  - "Did not carry this repricing" is a causal claim. The evidence is timing and scale: the collateral stock stepped up after
+    most of the price rise, and in 2024 new wholesale money was an order of magnitude too small (N4; C-118 for the full window).
+- **Correct position.** No measure shows collateral re-use rising before the price rise; the banks' collateral stock and their
+  re-pledged share both rose in H1 2026, after most of it; earlier shares are not measured. In 2024 new shadow money, net of the ON RRP handoff, was about a tenth of households' equity purchases ($136.2bn against
+  $1,404.9bn, N4), and over the window it stays a ceiling (C-118). Nothing measured shows these channels growing before the
+  price rise, or on the scale it would have needed; earlier collateral growth is unmeasured, not ruled out (N4 has no Dec-2023
+  collateral stock). That is a statement about timing and size, not a causal estimate.
+- **Still standing at:** nowhere live once this commit lands (page, answer note §3, RESEARCH_STATE).
+
+---
+
+## C-151 · "The earnings yield barely moved while real yields rose"
+
+**Mine, the page's lead paragraph and §09 ledger, the answer note and P2c's banner (C-102 and C-127 used the phrase as the correct
+position). Found 17 Oct by Grok's page attack (batch g6, parcels A and D); the supervisor re-read the path in
+`_research/2026-09-12-P2c-decomposition_annual.csv`.**
+
+- **What was wrong.** It describes a round trip by its endpoints. The trailing earnings yield went 4.11% (Dec 2023) to 3.50%
+  (Dec 2024), 3.51% (Dec 2025) and 3.96% (Jun 2026): −61bp, then +45bp, net −14bp. The real yield's +34bp is a change in monthly
+  averages; month-end to month-end it is +48bp (1.72% to 2.20%).
+- **Correct position.** The earnings yield ended the window close to where it began, after falling about 0.6 point in 2024 and
+  regaining most of it in the first half of 2026, while real yields rose about a third of a point (monthly averages). The
+  conclusion that the multiple held up stands.
+- **Still standing at:** the C-102 and C-127 entries, which stay as written (append-only) and are superseded here for this
+  phrase.
+
+---
+
+## C-150 · "Models and surveys agree that expected rates for the next four years fell"
+
+**Mine, the page's §05 US row and the answer note's rates paragraph. Found 17 Oct by Grok's page attack (batch g6, parcel C);
+checked by an independent Sonnet verifier against `data/r1_rates/survey_changes.csv` and by the supervisor.**
+
+- **What was wrong.** True as a net to the August 2026 survey (ACM −60bp, Kim-Wright −24bp, SPF −19bp over years 1–4), but placed
+  beside "+113bp to 18 Sep" it read as covering the same span. The fall came between the 2024Q1 and 2026Q1 surveys (−118, −72,
+  −54), when the 10-year moved −4bp. From the 2026Q1 to the 2026Q3 survey all three rose (+58, +47, +35), reversing half to
+  two-thirds of the fall, while +96bp of the 113bp came after 2 March 2026.
+- **Correct position.** Expected rates for years 1–4 were lower at the August 2026 survey than at the start, but the fall came
+  before 2026 and half to two-thirds of it reversed after that, while most of the yield rise came after March 2026. C-125 is
+  unchanged.
+- **Still standing at:** `2026-09-27-R1-Treasury-10y-Decomposition.md` ("fell over 2024–26"), which sits beside its own table of
+  the two windows.
+
+---
+
+## C-149 · The retirement figure: "IRA withdrawals of $475bn are the real exit" and "strip the transfers: −$90.7bn organic net"
+
+**Mine, the §08 retirement figure (labels and alt text). Found 17 Oct by Grok's page attack (batch g6, parcel D); checked by an
+independent Sonnet verifier against `_research/2026-09-12-Parcel-RET1-Retirement-Flows-Return.md`.**
+
+- **What was wrong.**
+  - $475.0bn is traditional-IRA withdrawals only (all IRA types $515.2bn), and a withdrawal is not spending: it includes required
+    distributions and money reinvested elsewhere. "Actually spent" and "the real exit" overstated it.
+  - The arithmetic of −$90.7bn is right (767,581 − 74,607 − 783,697), but it removes rollovers on the contribution side only and
+    keeps the $783.7bn of benefits whole, most of which are rollovers out ($652.8bn into traditional IRAs, ICI). Calling it
+    "organic" contradicted the figure's own caption and RET1, which says the net is neither an inflow nor an outflow.
+- **Correct position.** Traditional-IRA withdrawals were $475bn. Removing rollovers in turns −$16.1bn into −$90.7bn, but that is one
+  side of the transfers only, so neither net measures money leaving the market.
+- **Still standing at:** nowhere live.
+
+---
+
+## C-148 · "The ETF figure is corroborated independently: ICI's own census matches it"
+
+**Mine, the page (§02, §09 ledger, §11) and ETF1's status line. Found 17 Oct by Grok's page attack (batch g6, parcel E); checked by
+an independent Sonnet verifier against the ETF1 note and the Fed's table descriptions.**
+
+- **What was wrong.** `2026-09-15-ETF1-Identity-Net-Of-ETF.md` itself says the Z.1 ETF table (S.124.3) "is the ICI census, sitting
+  inside Z.1". The match to under $0.1bn against ICI's Fact Book shows the figure was transcribed correctly; it is not a second,
+  independent measurement. (The Fed's published descriptions do not name a source for S.124.3; that it is ICI's census is the
+  project's inference from an exact match in levels and flows.)
+- **Correct position.** The ETF figure matches ICI's own census, on which the Fed's table appears to be built. The figure is not
+  in question.
+- **Still standing at:** nowhere live.
+
+---
+
+## C-147 · "Only the two highest aggregate specifications in Gabaix and Koijen reach M≈11 (10.9 and 15)"
+
+**Mine, C-145's correct position and the C-077 amendment ("specifications giving M = 5.0 … 10.9 and 15"), carried to the page
+(§06 caption, figure label, §10 ledger), the answer note §4, P3, B0 and Tier B. Found 17 Oct by Grok's page attack (batch g6,
+parcel D). An independent Sonnet verifier confirmed it, and the supervisor re-read NBER w28967 (June 2021; no later revision listed).**
+
+- **What was wrong.** The 15 is not a Gabaix–Koijen estimate. Their footnote 12 quotes it as the market-microstructure
+  literature's price impact, "a factor of about 15", beside which their own 5 "may … seem moderate". The 10.9 is real: Table 3's
+  first column, with GDP growth as the only control, prints 10.93, a column the authors "show for illustration but do not
+  recommend using". With one common factor it is 10.85, just short of what B6 needs; with four factors it is 7.7. The paper's headline is about 5.
+  Their robustness checks run "from 3.5 to 8", and the abstract's headline is about $5. (The verifier's and the reviewer's
+  statement that 10.9 appears only in the non-recommended column was itself an overreach: the one-factor column gives 10.85.)
+- **Correct position.** Checked estimates span about 1.5 (Hartzmark–Solomon) to about 11. B6 needs M above about 10.9 on the 11.7
+  years free data provide; only the GDP-only column of Gabaix and Koijen's Table 3 reaches it. At their four-factor 7.7 B6 needs about
+  24 years, at their headline 5 about 56. Li and Lin's 6.98 is unchanged.
+- **Still standing at:** C-145 and the C-077 amendment, which stay as written (append-only) and are superseded here for the 15.
+
+---
+
 ## C-146 · "Funds added futures length on the way up" (oil, NYMEX WTI and ICE Brent)
 
 **Mine. It was C-142's replacement wording (13 Oct), and the 15 Oct ICE Brent landing carried it into the answer note. Found 17 Oct by
@@ -2525,4 +2662,19 @@ C-146	added futures length on the way up
 C-146	funds added futures length
 C-146	\*added\* length
 C-146	cut into the price peaks
+C-147	two highest aggregate specifications
+C-147	specifications run 5\.0.{1,3}15
+C-147	checked (estimates span )?(about )?1\.5 to 15
+C-148	ETF figure is corroborated independently
+C-148	independent census
+C-149	organic net
+C-149	the real exit
+C-149	Actually spent
+C-150	expected rates for the next four years fell
+C-151	earnings yield barely moved
+C-152	did not carry this repricing
+C-152	not what carried this repricing
+C-152	re-use intensity did not rise
+C-153	a range, not a split\.
+C-154	Revaluation splits into earnings growth
 ```
