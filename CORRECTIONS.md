@@ -990,6 +990,36 @@ principal asked whether the answer note was still up to date; superseded the sam
 
 ---
 
+## C-146 · "Funds added futures length on the way up" (oil, NYMEX WTI and ICE Brent)
+
+**Mine. It was C-142's replacement wording (13 Oct), and the 15 Oct ICE Brent landing carried it into the answer note. Found 17 Oct by
+Grok's review of the Brent claims (batch g5, parcel 3). A first rewrite ("built before the surges, cut into the peaks") also failed the
+pre-publication audit the same day: it was the same endpoint error in the other direction.**
+
+- **What was wrong.** Both phrasings summarise a path of swings by its endpoints. Weekly series, futures only:
+  - **NYMEX WTI.**
+    - 15,743 (30 Dec 2025) to 79,146 (10 Feb), price $57.79 to $64.20.
+    - Up to 96,371 on 17 Mar (price $96.01), then cut by 23,024 in two weeks to 73,347 on 31 Mar ($102.86).
+    - Back up to 98,368 (14 Apr) and 98,219 (19 May), down to 64,041 by 7 Jul; rebuilt to 111,731 on 8 Sep, cut after the 15 Sep
+      price high.
+  - **ICE Brent.**
+    - 126,906 (30 Dec 2025) to 300,712 by 24 Feb (spot $71.21); −54,198 in the week of 3 Mar, when the spot first jumped $12.
+    - Up through the March surge to the 2026 high of 382,072 on 31 Mar; the spot peaked on 7 Apr.
+    - Cut to 96,437 by 7 Jul, rebuilt to 275,879 on 15 Sep (+179,442 as the spot rose 82%), cut after.
+- **Correct position.** Funds' futures length rose over 2026 in swings, not one climb:
+  - built in January and February, before the price moved;
+  - in Brent, built further through the March surge, then cut from the 31 Mar peak to early July; in WTI, swinging between about
+    64,000 and 100,000 contracts from March to early July;
+  - rebuilt from July to mid-September as prices rose;
+  - cut after the 15 Sep high. In the four weeks to 6 Oct WTI's net long halved (with options, down a quarter) and Brent's fell 28%
+    (32.5% from the 15 Sep high).
+  - Weekly changes move with the same week's price (Brent r = 0.60 in 2026, WTI about 0), with no lead detected. The positions are
+    MEASURED. Nothing here says positions moved prices.
+- **Still standing at:** nowhere live once this commit lands. The page, the answer note and the E-021 note (three places) are
+  reworded. `_research/2026-10-12-Bassman-AlphaExchange-vs-Findings.md` keeps the phrase as a dated record. C-142 stays as written
+  (append-only) and is superseded here for this phrase.
+---
+
 ## C-145 · "At the top of the published envelope, M=9.4, B6 needs 16 years; its re-open trigger is about 2030"
 
 **Mine. The number re-entered in B0 (13 Sep, "1.5 to 9.4"), then C-091 and the Tier B note (16 Sep), RESEARCH_STATE, C-117 (22 Sep),
@@ -2491,4 +2521,8 @@ C-145	published \$2–\$9
 C-145	M=9\.4
 C-145	envelope top
 C-145	\$2–\$9 published
+C-146	added futures length on the way up
+C-146	funds added futures length
+C-146	\*added\* length
+C-146	cut into the price peaks
 ```

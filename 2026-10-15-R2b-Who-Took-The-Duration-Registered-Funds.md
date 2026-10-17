@@ -111,6 +111,35 @@ on either arm. That half-year accounts for most of the whole-window excess on th
   five-sixths sat with other holders. Among those, the offshore hedge funds in Z.1's household row are the leading candidate
   (C-124). That remains HYPOTHESIS.
 
+## Outside review, 17 Oct
+
+Grok batch g5, parcels 1 and 4: an adversarial review and a source hunt. The supervisor re-checked the Fed definitions and the
+money-fund figure at source. **The arithmetic and the verdict stand. Four points sharpen what the verdict means.**
+
+- **The first-order line is close to pro-rata.** One-seventh of the public's increase is $460bn. The funds' ordinary share, 14.5%
+  of $3,218.3bn on their own filings, is about $468bn; on the scaled basis their starting share is 15.2%, about $490bn. So clearing
+  the line means the funds took about their usual share, not more. Excess over each arm's own share: measured +$81bn, scaled −$41bn.
+- **The Z.1-scaled arm rests on a weaker comparator.**
+  - Z.1's ETF Treasury row (LM563061103) is ICI's total net assets of government-bond ETFs, by fund objective. It is not a sum of
+    the Treasuries all ETFs hold. Treasuries held by other bond ETFs are left out, and agency debt inside government-bond ETFs is
+    included.
+  - The mutual-fund row's most recent quarter is estimated from price indexes. In the 11 Sep vintage that quarter is 2026Q2.
+  - Both points were confirmed on the Fed's series pages on 17 Oct.
+  - The verdict rule was set before measurement, so it is not changed: it stays NOT ESTABLISHED.
+  - The next test is the 11 Dec Z.1 vintage, whose 2026Q2 mutual-fund stock will be ICI data rather than an estimate. Re-run the
+    scaled arm then (`CALENDAR.tsv`, the 11 Dec row).
+- **Futures could move either arm across the line.** A rise of roughly $120bn in fund Treasury-futures 10-year equivalents
+  (relayed, not measured) would take the scaled arm from $450bn to about $570bn. A Fed note (May 2024) put mutual-fund futures at
+  about 7% of portfolio DV01. Measuring fund futures from N-PORT is the next build on this question.
+- **The long end follows the funds' existing mix.**
+  - The funds took 15.9% of the public's new long-coupon 10-year equivalents (290.7 of 1,822.6).
+  - Their share of the public's long-coupon stock edged from 16.8% to 16.5%.
+  - *MEASURED.* ΔS by half-year (all Treasuries, 10-year equivalents): 2024H1 +$83bn, 2024H2 +$120bn, 2025H1 +$38bn, 2025H2
+    +$146bn, 2026H1 +$162bn.
+- **Money-market funds** are outside: their Treasury stock rose from $2,269.5bn to $3,281.6bn (Z.1 S.123, re-read 17 Oct). Their
+  duration is short under rule 2a-7: roughly $20–50bn of 10-year equivalents, under 2% of $3,218.3bn (an ESTIMATE from a bill-like
+  factor of 0.02–0.05, not measured).
+
 ## Observed vs inferred
 
 - **Observed:** every ΔS, r and bucket figure, from the funds' filings on R2's basis.

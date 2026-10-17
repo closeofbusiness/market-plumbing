@@ -120,10 +120,12 @@ MAX_PRICE_LAG_DAYS = 5
 LATE_SPLIT = dt.date(2024, 1, 1)       # lead-lag sample: report dates from here (A7)
 PRICE_RANGE = (1.0, 250.0)             # plausible $/bbl for Brent spot, a unit guard
 USD_BASIS = "EIA_Europe_Brent_spot_FOB_not_ICE_settlement"
-PRICE_FLAG = "suspect_eia_print"
-# EIA Brent prints known to be wrong (inclusive date ranges of the PRINT date). The EIA prints of 2-6 Oct 2026 are about $20 above ICE's settlement
-# (CALENDAR.tsv, the crude row; Grok check 13 Oct). A report date whose price_date falls in a range gets price_flag; its USD figures stay as computed.
-KNOWN_SUSPECT_PRINTS = ((dt.date(2026, 10, 2), dt.date(2026, 10, 6)),)
+PRICE_FLAG = "eia_spot_gap_unverified"
+# EIA Brent spot prints not reconciled with the futures market (inclusive ranges of the PRINT date). From 2 Oct 2026 EIA's Europe Brent spot has
+# printed $125-136, about $20-30 above a Brent futures quote of about $102 on 5 Oct (relayed; Grok checks 13 and 17 Oct). EIA has not retracted the
+# prints and they persisted through 14 Oct, so this is an unexplained spot-futures gap, not a confirmed data error. Extend the range weekly while it
+# lasts (CALENDAR.tsv, the crude row). A report date whose price_date falls in a range gets price_flag; its USD figures stay as computed.
+KNOWN_SUSPECT_PRINTS = ((dt.date(2026, 10, 2), dt.date(2026, 10, 16)),)
 KEMP_BBL, KEMP_DATE, KEMP_TOL = 253_000_000, dt.date(2026, 6, 2), 0.01       # relayed, warn only (A14)
 PINS = ((dt.date(2026, 3, 31), "fo", 382072), (dt.date(2026, 3, 31), "combined", 429853))     # nets only (A4)
 ANCHORS = (("since end-2023", dt.date(2023, 12, 31), dt.date(2023, 12, 26)),
@@ -1613,14 +1615,14 @@ def suite_pure(ck):
     ck.eq("a ledger with an empty price_flag verifies", verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_row], SOURCE_ICE))[0], LEDGER_COLS)
     led_flag = list(led_row)
     led_flag[LEDGER_COLS.index("price_flag")] = PRICE_FLAG
-    ck.eq("a ledger with price_flag suspect_eia_print verifies", verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_flag], SOURCE_ICE))[0], LEDGER_COLS)
+    ck.eq("a ledger with price_flag eia_spot_gap_unverified verifies", verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_flag], SOURCE_ICE))[0], LEDGER_COLS)
     led_bad = list(led_row)
     led_bad[LEDGER_COLS.index("price_flag")] = "fine"
-    ck.raises("a price_flag value other than '' and suspect_eia_print is refused", DataError, lambda: verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_bad], SOURCE_ICE)), "price_flag")
+    ck.raises("a price_flag value other than '' and eia_spot_gap_unverified is refused", DataError, lambda: verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_bad], SOURCE_ICE)), "price_flag")
     ck.eq("price_flag is the column after usd_basis", LEDGER_COLS[LEDGER_COLS.index("usd_basis") + 1], "price_flag")
     # known-bad EIA prints
-    ck.eq("KNOWN_SUSPECT_PRINTS covers 2026-10-02 to 2026-10-06 and nothing around it",
-          [is_suspect_print(dt.date(2026, 10, k)) for k in range(1, 8)], [False, True, True, True, True, True, False])
+    ck.eq("KNOWN_SUSPECT_PRINTS covers 2026-10-02 to 2026-10-16 and nothing around it",
+          [is_suspect_print(dt.date(2026, 10, k)) for k in (1, 2, 9, 16, 17)], [False, True, True, True, False])
     # EIA workbook that will not load: an xlrd error becomes the script's DataError
     with tempfile.TemporaryDirectory() as tmp:
         for label, body in (("XLS magic bytes then garbage", XLS_MAGIC + b"\xa1\xb1\x1a\xe1" + b"x" * 64), ("an empty file", b""), ("HTML", b"<html>x</html>")):
@@ -1873,7 +1875,7 @@ def suite_build(ck):
         led4 = {x[0]: dict(zip(LEDGER_COLS, x)) for x in c4["led"]}
         ck.eq("price_flag marks the report dates whose price date is in a known-bad range, a carried-back quote included",
               sorted(k_ for k_, x in led4.items() if x["price_flag"]), sorted(["2030-07-02", FX_2030[20].isoformat()]))
-        ck.eq("...with the value suspect_eia_print", {x["price_flag"] for x in led4.values()} - {""}, {PRICE_FLAG})
+        ck.eq("...with the value eia_spot_gap_unverified", {x["price_flag"] for x in led4.values()} - {""}, {PRICE_FLAG})
         ck.ok("...and nothing else in any row changes (the USD figures stay as computed)",
               all({a: b for a, b in led4[k_].items() if a != "price_flag"} == {a: b for a, b in rd[k_].items() if a != "price_flag"} for k_ in rd))
         ck.eq("the build counts the flagged report dates", c4["n_flagged"], 2)

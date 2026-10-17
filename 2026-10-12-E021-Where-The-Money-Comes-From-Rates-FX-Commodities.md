@@ -52,8 +52,8 @@ $176bn). *MEASURED, Z.1 dollars, re-summed by the supervisor from the 11 Sep rel
 reading and HYPOTHESIS here.*
 
 **Commodities — gold rose alongside official buying, bar-and-coin demand and ETF inflows, while fund futures length ended where it
-began; oil's rise ran with large physical stock draws, and funds added futures length on the way up (C-141, C-142; Grok's K1
-review, 13 Oct).**
+began; oil's rise ran with large physical stock draws, and funds' futures length rose over 2026 in swings, not one climb (C-141, C-142,
+C-146; Grok's K1 review, 13 Oct, and g5 review, 17 Oct).**
 - **Gold futures:** managed-money net long on COMEX is 110,987 contracts (6 Oct 2026), about where it was at end-2023 (106,454).
   Gold roughly doubled over the same period, and fund length peaked at 219,029 in Sep 2024. Across all COMEX groups, swap dealers'
   net short deepened by 37,694 contracts (about 117 t), so other futures holders added net length (producers covered 25,512). The
@@ -67,9 +67,9 @@ review, 13 Oct).**
   figure by up to 187 t between vintages (Q1 2026: 244 t to 57 t). BIS swings move the IMF total. Russia (2,327 t) has not
   reported since Nov 2025. Treat the WGC figure as an estimate with a wide band.]
 - **US gold ETFs:** of the $119bn rise in GLD and IAU assets since end-2023, 77% is price and 23% is flows.
-- **Crude, NYMEX WTI:** managed money left WTI over the last four weeks (−58 mb, futures only). During the 2026 rise it had
-  *added* length: net long 15,743 contracts on 30 Dec 2025 ($57.79), 111,731 on 8 Sep 2026 ($94.21), then 53,598 on 6 Oct
-  (futures only; C-142; an earlier comparison with end-2023 hid this). The Strategic Petroleum Reserve fell 130 mb since
+- **Crude, NYMEX WTI:** managed money left WTI over the four weeks to 6 Oct (−58 mb, futures only). Over 2026 its net long moved in swings: 15,743
+  contracts on 30 Dec 2025 ($57.79), 96,371 on 17 Mar, 73,347 on 31 Mar, 64,041 on 7 Jul, 111,731 on 8 Sep ($94.21), then 53,598
+  on 6 Oct (futures only; C-142, C-146). The Strategic Petroleum Reserve fell 130 mb since
   end-2025 while the WTI price went from $60 to about $97. The stock draws are measured; how the rise splits between supply
   disruption and financial demand is not.
 - **Crude, ICE Brent.** Measured since 15 Oct by [`bin/pull_ice_brent_cot.py`](bin/pull_ice_brent_cot.py) into `data/ice_brent/`,
@@ -81,8 +81,13 @@ review, 13 Oct).**
     - 259,481 on 8 Sep;
     - 275,879 on 15 Sep;
     - 186,288 on 6 Oct.
-  - **The last four weeks.** From 8 Sep to 6 Oct it fell 28%, after rising in the first week. With options it went from 265,753
-    to 201,052, a fall of 24%.
+  - **The last four weeks.** From 8 Sep to 6 Oct it fell 28%, after rising in the first week; from the 15 Sep high it fell
+    32.5%. With options it went from 265,753 to 201,052, a fall of 24% (28.9% from the 15 Sep high of 282,657).
+  - **Swings, not one climb** (C-146, in the weekly series). 300,712 of the length was on by 24 Feb, with the spot at $71.21; the
+    week the spot first jumped $12 (3 Mar) funds cut 54,198 contracts; the net then rose through the March surge to the 31 Mar peak;
+    it was cut from 7 Apr to early July and rebuilt from 7 Jul to 15 Sep (+179,442 as the spot rose 82%) before the latest cut.
+  - **Outside checks (17 Oct).** ING (11 Aug: 240,748), John Kemp (78 million barrels bought in the week to 17 Mar) and two reports
+    for 6 Oct (201,052) match the futures-and-options figures, to rounding. *RELAYED; not re-read.*
   - **The same week.** Weekly changes in the managed-money net long move with the same week's percentage change in the spot price
     (EIA Brent spot for Brent, EIA Cushing spot for WTI).
     - Pooled over 2024–26 (145 weeks), futures only: ICE Brent r = 0.58, NYMEX WTI 0.38.
@@ -90,7 +95,7 @@ review, 13 Oct).**
   - **No lead is detected** in the next week's price change.
     - Futures only, over 144 weeks: −0.01 (ICE Brent) and −0.08 (NYMEX WTI).
     - Both are inside the ±0.16 band, the smallest correlation this sample can tell from zero.
-    - The Brent figures include the flagged 6 Oct EIA print; without it they are 0.59 and 0.00.
+    - The Brent figures include the two flagged EIA prints (6 and 13 Oct); without them the same-week r is 0.59.
     - *MEASURED in sample; coincident, no lead detected.*
 - **Copper:** about $14,800 a tonne (12 Oct; whether this is a record was not verified). LME stocks fell over the last month but are
   up 93.6 kt on the year (139,475 t on 9 Oct 2025 to 233,025 t on 9 Oct 2026, Cochilco weekly report, re-read by the supervisor 14 Oct;
@@ -196,7 +201,7 @@ what to read, and verify every number it gives.
      - the Strategic Petroleum Reserve fell 130.2 mb, about $12.0bn at weekly WTI spot;
      - commercial stocks were roughly flat (+1.2 mb);
      - the world drew 424 mb (Jan–Sep, STEO), after building 688 mb in 2025.
-     So the price rise ran with large stock draws, while funds added futures length (C-142); the attribution is HYPOTHESIS.
+     So the price rise ran with large stock draws, while funds' futures length swung (C-142, C-146); the attribution is HYPOTHESIS.
      Outside counts point the same way on the draw, not on its size: the IEA's observed global stocks fell 507 mb over Feb–Aug, while
      OPEC's OECD commercial stocks rose 36.6 mb in August, and IEA members released about 325 mb under the March collective action
      (all relayed by Grok, not re-read).

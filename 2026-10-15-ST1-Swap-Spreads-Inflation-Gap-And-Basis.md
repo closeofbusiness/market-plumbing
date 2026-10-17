@@ -128,6 +128,35 @@ pooled 1–5 years.*
   - weekend correction files are not fetched, which moved medians by at most 0.06bp on 13 Oct;
   - one trading platform is excluded from the headline.
 
+## Outside review, 17 Oct
+
+Grok batch g5, parcel 2: an adversarial review with a search for independently published levels. The supervisor re-read the
+Treasury figure at source.
+
+**Independent levels agree with the ledger to within about 1–2bp.** Ledger values are the daily headline where the outside figure is a
+single day.
+
+| Source | Date | Level | Ledger |
+|---|---|---|---|
+| The Treasury Borrowing Advisory Committee (press release sb0213; re-read 17 Oct): the ten-year spread "has declined from -20bp at the end of 2021 to -53bp currently" | 30 Jul 2025 | 10y −53bp | daily −54.2 |
+| Bloomberg, quoted in a Tradition letter (RELAYED) | 15 Jul 2025 | 2y −25bp, 10y −56bp, 30y −87bp | monthly −24.3, −55.1, −85.8; daily 30y −86.5 |
+| A dealer letter (RELAYED) | 2 Jan 2026 | 10y −37.5bp, 30y −68.4bp | daily −37.6, −68.0 |
+| The same letter (RELAYED) | 28 Aug 2026; 2–4 Mar 2026 | 30y −68.4; −74.1bp | daily −69.1; −74.5 to −75.0 |
+| A bank summary, EUR/USD 5y basis (RELAYED) | 4 Sep 2026 | −2.4bp | pooled 1–5y that day −2.0 |
+
+**One source disagrees and is not explained.** A St. Louis Fed article (Oct 2025), as relayed, gives 2025 averages of −26bp at 10
+years and −13bp at 5 years, and −18bp at 10 years for 2024. That is about 25bp less negative than both this ledger and the Treasury
+committee. The gap is too large and too steady to be noise; it is probably a different definition. The page refused the
+supervisor's scripted request, so the figure stays relayed and unchecked.
+
+**Wording changes from the review.**
+- The extremes are best described as April–September 2025: monthly medians of −53 to −55bp at 10 years, and −88bp at 30 years
+  (May). At 10 years the April single-day low (−58.5) is within about 1bp of 15 Jul (−57.5); at 30 years April (−93.4) is lower.
+- The 5-year inflation gap's seasonal pattern rests on two seasons only. April 2025 broke the low window.
+- "Near zero" fits sterling and the early-2026 euro basis. The latest euro month is −4.4bp.
+- A New York Fed article puts the average 5-year inflation-swap minus TIPS gap since 2004 at about 30bp, wider than this ledger's
+  2025–26 range. No dated 2025–26 external level was found.
+
 ## Observed vs inferred
 
 - **Observed:** every spread, gap and basis figure, as medians of public trade reports against public Treasury yields.
