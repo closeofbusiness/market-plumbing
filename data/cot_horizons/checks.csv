@@ -1,0 +1,61 @@
+# source: CFTC Disaggregated Commitments of Traders, NYMEX WTI code 067651 (publicreporting.cftc.gov and cftc.gov, public domain), retrieved 2026-10-18; EIA spot and NYMEX price workbooks (eia.gov, US government, public domain), retrieved and sha256: RBRTEd 2026-10-17 ae240e004d70e279e1e6a0e5297d1558c168c2279b7752f5c34513b72a8f3bb2; RCLC1d 2026-10-18 45587dc0eef295c0208422be901d9fc4eef4f34c33d138ebf340468fd4bf3975; RCLC2d 2026-10-18 3ada01eab08f3382f49be4ee9a764b944485b5a9c010348283382d42e8300098; RWTCd 2026-10-17 b028311df5769a2d3a6f9e37b7ee5ce8c8a4480d4a4e97484bfbc832853d1256; gov.uk bank holidays (Open Government Licence); ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025)
+check_id,name,expected,observed,status
+P1,"WTI managed-money net 2026-09-08, futures only","111,731","111,731",PASS
+P2,"WTI managed-money net 2026-10-06, futures only","53,598","53,598",PASS
+P3,"WTI managed-money net 2026-10-06, combined","104,491","104,491",PASS
+P4,"Brent managed-money net 2026-03-31, futures only (committed ledger)","382,072","382,072",PASS
+P5,"Brent managed-money net 2026-03-31, combined (committed ledger)","429,853","429,853",PASS
+D01,CFTC report dates per book (067651),">= 1,062, first 2006-06-13","fo 1062, co 1062, 2006-06-13 to 2026-10-13",PASS
+D02,pre-2010 WTI report dates,186,186,PASS
+D03,non-Tuesday dates before 2010,"2006-07-03, 2007-01-03, 2007-12-24, 2007-12-31, 2008-12-22, 2009-11-09","2006-07-03, 2007-01-03, 2007-12-24, 2007-12-31, 2008-12-22, 2009-11-09",PASS
+D04,non-Tuesday dates from 2010,"2012-12-24, 2012-12-31, 2017-07-03, 2018-12-24, 2018-12-31, 2020-12-21, 2023-07-03, 2025-11-10","2012-12-24, 2012-12-31, 2017-07-03, 2018-12-24, 2018-12-31, 2020-12-21, 2023-07-03, 2025-11-10",PASS
+D05,Brent ledger report dates (committed ledger),824 at commit 768a26f; more if refreshed,"824, 2011-01-04 to 2026-10-13",PASS
+F01,RCLC1 and RCLC2 last date,2024-04-05 both,2024-04-05 and 2024-04-05,PASS
+F02,"dates with RCLC1 but no RCLC2, counted from 2006-06-13",4,"4: 2006-06-30, 2006-08-11, 2007-03-02, 2007-04-12",PASS
+F03,"dates with RCLC2 but no RCLC1, counted from 2006-06-13",14,"14: 2006-06-15, 2006-07-05, 2006-08-21, 2006-09-12, 2006-09-15, 2006-10-27, 2006-11-08, 2006-11-10, 2006-11-16, 2006-12-01, 2006-12-13, 2007-03-27, 2011-05-31, 2011-07-15",PASS
+F04,"carry-forward prints (both files repeat the previous print), 2006-2024",spec author 13; second reviewer 9; a different count is not a failure,"13: 2018-01-01, 2018-01-15, 2018-02-19, 2018-03-30, 2018-05-28, 2018-07-04, 2018-09-03, 2018-11-16, 2018-11-22, 2018-12-25, 2019-04-19, 2019-11-28, 2019-12-05",INFO
+F05,NYMEX_HOLIDAYS equals the standard-rule holidays 2005-2026 (the set was generated that way),equal,equal,PASS
+F06,NYMEX_HOLIDAYS entries evidenced by an EIA carried-forward print (evidence=eia_carry_forward),11 holidays in 2018-19,11,INFO
+F07,NYMEX_HOLIDAYS entries with neither a CME notice nor a carry-forward print (absent from both EIA files only; no CME notice was read),0 for a PASS,"163 entries, 2005-2024",WARN
+F08,NYMEX_HOLIDAYS entries on which the files carry a distinct print (that print is ignored),0,0,PASS
+R01,"roll calendar expiries, Jan 2006 to Mar 2024, including 2020-04-21 (CLK20)",219 including 2020-04-21,"219 including 2020-04-21; 2 further delivery months (April and May 2024, last expiry 2024-04-22) cover the final windows",PASS
+R02,months where the holiday-set calendar and the plain union-of-prints calendar give different expiries,at least Nov 2018 and Dec 2018,2018-12 2018-11-19 vs union 2018-11-20; 2019-01 2018-12-19 vs union 2018-12-20,INFO
+R03,"calendar sanity, plain union-of-prints calendar (E+1 is the next date with an RCLC1 print)",shift +0: 128 of 218; shift -1: 96 of 216; shift +1: 98 of 218,shift +0: 128 of 218; shift -1: 97 of 217; shift +1: 98 of 218,WARN
+R03,"calendar sanity, holiday-set calendar (E+1 is the next date with an RCLC1 print)",shift 0 must beat both shifts,shift +0: 127 of 218; shift -1: 99 of 217; shift +1: 99 of 218,PASS
+B01,price-only bridge on the plain union-of-prints calendar (no move-forward),"929 grid dates, 888 pairs (38 missing + 2 non-positive spot), r 0.893, SD 0.0513 futures and 0.0682 spot; excl. Mar-Jun 2020 r 0.955 n 872","929 grid dates, 888 pairs (38 missing + 2 non-positive spot, 0 futures-missing), r 0.893, SD 0.0513 futures and 0.0682 spot; excl. Mar-Jun 2020 r 0.955 n 872",INFO
+B02,"builder's own bridge: post-release futures return vs spot return, primary window, pairs usable on both bases",INFO,"n 727, r 0.889",INFO
+N01,WTI primary pairs before exclusions (first report 2009-09-08 after the OPEN-6 ruling),759 (spec: 760 before the ruling),759,PASS
+N02,WTI primary pairs after the two shutdown blocks and their preceding reports,738 (spec: 739 before the ruling),738,PASS
+N03,WTI primary n after the release-lag rule (reports named),listed,"n 731; left out: 2023-01-24 (next_report_excluded), 2023-01-31 (release_lag_gt_7d), 2023-02-07 (release_lag_gt_7d), 2023-02-14 (release_lag_gt_7d), 2023-02-21 (release_lag_gt_7d), 2023-02-28 (release_lag_gt_7d), 2023-03-07 (release_lag_gt_7d)",INFO
+N04,Brent primary n on the committed EIA file,819 at commit 768a26f,819,PASS
+N05,"descriptive pooled WTI pairs (2006-06-20 to 2024-03-19), before exclusions",927,927,PASS
+N06,backcast WTI pairs (2006-06-20 to 2009-09-01 after the OPEN-6 ruling),"168 (spec: 167 to 2009-08-25, plus 2009-09-01)",168,PASS
+N07,WTI spot extension pairs (2024-03-26 to the last complete window),132 to 2026-09-29,132 to 2026-09-29,PASS
+N08,last WTI futures report,2024-03-19,2024-03-19,PASS
+N09,last Brent report with a complete window; last unflagged,"complete 2026-09-29, unflagged 2026-09-15","2026-09-29, 2026-09-15",PASS
+N10,"WTI primary bars: 5% 1.96/sqrt(n), Holm first 2.2414/sqrt(n), 80% power 2.8016/sqrt(n)",printed before any correlation,"n 731: 0.072, 0.083, 0.104",INFO
+N10,"Brent primary bars: 5% 1.96/sqrt(n), Holm first 2.2414/sqrt(n), 80% power 2.8016/sqrt(n)",printed before any correlation,"n 819: 0.068, 0.078, 0.098",INFO
+G06,"CFTC release rule reproduces the saved 2026 schedule (cftc.gov ReleaseSchedule), report-date to release","52 dates, 6 delayed","52 dates, 6 delayed, 0 mismatches",PASS
+G07,release overrides read from the saved special-announcements page; shutdown blocks excluded,"2025-09-30 -> 2025-11-19, excluded with the report before; 2025-11-10 -> 2025-12-10; 2014-12-23 -> 2014-12-30; blocks of 8 and 11 reports",blocks of 8 and 11 reports; 23 overrides read; all hold,PASS
+G07b,reports released more than 7 days after the report date (excluded),ION 2023 and the 2025 shutdown weeks,"17: 2023-01-31, 2023-02-07, 2023-02-14, 2023-02-21, 2023-02-28, 2023-03-07, 2025-09-30, 2025-10-07, 2025-10-14, 2025-10-21, 2025-10-28, 2025-11-04, 2025-11-10, 2025-11-18, 2025-11-25, 2025-12-02, 2025-12-09",INFO
+G08,ICE timing: no Brent window starts on a print dated on the release day; bank-holiday Friday releases move to the next London business day,holds,holds,PASS
+G02,"every post_start is strictly after the release date used (WTI futures, WTI spot, Brent)",holds,holds,PASS
+G03,no overlap: post_end of report k equals post_start of the next included report,holds,holds,PASS
+G09,roll consistency: at most one expiry per window on every window; prices positive,holds,holds,PASS
+G11,no WTI futures window ends after the last print; last report,2024-03-19,2024-03-19,PASS
+G12,WTI primary starts at 2009-09-08; reports up to 2009-09-01 are backcast and outside it; pooled and backcast samples exist,holds,holds,PASS
+G13,flag exclusion: windows touching a print in KNOWN_SUSPECT_PRINTS are excluded and counted,holds; ranges 2026-10-02 to 2026-10-16,"holds, n_excl_flag=2",PASS
+G01,"regressor is the published first difference of the net in contracts (WTI vs wti_ledger.csv, Brent vs brent_ledger.csv)",holds,holds,PASS
+G19,"seam: for 2010-01-05 on, the 2006 pull's managed-money nets equal wti_ledger.csv exactly",all equal,1752 values compared; all equal,PASS
+G20a,"legacy reproduction: WTI futures-only same-week 0.376 (n=146), next-week -0.084 (145); Brent 0.580 (146), -0.008 (145)",reproduced,reproduced,PASS
+G20b,"legacy reproduction against `git show 768a26f:<path>` for leadlag.csv and brent_leadlag.csv, 4 rows x 3 shifts x (n, Pearson, Spearman)",matches,matches,PASS
+G20c,legacy reproduction against the working copy of the two lead-lag files (a mismatch is a WARN: the sister outputs moved on),matches,matches,PASS
+G21,Brent fo_mm_net_chg equals the first difference of fo_mm_net on every row,holds,holds,PASS
+G22,one report per ISO week per market; accepted non-Tuesdays,"WTI: the 14 listed; Brent: 2012-12-24, 2012-12-31, 2018-12-24, 2018-12-31",holds,PASS
+G10b,English bank holidays: computed set equals the gov.uk file for every year it covers,no mismatch,no mismatch; years 2019-2028,PASS
+G17,"E-025 isolation: no COTHist* path opened, no ice.com host allowed, ~/ice_cot untouched (audit hook over this process)",none,0 paths,PASS
+X01,spec calendar (plain union of prints minus NYMEX_HOLIDAYS) vs weekdays minus NYMEX_HOLIDAYS: months with a different expiry; windows whose futures return changes,INFO (the registered build uses the spec calendar),"3 months (2006-12 2006-11-17 vs 2006-11-20, 2016-12 2016-11-18 vs 2016-11-21, 2017-12 2017-11-17 vs 2017-11-20); 6 windows change, largest absolute change in return 0.0246",INFO
+X02,"post-registration fix, 18 Oct, after independent verification: the roll calendar stopped at the March 2024 delivery month and missed the 2024-03-20 expiry",pre-fix values kept for the record,"before the fix the report of 2024-03-12 was priced RCLC2 to RCLC2 (-0.949%) instead of RCLC2 to RCLC1 (-0.256%); WTI primary r -0.01066 (-0.011), z -0.288, p 0.7731, s_used 0.0370, verdict unchanged",INFO
+V01,"independent re-derivation of the WTI primary n and r to 3 decimals from the raw CFTC rows and the RCLC files, spec section 3 alone (section 8.6)",WTI primary n=731 r=-0.011; Brent primary n=819 r=0.030,not yet run,PENDING
+G05,"banned estimators: every header is its exact allowlist; no nw_, newey, boot, p05, p95, pct_oi or ICE gross column",holds,holds,PASS
+G24,futures leak: no committed header contains 'fut'; y fields blank on futures bases; none of 4 raw futures prints in any committed table or note,holds,holds,PASS

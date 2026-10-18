@@ -219,12 +219,12 @@ ua_check() {
 #   2. ICE's header line, Market_and_Exchange_Names,As_of_Date_In_Form_YYMMDD, inside any tracked or untracked file outside bin/ and _research/
 #      (a COTHist file renamed, saved as .txt or pasted into a note). bin/ holds this script and the ICE parser, and _research/ the spec; both
 #      name the columns, so they are left out;
-#   3. a header cell in a data/ice_brent/*.csv that names a gross column: the word long, short, spread, spreading or gross, the string
+#   3. a header cell in a data/ice_brent/*.csv (and, since the COT horizons build, data/cot_horizons/*.csv, top level only) that names a gross column: the word long, short, spread, spreading or gross, the string
 #      open_interest, or the word oi outside pct_oi. bin/pull_ice_brent_cot.py refuses any header that is not on its exact allowlist; this is
 #      the second, independent look, and it reads the files as committed.
 # It warns and never blocks (header doctrine). (Numbered M11 because another session landed an M10, the User-Agent check, upstream.)
 icebrent_leak_check() {
-  echo "-- M11: ICE Brent leak guard (COTHist files in any letter case; ICE's header line outside bin/ and _research/; gross column names in data/ice_brent/ headers) --"
+  echo "-- M11: ICE Brent leak guard (COTHist files in any letter case; ICE's header line outside bin/ and _research/; gross column names in data/ice_brent/ and data/cot_horizons/ headers) --"
   local files sig sigfiles names f hit
   files=$( { git ls-files -co 2>/dev/null || find . -type f | sed 's|^\./||'; } | grep -Ei '(^|/)cothist[^/]*$' )
   sig='Market_and_Exchange_Names,As_of_Date_In_Form_YYMMDD'
@@ -234,22 +234,44 @@ icebrent_leak_check() {
     sigfiles=$(grep -rIlF -e "$sig" --exclude-dir=.git --exclude-dir=bin --exclude-dir=_research . 2>/dev/null | sed 's|^\./||')
   fi
   names=""
-  if [ -d data/ice_brent ]; then
-    for f in data/ice_brent/*.csv; do
-      [ -f "$f" ] || continue
-      hit=$(grep -v '^#' "$f" | head -1 | tr -d '\r' | awk -F, '{ n = split(tolower($0), h, ",");
-        for (i = 1; i <= n; i++) { c = h[i];
-          if (c ~ /(^|_)(long|short|spread|spreading|gross)(_|$)/ || c ~ /open_interest/ || (c ~ /(^|_)oi(_|$)/ && c !~ /pct_oi/)) print c } }')
-      [ -n "$hit" ] && names="${names}${f}: $(printf '%s' "$hit" | tr '\n' ' ')
+  # data/cot_horizons/ (bin/cot_horizons.py) carries Brent figures too, so its top-level tables get the same header look (top level only, warn-only)
+  for f in data/ice_brent/*.csv data/cot_horizons/*.csv; do
+    [ -f "$f" ] || continue
+    hit=$(grep -v '^#' "$f" | head -1 | tr -d '\r' | awk -F, '{ n = split(tolower($0), h, ",");
+      for (i = 1; i <= n; i++) { c = h[i];
+        if (c ~ /(^|_)(long|short|spread|spreading|gross)(_|$)/ || c ~ /open_interest/ || (c ~ /(^|_)oi(_|$)/ && c !~ /pct_oi/)) print c } }')
+    [ -n "$hit" ] && names="${names}${f}: $(printf '%s' "$hit" | tr '\n' ' ')
 "
-    done
+  done
+  # data/cot_horizons/ may hold only the published files (bin/cot_horizons.py, guard G24), and no csv there may have a header cell containing "fut"
+  # (the local weekly futures panel must never be copied in)
+  local stray="" futh="" rel
+  if [ -d data/cot_horizons ]; then
+    while IFS= read -r f; do
+      rel=${f#data/cot_horizons/}
+      case "$rel" in
+        primary.csv|descriptive.csv|plot26.csv|weekly_panel.csv|release_dates.csv|roll_calendar.csv|checks.csv|fetch_log.csv|README.md|SOURCES.md) ;;
+        raw/cftc_disagg_futonly_72hh-3qpy_067651.json|raw/cftc_disagg_combined_kh3c-gbw2_067651.json|raw/cftc_release_schedule.html) ;;
+        raw/cftc_special_announcements.html|raw/cftc_press_release_7864-19.html|raw/gov_uk_bank_holidays.json) ;;
+        *) stray="${stray}${f}
+" ;;
+      esac
+      case "$f" in
+        *.csv) grep -v '^#' "$f" | head -1 | tr -d '\r' | tr 'A-Z' 'a-z' | grep -q 'fut' && futh="${futh}${f}
+" ;;
+      esac
+    done <<EOF
+$(find data/cot_horizons -type f ! -name '.DS_Store' | sort)
+EOF
   fi
-  if [ -z "$files" ] && [ -z "$sigfiles" ] && [ -z "$names" ]; then
-    echo "  ✓ no COTHist file in the repository (any letter case), no ICE header line outside bin/ and _research/, no gross column name in a data/ice_brent/ header."
+  if [ -z "$files" ] && [ -z "$sigfiles" ] && [ -z "$names" ] && [ -z "$stray" ] && [ -z "$futh" ]; then
+    echo "  ✓ no COTHist file in the repository (any letter case), no ICE header line outside bin/ and _research/, no gross column name in a data/ice_brent/ or data/cot_horizons/ header, nothing unexpected in data/cot_horizons/."
   else
     [ -n "$files" ] && printf '%s\n' "$files" | sed 's/^/  ✗ ICE file in the repository: /'
     [ -n "$sigfiles" ] && printf '%s\n' "$sigfiles" | sed 's/^/  ✗ ICE header line in a file (a COTHist file renamed or pasted?): /'
     [ -n "$names" ] && printf '%s' "$names" | sed 's/^/  ✗ gross column name in header: /'
+    [ -n "$stray" ] && printf '%s' "$stray" | sed 's/^/  ✗ unexpected file in data\/cot_horizons: /'
+    [ -n "$futh" ] && printf '%s' "$futh" | sed 's/^/  ✗ header containing "fut" (a futures panel copied in?): /'
     echo "  -> an ICE record must never be committed (E-025). Remove it before any commit; if it already left this folder, tell the principal."
   fi
 }

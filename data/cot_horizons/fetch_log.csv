@@ -1,0 +1,10 @@
+# source: request log for CFTC, EIA and gov.uk files fetched by bin/cot_horizons.py (CFTC public domain; EIA US government; gov.uk Open Government Licence); each row carries its own UTC time; no ICE request is made
+utc,host,path,status,bytes,sha256
+2026-10-18T05:54:16Z,publicreporting.cftc.gov,"/resource/72hh-3qpy.json?$select=report_date_as_yyyy_mm_dd,cftc_contract_market_code,market_and_exchange_names,open_interest_all,m_money_positions_long_all,m_money_positions_short_all&$where=cftc_contract_market_code%3D%27067651%27&$order=report_date_as_yyyy_mm_dd&$limit=5000",200,299366,2c8cc44685b15934e16ef0519a8b7d4a65c558f0b4947861be95cb9a5df5ca6f
+2026-10-18T05:54:18Z,publicreporting.cftc.gov,"/resource/kh3c-gbw2.json?$select=report_date_as_yyyy_mm_dd,cftc_contract_market_code,market_and_exchange_names,open_interest_all,m_money_positions_long_all,m_money_positions_short_all&$where=cftc_contract_market_code%3D%27067651%27&$order=report_date_as_yyyy_mm_dd&$limit=5000",200,299322,efb8c952910e6856b3ec952532caf8518220ee6d27328478b383316bc6d68c3d
+2026-10-18T05:54:19Z,www.cftc.gov,/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm,200,48675,a05ad337e57a6d6a885f514a3076051ee10fd90878234e7845bcd1f11d8f3ae7
+2026-10-18T05:54:21Z,www.cftc.gov,/MarketReports/CommitmentsofTraders/HistoricalSpecialAnnouncements/index.htm,200,125759,f575099faecd77806db509c33872dff6733cda9020b1452f831d32f74340167f
+2026-10-18T05:54:23Z,www.cftc.gov,/PressRoom/PressReleases/7864-19,200,37385,d4974a24d7a67bcff1b9de50f70b8d281b98dbffbb2eb6f7651a936fbd6979cf
+2026-10-18T05:54:36Z,www.eia.gov,/dnav/pet/hist_xls/RCLC1d.xls,200,494592,45587dc0eef295c0208422be901d9fc4eef4f34c33d138ebf340468fd4bf3975
+2026-10-18T05:54:44Z,www.eia.gov,/dnav/pet/hist_xls/RCLC2d.xls,200,468480,3ada01eab08f3382f49be4ee9a764b944485b5a9c010348283382d42e8300098
+2026-10-18T05:54:44Z,www.gov.uk,/bank-holidays.json,200,22207,538b3482c28b85ecd2db606a0d5ae6ad17248900b6498700ce0a48d26a3ecde6
