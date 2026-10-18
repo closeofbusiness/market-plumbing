@@ -70,3 +70,8 @@ data/r15_yield_comovement/weekly_panel*
 CMO-Historical-Data-Monthly*.xlsx
 # COT horizons (bin/cot_horizons.py): the two EIA NYMEX futures workbooks and the local weekly futures panel are never committed (G24)
 data/vintages/cot_horizons/
+# JODI world oil ledger (spec 2026-10-18): JODI's terms say "All such rights are reserved", so no JODI annual CSV is ever committed. The cache is
+# ~/jodi_oil/, outside the repository (bin/build_jodi_oil_ledger.py refuses a cache inside it); bin/check.sh M12 looks for the rest.
+jodi_primary_*.csv
+primaryyear*.csv
+secondaryyear*.csv

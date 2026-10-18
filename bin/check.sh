@@ -387,6 +387,58 @@ goldry_leak_check() {
   fi
 }
 
+# --- M14: JODI LEAK GUARD (warn only) ---------------------------------------
+# data/jodi_oil/ may hold only statistics derived from the JODI-Oil World Database, never a JODI file or a table that lets a reader rebuild JODI's
+# country-by-month table (JODI: "All such rights are reserved"; spec _research/2026-10-18-JODI-World-Oil-Ledger-Spec.md, R1 and R6). Three things
+# would break that, and none is visible to M5-M11:
+#   1. a JODI annual file anywhere in the repository, by name: jodi_primary_*, primaryyear* or secondaryyear*, in any letter case. `git ls-files -co`
+#      lists tracked AND untracked files (-o without --exclude-standard also lists ignored ones), so a file dropped in before `git add`, or one the
+#      .gitignore rule hides, is caught too;
+#   2. a file whose FIRST line is JODI's CSV header (REF_AREA, TIME_PERIOD, ENERGY_PRODUCT, ...) -- a JODI file renamed or saved as .txt. bin/ and _research/
+#      name the header in the script and the spec, so they are left out;
+#   3. a header cell set in a data/jodi_oil/*.csv (other than checkpoints.csv, whose rows are the fixed list of at most 30) that has ref_area together with
+#      month, period, time_period or date as a whole word. bin/build_jodi_oil_ledger.py refuses any header that is not on its exact allowlist; this is
+#      the second, independent look, and it reads the files as committed. (months_usable and months_in_window are not the word month.)
+# It warns and never blocks (header doctrine).
+jodi_leak_check() {
+  echo "-- M14: JODI leak guard (JODI annual files by name; JODI's header as a first line outside bin/ and _research/; ref_area beside a time column in data/jodi_oil/ headers) --"
+  local files sigfiles hits names f hit hdr
+  hdr='REF_AREA,TIME_PERIOD,ENERGY_PRODUCT,FLOW_BREAKDOWN,UNIT_MEASURE,OBS_VALUE,ASSESSMENT_CODE'
+  files=$( { git ls-files -co 2>/dev/null || find . -type f | sed 's|^\./||'; } | grep -Ei '(^|/)(jodi_primary_|primaryyear|secondaryyear)[^/]*$' )
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    sigfiles=$(git grep -I --untracked -l -F -e "$hdr" -- . ':(exclude)bin' ':(exclude)_research' 2>/dev/null)
+  else
+    sigfiles=$(grep -rIlF -e "$hdr" --exclude-dir=.git --exclude-dir=bin --exclude-dir=_research . 2>/dev/null | sed 's|^\./||')
+  fi
+  hits=""
+  for f in $sigfiles; do
+    [ "$(head -1 "$f" 2>/dev/null | tr -d '\r')" = "$hdr" ] && hits="${hits}${f}
+"
+  done
+  names=""
+  if [ -d data/jodi_oil ]; then
+    for f in data/jodi_oil/*.csv; do
+      [ -f "$f" ] || continue
+      [ "$(basename "$f")" = "checkpoints.csv" ] && continue
+      hit=$(grep -v '^#' "$f" | head -1 | tr -d '\r' | awk -F, '{ n = split(tolower($0), h, ","); a = 0; t = 0; w = "";
+        for (i = 1; i <= n; i++) { c = h[i];
+          if (c ~ /(^|_)ref_area(_|$)/) a = 1;
+          if (c ~ /(^|_)(month|period|time_period|date)(_|$)/) { t = 1; w = w " " c } }
+        if (a && t) print "ref_area with" w }')
+      [ -n "$hit" ] && names="${names}${f}: ${hit}
+"
+    done
+  fi
+  if [ -z "$files" ] && [ -z "$hits" ] && [ -z "$names" ]; then
+    echo "  ✓ no JODI annual file in the repository (by name), no file starting with JODI's header outside bin/ and _research/, no ref_area-plus-time header in data/jodi_oil/."
+  else
+    [ -n "$files" ] && printf '%s\n' "$files" | sed 's/^/  ✗ JODI file in the repository: /'
+    [ -n "$hits" ] && printf '%s' "$hits" | sed 's/^/  ✗ file whose first line is JODI'"'"'s header: /'
+    [ -n "$names" ] && printf '%s' "$names" | sed 's/^/  ✗ country-by-time header: /'
+    echo "  -> a JODI file or a rebuildable country table must never be committed (JODI reserves all rights). Remove it before any commit; if it already left this folder, tell the principal."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -591,6 +643,8 @@ if [ "$TARGET" = "--all" ]; then
   r15_leak_check
   echo
   goldry_leak_check
+  echo
+  jodi_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
