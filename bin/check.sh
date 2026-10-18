@@ -297,6 +297,74 @@ r15_leak_check() {
   fi
 }
 
+# --- M13: GOLD REAL-YIELD LEAK GUARD (warn only) -----------------------------
+# data/gold_real_yield/ may hold derived statistics only: the World Bank Pink Sheet gold price is never redistributed (E-021 item 5; spec R1).
+# bin/gold_real_yield_break.py enforces this when it writes (exact column allowlists, K08), and refuses a cache inside the repository; this is the
+# second, independent look, and it reads the files as committed. It warns on
+#   1. a World Bank workbook (CMO-Historical-Data-Monthly*, any case) anywhere in the repository (tracked, untracked or ignored), or any
+#      .xlsx/.xls/.zip under data/gold_real_yield/;
+#   2. a file under data/gold_real_yield/ that is not one of the thirteen allowed names (the eleven outputs, README.md, SOURCES.md);
+#   3. a CSV whose header line is not exactly that file's allowlist, or whose header names gold, ln_g, dln, fitted, price or resid_ (the three
+#      exempt names resid_sd_in_sample, resid_var_regime1 and resid_var_regime2 apart);
+#   4. a rolling36.csv beta_ry, boot_lo or boot_hi cell with more than two decimals (the one per-month exception, published at 2 dp).
+# It warns and never blocks (header doctrine).
+goldry_leak_check() {
+  echo "-- M13: gold real-yield leak guard (no CMO workbook or spreadsheet; file and header allowlists; rolling36.csv at most 2 decimals) --"
+  local d=data/gold_real_yield out="" f b want hdr bad
+  local cmo
+  cmo=$( { git ls-files -co 2>/dev/null || find . -type f | sed 's|^\./||'; } | grep -Ei '(^|/)cmo-historical[^/]*$' )
+  [ -n "$cmo" ] && out="${out}$(printf '%s\n' "$cmo" | sed 's/^/  ✗ World Bank workbook in the repository: /')
+"
+  if [ -d "$d" ]; then
+    for f in "$d"/* "$d"/.[!.]*; do
+      [ -e "$f" ] || continue
+      b=$(basename "$f")
+      case "$b" in
+        monthly_inputs.csv|results.csv|cointegration.csv|break.csv|chow_known_dates.csv|rolling36.csv|rolling36.svg|levels_summary.csv|checks.csv|vintages.csv|fetch_log.csv|README.md|SOURCES.md) ;;
+        *) out="${out}  ✗ file not on the allowlist: $f
+" ;;
+      esac
+      case "$b" in *.xlsx|*.xls|*.zip|*.XLSX|*.XLS|*.ZIP) out="${out}  ✗ spreadsheet or zip under $d: $f
+" ;; esac
+      case "$b" in
+      monthly_inputs.csv) want='month,tips10_avg_pct_mc,tips10_avg_pct_official,tips10_days,tips10_mc_day_share,usd_broad_2006jan100,seam_flag' ;;
+      results.csv) want='object_id,role,sample_start,sample_end,n,regressors,coef_name,coef,coef_unit,pct_approx,pct_exact,se_classical,se_hac,hac_lag,hac_lag_rule,crit_value,crit_basis,ci_level,ci_low,ci_high,r2,mde80,flag,verdict' ;;
+      cointegration.csv) want='test_id,role,sample_start,sample_end,T,adf_lags,adf_stat,cv_5pct,reject_5pct,levels_printed' ;;
+      break.csv) want='trim,dummy_spec,first_candidate,last_candidate,n_candidates,sup_wald,p_value_boot,boot_draws,boot_mean_block,andrews_cv10,andrews_cv5,andrews_cv1,break_month_ssr,break_month_supwald,bai_ci_low,bai_ci_high,bai_halfwidth_months,ci_clipped,s_min_h4,s_min_h6,s_min_h8,s_min_h12,s_min_h18,resid_var_regime1,resid_var_regime2,hac_lag' ;;
+      chow_known_dates.csv) want='regime2_start,wald_hac,df,p_chi2,hac_lag,role' ;;
+      rolling36.csv) want='end_month,n,beta_ry,boot_lo,boot_hi,block_len,draws,seed' ;;
+      levels_summary.csv) want='object_id,fit_start,fit_end,coef_name,coef,ci_low,ci_high,hac_lag,resid_sd_in_sample,residual_label,status' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      vintages.csv) want='source,file,retrieved_utc,sha256,bytes,published_updated_on,last_obs' ;;
+      fetch_log.csv) want='utc,host,path,status,bytes,sha256,outcome' ;;
+      *) want="" ;;
+      esac
+      [ -f "$f" ] || continue
+      case "$b" in
+      *.csv)
+        hdr=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+        [ -n "$want" ] && [ "$hdr" != "$want" ] && out="${out}  ✗ header differs from the allowlist: $f
+"
+        bad=$(printf '%s' "$hdr" | tr ',' '\n' | grep -Ei 'gold|ln_g|dln|fitted|price|^resid_' | grep -vxE 'resid_sd_in_sample|resid_var_regime1|resid_var_regime2')
+        [ -n "$bad" ] && out="${out}  ✗ banned name in header of $f: $(printf '%s' "$bad" | tr '\n' ' ')
+"
+        ;;
+      esac
+    done
+    if [ -f "$d/rolling36.csv" ]; then
+      bad=$(grep -v '^#' "$d/rolling36.csv" | tail -n +2 | awk -F, '{ for (i = 3; i <= 5; i++) if ($i ~ /\.[0-9][0-9][0-9]/) { print NR ": " $i; break } }' | head -3)
+      [ -n "$bad" ] && out="${out}  ✗ rolling36.csv has more than 2 decimals (row: value): $(printf '%s' "$bad" | tr '\n' ' ')
+"
+    fi
+  fi
+  if [ -z "$out" ]; then
+    echo "  ✓ no World Bank workbook or spreadsheet; only the thirteen allowed files, each CSV on its exact header; rolling36.csv at most 2 decimals."
+  else
+    printf '%s' "$out"
+    echo "  -> the gold price must never be committed (World Bank terms; spec R1). Remove it before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -499,6 +567,8 @@ if [ "$TARGET" = "--all" ]; then
   ua_check
   icebrent_leak_check
   r15_leak_check
+  echo
+  goldry_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

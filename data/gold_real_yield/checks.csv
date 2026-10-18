@@ -1,0 +1,26 @@
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+check_id,description,expected,observed,status
+I02,B1 at trim 0.15: regime residual variances (the Bai interval is labelled approximate if they differ by more than 2x),ratio <= 2,ratio 1.06,INFO
+K01a,Gold header and ($/troy oz) units sit in the same column,same column,same column (parse_gold),PASS
+K01b,"Gold months 2006M01 to 2026M09, no blanks","249 months, 0 blank","249 months, 0 blank",PASS
+K01c,sha256 of the gold column lines (2 Oct 2026 vintage),c1ccb724d521450de7c283063c82ff619e40e94dc0b063738b8529f018a2798e,c1ccb724d521450de7c283063c82ff619e40e94dc0b063738b8529f018a2798e,PASS
+K02a,"Treasury 10 YR prints, 2003-01-02 to 2026-09-30, no duplicates or blanks","5941 prints, 2003-01-02, 2026-09-30","5941 prints, 2003-01-02, 2026-09-30",PASS
+K02b,"September 2026 (official): days, sum, mean","21 days, sum 55.40, mean 2.6381","21 days, sum 55.40, mean 2.6381",PASS
+K02c,"January 2006: days, sum","20 days, sum 40.12","20 days, sum 40.12",PASS
+K02d,"December 2021: days, and the three prints before 6 Dec (newest first, as the file lists them)","22 days; -1.08, -1.03, -1.01","22 days; -1.08, -1.03, -1.01",PASS
+K02e,Spot prints 2023-12-29 and 2026-09-30,"1.72, 2.93","1.72, 2.93",PASS
+K03a,Treasury overlap file: mean MC minus HS over the overlap days (pp),0.026614 over 251 days,0.026614 over 251 days,PASS
+K03b,December 2021 mean: MC basis and official,-0.9896; -0.9932,-0.9896; -0.9932,PASS
+K03c,"January 2006 mean, MC basis",2.0326,2.0326,PASS
+K04a,"Broad dollar index (2006-01=100): 2006-01, 2021-12, 2025-12, 2026-09",100.0000 / 115.8045 / 120.1883 / 119.2152,100.0000 / 115.8045 / 120.1883 / 119.2152,PASS
+K04b,Monthly index equals the mean of the month's daily values,within 0.0001 in every month,largest gap 0.00006 at 2009-07,PASS
+K04c,The Unit: label in the Fed file is not trusted; the base is asserted from the value,label says a 1997 base; values are 2006-01 = 100,label 'Index:_1997_Jan_100',INFO
+K05a,2026 levels slope over 9 months (official yields; a published checksum),-0.20199 +- 0.00005,-0.20199,PASS
+K05b,2026 changes slope over 8 months (official yields; a published checksum),-0.31907 +- 0.00005,-0.31907,PASS
+K05c,levels slope over the 7 quarters 2025Q1-2026Q3 (log of the equal-weight quarterly mean) (official yields; a published checksum),-0.02101 +- 0.00005,-0.02101,PASS
+K05d,Number of quarters in the quarterly checksum,7,7,PASS
+K06,"Sample and lags: n changes, rule-of-thumb lag, L; trim table as the spec","n=248, rule 4, L=12; 2007-02/2025-08, 2009-03/2023-07, 2011-03/2021-07","n=248, rule 4, L=12; 2007-02/2025-08, 2009-03/2023-07, 2011-03/2021-07",PASS
+K07,Gold series seam at 2025-06 against the GLD-implied PM price (local only),median gap before 2025-06 <= 0.10%,file absent: SKIP (expected for an outside reader),SKIP
+K08,Leak scan: explicit file and column allowlist; rolling36.csv at most 2 decimals; no spreadsheet under the output directory,no problems,no problems,PASS
+K09,"P1 null size on the real regressors (20000 synthetic iid and AR(0.2) y; no gold), rejection rate at the fixed-b cv",each <= 0.065,"iid 0.0601, AR(0.2) 0.0623",PASS
+K10,Every results.csv row: ci_low and ci_high equal coef -/+ crit_value x se_hac (to printed rounding); the P1 band on stdout equals results.csv's,0 rows disagree,0 of 26 rows disagree,PASS

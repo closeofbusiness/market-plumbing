@@ -66,3 +66,5 @@ latest-yield-curve-data.zip
 jgbcme*.csv
 *BBSIS*
 data/r15_yield_comovement/weekly_panel*
+# Gold vs real yield (E-021 item 5): the World Bank Pink Sheet workbook is never committed (the cache is ~/gold_ry_cache/, outside the repository; the script refuses a cache inside it)
+CMO-Historical-Data-Monthly*.xlsx

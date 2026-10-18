@@ -1,0 +1,11 @@
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+object_id,fit_start,fit_end,coef_name,coef,ci_low,ci_high,hac_lag,resid_sd_in_sample,residual_label,status
+D8_levels,2006-01,2021-11,b_ry,,,,,,,suppressed_no_cointegration
+D8_levels,2006-01,2021-11,c_usd,,,,,,,suppressed_no_cointegration
+D8_levels_trend,2006-01,2021-11,b_ry,,,,,,,suppressed_no_cointegration
+D8_levels_trend,2006-01,2021-11,c_usd,,,,,,,suppressed_no_cointegration
+D8_levels_trend,2006-01,2021-11,trend,,,,,,,suppressed_no_cointegration
+D8_levels_step,2006-01,2026-09,b_ry,,,,,,,suppressed_no_cointegration
+D8_levels_step,2006-01,2026-09,c_usd,,,,,,,suppressed_no_cointegration
+D8_levels_step,2006-01,2026-09,step,,,,,,,suppressed_no_cointegration
+D8_residual,2006-01,2021-11,residual_label,,,,,,,suppressed_no_cointegration

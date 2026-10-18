@@ -568,3 +568,68 @@ already-published checksums were run.
 - **New sources fetched once each (neutral User-Agent):** the Andrews (2003) corrigendum, from the copy attached on the gretl users
   list (`gretlml.univpm.it/.../andrewsCorrect.pdf`, 200, 40,266 bytes, 3 pages; the decimal points were lost in extraction and
   restored by column).
+
+## Builder decisions
+
+Recorded by the builder on 18 Oct 2026 where the spec is silent or ambiguous. Nothing here changes a pre-registered quantity: the sample, P1's regressors, lag, critical value and decision rule are as written in sections 3 and 4.
+
+**Run record.**
+- `fetch` made 8 requests, all 200, at 06:00:24-06:00:59 UTC on 18 Oct. Sizes and sha256 match the spec author's observations (workbook `ea1c3508...`, 586,099 bytes; D2 171,806; D4 47,599; D5 9,099; D6 201,840; D3 7,206 for 2026, last date 2026-10-16).
+- The first `build` printed one FAIL, K02d: the three December-2021 prints before the 6th were compared oldest-first, and the spec lists them newest-first (the file's order). The values are the same three. The check was changed to list them newest-first; no tolerance was loosened and no estimator changed, and P1 and every other output were byte-identical before and after.
+- The registered P1 was therefore computed more than once by the same code on the same cache (deterministic, no seed dependence); no alternative specification was run. A separate hand-written lstsq plus Newey-West reproduced b = -0.079624, se_HAC = 0.015207.
+- `selftest`: 30 guards PASS in 2.8 s. `selftest --mutants`: 30 of 30 guards caught, 44 mutant variants (a guard counts as caught only if every variant listed for it is caught), 5.7 s.
+- `bin/check.sh --all` after the build: every line is a pass, M10 included (the first run failed M10 because a self-test label put an at-sign on a line that names the User-Agent; it was reworded).
+
+**Estimators and critical values.**
+1. P1's critical value is the Kiefer-Vogelsang cubic at b = L/n rounded to 3 dp (2.105). The same cubic at each object's own L/n, rounded to 3 dp, gives the 95% bands of D1 to D5 and of the indicative levels intervals. The spec fixes only P1's.
+2. For windows with n < 100 the lag is `max(1, floor(4 (n/100)^(2/9)))` (D5: 2 and 3). The primary design and every n >= 100 object use `max(12, rule)`.
+3. D5's first window runs 2006-02 to 2021-11 (n = 190, L = 12).
+4. The D4 dummies' HAC standard errors are degenerate for a one-month regressor (0.0030 against a classical 0.0334 for 2021-12). They are printed as the spec's columns require and the rows are flagged `hac_se_degenerate_for_one_month_dummy`.
+5. D9 checksums are simple OLS slopes (with intercept) on official yields; the quarterly yield is the mean of the daily prints in the quarter. They are written to results.csv at 4 dp and to checks.csv at 5 dp.
+
+**B1.**
+6. One scan over the widest candidate set (trim 0.05) is made per dummy spec, and each trim takes its own sub-range of it. So the bootstrap sup for trim 0.25 is the maximum over that trim's candidates only.
+7. The bootstrap's restricted model is the P1 model, plus the 2021-12 impulse dummy in the dummy spec. One `RandomState(20261018)` is created per spec, so the index draws are identical across specs and trims. The stationary bootstrap draws start indices with `randint` then new-block flags with `rand`; blocks are circular, mean length 6.
+8. Bai's estimator: k-hat is the minimum-SSR candidate within the trim's own range. Omega-hat is the lag-12 Newey-West long-run variance of x_t e_t over the three P1 regressors, with e the residuals of the broken model at k-hat (including the dummy in the dummy spec). Q-hat = X'X/n over those three regressors. `bai_halfwidth_months` is h itself (1 dp, unclipped, not the integer); the interval uses ceil(h) from the unrounded h. `s_min_h*` use Omega-hat(2,2) and Q-hat(2,2) of the same row. The regime residual variances come from the same broken model.
+9. "Approximate if the regime variances differ by more than 2x" has no column in break.csv, so it is reported as check I02 (INFO if the ratio is at most 2, WARN otherwise). At trim 0.15 the ratio is 1.06.
+10. The HAC covariance of the sup-Wald is the full unrestricted model's, and the Wald uses the (3 x 3) shift block, which is computed as R S R' with R the shift rows of (X'X)^-1; G29 pins this against an explicit fit-HAC-Wald loop at every candidate.
+11. Observation, not a change: the trim-0.05 sup-Wald (226) is at k = 14, a first regime of 14 monthly changes against a 12-lag HAC. The explicit-loop reference reproduces it on the real data, so it is the statistic as specified; it is flagged in the README as not to be leaned on.
+12. D7: `k` is the number of change observations before the named month (2008-12: 34; 2021-12: 190). The p-value is the closed-form chi-square(3) tail.
+13. D6: one `RandomState(20261018)` stream is consumed sequentially across the 213 windows (not reseeded per window); blocks are non-wrapping (start in 0..30); percentile uses numpy's linear interpolation.
+
+**Levels (D8).**
+14. Engle-Granger: no-constant ADF on the residuals; lag by AIC = N ln(SSR/N) + 2(p+1) over 0 to 12 on a common sample that starts at lag 12, then re-run at that lag on the longest sample; tau = rho/se with the classical OLS standard error. cointegration.csv has four rows: tau_c and tau_ct, each on the fit sample and on the full sample; only tau_c on the fit sample is the gate (role `gate`); the rest are `info`.
+15. If the gate had rejected: the levels slopes (without and with a trend) would be fitted on the fit sample (2006-01 to 2021-11), the step-dummy fit on the full sample; the indicative interval would use the fixed-b cubic at b = 12/T; the in-sample sd would be sqrt(SSR/(T-3)). None of this ran on real data, because the gate did not reject. It ran on synthetic cointegrated data in the selftest (G13).
+16. Result on real data: tau_c = -2.8045 (3 lags) against -3.7858 on the gate sample, so every levels row is `suppressed_no_cointegration`.
+
+**Files and checks.**
+17. checks.csv splits K01 to K05 into lettered rows and adds I01 (revision report, only when a second vintage exists) and I02 (item 9). Its `# source:` line carries the retrieval dates.
+18. `monthly_inputs.csv` seam flags: `tips_knot_change` (2008-12), `hs_to_mc_spline` (2021-12), `pink_sheet_series_definition` (2025-06). The last describes the gold series' definition, but the file carries no gold.
+19. `vintages.csv` has one row per file in the cache (all vintages, not only the latest); `retrieved_utc` is the logged request time matched by sha256, or the date in the file name if unlogged.
+20. K08 also fails on any spreadsheet or zip under `data/gold_real_yield/`. The success-criterion scan for `.xlsx` finds only pre-existing tracked files from other builds (data/gold/raw, data/crude/raw), and no World Bank workbook.
+21. The README's numbers are written by hand from the registered run; they are not regenerated by the script. If a later vintage changes them, the README is stale until a person updates it.
+
+**Fetch.**
+22. Any status other than 200 or 5xx latches (the spec names 401, 403, 429 and 3xx; a 404 or 400 would also mean a wrong address). A 5xx is logged and ends the run without a latch, like a socket fault. A body that is larger than the 40 MB cap latches.
+23. Past-year D3 files are reused from the cache only if their last print is on or after 24 December of that year. D1, D5, D6 and the current-year D3 are requested every run. Pacing is 5.05 s between request starts, persisted in `~/gold_ry_cache/.last_request`.
+24. The vintage file name is `<id>_<YYYYMMDD>_<first 8 hex of sha256>.<ext>` under `<cache>/vintages/{worldbank,treasury,fed}/`.
+25. No update mode: the build always computes the registered sample (end 2026-09), as G26 requires. A later vintage changes only the revision report and any revised values inside that sample. Extending the sample as a labelled update needs a decision on how its outputs are kept apart from the registered ones; the spec does not say.
+
+**Selftest.**
+26. The G4 simulation uses N = 1000, L = 48 (b = 0.048), 20,000 draws, `RandomState(20261018)` (the spec author used N = 2000, L = 97), for speed: it gives 2.118 against the cubic's 2.1046 (gap 0.013, inside 0.02). The 97.5% quantile of 20,000 draws has a standard error of about 0.017, so this check is deterministic but not tight; it separates 2.105 from 1.96 and 2.2414.
+27. G6 (seeded bootstrap p and sup-Wald on a synthetic series) and G22 (sum of the seeded moving-block index array) are regression pins recorded at the first successful run, not independent values. The Andrews constants are pinned against the spec's table, typed separately in the test.
+28. G28 and K09 draw a Gaussian synthetic X first (G28 only), then iid noise, then AR(0.2) noise with a 100-step burn-in, from one `RandomState(20261018)`. At cv 2.105 the rates are 5.3% and 5.7% on the synthetic X (G28) and 6.0% and 6.2% on the real X (K09); at 1.96 they are 7.0% and 7.5% on the synthetic X. The spec author's draw order differs, so the figures are close to but not the same as theirs.
+29. Some mutants are caught by the production guard stopping the build rather than by an assertion in the test: G18's three, G19's 4-dp mutant and G21's. That is the guard doing its job (the mutated producer cannot write), and the printed reason shows it.
+30. G25 also checks the fetch plan (8 requests, then 4 on the next run, with a fake network) and G24 the full latch matrix. The latch and pacing logic were tested only against a fake opener; the live fetch (8 of 8 returning 200) is the only live test.
+31. The selftest's temporary directories are created outside the repository and the test refuses to run if the system temp directory is inside it.
+
+**Landing.**
+32. Added as the spec's section 9 names: `.gitignore` rule `CMO-Historical-Data-Monthly*.xlsx`; a `CALENDAR.tsv` row dated 2026-11-04 (the third business day of November; Pink Sheet and H.10 have both published by then), status OPEN; a data note in REPRODUCE.md. No check.sh gate was added (the spec leaves that to the supervisor). The spec copy is in `_research/` and is not yet in CLAUDE.md's read table; M5 passes because it checks top-level entries only.
+33. Bibliographic details in SOURCES.md were checked on 18 Oct against Crossref (one request per DOI) and NBER's page: Politis-Romano and Bai fully; Newey-West, Engle-Granger and Kiefer-Vogelsang as to journal, title, volume, issue and first page (last pages not shown by Crossref); Erb-Harvey as to title, number and date. Andrews (2003), MacKinnon (2010; Queen's server failed certificate validation, not bypassed) and Torul (2026) are marked not re-checked. The spec's own caveats (Kiefer-Vogelsang cubic recalled, Andrews table from a third-party copy, MacKinnon coefficients read once) stand.
+
+**Second-round changes (supervisor, 18 Oct).**
+34. New band guard: `band_problems()` asserts on every results.csv row that ci_low and ci_high equal coef -/+ crit_value x se_hac to printed rounding (0.00005 x (2 + crit)); `stdout_band_problems()` asserts the P1 band on stdout equals results.csv's; the build raises DataError on a disagreement and the report refuses to print one; checks.csv gains K10 (PASS). G4 carries the checks, with a new mutant `g4_band_196` (coef_rows uses 1.96 for the band). The suite is still 30 guards; with the mutant, 45 variants.
+35. `bin/check.sh` gains M12, `goldry_leak_check`, warn-only, called from `--all` after M11 (CMO workbook or spreadsheet anywhere; file allowlist; exact header per CSV; banned header names; rolling36 at most 2 decimals). Its header strings were generated from the script's allowlist, so a change to one needs the other changed too.
+36. README: Wald, sup-Wald, SSR, Engle-Granger and Chow are defined at first use; the table column is "most likely break month"; the s_min sentence is reworded; a plain note says the scan's "2021-12" is the last month of regime 1 while the Chow date is the first month of regime 2.
+
+**OPEN-3, run by the builder (scratch experiment, not committed, no gold).** B1's bootstrap p-value at trim 0.15 with the real regressors, on 500 synthetic series per noise type, B = 199 each, rejecting at p <= 0.05: 22 of 500 for iid noise (4.4%) and 22 of 500 for AR(0.2) noise (4.4%). The standard error of such a rate over 500 series is about 1 point. Trims 0.05 and 0.25 and the dummy spec were not run. This suggests the bootstrap p-value is roughly correctly sized at the pre-registered trim; it is still descriptive.

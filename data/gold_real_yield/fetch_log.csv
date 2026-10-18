@@ -1,0 +1,10 @@
+# source: request log for the World Bank, US Treasury and Federal Reserve Board files read by bin/gold_real_yield_break.py; each row carries its own UTC time
+utc,host,path,status,bytes,sha256,outcome
+2026-10-18T06:00:24Z,thedocs.worldbank.org,/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx,200,586099,ea1c350827878ea3bbe30e3cda16a13fd3bd5b409b8458940dc94a36b5a33154,saved
+2026-10-18T06:00:29Z,home.treasury.gov,/system/files/276/par-real-yield-curve-rates-2003-2023.csv,200,171806,5fc18bb6f71ffe9dec8f179ceac78696f2162844a9c0bb07e1c76f386efa8583,saved
+2026-10-18T06:00:34Z,home.treasury.gov,/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2024/all?type=daily_treasury_real_yield_curve&field_tdr_date_value=2024&page&_format=csv,200,9042,d3ff00a9287ebf68fdc80e72fb2d1895a73c84b3ff2a6ca8c6d64648cb470f16,saved
+2026-10-18T06:00:39Z,home.treasury.gov,/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2025/all?type=daily_treasury_real_yield_curve&field_tdr_date_value=2025&page&_format=csv,200,9006,d3d3131c41e1f93f4661d227ce7079049d51888b395aaff863b6ad8e08838b64,saved
+2026-10-18T06:00:44Z,home.treasury.gov,/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_real_yield_curve&field_tdr_date_value=2026&page&_format=csv,200,7206,f160851077b914fc3b2e2010a23e100a774a68ca7da21884add0466961120d5b,saved
+2026-10-18T06:00:49Z,home.treasury.gov,/system/files/221/fy2021-mc-vs-hs-combined.csv,200,47599,d1111ffb985ea76a3291f0f006cca652c8f8126811e932182b507e2ce86f695d,saved
+2026-10-18T06:00:54Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H10&series=847be2166a425bda9b4d92465f797544&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,9099,f3971c907d91493392a46b3107c4b17ee34107826c412ea3483c071405ab001f,saved
+2026-10-18T06:00:59Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,201840,98d8e4e2d4e954b3c3138fcade66707763944e5d67a70d618949063a69e0718f,saved

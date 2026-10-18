@@ -1,0 +1,10 @@
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+source,file,retrieved_utc,sha256,bytes,published_updated_on,last_obs
+fed,D5_20261018_f3971c90.csv,2026-10-18T06:00:54Z,f3971c907d91493392a46b3107c4b17ee34107826c412ea3483c071405ab001f,9099,,2026-09
+fed,D6_20261018_98d8e4e2.csv,2026-10-18T06:00:59Z,98d8e4e2d4e954b3c3138fcade66707763944e5d67a70d618949063a69e0718f,201840,,2026-10-09
+treasury,D2_20261018_5fc18bb6.csv,2026-10-18T06:00:29Z,5fc18bb6f71ffe9dec8f179ceac78696f2162844a9c0bb07e1c76f386efa8583,171806,,2023-12-29
+treasury,D3-2024_20261018_d3ff00a9.csv,2026-10-18T06:00:34Z,d3ff00a9287ebf68fdc80e72fb2d1895a73c84b3ff2a6ca8c6d64648cb470f16,9042,,2024-12-31
+treasury,D3-2025_20261018_d3d3131c.csv,2026-10-18T06:00:39Z,d3d3131c41e1f93f4661d227ce7079049d51888b395aaff863b6ad8e08838b64,9006,,2025-12-31
+treasury,D3-2026_20261018_f1608510.csv,2026-10-18T06:00:44Z,f160851077b914fc3b2e2010a23e100a774a68ca7da21884add0466961120d5b,7206,,2026-10-16
+treasury,D4_20261018_d1111ffb.csv,2026-10-18T06:00:49Z,d1111ffb985ea76a3291f0f006cca652c8f8126811e932182b507e2ce86f695d,47599,,
+worldbank,D1_20261018_ea1c3508.xlsx,2026-10-18T06:00:24Z,ea1c350827878ea3bbe30e3cda16a13fd3bd5b409b8458940dc94a36b5a33154,586099,"October 02, 2026",2026-09

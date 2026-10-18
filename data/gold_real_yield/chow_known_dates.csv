@@ -1,0 +1,4 @@
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+regime2_start,wald_hac,df,p_chi2,hac_lag,role
+2008-12,2.088,3,0.554,12,descriptive
+2021-12,20.898,3,0.000,12,descriptive
