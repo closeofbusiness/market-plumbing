@@ -1,0 +1,46 @@
+# source: US Treasury (home.treasury.gov, daily par yield curve and par real yield curve), retrieved 2026-10-18; Deutsche Bundesbank (api.statistiken.bundesbank.de, BBSIS), retrieved 2026-10-18; Bank of England (www.bankofengland.co.uk, nominal spot curve), retrieved 2026-10-18; Ministry of Finance Japan (www.mof.go.jp, JGB interest rate), retrieved 2026-10-18; European Central Bank (data-api.ecb.europa.eu, YC euro-area AAA), retrieved 2026-10-18. Derived statistics only; CC BY 4.0 covers only this computation. Source: Deutsche Bundesbank.
+check_id,description,pin_date,expected,observed,status
+PIN_us_nom_2023-12-29,"US Treasury us_nom verification checkpoint (pp, tolerance 0.005)",2023-12-29,3.88,3.8800,PASS
+PIN_us_nom_2026-01-02,"US Treasury us_nom verification checkpoint (pp, tolerance 0.005)",2026-01-02,4.19,4.1900,PASS
+PIN_us_nom_2026-07-31,"US Treasury us_nom verification checkpoint (pp, tolerance 0.005)",2026-07-31,4.75,4.7500,PASS
+PIN_us_nom_2026-09-18,"US Treasury us_nom verification checkpoint (pp, tolerance 0.005)",2026-09-18,5.01,5.0100,PASS
+PIN_us_nom_2026-10-16,"US Treasury us_nom verification checkpoint (pp, tolerance 0.005)",2026-10-16,5.09,5.0900,PASS
+PIN_us_real_2023-12-29,"US Treasury us_real verification checkpoint (pp, tolerance 0.005)",2023-12-29,1.72,1.7200,PASS
+PIN_us_real_2026-09-18,"US Treasury us_real verification checkpoint (pp, tolerance 0.005)",2026-09-18,2.68,2.6800,PASS
+PIN_us_real_2026-10-16,"US Treasury us_real verification checkpoint (pp, tolerance 0.005)",2026-10-16,2.74,2.7400,PASS
+PIN_bund_nom_2018-01-02,"Deutsche Bundesbank bund_nom verification checkpoint (pp, tolerance 0.005)",2018-01-02,0.5,0.5000,PASS
+PIN_bund_nom_2023-12-29,"Deutsche Bundesbank bund_nom verification checkpoint (pp, tolerance 0.005)",2023-12-29,2.06,2.0600,PASS
+PIN_bund_nom_2026-01-02,"Deutsche Bundesbank bund_nom verification checkpoint (pp, tolerance 0.005)",2026-01-02,2.96,2.9600,PASS
+PIN_bund_nom_2026-07-31,"Deutsche Bundesbank bund_nom verification checkpoint (pp, tolerance 0.005)",2026-07-31,3.21,3.2100,PASS
+PIN_bund_nom_2026-10-16,"Deutsche Bundesbank bund_nom verification checkpoint (pp, tolerance 0.005)",2026-10-16,3.48,3.4800,PASS
+PIN_jgb_nom_2018-01-04,"Ministry of Finance Japan jgb_nom verification checkpoint (pp, tolerance 0.005)",2018-01-04,0.052,0.0520,PASS
+PIN_jgb_nom_2023-12-29,"Ministry of Finance Japan jgb_nom verification checkpoint (pp, tolerance 0.005)",2023-12-29,0.647,0.6470,PASS
+PIN_jgb_nom_2026-09-30,"Ministry of Finance Japan jgb_nom verification checkpoint (pp, tolerance 0.005)",2026-09-30,3.057,3.0570,PASS
+PIN_jgb_nom_2026-10-13,"Ministry of Finance Japan jgb_nom verification checkpoint (pp, tolerance 0.005)",2026-10-13,3.019,3.0190,PASS
+PIN_jgb_nom_2026-10-15,"Ministry of Finance Japan jgb_nom verification checkpoint (pp, tolerance 0.005)",2026-10-15,2.948,2.9480,PASS
+PIN_gilt_nom_2018-01-02,"Bank of England gilt_nom verification checkpoint (pp, tolerance 0.005)",2018-01-02,1.3498,1.3498,PASS
+PIN_gilt_nom_2023-12-29,"Bank of England gilt_nom verification checkpoint (pp, tolerance 0.005)",2023-12-29,3.5803,3.5803,PASS
+PIN_gilt_nom_2026-07-31,"Bank of England gilt_nom verification checkpoint (pp, tolerance 0.005)",2026-07-31,5.104,5.1040,PASS
+PIN_gilt_nom_2026-09-30,"Bank of England gilt_nom verification checkpoint (pp, tolerance 0.005)",2026-09-30,5.4028,5.4028,PASS
+PIN_gilt_nom_2026-10-15,"Bank of England gilt_nom verification checkpoint (pp, tolerance 0.005)",2026-10-15,5.3435,5.3435,PASS
+PIN_ea_aaa_2018-01-02,"European Central Bank ea_aaa verification checkpoint (pp, tolerance 0.005)",2018-01-02,0.5376,0.5376,PASS
+PIN_ea_aaa_2026-10-01,"European Central Bank ea_aaa verification checkpoint (pp, tolerance 0.005)",2026-10-01,3.5922,3.5922,PASS
+I1_trace,"trace of every correlation matrix minus k, largest absolute value over all windows and sets",,< 1e-8,4.44e-16,PASS
+I2_eigsum,"sum of eigenvalues minus k, largest absolute value",,< 1e-8,3.55e-15,PASS
+I3_mineig,smallest eigenvalue over all correlation matrices (singularity guard),,> 1e-6,0.0730,PASS
+S_mof_all_mof_current,seam mof_all|mof_current: the newer file starts on the next weekday,,overlap_agree or no_overlap+continuous,no_overlap+continuous,INFO
+S_boe_archive_boe_latest,seam boe_archive|boe_latest: the newer file starts on the next weekday,,overlap_agree or no_overlap+continuous,no_overlap+continuous,INFO
+K20_vintage,dates revised by more than 0.005pp against the previous cached vintage,,informational,no previous vintage (first fetch),INFO
+K30_g4_count,"g4 re-derivation, weeks ending 2026-01-09..2026-07-31 under the 3.1 gap rule: weeks with a change in all three of us_nom, us_real, bund_nom",,30,30,PASS
+K31_g4_sums,"g4 re-derivation: sums of the weekly changes in bp (us_nom, us_real, bund_nom)",,+56 / +53 / +25,+56 / +53 / +25,PASS
+K32_g4_corr,g4 re-derivation: correlations us_nom-bund_nom / us_nom-us_real / us_real-bund_nom,,0.76 / 0.88 / 0.72,0.76 / 0.88 / 0.72,PASS
+K40_weeks_calendar,weeks_calendar for w2018_19 / w2022_23 / w2024_latest (expectation holds at as-of 2026-10-18),,104 / 104 / 146,104 / 104 / 146,PASS
+K41_dropped,weeks dropped from nom4 in w2018_19 / w2024_latest (gap plus missing); weeks listed: 2019-05-10; 2019-05-03,,2 / 0,2 / 0,PASS
+K42_placebo_layouts,"placebo layouts used for the primary (of 47 laid out, n_C = 146)",,47 at n_C = 146,47,PASS
+K43_placebo_excluded,placebo layouts excluded by d2 (start week; weeks dropped in the 104-week and the n_C-week window),,listed,none,INFO
+K44_placebo_quantiles,"OPEN-4: placebo change in the nom4 share, min / median / max, and the RMS about zero",,read before the primary change,-0.021 / 0.040 / 0.153 ; rms 0.0690,INFO
+K45_requests,requests logged in the cache's fetch_log.csv (all runs),,<= 46,46,PASS
+K46_stop,STOP latch present,,absent,absent,PASS
+K47_asof,as-of date (UTC date of the newest successful row in fetch_log.csv),,informational,2026-10-18,INFO
+K50_verdict_recompute,"primary verdict recomputed mechanically from delta, boot_sd_used, the b = 4 and 12 rows and d1-d5",,INCONCLUSIVE,INCONCLUSIVE,PASS
+K51_robustness_flag,robustness sets that move the primary change by 0.05 or more,,informational,none,INFO

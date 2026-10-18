@@ -1,0 +1,8 @@
+# source: US Treasury (home.treasury.gov, daily par yield curve and par real yield curve), retrieved 2026-10-18; Deutsche Bundesbank (api.statistiken.bundesbank.de, BBSIS), retrieved 2026-10-18; Bank of England (www.bankofengland.co.uk, nominal spot curve), retrieved 2026-10-18; Ministry of Finance Japan (www.mof.go.jp, JGB interest rate), retrieved 2026-10-18; European Central Bank (data-api.ecb.europa.eu, YC euro-area AAA), retrieved 2026-10-18. Derived statistics only; CC BY 4.0 covers only this computation. Source: Deutsche Bundesbank.
+source,series,last_obs,asof,lag_bdays,max_lag_bdays,status,seam,seam_status
+US Treasury,us_nom,2026-10-16,2026-10-18,0,5,fresh,,
+US Treasury,us_real,2026-10-16,2026-10-18,0,5,fresh,,
+Deutsche Bundesbank,bund_nom,2026-10-16,2026-10-18,0,5,fresh,,
+Bank of England,gilt_nom,2026-10-15,2026-10-18,1,5,fresh,boe_archive|boe_latest,no_overlap+continuous
+Ministry of Finance Japan,jgb_nom,2026-10-15,2026-10-18,1,5,fresh,mof_all|mof_current,no_overlap+continuous
+European Central Bank,ea_aaa,2026-10-15,2026-10-18,1,5,fresh,,

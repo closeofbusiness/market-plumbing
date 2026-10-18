@@ -58,3 +58,11 @@ COTHist*.csv
 data/vintages/fx_rate_gap/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/fx_rate_gap/_FAILED/
+# R15 yield-comovement build (spec 8.9): the raw files live in ~/r15_yield_cache/, outside the repository (the script refuses a cache inside it);
+# these patterns are a second line of defence. Only derived statistics are committed, under data/r15_yield_comovement/.
+glc*.zip
+GLC*.zip
+latest-yield-curve-data.zip
+jgbcme*.csv
+*BBSIS*
+data/r15_yield_comovement/weekly_panel*

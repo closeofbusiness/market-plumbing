@@ -254,6 +254,49 @@ icebrent_leak_check() {
   fi
 }
 
+# --- M12: R15 YIELD-COMOVEMENT LEAK GUARD (warn only) -----------------------
+# data/r15_yield_comovement/ may hold only statistics derived from the US Treasury, Bundesbank, Bank of England, MoF Japan and ECB yield files
+# (spec _research/2026-10-18-Yield-Comovement-Four-Country-Spec.md, 8.9). The Bundesbank's and the Bank of England's terms do not allow redistributing
+# their series, so the raw files live in ~/r15_yield_cache/, outside the repository. Two things would break that, and none is visible to M5-M11:
+#   1. a raw source file anywhere in the repository, in any letter case: glc*.zip (the BoE archive), latest-yield-curve-data.zip, jgbcme*.csv
+#      (MoF) or anything with BBSIS in its name (Bundesbank). `git ls-files -co` lists tracked AND untracked files (and ignored ones, since -o is
+#      used without --exclude-standard), so a file dropped in before `git add`, or one the .gitignore pattern hides, is caught too;
+#   2. a header line in a data/r15_yield_comovement/*.csv that is not that file's exact column allowlist (a weekly panel, or a level column,
+#      would show up as a different header). bin/r15_yield_comovement.py refuses to write such a header and runs the same test (leak_guard).
+# The allowlists below are a second, independent copy of the script's ALLOW table (that is the point). It warns and never blocks (header doctrine).
+r15_leak_check() {
+  echo "-- M12: R15 yield-comovement leak guard (raw BoE/MoF/Bundesbank files in any letter case; every data/r15_yield_comovement CSV header equals its allowlist) --"
+  local files badhdr f name hdr allow
+  files=$( { git ls-files -co 2>/dev/null || find . -type f | sed 's|^\./||'; } | grep -Ei '(^|/)(glc[^/]*\.zip|latest-yield-curve-data\.zip|jgbcme[^/]*\.csv|[^/]*BBSIS[^/]*)$' | grep -v '^data/vintages/r3/' )
+  # data/vintages/r3/jgbcme*.csv were committed by the R3 build (27 Sep); MoF publishes them under PDL1.0, which allows
+  # redistribution with attribution, so they are exempt. The r15 build keeps its own copies in ~/r15_yield_cache/ all the same.
+  badhdr=""
+  for f in data/r15_yield_comovement/*.csv; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    hdr=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+    case "$name" in
+    windows.csv) allow='window,series_set,k,asof,first_week,last_week,weeks_calendar,weeks_used,dropped_gap,dropped_missing,lambda1,lambda1_share,rho_mean,rho_min,rho_max,share_ci95_lo,share_ci95_hi,block_len,boot_draws,status' ;;
+    pairs.csv) allow='window,series_set,pair,n,rho,ci95_lo,ci95_hi' ;;
+    shift_test.csv) allow='comparison,role,statistic,series_set,window_from,window_to,value_from,value_to,delta,boot_sd,placebo_sd,placebo_layouts,boot_sd_used,calibration,inflation_k,ci95_lo,ci95_hi,ci90_lo,ci90_hi,block_len,boot_draws,verdict,downgrade_reasons' ;;
+    series_stats.csv) allow='window,series,n_changes,sd_bp,dropped_gap,missing_weeks' ;;
+    freshness.csv) allow='source,series,last_obs,asof,lag_bdays,max_lag_bdays,status,seam,seam_status' ;;
+    checks.csv) allow='check_id,description,pin_date,expected,observed,status' ;;
+    fetch_log.csv) allow='utc,host,path,status,bytes,sha256,note' ;;
+    *) allow='' ;;
+    esac
+    [ "$hdr" = "$allow" ] || badhdr="${badhdr}${f}
+"
+  done
+  if [ -z "$files" ] && [ -z "$badhdr" ]; then
+    echo "  ✓ no raw BoE, MoF or Bundesbank file in the repository; every data/r15_yield_comovement CSV header is its exact allowlist."
+  else
+    [ -n "$files" ] && printf '%s\n' "$files" | sed 's/^/  ✗ raw source file in the repository: /'
+    [ -n "$badhdr" ] && printf '%s' "$badhdr" | sed 's/^/  ✗ header outside the allowlist: /'
+    echo "  -> raw yield files stay in ~/r15_yield_cache/ and are never committed (R1). Remove it before any commit; if it already left this folder, tell the principal."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -455,6 +498,7 @@ if [ "$TARGET" = "--all" ]; then
   echo
   ua_check
   icebrent_leak_check
+  r15_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
