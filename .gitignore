@@ -52,3 +52,9 @@ data/vintages/swap_tape_ust/
 
 # ICE Brent COT ledger (E-025): the ICE COTHist files are never committed (the cache is ~/ice_cot/, outside the repo; the script refuses a cache inside it)
 COTHist*.csv
+
+# FX rate-gap build (E-021 queue item 4): raw downloads (Treasury, MoF, ECB, BIS, Bundesbank) and the weekly panel, which would let a reader rebuild
+# yield levels, stay in this cache and are never committed (spec R4, O-6). A STOP file here is the fetch latch; only a person deletes it.
+data/vintages/fx_rate_gap/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/fx_rate_gap/_FAILED/

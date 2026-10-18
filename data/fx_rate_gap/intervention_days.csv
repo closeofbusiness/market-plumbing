@@ -1,0 +1,15 @@
+# source: Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-18; Japan MoF foreign exchange intervention operations; amounts in 100 million yen
+kind,start,end,amount_100m_yen,source_file,release_note
+day,2022-09-22,2022-09-22,28382,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2022-10-21,2022-10-21,56202,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2022-10-24,2022-10-24,7296,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2024-04-29,2024-04-29,59185,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2024-05-01,2024-05-01,38700,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2024-07-11,2024-07-11,31678,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2024-07-12,2024-07-12,23670,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2026-04-30,2026-04-30,62787,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2026-05-04,2026-05-04,7802,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+day,2026-05-06,2026-05-06,46759,foreign_exchange_intervention_operations.csv,quarterly CSV; latest quarter in the file ends 2026-06-30
+block,2026-06-29,2026-07-29,0.0,monthly/20260731e.html,zero total
+block,2026-07-30,2026-08-26,153993.0,monthly/20260828e.html,"monthly page, no day split"
+block,2026-08-27,2026-09-28,0.0,monthly/20260930e.html,zero total

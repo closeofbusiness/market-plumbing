@@ -1,0 +1,21 @@
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-18; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-18; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-18; Bank for International Settlements (stats.bis.org) retrieved 2026-10-18; at most five pinned values per source; project_computation rows are computed by bin/fx_rate_gap.py
+source,series,pin_date,value,unit
+U.S. Treasury,2 Yr par yield,2023-12-29,4.23,percent
+U.S. Treasury,2 Yr par yield,2024-03-21,4.62,percent
+U.S. Treasury,2 Yr par yield,2024-03-22,4.59,percent
+U.S. Treasury,2 Yr par yield,2026-09-17,4.67,percent
+U.S. Treasury,2 Yr par yield,2026-09-18,4.76,percent
+MoF Japan,2Y constant-maturity yield,2018-01-05,-0.138,percent
+MoF Japan,2Y constant-maturity yield,2023-12-29,0.048,percent
+MoF Japan,2Y constant-maturity yield,2024-03-22,0.206,percent
+MoF Japan,2Y constant-maturity yield,2026-09-18,1.849,percent
+MoF Japan,2Y constant-maturity yield,2026-09-24,1.912,percent
+BIS,D.JP.JPY.A yen per USD,2023-12-29,141.475113,yen per USD
+BIS,D.JP.JPY.A yen per USD,2026-09-18,157.888307,yen per USD
+BIS,D.XM.EUR.A euro per USD,2026-09-18,0.872600,euro per USD
+ECB,SR_2Y,2026-09-18,3.215212,percent
+ECB,SR_10Y,2026-09-18,3.529753,percent
+ECB,PY_2Y,2026-09-18,3.210733,percent
+ECB,PY_10Y,2026-09-18,3.502467,percent
+project_computation,ea2_sa (semiannual par from ECB parameters),2026-09-18,3.237019,percent
+project_computation,ea10_sa (semiannual par from ECB parameters),2026-09-18,3.533452,percent
