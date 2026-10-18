@@ -326,9 +326,9 @@ series):
 2. **N-PORT Treasury maturity buckets** (item 7): DONE 15 Oct. The result is in R2b
    ([`2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md`](2026-10-15-R2b-Who-Took-The-Duration-Registered-Funds.md)).
    Registered funds took $549bn on their own filings and $450bn scaled to Z.1, so the first-order verdict is not established.
-3. **Full-sample COT horizons** (item 2). The ICE Brent leg was BUILT on 15 Oct, after the principal extended E-024's terms to
+3. **Full-sample COT horizons** (item 2): DONE 18 Oct, AGAINST for both WTI and Brent: no lead larger than 0.083 / 0.105 detected; see [`2026-10-18-E021-Builds-3-6-Results.md`](2026-10-18-E021-Builds-3-6-Results.md). Earlier text: The ICE Brent leg was BUILT on 15 Oct, after the principal extended E-024's terms to
    it (E-025). The multi-horizon regressions over the full sample are still to do, for WTI and Brent.
-4. **Yen and euro against rate gaps, weekly regression** (item 4), the three windows pre-registered in the return.
-5. **Gold against real yields with HAC errors and a break date** (item 9), once the World Bank monthly workbook downloads.
-6. **Four-country comovement** (item 15), adding the UK and JGB legs.
+4. **Yen and euro against rate gaps, weekly regression** (item 4): DONE 18 Oct, the 2-year gap term POINTS THE OTHER WAY for the yen since March 2024 (same note). Earlier text: the three windows pre-registered in the return.
+5. **Gold against real yields with HAC errors and a break date** (item 9): DONE 18 Oct, SUPPORTS on 2006-2026 (about −7.7% per point), weaker since Dec 2021 (same note). Earlier text: once the World Bank monthly workbook downloads.
+6. **Four-country comovement** (item 15): DONE 18 Oct, INCONCLUSIVE (0.78 → 0.71; same note). Earlier text: adding the UK and JGB legs.
 7. **Copper ledger** (item 5), kept local (Refinitiv-sourced), with only the shares published.
