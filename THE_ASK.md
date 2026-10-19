@@ -30,6 +30,20 @@ principal and append a new entry.
 
 ---
 
+## E-026 · 19 October 2026 — no notice to the Bank of Japan: a research script is not a "service"
+
+Given after the supervisor reported that the Bank of Japan's notice for its statistics API asks anyone who "releases a service
+which uses the API" to tell the Bank by email, and that the FX-hedged Treasury yield build (spec
+`_research/2026-10-19-FX-Hedged-Treasury-Yield-Spec.md`, open item O-1b) publishes a script that calls it.
+
+> *"leave it, a research script isn't a service"*
+
+**Reading notes.** No email or notice is sent to the Bank of Japan. The public repository's scripts that request TONA or other BoJ
+series are research code, not a released service. The BoJ's other terms still apply: its credit line on every output that uses its
+data, and no committed file that lets a reader rebuild a BoJ series month by month (the build's O-1 ruling).
+
+---
+
 ## E-025 · 15 October 2026 — script ICE's Brent COT files on the same terms as the DTCC swap tape
 
 Given after the supervisor reported that E-024 covered the swap tape only. The ICE Brent positioning files were not ruled on,
