@@ -497,3 +497,7 @@ Grok's integers match the second review and the spec (September 2026 life 5,487 
 - **R3-5 March 2024.** The windows stay as registered (W2 from 2024-03, W2b from 2024-04). The README says the 19 March 2024 decision took effect on 21 March, so March 2024 is mostly before it, and W2b leaves it out. W2 is not re-based: the second reviewer computed both before this ruling.
 - **R3-6 Labels and sign.** Matched by R2-2 (NFKC folding). The file's own sign is used (CSV Note 2: plus = net acquisition, confirmed by the 2005 identity). The English index banner, which still says plus is net sales, is recorded in SOURCES.md as stale and is never coded.
 - **R3-7 Reference points** become INFO checks: the 2022 calendar-year life net (−114,641 in the CY cell; monthly cells sum to −114,640) against Nikkei's "a bit over ¥11 trillion", December 2022 (−22,466), and November 2022 (−19,269) against the Japan Times' ¥1.9 trillion. Quotes go in SOURCES.md only, each under 15 words.
+
+## Correction after the build (supervisor, 19 Oct 2026)
+
+- **C07 count.** The spec's "324 cells (108 rows × 3 fields × 4 sectors)" is wrong arithmetic: 324 is the count for one sector (108 months × 3 fields, 2005-01 to 2013-12), and 1,296 is the count across the four sectors. The builder's first run failed on the literal 324 and the pin was changed to 1,296. The independent verifier counted 1,296 in each of the four files. No rule, threshold or registered value changed.
