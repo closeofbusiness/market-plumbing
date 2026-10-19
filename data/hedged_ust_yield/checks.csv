@@ -1,0 +1,37 @@
+# source: input checks of bin/hedged_ust_yield.py build against the files fetched (see fetch_log.csv)
+check_id,description,expected,observed,status
+C01,Treasury 10 Yr read by header name,2024-03-21 4.27; 2026-09-18 5.01; 2026-10-15 5.1,2024-03-21 4.27; 2026-09-18 5.01; 2026-10-15 5.10,PASS
+C02,MoF 10Y (history file merged with the current-month file),2024-03-22 0.762; 2026-09-18 2.981; 2026-10-01 3.092,2024-03-22 0.762; 2026-09-18 2.981; 2026-10-01 3.092,PASS
+C02b,MoF: the history file and the current-month file agree on every shared date,no disagreement,"agree on 0 shared dates (the history file ends 2026-09-30, the current-month file starts 2026-10-01)",PASS
+C03,NY Fed SOFR,2018-04-02 1.8; 2026-10-15 3.89,2018-04-02 1.80; 2026-10-15 3.89,PASS
+C03b,NY Fed EFFR,2026-10-15 3.88,2026-10-15 3.88,PASS
+C04,"SOFR Index: Index(b)/Index(a) = 1 + SOFR(a)(b-a)/36000 within 2e-8 for each consecutive pair, and the 3-month window test against B's compounding",0 misses,"1655 pairs, max 9.09e-09, 0 misses; 77 windows, max 7.73e-09, 0 misses",PASS
+C04b,SOFR Index pin,2026-10-16 1.26303308,2026-10-16 1.26303308,PASS
+C05,"euro short-term rate index: the same rule within 1e-9, pairwise and on the window test",0 misses,"1805 pairs, max 9.93e-11, 0 misses; 82 windows, max 7.87e-11, 0 misses",PASS
+C05a,euro short-term rate (volume-weighted trimmed mean),2019-10-01 -0.549; 2026-10-16 2.441,2019-10-01 -0.549; 2026-10-16 2.441,PASS
+C05b,compounded euro short-term rate index,2026-10-19 110.03236357,2026-10-19 110.03236357,PASS
+C06,"TONA from the Bank of Japan API ('null' is missing, the header block and the quoted series name parse)",2018-01-04 -0.047; 2026-10-15 1.228,2018-01-04 -0.047; 2026-10-15 1.228,PASS
+C06b,TONA: the header block's NEXTPOSITION is empty (no further page) and 'null' days are not values,empty; no 0 on a null day,NEXTPOSITION ''; 1068 null days read as missing,PASS
+C07,"ECB AAA 10-year, semiannual par recomputed from the Svensson parameters (ea10_sa)",2026-09-18 3.533452 within 1e-5,"2026-09-18 3.533452; 1 date(s) quarantined, 1 incomplete",PASS
+C08,"DKS ranged probe: 206 with the header, size and ETag as observed",206; 118471039 bytes; ETag eb058f21fd563d35e00644bdb42120a1-7,206; 118471039 bytes; ETag eb058f21fd563d35e00644bdb42120a1-7,PASS
+C08b,DKS extract holds the JPY and EUR 3m and 1y rows; the full body was deleted and its sha256 is in the fetch log,4 series of more than 1000 rows; one logged full body,"EUR 1y 6604, EUR 3m 6651, JPY 1y 6522, JPY 3m 6651; logged full bodies: 1",PASS
+C09,"Ledger monthly cells: the file exists, every median has n >= 10, the euro 3m cells exist for 2024-10, the yen anchor month is recorded",all four,file read (240 cells); euro 2024-10 3m cells present; yen anchor 2025-03,PASS
+C10-euro,A_hist on 2026-10-15 with D = 92 (the reviewer's re-derivation),"gap -1.501968, h 3.598032","gap -1.501968, h 3.598032, D 92",PASS
+C10-yen,A_hist on 2026-10-15 with D = 92 (the reviewer's re-derivation),"gap -2.766265, h 2.333735","gap -2.766265, h 2.333735, D 92",PASS
+C11,Alignment triples (d / Tokyo date / TARGET date),2025-01-02 / 2024-12-30 / 2025-01-02; 2025-04-21 / 2025-04-21 / 2025-04-17; 2025-12-26 / 2025-12-26 / 2025-12-24; 2026-05-06 / 2026-05-01 / 2026-05-06,2025-01-02 / 2024-12-30 / 2025-01-02; 2025-04-21 / 2025-04-21 / 2025-04-17; 2025-12-26 / 2025-12-26 / 2025-12-24; 2026-05-06 / 2026-05-01 / 2026-05-06,PASS
+C12-ECB yield curve,ECB yield curve is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-16, 3 days",PASS
+C12-EFFR,EFFR is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-15, 4 days",PASS
+C12-MoF current month,MoF current month is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-16, 3 days",PASS
+C12-SOFR,SOFR is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-15, 4 days",PASS
+C12-TONA,TONA is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-15, 4 days",PASS
+C12-Treasury,Treasury is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-16, 3 days",PASS
+C12-euro short-term rate,euro short-term rate is no older than 7 days at the as-of date 2026-10-19,<= 7,"latest 2026-10-16, 3 days",PASS
+C12-ledger,ledger monthly file is no older than 14 days at the as-of date,<= 14,"file dated 2026-10-19, 0 days",PASS
+C13,Bund 10-year against the ECB AAA 10-year (INFO): the median of the monthly medians of AAA minus Bund,statistic only,"median 0.046 pp over 106 months (min -0.048 in 2026-09, max 0.114 in 2023-04)",INFO
+C14,Fixed output: rendering every file twice gives the same sha256 (a second `build` is compared on disk by the caller),identical,identical (9 files),PASS
+C15,gaps of more than 4 calendar days between published rates that KNOWN_CLOSURES do not explain,none,"SOFR 0; TONA 5 (2019-04-26 to 2019-05-07, 2020-07-22 to 2020-07-27, 2020-09-18 to 2020-09-23); euro short-term rate 0",WARN
+C16,"Licence and leak guard (section 7): no yen monthly row, no raw-series column, no daily date column, no DKS column, caps on yen and pins",no problem,no problem,PASS
+C17-H-1y,"post-registration bug fix of 19 Oct 2026 (ledger monthly stage, exact index-name list): gate median in bp, H form, 1y hedge",before the fix 11.183,after the fix 12.113 (PASS),INFO
+C17-H-3m,"post-registration bug fix of 19 Oct 2026 (ledger monthly stage, exact index-name list): gate median in bp, H form, 3m hedge",before the fix 10.441,after the fix 10.445 (PASS),INFO
+C17-P-1y,"post-registration bug fix of 19 Oct 2026 (ledger monthly stage, exact index-name list): gate median in bp, P form, 1y hedge",before the fix 10.090,after the fix 10.648 (PASS),INFO
+C17-P-3m,"post-registration bug fix of 19 Oct 2026 (ledger monthly stage, exact index-name list): gate median in bp, P form, 3m hedge",before the fix 6.658,after the fix 6.662 (PASS),INFO

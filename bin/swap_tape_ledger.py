@@ -5,6 +5,7 @@ dissemination (PPD) CFTC cumulative interest-rate reports. Python 3 standard lib
   python3 bin/swap_tape_ledger.py fetch --dates 2025-04-09,2026-09-29 | --start D --end D  [--cache DIR] [--sleep 5] [--max-requests 60]
   python3 bin/swap_tape_ledger.py fetch-ust --years 2025,2026         # Treasury par and real CSVs -> data/vintages/swap_tape_ust/
   python3 bin/swap_tape_ledger.py build --start D --end D [--cache DIR] [--out data/swap_tape] [--ust-dir DIR]
+  python3 bin/swap_tape_ledger.py monthly --start-month 2024-10 --end-month YYYY-MM [--cache DIR] [--out data/swap_tape]
   python3 bin/swap_tape_ledger.py selftest                            # synthetic fixture, mutants, stop logic; no network
 
 Specification: _research/2026-10-14-Swap-Tape-Ledger-Spec.md (section 17, the supervisor's amendments, overrides the sections above it).
@@ -21,6 +22,9 @@ What it does and does not touch:
                      a human deletes it. A socket fault ends the invocation without latching. No retry, ever.
   build              offline and deterministic: reads cached zips and Treasury CSVs, upserts the rows of the weekdays it is given into
                      data/swap_tape/ (ledger, cells, funnel, diagnostics by year; file_stats, ust_used, summary, SOURCES.md).
+  monthly            offline: from the same cached zips, the monthly median/quartiles of the 3-month and 1-year cells of sofr_ois, estr_ois, tona_ois
+                     (percent) and xccy_jpyusd, xccy_eurusd (bp), into the NEW files monthly_short_tenor.csv and monthly_short_tenor_funnel.csv
+                     (spec 2026-10-19 section 3.5). A cell publishes only at n >= 10; the daily files are never touched.
   selftest           builds a synthetic tape (no DTCC content) and checks the exact funnel, medians, spreads, the stop logic (fake opener,
                      fake clock), the leak guards and three mutants (noconv, noeror, nowindow); it FAILS if a mutant is not detected.
 
@@ -41,6 +45,7 @@ THE RULES THE BUILD APPLIES (all stated, because a matching rule is a hypothesis
     max, no weighted median, and no output field that is a whole string of 8-19 digits (a Dissemination Identifier).
 """
 import argparse
+import calendar
 import collections
 import csv
 import datetime as dt
@@ -1579,6 +1584,589 @@ def build(start, end, cache, out_dir, ust_dir, cfg, say=print):
 
 
 # ----------------------------------------------------------------------------------------------------------------------
+# monthly stage: single-tenor (3-month, 1-year) OIS and cross-currency medians by month
+# (spec _research/2026-10-19-FX-Hedged-Treasury-Yield-Spec.md section 3.5; THE_ASK.md E-024). Offline: reads the cached zips and writes
+# two NEW files. It shares no state with `build`, touches no existing output file and leaves XCCY_TENORS (and so pool1to5) alone.
+# ----------------------------------------------------------------------------------------------------------------------
+MONTHLY_FILE = "monthly_short_tenor.csv"
+MONTHLY_FUNNEL_FILE = "monthly_short_tenor_funnel.csv"
+MONTHLY_COLS = ("month", "series", "tenor", "n", "median", "q1", "q3", "iqr", "status", "n_days_with_trades")
+MONTHLY_FUNNEL_COLS = ("month", "series", "tenor", "step", "n_after")
+MONTHLY_FLOOR = 10            # a single-tenor monthly cell publishes only at n >= 10; there is no 5-9 tier (spec 3.5 rule 5)
+MONTHLY_TENORS = (("3m", 3), ("1y", 12))
+MONTHLY_TOL_DAYS = 7
+# series -> (currency, risk-free-rate token (used only by the superseded substring rule), expected fixed-leg day count, EXACT underlier names).
+# The names are the spellings of the compounded overnight index booked under FISN "NA/Swap OIS {CCY}" in the 524 cached files (read 19 Oct 2026); the
+# USD pair is the daily ledger's own SOFR_NAMES. Other names under the same FISN (USD-SOFR, USD-SOFR CME Term, USD-SOFR Compounded Index,
+# JPY-TONA, JPY-TONA Compounded Index, EUR-EuroSTR) are not the compounded-in-arrears overnight swap and stay out, as in the daily ledger.
+# Corrected 19 Oct 2026 (post-registration bug fix): the first version required the substring "OIS" in the name and so dropped the COMPOUND spellings.
+MONTHLY_OIS = collections.OrderedDict([
+    ("sofr_ois", ("USD", "SOFR", "A004", ("USD-SOFR-OIS Compound", "USD-SOFR-COMPOUND"))),
+    ("estr_ois", ("EUR", "EUROSTR", "A004", ("EUR-EuroSTR-OIS Compound", "EUR-EuroSTR-COMPOUND"))),
+    ("tona_ois", ("JPY", "TONA", "A005", ("JPY-TONA-OIS Compound", "JPY-TONA-OIS-COMPOUND")))])
+MONTHLY_XCCY = ("xccy_jpyusd", "xccy_eurusd")
+MONTHLY_SERIES = tuple(MONTHLY_OIS) + MONTHLY_XCCY
+MONTHLY_STEPS = ("F0", "F1", "F2", "F3", "F4", "F4s", "F5", "F6", "Fb", "F6d", "F6f", "F6u")
+MONTHLY_MUTANTS = ("m1_tol8", "m1_tol6", "m1_days", "m2_floor9", "m2_floor11", "m3_effmonth", "m5_dc_swap", "m6_keep_dail",
+                   "m6_no_dropcount", "m7_no_f1", "m8_extremes", "m0_substring")
+
+
+class MCfg:
+    """mutant: None, or one of MONTHLY_MUTANTS (selftest only)."""
+
+    def __init__(self, mutant=None):
+        if mutant is not None and mutant not in MONTHLY_MUTANTS:
+            raise ValueError("unknown monthly mutant")
+        self.mutant = mutant
+        self.tol = {"m1_tol8": MONTHLY_TOL_DAYS + 1, "m1_tol6": MONTHLY_TOL_DAYS - 1}.get(mutant, MONTHLY_TOL_DAYS)
+        self.floor = {"m2_floor9": MONTHLY_FLOOR - 1, "m2_floor11": MONTHLY_FLOOR + 1}.get(mutant, MONTHLY_FLOOR)
+
+
+def add_months(d, k):
+    """d plus k calendar months, clipped to the end of the month (31 Jan + 3 months = 30 Apr)."""
+    y, m0 = divmod(d.year * 12 + d.month - 1 + k, 12)
+    m = m0 + 1
+    return dt.date(y, m, min(d.day, calendar.monthrange(y, m)[1]))
+
+
+def in_month_bucket(eff, exp, k, mc):
+    """|expiry - add_months(effective, k)| <= 7 days (rule 2)."""
+    if eff is None or exp is None:
+        return False
+    if mc.mutant == "m1_days":   # the mutant: a fixed 91- or 365-day span instead of calendar months
+        return abs((exp - eff).days - (91 if k == 3 else 365)) <= MONTHLY_TOL_DAYS
+    return abs((exp - add_months(eff, k)).days) <= mc.tol
+
+
+def monthly_freq_ok(per, mul, k, mc):
+    """A single payment at maturity: EXPI/1; YEAR/1 and MNTH/12 at k = 3 or 12; MNTH/3 at k = 3 only (rule 3, F6)."""
+    if (per, mul) == ("EXPI", "1") or (per, mul) in (("YEAR", "1"), ("MNTH", "12")):
+        return True
+    if per == "MNTH" and mul == "3" and k == 3:
+        return True
+    return mc.mutant == "m6_keep_dail" and (per, mul) in (("DAIL", "1"), ("WEEK", "13"))
+
+
+def monthly_ois_match(t, ccy, rfr, names, substring=False):
+    """F0: FISN NA/Swap OIS {CCY}, both notional currencies CCY, and an underlier name from the exact allow-list `names`. `substring` is the superseded rule
+    (the name contains OIS and the rate's token), kept only as the m0_substring mutant."""
+    if not (t["UPI FISN"] == "NA/Swap OIS " + ccy and t["Notional currency-Leg 1"].strip() == ccy and t["Notional currency-Leg 2"].strip() == ccy):
+        return False
+    if substring:
+        und = t["UPI Underlier Name"].upper()
+        return "OIS" in und and rfr in und
+    return t["UPI Underlier Name"] in names
+
+
+def xccy_bp_values(cur, ccy, cap):
+    """F5 and F6 of run_xccy for the monthly stage: no fixed leg and the right currency pair; the spread on the non-USD leg in bp. -> (n_f5, [(trade, bp)])"""
+    legs = []
+    for t in cur:
+        c1, c2 = t["Notional currency-Leg 1"].strip(), t["Notional currency-Leg 2"].strip()
+        if t["Fixed rate-Leg 1"].strip() or t["Fixed rate-Leg 2"].strip():
+            continue
+        if (c1, c2) == ("USD", ccy):
+            legs.append((t, "1", "2"))
+        elif (c1, c2) == (ccy, "USD"):
+            legs.append((t, "2", "1"))
+    out = []
+    for t, u, x in legs:
+        su, sx = fnum(t["Spread-Leg " + u]), fnum(t["Spread-Leg " + x])
+        if t["Spread-Leg " + u].strip() and su not in (None, 0.0) and not t["Spread-Leg " + x].strip():
+            continue
+        if sx is None or su not in (None, 0.0) or (t["Spread-Leg " + u].strip() and su is None):
+            continue
+        nt = t["Spread notation-Leg " + x].strip()
+        if nt == "3":
+            bp = sx * 10000.0
+        elif nt == "4":
+            bp = sx
+        else:
+            continue
+        if abs(bp) > cap:
+            continue
+        out.append((t, bp))
+    return len(legs), out
+
+
+def monthly_day(trades, d, mc):
+    """One file date. -> (funnel Counter {(series, tenor, step): n}, vals {(series, tenor): [(month, execution date, value)]}).
+    OIS values are decimals (0.043 = 4.3 percent); cross-currency values are bp. The month is the month of the UTC execution date (rule 4)."""
+    fun = collections.Counter()
+    vals = collections.defaultdict(list)
+
+    def step(series, tenor, name, items, pred=None):
+        if pred is not None:
+            items = [x for x in items if pred(x)]
+        fun[(series, tenor, name)] += len(items)
+        return items
+
+    def month_of(t):
+        return (t["_eff"].isoformat() if mc.mutant == "m3_effmonth" else t["_xd"])[:7]
+
+    def common(series, items):
+        cur = step(series, "", "F1", items, None if mc.mutant == "m7_no_f1" else (lambda t: t["_xd"] == d))
+        cur = step(series, "", "F2", cur, spot_ok)
+        return cur
+
+    for series, (ccy, rfr, dc, names) in MONTHLY_OIS.items():
+        want_dc = dc if mc.mutant != "m5_dc_swap" else ("A005" if dc == "A004" else "A004")
+        cur = step(series, "", "F0", trades, lambda t: monthly_ois_match(t, ccy, rfr, names, mc.mutant == "m0_substring"))
+        cur = common(series, cur)
+        cur = step(series, "", "F3", cur, lambda t: not t["Other payment amount"].strip())
+        cur = step(series, "", "F4", cur, flags_ok)
+        cur = step(series, "", "F4s", cur, lambda t: not t["Strike Price"].strip())
+        legs = step(series, "", "F5", one_fixed_leg(cur))
+        for ten, k in MONTHLY_TENORS:
+            b = step(series, ten, "Fb", legs, lambda x: in_month_bucket(x["t"]["_eff"], x["t"]["_exp"], k, mc))
+            b = step(series, ten, "F6d", b, lambda x: conv(x["t"], x["L"])[0] == want_dc)
+            ok, dropped = [], collections.Counter()
+            for x in b:
+                _, per, mul = conv(x["t"], x["L"])
+                if monthly_freq_ok(per, mul, k, mc):
+                    ok.append(x)
+                else:
+                    dropped[(per or "BLANK") + "_" + (mul or "BLANK")] += 1
+            fun[(series, ten, "F6f")] += len(ok)
+            if mc.mutant != "m6_no_dropcount":
+                for code, n in dropped.items():
+                    fun[(series, ten, "F6f_" + code)] += n
+            ok = step(series, ten, "F6u", ok, lambda x: x["r"] <= 0.25)   # a fixed rate above 0.25 (decimal) is a percent-unit entry
+            for x in ok:
+                vals[(series, ten)].append((month_of(x["t"]), x["t"]["_xd"], x["r"]))
+    for series in MONTHLY_XCCY:
+        ccy, _, cap = XCCY[series]
+        cur = step(series, "", "F0", trades, lambda t: xccy_match(t, series))
+        cur = common(series, cur)
+        cur = step(series, "", "F3", cur, lambda t: "UFRO" not in [p.strip() for p in t["Other payment type"].split(";")])
+        cur = step(series, "", "F4", cur, flags_ok)
+        cur = step(series, "", "F4s", cur, lambda t: not t["Strike Price"].strip())
+        n5, pairs = xccy_bp_values(cur, ccy, cap)
+        fun[(series, "", "F5")] += n5
+        fun[(series, "", "F6")] += len(pairs)
+        for ten, k in MONTHLY_TENORS:
+            for t, bp in pairs:
+                if in_month_bucket(t["_eff"], t["_exp"], k, mc):
+                    fun[(series, ten, "Fb")] += 1
+                    vals[(series, ten)].append((month_of(t), t["_xd"], bp))
+            fun[(series, ten, "Fb")] += 0
+    return fun, vals
+
+
+class MonthAgg:
+    def __init__(self):
+        self.fun = collections.Counter()      # (month, series, tenor, step) -> n
+        self.vals = collections.defaultdict(list)   # (month, series, tenor) -> [(execution date, value)]
+        self.files = collections.Counter()    # (month, word) -> files_read / files_missing / files_error
+
+    def add_day(self, d, fun, vals):
+        m = d[:7]
+        for (series, ten, name), n in fun.items():
+            self.fun[(m, series, ten, name)] += n
+        for (series, ten), lst in vals.items():
+            for month, xd, v in lst:
+                self.vals[(month, series, ten)].append((xd, v))
+
+
+def monthly_aggregate(dates, loader, mc, say=lambda *a: None):
+    """dates: ISO strings. loader(ds) -> rows of the file, None for a missing file; raises SchemaMismatch / AssertionError... for a bad one."""
+    agg = MonthAgg()
+    for ds in dates:
+        m = ds[:7]
+        try:
+            rows = loader(ds)
+        except (SchemaMismatch, AssertionError, zipfile.BadZipFile, KeyError, ValueError) as e:
+            agg.files[(m, "files_error")] += 1
+            say("%s  ERROR: %s" % (ds, str(e)[:160]))
+            continue
+        if rows is None:
+            agg.files[(m, "files_missing")] += 1
+            continue
+        agg.files[(m, "files_read")] += 1
+        trades, _, _ = resolve_trades(rows, Cfg(), ds)
+        fun, vals = monthly_day(trades, ds, mc)
+        agg.add_day(ds, fun, vals)
+    return agg
+
+
+def monthly_tables(agg, mc):
+    """-> (cells rows, funnel rows, months, header). Months are those that had at least one file (read, missing or in error)."""
+    months = sorted({k[0] for k in agg.files})
+    header = tuple(MONTHLY_COLS) + (("min", "max") if mc.mutant == "m8_extremes" else ())
+    rows = []
+    for month in months:
+        for series in MONTHLY_SERIES:
+            pct = series in MONTHLY_OIS
+            for ten, _ in MONTHLY_TENORS:
+                lst = agg.vals.get((month, series, ten), [])
+                vs = [v for _, v in lst]
+                st = cell_stats(vs, (mc.floor, mc.floor), 1e4 if pct else 1.0)
+                if pct:
+                    med, q1, q3 = (f6(None if st[k] is None else st[k] * 100.0) for k in ("median", "q1", "q3"))
+                else:
+                    med, q1, q3 = (f3(st[k]) for k in ("median", "q1", "q3"))
+                row = [month, series, ten, str(st["n"]), med, q1, q3, f3(st["iqr"]), "ok" if st["median"] is not None else "count_only",
+                       str(len({xd for xd, _ in lst}))]
+                if mc.mutant == "m8_extremes":
+                    s = sorted(vs)
+                    row += [f6(s[0]) if s else "", f6(s[-1]) if s else ""]
+                rows.append(row)
+    srank = {s: i for i, s in enumerate(MONTHLY_SERIES)}
+    trank = {"": 0, "3m": 1, "1y": 2}
+
+    def fkey(k):
+        month, series, ten, name = k
+        base = name.split("_")[0] if name.startswith("F6f_") else name
+        return (month, srank[series], trank[ten], MONTHLY_STEPS.index(base), name)
+    frows = [[k[0], k[1], k[2], k[3], str(n)] for k, n in sorted(agg.fun.items(), key=lambda kv: fkey(kv[0]))
+             if k[0] in months]
+    for month in months:
+        for word in ("files_read", "files_missing", "files_error"):
+            frows.append([month, "all", "", word, str(agg.files.get((month, word), 0))])
+    return rows, frows, months, header
+
+
+def weekday_strings(d0, d1):
+    return [d.isoformat() for d in weekdays(d0, d1)]
+
+
+def month_bounds(start_month, end_month):
+    y0, m0 = (int(x) for x in start_month.split("-"))
+    y1, m1 = (int(x) for x in end_month.split("-"))
+    first = dt.date(y0, m0, 1)
+    last = dt.date(y1, m1, calendar.monthrange(y1, m1)[1])
+    if first > last:
+        raise Refused("--start-month is after --end-month")
+    return first, last
+
+
+def write_monthly(out_dir, rows, frows, months, header, say=print):
+    fs_rows = read_table(os.path.join(out_dir, "file_stats.csv"), FILE_STATS_COLS)
+    fs_ret = {r[0]: r[27] for r in fs_rows}
+    ms = set(months)
+
+    def src(allrows):
+        mm = {r[0] for r in allrows}
+        sp = span([v for k, v in fs_ret.items() if k[:7] in mm])
+        return source_line(sp, None, "monthly medians of single-tenor cells (3-month and 1-year), published at n >= 10 per cell, month = month of the UTC "
+                           "execution date; computed by `monthly`, offline from the cached files")
+    upsert_table(os.path.join(out_dir, MONTHLY_FILE), header, rows, ms, src)
+    upsert_table(os.path.join(out_dir, MONTHLY_FUNNEL_FILE), MONTHLY_FUNNEL_COLS, frows, ms, src)
+
+
+def monthly(start_month, end_month, cache, out_dir, mc, say=print):
+    check_cache(cache)
+    cache = os.path.expanduser(cache)
+    first, last = month_bounds(start_month, end_month)
+    dates = weekday_strings(first, last)
+
+    def loader(ds):
+        d = dt.date.fromisoformat(ds)
+        path = os.path.join(cache, dtcc_name(d))
+        if not os.path.exists(path):
+            return None
+        rows, _ = read_zip(path, d)
+        return rows
+    agg = MonthAgg()
+    cur_m = None
+    for ds in dates:
+        sub = monthly_aggregate([ds], loader, mc, say)
+        for k, n in sub.fun.items():
+            agg.fun[k] += n
+        for k, lst in sub.vals.items():
+            agg.vals[k] += lst
+        for k, n in sub.files.items():
+            agg.files[k] += n
+        if ds[:7] != cur_m:
+            cur_m = ds[:7]
+            say("%s  ..." % cur_m)
+    rows, frows, months, header = monthly_tables(agg, mc)
+    write_monthly(out_dir, rows, frows, months, header, say)
+    errs = sum(n for (m, w), n in agg.files.items() if w == "files_error")
+    for m in months:
+        say("%s  files read %d, missing %d, error %d" % (m, agg.files.get((m, "files_read"), 0), agg.files.get((m, "files_missing"), 0),
+                                                         agg.files.get((m, "files_error"), 0)))
+    return errs
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# selftest of the monthly stage (M1-M8): fixture dates in 2030, no DTCC content
+# ----------------------------------------------------------------------------------------------------------------------
+MF_OIS_UND = {"USD": "USD-SOFR-OIS Compound", "EUR": "EUR-EuroSTR-OIS Compound", "JPY": "JPY-TONA-OIS-COMPOUND"}
+
+
+def mfx_ois(ccy, rate, ts, eff, exp, per="EXPI", mul="1", dc=None, **over):
+    f = fx_ois(rate, ts, fisn="NA/Swap OIS " + ccy, und=MF_OIS_UND[ccy], dc=dc or ("A005" if ccy == "JPY" else "A004"), per=per, mul=mul,
+               eff=eff, exp=exp)
+    f.update({"Notional currency-Leg 1": ccy, "Notional currency-Leg 2": ccy})
+    f.update(over)
+    return f
+
+
+def mfx_xccy(ccy, bp, ts, eff, exp, **over):
+    o = {"Effective Date": eff, "Expiration Date": exp}
+    o.update(over)
+    return fx_xccy(ccy, bp, 1, ts, **o)
+
+
+def monthly_fixture_tapes():
+    """{file date: Tape}. Every cell is designed so its n, median and funnel counts are known by hand (see monthly_checks)."""
+    tapes = {}
+    # --- M1 edges, k = 3 lower edge and k = 12 both edges: start 2030-01-31 (31 Jan + 3 months = 30 Apr; + 12 months = 31 Jan 2031) ----------
+    t = Tape()
+    ts, eff = "2030-01-29T15:00:00Z", "2030-01-31"
+    for _ in range(10):
+        t.add(mfx_ois("USD", 0.0430, ts, eff, "2030-04-23"))      # 82 days: in
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2030-04-22"))      # 81 days: out
+    for _ in range(5):
+        t.add(mfx_ois("USD", 0.0420, ts, eff, "2031-01-24"))      # 12 months - 7 days: in
+        t.add(mfx_ois("USD", 0.0420, ts, eff, "2031-02-07"))      # 12 months + 7 days: in
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2031-01-23"))      # 8 days early: out
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2031-02-08"))      # 8 days late: out
+    tapes["2030-01-29"] = t
+    # --- M1 upper edge at k = 3: start 2030-07-15 (+ 3 months = 15 Oct): 99 days in, 100 days out --------------------------------------
+    t = Tape()
+    ts, eff = "2030-07-12T15:00:00Z", "2030-07-15"
+    for _ in range(10):
+        t.add(mfx_ois("USD", 0.0440, ts, eff, "2030-10-22"))      # 99 days: in
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2030-10-23"))      # 100 days: out
+    for _ in range(5):                                           # the same pattern at k = 12 (15 Jul 2031 +- 7 days in, +- 8 days out)
+        t.add(mfx_ois("USD", 0.0410, ts, eff, "2031-07-22"))
+        t.add(mfx_ois("USD", 0.0410, ts, eff, "2031-07-08"))
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2031-07-23"))
+        t.add(mfx_ois("USD", 0.0300, ts, eff, "2031-07-07"))
+    tapes["2030-07-12"] = t
+    # --- March: the floor, day counts, frequencies, F1, cross-currency ------------------------------------------------------------------
+    t = Tape()
+    ts, eff, e3, e12 = "2030-03-12T15:00:00Z", "2030-03-14", "2030-06-14", "2031-03-14"
+    freq3 = [("EXPI", "1")] * 4 + [("MNTH", "12")] * 2 + [("YEAR", "1")] * 2 + [("MNTH", "3")] * 2          # ten accepted at k = 3
+    for i, (per, mul) in enumerate(freq3):
+        t.add(mfx_ois("EUR", round(0.0200 + 0.0001 * i, 4), ts, eff, e3, per=per, mul=mul))
+    for per, mul in (("DAIL", "1"), ("DAIL", "1"), ("WEEK", "13"), ("MNTH", "1")):                          # dropped, counted per code
+        t.add(mfx_ois("EUR", 0.0300, ts, eff, e3, per=per, mul=mul))
+    freq12 = [("EXPI", "1")] * 3 + [("YEAR", "1")] * 4 + [("MNTH", "12")] * 3
+    for i, (per, mul) in enumerate(freq12):
+        t.add(mfx_ois("EUR", round(0.0210 + 0.0001 * i, 4), ts, eff, e12, per=per, mul=mul))
+    for _ in range(3):
+        t.add(mfx_ois("EUR", 0.0300, ts, eff, e12, per="MNTH", mul="3"))                                     # quarterly at 1y: dropped
+    for i in range(9):                                                                                      # TONA 3m: nine (A005)
+        t.add(mfx_ois("JPY", round(0.0050 + 0.0001 * i, 4), ts, eff, e3))
+    for _ in range(3):
+        t.add(mfx_ois("JPY", 0.0100, ts, eff, e3, dc="A004"))                                               # TONA with ACT/360: dropped
+    for i in range(10):                                                                                     # TONA 1y: ten
+        t.add(mfx_ois("JPY", round(0.0060 + 0.0001 * i, 4), ts, eff, e12))
+    for i in range(12):                                                                                     # SOFR 3m: twelve
+        t.add(mfx_ois("USD", round(0.0430 + 0.0001 * i, 4), ts, eff, e3))
+    for _ in range(3):
+        t.add(mfx_ois("USD", 0.0600, ts, eff, e3, dc="A005"))                                               # SOFR with ACT/365: dropped
+    for _ in range(5):
+        t.add(mfx_ois("USD", 0.0300, "2030-03-11T15:00:00Z", eff, e3))                                       # executed the previous day: F1
+    t.add(mfx_ois("USD", 4.30, ts, eff, e3))                                                                # percent-unit entry: F6u
+    for i in range(10):                                                                                     # xccy JPY 3m: ten
+        t.add(mfx_xccy("JPY", -30.0 - i, ts, eff, e3))
+    for i in range(9):                                                                                      # xccy JPY 1y: nine
+        t.add(mfx_xccy("JPY", -20.0 - i, ts, eff, e12))
+    for _ in range(2):                                                                                      # xccy JPY 2y: in pool1to5 only
+        t.add(mfx_xccy("JPY", -10.0, ts, eff, "2032-03-14"))
+    for i in range(9):                                                                                      # xccy EUR 3m: nine
+        t.add(mfx_xccy("EUR", -2.0 - i, ts, eff, e3))
+    for i in range(10):                                                                                     # xccy EUR 1y: ten
+        t.add(mfx_xccy("EUR", -1.0 - 0.5 * i, ts, eff, e12))
+    tapes["2030-03-12"] = t
+    # --- M3: executed 31 Mar 2030 23:30 UTC, effective 2 Apr 2030 (a Sunday file, for the fixture): the month is March --------------------
+    t = Tape()
+    for _ in range(10):
+        t.add(mfx_ois("USD", 0.0450, "2030-03-31T23:30:00Z", "2030-04-02", "2030-07-02"))
+    tapes["2030-03-31"] = t
+    # --- the COMPOUND spellings (post-registration fix): half of each cell is booked under "...-COMPOUND", half under "...-OIS Compound"; look-alike names stay out -
+    t = Tape()
+    ts, eff, e3 = "2030-05-14T15:00:00Z", "2030-05-16", "2030-08-16"
+    for k in range(6):
+        t.add(mfx_ois("USD", 0.0440, ts, eff, e3, **{"UPI Underlier Name": "USD-SOFR-OIS Compound"}))
+        t.add(mfx_ois("USD", 0.0442, ts, eff, e3, **{"UPI Underlier Name": "USD-SOFR-COMPOUND"}))
+    for k in range(5):
+        t.add(mfx_ois("EUR", 0.0200, ts, eff, e3, **{"UPI Underlier Name": "EUR-EuroSTR-OIS Compound"}))
+        t.add(mfx_ois("EUR", 0.0204, ts, eff, e3, **{"UPI Underlier Name": "EUR-EuroSTR-COMPOUND"}))
+        t.add(mfx_ois("JPY", 0.0050, ts, eff, e3, **{"UPI Underlier Name": "JPY-TONA-OIS Compound"}))
+        t.add(mfx_ois("JPY", 0.0054, ts, eff, e3, **{"UPI Underlier Name": "JPY-TONA-OIS-COMPOUND"}))
+    for und in ("USD-SOFR", "USD-SOFR CME Term", "USD-SOFR Compounded Index"):          # same FISN, not the compounded swap: out
+        t.add(mfx_ois("USD", 0.0300, ts, eff, e3, **{"UPI Underlier Name": und}))
+    t.add(mfx_ois("EUR", 0.0300, ts, eff, e3, **{"UPI Underlier Name": "EUR-EuroSTR"}))
+    t.add(mfx_ois("JPY", 0.0300, ts, eff, e3, **{"UPI Underlier Name": "JPY-TONA Compounded Index"}))
+    tapes["2030-05-14"] = t
+    return tapes
+
+
+def make_monthly_cache(root):
+    cache = os.path.join(root, "mcache")
+    os.makedirs(cache, exist_ok=True)
+    tapes = monthly_fixture_tapes()
+    for ds, tape in tapes.items():
+        d = dt.date.fromisoformat(ds)
+        with open(os.path.join(cache, dtcc_name(d)), "wb") as f:
+            f.write(tape_to_zip(tape, d))
+    return cache, sorted(tapes) + ["2030-03-05"]   # the last is a date with no file: files_missing
+
+
+def run_monthly_fixture(cache, dates, mc):
+    def loader(ds):
+        d = dt.date.fromisoformat(ds)
+        p = os.path.join(cache, dtcc_name(d))
+        if not os.path.exists(p):
+            return None
+        return read_zip(p, d)[0]
+    return monthly_tables(monthly_aggregate(dates, loader, mc), mc)
+
+
+def monthly_checks(rows, frows, months, header, out_dir=None):
+    ck = Checks()
+    cell = {(r[0], r[1], r[2]): r for r in rows}
+    fun = {(r[0], r[1], r[2], r[3]): r[4] for r in frows}
+    C = {c: i for i, c in enumerate(MONTHLY_COLS)}
+
+    def cv(m, s, t, col):
+        r = cell.get((m, s, t))
+        return None if r is None else r[C[col]]
+    ck.eq("monthly header is exactly the allowlist (no min, max or weighted column)", tuple(header), MONTHLY_COLS)
+    ck.eq("months are those of the file dates (a trade is never moved to another month)", months, ["2030-01", "2030-03", "2030-05", "2030-07"])
+    # M1 tenor edges
+    ck.eq("M1 k=3 lower edge: start 31 Jan, 82 days in, 81 days out (n, median)", (cv("2030-01", "sofr_ois", "3m", "n"), cv("2030-01", "sofr_ois", "3m", "median")),
+          ("10", "4.300000"))
+    ck.eq("M1 k=12: 12 months -7 and +7 days in, 8 days off out (n, median)", (cv("2030-01", "sofr_ois", "1y", "n"), cv("2030-01", "sofr_ois", "1y", "median")),
+          ("10", "4.200000"))
+    ck.eq("M1 k=3 upper edge: start 15 Jul, 99 days in, 100 days out (n, median)", (cv("2030-07", "sofr_ois", "3m", "n"), cv("2030-07", "sofr_ois", "3m", "median")),
+          ("10", "4.400000"))
+    ck.eq("M1 k=12 from 15 Jul: +-7 days in, +-8 days out (n, median)", (cv("2030-07", "sofr_ois", "1y", "n"), cv("2030-07", "sofr_ois", "1y", "median")),
+          ("10", "4.100000"))
+    ck.eq("M1 add_months clips to the month end and the edge spans are 82 / 99 days", (add_months(dt.date(2030, 1, 31), 3), add_months(dt.date(2028, 2, 29), 12),
+          (dt.date(2030, 4, 23) - dt.date(2030, 1, 31)).days, (dt.date(2030, 10, 22) - dt.date(2030, 7, 15)).days),
+          (dt.date(2030, 4, 30), dt.date(2029, 2, 28), 82, 99))
+    ck.eq("M1 funnel Fb counts at the edges", (fun.get(("2030-01", "sofr_ois", "3m", "Fb")), fun.get(("2030-01", "sofr_ois", "1y", "Fb")),
+                                              fun.get(("2030-07", "sofr_ois", "3m", "Fb"))), ("10", "10", "10"))
+    # M2 floor
+    ck.eq("M2 n=10 publishes (EUR 3m median, q1, q3, iqr, status)", (cv("2030-03", "estr_ois", "3m", "median"), cv("2030-03", "estr_ois", "3m", "q1"),
+                                                                     cv("2030-03", "estr_ois", "3m", "q3"), cv("2030-03", "estr_ois", "3m", "iqr"),
+                                                                     cv("2030-03", "estr_ois", "3m", "status")), ("2.045000", "2.022500", "2.067500", "4.500", "ok"))
+    ck.eq("M2 n=9 publishes only the count (TONA 3m: n, median, q1, iqr, status)", (cv("2030-03", "tona_ois", "3m", "n"), cv("2030-03", "tona_ois", "3m", "median"),
+                                                                                    cv("2030-03", "tona_ois", "3m", "q1"), cv("2030-03", "tona_ois", "3m", "iqr"),
+                                                                                    cv("2030-03", "tona_ois", "3m", "status")), ("9", "", "", "", "count_only"))
+    ck.eq("M2 xccy: JPY 3m n=10 publishes, JPY 1y n=9 does not", (cv("2030-03", "xccy_jpyusd", "3m", "median"), cv("2030-03", "xccy_jpyusd", "3m", "status"),
+                                                                 cv("2030-03", "xccy_jpyusd", "1y", "n"), cv("2030-03", "xccy_jpyusd", "1y", "median")),
+          ("-34.500", "ok", "9", ""))
+    ck.eq("M2 xccy: EUR 3m n=9 does not publish, EUR 1y n=10 does", (cv("2030-03", "xccy_eurusd", "3m", "n"), cv("2030-03", "xccy_eurusd", "3m", "median"),
+                                                                   cv("2030-03", "xccy_eurusd", "1y", "median")), ("9", "", "-3.250"))
+    # M3 month assignment (the trades executed 31 Mar 23:30 UTC with an April effective date are March's)
+    ck.eq("M3 SOFR 3m in March: 12 + 10 trades, median of 22 (n, median, days with trades)", (cv("2030-03", "sofr_ois", "3m", "n"), cv("2030-03", "sofr_ois", "3m", "median"),
+                                                                                           cv("2030-03", "sofr_ois", "3m", "n_days_with_trades")), ("22", "4.405000", "2"))
+    # F0 exact allow-list: both spellings of the compounded index count, look-alike names do not
+    ck.eq("F0 SOFR: 'USD-SOFR-OIS Compound' and 'USD-SOFR-COMPOUND' both count; USD-SOFR, CME Term, Compounded Index do not (n, median, F0 funnel)",
+          (cv("2030-05", "sofr_ois", "3m", "n"), cv("2030-05", "sofr_ois", "3m", "median"), fun.get(("2030-05", "sofr_ois", "", "F0"))), ("12", "4.410000", "12"))
+    ck.eq("F0 euro short-term rate: '...-OIS Compound' and '...-COMPOUND' both count, plain EUR-EuroSTR does not (n, median, F0)",
+          (cv("2030-05", "estr_ois", "3m", "n"), cv("2030-05", "estr_ois", "3m", "median"), fun.get(("2030-05", "estr_ois", "", "F0"))), ("10", "2.020000", "10"))
+    ck.eq("F0 TONA: both spellings count, 'JPY-TONA Compounded Index' does not (n, median, F0)",
+          (cv("2030-05", "tona_ois", "3m", "n"), cv("2030-05", "tona_ois", "3m", "median"), fun.get(("2030-05", "tona_ois", "", "F0"))), ("10", "0.520000", "10"))
+    # M5 day count
+    ck.eq("M5 TONA 3m: nine A005 prints kept, three A004 dropped (funnel F6d)", (fun.get(("2030-03", "tona_ois", "3m", "F6d")), cv("2030-03", "tona_ois", "3m", "n")), ("9", "9"))
+    ck.eq("M5 SOFR 3m: the three A005 prints are dropped (F6d = 23 of 26)", fun.get(("2030-03", "sofr_ois", "3m", "F6d")), "23")
+    # M6 frequency and the drop counts
+    ck.eq("M6 EUR 3m: MNTH/12, YEAR/1, EXPI/1 and MNTH/3 kept (F6f = 10)", fun.get(("2030-03", "estr_ois", "3m", "F6f")), "10")
+    ck.eq("M6 drop counts per code, EUR 3m (DAIL/1 x2, WEEK/13, MNTH/1)", tuple(fun.get(("2030-03", "estr_ois", "3m", "F6f_" + c)) for c in ("DAIL_1", "WEEK_13", "MNTH_1")),
+          ("2", "1", "1"))
+    ck.eq("M6 EUR 1y: MNTH/3 is quarterly and is dropped, three of them", (fun.get(("2030-03", "estr_ois", "1y", "F6f_MNTH_3")), fun.get(("2030-03", "estr_ois", "1y", "F6f"))),
+          ("3", "10"))
+    ck.eq("M6 kept frequencies never appear as drops", [k for k in fun if k[3] in ("F6f_EXPI_1", "F6f_YEAR_1", "F6f_MNTH_12")], [])
+    # M7 F1
+    ck.eq("M7 F1 drops the five prints of the previous day (SOFR: F0 31, F1 26)", (fun.get(("2030-03", "sofr_ois", "", "F0")), fun.get(("2030-03", "sofr_ois", "", "F1"))),
+          ("31", "26"))
+    ck.eq("F6u drops the percent-unit entry (F6d 23, F6u 22)", (fun.get(("2030-03", "sofr_ois", "3m", "F6d")), fun.get(("2030-03", "sofr_ois", "3m", "F6u"))), ("23", "22"))
+    # files
+    ck.eq("files read / missing in March", (fun.get(("2030-03", "all", "", "files_read")), fun.get(("2030-03", "all", "", "files_missing"))), ("2", "1"))
+    # no extremes anywhere in the cells
+    ck.ok("no row has more cells than the header", all(len(r) == len(header) for r in rows))
+    if out_dir is not None:
+        ck.ok("monthly files start with '# source:' naming DTCC",
+              all(open(os.path.join(out_dir, n), encoding="utf-8").readline().startswith("# source: DTCC Public Price Dissemination")
+                  for n in (MONTHLY_FILE, MONTHLY_FUNNEL_FILE)))
+    return ck
+
+
+def monthly_m4_check():
+    """M4: XCCY_TENORS is untouched and the daily pool1to5 does not take the 3-month prints. Returns (Checks, pool n under the real config, n under the mutant)."""
+    ck = Checks()
+    tape = monthly_fixture_tapes()["2030-03-12"]
+    ck.eq("M4 XCCY_TENORS is still (1, 2, 3, 4, 5)", XCCY_TENORS, (1, 2, 3, 4, 5))
+
+    def pool_n():
+        trades, _, _ = resolve_trades(tape.rows, Cfg(), "2030-03-12")
+        _, groups, _ = run_xccy(trades, "2030-03-12", Cfg(), "xccy_jpyusd")
+        return len(groups[("pool1to5", "headline")])
+    n_real = pool_n()
+    ck.eq("M4 pool1to5 of the fixture: nine 1y + two 2y prints = 11 (the ten 3-month prints are not in it)", n_real, 11)
+    return ck, n_real
+
+
+def monthly_m4_mutant():
+    """The mutant: 0.25 added to XCCY_TENORS, and a bucket that understands fractions of a year. pool1to5 must change (the check above then fails)."""
+    global XCCY_TENORS, bucket
+    saved = (XCCY_TENORS, bucket)
+
+    def bucket_frac(eff, exp, targets, tol=7):
+        if eff is None or exp is None:
+            return None
+        for n in targets:
+            if abs((exp - add_months(eff, int(round(n * 12)))).days) <= tol:
+                return n
+        return None
+    XCCY_TENORS = (0.25, 1, 2, 3, 4, 5)
+    bucket = bucket_frac
+    try:
+        return monthly_m4_check()[0]
+    finally:
+        XCCY_TENORS, bucket = saved
+
+
+def monthly_selftest_groups(root):
+    """-> ([(title, Checks)], [(mutant, why or None)])."""
+    import shutil
+    cache, dates = make_monthly_cache(root)
+    out = os.path.join(root, "mout")
+    mc = MCfg()
+    rows, frows, months, header = run_monthly_fixture(cache, dates, mc)
+    write_monthly(out, rows, frows, months, header)
+    base = monthly_checks(rows, frows, months, header, out)
+    det = Checks()
+    first = {n: open(os.path.join(out, n), "rb").read() for n in (MONTHLY_FILE, MONTHLY_FUNNEL_FILE)}
+    write_monthly(out, rows, frows, months, header)
+    det.ok("a second write of the same months is byte-identical (upsert)", all(open(os.path.join(out, n), "rb").read() == b for n, b in first.items()))
+    write_monthly(out, [r for r in rows if r[0] in ("2030-01", "2030-07")], [r for r in frows if r[0] in ("2030-01", "2030-07")], ["2030-01", "2030-07"], header)
+    det.ok("rewriting two months leaves the other months' rows alone", all(open(os.path.join(out, n), "rb").read() == b for n, b in first.items()))
+    det.ok("the cells file has no field of 8 to 19 digits and no absolute home path",
+           not any(re.search(r"(^|,)[0-9]{8,19}(,|$)", ln) for n in first for ln in first[n].decode().splitlines())
+           and os.path.expanduser("~") not in first[MONTHLY_FILE].decode())
+    m4, _ = monthly_m4_check()
+    groups = [("monthly stage: M1 edges, M2 floor, M3 month, M5 day count, M6 frequency, M7 F1", base),
+              ("monthly stage: M4 pool1to5 untouched, files, determinism", m4), ("monthly stage: output files", det)]
+    results = []
+    for m in MONTHLY_MUTANTS:
+        why = None
+        try:
+            mcfg = MCfg(m)
+            r2, f2, mo2, h2 = run_monthly_fixture(cache, dates, mcfg)
+            bad = monthly_checks(r2, f2, mo2, h2).failed()
+            if not bad:
+                # the extremes mutant is caught by the writer, as a mutant that widens the header must be
+                write_monthly(os.path.join(root, "mut_" + m), r2, f2, mo2, h2)
+            else:
+                why = "%d check(s) failed, first: %s" % (len(bad), bad[0][0])
+        except Exception as e:
+            why = "raised %s" % type(e).__name__
+        results.append((m, why))
+    bad = monthly_m4_mutant().failed()
+    results.append(("m4_xccy_tenors_quarter", ("%d check(s) failed, first: %s" % (len(bad), bad[0][0])) if bad else None))
+    return groups, results
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 # selftest: synthetic tape (ids T0001..., dates in 2030, no DTCC content), pure checks, stop logic, mutants
 # ----------------------------------------------------------------------------------------------------------------------
 class Checks:
@@ -2247,6 +2835,8 @@ def selftest():
         det.ok("SOURCES.md carries the R3 citation", "Derived from DTCC Public Price Dissemination, CFTC cumulative interest-rate reports (pddata.dtcc.com). "
                "Statistics only; no DTCC record is reproduced." in " ".join(open(os.path.join(outs[0], "SOURCES.md"), encoding="utf-8").read().split()))
         allck.append(("determinism and leak guards", det))
+        mgroups, mresults = monthly_selftest_groups(root)
+        allck.extend(mgroups)
         mutant_results = []
         for m in ("noconv", "noeror", "nowindow"):
             out = os.path.join(root, "mut_" + m)
@@ -2261,6 +2851,7 @@ def selftest():
             except Exception as e:
                 why = "raised %s" % type(e).__name__
             mutant_results.append((m, why))
+        mutant_results.extend(mresults)
     finally:
         shutil.rmtree(root, ignore_errors=True)
     bad_total = 0
@@ -2306,11 +2897,19 @@ def main(argv=None):
     pb.add_argument("--ust-dir", default=UST_DEFAULT)
     pb.add_argument("--mutant", choices=("noconv", "noeror", "nowindow"),
                     help="diagnostic: build with a deliberately broken rule; refused for the repository's data/swap_tape")
+    pm = sub.add_parser("monthly", help="offline: monthly 3-month and 1-year OIS and cross-currency medians (E-024; writes two new files)")
+    pm.add_argument("--start-month", required=True, help="YYYY-MM")
+    pm.add_argument("--end-month", required=True, help="YYYY-MM")
+    pm.add_argument("--cache", default=os.environ.get("DTCC_PPD_CACHE") or CACHE_DEFAULT)
+    pm.add_argument("--out", default=OUT_DEFAULT)
     sub.add_parser("selftest", help="synthetic fixture, mutants and stop logic; no network")
     a = ap.parse_args(argv)
     if a.cmd == "selftest":
         return selftest()
     try:
+        if a.cmd == "monthly":
+            errs = monthly(a.start_month, a.end_month, a.cache, a.out, MCfg())
+            return 2 if errs else 0
         if a.cmd == "build":
             if a.mutant and os.path.realpath(a.out) == os.path.realpath(OUT_DEFAULT):
                 raise Refused("--mutant may not write into the repository's data/swap_tape")

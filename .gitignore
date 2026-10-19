@@ -75,3 +75,8 @@ data/vintages/cot_horizons/
 jodi_primary_*.csv
 primaryyear*.csv
 secondaryyear*.csv
+# FX-hedged Treasury yield build (bin/hedged_ust_yield.py): raw downloads (Treasury, MoF, ECB, NY Fed, BoJ, Bundesbank, the DKS panel extract), the daily
+# panel and the yen monthly rows stay in this cache and are never committed. A STOP file here is the fetch latch; only a person deletes it.
+data/vintages/hedged_ust_yield/
+# A build with a hard check FAIL or a failed gate writes its outputs here and leaves the committed files alone
+data/hedged_ust_yield/_FAILED/

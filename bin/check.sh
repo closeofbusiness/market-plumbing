@@ -439,6 +439,59 @@ jodi_leak_check() {
   fi
 }
 
+# --- M15: FX-HEDGED TREASURY YIELD LEAK GUARD (warn only) ---------------------
+# data/hedged_ust_yield/ may hold only derived statistics. The Bank of Japan's terms keep monthly yen figures out (spec
+# _research/2026-10-19-FX-Hedged-Treasury-Yield-Spec.md, section 7 and ruling O-1), and the raw downloads, the daily panel and the yen monthly rows
+# stay in the gitignored cache data/vintages/hedged_ust_yield/. Four things would break that, and none is visible to M5-M14:
+#   1. a yen row in monthly.csv (the committed monthly file is euro only);
+#   2. yen_summary.csv with more than 8 values for one (variant, statistic) -- annual means and two anchor months are the accepted granularity;
+#   3. a header line in one of the committed CSVs that is not that file's exact column allowlist (the spec's lists, typed here a second time);
+#   4. a file in the folder that is not one of the nine committed names: a raw input (tsy_*, mof_*, nyfed_*, ecb_*, boj_*, dks*, bbk_*), the daily
+#      panel or the full monthly table. The _FAILED folder is gitignored and is not scanned.
+# bin/hedged_ust_yield.py refuses the same things when it writes (leak_guard); this is the second, independent look. HEDGED_DIR overrides the folder
+# (used to show that the guard fires on a planted row). It warns and never blocks (header doctrine).
+hedged_leak_check() {
+  echo "-- M15: hedged-yield leak guard (data/hedged_ust_yield/: no yen row in monthly.csv, yen_summary.csv within its cap, exact headers, no raw input file) --"
+  local dir="${HEDGED_DIR:-data/hedged_ust_yield}" f name want got bad="" extra yen cap
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  for name in monthly.csv yen_summary.csv summary.csv references.csv checks.csv pins.csv fetch_log.csv; do
+    f="$dir/$name"
+    [ -f "$f" ] || continue
+    case "$name" in
+      monthly.csv) want='month,pair,variant,role,n_days,partial,qe_turn_early,ust10_pct,home10_pct,rate_gap_term_pp,basis_term_pp,hedged_carry_pct,pickup_pp,form_gap_bp,basis_tenor,hedge_days_mean,n_ois_us,n_ois_home,n_basis' ;;
+      yen_summary.csv) want='period,variant,statistic,value,credit' ;;
+      summary.csv) want='run_label,L,question,pair,variant,statistic,value,notable' ;;
+      references.csv) want='ref_id,source,ref_date,pair,form,tenor,published,rounding_bp,build_value,gap_bp,tolerance,status,note' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      pins.csv) want='source,series,pin_date,value,unit' ;;
+      fetch_log.csv) want='utc_time,host,path,status,bytes,sha256' ;;
+    esac
+    got=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+    [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+  done
+  if [ -f "$dir/monthly.csv" ]; then
+    yen=$(grep -v '^#' "$dir/monthly.csv" | awk -F, 'NR > 1 && $2 == "yen" { n++ } END { if (n) print n }')
+    [ -n "$yen" ] && bad="${bad}  ✗ monthly.csv holds $yen yen row(s)
+"
+  fi
+  if [ -f "$dir/yen_summary.csv" ]; then
+    cap=$(grep -v '^#' "$dir/yen_summary.csv" | awk -F, 'NR > 1 { k = $2 "|" $3; n[k]++ } END { for (k in n) if (n[k] > 8) print k " = " n[k] }')
+    [ -n "$cap" ] && bad="${bad}$(printf '%s\n' "$cap" | sed 's/^/  ✗ yen_summary.csv has more than 8 values for /')
+"
+  fi
+  extra=$(find "$dir" -maxdepth 1 -type f ! -name '.DS_Store' ! -name README.md ! -name SOURCES.md ! -name monthly.csv ! -name yen_summary.csv ! -name summary.csv \
+            ! -name references.csv ! -name checks.csv ! -name pins.csv ! -name fetch_log.csv | sort)
+  [ -n "$extra" ] && bad="${bad}$(printf '%s\n' "$extra" | sed 's/^/  ✗ file that is not one of the nine committed names: /')
+"
+  if [ -z "$bad" ]; then
+    echo "  ✓ no yen row in monthly.csv, yen_summary.csv within 8 values per variant and statistic, every header its exact allowlist, no raw input file in $dir."
+  else
+    printf '%s' "$bad"
+    echo "  -> Bank of Japan terms: no monthly yen series may be committed; raw inputs and the daily panel stay in data/vintages/hedged_ust_yield/. Remove it before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -645,6 +698,8 @@ if [ "$TARGET" = "--all" ]; then
   goldry_leak_check
   echo
   jodi_leak_check
+  echo
+  hedged_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

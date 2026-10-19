@@ -1,0 +1,18 @@
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19; at most five pinned values per source
+source,series,pin_date,value,unit
+U.S. Treasury,10 Yr par yield,2024-03-21,4.27,percent
+U.S. Treasury,10 Yr par yield,2026-09-18,5.01,percent
+U.S. Treasury,10 Yr par yield,2026-10-15,5.10,percent
+MoF Japan,10Y constant-maturity yield,2024-03-22,0.762,percent
+MoF Japan,10Y constant-maturity yield,2026-09-18,2.981,percent
+MoF Japan,10Y constant-maturity yield,2026-10-01,3.092,percent
+NY Fed,SOFR,2018-04-02,1.80,percent
+NY Fed,SOFR,2026-10-15,3.89,percent
+NY Fed,EFFR,2026-10-15,3.88,percent
+NY Fed,SOFR Index,2026-10-16,1.26303308,index
+ECB,euro short-term rate,2019-10-01,-0.549,percent
+ECB,euro short-term rate,2026-10-16,2.441,percent
+ECB,compounded euro short-term rate index,2026-10-19,110.03236357,index
+ECB,"AAA 10-year, semiannual par recomputed from the parameters",2026-09-18,3.533452,percent
+Bank of Japan,"TONA (call rate, uncollateralised overnight, average)",2018-01-04,-0.047,percent
+Bank of Japan,"TONA (call rate, uncollateralised overnight, average)",2026-10-15,1.228,percent
