@@ -16,7 +16,7 @@ TIC July 2026 foreign net purchases of US equities were **+$2.8bn** for all coun
 
 A European pensions scout exists ([`2026-09-14-E1-European-Pensions-Scout.md`](../2026-09-14-E1-European-Pensions-Scout.md)). Dutch pension asset stocks are in the monitor. They are not an EGB curve result. GPIF assets are in the monitor (about **¥320trn** at 30 June 2026). A claim that GPIF will buy a stated amount of JGBs is someone else’s call on the calendar; it is not a result of this programme.
 
-JGB and euro-area government-bond holders by sector and the yield decompositions are in R3 ([`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](../2026-09-27-R3-JGB-And-Euro-Area-Bonds.md), tables in `data/r3_rates/`). Cross-currency basis regimes as price drivers are **stated in the programme brief, not yet tied to a source file.**
+JGB and euro-area government-bond holders by sector and the yield decompositions are in R3 ([`2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`](../2026-09-27-R3-JGB-And-Euro-Area-Bonds.md), tables in `data/r3_rates/`). The cross-currency basis is now measured from the public DTCC swap tape (1-5-year JPY/USD premium about halved in two years; EUR and GBP near zero), in [`2026-10-15-ST1-Swap-Spreads-Inflation-Gap-And-Basis.md`](../2026-10-15-ST1-Swap-Spreads-Inflation-Gap-And-Basis.md). That is the premium, not the hedge ratio, and not a price driver.
 
 A primary-source HTML note on the cross-border Treasury basis trade sits in the Dropbox tree and was not copied. The programme’s own N2a note is the citation.
 
@@ -29,3 +29,5 @@ One denominator for hedged and unhedged official and private demand, beside net 
 TIC, BIS locational banking and GLI, CPIS, Irish and Luxembourg USD money funds, OCC bank FX notionals, GPIF and Dutch pension keys. See the monitor.
 
 **First measurement map, 12 Oct 2026 (E-021):** `2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md`, with the FX agent's full tables in `_research/2026-10-12-E021-fx-inhouse-return.md`.
+
+**Candidates from BIS CGFS Papers No 65 (read 19 Oct 2026):** the full hedging cost and FX-hedged Treasury yield; foreign banks' US offices' net due to related foreign offices (Fed H.8); US money funds' lending to non-US banks by nationality and quarter-end; the quarter-end effect in the basis; the BoJ's dollar stability gap and life insurers' hedge ratio as series; dollar debt securities by issuer sector (BIS IDS). Details and the free sources checked: [`_research/2026-10-19-CGFS65-Dollar-Funding-Reading.md`](../_research/2026-10-19-CGFS65-Dollar-Funding-Reading.md).
