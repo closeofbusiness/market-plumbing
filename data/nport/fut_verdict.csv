@@ -1,0 +1,49 @@
+key,value
+required_sentence,These are holdings measurements. They do not show what moved Treasury yields.
+scope,"registered funds' Treasury futures, from the SEC bulk N-PORT data sets; the cash build's survivors, lag and fixed end-2023 curve"
+basis,"10-year equivalents on the fixed 2023-12-29 curve, tenor map, PAYOFF_PROFILE sign (the headline)"
+denominator_funds_2023q4,12609
+denominator_funds_2026q2,13799
+f_2023q4_bn,131.145097
+f_2026q2_bn,289.001564
+d_f_bn,157.856467
+d_f_line_bn,100.0
+d_f_sign,up
+d_f_2024_bn,54.558228
+d_f_2025_bn,90.341016
+d_f_2026h1_bn,12.957223
+a1_face_net_bn,353.505625
+a1_range_bn,250-380
+a2_dv01_ratio,0.095696
+a2_range,0.20-0.45
+a3_implied_duration_years,3.004418
+a3_range_years,3.0-4.5
+a_pass,no
+anchor_universe_funds,2735
+anchor_universe_funds_with_futures,1523
+a1_balsign_face_net_bn,410.918101
+a2_balsign_dv01_ratio,0.147366
+a3_balsign_implied_duration_years,3.980198
+a_balsign_pass,no
+a4_all_fund_gross_long_face_bn,552.974745
+a4_feds_reading_bn,470-500
+u_f_2023q4,0.031754
+u_f_2026q2,0.03305
+u_f_max,0.1
+g_v_bn,0.821028
+g_v_max_bn,20.0
+g_c_bn,5.452912
+g_c_max_bn,50.0
+g_s_bn,27.535947
+g_s_max_bn,20.0
+d_f_matched_bn,157.035439
+d_f_ctd_bn,163.309379
+d_f_balsign_bn,130.320521
+label,INCONCLUSIVE
+verdict_sentence,"The net change in registered funds' Treasury futures from end-2023 to mid-2026 was not established, at $157.9bn of 10-year equivalents against a $100bn line. It is not established because the ratio of futures to notes-and-bonds sensitivity was 0.10 (accepted range 0.20 to 0.45; the Federal Reserve note's own value is 0.30); the filed long-or-short sign and the sign of the filed contract count differ by $27.5bn (limit $20bn)."
+held_apart,"futures are in zero net supply: no output adds them to cash holdings, divides them by the public's change, or sets them against the cash line"
+exetf_a1_face_net_bn,345.604228
+exetf_a2_dv01_ratio,0.15141
+exetf_a3_implied_duration_years,3.061705
+exetf_universe_funds,2267
+anchor_universe_series_without_ncen_row,7

@@ -1,0 +1,55 @@
+key,value
+required_sentence,These are holdings measurements. They do not show what moved Treasury yields.
+scope,"registered funds' cash Treasury 10-year equivalents (the cash build's survivors and fixed curve), split by the Form N-CEN index flag"
+windows,"2023Q4, 2024Q4, 2025Q4, 2026Q2 (the R2 dates), base vintage"
+base_ds_2024_bn,203.17863
+ds_index_stable_2024_bn,130.975056
+ds_active_stable_2024_bn,62.787513
+classified_sum_2024_bn,193.76257
+classified_floor_2024_bn,50.794657
+q_2024,0.675956
+base_ds_2025_bn,183.958587
+ds_index_stable_2025_bn,93.603966
+ds_active_stable_2025_bn,85.776595
+classified_sum_2025_bn,179.380561
+classified_floor_2025_bn,45.989647
+q_2025,0.521818
+base_ds_2026h1_bn,162.103494
+ds_index_stable_2026h1_bn,65.504214
+ds_active_stable_2026h1_bn,92.699126
+classified_sum_2026h1_bn,158.20334
+classified_floor_2026h1_bn,40.525874
+q_2026h1,0.414051
+s0,0.568858
+q_2026h1_minus_s0,-0.154807
+q_2026h1_minus_q_2024,-0.261906
+q_2026h1_minus_q_2025,-0.107767
+u_bn,4.015708
+u_cap_bn,16.2
+u_unflagged_bn,0.379275
+u_switcher_bn,0.088763
+u_stale_flag_bn,3.547671
+u_unflagged_entrants_bn,0.336053
+entrants_n,148
+entrants_ds_2026h1_bn,1.145911
+entrants_unflagged_n,106
+entrants_backfilled_n,0
+pre_run_inconclusive_by_construction,no
+label,INCONCLUSIVE
+verdict_sentence,"The split of registered funds' cash Treasury duration change between series flagged 'Index Fund' on Form N-CEN (any index, not only Treasury indexes) and the rest is not established: the index-flag share of the classified change was 67.6% in 2024, 52.2% in 2025 and 41.4% in the first half of 2026, against 56.9% of the classified stock at end-2023. The share in the first half of 2026 was neither at least 60% with the required margins nor at most 40% and no higher than the stock share, so it falls between the two bars."
+bar_hurdle_note,0.15 is a pre-registered hurdle taken from a different object (the funds' excess over the public stock in the cash build) after that object was measured; it is not a sampling bound
+q_plain_2026h1_no_bounds,0.414051
+q_all,0.414418
+q_strict_2026h1,0.427209
+q_levinv_in,0.413622
+q_m1_2026h1,0.406537
+s0_m1,0.575967
+index_share_of_all_groups_2026h1,0.404089
+excess_over_s0_index_etf_only,-0.292456
+excess_over_s0_index_mutual_fund_only,0.008528
+index_exclusive_share_of_index_change,0.001011
+flag_etf_only_gap,no
+flag_index_exclusive,no
+flag_levinv_crosses_bar,no
+flag_stable_vs_all_gap,no
+resolution_note,"within about 10 points of a bar at the unclassified cap, a share is fragile: unclassified change of $16.2bn could move it by that much"

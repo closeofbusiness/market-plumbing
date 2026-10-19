@@ -754,6 +754,96 @@ ukgold_leak_check() {
   fi
 }
 
+# --- M19: FUND FUTURES AND INDEX SPLIT LEAK GUARD (warn only) -----------------
+# data/nport/fut_*.csv and idx_*.csv are derived aggregates of the SEC bulk N-PORT and Form N-CEN files (spec
+# _research/2026-10-19-Fund-Futures-And-Index-Split-Spec.md, requirements R5 and R23-16). Five things would break that, and none is visible to M5-M18:
+#   1. a header that is not that file's row of data/nport/fut_idx_columns.tsv (the one committed allowlist; this guard keeps no copy of it);
+#   2. a header holding CUSIP, HOLDING_ID, ACCESSION_NUMBER, SERIES_ID, SERIES_NAME, REGISTRANT_NAME, LEI or CIK, or a file above 2,000 rows;
+#   3. a count below five (series_n or funds_n) on any row that is not the merged other_small row, or an other_small row of fewer than five with amounts;
+#   4. a fut_*/idx_* file that fut_idx_columns.tsv does not list, or fut_idx_columns.tsv differing from the table of section 5 of the spec;
+#   5. causal wording in the README, the sources file or the verdict files, or a verdict file whose first key is not required_sentence.
+# bin/nport_futures_index.py checks the same things when it writes (C-X4); this is the second, independent look. FUTIDX_DIR and FUTIDX_SPEC override the
+# folder and the spec path (used to show that the guard fires on a planted row). It warns and never blocks (header doctrine).
+futidx_leak_check() {
+  echo "-- M19: fund-futures / index-split leak guard (data/nport/fut_*, idx_*: headers = fut_idx_columns.tsv = spec section 5, no identifier column, small cells merged, no causal wording) --"
+  local dir="${FUTIDX_DIR:-data/nport}" spec="${FUTIDX_SPEC:-_research/2026-10-19-Fund-Futures-And-Index-Split-Spec.md}"
+  if ! ls "$dir"/fut_*.csv "$dir"/idx_*.csv >/dev/null 2>&1 && [ ! -f "$dir/fut_idx_columns.tsv" ]; then
+    echo "  ✓ $dir holds no fund-futures or index-split file -- nothing to leak."; return
+  fi
+  local out py
+  read -r -d '' py <<'PY' || true
+import csv, glob, os, re, sys
+d, spec = sys.argv[1], sys.argv[2]
+bad = []
+tsv = os.path.join(d, "fut_idx_columns.tsv")
+cols = {}
+if not os.path.exists(tsv):
+    bad.append("fut_idx_columns.tsv is missing")
+else:
+    for ln in open(tsv, encoding="utf-8").read().splitlines()[1:]:
+        if ln.strip():
+            f, c = ln.split("\t")
+            cols[f] = c.split("|")
+if os.path.exists(spec) and cols:
+    sec = open(spec, encoding="utf-8").read()
+    a = sec.find("## 5. Outputs")
+    b = sec.find("**Small cells", a)
+    want = {}
+    for ln in sec[a:b].splitlines():
+        if ln.startswith("| `"):
+            cells = [x.strip() for x in ln.strip().strip("|").split("|")]
+            for f in re.findall(r"`([^`]+)`", cells[0]):
+                want[f] = [x.strip() for x in re.search(r"`([^`]+)`", cells[2]).group(1).split(",")]
+    if want != cols:
+        bad.append("fut_idx_columns.tsv differs from the table of section 5 of the spec: " + ", ".join(sorted(set(want) ^ set(cols)) or [k for k in want if want[k] != cols.get(k)]))
+forbid = ("CUSIP", "HOLDING_ID", "ACCESSION_NUMBER", "SERIES_ID", "SERIES_NAME", "REGISTRANT_NAME", "LEI", "CIK")
+cellfiles = {"fut_contracts.csv": ("funds_n", "contract"), "fut_split.csv": ("funds_n", "group"), "idx_split.csv": ("series_n", "group"),
+             "idx_coverage.csv": ("series_n", "flag"), "idx_crosstab.csv": ("series_n", "arm")}
+for p in sorted(glob.glob(os.path.join(d, "fut_*.csv")) + glob.glob(os.path.join(d, "idx_*.csv"))):
+    n = os.path.basename(p)
+    rows = list(csv.reader(open(p, encoding="utf-8", newline="")))
+    hdr = rows[0] if rows else []
+    if n not in cols:
+        bad.append(n + " is not listed in fut_idx_columns.tsv"); continue
+    if hdr != cols[n]:
+        bad.append(n + ": header is not its row of fut_idx_columns.tsv")
+    if any(t in h.upper() for h in hdr for t in forbid):
+        bad.append(n + ": a header holds an identifier token")
+    if len(rows) - 1 > 2000:
+        bad.append(n + ": %d rows, above 2,000" % (len(rows) - 1))
+    if n in cellfiles and not (cellfiles[n][0] in hdr and cellfiles[n][1] in hdr):
+        bad.append("%s: the count column %s or the label column %s is missing from the header (renamed?), so the small-cell test cannot run" % ((n,) + cellfiles[n]))
+    elif n in cellfiles:
+        nc, lc = cellfiles[n]
+        for i, r in enumerate(rows[1:], start=2):
+            row = dict(zip(hdr, r))
+            try:
+                k = int(float(row[nc]))
+            except ValueError:
+                continue
+            if row[lc] != "other_small" and k < 5:
+                bad.append("%s row %d: count %d is below five" % (n, i, k))
+            if row[lc] == "other_small" and k < 5 and any(v for c, v in row.items() if c not in (nc, lc, "period", "window") and v != ""):
+                bad.append("%s row %d: an other_small cell of %d shows amounts" % (n, i, k))
+    if n in ("fut_verdict.csv", "idx_verdict.csv") and (len(rows) < 2 or rows[1][0] != "required_sentence"):
+        bad.append(n + ": the first key is not required_sentence")
+causal = re.compile(r"\b(caus(e|ed|es|ing)|drove|driv(e|es|en|ing)|led\s+to|pushed|because\s+of|in\s+response\s+to|moved\s+yields)\b", re.I)
+req = "These are holdings measurements. They do not show what moved Treasury yields."
+for p in sorted(glob.glob(os.path.join(d, "fut_idx_*.md")) + glob.glob(os.path.join(d, "fut_verdict.csv")) + glob.glob(os.path.join(d, "idx_verdict.csv"))):
+    t = open(p, encoding="utf-8").read().replace(req, "")
+    for m in causal.finditer(t):
+        bad.append(os.path.basename(p) + ": causal wording '" + m.group(0) + "'")
+print("\n".join("  ✗ " + b for b in bad) if bad else "OK")
+PY
+  out=$(python3 -c "$py" "$dir" "$spec")
+  if [ "$out" = "OK" ]; then
+    echo "  ✓ every fut_*/idx_* header is its row of fut_idx_columns.tsv (= spec section 5), no identifier column, at most 2,000 rows, no count below five outside other_small, no causal wording."
+  else
+    printf '%s\n' "$out"
+    echo "  -> derived aggregates only: no identifier, fund or registrant name, and no cell under five series may be committed. Remove or re-run before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -968,6 +1058,8 @@ if [ "$TARGET" = "--all" ]; then
   japan_tp_leak_check
   echo
   ukgold_leak_check
+  echo
+  futidx_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

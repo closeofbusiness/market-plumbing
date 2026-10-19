@@ -1,0 +1,17 @@
+variant_id,description,period,f_start_bn,f_end_bn,d_f_bn
+B0,"tenor map, base vintage, BALANCE sign (R23-1)",full,200.902081,331.222602,130.320521
+B0,"tenor map, base vintage, BALANCE sign (R23-1)",2024,200.902081,224.363286,23.461205
+B0,"tenor map, base vintage, BALANCE sign (R23-1)",2025,224.363286,321.058514,96.695228
+B0,"tenor map, base vintage, BALANCE sign (R23-1)",2026H1,321.058514,331.222602,10.164088
+C0,"modelled cheapest-to-deliver, base vintage (R2-date windows)",full,138.681682,301.991061,163.309379
+C0,"modelled cheapest-to-deliver, base vintage (R2-date windows)",2024,138.681682,193.241692,54.560011
+C0,"modelled cheapest-to-deliver, base vintage (R2-date windows)",2025,193.241692,287.972882,94.731189
+C0,"modelled cheapest-to-deliver, base vintage (R2-date windows)",2026H1,287.972882,301.991061,14.018179
+T0,"tenor map, base vintage, PAYOFF_PROFILE sign (the headline)",full,131.145097,289.001564,157.856467
+T0,"tenor map, base vintage, PAYOFF_PROFILE sign (the headline)",2024,131.145097,185.703326,54.558228
+T0,"tenor map, base vintage, PAYOFF_PROFILE sign (the headline)",2025,185.703326,276.044342,90.341016
+T0,"tenor map, base vintage, PAYOFF_PROFILE sign (the headline)",2026H1,276.044342,289.001564,12.957223
+T1,"tenor map, matched vintage",full,131.966125,289.001564,157.035439
+T1,"tenor map, matched vintage",2024,131.966125,185.033852,53.067726
+T1,"tenor map, matched vintage",2025,185.033852,275.504365,90.470514
+T1,"tenor map, matched vintage",2026H1,275.504365,289.001564,13.497199

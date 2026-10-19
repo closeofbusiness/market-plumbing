@@ -1,0 +1,15 @@
+file	columns
+fut_windows.csv	window|quarter_end|vintage|funds_in_window|funds_with_tsy_fut|tsy_fut_lines|contracts_long|contracts_short|face_long_bn|face_short_bn|face_net_bn|notional_tradedate_net_bn|tenyeq_tenor_bn|tenyeq_tenor_balsign_bn|tenyeq_ctd_bn|unrealized_abs_bn|lines_basis_face|lines_basis_notional|notional_field_is_count_lines|unit_suspect_lines|no_size_lines|non_usd_lines|unresolved_lines|unresolved_conflict_lines|sign_na_lines|sign_disagree_lines|sign_disagree_notional_share|expired_lines|non_dir_tsy_lines|ctd_fallback_lines|unresolved_share
+fut_contracts.csv	window|contract|funds_n|lines|contracts_net|face_net_bn|tenyeq_tenor_bn|tenyeq_ctd_bn|dv01_tenor_mn|tenor_factor_usd|ctd_factor_usd|ctd_maturity|ctd_coupon_pct|ctd_cf|notional_over_face_median
+fut_change.csv	variant_id|description|period|f_start_bn|f_end_bn|d_f_bn
+fut_split.csv	period|group|funds_n|d_f_bn
+fut_other_deriv.csv	window|category|lines|notional_abs_bn
+fut_verdict.csv	key|value
+idx_verdict.csv	key|value
+idx_prerun.csv	key|value
+idx_split.csv	period|group|series_n|s_start_bn|s_end_bn|d_s_bn
+idx_coverage.csv	window|flag|flag_backfilled_n|series_n|s_bn
+idx_crosstab.csv	period|is_etf|arm|series_n|s_start_bn|d_s_bn
+fut_checks.csv	check_id|label|ours|reference|threshold|result|hard|note
+idx_checks.csv	check_id|label|ours|reference|threshold|result|hard|note
+fut_idx_file_stats.csv	tag|key|value

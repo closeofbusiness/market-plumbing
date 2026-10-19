@@ -45,6 +45,9 @@ data/vintages/crude/
 # N-PORT Treasury-duration build: outputs of a run with a hard check FAIL are written here and the committed files are left alone
 data/nport/_FAILED/
 
+# Fund futures and index split build: outputs of a run with a hard check FAIL are written here and the committed files are left alone
+data/nport/_FAILED_fut_idx/
+
 # Swap-tape ledger (E-024): the DTCC PPD zips are never committed (the cache is ~/dtcc_ppd/, outside the repo; the script refuses a cache inside it);
 # Treasury CMT CSVs are fetched by bin/swap_tape_ledger.py, not redistributed
 CFTC_CUMULATIVE_RATES_*
