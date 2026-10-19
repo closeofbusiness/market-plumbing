@@ -18,6 +18,8 @@ Gross retirement on 2024:Q1–2026:Q2 was $2,979bn, 65% buybacks and 35% M&A, ag
 
 Green’s own numbers were checked where free data allowed ([`2026-09-11-DG-Green-Numbers-Checked.md`](../2026-09-11-DG-Green-Numbers-Checked.md), [`2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md`](../2026-09-15-DG-Remainder-Leveraged-ETF-Flows.md)). Some mechanism sketches reproduced. Several magnitudes are blocked on proprietary data and were not filled in. Older Substack posts were left unpulled by a 11 September ruling.
 
+**IPOs, counts against dollars (noted 19 Oct 2026).** In his 11 Oct 2026 newsletter ("A Top Tier Update") Green lists six things he says the passive-impact hypothesis alone explains: rising valuations through low and high rates, concentration, reduced elasticity, "the paucity of IPOs" despite equity markets near highs, rising correlations, and weaker active-manager performance. The IPO item cuts against this programme's IPO row: about $112bn of new company money in 2026 to 12 September across eight deals, two-thirds of it SpaceX ([`ipo-boom.md`](ipo-boom.md)). The two most likely measure different things, the number of listings against the dollars raised, but that is not yet checked. The six items are one hypothesis to grade, not six pieces of evidence; this programme has measured none of them as caused by passive buying.
+
 The causal test — how far a dollar of non-price-sensitive buying moves aggregate equity value — closed. See [corrections/REGISTER.md](../corrections/REGISTER.md). No multiplier is carried.
 
 ## What would change the conclusion
