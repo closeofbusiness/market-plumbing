@@ -492,6 +492,66 @@ hedged_leak_check() {
   fi
 }
 
+# --- M18: JAPANESE LIFE-INSURER FOREIGN-BOND LEAK GUARD (warn only) -----------
+# data/jp_life_foreign_bonds/ may hold only the derived tables and the two generated texts (spec _research/2026-10-19-JP-Life-Insurers-Foreign-Bonds-Spec.md,
+# sections 2.6 and 6; named M16 there, M18 here because parallel builds took M16 and M17). The raw MoF files and the Bank of Japan PDFs stay in the
+# gitignored cache data/vintages/jp_life_foreign_bonds/. Four things would break that, and none is visible to M5-M15:
+#   1. a file in the folder that is not one of the 12 committed names -- a raw monthb1-b4.csv (its second line is a MoF title), a PDF, a scratch file;
+#   2. a committed CSV whose header (the first line that does not start with #) is not that file's exact column allowlist (the spec's lists, typed here
+#      a third time, after ALLOW and SPEC_ALLOW in bin/jp_life_foreign_bonds.py);
+#   3. a committed file with a MoF title as its second line (a raw file under a committed name) or a PDF signature;
+#   4. a local path (/Users/ or /private/tmp) or an at sign in any committed file.
+# bin/jp_life_foreign_bonds.py refuses the same things when it writes (G17); this is the second, independent look. JPLIFE_DIR overrides the folder (used
+# to show that the guard fires on planted files). It warns and never blocks (header doctrine).
+jp_life_leak_check() {
+  echo "-- M18: Japanese life-insurer bond leak guard (data/jp_life_foreign_bonds/: 12 committed names, exact headers, no raw MoF file or PDF, no local path, no at sign) --"
+  local dir="${JPLIFE_DIR:-data/jp_life_foreign_bonds}" f name want got bad="" committed raw
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md monthly.csv annual.csv boj_dates.csv questions.csv forecast_score.csv vintages.csv revisions.csv checks.csv pins.csv fetch_log.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    raw=""
+    case "$name" in *.csv) sed -n 2p "$f" | grep -qF 'Purchases and Sales of Foreign Securities' && raw=1 ;; esac
+    head -c 4 "$f" | grep -qF '%PDF' && raw=pdf
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw input file ($name): a MoF CSV or a PDF must stay in the cache
+"
+    elif [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the 12 committed names: $name
+"
+    fi
+    grep -qE '/Users/|/private/tmp' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/ or /private/tmp)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      monthly.csv) want='month,instrument,sector,acquisition_100m_yen,disposal_100m_yen,net_100m_yen,basis' ;;
+      annual.csv) want='period_type,period,basis,instrument,sector,months,acquisition_100m_yen,disposal_100m_yen,net_100m_yen,file_total_net_100m_yen,diff_100m_yen' ;;
+      boj_dates.csv) want='decision_date,effective_date,month,action,phrase,url,sha256' ;;
+      questions.csv) want='run_label,question,window,instrument,sector,statistic,value,unit,denominator,notable' ;;
+      forecast_score.csv) want='registered_on,target_month,vintage_final_update,vintage_sha256,point_100m_yen,low_100m_yen,high_100m_yen,print_100m_yen,status,of_record,band_recomputed_low,band_recomputed_point,band_recomputed_high,note' ;;
+      vintages.csv) want='file,final_update,retrieved_utc,bytes,sha256,months_published,last_month' ;;
+      revisions.csv) want='file,vintage_from,vintage_to,row_label,sector,field,old_value,new_value,kind' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      pins.csv) want='source,series,pin_date,value,unit' ;;
+      fetch_log.csv) want='utc_time,host,path,status,bytes,sha256' ;;
+    esac
+    if [ -n "$want" ] && [ -z "$raw" ]; then
+      got=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  if [ -z "$bad" ]; then
+    echo "  ✓ only the 12 committed names, every header its exact allowlist, no raw MoF file or PDF, no local path, no at sign in $dir."
+  else
+    printf '%s' "$bad"
+    echo "  -> raw MoF files and Bank of Japan PDFs stay in data/vintages/jp_life_foreign_bonds/ (gitignored). Remove the file before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -700,6 +760,8 @@ if [ "$TARGET" = "--all" ]; then
   jodi_leak_check
   echo
   hedged_leak_check
+  echo
+  jp_life_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

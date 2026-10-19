@@ -1,0 +1,18 @@
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+utc_time,host,path,status,bytes,sha256
+2026-10-19T13:24:11.726Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb3.csv,200,113821,5c70e53f3c95d5c7cdb5041195d386cec46e67860cd142e6f3f825bb72d26cc1
+2026-10-19T13:24:13.781Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb1.csv,200,116077,f9d96ca4553ff7dbe211fbc2d2667276dc25e027cc8f54906ca8290602d28584
+2026-10-19T13:24:15.836Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb2.csv,200,96214,eb8570560c63c0ae5721e5cf38b6c005fad1dbc4b3b6ff125c3cb7b4f0dad7f6
+2026-10-19T13:24:17.891Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb4.csv,200,84610,751df62b428c5632546b37c2219de83e7e67f881f52b63f23b1f7e8fa51036d6
+2026-10-19T13:24:19.945Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2013/k130404a.pdf,200,157105,808a67d9016cf22ea6e4129f2084a5a0f2ca63e8b4af8d832aacf8d90fac3d0f
+2026-10-19T13:24:21.996Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2016/k160129a.pdf,200,30533,604f4b9bb33f131864eb3f83dccb47bb15b3b9747e777b4c45caa19315500e90
+2026-10-19T13:24:24.048Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2016/k160921a.pdf,200,44389,c15180b02d80fd86300bdcefbaa01cf27ef607b2ad8f32bbb4aafb59374804cb
+2026-10-19T13:24:26.098Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2022/k221220a.pdf,200,207453,7d97749ccc1e3a3b319a68392d7f171aa94fecccc1fec48958adcbc30147427d
+2026-10-19T13:24:28.152Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2023/k230728a.pdf,200,465135,fd3f4c4232ee8b718d63d8340cb7ebbddd28eadefd6fa161692e83069b26fda3
+2026-10-19T13:24:30.205Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2023/k231031a.pdf,200,462610,575d056d656bd90990d96d47196bd536800a2513dcce50d5b93db2ef4ac28e94
+2026-10-19T13:24:32.256Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2024/k240319a.pdf,200,474660,e07e26da39f4428bd5be1c870d7ec2229a98d0428f687b19fef220c6cc70e851
+2026-10-19T13:24:34.311Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2024/k240731a.pdf,200,482007,bbe8f2154393224ca956c421a41d60e703a72b4fd8330680c8261c2ace4c3601
+2026-10-19T13:24:36.364Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2025/k250124a.pdf,200,469888,6924980a4aea989959ed3329666609844d78d5226520df1926291d6ccbed2d0a
+2026-10-19T13:24:38.418Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2025/k251219a.pdf,200,228103,bcef45990da1895de03cb336cb4fdb17e4155df51f3f4b6def60afdea7968e4e
+2026-10-19T13:24:40.470Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2026/k260616a.pdf,200,190988,93fe8f756750d1b38be0b42887dddb69f78bfc00b701c8edc77052101cf9a399
+2026-10-19T13:24:42.525Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2026/k260918a.pdf,200,208861,36d7aa63ff283e25dcc07bc1f6e0caaad8e6764d30cf22433b5c2dd0b6bda391

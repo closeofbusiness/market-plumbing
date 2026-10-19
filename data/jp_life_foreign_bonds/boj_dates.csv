@@ -1,0 +1,15 @@
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+# credit: Bank of Japan, Statement on Monetary Policy, on the dates shown
+decision_date,effective_date,month,action,phrase,url,sha256
+2013-04-04,,2013-04,introduces,Quantitative and Qualitative Monetary Easing,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2013/k130404a.pdf,808a67d9016cf22ea6e4129f2084a5a0f2ca63e8b4af8d832aacf8d90fac3d0f
+2016-01-29,,2016-01,negative rate,negative interest rate of minus 0.1 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2016/k160129a.pdf,604f4b9bb33f131864eb3f83dccb47bb15b3b9747e777b4c45caa19315500e90
+2016-09-21,,2016-09,introduces,Yield Curve Control,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2016/k160921a.pdf,c15180b02d80fd86300bdcefbaa01cf27ef607b2ad8f32bbb4aafb59374804cb
+2022-12-20,,2022-12,10-year band widened,around plus and minus 0.5 percentage points,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2022/k221220a.pdf,7d97749ccc1e3a3b319a68392d7f171aa94fecccc1fec48958adcbc30147427d
+2023-07-28,,2023-07,fixed-rate purchases,at 1.0 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2023/k230728a.pdf,fd3f4c4232ee8b718d63d8340cb7ebbddd28eadefd6fa161692e83069b26fda3
+2023-10-31,,2023-10,reference for the upper bound,upper bound of 1.0 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2023/k231031a.pdf,575d056d656bd90990d96d47196bd536800a2513dcce50d5b93db2ef4ac28e94
+2024-03-19,2024-03-21,2024-03,call rate,around 0 to 0.1 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2024/k240319a.pdf,e07e26da39f4428bd5be1c870d7ec2229a98d0428f687b19fef220c6cc70e851
+2024-07-31,2024-08-01,2024-07,call rate,around 0.25 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2024/k240731a.pdf,bbe8f2154393224ca956c421a41d60e703a72b4fd8330680c8261c2ace4c3601
+2025-01-24,2025-01-27,2025-01,call rate,around 0.5 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2025/k250124a.pdf,6924980a4aea989959ed3329666609844d78d5226520df1926291d6ccbed2d0a
+2025-12-19,2025-12-22,2025-12,call rate,around 0.75 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2025/k251219a.pdf,bcef45990da1895de03cb336cb4fdb17e4155df51f3f4b6def60afdea7968e4e
+2026-06-16,2026-06-17,2026-06,call rate,around 1.0 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf,93fe8f756750d1b38be0b42887dddb69f78bfc00b701c8edc77052101cf9a399
+2026-09-18,2026-09-24,2026-09,call rate,around 1.25 percent,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260918a.pdf,36d7aa63ff283e25dcc07bc1f6e0caaad8e6764d30cf22433b5c2dd0b6bda391

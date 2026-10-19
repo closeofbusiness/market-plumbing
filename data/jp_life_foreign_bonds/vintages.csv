@@ -1,0 +1,6 @@
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+file,final_update,retrieved_utc,bytes,sha256,months_published,last_month
+monthb3,2026-10-08,2026-10-19T13:24:11.726Z,113821,5c70e53f3c95d5c7cdb5041195d386cec46e67860cd142e6f3f825bb72d26cc1,261,2026-09
+monthb1,2026-10-08,2026-10-19T13:24:13.781Z,116077,f9d96ca4553ff7dbe211fbc2d2667276dc25e027cc8f54906ca8290602d28584,261,2026-09
+monthb2,2026-10-08,2026-10-19T13:24:15.836Z,96214,eb8570560c63c0ae5721e5cf38b6c005fad1dbc4b3b6ff125c3cb7b4f0dad7f6,261,2026-09
+monthb4,2026-10-08,2026-10-19T13:24:17.891Z,84610,751df62b428c5632546b37c2219de83e7e67f881f52b63f23b1f7e8fa51036d6,261,2026-09

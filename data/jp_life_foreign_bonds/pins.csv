@@ -1,0 +1,35 @@
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+source,series,pin_date,value,unit
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2024-10,746,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2024-11,-1970,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2024-12,-1964,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-01,-2128,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-02,-2163,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-03,-2501,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-04,-762,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-05,5309,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-06,-46,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-07,-1993,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-08,809,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-09,326,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-10,-385,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-11,-649,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2025-12,-2543,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-01,402,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-02,-6187,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-03,-6384,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-04,-802,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-05,179,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-06,-413,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-07,-106,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-08,-1373,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, Net cell",2026-09,-2886,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, acquisition cell",2005-01,5271,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, disposition cell",2005-01,9384,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, net cell",2005-01,-4113,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, acquisition cell",2024-03,11783,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, disposition cell",2024-03,13790,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, net cell",2024-03,-2007,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, acquisition cell",2026-09,5487,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, disposition cell",2026-09,8374,100m yen
+"MoF monthb3.csv, Final Update October 8, 2026","life insurers, long-term debt, net cell",2026-09,-2886,100m yen

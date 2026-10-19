@@ -80,3 +80,8 @@ secondaryyear*.csv
 data/vintages/hedged_ust_yield/
 # A build with a hard check FAIL or a failed gate writes its outputs here and leaves the committed files alone
 data/hedged_ust_yield/_FAILED/
+# Japanese life insurers' foreign long-term debt build (bin/jp_life_foreign_bonds.py): the raw MoF files (every vintage) and the Bank of Japan statement PDFs stay in this
+# cache and are never committed. The latch files STOP (a MoF failure) and STOP_BOJ (a BoJ failure) live here; only a person deletes them.
+data/vintages/jp_life_foreign_bonds/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/jp_life_foreign_bonds/_FAILED/
