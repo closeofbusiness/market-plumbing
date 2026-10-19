@@ -1,0 +1,20 @@
+# source: HMRC Overseas Trade Statistics API (api.uktradeinfo.com), Open Government Licence v3.0, retrieved 2026-10-19; checks of bin/uk_gold_exports.py build
+check_id,description,expected,observed,status
+C01,"2024 annual net mass of CN 71081310 (kg): China, Switzerland, Hong Kong",CN 382786; CH 305087; HK 26044,CN 382786; CH 305087; HK 26044,PASS
+C02,"2024 by code (kg): 71081200 and 71081380 by partner, then the other and powder groups",71081200/CH 3000; 71081200/CN no_rows; 71081200/HK 17; 71081380/CH 63; 71081380/CN 1; 71081380/HK 14; other CN 1 HK 31; powder HK 1,71081200/CH 3000; 71081200/CN no_rows; 71081200/HK 17; 71081380/CH 63; 71081380/CN 1; 71081380/HK 14; other CN 1 HK 31; powder HK 1,PASS
+C03,2024 China CN 71081310 by month (kg; no_rows where HMRC has no row),01=25046 02=20017 03=41750 04=35634 05=50194 06=no_rows 07=no_rows 08=0 09=60595 10=54715 11=49931 12=44904,01=25046 02=20017 03=41750 04=35634 05=50194 06=no_rows 07=no_rows 08=0 09=60595 10=54715 11=49931 12=44904,PASS
+C04,"Coverage: first month, latest month, row count of the 7108 non-EU-export pull",first 2005-01; latest >= 2026-08; rows >= 9667,first 2005-01; latest 2026-08; rows 9667,PASS
+C05,Cross-check: the $apply groupby for 2024 China CN 71081310 equals the row sums of C03,equal in all 12 months,equal in all 12 months (10 groupby rows),PASS
+C06,"Suppression census: 7108 rows with SuppressionIndex not 0, rows under CountryId >= 950, and the unattributable months",0; 0; none (19 Oct 2026),0; 0; none,PASS
+C07,"Implied price only: Value / NetMass / 32.1507466 in 150 to 6000 sterling per troy ounce, rows from 2016-05 with NetMass >= 100 kg",all rows in range; fewer than 1% outside,"0 of 618 rows outside; 2024-01 China 1,623 sterling per troy ounce",PASS
+C07s,Supplementary-unit census: rows with NetMass >= 100 kg whose SuppUnit / NetMass lies outside 990 to 1010,about 13% (second review); never a FAIL,69 of 618 rows (11.2%),WARN
+C08,Lookups: FlowType 4 is 'Non-EU Exports'; Country 720/740/39/977 are CN/HK/CH/blank; the 7108 commodity list is the five codes,all three hold,all three hold,PASS
+C09,"Swiss pins: months 2024-01, 2014-01 and 2013-12 and annual 2024 against the Comtrade replies (flowCode X)",,,PASS
+C10,"Context pins: ledger china_change_t 2024 and 2025, WGC 2024 and 2025, and the monthly china_change_t summed over each year 2019-2025 equals the annual within 0.01 t",44.167; 26.749; 1092.4; 863.3; seven years within 0.01,pins hold; years within 0.01: 7 of 7,PASS
+C11,"Fixed output: a second build over the same cache leaves every file's sha256 unchanged, revisions.csv included",identical,identical (9 files),PASS
+C12,UK net mass to China 2024 (71081310 + 71081380) against Comtrade's reporter-826 netWgt for HS 710813 (INFO),within 2 kg,UK 382787 kg; Comtrade 382787 kg; gap 0 kg,INFO
+C13,"Monetary gold 71082000 rows in the pull (counted, in no series)",counted,0 rows,INFO
+C14,Any 7108 code outside the five known codes (a person classifies it),none,none,PASS
+C15,Vintages: the newest pull's latest month is not earlier than the previous pull's,not earlier,not earlier (1 pull(s) in the cache),PASS
+C16,"Folder guards on the rendering: ten names, exact headers, no raw file, Swiss leak places, no ratio, no cross-route sum, wording",no problem,no problem,PASS
+C17,NetMass values that are not whole kilograms (sums are rounded to integers in the outputs),0,0,INFO

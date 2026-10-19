@@ -1,0 +1,3 @@
+# source: HMRC Overseas Trade Statistics API (api.uktradeinfo.com), Open Government Licence v3.0, retrieved 2026-10-19; append-only: one row per changed partner-month cell between two dated pulls
+vintage_prev,vintage_new,month,partner,series,kg_prev,kg_new,change_kg,provisional_at_prev
+baseline,2026-10-19,,,,,,,

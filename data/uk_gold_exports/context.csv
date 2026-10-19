@@ -1,0 +1,10 @@
+# source: HMRC Overseas Trade Statistics API (api.uktradeinfo.com), Open Government Licence v3.0, retrieved 2026-10-19; with data/gold/ledger_annual_reconciliation.csv and ledger_monthly.csv (SAFE Official Reserve Assets; WGC Gold Demand Trends) and UN Comtrade for the Swiss column; separate magnitudes, no ratio
+window,months,months_blank,trade_system,uk_71081310_cn_hk_t,uk_71081310_cn_t,uk_71081310_hk_t,swiss_710812_cn_hk_t,safe_reported_change_t,wgc_central_banks_t,wgc_minus_imf_gap_t,note
+2019,12,0,special,190.783,184.782,6.001,253.770,95.799,,,
+2020,12,0,special,21.931,9.900,12.031,,0.000,,,Swiss column blank: partial year
+2021,12,0,special,12.672,0.000,12.672,,0.000,,,Swiss column blank: partial year
+2022,12,0,special,560.334,300.165,260.169,523.657,62.207,1081.900,1110.258,
+2023,12,0,special,392.888,281.283,111.605,575.930,224.878,1050.800,541.589,
+2024,12,0,special,408.830,382.786,26.044,,44.167,1092.400,830.336,Swiss column blank: partial year
+2025,12,0,special,217.170,186.866,30.304,,26.749,863.300,557.257,Swiss column blank: partial year
+2026_to_2026-08,8,0,special,220.855,193.084,27.771,,80.247,,,Swiss column blank: not a completed year; WGC annual figures are not published for a part year

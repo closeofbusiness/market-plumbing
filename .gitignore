@@ -85,3 +85,9 @@ data/hedged_ust_yield/_FAILED/
 data/vintages/jp_life_foreign_bonds/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/jp_life_foreign_bonds/_FAILED/
+
+# UK gold exports to China and Hong Kong (bin/uk_gold_exports.py): raw HMRC and Comtrade replies, the Swiss monthly cache and the STOP latches stay here and are
+# never committed. A STOP_hmrc or STOP_comtrade file here is the fetch latch; only a person deletes it.
+data/vintages/uk_gold_exports/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/uk_gold_exports/_FAILED/

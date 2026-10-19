@@ -629,6 +629,131 @@ japan_tp_leak_check() {
   fi
 }
 
+# --- M16: UK GOLD EXPORTS LEAK AND WORDING GUARD (warn only) ------------------
+# data/uk_gold_exports/ holds HMRC-derived kilograms (Open Government Licence) and, for completed years only, Swiss totals from UN Comtrade, whose terms keep
+# monthly values out (spec _research/2026-10-19-UK-Gold-Exports-China-HK-Spec.md, sections 5 and 6). Raw replies, the Swiss monthly values and the STOP
+# latches stay in the gitignored cache data/vintages/uk_gold_exports/. Four things would break that or the spec's wording rules, and none is visible to M5-M15:
+#   1. a file in the folder that is not one of the ten names (eight CSVs, README.md, SOURCES.md), and a raw .json file in particular;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist (the spec's canonical text, typed here a second time);
+#   3. a Swiss monthly netWgt (kg, or tonnes to 3 decimals) anywhere in the folder unless it equals a completed-year total: in a cell of swiss_mirror_annual.csv or
+#      of the Swiss column of context.csv, in any plain-number cell of the other committed files, or written with a unit in README.md or SOURCES.md; and a filled
+#      Swiss cell for the current year. The three tables of HMRC kilograms and the request log are not read for this, since a coincidence there is not a disclosure;
+#   4. a bound word (ceiling, cap, capped, bound, bounded) anywhere in the folder except the one README sentence that denies it.
+# bin/uk_gold_exports.py refuses the same things when it writes; this is the second, independent look. UKGOLD_DIR and UKGOLD_CACHE override the folders
+# (used to show that the guard fires on a planted value). It warns and never blocks (header doctrine). Numbered M16 to avoid a clash with parallel builds.
+ukgold_leak_check() {
+  echo "-- M16: UK gold exports guard (data/uk_gold_exports/: the ten names, exact headers, no raw file, no Swiss monthly value in any committed file, no bound word outside the denial sentence) --"
+  local dir="${UKGOLD_DIR:-data/uk_gold_exports}" cache="${UKGOLD_CACHE:-data/vintages/uk_gold_exports}" name want got bad="" f extra kg
+  local denial="From May 2016 warehouse and free-zone movements are outside the figures, so this series is not an upper bound, ceiling or cap on metal leaving the UK."
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  for name in monthly.csv annual.csv swiss_mirror_annual.csv context.csv revisions.csv summary.csv checks.csv fetch_log.csv; do
+    f="$dir/$name"
+    if [ ! -f "$f" ]; then bad="${bad}  ✗ missing: $name
+"; continue; fi
+    case "$name" in
+      monthly.csv) want='month,partner,series,net_mass_kg,supp_unit_div_1000,rows_n,status,trade_system,provisional,vintage' ;;
+      annual.csv) want='year,partner,series,net_mass_kg,net_mass_kg_known_months,months_n,months_blank,trade_system,provisional_months,vintage' ;;
+      swiss_mirror_annual.csv) want='year,partner,hs6,net_mass_kg,net_mass_kg_known_months,months_n,months_blank,net_wgt_estimated_months,status,comtrade_annual_kg,monthly_sum_minus_annual_kg' ;;
+      context.csv) want='window,months,months_blank,trade_system,uk_71081310_cn_hk_t,uk_71081310_cn_t,uk_71081310_hk_t,swiss_710812_cn_hk_t,safe_reported_change_t,wgc_central_banks_t,wgc_minus_imf_gap_t,note' ;;
+      revisions.csv) want='vintage_prev,vintage_new,month,partner,series,kg_prev,kg_new,change_kg,provisional_at_prev' ;;
+      summary.csv) want='question,window,partner,series,statistic,value,blind,notable' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      fetch_log.csv) want='utc_time,host,path_and_query,status,bytes,sha256' ;;
+    esac
+    got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+    [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+  done
+  for name in README.md SOURCES.md; do
+    [ -f "$dir/$name" ] || bad="${bad}  ✗ missing: $name
+"
+  done
+  extra=$(find "$dir" -maxdepth 1 -type f -name '*.json' | sort)
+  [ -n "$extra" ] && bad="${bad}$(printf '%s\n' "$extra" | sed 's/^/  ✗ raw file in the committed folder: /')
+"
+  extra=$(find "$dir" -maxdepth 1 -type f ! -name '*.json' ! -name '.DS_Store' ! -name README.md ! -name SOURCES.md ! -name monthly.csv ! -name annual.csv \
+            ! -name swiss_mirror_annual.csv ! -name context.csv ! -name revisions.csv ! -name summary.csv ! -name checks.csv ! -name fetch_log.csv | sort)
+  [ -n "$extra" ] && bad="${bad}$(printf '%s\n' "$extra" | sed 's/^/  ✗ file that is not one of the ten committed names: /')
+"
+  # Swiss monthly values: every monthly Comtrade reply in the cache (YYYYMM.json) gives netWgt values, as kg and as tonnes to 3 decimals
+  kg=$(ls "$cache"/comtrade/[0-9][0-9][0-9][0-9][0-9][0-9].json 2>/dev/null | while read -r f; do grep -o '"netWgt": *[0-9.]*' "$f" | sed 's/.*: *//'; done | awk '{ printf "%d\n", $1 + 0.5 }' | sort -u)
+  if [ -n "$kg" ] && [ -f "$dir/swiss_mirror_annual.csv" ] && [ -f "$dir/context.csv" ]; then
+    local asof leak
+    asof=$(grep -v '^#' "$dir/monthly.csv" 2>/dev/null | awk -F, 'NR == 2 { print substr($10, 1, 4) }')
+    leak=$(printf '%s\n' "$kg" | awk -v asof="${asof:-9999}" -v sfile="$dir/swiss_mirror_annual.csv" -v cfile="$dir/context.csv" '
+      { k[$1] = 1; t[sprintf("%.3f", $1 / 1000)] = 1 }
+      END {
+        while ((getline line < sfile) > 0) {
+          if (line ~ /^#/) continue
+          n = split(line, c, ","); if (c[1] == "year") continue
+          if (c[9] == "complete" && c[4] != "") { tot[c[4]] = 1; tott[sprintf("%.3f", c[4] / 1000)] = 1 }
+          rows[++r] = line
+        }
+        for (i = 1; i <= r; i++) {
+          n = split(rows[i], c, ",")
+          for (j = 4; j <= 11; j++) { if (j == 6 || j == 7 || j == 8 || j == 9) continue
+            v = c[j]; if (v ~ /^[0-9]+$/ && v != "0" && (v in k) && !(v in tot)) print "a Swiss monthly kg value sits in swiss_mirror_annual.csv (" v ")" }
+          if (c[1] + 0 >= asof + 0 && (c[4] != "" || c[5] != "" || c[10] != "" || c[11] != "")) print "a current-year Swiss cell is filled in swiss_mirror_annual.csv (" c[1] ")"
+        }
+        while ((getline line < cfile) > 0) {
+          if (line ~ /^#/) continue
+          n = split(line, c, ","); if (c[1] == "window") continue
+          v = c[8]; if (v == "" || v == "0.000") continue
+          if ((v in t) && !(v in tott)) print "a Swiss monthly value in tonnes sits in context.csv (" v ")"
+          if (c[1] !~ /^[0-9][0-9][0-9][0-9]$/ || c[1] + 0 >= asof + 0) print "a current-year Swiss cell is filled in context.csv (" c[1] ")"
+        }
+      }')
+    [ -n "$leak" ] && bad="${bad}$(printf '%s\n' "$leak" | sort -u | sed 's/^/  ✗ /')
+"
+  fi
+  # the same Swiss monthly values in every other committed file: plain-number cells (an integer of 1,000 or more that is not a year, or a 3-decimal tonnes figure)
+  # and any number written with a unit; completed-year totals are exempt
+  if [ -n "$kg" ] && [ -f "$dir/swiss_mirror_annual.csv" ]; then
+    local tots prose
+    tots=$(grep -v '^#' "$dir/swiss_mirror_annual.csv" | awk -F, 'NR > 1 && $9 == "complete" && $4 != "" { print $4 }')
+    prose=$(for f in "$dir"/README.md "$dir"/SOURCES.md "$dir"/summary.csv "$dir"/checks.csv; do
+      [ -f "$f" ] || continue
+      KGS="$kg" TOTS="$tots" awk -v name="$(basename "$f")" -v md="$([ "${f##*.}" = md ] && echo 1 || echo 0)" '
+        BEGIN { n = split(ENVIRON["KGS"], a, "\n"); for (i = 1; i <= n; i++) if (a[i] != "") { k[a[i] + 0] = 1; t[sprintf("%.3f", a[i] / 1000)] = 1 }
+                n = split(ENVIRON["TOTS"], b, "\n"); for (i = 1; i <= n; i++) if (b[i] != "") { tot[b[i] + 0] = 1; tott[sprintf("%.3f", b[i] / 1000)] = 1 } }
+        /^#/ && md == 0 { next }
+        { line = $0
+          if (md == 1) { m = (line ~ /^[|]/) ? split(line, c, "|") : 0 } else { m = split(line, c, ",") }
+          for (j = 1; j <= m; j++) { v = c[j]; gsub(/^[ \t"]+|[ \t"]+$/, "", v)
+            if (v ~ /^[0-9]+$/ && v + 0 >= 1000 && !(v + 0 >= 1990 && v + 0 <= 2100) && ((v + 0) in k) && !((v + 0) in tot)) hit[v] = 1
+            else if (v ~ /^[0-9]+[.][0-9][0-9][0-9]$/ && (v in t) && !(v in tott)) hit[v] = 1 }
+          s = line
+          while (match(s, /[0-9][0-9,]*([.][0-9]+)?[ \t]*(kg|kilograms?|tonnes?)([^A-Za-z]|$)/)) {
+            tok = substr(s, RSTART, RLENGTH); s = substr(s, RSTART + RLENGTH)
+            unit = tok; gsub(/[0-9,. \t]/, "", unit); sub(/[^A-Za-z]+$/, "", unit)
+            num = tok; sub(/[ \t]*[A-Za-z].*$/, "", num); gsub(/,/, "", num)
+            if (unit ~ /^(kg|kilograms?)$/ && num ~ /^[0-9]+$/ && ((num + 0) in k) && !((num + 0) in tot)) hit[num] = 1
+            if (unit ~ /^tonnes?$/ && num ~ /^[0-9]+[.][0-9][0-9][0-9]$/ && (num in t) && !(num in tott)) hit[num] = 1 } }
+        END { for (h in hit) print "a Swiss monthly value (" h ") sits in " name }' "$f"
+    done)
+    [ -n "$prose" ] && bad="${bad}$(printf '%s\n' "$prose" | sort -u | sed 's/^/  ✗ /')
+"
+  fi
+  # bound words anywhere in the folder, except the one README sentence that denies them (removed once, from the first line that holds it)
+  local words
+  words=$(for f in "$dir"/*.csv "$dir"/README.md "$dir"/SOURCES.md; do
+    [ -f "$f" ] || continue
+    awk -v den="$denial" -v readme="$([ "$(basename "$f")" = README.md ] && echo 1 || echo 0)" -v name="$(basename "$f")" '
+      { line = $0
+        if (readme == 1 && !gone) { i = index(line, den); if (i > 0) { line = substr(line, 1, i - 1) substr(line, i + length(den)); gone = 1 } }
+        l = tolower(line)
+        if (l ~ /(^|[^a-z0-9_])(ceiling|caps?|capped|(upper[ \t]+)?bounds?|bounded)([^a-z0-9_]|$)/) print "  ✗ a bound word in " name " line " NR }' "$f"
+  done)
+  [ -n "$words" ] && bad="${bad}${words}
+"
+  if [ -z "$bad" ]; then
+    echo "  ✓ ten names, every header its exact allowlist, no raw file, no Swiss monthly value in any committed file, no bound word outside the one denial sentence in $dir."
+  else
+    printf '%s' "$bad"
+    echo "  -> UN Comtrade terms: monthly values stay in data/vintages/uk_gold_exports/; the spec bans bound words except in the one README sentence that denies them. Remove it before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -841,6 +966,8 @@ if [ "$TARGET" = "--all" ]; then
   jp_life_leak_check
   echo
   japan_tp_leak_check
+  echo
+  ukgold_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
