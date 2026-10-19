@@ -1,0 +1,14 @@
+# source: request log of bin/japan_term_premium.py fetch (one row per request; hosts api.github.com, raw.githubusercontent.com, sites.google.com, takujiokubo.github.io); retrieved 2026-10-19
+# cite: Ichiue, H., and Y. Ueno (2013), "Estimating term premia at the zero bound: An analysis of Japanese, US, and UK yields", Bank of Japan Working Paper 13-E-8; Nakajima, J. (2025), "Impact of US monetary policy spillovers and yield curve control policy", Discussion Paper A.760, Institute of Economic Research, Hitotsubashi University; Japan Macro Advisors (JMA) JGB yield curve model; Ministry of Finance Japan (JGB yields). Not the official view of the Bank of Japan.
+utc_time,host,path,status,bytes,sha256
+2026-10-19T13:29:07.933Z,api.github.com,/repos/jouchinakajima/program/commits?path=yield_M.csv&per_page=100,200,39763,00457028ae23d2312ef48059cf8171b2e198d2655c716d7ac4bcb01660a4aa8f
+2026-10-19T13:29:09.992Z,api.github.com,/repos/jouchinakajima/program/commits?path=yield_D.csv&per_page=100,200,39763,00457028ae23d2312ef48059cf8171b2e198d2655c716d7ac4bcb01660a4aa8f
+2026-10-19T13:29:12.043Z,raw.githubusercontent.com,/jouchinakajima/program/33118433fe95b51be374b5179a80978d59ac4ee9/yield_M.csv,200,38153,4455f00a3aee9f5160b84dbf9cc3400579da0bd843b435848c198c1e30538896
+2026-10-19T13:29:14.100Z,raw.githubusercontent.com,/jouchinakajima/program/33118433fe95b51be374b5179a80978d59ac4ee9/yield_D.csv,200,784130,3f570a2aec294ceed6cf3eb035a8ffc6e88023d5a24314195dc2845137152456
+2026-10-19T13:29:16.161Z,api.github.com,/repos/jouchinakajima/program/contents/yield_M.csv?ref=33118433fe95b51be374b5179a80978d59ac4ee9,200,53559,81edbe182488092aa71ddfeb3c77768c7bb2e54544ef0538af9da673e1a3df98
+2026-10-19T13:29:18.219Z,api.github.com,/repos/jouchinakajima/program/contents/yield_D.csv?ref=33118433fe95b51be374b5179a80978d59ac4ee9,200,1081352,64338d3045705e95a25802510861884452cdcf8efb22e188dd864ec84c9e4eb2
+2026-10-19T13:29:20.280Z,sites.google.com,/site/jnakajimaweb/yield,200,119791,1455efd0a292baac47751ae93d4e0ea01da6a15d956dc1615f52cf196962aa4e
+2026-10-19T13:29:22.335Z,takujiokubo.github.io,/jma-data/jgb-yield-curve-main/data/curve-panel.csv,200,64381,23d7c109d5d83a7c32020cf367a25cc11c15c55ff102337665fedd34f9dc42cf
+2026-10-19T13:29:24.392Z,takujiokubo.github.io,/jma-data/jgb-yield-curve-main/,200,325062,c3e14caf3a2af129d41bec486c9447031c2891cba9cb6dceb730e02b2f3906fa
+2026-10-19T13:29:26.453Z,raw.githubusercontent.com,/jouchinakajima/program/80f7108a1637ac71d62a30fe97a7ce8a3bc88046/yield_M.csv,200,37864,4b7f1ee00321cdf83d511c3d2e9c2a2b4b1efc4e71dea6e658f064db4003ae60
+2026-10-19T13:29:28.508Z,raw.githubusercontent.com,/jouchinakajima/program/8f940a0141eefc0d63a426ae5b3a2f6c11e236d0/yield_M.csv,200,37562,d9a87bd3dc2835652d4cf3d35a79388601175036b7ab6c56b9aef0796badb37d

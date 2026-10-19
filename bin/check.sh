@@ -552,6 +552,83 @@ jp_life_leak_check() {
   fi
 }
 
+# --- M17: JAPAN TERM-PREMIUM LEAK GUARD (warn only) --------------------------
+# data/japan_term_premium/ may hold only derived statistics of Jouchi Nakajima's decomposition (spec
+# _research/2026-10-19-Japan-Term-Premium-Spec.md, section 6), numbered M17 to avoid a clash with parallel builds. His repository
+# states no licence, so his files are never committed in any form or under any name; the raw downloads stay in ~/jgb_term_premium_cache/. Four things
+# would break that, and none is visible to M5-M15:
+#   1. a file in the folder that is not one of the ten committed names (a copy of yield_M.csv or yield_D.csv, or the same bytes renamed);
+#   2. Nakajima's quoted header line ("YYYYMM","ShadowRate",... or "YYYYMMDD","ShadowRate",...) at the start of a line in any file of the folder, or in
+#      any tracked or untracked-but-not-ignored file of the repository outside bin/ and _research/ (the script and the spec quote it in prose);
+#   3. pins.csv beyond its caps: more than 4 pins for one Nakajima monthly vintage, any pin for the April vintage or for a daily-file vintage, more than 4
+#      for the Ministry of Finance or 3 for JMA, or a pin in a month outside the seven listed;
+#   4. a month or a daily date in a committed file that is not one of 202312, 202407, 202408, 202412, 202603, 202606, 202609 (the fetch log's bytes and
+#      sha256 columns are not read).
+# Each file with a problem prints ONE ✗ line with all its reasons. bin/japan_term_premium.py refuses the same things when it writes (leak_guard); this is the
+# second, independent look. JTP_DIR overrides the folder (used to show that the guard fires on a planted scratch copy). It warns and never blocks.
+japan_tp_leak_check() {
+  echo "-- M17: Japan term-premium leak guard (data/japan_term_premium/: only the ten committed names; no Nakajima header line; pins within caps; months within the list) --"
+  local dir="${JTP_DIR:-data/japan_term_premium}" f name why bad="" pinbad want got toks t months hits
+  local files="decomposition.csv verdict.csv vintage_revisions.csv fitted_check.csv vintages.csv pins.csv checks.csv fetch_log.csv README.md SOURCES.md"
+  months="202312 202407 202408 202412 202603 202606 202609"
+  local hdr_rx='^[[:space:]]*"YYYYMM(DD)?"[[:space:]]*,[[:space:]]*"ShadowRate"'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  while IFS= read -r f; do
+    [ -n "$f" ] || continue
+    name=$(basename "$f")
+    why=""
+    case " $files " in *" $name "*) ;; *) why="${why}not on the list of ten committed names; " ;; esac
+    grep -Eq "$hdr_rx" "$f" 2>/dev/null && why="${why}holds Nakajima's quoted header line; "
+    case "$name" in
+      decomposition.csv) want='vintage_id,variant,tenor,window_id,start_month,end_month,d_yield_pp,d_tp_pp,d_er_pp,tp_share,distance_bp,classification,opposite_signs,role' ;;
+      verdict.csv) want='verdict_id,vintage_id,tenor,d_yield_pp,tp_share,distance_bp,classification,tp_share_2y,tp_share_5y,tp_share_10y,tp_share_20y,d_variant_tp_share,d_variant_classification,headline_reading,jma_tp_share,jma_label,jma_arms_fired,boj_match_tp_share,status,superseded_by,vintage_retrieved_utc' ;;
+      vintage_revisions.csv) want='window_id,start_month,end_month,vintage_id,d_yield_pp,d_tp_pp,d_er_pp,tp_share,classification' ;;
+      fitted_check.csv) want='vintage_id,file,tenor,scope,basis,n_periods,max_abs_gap_pp,median_abs_gap_pp,n_over_tol,status' ;;
+      vintages.csv) want='vintage_id,source,file,commit_sha,commit_utc,blob_sha,sha256,first_period,last_period,n_rows,stated_update,retrieved_utc,role' ;;
+      pins.csv) want='vintage_id,source,series,period,value,unit' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      fetch_log.csv) want='utc_time,host,path,status,bytes,sha256' ;;
+      *) want='' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || why="${why}header is not its exact allowlist; "
+    fi
+    if [ "$name" = "pins.csv" ]; then
+      pinbad=$(grep -v '^#' "$f" | tr -d '\r' | awk -F, -v months="$months" '
+        BEGIN { n = split(months, ml, " "); for (i = 1; i <= n; i++) ok[ml[i]] = 1 }
+        NR > 1 { c[$1 "|" $2]++
+                 if ($2 == "nakajima_daily") bad = bad "a pin for a daily-file vintage; "
+                 if ($2 == "nakajima_monthly" && index($1, "2026-04-20_8f940a0141ee") == 1) bad = bad "a pin for the April vintage; "
+                 if (!($4 in ok)) bad = bad "a pin in a month outside the list; " }
+        END { for (k in c) { split(k, p, "|"); s = p[2]
+                cap = (s == "nakajima_monthly") ? 4 : (s == "mof") ? 4 : (s == "jma") ? 3 : (s == "nakajima_daily") ? -1 : 0
+                if (cap >= 0 && c[k] > cap) bad = bad c[k] " pins for " s " " p[1] " (cap " cap "); " }
+              print bad }')
+      [ -n "$pinbad" ] && why="${why}${pinbad}"
+    fi
+    case "$name" in
+      fetch_log.csv) toks=$(grep -v '^#' "$f" | cut -d, -f1-4 | tr -cs '0-9A-Za-z_.' '\n') ;;
+      *) toks=$(grep -v '^#' "$f" 2>/dev/null | tr -cs '0-9A-Za-z_.' '\n') ;;
+    esac
+    hits=$(printf '%s\n' "$toks" | grep -E '^(19|20)[0-9]{2}(0[1-9]|1[0-2])([0-2][0-9]|3[01])?$' | awk -v months="$months" 'BEGIN { n = split(months, ml, " "); for (i = 1; i <= n; i++) ok[ml[i]] = 1 } !($1 in ok) { k++; if (k <= 4) s = s $1 " " } END { if (k) print k " token(s), first " s }')
+    [ -n "$hits" ] && why="${why}month or date outside the list (${hits% }); "
+    [ -n "$why" ] && bad="${bad}  ✗ $name: ${why%; }
+"
+  done < <(find "$dir" -maxdepth 1 -type f ! -name '.DS_Store' | sort)
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    t=$(git grep -I --untracked -l -E "$hdr_rx" -- . ':(exclude)bin' ':(exclude)_research' 2>/dev/null)
+    [ -n "$t" ] && bad="${bad}$(printf '%s\n' "$t" | sed 's/^/  ✗ tracked or untracked file that starts a line with Nakajima'"'"'s quoted header: /')
+"
+  fi
+  if [ -z "$bad" ]; then
+    echo "  ✓ $dir holds only the ten committed names, no file starts a line with Nakajima's header, pins are within their caps, and every month is one of the seven listed."
+  else
+    printf '%s' "$bad"
+    echo "  -> Nakajima's repository states no licence: his files are never committed, in any form or under any name; raw files stay in ~/jgb_term_premium_cache/. Remove the file before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -762,6 +839,8 @@ if [ "$TARGET" = "--all" ]; then
   hedged_leak_check
   echo
   jp_life_leak_check
+  echo
+  japan_tp_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
