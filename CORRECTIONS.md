@@ -990,6 +990,26 @@ principal asked whether the answer note was still up to date; superseded the sam
 
 ---
 
+## C-155 · "Term premium versus expected rates … no free series for JGBs or Bunds"; "The term premium is not measured on free data in any of the three"
+
+**Mine, the page's §09 grading row, the "gaps that remain" item and the §05 "Supply is shared" paragraph. Found 19 Oct when the Japan
+term-premium build (E-021, g9) ran on Jouchi Nakajima's published decomposition, which is free to download; the §05 occurrence was
+found by the independent pre-publication audit.**
+
+- **What was wrong.** A free series for Japan existed: Nakajima publishes a monthly and a daily split of JGB yields into expected
+  short rates and a term premium (the Ichiue–Ueno shadow-rate model), free but not an official series. The page said none existed
+  and that the term premium was not measured on free data in any of the three markets.
+- **Correct position.** For Japan, from the December 2023 average to the September 2026 average (a 2.31-point rise in the 10-year
+  yield on monthly averages), Nakajima's monthly file puts the term premium at 54% of the rise and his daily file at 44%; Japan Macro
+  Advisors' model puts it at 29% of the rise in its own yield (2.39 points). The split depends on the model, and each figure is one
+  model's residual, not a measurement (`data/japan_term_premium/README.md`). The US and German statements were not re-tested: for
+  Germany "no free series found" is itself an unsearched negative.
+- **Still standing at:** nowhere live on the page or README. The dated findings note `2026-09-27-R3-JGB-And-Euro-Area-Bonds.md`
+  (line 60, "No free, maintained term-premium series exists for JGBs or Bunds") keeps the old wording as a record and is superseded by
+  this entry. The E-021 map's line 277 ("No central bank publishes a maintained free series") is about central banks and stands.
+
+---
+
 ## C-154 · The lead figure's alt text: "Revaluation splits into earnings growth and a net multiple change of +0.87 P/E"
 
 **Mine, the screen-reader text of the §01 decomposition figure. Found 17 Oct by Grok's page attack (batch g6, parcel A); checked by
@@ -2677,4 +2697,6 @@ C-152	not what carried this repricing
 C-152	re-use intensity did not rise
 C-153	a range, not a split\.
 C-154	Revaluation splits into earnings growth
+C-155	no free series for JGBs or Bunds
+C-155	not measured on free data in any of the three
 ```
