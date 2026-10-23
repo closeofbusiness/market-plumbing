@@ -1,0 +1,9 @@
+# source: derived from DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com), through the project's swap-tape ledger (data/swap_tape/); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024)
+file,sha256,rows,first_date,last_date
+cells_2024.csv,8a93cb1c7dfc542c2f15454550c25989fd0c0d0ded85b9f4b6692b3952584bd2,2451,2024-10-14,2024-12-31
+cells_2025.csv,fef068669d757fff0ae26611f662de9864a6b6f54dd687d697192b2e06a7a11b,11223,2025-01-01,2025-12-31
+cells_2026.csv,c22e2ff2e130adc7698e39480b09486f8d5d2b199f06b361fa9f74390a790151,9030,2026-01-01,2026-10-21
+diagnostics_2024.csv,81c70c7ac857d08316fb2d10d69feba4c922f5a56875b988a90b46f6d0e86b64,3070,2024-10-14,2024-12-31
+diagnostics_2025.csv,d24216f3987ce487ffd0065f68c4588044024de0821763b4addf8b2aec6e28f2,14899,2025-01-01,2025-12-31
+diagnostics_2026.csv,b5cfc6dcde12f13ac524722f222b39131c73414f70edc99c7cf2ee20ef8b169f,12541,2026-01-01,2026-10-21
+monthly_short_tenor.csv,d4b658733bc6c8ebc17f819f8ae988afb4952f5a6be468cd11a159e003d9e13a,240,2024-10,2026-09

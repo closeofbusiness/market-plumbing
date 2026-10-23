@@ -1,0 +1,6 @@
+# source: derived from DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com), through the project's swap-tape ledger (data/swap_tape/); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024)
+series,tenor,first_month,last_month,months,months_published,n_total,n_month_median,days_with_trades_month_median
+xccy_jpyusd,3m,2024-10,2026-09,24,19,404,14.5,7
+xccy_jpyusd,1y,2024-10,2026-09,24,24,1667,63,15.5
+xccy_eurusd,3m,2024-10,2026-09,24,21,545,19,9
+xccy_eurusd,1y,2024-10,2026-09,24,24,1750,69.5,18

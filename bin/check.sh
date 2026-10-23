@@ -844,6 +844,222 @@ PY
   fi
 }
 
+# --- M22: QUARTER-END BASIS LEAK AND WORDING GUARD (warn only) ----------------
+# data/quarter_end_basis/ may hold only derived statistics of the swap-tape ledger's own derived files (spec _research/2026-10-23-Quarter-End-Basis-Spec.md,
+# sections 6 and 7; E-024: nothing raw from DTCC is ever committed). Six things would break that or the spec's wording rules, and none is visible to M5-M19:
+#   1. a file in the folder that is not one of the ten committed names, or a committed name that is missing;
+#   2. the spec's fenced allowlist block not hashing to the pinned sha256 (typed here a third time, after SPEC_ALLOW_SHA256 in bin/quarter_end_basis.py and
+#      the hash the spec prints), or columns.tsv or a CSV header (the first line that does not start with #) differing from that block;
+#   3. a file named CFTC_CUMULATIVE_*, a .zip, or a header holding Dissemination Identifier, Event timestamp, UPI FISN or Notional currency-Leg 1;
+#   4. a field that is a whole string of 8 to 19 digits (an identifier), or /Users/, /private/tmp or an at sign in any committed file;
+#   5. a row of anchors.csv, anchors_tenor.csv or questions.csv whose status is not complete (or whose n_window is under 25) that carries a median, D or rank;
+#   6. causal or attribution wording, or verdict or significance wording, in README.md, SOURCES.md or a note, outside the exemptions of the spec's R5.
+# Each breach prints one line tagged [1] to [6]. bin/quarter_end_basis.py refuses the same things when it writes; this is the second, independent look.
+# QEB_DIR and QEB_SPEC override the folder and the spec path (used to show that the guard fires on planted copies). It warns and never blocks.
+qeb_leak_check() {
+  echo "-- M22: quarter-end basis guard (data/quarter_end_basis/: the ten names, allowlist hash and exact headers, no raw DTCC file or identifier, no thin-row value, no verdict or causal wording) --"
+  local dir="${QEB_DIR:-data/quarter_end_basis}" spec="${QEB_SPEC:-_research/2026-10-23-Quarter-End-Basis-Spec.md}" out py
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  read -r -d '' py <<'PY' || true
+import csv, hashlib, os, re, sys
+d, spec = sys.argv[1], sys.argv[2]
+PIN = "3f54fbeb17c65e257af8acd41c1f2b0b2398b432ca18b3bed4f60c1c5e2445e4"
+NAMES = ["README.md", "SOURCES.md", "anchors.csv", "anchors_tenor.csv", "band.csv", "questions.csv", "short_tenor_availability.csv", "inputs.csv", "checks.csv", "columns.tsv"]
+REQ = ("These are medians of reported 1-5-year cross-currency swap prices around quarter-ends. A difference at a quarter-end does not show who "
+       "borrowed dollars, why, or that any flow moved a price.")
+NEI = "Neither identifies the counterparties or the reason."
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because|due\s+to|in\s+response\s+to|led\s+to|prompted|pushed|"
+                    r"as\s+a\s+result\s+of|reflect(?:s|ed|ing)?|amid|owing\s+to|on\s+the\s+back\s+of|window[- ]dress(?:ed|es|ing)?|borrowed|"
+                    r"borrowing\s+by|demand\s+for\s+dollars|hedging\s+demand)\b", re.I)
+VERDICT = re.compile(r"\b(SUPPORTS|AGAINST|INCONCLUSIVE|PENDING)\b|(?i:\b(statistically\s+significant|significance|p-value|reject(?:s|ed)?\s+the\s+null)\b)")
+files = sorted(os.listdir(d))
+def text(n):
+    with open(os.path.join(d, n), encoding="utf-8", errors="replace") as f:
+        return f.read()
+def table(n):
+    lines = [l for l in text(n).splitlines() if not l.startswith("#")]
+    if not lines:
+        return [], []
+    if n.endswith(".tsv"):
+        rows = [l.split("\t") for l in lines]
+    else:
+        rows = list(csv.reader(lines))
+    return rows[0], rows[1:]
+def block():
+    try:
+        with open(spec, encoding="utf-8") as f:
+            t = f.read()
+    except OSError:
+        return None, None
+    i = t.find("**Header allowlist, canonical text.**")
+    j = t.find("```\n", i)
+    k = t.find("\n```", j + 4)
+    if i < 0 or j < 0 or k < 0:
+        return None, None
+    m = re.search(r"sha256 of that text \([0-9,]+ bytes\): `([0-9a-f]{64})`", t)
+    return t[j + 4:k] + "\n", (m.group(1) if m else None)
+def r1():
+    out = ["[1] file that is not one of the ten committed names: " + n for n in files if n not in NAMES]
+    return out + ["[1] committed name missing: " + n for n in NAMES if n not in files]
+def r2():
+    blk, printed = block()
+    if blk is None:
+        return ["[2] the spec's fenced allowlist block cannot be read from " + spec]
+    out = []
+    if hashlib.sha256(blk.encode()).hexdigest() != PIN:
+        out.append("[2] the spec's allowlist block does not hash to the pinned sha256")
+    if printed != PIN:
+        out.append("[2] the sha256 the spec prints for its allowlist block is not the pinned one")
+    want = {}
+    for ln in blk.splitlines():
+        n, c = ln.split(":", 1)
+        want[n] = c.split(",")
+    for n in files:
+        if n in want:
+            h, rows = table(n)
+            if h != want[n]:
+                out.append("[2] header of %s is not its allowlist" % n)
+            if n == "columns.tsv":
+                got = {r[0]: r[1].split("|") for r in rows if len(r) == 2}
+                if got != want:
+                    out.append("[2] columns.tsv differs from the allowlist block")
+    return out
+def r3():
+    out = []
+    for n in files:
+        if re.match(r"CFTC_CUMULATIVE_", n, re.I) or n.lower().endswith(".zip"):
+            out.append("[3] raw DTCC file or archive by name: " + n)
+        if n.endswith((".csv", ".tsv")):
+            first = [l for l in text(n).splitlines() if not l.startswith("#")][:1]
+            if first and re.search(r"Dissemination Identifier|Event timestamp|UPI FISN|Notional currency-Leg 1", first[0]):
+                out.append("[3] raw DTCC header in " + n)
+    return out
+def r4a():
+    out = []
+    for n in files:
+        if n.endswith((".csv", ".tsv")):
+            h, rows = table(n)
+            for i, r in enumerate(rows, 2):
+                for c in r:
+                    if re.fullmatch(r"\d{8,19}", c):
+                        out.append("[4] %s row %d: a field that is a whole string of %d digits" % (n, i, len(c)))
+    return out
+def r4b():
+    out = []
+    for n in files:
+        t = text(n)
+        for tok in ("/Users/", "/private/tmp", "@"):
+            if tok in t:
+                out.append("[4] %s contains %s" % (n, "an at sign" if tok == "@" else tok))
+    return out
+NUMCOLS = ["med_window_bp", "med_pre_bp", "med_post_bp", "d_bp", "rank_band", "rank_ref", "mean_tenor_window_y", "mean_tenor_ctrl_y", "d_mean_tenor_y"]
+def anchors():
+    if "anchors.csv" not in files:
+        return {}
+    h, rows = table("anchors.csv")
+    return {(r[0], r[1], r[2]): dict(zip(h, r)) for r in rows if len(r) == len(h)}
+def thin(a):
+    try:
+        return a["status"] != "complete" or (a["n_window"] != "" and int(a["n_window"]) < 25)
+    except (KeyError, ValueError):
+        return True
+def r5a():
+    out = []
+    for k, a in anchors().items():
+        if thin(a) and any(a.get(c, "") != "" for c in NUMCOLS):
+            out.append("[5] anchors.csv %s %s %s: status %s (n_window %s) carries a median, D or rank" % (k + (a["status"], a["n_window"])))
+    return out
+def r5t():
+    out = []
+    if "anchors_tenor.csv" in files:
+        h, rows = table("anchors_tenor.csv")
+        for r in rows:
+            a = dict(zip(h, r))
+            if a.get("status") != "complete" and any(a.get(c, "") != "" for c in ("med_window_bp", "med_pre_bp", "med_post_bp", "d_bp")):
+                out.append("[5] anchors_tenor.csv %s %s %s tenor %s: status %s carries a median or D" % (a["pair"], a["anchor_date"], a["anchor_type"], a["tenor_y"], a["status"]))
+    return out
+def r5q():
+    out = []
+    if "questions.csv" not in files:
+        return out
+    an = anchors()
+    tn = {}
+    if "anchors_tenor.csv" in files:
+        h, rows = table("anchors_tenor.csv")
+        for r in rows:
+            a = dict(zip(h, r))
+            tn[(a["pair"], a["anchor_date"], a["anchor_type"], a["tenor_y"])] = a["status"]
+    h, rows = table("questions.csv")
+    for r in rows:
+        q = dict(zip(h, r))
+        if not re.match(r"(d_bp|rank_|d_mean_tenor_y|d_tenor_|med_|mean_tenor)", q["statistic"]) or q["value"] == "" or q["anchor_date"] == "":
+            continue
+        key = (q["pair"], q["anchor_date"], q["anchor_type"])
+        a = an.get(key)
+        if a is not None and thin(a):
+            out.append("[5] questions.csv %s %s %s: %s is printed for an anchor whose status is %s" % (key + (q["statistic"], a["status"])))
+        m = re.match(r"d_tenor_(\d)y_bp", q["statistic"])
+        if m and tn.get(key + (m.group(1),)) != "complete":
+            out.append("[5] questions.csv %s %s %s: %s is printed for a tenor cell that is not complete" % (key + (q["statistic"],)))
+    return out
+def strip(n, t):
+    t = t.replace(REQ, "").replace(NEI, "")
+    if n == "SOURCES.md":
+        t = "\n".join("" if (re.search(r"CGFS", l) and re.search(r"\bpp?\s?\d", l)) else l for l in t.split("\n"))
+    return t
+def scan(label, n, t):
+    out = []
+    for m in CAUSAL.finditer(strip(n, t)):
+        out.append("[6] %s: causal or attribution wording %r" % (label, m.group(0)))
+    return out
+def r6a():
+    out = []
+    for n in ("README.md", "SOURCES.md"):
+        if n in files:
+            out += scan(n, n, text(n))
+    if "questions.csv" in files:
+        h, rows = table("questions.csv")
+        if "note" in h:
+            i = h.index("note")
+            for r in rows:
+                if len(r) > i:
+                    out += scan("questions.csv note", "questions.csv", r[i])
+    return out
+def r6b():
+    out = []
+    for n in ("README.md", "SOURCES.md"):
+        if n in files:
+            out += ["[6] %s: verdict or significance wording %r" % (n, m.group(0)) for m in VERDICT.finditer(text(n))]
+    if "questions.csv" in files:
+        h, rows = table("questions.csv")
+        if "note" in h:
+            i = h.index("note")
+            for r in rows:
+                if len(r) > i:
+                    out += ["[6] questions.csv note: verdict or significance wording %r" % m.group(0) for m in VERDICT.finditer(r[i])]
+    return out
+bad = []
+bad += r1()
+bad += r2()
+bad += r3()
+bad += r4a()
+bad += r4b()
+bad += r5a()
+bad += r5t()
+bad += r5q()
+bad += r6a()
+bad += r6b()
+print("\n".join("  ✗ " + b for b in bad) if bad else "OK")
+PY
+  out=$(python3 -c "$py" "$dir" "$spec")
+  if [ "$out" = "OK" ]; then
+    echo "  ✓ only the ten committed names, the allowlist block hashes to the pinned sha256 and every header is it, no raw DTCC file or identifier, no local path or at sign, no value on a thin row, no verdict or causal wording in $dir."
+  else
+    printf '%s\n' "$out"
+    echo "  -> derived statistics only (E-024): no DTCC file, row or identifier, no value on a row that is not complete, no verdict or causal wording. Remove or re-run before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -1060,6 +1276,8 @@ if [ "$TARGET" = "--all" ]; then
   ukgold_leak_check
   echo
   futidx_leak_check
+  echo
+  qeb_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

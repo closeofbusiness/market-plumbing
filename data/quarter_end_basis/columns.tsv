@@ -1,0 +1,10 @@
+# source: derived from DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com), through the project's swap-tape ledger (data/swap_tape/); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024)
+file	columns
+anchors.csv	pair|anchor_date|anchor_type|in_sample|in_band|in_ref|status|window_first|window_last|gap_days|on_date|weekdays_window_span|post_first|pre_in_zone_days|post_in_zone_days|n_window|n_pre|n_post|med_window_bp|med_pre_bp|med_post_bp|d_bp|band_role|rank_band|k_band|rank_ref|k_ref|mean_tenor_window_y|mean_tenor_ctrl_y|d_mean_tenor_y|mix_limit_y|mix_flag
+anchors_tenor.csv	pair|anchor_date|anchor_type|tenor_y|days_window|days_pre|days_post|med_window_bp|med_pre_bp|med_post_bp|d_bp|status
+band.csv	pair|band_role|asof|tape_last_date|k_anchors|stretches|p5_bp|p25_bp|p50_bp|p75_bp|p95_bp|sd_bp|p5_leave_one_stretch_out_min_bp|p5_leave_one_stretch_out_max_bp|k_ref|ref_min_bp|ref_median_bp|ref_max_bp|mix_limit_y|inputs_sha256
+questions.csv	question|pair|anchor_type|anchor_date|statistic|value|unit|denominator|note
+short_tenor_availability.csv	series|tenor|first_month|last_month|months|months_published|n_total|n_month_median|days_with_trades_month_median
+inputs.csv	file|sha256|rows|first_date|last_date
+checks.csv	check_id|description|expected|observed|status
+columns.tsv	file|columns

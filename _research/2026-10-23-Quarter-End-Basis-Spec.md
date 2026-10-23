@@ -157,6 +157,7 @@ For anchor `a`: `j` = index in `L` of the last liquid day on or before `a`; `k` 
 - **If `j - 17 < 0`** (too little history) the status is `incomplete`; indices never wrap (G2).
 - The window never holds a day after `a`. `weekdays_window_span` = weekdays from `window_first` to `window_last` inclusive.
 - `pre_in_zone_days` = how many of the 10 pre-control days fall in any exclusion zone `Z_q` (3.5).
+- `post_in_zone_days` (round 4, O-4) = how many of the 10 post-control days `L[k+3..k+12]` fall in any exclusion zone `Z_q`; descriptive, like `pre_in_zone_days`.
 
 ### 3.4 The difference D
 `D = median(window daily medians) - (median(pre-control medians) + median(post-control medians)) / 2`, bp. A median of ten is the mean of
@@ -249,7 +250,7 @@ in this order. `columns.tsv` holds the same as `file<TAB>columns` with columns j
 this fenced block (the first after this paragraph), skip `# source:` lines and compare.
 
 ```
-anchors.csv:pair,anchor_date,anchor_type,in_sample,in_band,in_ref,status,window_first,window_last,gap_days,on_date,weekdays_window_span,post_first,pre_in_zone_days,n_window,n_pre,n_post,med_window_bp,med_pre_bp,med_post_bp,d_bp,band_role,rank_band,k_band,rank_ref,k_ref,mean_tenor_window_y,mean_tenor_ctrl_y,d_mean_tenor_y,mix_limit_y,mix_flag
+anchors.csv:pair,anchor_date,anchor_type,in_sample,in_band,in_ref,status,window_first,window_last,gap_days,on_date,weekdays_window_span,post_first,pre_in_zone_days,post_in_zone_days,n_window,n_pre,n_post,med_window_bp,med_pre_bp,med_post_bp,d_bp,band_role,rank_band,k_band,rank_ref,k_ref,mean_tenor_window_y,mean_tenor_ctrl_y,d_mean_tenor_y,mix_limit_y,mix_flag
 anchors_tenor.csv:pair,anchor_date,anchor_type,tenor_y,days_window,days_pre,days_post,med_window_bp,med_pre_bp,med_post_bp,d_bp,status
 band.csv:pair,band_role,asof,tape_last_date,k_anchors,stretches,p5_bp,p25_bp,p50_bp,p75_bp,p95_bp,sd_bp,p5_leave_one_stretch_out_min_bp,p5_leave_one_stretch_out_max_bp,k_ref,ref_min_bp,ref_median_bp,ref_max_bp,mix_limit_y,inputs_sha256
 questions.csv:question,pair,anchor_type,anchor_date,statistic,value,unit,denominator,note
@@ -259,7 +260,7 @@ checks.csv:check_id,description,expected,observed,status
 columns.tsv:file,columns
 ```
 
-**sha256 of that text (1,078 bytes): `479678adef66bcd7aa9ca5e3f90a89d7b0e1ffebc90d6e97921dd8f76f0c2ed6`** (computed by the spec author). It is
+**sha256 of that text (1,096 bytes): `3f54fbeb17c65e257af8acd41c1f2b0b2398b432ca18b3bed4f60c1c5e2445e4`** (round 4: `post_in_zone_days` added to `anchors.csv` after `pre_in_zone_days`; the earlier text was 1,078 bytes with sha256 `479678adef66bcd7aa9ca5e3f90a89d7b0e1ffebc90d6e97921dd8f76f0c2ed6`; the new hash was computed by the builder, per ruling O-4 of round 4). It is
 anchored here, outside the code. A builder who needs a column changes this text and its hash first and tells the supervisor.
 
 Value sets: `anchor_type` in {quarter_end, month_end, placebo}; `status` in {complete, incomplete, gap, low_n} (anchors) and {complete,
@@ -362,7 +363,7 @@ they stay valid after later weekly runs.
   discriminator); 2026-06 +2.172. EUR 2025-03 +0.719; 2025-06 +0.828; 2025-09 -0.547; 2025-12 -0.156; 2026-03 -2.688; 2026-06 -0.438;
   2026-09 +0.578.
 - **C14 `pre_in_zone_days`:** JPY 2024-12 0, 2025-03 6, 2025-06 7, 2025-09 0, 2025-12 2, 2026-03 6, 2026-06 8; EUR 2025-03 8, 2025-06 6,
-  2025-09 8, 2025-12 4, 2026-03 8, 2026-06 7, 2026-09 8.
+  2025-09 8, 2025-12 4, 2026-03 8, 2026-06 7, 2026-09 8. `post_in_zone_days` (round 4, pinned by the verifier), in quarter-end order: JPY 0, 2, 2, 2, 0, 0, 0; EUR 2, 2, 2, 1, 0, 0, 2.
 - **C15 per-tenor availability:** `complete` tenor cells at complete quarter-ends: JPY 2025-06-30 5y; 2026-03-31 2y and 5y; 2026-06-30 5y;
   EUR 2026-03-31 5y; GBP none. Every other tenor cell is `too_few_days`. Reference dates: JPY 2024-11-15, 2025-02-12, 2025-05-14,
   2025-08-13, 2025-11-12, 2026-02-09, 2026-05-14, 2026-08-07; EUR 2024-11-12, 2025-02-11, 2025-05-14, 2025-08-08, 2025-11-12, 2026-02-10,
@@ -394,8 +395,7 @@ The supervisor verifies, adds the guard as M22, adds the CALENDAR row and writes
   (Christmas lies in a zone).
 - **O-3 The band is short and clustered.** About eight stretches; its lower tail rests on February 2026. The reference set has eight values.
   Neither supports a probability statement, and none is printed.
-- **O-4 Post-control in zone.** Only `pre_in_zone_days` is printed (R2-2). The first post-control days can also fall before q + 7; a
-  `post_in_zone_days` column would complete the picture. Not added without a ruling.
+- **O-4 Post-control in zone.** Resolved by the round-4 ruling: `post_in_zone_days` is added beside `pre_in_zone_days` in `anchors.csv` (descriptive), and pinned in C14. The first post-control days can fall before q + 7, so the two counts together show how much of each control sits in an exclusion zone.
 - **O-5 Daily 3-month cell.** The ledger's guard M4 keeps 3-month prints out of the pool on purpose; a pooled weekly 3-month cell needs its
   own ledger spec.
 - **O-6 Mark-to-market resetting** is not visible on the tape; a shift in its share near quarter-ends would move the median unseen.

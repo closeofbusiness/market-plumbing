@@ -1,0 +1,5 @@
+# source: derived from DTCC Public Price Dissemination, CFTC cumulative rates reports (pddata.dtcc.com), through the project's swap-tape ledger (data/swap_tape/); statistics only, no DTCC record is reproduced; non-commercial research (THE_ASK.md E-024)
+pair,band_role,asof,tape_last_date,k_anchors,stretches,p5_bp,p25_bp,p50_bp,p75_bp,p95_bp,sd_bp,p5_leave_one_stretch_out_min_bp,p5_leave_one_stretch_out_max_bp,k_ref,ref_min_bp,ref_median_bp,ref_max_bp,mix_limit_y,inputs_sha256
+JPYUSD,provisional,2026-10-21,2026-10-21,52,8,-3.470,-1.064,0.469,2.657,4.281,2.390,-3.470,-2.789,8,-3.033,1.234,4.469,0.663,c2d42cf90658b9feab459c6b8a5332892ace0e57217387fc8ad663bac8ff823f
+EURUSD,provisional,2026-10-21,2026-10-21,68,8,-1.391,-0.531,0.063,0.547,1.828,0.945,-1.406,-0.938,8,-1.266,0.445,1.688,0.730,a634ef22904e3455e318ace83fd6e27bd1593dbd398196e42de513b9d5d34a3d
+GBPUSD,provisional,2026-10-21,2026-10-21,26,5,0.016,0.328,0.391,1.063,2.000,0.666,-0.110,0.078,5,0.219,0.625,1.875,1.061,8bdc297784c61b0e8dbcd91836444226850a0e0acdb001aae8838de718c844ca
