@@ -125,7 +125,7 @@ PRICE_FLAG = "eia_spot_gap_unverified"
 # printed $125-136, about $20-30 above a Brent futures quote of about $102 on 5 Oct (relayed; Grok checks 13 and 17 Oct). EIA has not retracted the
 # prints and they persisted through 14 Oct, so this is an unexplained spot-futures gap, not a confirmed data error. Extend the range weekly while it
 # lasts (CALENDAR.tsv, the crude row). A report date whose price_date falls in a range gets price_flag; its USD figures stay as computed.
-KNOWN_SUSPECT_PRINTS = ((dt.date(2026, 10, 2), dt.date(2026, 10, 16)),)
+KNOWN_SUSPECT_PRINTS = ((dt.date(2026, 10, 2), dt.date(2026, 10, 21)),)   # 23 Oct: press-reported Dated Brent premium (Grok g10); EIA issued no notice
 KEMP_BBL, KEMP_DATE, KEMP_TOL = 253_000_000, dt.date(2026, 6, 2), 0.01       # relayed, warn only (A14)
 PINS = ((dt.date(2026, 3, 31), "fo", 382072), (dt.date(2026, 3, 31), "combined", 429853))     # nets only (A4)
 ANCHORS = (("since end-2023", dt.date(2023, 12, 31), dt.date(2023, 12, 26)),
@@ -1621,8 +1621,8 @@ def suite_pure(ck):
     ck.raises("a price_flag value other than '' and eia_spot_gap_unverified is refused", DataError, lambda: verify_text("brent_ledger.csv", render_table(LEDGER_COLS, [led_bad], SOURCE_ICE)), "price_flag")
     ck.eq("price_flag is the column after usd_basis", LEDGER_COLS[LEDGER_COLS.index("usd_basis") + 1], "price_flag")
     # known-bad EIA prints
-    ck.eq("KNOWN_SUSPECT_PRINTS covers 2026-10-02 to 2026-10-16 and nothing around it",
-          [is_suspect_print(dt.date(2026, 10, k)) for k in (1, 2, 9, 16, 17)], [False, True, True, True, False])
+    ck.eq("KNOWN_SUSPECT_PRINTS covers 2026-10-02 to 2026-10-21 and nothing around it",
+          [is_suspect_print(dt.date(2026, 10, k)) for k in (1, 2, 9, 21, 22)], [False, True, True, True, False])
     # EIA workbook that will not load: an xlrd error becomes the script's DataError
     with tempfile.TemporaryDirectory() as tmp:
         for label, body in (("XLS magic bytes then garbage", XLS_MAGIC + b"\xa1\xb1\x1a\xe1" + b"x" * 64), ("an empty file", b""), ("HTML", b"<html>x</html>")):
