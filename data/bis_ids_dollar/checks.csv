@@ -112,7 +112,7 @@ C06,"Sign convention: for ALL, in the quarters from 2014-Q1 with |net issues| >=
 C06b,"At 2019-Q4: ALL change 147,756 = net issues 147,756; US change -14,446, net issues -14,447 (one-vintage pin)",as stated,"ALL change 147,756, net 147,756; US change -14,446, net -14,447",PASS
 C07,"Units: every row is USD, UNIT_MULT 6, OBS_CONF F (hard content tests on 11301 rows) and ALL outstanding is within US$ 5.0 to 50.0 trillion in every quarter",all rows pass; range holds,range holds in all 51 quarters,PASS
 C08,"Nationality memo: US_NATIONALITY outstanding 2019-Q4 2,754,559 and 2013-Q4 1,955,757; net issues 2013-Q4 20,953 (a one-vintage pin)",3 values equal,3 of 3 equal,PASS
-C09,"CALENDAR row for the 2026-12-07 revision check contains '52 cells', 'sector ALL' and 'more than 1.0%'",row present with the three phrases,no CALENDAR row found,INFO
+C09,"CALENDAR row for the 2026-12-07 revision check contains '52 cells', 'sector ALL' and 'more than 1.0%'",row present with the three phrases,row present with all three,PASS
 C10,"LBS stocks and flows equal the author's pull (release of 31 Jul 2026), the 2019-Q4 break flag and pre-break value, and 20 of 20 quarters flagged B; a one-vintage pin",all equal,all equal; 20 of 20 flagged,PASS
 C11,"Paper level: IDS ALL plus LBS S A 5J at 2019-Q4 within 3% of US$ 22.6 trillion (author's pull: 22,470,218.581, -0.57%)",within 3%,"22470218.581, -0.57% from 22,600,000",PASS
 C12,Coverage: first quarter 2013-Q4 for ALL and US; latest >= 2026-Q2; all 10 sectors present for ALL; US_NATIONALITY exists,as stated,"first quarter ALL 2013-Q4, US 2013-Q4; latest 2026-Q2; missing sectors none; nationality present",PASS
