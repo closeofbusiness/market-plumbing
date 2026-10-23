@@ -1,6 +1,6 @@
-# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 18 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
+# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 23 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
 # source: U.S. Energy Information Administration (Oct 2026): STEO bulk file (release of 6 Oct 2026); Petroleum Supply Monthly series MCRSTUS1, MCESTUS1, MCSSTUS1, MCRFPUS2.
-# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-09-22:5726e6e7319b 2026:2026-09-22:909a73300584; max TIME_PERIOD and preliminary months: see file_stats.csv.
+# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-10-21:fe7c640d99e7 2026:2026-10-21:6967657d591f; max TIME_PERIOD and preliminary months: see file_stats.csv.
 requested_at_utc,host,path,method,http_status,outcome,bytes,sha256,last_modified
 2026-10-18T05:50:18.877Z,www.jodidata.org,/oil/database/data-downloads.aspx,GET,200,saved,32660,44b22af88f7ab8402bae8d35917063ebf6535f66d422ed6a96e0d944a2be13e8,
 2026-10-18T05:50:23.927Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/primaryyear2026.csv,GET,200,saved,5542684,909a73300584b877b122659d549033f1eebab9f93d1131157e47ba0d142ca5e2,"Tue, 22 Sep 2026 07:18:47 GMT"
@@ -36,3 +36,26 @@ requested_at_utc,host,path,method,http_status,outcome,bytes,sha256,last_modified
 2026-10-18T06:17:51.225Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2025.csv,HEAD,200,head,11575254,,"Tue, 22 Sep 2026 07:18:22 GMT"
 2026-10-18T06:17:56.280Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/primaryyear2026.csv,HEAD,200,head,5542684,,"Tue, 22 Sep 2026 07:18:47 GMT"
 2026-10-18T06:21:09.570Z,www.eia.gov,/opendata/bulk/manifest.txt,GET,200,saved,28398,019c779cb0f8bf4043d45a8116aa0f513fa0e049761eef396e89377daa6bfae0,"Sat, 17 Oct 2026 03:28:36 GMT"
+2026-10-23T11:52:29.775Z,www.jodidata.org,/oil/database/data-downloads.aspx,GET,200,saved,32660,f2c0d26e9550c618b7daffb0d70ba3b2cb6b838b3dd77c5669d1ee700eddff78,
+2026-10-23T11:52:34.830Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2015.csv,HEAD,200,head,11856506,,"Tue, 21 Oct 2025 18:35:00 GMT"
+2026-10-23T11:52:39.881Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2016.csv,HEAD,200,head,11778582,,"Tue, 21 Oct 2025 18:37:00 GMT"
+2026-10-23T11:52:44.936Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2017.csv,HEAD,200,head,11659316,,"Tue, 21 Oct 2025 18:40:32 GMT"
+2026-10-23T11:52:49.991Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2018.csv,HEAD,200,head,11656143,,"Tue, 21 Oct 2025 18:43:26 GMT"
+2026-10-23T11:52:55.045Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2019.csv,HEAD,200,head,11641900,,"Tue, 21 Oct 2025 18:46:06 GMT"
+2026-10-23T11:53:00.096Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2020.csv,HEAD,200,head,11656353,,"Tue, 21 Oct 2025 18:48:28 GMT"
+2026-10-23T11:53:05.150Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2021.csv,HEAD,200,head,11649796,,"Tue, 21 Oct 2025 18:50:48 GMT"
+2026-10-23T11:53:10.202Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2022.csv,HEAD,200,head,11649999,,"Tue, 21 Oct 2025 18:53:02 GMT"
+2026-10-23T11:53:15.257Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2023.csv,HEAD,200,head,11637677,,"Tue, 21 Oct 2025 18:55:06 GMT"
+2026-10-23T11:53:20.311Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2024.csv,HEAD,200,head,11603543,,"Tue, 21 Oct 2025 18:57:12 GMT"
+2026-10-23T11:53:25.365Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2025.csv,HEAD,200,head,11580154,,"Wed, 21 Oct 2026 15:08:32 GMT"
+2026-10-23T11:53:30.420Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/primaryyear2026.csv,HEAD,200,head,7699910,,"Wed, 21 Oct 2026 15:09:04 GMT"
+2026-10-23T11:53:35.475Z,www.jodidata.org,/oil/database/data-downloads.aspx,GET,200,saved,32660,f2c0d26e9550c618b7daffb0d70ba3b2cb6b838b3dd77c5669d1ee700eddff78,
+2026-10-23T11:53:40.527Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/primaryyear2026.csv,GET,200,saved,7699910,6967657d591f607d3d499b2fa099f1694b0b441729f4068eb3627ce4dba9d11d,"Wed, 21 Oct 2026 15:09:04 GMT"
+2026-10-23T11:53:45.581Z,www.eia.gov,/dnav/pet/hist_xls/MCRSTUS1m.xls,GET,200,saved,38912,bd8b18f8ab945eac8d9a6ffecbdea65752cd8b93992bb429fdc001d8a250f613,"Sat, 26 Sep 2026 02:26:55 GMT"
+2026-10-23T11:53:50.636Z,www.eia.gov,/dnav/pet/hist_xls/MCESTUS1m.xls,GET,200,saved,38912,548bf08f32f48967e0e67bdce29c8f4681b1de62eb8da46c01da68879101fce1,"Sat, 26 Sep 2026 02:33:46 GMT"
+2026-10-23T11:53:55.691Z,www.eia.gov,/dnav/pet/hist_xls/MCSSTUS1m.xls,GET,200,saved,53248,ba9c7453a1c6a235d08efa87f344025db3b1f4e946c5611cdcd8271851f2bec5,"Sat, 26 Sep 2026 02:26:50 GMT"
+2026-10-23T11:54:00.741Z,www.eia.gov,/dnav/pet/hist_xls/MCRFPUS2m.xls,GET,200,saved,84992,05ffd0287f234017a78695bf4d412d692527e94090a9ee31f41c5796e5d631d7,"Sat, 26 Sep 2026 02:30:10 GMT"
+2026-10-23T11:54:05.794Z,www.eia.gov,/opendata/bulk/STEO.zip,GET,200,saved,5449396,828caff63e7303833fbe9af50b9fee52b6db8ab22f1a3a46a3aad2f56644c8e0,"Tue, 06 Oct 2026 20:16:24 GMT"
+2026-10-23T11:54:10.849Z,www.eia.gov,/opendata/bulk/manifest.txt,GET,200,saved,28398,0ae96ab9952d34e75f402ecf1e2f930ab9764499a2e0aaf5ab9971a77b1f37e0,"Fri, 23 Oct 2026 09:42:17 GMT"
+2026-10-23T11:54:28.029Z,www.jodidata.org,/oil/database/data-downloads.aspx,GET,200,saved,32660,f2c0d26e9550c618b7daffb0d70ba3b2cb6b838b3dd77c5669d1ee700eddff78,
+2026-10-23T11:54:33.083Z,www.jodidata.org,/_resources/files/downloads/oil-data/annual-csv/primary/2025.csv,GET,200,saved,11580154,fe7c640d99e7de67b98641c08530bad747bf5d56207ee8b4cff8948811011408,"Wed, 21 Oct 2026 15:08:32 GMT"
