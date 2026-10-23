@@ -94,3 +94,10 @@ data/jp_life_foreign_bonds/_FAILED/
 data/vintages/uk_gold_exports/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/uk_gold_exports/_FAILED/
+
+# Fed H.8 net due to related foreign offices (bin/h8_foreign_offices.py): the release XML zip, the DDP packages, the notes pages, the 20-series subsets of every vintage and
+# the STOP latches stay here and are never committed (the Board's files are public domain; they are kept out for size). A STOP_xml, STOP_ddp or STOP_notes file here is the
+# fetch latch; only a person deletes it.
+data/vintages/h8_foreign_offices/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/h8_foreign_offices/_FAILED/

@@ -1060,6 +1060,126 @@ PY
   fi
 }
 
+# --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
+# data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
+# _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
+# data/vintages/h8_foreign_offices/. Four things would break that or the spec's rules, and none is visible to M5-M19:
+#   1. a file that is not one of the ten committed names, a raw file (zip, xml, page, pdf) or a DDP package under any name, and a header line (skipping every
+#      "# source:" line) that is not that file's exact column allowlist -- the spec's eight canonical lines, typed here a second time (R2-5): this guard
+#      never reads them from bin/h8_foreign_offices.py;
+#   2. a local path (/Users/, /private/, a tilde) or an at sign in any committed file;
+#   3. causal, flow or motive wording (the spec's two patterns, pasted) anywhere in the folder except the one README denial sentence;
+#   4. binding on the latest week of weekly.csv: FRI + DOM = ALL (NSA, usd_mn) and FRI total liabilities below DOM's are errors. By R3-6 the groups are bound
+#      by identities and never by sign: a negative FRI level from 2019-01-02 on is a warning, not an error.
+# bin/h8_foreign_offices.py refuses the same things when it writes; this is the second, independent look. H8FO_DIR overrides the folder (used to show that
+# the guard fires on a planted copy). It warns and never blocks (header doctrine).
+h8fo_leak_check() {
+  echo "-- M21: H.8 foreign-offices guard (data/h8_foreign_offices/: the ten names, exact headers, no raw file, local path or at sign, no causal/flow/motive wording outside the denial sentence, FRI + DOM = ALL on the latest week; a negative FRI level only warns) --"
+  local dir="${H8FO_DIR:-data/h8_foreign_offices}" f name want got bad="" raw committed out py
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md weekly.csv quarter_ends.csv notes.csv revisions.csv vintages.csv summary.csv checks.csv fetch_log.csv "
+  for name in ${committed}; do
+    [ -f "$dir/$name" ] || bad="${bad}  ✗ missing: $name
+"
+  done
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    raw=""
+    case "$name" in *.zip|*.xml|*.htm|*.html|*.pdf|*.xsd|*.gz) raw=1 ;; esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && raw=1
+    head -c 4 "$f" | grep -qF '%PDF' && raw=1
+    case "$name" in *.csv) grep -v '^# source:' "$f" | head -1 | grep -q '^"Series Description"' && raw=1 ;; esac
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw file in the committed folder (a zip, XML, page, PDF or DDP package): $name
+"
+      continue
+    fi
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the ten committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or a tilde)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      weekly.csv) want='week_wed,group,sa,series_id,usd_mn,change_usd_mn,total_liabilities_usd_mn,pct_of_total_liabilities,qe_quarter,qe_role,qe_offset_days,segment_start,note_flag,vintage' ;;
+      quarter_ends.csv) want='quarter,qe_date,qe_wed,offset_days,on_date,group,level_qe_wed_usd_mn,delta_qe_wed_usd_mn,delta_next_usd_mn,qe_day_in_window,straddles_break,frozen_set,blind,vintage' ;;
+      notes.csv) want='note_week,group,line38_effect_usd_mn,kind,paragraph_index,text_head' ;;
+      revisions.csv) want='vintage_prev,vintage_new,series_id,week_wed,usd_mn_prev,usd_mn_new,change_usd_mn' ;;
+      vintages.csv) want='vintage,route,xml_prepared,xml_last_modified,xml_sha256,ddp_status,latest_week,rows_fri_nsa' ;;
+      summary.csv) want='question,window,group,statistic,value,unit,blind' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      fetch_log.csv) want='utc_time,host,path_and_query,status,bytes,sha256' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+d = sys.argv[1]
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)?flows?\b|window[- ]dressing|\b(?:head\s+offices?|parents?)\s+(?:fund|funds|funded|funding|push|pushes|pushed|pull|pulls|pulled|drain|drains|drained)\b|\b(?:dollar\s+)?(?:shortage|squeeze)\b", re.I)
+DENIAL = "These weekly changes are not flows of funds, and the table does not test window dressing or any other motive."
+HEAD = "week_wed,group,sa,series_id,usd_mn,change_usd_mn,total_liabilities_usd_mn,pct_of_total_liabilities,qe_quarter,qe_role,qe_offset_days,segment_start,note_flag,vintage".split(",")
+bad, warn = [], []
+for name in ("README.md", "SOURCES.md", "weekly.csv", "quarter_ends.csv", "notes.csv", "revisions.csv", "vintages.csv", "summary.csv", "checks.csv", "fetch_log.csv"):
+    p = os.path.join(d, name)
+    if not os.path.isfile(p):
+        continue
+    t = open(p, encoding="utf-8", errors="replace").read()
+    if name == "README.md":
+        t = t.replace(DENIAL, "", 1)
+    hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t)})
+    if hits:
+        bad.append("%s holds banned wording (spec R5): %s" % (name, ", ".join(hits[:4])))
+p = os.path.join(d, "weekly.csv")
+if os.path.isfile(p):
+    lines = [l for l in open(p, encoding="utf-8", errors="replace").read().splitlines() if not l.startswith("# source:")]
+    rows = list(csv.reader(lines))
+    if rows and rows[0] == HEAD and len(rows) > 1:
+        rows = [dict(zip(HEAD, r)) for r in rows[1:]]
+        last = max(r["week_wed"] for r in rows)
+        cur = {}
+        for r in rows:
+            if r["week_wed"] == last and r["sa"] == "NSA":
+                cur.setdefault(r["group"], []).append(r)
+        if sorted(cur) != ["ALL", "DOM", "FRI"] or any(len(v) != 1 for v in cur.values()):
+            bad.append("weekly.csv, latest week %s: expected one NSA row each for FRI, DOM and ALL, found %s" % (last, {g: len(v) for g, v in sorted(cur.items())}))
+        else:
+            f, m, a = (float(cur[g][0]["usd_mn"]) for g in ("FRI", "DOM", "ALL"))
+            ft, mt = float(cur["FRI"][0]["total_liabilities_usd_mn"]), float(cur["DOM"][0]["total_liabilities_usd_mn"])
+            if abs(f + m - a) > 0.5:
+                bad.append("weekly.csv, latest week %s: FRI + DOM = %.1f but ALL = %.1f" % (last, f + m, a))
+            elif not ft < mt:
+                bad.append("weekly.csv, latest week %s: FRI total liabilities %.1f is not below DOM's %.1f (groups mislabelled?)" % (last, ft, mt))
+        neg = sorted(r["week_wed"] for r in rows if r["group"] == "FRI" and r["sa"] == "NSA" and r["week_wed"] >= "2019-01-02" and float(r["usd_mn"]) < 0)
+        if neg:
+            warn.append("FRI NSA is negative on %d week(s) from 2019-01-02 (%s...): a warning only, groups are bound by identities not sign" % (len(neg), neg[0]))
+for b in bad:
+    print("BAD " + b)
+for w in warn:
+    print("WARN " + w)
+PY
+  out=$(python3 -c "$py" "$dir" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ ten names, every header its exact allowlist, no raw file, local path or at sign, no banned wording outside the denial sentence, FRI + DOM = ALL and FRI total liabilities below DOM's on the latest week of weekly.csv in $dir."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> raw Board files stay in data/vintages/h8_foreign_offices/ (gitignored); fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep '^WARN ' | sed 's/^WARN /  ⚠ /'
+  printf '%s\n' "$out" | grep -v '^BAD \|^WARN \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -1278,6 +1398,8 @@ if [ "$TARGET" = "--all" ]; then
   futidx_leak_check
   echo
   qeb_leak_check
+  echo
+  h8fo_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

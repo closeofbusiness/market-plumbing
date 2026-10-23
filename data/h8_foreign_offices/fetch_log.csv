@@ -1,0 +1,8 @@
+# source: Board of Governors of the Federal Reserve System (www.federalreserve.gov) retrieved 2026-10-23; request log of bin/h8_foreign_offices.py fetch (one row per request)
+utc_time,host,path_and_query,status,bytes,sha256
+2026-10-23T13:16:31.574Z,www.federalreserve.gov,/releases/h8/data/FRB_h8_xml.zip,200,8438469,2ce2d425cdc21fe7fe3623aec6fe0dc273438e6887cdea813a69e188344c222b
+2026-10-23T13:16:34.629Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=0e569516edadaa66168c115e5016ff16&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,657564,450307fee2d2f2e5dbc0d87a4f2393c3d62daeb658bdafb1562b3a18ff18cad6
+2026-10-23T13:16:37.682Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=18461c27aa45d43aa804016497d92ece&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,773075,48841904ca8d95bc26f1d04f6a0c6fb485ff746e49d86cb3b007c02e5b2f894d
+2026-10-23T13:16:40.736Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=c8dfa96ef1d2db40ce57121ffdddf59d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,776067,6bbba7279a4bc51cd32982b2113ae395c6013ccb91ffb906115866dd14ad8559
+2026-10-23T13:16:43.792Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=53b903ce661b8534202a6d5e36db960d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,660014,f5a446aaced63ea1a3cd78ce56f1cda488c32bbe7b05b0abbb8262fcbefa98e0
+2026-10-23T13:16:46.847Z,www.federalreserve.gov,/releases/h8/h8notes.htm,200,247995,93405fa2cbed3caaa57fc53b0c9dacdc4111e55b186927fe6d3aac6c879f6efd
