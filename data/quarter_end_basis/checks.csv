@@ -23,7 +23,7 @@ C07a_GBP,GBPUSD band at the pinned vintage (bp unless marked),k 26; stretches 5;
 C07b_GBP,GBPUSD band percentiles (bp),P25 0.328; P75 1.063; P95 2.000,P25 0.328; P75 1.063; P95 2.000,PASS
 C07c,month-end anchors that would pass the band tests,JPYUSD 0; EURUSD 0; GBPUSD 0,JPYUSD 0; EURUSD 0; GBPUSD 0,PASS
 C08,"monthly short-tenor counts, months to 2026-09","JPY 3m n 404, 24 months, 19 published, median 14.5 on 7 days; EUR 3m n 545, 24 months, 21 published, median 19 on 9 days; 1y months published JPY 24 of 24 and EUR 24 of 24; 1y totals JPY 1667 and EUR 1750","JPY 3m n 404, 24 months, 19 published, median 14.5 on 7 days; EUR 3m n 545, 24 months, 21 published, median 19 on 9 days; 1y months published JPY 24 of 24 and EUR 24 of 24; 1y totals JPY 1667 and EUR 1750",PASS
-C09,the CALENDAR row of 2027-01-29 names the spec,present,absent,WARN
+C09,the CALENDAR row of 2027-01-29 names the spec,present,present,PASS
 C10,a second build leaves every sha256 unchanged,identical,identical,PASS
 C11,band of record (asof 2026-11-27),written once the tape covers 2026-11-27,the tape ends 2026-10-21; provisional rows only,INFO
 C13_JPY,"JPYUSD in-sample D at quarter-ends, computed by the second reviewer before the build (bp)",2024-12-31 -0.740; 2025-03-31 3.468; 2025-06-30 0.234; 2025-09-30 3.375; 2025-12-31 -3.499; 2026-03-31 -4.329; 2026-06-30 2.172,2024-12-31 -0.740; 2025-03-31 3.468; 2025-06-30 0.234; 2025-09-30 3.375; 2025-12-31 -3.499; 2026-03-31 -4.329; 2026-06-30 2.172,PASS
