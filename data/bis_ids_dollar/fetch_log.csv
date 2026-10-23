@@ -1,0 +1,9 @@
+# source: request log of bin/bis_ids_dollar.py fetch (stats.bis.org), pull folders 2026-10-23
+utc_time,host,path_and_query,status,bytes,sha256
+2026-10-23T13:18:55.308Z,stats.bis.org,/api/v2/structure/dataflow/BIS/WS_DEBT_SEC2_PUB/1.0?references=all&detail=full,200,797104,04ef095aeb9a9dd0b38777281de73d24f1b877b8ac0c55e1e21453d1d391f14a
+2026-10-23T13:18:57.363Z,stats.bis.org,/api/v2/structure/dataflow/BIS/WS_LBS_D_PUB/1.0?references=all&detail=full,socket_fault,,
+2026-10-23T13:39:17.867Z,stats.bis.org,/api/v2/structure/dataflow/BIS/WS_LBS_D_PUB/1.0?references=all&detail=full,200,522223,589fc4dd5900f26dd0430246b1d354aae86fdaf22d5e526164110a194b5f8704
+2026-10-23T13:39:19.922Z,stats.bis.org,/api/v2/data/dataflow/BIS/WS_DEBT_SEC2_PUB/1.0/Q.3P+US+5R+4T+1C.3P.1+2+B+J+S+E+I+G+K+7.1.C.A.A.USD.A.A.A.A.A.I+G?startPeriod=2013-Q4&format=csv,200,249009,b03aa63ad2753cbe39bc6778b6a0caefef1fe419de0f0fa9f40b25ea38a93340
+2026-10-23T13:39:21.977Z,stats.bis.org,/api/v2/data/dataflow/BIS/WS_DEBT_SEC2_PUB/1.0/Q.3P.US.1.1.C.A.A.USD.A.A.A.A.A.I+G?startPeriod=2013-Q4&format=csv,200,6813,3736d299f031254a4d9b0a6b9edefb3fd7613f51982ca38a9c2d817c8a62867d
+2026-10-23T13:39:24.030Z,stats.bis.org,/api/v2/data/dataflow/BIS/WS_DEBT_SEC2_PUB/1.0/Q..3P.1.1.C.A.A.USD.A.A.A.A.A.I?startPeriod=2013-Q4&format=csv,200,430439,8dd6aac292546d767ffa53d61ab71cc9600ea7f1f7e5542c4e6fe80b043bb535
+2026-10-23T13:39:26.085Z,stats.bis.org,/api/v2/data/dataflow/BIS/WS_LBS_D_PUB/1.0/Q.S+F.C.G.USD.A.5J.A.5A.A+I.5J+US.N?startPeriod=2013-Q4&format=csv,200,29710,09892963fbf6861100a4cf9399fc606ac584ce45e04813a97d5458b9230c2532

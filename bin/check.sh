@@ -1180,6 +1180,102 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^WARN \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M20: BIS INTERNATIONAL DEBT SECURITIES (US DOLLARS) LEAK AND WORDING GUARD (warn only) ----------------------------------------------------------
+# data/bis_ids_dollar/ holds BIS-derived quarterly aggregates and statistics derived from them, never the raw SDMX replies (spec
+# _research/2026-10-23-BIS-IDS-Dollar-Spec.md, sections 5 and 6; build bin/bis_ids_dollar.py). The raw replies stay in the gitignored cache
+# data/vintages/bis_ids_dollar/. Five things would break that, and none is visible to M5-M19:
+#   1. a file in the folder that is not one of the 11 names (nine CSVs, README.md, SOURCES.md), and a missing one;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist (the spec's canonical text, typed here a third time,
+#      after ALLOW and SPEC_ALLOW_TEXT in the script);
+#   3. a raw SDMX file: ANY line beginning FREQ,ISSUER_RES or FREQ,L_MEASURE, or a body holding "dataStructures" (a "# source:" line in front does not hide it),
+#      in the folder or, for a JSON body or a line-start header, anywhere else the repository would commit (the gitignored cache is not looked at);
+#   4. an at sign, or a local path (/Users/, /private/, /tmp/, ~/), in any file of the folder;
+#   5. a match of the spec's literal causal pattern (6.3) in the README.
+# bin/bis_ids_dollar.py refuses the same things when it writes (G11, G12, G16); this is the second, independent look. BISIDS_DIR and BISIDS_ROOT override the
+# folder and the repository root (used to show that the guard fires on planted files). It warns and never blocks (header doctrine).
+bisids_leak_check() {
+  echo "-- M20: BIS IDS dollar guard (data/bis_ids_dollar/: the 11 names, exact headers, no raw SDMX file outside the cache, no at sign, no local path, no causal wording in the README) --"
+  local dir="${BISIDS_DIR:-data/bis_ids_dollar}" root="${BISIDS_ROOT:-.}" py out
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  read -r -d '' py <<'PY' || true
+import os, re, subprocess, sys
+d, root = sys.argv[1], sys.argv[2]
+want = {
+ "quarterly.csv": "quarter,basis,issuer_group,sector,outstanding_usd_m,net_issues_usd_m,change_in_outstanding_usd_m,other_change_usd_m,status,derived,vintage,ids_release",
+ "shares.csv": "quarter,issuer_group,sector,share_pct,numerator_usd_m,denominator_usd_m,denominator",
+ "net_issues_windows.csv": "window,first_quarter,last_quarter,issuer_group,sector,quarters_n,quarters_blank,net_issues_usd_m,change_in_outstanding_usd_m,other_change_usd_m,share_of_group_net_issues_pct,denominator",
+ "cgfs_check.csv": "variant,plain_name,definition,first_quarter,last_quarter,ids_change_usd_m,lbs_change_usd_m,lbs_measure,lbs_flow_sum_usd_m,lbs_break_sum_usd_m,lbs_break_quarters,ids_share_of_increase_pct,denominator,reading,note",
+ "summary.csv": "question,window,issuer_group,sector,statistic,value,denominator,blind",
+ "revisions.csv": "vintage_prev,vintage_new,quarter,basis,issuer_group,sector,measure,value_prev_usd_m,value_new_usd_m,change_usd_m,change_pct",
+ "registration_score.csv": "registered_on,scored_on,vintage_prev,vintage_new,latest_quarter_new,cells_checked,largest_abs_change_pct,largest_cell,threshold_pct,result,note",
+ "checks.csv": "check_id,description,expected,observed,status",
+ "fetch_log.csv": "utc_time,host,path_and_query,status,bytes,sha256",
+}
+names = set(want) | {"README.md", "SOURCES.md"}
+raw_rx = re.compile(r"^FREQ,(ISSUER_RES|L_MEASURE)", re.M)
+path_rx = re.compile(r"/Users/|/private/|/tmp/|~/")
+causal = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of|fuell?ed)\b", re.I)
+bad = []
+here = set()
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    here.add(n)
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    raw = bool(raw_rx.search(t)) or '"dataStructures"' in t
+    if raw:
+        bad.append("raw SDMX file in the committed folder: " + n)
+    elif n not in names:
+        bad.append("file that is not one of the 11 committed names: " + n)
+    if path_rx.search(t):
+        bad.append(n + " contains a local path (/Users/, /private/, /tmp/ or ~/)")
+    if "@" in t:
+        bad.append(n + " contains an at sign")
+    if n in want and not raw:
+        hdr = next((l.rstrip("\r") for l in t.split("\n") if not l.startswith("# source:")), "")
+        if hdr != want[n]:
+            bad.append("header of " + n + " is not its exact allowlist")
+    if n == "README.md":
+        for m in sorted({re.sub(r"\s+", " ", x.group(0).lower()) for x in causal.finditer(t)}):
+            bad.append("causal wording in README.md: '" + m + "'")
+for n in sorted(names - here):
+    bad.append("missing: " + n)
+# the rest of the repository: files git would commit (tracked, or untracked and not ignored), outside the folder itself
+try:
+    r = subprocess.run(["git", "-C", root, "ls-files", "-co", "--exclude-standard", "-z"], capture_output=True, timeout=120)
+    files = [os.path.join(root, x) for x in r.stdout.decode("utf-8", "replace").split("\0") if x] if r.returncode == 0 else None
+except Exception:
+    files = None
+if files is None:
+    files = [os.path.join(dp, f) for dp, dn, fn in os.walk(root) if ".git" not in dp.split(os.sep) for f in fn]
+dreal = os.path.realpath(d)
+for p in files:
+    rp = os.path.realpath(p)
+    if rp.startswith(dreal + os.sep) or not os.path.isfile(p) or os.path.islink(p):
+        continue
+    try:
+        if os.path.getsize(p) > 200 * 1024 * 1024:
+            continue
+        b = open(p, "rb").read()
+    except OSError:
+        continue
+    if b"FREQ,ISSUER_RES" not in b and b"FREQ,L_MEASURE" not in b and b'"dataStructures"' not in b:
+        continue
+    t = b.decode("utf-8", "replace")
+    if raw_rx.search(t) or (t.lstrip().startswith("{") and '"dataStructures"' in t):
+        bad.append("raw SDMX file outside the cache: " + os.path.relpath(p, root))
+print("\n".join("  ✗ " + x for x in bad) if bad else "OK")
+PY
+  out=$(python3 -c "$py" "$dir" "$root")
+  if [ "$out" = "OK" ]; then
+    echo "  ✓ the 11 committed names, every header its exact allowlist, no raw SDMX file anywhere the repository would commit, no at sign or local path, no causal wording in the README ($dir)."
+  else
+    printf '%s\n' "$out"
+    echo "  -> BIS terms: only selected quarterly aggregates and statistics derived from them may be committed; raw replies stay in data/vintages/bis_ids_dollar/. Remove the file before any commit."
+  fi
+}
+
 # --- HANDOVER ----------------------------------------------------------------
 # Two agents work this folder (E-006), never at the same time, routed by whichever
 # token budget the principal has. A handover is written after EVERY work parcel,
@@ -1400,6 +1496,8 @@ if [ "$TARGET" = "--all" ]; then
   qeb_leak_check
   echo
   h8fo_leak_check
+  echo
+  bisids_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

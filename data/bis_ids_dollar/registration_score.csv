@@ -1,0 +1,3 @@
+# source: Bank for International Settlements, international debt securities statistics, retrieved 2026-10-23
+registered_on,scored_on,vintage_prev,vintage_new,latest_quarter_new,cells_checked,largest_abs_change_pct,largest_cell,threshold_pct,result,note
+2026-10-23,,2026-10-23,2026-10-23,2026-Q2,,,,1.0,PENDING,2026-Q3 is not in the file yet (newest pull 2026-10-23 ends at 2026-Q2); scored only when a pull holds 2026-Q3 or later.

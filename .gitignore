@@ -101,3 +101,8 @@ data/uk_gold_exports/_FAILED/
 data/vintages/h8_foreign_offices/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/h8_foreign_offices/_FAILED/
+# BIS international debt securities in US dollars (bin/bis_ids_dollar.py): the raw SDMX replies of every pull and the STOP latch stay in this cache and are never
+# committed. A STOP file here is the fetch latch; only a person deletes it.
+data/vintages/bis_ids_dollar/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/bis_ids_dollar/_FAILED/
