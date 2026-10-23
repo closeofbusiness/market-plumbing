@@ -1,10 +1,10 @@
-# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 18 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
+# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 23 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
 # source: U.S. Energy Information Administration (Oct 2026): STEO bulk file (release of 6 Oct 2026); Petroleum Supply Monthly series MCRSTUS1, MCESTUS1, MCSSTUS1, MCRFPUS2.
-# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-09-22:5726e6e7319b 2026:2026-09-22:909a73300584; max TIME_PERIOD 2026-07; preliminary months 2026-06, 2026-07.
+# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-10-21:fe7c640d99e7 2026:2026-10-21:6967657d591f; max TIME_PERIOD 2026-08; preliminary months 2026-07, 2026-08.
 JODI WORLD OIL LEDGER: country-reported crude production and closing stocks, reconciled with EIA's STEO
 
-RUN STATUS: DRY_RUN
-  primaryyear2026.csv was last modified 2026-09-22T07:18:47Z, before 2026-10-21T00:00:00Z
+RUN STATUS: REGISTERED
+  primaryyear2026.csv last modified 2026-10-21T15:09:04Z, max period 2026-08
 
 1. FILES AND VINTAGE
   year file                 last modified (UTC)   max          rows areas  sha256 (12)
@@ -18,51 +18,68 @@ RUN STATUS: DRY_RUN
   2022 2022.csv             2025-10-21T18:53:02Z  2022-12    283200   118  e0263b8a3324
   2023 2023.csv             2025-10-21T18:55:06Z  2023-12    283200   118  34f170c90f39
   2024 2024.csv             2025-10-21T18:57:12Z  2024-12    283200   118  99ffe47ceee1
-  2025 2025.csv             2026-09-22T07:18:22Z  2025-12    283200   118  5726e6e7319b
-  2026 primaryyear2026.csv  2026-09-22T07:18:47Z  2026-07    134400    96  909a73300584
-  Window W = 2015-01 to 2026-05 (137 months). Months after E = 2026-05 (2026-06, 2026-07) are preliminary: published, flagged, never in a statistic.
+  2025 2025.csv             2026-10-21T15:08:32Z  2025-12    283200   118  fe7c640d99e7
+  2026 primaryyear2026.csv  2026-10-21T15:09:04Z  2026-08    188800   118  6967657d591f
+  Window W = 2015-01 to 2026-06 (138 months). Months after E = 2026-06 (2026-07, 2026-08) are preliminary: published, flagged, never in a statistic.
 
-2. FIXED PANELS (frozen for this vintage; panels.csv sha256 e9dcac088cdd3aa25bc97acb0f40f58f06caa347cbe803733cbec2689eab36e1)
+2. FIXED PANELS (frozen for this vintage; panels.csv sha256 5a9dc5f57e290c1f63b40c37abe9912c714b0ff7bf460948f075d18220cdf01d)
   panel_producers             45 members; mean over W 35.1 mb/d
-  panel_nonoecd_stocks         9 members; mean over W 259.7 mb
-  panel_oecd_stocks_exspr     30 members; mean over W 1413.2 mb
+  panel_nonoecd_stocks         9 members; mean over W 259.4 mb
+  panel_oecd_stocks_exspr     30 members; mean over W 1411.5 mb
   The US member of panel_oecd_stocks_exspr is JODI's US figure less EIA's SPR (JODI's US crude stocks include the SPR; see 5).
 
 3. COVERAGE OF STEO WORLD CRUDE PRODUCTION (ratios at 0.01; reporters change over time, so these are not a consistent series of one set of countries)
   month     reporters  (+code 2)      ratio  ratio+code2    panel ratio
   2015-01          85         95       0.81         0.97           0.46
-  2025-06          60         60       0.59         0.59           0.47
-  2026-05          55         55       0.59         0.59           0.49
-  2026-07          43         47       0.53         0.53            n/a
+  2025-06          66         67       0.67         0.67           0.47
+  2026-06          57         63       0.61         0.69           0.47
+  2026-08          42         46       0.53         0.53            n/a
   The fall in the ratio is countries that stopped reporting (counts above), not lower output.
 
 4. OECD STOCKS AGAINST STEO (shared source: IEA data feed both, so agreement is not independent evidence)
-  months 136; Pearson r of monthly changes: not computed (DRY_RUN)
+  months 137; Pearson r of monthly changes: 0.407
 
 5. DOES JODI'S US CRUDE STOCK INCLUDE THE SPR?
-  spr_included = yes: median |STOCKCH - change in EIA total| 88 KBBL against 1950 KBBL for the change excluding the SPR, over 2025-01..E (n = 17).
+  spr_included = yes: median |STOCKCH - change in EIA total| 87 KBBL against 2040 KBBL for the change excluding the SPR, over 2025-01..E (n = 18).
   Months where |STOCKCH - change in MCRSTUS1| exceeds 2000 KBBL: 2025-03 (JODI -5654, EIA 3549)
-  Level offset, EIA total less JODI (kb): 2015-01 99121; 2025-01 135979; 2025-12 144612; 2026-07 144614. Unexplained (OPEN-2).
+  Level offset, EIA total less JODI (kb): 2015-01 99121; 2025-01 135979; 2025-12 144612. Unexplained (OPEN-2).
 
 6. STOCK IDENTITY AND SEAMS
   stock identity, 2015, all: 894 of 961 pass (0.930); exact 802
   stock identity, 2015, all_three_code1: 441 of 441 pass (1.000); exact 437
-  stock identity, 2025-01..2026-07, all: 901 of 974 pass (0.925); exact 712
-  stock identity, 2025-01..2026-07, all_three_code1: 702 of 702 pass (1.000); exact 594
-  seams (December of an older file to January of the new one), all boundaries: 623 of 693 pass; older files are older vintages.
+  stock identity, 2025-01..2026-08, all: 951 of 1031 pass (0.922); exact 746
+  stock identity, 2025-01..2026-08, all_three_code1: 741 of 743 pass (0.997); exact 623
+  seams (December of an older file to January of the new one), all boundaries: 624 of 694 pass; older files are older vintages.
 
 7. THE PRE-REGISTERED TEST (spec sections 3.4 and 4)
-  D = the panel's draw (minus the change in closing stocks), R = STEO's 'other inventory draws and balance' line, months 2015-02..2026-05.
-  test months n = 136 (seam months excluded: 0); panel 9 countries, mean level 259.7 mb; run conditions met.
+  D = the panel's draw (minus the change in closing stocks), R = STEO's 'other inventory draws and balance' line, months 2015-02..2026-06.
+  test months n = 137 (seam months excluded: 0); panel 9 countries, mean level 259.4 mb; run conditions met.
   largest member of the panel's change variance: SA, share 0.566 (shares sum to 1).
-  DRY_RUN: the 2026 file is not the registered vintage. NO correlation of any kind between D and R was computed; the primary row's
-  statistic cells (pearson_r, ci95_lo, ci95_hi, spearman_rho, verdict) and every descriptive correlation are blank. The first REGISTERED build's verdict is the result.
+  VERDICT: INCONCLUSIVE
+  Pearson r (demeaned by calendar month) 0.141, 95% moving-block bootstrap CI [-0.076, 0.285], Spearman rho 0.175, house band 1.96/sqrt(n) = 0.167.
+  INCONCLUSIVE: r = 0.141, 95% CI [-0.076, 0.285], n = 137; neither the SUPPORTS nor the AGAINST condition holds.
+  descriptive: raw (not demeaned)                                                       n = 137  r = 0.138
+  descriptive: excluding 2020-03..2020-12                                               n = 127  r = 0.234
+  descriptive: excluding 2026                                                           n = 131  r = 0.051
+  descriptive: excluding 2020-03..2020-12 and 2026                                      n = 121  r = 0.153
+  descriptive: starting 2018-01                                                         n = 102  r = 0.095
+  descriptive: panel restricted to code-1 cells (0 of 9 members)                        n =   0  r = n/a
+  descriptive: OECD ex-SPR panel vs STEO OECD commercial change (shared source: IEA dat n = 137  r = 0.407
 
 8. CONTEXT, UNMATCHED
   STEO's world withdrawal 2026-01..2026-09: 424.4 mb, of which the residual line 145.9 mb (a balancing item; no JODI quantity is set against the world figure).
 
-9. CHECKS: 38 PASS, 1 WARN, 0 FAIL, 2 INFO
+9. CHECKS: 29 PASS, 10 WARN, 0 FAIL, 2 INFO
   WARN G09 seam check: December (older file) to January (new file) against STOCKCH: expected no country-boundary off beyond max(1%, 100 KBBL) (older files are older vintages); observed 70 country-boundaries off
+  WARN C1a primaryyear2026.csv: rows, areas, max period, sha256: expected 134,400 rows; 96 areas; max 2026-07; 909a7330...; observed 188800 rows; 118 areas; max 2026-08; 6967657d...
+  WARN C1b 2025.csv: rows, areas, sha256: expected 283,200 rows; 118 areas; 5726e6e7...; observed 283200 rows; 118 areas; fe7c640d...
+  WARN C2a KBD = KBBL / days on every crude cell where both are numeric (2026 file): expected 2,137 cells, worst gap <= 0.00005 KBD; observed 2531 cells, worst gap 0.00005 KBD
+  WARN C3 coverage against STEO world crude: 2015-01 all codes 95 reporters / ratio 0.974, codes 1 and 3 85 / 0.808; 2025 mean ratio 0.592; 2026-07 47 reporters: expected all match the pins (reporter sums are printed to the terminal only); observed DO NOT MATCH: see the terminal block
+  WARN C4a stock identity 2025-01..2026-08, all, KBBL: n, pass, exact: expected 974/901/712; observed 1031/951/746
+  WARN C4b stock identity 2025-01..2026-08, all_three_code1, KBBL: n, pass: expected 702/702; observed 743/741/623
+  WARN C5a US CLOSTLV 2026-07 (JODI, KBBL); MCRSTUS1; MCSSTUS1: expected 568,729; 713,343; 304,810; observed 568660; 713343; 304810
+  WARN C5x level offset MCRSTUS1 - JODI US CLOSTLV (kb), unexplained (OPEN-2): expected 99,121 (2015-01); 135,979 (2025-01); 144,612 (2025-12); 144,614 (2026-07); observed 2015-01: 99121; 2025-01: 135979; 2025-12: 144612
+  WARN C6 checkpoints at max month: US INDPROD vs MCRFPUS2; SA vs COPR_SA; NG vs COPR_NI; KW vs COPR_KU (kb/d; difference printed, no pass/fail): expected 13817.3871 vs 13948; 8135.0968 vs 7830; 1505 vs 1420; 1971 vs 1770; observed 13850.3871 vs ; 6237.9032 vs 6530; 1500 vs 1530; 1988 vs 1920
 
 WHAT THIS BUILD CANNOT SAY: a world stock level or change (China, Russia and most of the Gulf do not report stocks); anything about product stocks;
 anything about prices (none enters); anything in real time (every series is a revised vintage). Not allowed under any verdict: 'world stocks',

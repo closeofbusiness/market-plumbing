@@ -1,6 +1,6 @@
 # Four tests set in advance: oil positioning, the yen, gold and global yields (E-021 builds 3-6), 18 Oct 2026
 
-**Status: RESULT for four builds; one more (the JODI world oil ledger) runs its test after JODI's 21 October update.**
+**Status: RESULT for all five builds. The fifth (the JODI world oil ledger) ran its registered test on 23 October 2026: INCONCLUSIVE (section below).**
 Each test's design was attacked from outside (Grok batch g7), rewritten, reviewed a second time, and committed to this public
 repository before its data were run. A builder ran it once. An independent verifier then rebuilt each headline number with its own
 code (recorded in each build's commit message; the oil build's own check row V01 still reads PENDING until it is frozen). The FX
@@ -33,8 +33,8 @@ has failed before. They carry no verdict.
 Built on 18 October as a dry run on JODI's 22 September file. It finds that the countries reporting to JODI covered 97% of world
 crude production in January 2015 (81% leaving out countries JODI flags for checking) and 59% in 2025, because many stopped reporting. China, Russia and most Gulf states report no
 stocks at all. So it publishes only sums over fixed panels of countries, never world totals. Its one test compares a fixed panel's stock
-changes (Saudi Arabia carries a little over half of their variation) with the line EIA uses to balance world stocks. The test is blind until JODI's 21 October update; see
-the calendar row of that date. [`data/jodi_oil/`](data/jodi_oil/README.md)
+changes (Saudi Arabia carries a little over half of their variation) with the line EIA uses to balance world stocks. Registered result, 23 October 2026, on JODI's 21 October file: r = 0.14 over 137 months, 95% interval −0.08 to 0.29,
+so INCONCLUSIVE under the rule fixed in advance (support needed r ≥ 0.25; against, r < 0.10); an independent recomputation matched. [`data/jodi_oil/`](data/jodi_oil/README.md)
 
 ## How these were built, and what went wrong on the way
 

@@ -1,7 +1,7 @@
 path	source_url	fetched_utc	sha256	size_bytes
-data/jodi_oil/raw/eia_MCRSTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCRSTUS1m.xls	2026-10-18T05:51:52Z	bd8b18f8ab945eac8d9a6ffecbdea65752cd8b93992bb429fdc001d8a250f613	38912
-data/jodi_oil/raw/eia_MCESTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCESTUS1m.xls	2026-10-18T05:52:02Z	548bf08f32f48967e0e67bdce29c8f4681b1de62eb8da46c01da68879101fce1	38912
-data/jodi_oil/raw/eia_MCSSTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCSSTUS1m.xls	2026-10-18T05:52:11Z	ba9c7453a1c6a235d08efa87f344025db3b1f4e946c5611cdcd8271851f2bec5	53248
-data/jodi_oil/raw/eia_MCRFPUS2m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCRFPUS2m.xls	2026-10-18T05:52:20Z	05ffd0287f234017a78695bf4d412d692527e94090a9ee31f41c5796e5d631d7	84992
-data/jodi_oil/raw/eia_steo_extract.csv	https://www.eia.gov/opendata/bulk/STEO.zip	2026-10-18T05:52:30Z	68379e73a8e3e62dbea17a8b86dff3184434e5c19dda167f77b0721808fde6d4	213329
-data/jodi_oil/raw/eia_steo_release.txt	https://www.eia.gov/opendata/bulk/manifest.txt	2026-10-18T06:21:09Z	26f1324f4a31eca63221f08b4a360ded291ffe7cbe5b7223ad7e59ac001ebe9f	125
+data/jodi_oil/raw/eia_MCRSTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCRSTUS1m.xls	2026-10-23T11:53:45Z	bd8b18f8ab945eac8d9a6ffecbdea65752cd8b93992bb429fdc001d8a250f613	38912
+data/jodi_oil/raw/eia_MCESTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCESTUS1m.xls	2026-10-23T11:53:50Z	548bf08f32f48967e0e67bdce29c8f4681b1de62eb8da46c01da68879101fce1	38912
+data/jodi_oil/raw/eia_MCSSTUS1m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCSSTUS1m.xls	2026-10-23T11:53:55Z	ba9c7453a1c6a235d08efa87f344025db3b1f4e946c5611cdcd8271851f2bec5	53248
+data/jodi_oil/raw/eia_MCRFPUS2m.xls	https://www.eia.gov/dnav/pet/hist_xls/MCRFPUS2m.xls	2026-10-23T11:54:00Z	05ffd0287f234017a78695bf4d412d692527e94090a9ee31f41c5796e5d631d7	84992
+data/jodi_oil/raw/eia_steo_extract.csv	https://www.eia.gov/opendata/bulk/STEO.zip	2026-10-23T11:54:05Z	b553600c8456dac7f580968b8ebc9fa5efb15a82d33d9a56566c25ef3247a859	213329
+data/jodi_oil/raw/eia_steo_release.txt	https://www.eia.gov/opendata/bulk/manifest.txt	2026-10-23T11:54:10Z	26f1324f4a31eca63221f08b4a360ded291ffe7cbe5b7223ad7e59ac001ebe9f	125

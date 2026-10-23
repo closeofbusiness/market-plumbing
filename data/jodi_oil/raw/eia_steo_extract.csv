@@ -1,6 +1,6 @@
 # source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 23 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
 # source: U.S. Energy Information Administration (Oct 2026): STEO bulk file (release of 6 Oct 2026); Petroleum Supply Monthly series MCRSTUS1, MCESTUS1, MCSSTUS1, MCRFPUS2.
-# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-09-22:5726e6e7319b 2026:2026-10-21:6967657d591f; max TIME_PERIOD and preliminary months: see file_stats.csv.
+# vintage: JODI files 2015:2025-10-21:08d761f322d8 2016:2025-10-21:e2689657ff55 2017:2025-10-21:e1ec1e41bce3 2018:2025-10-21:eb9bdb984c42 2019:2025-10-21:1013d3351fc7 2020:2025-10-21:fa12a096d21b 2021:2025-10-21:5af388bfe0e5 2022:2025-10-21:e0263b8a3324 2023:2025-10-21:34f170c90f39 2024:2025-10-21:99ffe47ceee1 2025:2026-10-21:fe7c640d99e7 2026:2026-10-21:6967657d591f; max TIME_PERIOD 2026-08; preliminary months 2026-07, 2026-08.
 series_id,name,units,month,value
 STEO.COPR_KU.M,"Crude Oil Production, Kuwait, Monthly",million barrels per day,2014-12,2.65
 STEO.COPR_KU.M,"Crude Oil Production, Kuwait, Monthly",million barrels per day,2015-01,2.7
