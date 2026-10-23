@@ -39,7 +39,7 @@ Every CSV starts with three lines that begin `#` (the JODI acknowledgement, the 
 
 ## Groups, window and panels
 
-- **Window.** From January 2015 to E, where E is the latest month of the vintage minus two (2026-05 at this build). The last two months are `preliminary`: published and flagged, never in a statistic. The start was chosen before any statistic was run: JODI coverage was near complete in 2015 and has fallen since, so a later start would add no members to a strict panel.
+- **Window.** From January 2015 to E, where E is the latest month of the vintage minus two (2026-06 at the registered build of 23 October 2026). The last two months are `preliminary`: published and flagged, never in a statistic. The start was chosen before any statistic was run: JODI coverage was near complete in 2015 and has fallen since, so a later start would add no members to a strict panel.
 - **OECD** is the 38-member list for 2026, used for all months.
 - **`panel_nonoecd_stocks`**: non-OECD areas with a usable closing stock (numeric, above zero, assessment code 1 or 3) in every month of the window. **`panel_oecd_stocks_exspr`**: OECD areas likewise, with the US figure taken as JODI's US stock less EIA's SPR (the US Strategic Petroleum Reserve) (JODI's US figure includes the SPR; see below). **`panel_producers`**: areas with a usable crude production figure in every month.
 - **Reporter groups** (`reporters_*`) are every area with a usable cell that month. They appear only as counts and as coverage ratios.
