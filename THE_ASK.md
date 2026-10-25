@@ -30,6 +30,26 @@ principal and append a new entry.
 
 ---
 
+## E-027 · 25 October 2026 — crawl the OFR money-fund monitor's chart files politely; goal read-back confirmed
+
+Given after the supervisor reported that the Office of Financial Research's "Complete Dataset" zip for its U.S. Money Market Fund
+Monitor returned HTTP 403 to a script, that the same data sit in the monitor's public per-chart files (robots.txt does not
+disallow them; the OFR's API has no country split), and that using them means about 1,000-2,000 small requests a month. The
+question offered three options; the principal chose:
+
+> *"Yes, crawl politely"* — the option as offered: *"Pace the requests, use the neutral User-Agent, latch STOP on any 403/429 and
+> never retry. Commit derived statistics only (OFR data is US-government work)."*
+
+In the same exchange, asked whether the canonical mission statement (quoted to him in full) still describes his intent, he chose:
+
+> *"Yes, unchanged"*
+
+**Reading notes.** The X3 build (`_research/2026-10-25-MMF-NonUS-Banks-Spec.md`) may crawl the monitor's chart files under the
+conditions quoted; the zip itself is not requested again. Any 403 or 429 on a chart file latches STOP and the crawl ends; nothing
+retries. The goal read-back due 16 Oct is done; the next is due about three weeks later (CALENDAR row 2026-11-15).
+
+---
+
 ## E-026 · 19 October 2026 — no notice to the Bank of Japan: a research script is not a "service"
 
 Given after the supervisor reported that the Bank of Japan's notice for its statistics API asks anyone who "releases a service
