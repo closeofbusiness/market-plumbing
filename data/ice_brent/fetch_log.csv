@@ -19,3 +19,5 @@ requested_at_utc,host,path,http_status,outcome,bytes,sha256
 2026-10-15T06:57:27.643Z,www.eia.gov,/dnav/pet/hist_xls/RBRTEd.xls,200,saved,452096,a7b7074cb3e1e4b7418cdc7f73ccf831226d55f9365c136be56c8edc3a1e2182
 2026-10-17T08:58:24.097Z,www.ice.com,/publicdocs/futures/COTHist2026.csv,200,saved,311330,458b942cf724d2d8b10069d549a2e50be22bde753f389713637e188c319ddccb
 2026-10-17T08:58:29.149Z,www.eia.gov,/dnav/pet/hist_xls/RBRTEd.xls,200,saved,452608,ae240e004d70e279e1e6a0e5297d1558c168c2279b7752f5c34513b72a8f3bb2
+2026-10-25T14:02:36.275Z,www.ice.com,/publicdocs/futures/COTHist2026.csv,200,saved,319182,56af478560772dd750d08bf5038e775b6dad6e9bc0493be492c906eca03d2ae7
+2026-10-25T14:02:41.330Z,www.eia.gov,/dnav/pet/hist_xls/RBRTEd.xls,200,saved,452608,4c59848741cf3075eeef6e12a7527135643e4e333a4a8b0123514193bcf0d685

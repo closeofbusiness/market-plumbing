@@ -1,4 +1,4 @@
-# source: Board of Governors of the Federal Reserve System, Notes on Data (www.federalreserve.gov/releases/h8/h8notes.htm) retrieved 2026-10-23, and release footnote 20 of the H.8 release
+# source: Board of Governors of the Federal Reserve System, Notes on Data (www.federalreserve.gov/releases/h8/h8notes.htm) retrieved 2026-10-25, and release footnote 20 of the H.8 release
 note_week,group,line38_effect_usd_mn,kind,paragraph_index,text_head
 2004-12-29,DOM,2000.0,note,0,"net due to related foreign offices, $2.0 billion"
 2006-10-04,DOM,-10000.0,note,0,"net due to related foreign offices, -$10.0 billion"

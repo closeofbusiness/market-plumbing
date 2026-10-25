@@ -1,3 +1,4 @@
 # source: the vintage index and 20-series subsets kept in the git-ignored cache; DDP package presence per vintage
 vintage,route,xml_prepared,xml_last_modified,xml_sha256,ddp_status,latest_week,rows_fri_nsa
 2026-10-16,xml,2026-10-16T10:00:00,2026-10-16T20:15:04Z,2ce2d425cdc21fe7fe3623aec6fe0dc273438e6887cdea813a69e188344c222b,ok,2026-10-07,2806
+2026-10-23,xml,2026-10-23T10:00:00,2026-10-23T20:15:15Z,465afb4eeb1a6b642d115043b48c10bd7b12e811b0db5829393d4a9b1aae82ff,ok,2026-10-14,2807

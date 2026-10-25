@@ -1,12 +1,12 @@
-# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-10-17; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-10-17
+# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-10-25; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-10-25
 contract,report_type,window,weeks,from_date,to_date,mm_net_from,mm_net_to,mm_net_chg,mm_net_chg_bbl,mm_net_pct_oi_from,mm_net_pct_oi_to
-brent,fo,4 weeks,4,2026-09-15,2026-10-13,275879,206930,-68949,-68949000,10.1,7.8
-brent,fo,12 weeks,12,2026-07-21,2026-10-13,188075,206930,18855,18855000,7.0,7.8
-brent,fo,52 weeks,52,2025-10-14,2026-10-13,110311,206930,96619,96619000,3.7,7.8
-brent,fo,since end-2023,146,2023-12-26,2026-10-13,199688,206930,7242,7242000,9.4,7.8
-brent,fo,since end-2025 (new),41,2025-12-30,2026-10-13,126906,206930,80024,80024000,4.0,7.8
-brent,combined,4 weeks,4,2026-09-15,2026-10-13,282657,233029,-49628,-49628000,7.5,6.5
-brent,combined,12 weeks,12,2026-07-21,2026-10-13,192031,233029,40998,40998000,5.0,6.5
-brent,combined,52 weeks,52,2025-10-14,2026-10-13,109606,233029,123423,123423000,2.9,6.5
-brent,combined,since end-2023,146,2023-12-26,2026-10-13,199375,233029,33654,33654000,7.6,6.5
-brent,combined,since end-2025 (new),41,2025-12-30,2026-10-13,126184,233029,106845,106845000,3.3,6.5
+brent,fo,4 weeks,4,2026-09-22,2026-10-20,228721,221344,-7377,-7377000,8.5,8.5
+brent,fo,12 weeks,12,2026-07-28,2026-10-20,204525,221344,16819,16819000,7.7,8.5
+brent,fo,52 weeks,52,2025-10-21,2026-10-20,51791,221344,169553,169553000,1.7,8.5
+brent,fo,since end-2023,147,2023-12-26,2026-10-20,199688,221344,21656,21656000,9.4,8.5
+brent,fo,since end-2025 (new),42,2025-12-30,2026-10-20,126906,221344,94438,94438000,4.0,8.5
+brent,combined,4 weeks,4,2026-09-22,2026-10-20,218114,241881,23767,23767000,6.0,6.6
+brent,combined,12 weeks,12,2026-07-28,2026-10-20,185083,241881,56798,56798000,5.2,6.6
+brent,combined,52 weeks,52,2025-10-21,2026-10-20,52521,241881,189360,189360000,1.3,6.6
+brent,combined,since end-2023,147,2023-12-26,2026-10-20,199375,241881,42506,42506000,7.6,6.6
+brent,combined,since end-2025 (new),42,2025-12-30,2026-10-20,126184,241881,115697,115697000,3.3,6.6

@@ -2,7 +2,7 @@
 
 ## Federal Reserve Board, H.8 release: XML file (primary source)
 
-- URL: `https://www.federalreserve.gov/releases/h8/data/FRB_h8_xml.zip`, fetched by `bin/h8_foreign_offices.py fetch`. The zip holds `H8_data.xml` (SDMX-ML compact), `H8_struct.xml` and two schema files; the script streams `H8_data.xml` with `iterparse` and never reads it with a regular expression. Vintages so far, with the time each was retrieved (UTC) and the XML `Prepared` timestamp: 2026-10-16 (xml, retrieved 2026-10-23T12:05:34Z, prepared 2026-10-16T10:00:00).
+- URL: `https://www.federalreserve.gov/releases/h8/data/FRB_h8_xml.zip`, fetched by `bin/h8_foreign_offices.py fetch`. The zip holds `H8_data.xml` (SDMX-ML compact), `H8_struct.xml` and two schema files; the script streams `H8_data.xml` with `iterparse` and never reads it with a regular expression. Vintages so far, with the time each was retrieved (UTC) and the XML `Prepared` timestamp: 2026-10-16 (xml, retrieved 2026-10-23T12:05:34Z, prepared 2026-10-16T10:00:00); 2026-10-23 (xml, retrieved 2026-10-25T14:02:58Z, prepared 2026-10-23T10:00:00).
 - Series: matched on the whole `SERIES_NAME`, never on a substring or a column position (`NFRD` is weekly NSA, `NFRDM` monthly NSA, `NFRA` weekly SA). The script asserts, for each of the 20 series: `BG`, `SA`, `CATEGORY` = `L`, `ITEM`, `FREQ` = `19`, `UNIT_MULT` = `1000000`. `CL_CATEGORY` L is "Liabilities" and `CL_ITEM` 1100 is "(38) Net due to related foreign offices".
 
 | series | group | basis | BG | ITEM | line |
@@ -39,7 +39,7 @@
 
 ## Notes on Data
 
-- URL: `https://www.federalreserve.gov/releases/h8/h8notes.htm`, newest cached copy retrieved 2026-10-23. The leading index of dates is not an entry; an undated paragraph belongs to the dated entry before it; the group is read per paragraph.
+- URL: `https://www.federalreserve.gov/releases/h8/h8notes.htm`, newest cached copy retrieved 2026-10-25. The leading index of dates is not an entry; an undated paragraph belongs to the dated entry before it; the group is read per paragraph.
 
 Quoted clauses that carry the amounts (the Board's text, in the stated paragraph):
 
