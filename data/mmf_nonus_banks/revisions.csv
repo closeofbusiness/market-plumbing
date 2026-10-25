@@ -1,0 +1,2 @@
+# source: Office of Financial Research, OFR Money Market Fund Monitor (https://www.financialresearch.gov/money-market-funds/); vintage updated 2026-10-15, data as of 2026-09-30; retrieved 2026-10-25 (fetch_log.csv); derived statistics by bin/mmf_nonus_banks.py. Office of Financial Research, "OFR Money Market Fund Monitor", refreshed monthly, https://www.financialresearch.gov/money-market-funds/.
+vintage_prev,vintage_new,month_end,country,instrument_group,usd_mn_prev,usd_mn_new,change_usd_mn

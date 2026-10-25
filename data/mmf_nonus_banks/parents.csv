@@ -1,0 +1,140 @@
+# source: Office of Financial Research, OFR Money Market Fund Monitor (https://www.financialresearch.gov/money-market-funds/); vintage updated 2026-10-15, data as of 2026-09-30; retrieved 2026-10-25 (fetch_log.csv); derived statistics by bin/mmf_nonus_banks.py. Office of Financial Research, "OFR Money Market Fund Monitor", refreshed monthly, https://www.financialresearch.gov/money-market-funds/.
+parent,country,country_group,kind,first_month,last_month,usd_mn_latest,vintage
+ABB Ltd.,Switzerland,CH,other_fin,2011-03-31,2020-03-31,0.0,2026-10-15
+ABN AMRO,Netherlands,EA,bank,2011-01-31,2026-09-30,13955.7,2026-10-15
+Abu Dhabi International Bank I,United Arab Emirates,OTHER_ASIA,bank,2023-04-30,2024-04-30,0.0,2026-10-15
+Agricultural Bank of China,China,OTHER_ASIA,bank,2013-08-31,2026-08-31,0.0,2026-10-15
+Albion Capital,Australia,AUNZ,other_fin,2013-09-30,2026-09-30,618.8,2026-10-15
+Allianz,Germany,EA,insurer,2011-01-31,2022-02-28,0.0,2026-10-15
+Alternative Bank Switzerland AG,Switzerland,CH,bank,2022-05-31,2025-02-28,0.0,2026-10-15
+Asian Development Bank,Philippines,OTHER_ASIA,other_fin,2021-05-31,2021-10-31,0.0,2026-10-15
+Australia & New Zealand Banking Group,Australia,AUNZ,bank,2011-01-31,2026-09-30,28336.0,2026-10-15
+Axa SA,France,EA,insurer,2011-01-31,2026-08-31,0.0,2026-10-15
+Axis,India,OTHER_ASIA,bank,2011-01-31,2023-03-31,0.0,2026-10-15
+BNP Paribas,France,EA,bank,2011-01-31,2026-09-30,154708.4,2026-10-15
+Banco Bilbao Vizcaya Argentaria,Spain,EA,bank,2011-01-31,2026-09-30,11866.6,2026-10-15
+Banco Santander,Spain,EA,bank,2011-01-31,2026-09-30,31371.4,2026-10-15
+Banco de Credito e Inversiones,Chile,OTHER,bank,2012-09-30,2020-06-30,0.0,2026-10-15
+Banco del Estado de Chile,Chile,OTHER,bank,2011-01-31,2024-07-31,0.0,2026-10-15
+Banesco,Venezuela,OTHER,bank,2014-08-31,2017-10-31,0.0,2026-10-15
+Bank Baroda,India,OTHER_ASIA,bank,2011-05-31,2016-07-31,0.0,2026-10-15
+Bank Hapoalim,Israel,OTHER_ASIA,bank,2011-11-30,2021-01-31,0.0,2026-10-15
+Bank Leumi,Israel,OTHER_ASIA,bank,2011-11-30,2016-02-29,0.0,2026-10-15
+Bank Nederlandse Gemeenten,Netherlands,EA,other_fin,2011-04-30,2026-09-30,40.0,2026-10-15
+Bank of Australia,Australia,AUNZ,bank,2011-02-28,2015-06-30,0.0,2026-10-15
+Bank of China,China,OTHER_ASIA,bank,2011-05-31,2026-08-31,0.0,2026-10-15
+Bank of India,India,OTHER_ASIA,bank,2011-05-31,2016-07-31,0.0,2026-10-15
+Bank of Ireland,Ireland,EA,bank,2011-01-31,2011-03-31,0.0,2026-10-15
+Bank of Montreal,Canada,CA,bank,2011-01-31,2026-09-30,51471.0,2026-10-15
+Bank of New Zealand,New Zealand,AUNZ,bank,2011-01-31,2026-09-30,717.9,2026-10-15
+Bank of Nova Scotia,Canada,CA,bank,2011-01-31,2026-09-30,37948.7,2026-10-15
+Bank of Tokyo-Mitsubishi,Japan,JP,bank,2011-01-31,2026-09-30,73554.3,2026-10-15
+Banque et Caisse,Luxembourg,EA,bank,2011-01-31,2025-08-31,0.0,2026-10-15
+Barclays,UK,UK,bank,2011-01-31,2026-09-30,57823.7,2026-10-15
+Bayerische Hypo Vereinsbank,Germany,EA,bank,2011-02-28,2011-06-30,0.0,2026-10-15
+Bayerische Landesbank,Germany,EA,bank,2011-01-31,2026-08-31,0.0,2026-10-15
+Brookfield Holdings Canada Inc.,Canada,CA,other_fin,2022-10-31,2022-10-31,0.0,2026-10-15
+Caisse Centrale Des Jardins,Canada,CA,bank,2011-01-31,2026-09-30,1415.8,2026-10-15
+Canadian Imperial Bancorp,Canada,CA,bank,2011-01-31,2026-09-30,54897.9,2026-10-15
+Canadian Pacer Auto Recievables Trust,Canada,CA,other_fin,2017-10-31,2018-02-28,0.0,2026-10-15
+Chiba Bank,Japan,JP,bank,2013-01-31,2020-04-30,0.0,2026-10-15
+China Construction Bank,China,OTHER_ASIA,bank,2011-12-31,2026-09-30,1000.0,2026-10-15
+"Cic Eurosecurities, Inc.",France,EA,other_fin,2015-09-30,2016-07-31,0.0,2026-10-15
+Commerzbank,Germany,EA,bank,2011-01-31,2026-09-30,3532.4,2026-10-15
+Commonwealth Bank of Australia,Australia,AUNZ,bank,2011-01-31,2026-09-30,2760.5,2026-10-15
+Credit Agricole,France,EA,bank,2011-01-31,2026-09-30,84089.6,2026-10-15
+Credit Industriel,France,EA,bank,2011-01-31,2022-12-31,0.0,2026-10-15
+Credit Mutuel,France,EA,bank,2011-01-31,2026-09-30,4162.7,2026-10-15
+Credit Suisse,Switzerland,CH,bank,2011-01-31,2024-12-31,0.0,2026-10-15
+DBS Bank,Singapore,OTHER_ASIA,bank,2012-01-31,2026-09-30,3994.1,2026-10-15
+DNB,Norway,NORDIC,bank,2011-01-31,2026-09-30,12795.1,2026-10-15
+DZ Bank AG,Germany,EA,bank,2011-01-31,2026-09-30,1522.3,2026-10-15
+Daiwa Securities Group Inc,Japan,JP,other_fin,2016-06-30,2026-09-30,16106.3,2026-10-15
+Danske Bank,Denmark,NORDIC,bank,2011-01-31,2026-09-30,62.6,2026-10-15
+Depfa Bank,Germany,EA,bank,2011-01-31,2020-09-30,0.0,2026-10-15
+Deutsche Bank,Germany,EA,bank,2011-01-31,2026-09-30,28744.7,2026-10-15
+Dexia,Belgium,EA,bank,2011-01-31,2026-05-31,0.0,2026-10-15
+Eaton Capital UnLtd Co,Ireland,EA,other_fin,2022-06-30,2026-05-31,0.0,2026-10-15
+Eksportfinans,Norway,NORDIC,other_fin,2011-01-31,2012-03-31,0.0,2026-10-15
+Erste Bank,Austria,EA,bank,2011-01-31,2026-09-30,439.9,2026-10-15
+Experian Finance PLC,UK,UK,other_fin,2021-10-31,2026-09-30,7.0,2026-10-15
+Firstmac Mortgage,Australia,AUNZ,other_fin,2014-12-31,2015-05-31,0.0,2026-10-15
+Glencore,Switzerland,CH,other_fin,2019-03-31,2026-09-30,90.3,2026-10-15
+Global Lending Services LLC,Japan,JP,other_fin,2026-08-31,2026-09-30,4.1,2026-10-15
+Groupe BPCE,France,EA,bank,2011-01-31,2026-09-30,6674.7,2026-10-15
+HSBC,UK,UK,bank,2011-01-31,2026-09-30,28509.3,2026-10-15
+Hana Financial Group,South Korea,OTHER_ASIA,bank,2021-01-31,2026-09-30,179.8,2026-10-15
+Helaba,Germany,EA,bank,2011-01-31,2026-09-30,2750.0,2026-10-15
+ING Groep Nv,Netherlands,EA,bank,2011-01-31,2026-09-30,35996.2,2026-10-15
+ITOCHU Corporation,Japan,JP,other_fin,2025-11-30,2026-09-30,54.0,2026-10-15
+Icici Bank Limited,India,OTHER_ASIA,bank,2011-01-31,2014-11-30,0.0,2026-10-15
+Industrial & Commercial Bank of China Ltd.,China,OTHER_ASIA,bank,2011-11-30,2024-05-31,0.0,2026-10-15
+Intesa,Italy,EA,bank,2011-01-31,2011-10-31,0.0,2026-10-15
+Israel Discount Bank of New York,Israel,OTHER_ASIA,bank,2011-11-30,2017-10-31,0.0,2026-10-15
+Japan Finance Corp,Japan,JP,other_fin,2011-01-31,2011-05-31,0.0,2026-10-15
+KBC Groep Nv,Belgium,EA,bank,2011-01-31,2026-09-30,252.5,2026-10-15
+KFW,Germany,EA,other_fin,2011-01-31,2026-09-30,40.0,2026-10-15
+Kommunalbanken,Norway,NORDIC,other_fin,2011-07-31,2024-08-31,0.0,2026-10-15
+Kookmin Bank,South Korea,OTHER_ASIA,bank,2012-04-30,2025-11-30,0.0,2026-10-15
+LA BANQUE POSTALE,France,EA,bank,2017-09-30,2020-03-31,0.0,2026-10-15
+Landesbank Baden-wuerttemberg,Germany,EA,bank,2011-01-31,2026-09-30,8765.2,2026-10-15
+Lloyds,UK,UK,bank,2011-01-31,2026-09-30,9902.0,2026-10-15
+London Stock Exchange Group,UK,UK,other_fin,2024-11-30,2025-11-30,0.0,2026-10-15
+London Stock Exchange Group plc,UK,UK,other_fin,2025-12-31,2026-09-30,24.3,2026-10-15
+Louis Dreyfus,Netherlands,EA,other_fin,2011-01-31,2012-09-30,0.0,2026-10-15
+Macquarie,Australia,AUNZ,bank,2011-01-31,2026-09-30,3386.6,2026-10-15
+Maybank,Malaysia,OTHER_ASIA,bank,2015-11-30,2021-03-31,0.0,2026-10-15
+Mirae Asset Financial Group,South Korea,OTHER_ASIA,other_fin,2024-08-31,2026-09-30,91.2,2026-10-15
+Mizuho,Japan,JP,bank,2011-01-31,2026-09-30,51057.2,2026-10-15
+NRW.Bank,Germany,EA,other_fin,2011-01-31,2026-09-30,50.3,2026-10-15
+NatWest Group,UK,UK,bank,2021-09-30,2026-09-30,264.0,2026-10-15
+Natexis + Natixis,France,EA,bank,2011-01-31,2026-09-30,30475.3,2026-10-15
+National Australia Bank,Australia,AUNZ,bank,2011-01-31,2026-09-30,9307.5,2026-10-15
+National Bank of Abu Dhabi,United Arab Emirates,OTHER_ASIA,bank,2015-12-31,2026-09-30,5333.2,2026-10-15
+National Bank of Canada,Canada,CA,bank,2011-01-31,2026-09-30,14534.1,2026-10-15
+National Bank of Kuwait,Kuwait,OTHER_ASIA,bank,2011-11-30,2026-09-30,1335.5,2026-10-15
+Nationwide Building Society,UK,UK,bank,2011-01-31,2026-09-30,64.2,2026-10-15
+Nederlandse Waterschapbank,Netherlands,EA,other_fin,2011-01-31,2026-08-31,0.0,2026-10-15
+Nomura Securities,Japan,JP,other_fin,2011-01-31,2026-09-30,15850.7,2026-10-15
+Norddeutsche Landesbank,Germany,EA,bank,2011-01-31,2026-09-30,1079.8,2026-10-15
+Nordea,Sweden,NORDIC,bank,2011-01-31,2026-09-30,3539.5,2026-10-15
+Norinchukin Bank,Japan,JP,bank,2011-01-31,2026-09-30,3954.2,2026-10-15
+Northcross Capital,UK,UK,other_fin,2011-01-31,2026-09-30,1285.8,2026-10-15
+Novo Holdings A/S,Denmark,NORDIC,other_fin,2026-03-31,2026-03-31,0.0,2026-10-15
+OMERS Finance Trust,Canada,CA,other_fin,2018-07-31,2026-09-30,66.2,2026-10-15
+OP Financial Group,Finland,EA,bank,2015-08-31,2016-07-31,0.0,2026-10-15
+Oesterreicheische Kontrollbank Ag,Austria,EA,other_fin,2011-01-31,2026-06-30,0.0,2026-10-15
+Oversea Chinese Banking,Singapore,OTHER_ASIA,bank,2011-08-31,2026-09-30,9753.0,2026-10-15
+Pepper Group,UK,UK,other_fin,2018-10-31,2020-09-30,0.0,2026-10-15
+Prudential Plc,UK,UK,insurer,2011-01-31,2026-09-30,6.0,2026-10-15
+RWE AG,Germany,EA,other_fin,2023-02-28,2026-02-28,0.0,2026-10-15
+Rabobank,Netherlands,EA,bank,2011-01-31,2026-09-30,7096.6,2026-10-15
+Reckitt Benckiser,UK,UK,other_fin,2011-01-31,2017-04-30,0.0,2026-10-15
+Resimac,Australia,AUNZ,other_fin,2013-06-30,2015-02-28,0.0,2026-10-15
+Roche Holdings,Switzerland,CH,other_fin,2011-01-31,2026-08-31,0.0,2026-10-15
+Royal Bank of Canada,Canada,CA,bank,2011-01-31,2026-09-30,221968.4,2026-10-15
+Royal Bank of Scotland,UK,UK,bank,2011-01-31,2026-09-30,5281.1,2026-10-15
+SBAB Bank AB,Sweden,NORDIC,bank,2011-01-31,2013-08-31,0.0,2026-10-15
+Shinhan Bank,South Korea,OTHER_ASIA,bank,2012-11-30,2026-07-31,0.0,2026-10-15
+Shizuoka Bank,Japan,JP,bank,2011-01-31,2020-07-31,0.0,2026-10-15
+Skandinaviska Enskilda Banken,Sweden,NORDIC,bank,2011-01-31,2026-09-30,9115.2,2026-10-15
+Societe Generale,France,EA,bank,2011-01-31,2026-09-30,40564.8,2026-10-15
+Standard Chartered Bank,UK,UK,bank,2011-01-31,2026-09-30,8661.5,2026-10-15
+State Bank Financial,India,OTHER_ASIA,bank,2017-04-30,2017-04-30,0.0,2026-10-15
+State Bank of India,India,OTHER_ASIA,bank,2012-09-30,2017-07-31,0.0,2026-10-15
+Sumitomo Mitsui Bank,Japan,JP,bank,2011-01-31,2026-09-30,81017.7,2026-10-15
+Sumitomo Trust,Japan,JP,bank,2011-01-31,2020-06-30,0.0,2026-10-15
+Suncorp,Australia,AUNZ,other_fin,2011-01-31,2026-08-31,0.0,2026-10-15
+Svenska Handelsbanken,Sweden,NORDIC,bank,2011-01-31,2026-09-30,11847.0,2026-10-15
+Swedbank,Sweden,NORDIC,bank,2011-01-31,2026-09-30,2850.0,2026-10-15
+Swedish Export Finance,Sweden,NORDIC,other_fin,2011-03-31,2024-03-31,0.0,2026-10-15
+TP ICAP,UK,UK,other_fin,2019-06-30,2019-06-30,0.0,2026-10-15
+The Commercial Bank of Qatar,Qatar,OTHER_ASIA,bank,2017-08-31,2019-04-30,0.0,2026-10-15
+Toronto Dominion,Canada,CA,bank,2011-01-31,2026-09-30,61676.9,2026-10-15
+UBS,Switzerland,CH,bank,2011-01-31,2026-09-30,6890.0,2026-10-15
+Unicredit,Italy,EA,bank,2011-01-31,2011-10-31,0.0,2026-10-15
+United Overseas Bank,Singapore,OTHER_ASIA,bank,2011-04-30,2026-09-30,1812.1,2026-10-15
+Westpac,Australia,AUNZ,bank,2011-01-31,2026-09-30,8933.3,2026-10-15
+Wintek Ltd,China,OTHER_ASIA,other_fin,2011-01-31,2019-03-31,0.0,2026-10-15
+Zephyr Financiere Inc.,Canada,CA,other_fin,2026-04-30,2026-09-30,489.8,2026-10-15
+Zurich Cantonal Bank,Switzerland,CH,bank,2018-01-31,2021-02-28,0.0,2026-10-15

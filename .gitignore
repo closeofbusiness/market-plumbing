@@ -106,3 +106,10 @@ data/h8_foreign_offices/_FAILED/
 data/vintages/bis_ids_dollar/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/bis_ids_dollar/_FAILED/
+
+# US money funds' claims on non-US banks (bin/mmf_nonus_banks.py): the OFR monitor's chart files (every vintage, complete and partial), the API replies, the request
+# manifests and the STOP latches stay in this cache and are never committed (the OFR says its parent and country mapping draws on commercial data). A STOP_ofr,
+# STOP_api or STOP_budget file here is the fetch latch; only a person deletes it.
+data/vintages/mmf_nonus_banks/
+# A build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/mmf_nonus_banks/_FAILED/

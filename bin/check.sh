@@ -1060,6 +1060,134 @@ PY
   fi
 }
 
+# --- M23: US MONEY FUNDS' CLAIMS ON NON-US BANKS GUARD (warn only) -----------
+# data/mmf_nonus_banks/ holds statistics derived from the OFR money-fund monitor and nothing raw (spec _research/2026-10-25-MMF-NonUS-Banks-Spec.md, sections 5, 6
+# and 9.5; build bin/mmf_nonus_banks.py). The monitor's JSON stays in the gitignored cache data/vintages/mmf_nonus_banks/. Six things would break that or the
+# spec's rules, and none is visible to M5-M22:
+#   1. a file that is not one of the twelve committed names (ten CSVs, README.md, SOURCES.md), a raw file (.json, .zip, .html, .pdf) or a node JSON under any
+#      name, and a missing name;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's ten canonical lines, typed here a second
+#      time: this guard never reads them from the script;
+#   3. a local path (/Users/, /private/, a tilde) or an at sign in any committed file;
+#   4. causal, flow or motive wording (the spec's two patterns, pasted) in README.md anywhere but the one denial sentence;
+#   5. a duplicate key in any file;
+#   6. on every month, measure and lineage of levels_group.csv, the nine groups EA, JP, CA, UK, CH, NORDIC, AUNZ, OTHER_ASIA and OTHER not summing to ALL_NONUS.
+# The script refuses the same things when it writes; this is the second, independent look. MMFNB_DIR overrides the folder (used to show that the guard fires on
+# a planted copy). It warns and never blocks (header doctrine).
+mmfnb_leak_check() {
+  echo "-- M23: money-fund non-US banks guard (data/mmf_nonus_banks/: the twelve names, exact headers, no raw file, local path or at sign, no causal/flow/motive wording outside the denial sentence, no duplicate key, the nine groups sum to ALL_NONUS on every month, measure and lineage) --"
+  local dir="${MMFNB_DIR:-data/mmf_nonus_banks}" out py
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+from decimal import Decimal
+d = sys.argv[1]
+CANON = """levels_country.csv:month_end,country,country_group,instrument_group,usd_mn,pct_of_mmf_total,pct_of_nonus_fi,vintage
+levels_group.csv:month_end,country_group,fund_lineage,measure,usd_mn,pct_of_mmf_total,pct_of_lineage_total,vintage
+quarter_ends.csv:quarter,qe_month,basis,stat_kind,country_group,measure,level_prev_usd_mn,level_qe_usd_mn,level_next_usd_mn,chg_in_pct,chg_out_pct,below_nbrs_pct,below_nbrs_usd_mn,window,frozen_set,primary,blind,vintage
+qe_summary.csv:basis,stat_kind,window,country_group,measure,n_quarters,n_blank,mean_below_nbrs_pct,median_below_nbrs_pct,n_negative,sd_below_nbrs_pct,se_mean_below_nbrs_pct,noise_clean_sd_pct,noise_n,pattern,paired_n_vs_aunz,paired_mean_diff_vs_aunz_pct,paired_se_vs_aunz_pct,primary,blind,vintage
+parents.csv:parent,country,country_group,kind,first_month,last_month,usd_mn_latest,vintage
+summary.csv:question,window,country_group,measure,from_month,to_month,statistic,value,unit,primary,blind
+revisions.csv:vintage_prev,vintage_new,month_end,country,instrument_group,usd_mn_prev,usd_mn_new,change_usd_mn
+vintages.csv:vintage,ofr_updated,ofr_asof,requests,nodes,manifest_sha256,api_total_check,kind_table_sha256
+checks.csv:check_id,description,expected,observed,status
+fetch_log.csv:utc_time,host,path,status,bytes,sha256
+"""
+want = dict(l.split(":", 1) for l in CANON.strip().split("\n"))
+keys = {
+ "levels_country.csv": ("month_end", "country", "instrument_group"),
+ "levels_group.csv": ("month_end", "country_group", "fund_lineage", "measure"),
+ "quarter_ends.csv": ("quarter", "basis", "country_group", "measure"),
+ "qe_summary.csv": ("basis", "window", "country_group", "measure"),
+ "parents.csv": ("parent", "country"),
+ "summary.csv": ("question", "window", "country_group", "measure", "from_month", "to_month", "statistic"),
+ "revisions.csv": ("vintage_prev", "vintage_new", "month_end", "country", "instrument_group"),
+ "vintages.csv": ("vintage",),
+ "checks.csv": ("check_id",),
+}
+names = set(want) | {"README.md", "SOURCES.md"}
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)?flows?\b|window[- ]dressing|\b(?:head\s+offices?|parents?)\s+(?:fund|funds|funded|funding|push|pushes|pushed|pull|pulls|pulled|drain|drains|drained)\b|\b(?:dollar\s+)?(?:shortage|squeeze)\b|\bpull(?:ed|ing|s)?\s+(?:back|out)\b|\bretreat(?:ed|ing|s)?\b|\bruns?\s+on\b|\bflight\b|\blog[- ]points?\b|\bdips?\b", re.I)
+DENIAL = "These month-end changes are not flows of funds, and the table does not test window dressing or any other motive."
+bad = []
+here = set()
+texts = {}
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    here.add(n)
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    texts[n] = t
+    body = [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+    first = body[0].lstrip() if body else ""
+    if n.lower().endswith((".json", ".zip", ".html", ".pdf")) or first.startswith('{"datatable"') or first.startswith('{"highcharts"') or (first.startswith("{") and ('"datatable"' in t[:3000] or '"highcharts"' in t[:3000])):
+        bad.append("raw file in the committed folder (a node JSON, zip, page or PDF): " + n)
+        continue
+    if n not in names:
+        bad.append("file that is not one of the twelve committed names: " + n)
+        continue
+    if re.search(r"/Users/|/private/|~", t):
+        bad.append(n + " contains a local path (/Users/, /private/ or a tilde)")
+    if "@" in t:
+        bad.append(n + " contains an at sign")
+    if n in want:
+        hdr = (body[0] if body else "").rstrip("\r")
+        if hdr != want[n]:
+            bad.append("header of " + n + " is not its exact allowlist")
+        elif n in keys:
+            rows = list(csv.reader(body))
+            head = rows[0]
+            idx = [head.index(k) for k in keys[n]]
+            seen, dup = set(), []
+            for r in rows[1:]:
+                k = tuple(r[i] for i in idx if i < len(r))
+                if k in seen:
+                    dup.append(k)
+                seen.add(k)
+            if dup:
+                bad.append("duplicate key in " + n + ": " + "|".join(dup[0]) + " (" + str(len(dup)) + " duplicate row(s))")
+    if n == "README.md":
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t2)})
+        if hits:
+            bad.append("README.md holds banned wording (spec R5): " + ", ".join(hits[:6]))
+for n in sorted(names - here):
+    bad.append("missing: " + n)
+NINE = ("EA", "JP", "CA", "UK", "CH", "NORDIC", "AUNZ", "OTHER_ASIA", "OTHER")
+t = texts.get("levels_group.csv")
+if t:
+    body = [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+    rows = list(csv.reader(body))
+    if rows and ",".join(rows[0]) == want["levels_group.csv"]:
+        head = rows[0]
+        im, ig, il, imeas, iv = (head.index(c) for c in ("month_end", "country_group", "fund_lineage", "measure", "usd_mn"))
+        tot, parts = {}, {}
+        for r in rows[1:]:
+            if len(r) <= iv or r[iv] == "":
+                continue
+            k = (r[im], r[il], r[imeas])
+            if r[ig] == "ALL_NONUS":
+                tot[k] = Decimal(r[iv])
+            elif r[ig] in NINE:
+                parts[k] = parts.get(k, Decimal(0)) + Decimal(r[iv])
+        off = [k for k in sorted(set(tot) | set(parts)) if abs(tot.get(k, Decimal(0)) - parts.get(k, Decimal(0))) > Decimal("0.5")]
+        if off:
+            k = off[0]
+            bad.append("levels_group.csv: the nine groups do not sum to ALL_NONUS in " + str(len(off)) + " month-measure-lineage cell(s), first " + "/".join(k) + " (nine groups " + str(parts.get(k, Decimal(0))) + ", ALL_NONUS " + str(tot.get(k, Decimal(0))) + ")")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" 2>&1)
+  if [ -z "$(printf '%s' "$out" | tr -d '\n ')" ]; then
+    echo "  ✓ twelve names, every header its exact allowlist, no raw file, local path or at sign, no duplicate key, no banned wording outside the denial sentence, and the nine groups sum to ALL_NONUS on every month, measure and lineage of levels_group.csv in $dir."
+  else
+    printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /'
+    printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+    echo "  -> raw OFR files stay in data/vintages/mmf_nonus_banks/ (gitignored); fix the build, do not edit the committed tables by hand."
+  fi
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -1498,6 +1626,8 @@ if [ "$TARGET" = "--all" ]; then
   h8fo_leak_check
   echo
   bisids_leak_check
+  echo
+  mmfnb_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

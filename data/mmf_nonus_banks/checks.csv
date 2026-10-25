@@ -1,0 +1,50 @@
+# source: Office of Financial Research, OFR Money Market Fund Monitor (https://www.financialresearch.gov/money-market-funds/); vintage updated 2026-10-15, data as of 2026-09-30; retrieved 2026-10-25 (fetch_log.csv); derived statistics by bin/mmf_nonus_banks.py. Office of Financial Research, "OFR Money Market Fund Monitor", refreshed monthly, https://www.financialresearch.gov/money-market-funds/.
+check_id,description,expected,observed,status
+C01a,sum of the nine root categories: root on 2026-09-30,8396822287018.74,8396822287018.74,PASS
+C01b,sum of the nine root categories: root on 2011-01-31,3011802131036.00,3011802131036.00,PASS
+C01c,sum of the nine root categories equals MMF-MMF_TOT-M on 2026-09-30,within 1.00 USD,"categories 8396822287018.74, API 8396822287018.74",PASS
+C01d,sum of the nine root categories equals MMF-MMF_TOT-M on 2011-01-31,within 1.00 USD,"categories 3011802131036.00, API 3011802131036.0",PASS
+C01e,the nine categories equal MMF-MMF_TOT-M in every month,within 1.00 USD,largest gap 0.00 USD in 189 months,PASS
+C02a,"France, Financial Institution sector, government funds: Government/Europe/France / Financial Institution on 2026-09-30",216102500879.82,216102500879.82,PASS
+C02b,"sum of the seven French financial-institution parents, government funds: Government/Europe/France/Financial Institution on 2026-09-30",216102500879.82,216102500879.82,PASS
+C02c,"BNP Paribas, government funds: Government/Europe/France/Financial Institution / BNP Paribas on 2026-09-30",119064967826.42,119064967826.42,PASS
+C02d,"Credit Agricole, government funds: Government/Europe/France/Financial Institution / Credit Agricole on 2026-09-30",51474585053.40,51474585053.4,PASS
+C02e,"Societe Generale, government funds: Government/Europe/France/Financial Institution / Societe Generale on 2026-09-30",26237948000.00,26237948000.0,PASS
+C02f,"Natexis + Natixis, government funds: Government/Europe/France/Financial Institution / Natexis + Natixis on 2026-09-30",19325000000.00,19325000000.0,PASS
+C02g,"Axa SA, government funds: Government/Europe/France/Financial Institution / Axa SA on 2026-09-30",0,0.0,PASS
+C02h,"Credit Mutuel, government funds: Government/Europe/France/Financial Institution / Credit Mutuel on 2026-09-30",0,0.0,PASS
+C02i,"Groupe BPCE, government funds: Government/Europe/France/Financial Institution / Groupe BPCE on 2026-09-30",0,0.0,PASS
+C02j,BNP Paribas Treasury repurchase agreements: Government/Europe/France/Financial Institution/BNP Paribas / Treasury Repurchase Agreement on 2026-09-30,86062527564.34,86062527564.34,PASS
+C02k,BNP Paribas Government Agency repurchase agreements: Government/Europe/France/Financial Institution/BNP Paribas / Government Agency Repurchase Agreement on 2026-09-30,33002440262.08,33002440262.08,PASS
+C02l,"BNP Paribas asset types, sum: Government/Europe/France/Financial Institution/BNP Paribas on 2026-09-30",119064967826.42,119064967826.42,PASS
+C03a,"Japan, all sectors, government funds: Government/Asia / Japan on 2026-09-30",113982689785.25,113982689785.25,PASS
+C03b,"Canada, all sectors, government funds: Government/North America / Canada on 2026-09-30",237451088980.92,237451088980.92,PASS
+C03c,"USA, all sectors, government funds: Government/North America / USA on 2026-09-30",6179508927720.00,6179508927720.0,PASS
+C03d,"region Europe, government funds: Government / Europe on 2026-09-30",335544661517.19,335544661517.19,PASS
+C03e,"France, all sectors, government funds: Government/Europe / France on 2016-03-31",55610766012.58,55610766012.58,PASS
+C03f,"France, all sectors, government funds: Government/Europe / France on 2024-06-30",183349026908.53,183349026908.53,PASS
+C04,"France, Financial Institution sector, government funds: Government/Europe/France / Financial Institution on 2026-06-30",209083190057.81,209083190057.81,PASS
+C05a,"Prime Institutional, region Europe: Prime Institutional / Europe on 2026-09-30",97894050668.11,97894050668.11,PASS
+C05b,"Prime, region Europe: Prime / Europe on 2011-01-31",885581940544.21,885581940544.21,PASS
+C05c,"Prime, region Europe: Prime / Europe on 2016-03-31",481729017251.35,481729017251.35,PASS
+C05d,"Prime Institutional, region Europe: Prime Institutional / Europe on 2016-04-30",530959993340.79,530959993340.79,PASS
+C05e,"Government (Fees & Gates), region Europe: Government (Fees & Gates) / Europe on 2016-04-30",63230004856.22,63230004856.22,PASS
+C05f,"Government (Fees & Gates), region North America: Government (Fees & Gates) / North America on 2020-03-31",4528754694.53,4528754694.53,PASS
+C06,"FICC, USA Financial Institution sector, government funds: Government/North America/USA/Financial Institution / FICC on 2026-09-30",909754515958.22,909754515958.22,PASS
+C07,"nonzero month counts of the nine fund categories (Prime, Prime Institutional, Prime Retail, Government, Government No Fees and Gates, Government Fees and Gates, Tax Exempt, Tax Exempt Institutional, Tax Exempt Retail)","63,126,126,91,98,98,63,126,126","63,126,126,91,98,98,63,126,126",PASS
+C08,"root months: calendar month-ends from 2011-01-31 to asof, no gaps",189 months to 2026-09-30,"189 months, 2011-01-31 to 2026-09-30",PASS
+C09,non-US secured (repo) against MMF-MMF_RP_wFFI-M in every month (gap printed; definitions may differ),gap 0,"largest gap 0.00 USD on 2026-09-30; on 2026-09-30 secured 890163548540.15, API 890163548540.15",PASS
+C10,no 'Aggregated small issuers' child,none,none,PASS
+C11,"levels_group FR / government / headline / 2026-09-30, USD millions",216102.5,216102.5,PASS
+C12,a second build leaves every sha256 unchanged,identical,identical,PASS
+C13,"no unknown label (categories, regions, countries, sectors, asset types)",none,no unknown label,PASS
+C13b,relayed asset-type labels seen (mapped as listed),none,"Insurance Company Funding Agreement, Investment Company, Non-Negotiable Time Deposit, Non-U.S. Sovereign, Sub-Sovereign and Supra-National debt, Other Asset Backed Securities, Other Municipal Security, Tender Option Bond, Variable Rate Demand Note",WARN
+C14,MEMO_FICC against MMF-MMF_RP_wFICC-M in every month (gap printed),gap 0,"largest gap 28350000000.00 USD on 2025-08-31; on 2026-09-30 MEMO_FICC 1156504775448.02, API 1137272775448.02",WARN
+C15,"the kind table hashes to KIND_TABLE_SHA256 and every parent has a kind (review date in SOURCES.md, Builder decisions)",372706934150e78332604721c1efde76cdd0b07b09015d4ed8159eec6e6c491b,372706934150e78332604721c1efde76cdd0b07b09015d4ed8159eec6e6c491b,PASS
+C16,"secured + unsecured + abcp + misc + unallocated = headline, every group, month and lineage",within 1.00 USD,no breach,PASS
+C17,node identities: children sum to the parent's value on every node and month,within 1.00 USD,"996 nodes, no breach",PASS
+C18,category lineages: old and new names never both nonzero in one month,none,none,PASS
+C19,"the nine groups sum to ALL_NONUS in every month, measure and lineage; ALL_NONUS equals the sum over countries; every share is within 0-100",none,none,PASS
+C20,vintages: asof never earlier than the previous vintage's; the same key never has a different manifest,none,none,PASS
+C21,no basis other than calendar uses a calendar quarter-end month as a neighbour; ca_fiscal is one-sided; jp_march is March,none,none,PASS
+S1,"historical hit rate of the pre-registered statement (chg_in_pct <= -N on the 9 year-ends 2017-2025, ALL_NONUS secured); N is the clean-month sd, frozen at the first build",at least 8 of 9,9 of 9 with N = 6.2158,PASS
