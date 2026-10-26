@@ -529,3 +529,20 @@ Grok (fenced, read + web; 16 fetches, no breaches) said BUILD WITH CHANGES. I ch
 - **Observed, for the builder.** Some filers report `VALUE` in thousands: Cerebras rows imply $0.22, SpaceX rows $0.17. These rows are caught by the ±1% check and listed. Shares count; values do not. Both issuers' shares appear under more than one identifier string in the raw file, so the R2-2 normalisation and the second scan matter for C19.
 - **Paths.** Raw files are in the repository's gitignored `data/vintages/form13f_zips/` and `data/vintages/ipo_13f_holders/docs/`, following the repository's practice for every other build, in place of the spec's `private/...`.
 - **First 10-Qs.** All five measured issuers filed a 10-Q for the period ended 30 Jun 2026, so C20 is expected to list none.
+
+## Supervisor rulings, round 6 (during the build), 26 Oct 2026
+
+Recorded in full in `data/ipo_13f_holders/SOURCES.md`, Builder decisions, as "supervisor ruling R6-1" to "R6-17". In summary:
+- **R6-1:** a blank amendment type refuses the build only at a measured quarter-end.
+- **R6-2:** C02 pins 5 and 8 corrected from the zip; the relayed figures had added a call position (Atreides) and dropped one row (Maplelane). Verified by the supervisor.
+- **R6-3:** an `offer_price_usd` item in `deal_inputs.csv`, so the hash covers the prices.
+- **R6-4, R6-5, R6-7 to R6-10:** builder readings accepted. These cover the zip folder, the per-ticker pre-listing flag, rounded 10-Q counts, the i2 typed-count labels, a 13F-HR carrying an amendment flag, and the 2026q2 Official List governing the June reports.
+- **R6-6:** rows under the Official List's call and put identifiers count as options, never in `sh_13f`.
+- **R6-11 to R6-17 (independent verifier's defects):**
+  - the Schedule 13D/13G column moved to its own table, marked not comparable;
+  - the prospectus-based percentage left the README;
+  - the weighted mean is stated in one sentence with its caveats;
+  - two guards were added (denominator at the point of use; a stale restatement loses);
+  - a real ISIN and FIGI were removed from the selftest;
+  - share counts were blanked for withheld individuals.
+- **First trading days and three pricing dates** are supplied by the supervisor (mostly relayed from a Grok web search with fetched pages), as listed in SOURCES.md.

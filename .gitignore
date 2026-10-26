@@ -124,3 +124,5 @@ data/vintages/ipo_13f_holders/
 data/vintages/census_public_pensions/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/census_public_pensions/_FAILED/
+# 13F IPO holders build (bin/ipo_13f_holders.py): a build with a hard check FAIL writes its outputs here and leaves the committed files alone
+data/ipo_13f_holders/_FAILED/

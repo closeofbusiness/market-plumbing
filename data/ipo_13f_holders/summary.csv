@@ -1,0 +1,495 @@
+# source: U.S. Securities and Exchange Commission, "Form 13F Data Sets", 01jun2026-31aug2026_form13f.zip, 01mar2026-31may2026_form13f.zip.
+question,scope,ticker,quarter_end,statistic,value,unit,denominator,vintage
+Q1,measured_all,,,measured_proceeds,84119999925.00,usd,sum over the measured deals of primary base proceeds,13f_to_2026-08-31
+Q1,measured_all,,,measured_proceeds_pct_of_112bn,75.146,pct,"eight 2026 deals' primary base proceeds, 111,941,660,492 usd",13f_to_2026-08-31
+Q1,measured_ex_spcx,,,measured_proceeds,9120000000.00,usd,sum over the measured deals except SPCX of primary base proceeds,13f_to_2026-08-31
+Q1,measured_ex_spcx,,,measured_proceeds_pct_of_ex_spcx_total,24.688,pct,"the eight deals' proceeds without SpaceX, 36,941,660,567 usd",13f_to_2026-08-31
+Q1,measured_all,SPCX,,spcx_weight_pct_of_measured,89.158,pct,measured deals' primary base proceeds,13f_to_2026-08-31
+Q1,measured_all,,,n_measured_deals,5,count,eight deals in the deal list,13f_to_2026-08-31
+Q1,measured_all,,,n_awaiting_deals,3,count,eight deals in the deal list,13f_to_2026-08-31
+Q1,measured_all,,,n_measured_deals_with_blank_primary,0,count,measured deals,13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,sh_13f,3668807223,shares,listed-class shares reported on Form 13F (sum over filers),13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,n_filers,1744,count,13F filers reporting shares of the listed class,13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,sh_13f_sole,2137533475,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,sh_pre_ipo_flagged,1370072045,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,sh_13dg_holders_without_13f,7660179395,shares,"typed Schedule 13D/13G counts, not a share of the class",13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,pct_of_listed,48.229,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,pct_of_listed_prosp,49.712,pct,"listed class outstanding after the offering, base case (424B4)",13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,pct_of_all_classes,27.845,pct,all common classes on the same 10-Q item,13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,ipo_shares_pct_of_listed,7.303,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,SPCX,2026-06-30,pct_of_ipo_shares,660.385,pct,"shares sold in the offering, base case (memo; can exceed 100)",13f_to_2026-08-31
+Q4,deal,SPCX,2026-06-30,top1_pct_of_13f,15.024,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,SPCX,2026-06-30,top10_pct_of_13f,67.380,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,SPCX,2026-06-30,top10_pct_of_listed,32.497,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q5,deal,SPCX,2026-06-30,pct_of_13f_ria_801,19.952,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,SPCX,2026-06-30,pct_of_13f_era_802,7.464,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,SPCX,2026-06-30,pct_of_13f_bd_8,0.009,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,SPCX,2026-06-30,pct_of_13f_other_prefix,19.152,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,SPCX,2026-06-30,pct_of_13f_none,53.422,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,calls_pct_of_13f,2.942,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,puts_pct_of_13f,2.334,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,calls_pct_of_listed,1.419,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,puts_pct_of_listed,1.126,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,n_filers_calls,99,count,13F filers in the deal's table,13f_to_2026-08-31
+Q6,deal,SPCX,2026-06-30,n_filers_puts,104,count,13F filers in the deal's table,13f_to_2026-08-31
+Q7,deal,SPCX,2026-06-30,pct_of_13f_held_by_filers_that_also_filed_13d_13g,29.368,pct,sh_13f,13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,sh_13f,88739770,shares,listed-class shares reported on Form 13F (sum over filers),13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,n_filers,412,count,13F filers reporting shares of the listed class,13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,sh_13f_sole,54899707,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,sh_pre_ipo_flagged,0,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,sh_13dg_holders_without_13f,125634550,shares,"typed Schedule 13D/13G counts, not a share of the class",13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,pct_of_listed,85.971,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,pct_of_listed_prosp,295.799,pct,"listed class outstanding after the offering, base case (424B4)",13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,pct_of_all_classes,38.886,pct,all common classes on the same 10-Q item,13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,ipo_shares_pct_of_listed,29.064,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,CBRS,2026-06-30,pct_of_ipo_shares,295.799,pct,"shares sold in the offering, base case (memo; can exceed 100)",13f_to_2026-08-31
+Q4,deal,CBRS,2026-06-30,top1_pct_of_13f,12.899,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,CBRS,2026-06-30,top10_pct_of_13f,59.266,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,CBRS,2026-06-30,top10_pct_of_listed,50.952,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q5,deal,CBRS,2026-06-30,pct_of_13f_ria_801,38.175,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,CBRS,2026-06-30,pct_of_13f_era_802,15.417,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,CBRS,2026-06-30,pct_of_13f_bd_8,0.009,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,CBRS,2026-06-30,pct_of_13f_other_prefix,1.731,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,CBRS,2026-06-30,pct_of_13f_none,44.668,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,calls_pct_of_13f,13.179,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,puts_pct_of_13f,7.984,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,calls_pct_of_listed,11.330,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,puts_pct_of_listed,6.864,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,n_filers_calls,33,count,13F filers in the deal's table,13f_to_2026-08-31
+Q6,deal,CBRS,2026-06-30,n_filers_puts,23,count,13F filers in the deal's table,13f_to_2026-08-31
+Q7,deal,CBRS,2026-06-30,pct_of_13f_held_by_filers_that_also_filed_13d_13g,32.704,pct,sh_13f,13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,sh_13f,34003849,shares,listed-class shares reported on Form 13F (sum over filers),13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,n_filers,174,count,13F filers reporting shares of the listed class,13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,sh_13f_sole,11685718,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,sh_pre_ipo_flagged,0,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,sh_13dg_holders_without_13f,405211851,shares,"typed Schedule 13D/13G counts, not a share of the class",13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,pct_of_listed,94.104,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,pct_of_listed_prosp,103.472,pct,"listed class outstanding after the offering, base case (424B4)",13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,pct_of_all_classes,12.934,pct,all common classes on the same 10-Q item,13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,ipo_shares_pct_of_listed,77.489,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,QNT,2026-06-30,pct_of_ipo_shares,121.442,pct,"shares sold in the offering, base case (memo; can exceed 100)",13f_to_2026-08-31
+Q4,deal,QNT,2026-06-30,top1_pct_of_13f,13.407,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,QNT,2026-06-30,top10_pct_of_13f,51.047,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,QNT,2026-06-30,top10_pct_of_listed,48.037,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q5,deal,QNT,2026-06-30,pct_of_13f_ria_801,30.273,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,QNT,2026-06-30,pct_of_13f_era_802,1.334,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,QNT,2026-06-30,pct_of_13f_bd_8,0.551,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,QNT,2026-06-30,pct_of_13f_other_prefix,1.866,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,QNT,2026-06-30,pct_of_13f_none,65.976,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,calls_pct_of_13f,1.611,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,puts_pct_of_13f,0.688,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,calls_pct_of_listed,1.516,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,puts_pct_of_listed,0.647,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,n_filers_calls,8,count,13F filers in the deal's table,13f_to_2026-08-31
+Q6,deal,QNT,2026-06-30,n_filers_puts,6,count,13F filers in the deal's table,13f_to_2026-08-31
+Q7,deal,QNT,2026-06-30,pct_of_13f_held_by_filers_that_also_filed_13d_13g,0.000,pct,sh_13f,13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,sh_13f,185569018,shares,listed-class shares reported on Form 13F (sum over filers),13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,n_filers,183,count,13F filers reporting shares of the listed class,13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,sh_13f_sole,121464276,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,sh_pre_ipo_flagged,69955689,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,sh_13dg_holders_without_13f,140910868,shares,"typed Schedule 13D/13G counts, not a share of the class",13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,pct_of_listed,64.688,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,pct_of_listed_prosp,67.290,pct,"listed class outstanding after the offering, base case (424B4)",13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,pct_of_all_classes,62.979,pct,all common classes on the same 10-Q item,13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,ipo_shares_pct_of_listed,24.401,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,FRVO,2026-06-30,pct_of_ipo_shares,265.099,pct,"shares sold in the offering, base case (memo; can exceed 100)",13f_to_2026-08-31
+Q4,deal,FRVO,2026-06-30,top1_pct_of_13f,19.253,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,FRVO,2026-06-30,top10_pct_of_13f,59.995,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,FRVO,2026-06-30,top10_pct_of_listed,38.810,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q5,deal,FRVO,2026-06-30,pct_of_13f_ria_801,14.286,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,FRVO,2026-06-30,pct_of_13f_era_802,0.196,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,FRVO,2026-06-30,pct_of_13f_bd_8,0.013,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,FRVO,2026-06-30,pct_of_13f_other_prefix,22.970,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,FRVO,2026-06-30,pct_of_13f_none,62.534,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,calls_pct_of_13f,0.612,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,puts_pct_of_13f,0.136,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,calls_pct_of_listed,0.396,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,puts_pct_of_listed,0.088,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,n_filers_calls,10,count,13F filers in the deal's table,13f_to_2026-08-31
+Q6,deal,FRVO,2026-06-30,n_filers_puts,6,count,13F filers in the deal's table,13f_to_2026-08-31
+Q7,deal,FRVO,2026-06-30,pct_of_13f_held_by_filers_that_also_filed_13d_13g,37.698,pct,sh_13f,13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,sh_13f,454603514,shares,listed-class shares reported on Form 13F (sum over filers),13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,n_filers,148,count,13F filers reporting shares of the listed class,13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,sh_13f_sole,389970139,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,sh_pre_ipo_flagged,334867308,shares,sh_13f,13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,sh_13dg_holders_without_13f,646500000,shares,"typed Schedule 13D/13G counts, not a share of the class",13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,pct_of_listed,60.614,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,pct_of_listed_prosp,60.614,pct,"listed class outstanding after the offering, base case (424B4)",13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,pct_of_all_classes,60.614,pct,all common classes on the same 10-Q item,13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,ipo_shares_pct_of_listed,12.000,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q2,deal,INIO,2026-06-30,pct_of_ipo_shares,505.115,pct,"shares sold in the offering, base case (memo; can exceed 100)",13f_to_2026-08-31
+Q4,deal,INIO,2026-06-30,top1_pct_of_13f,73.661,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,INIO,2026-06-30,top10_pct_of_13f,86.606,pct,sh_13f,13f_to_2026-08-31
+Q4,deal,INIO,2026-06-30,top10_pct_of_listed,52.495,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q5,deal,INIO,2026-06-30,pct_of_13f_ria_801,8.022,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,INIO,2026-06-30,pct_of_13f_era_802,0.771,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,INIO,2026-06-30,pct_of_13f_other_prefix,0.282,pct,sh_13f,13f_to_2026-08-31
+Q5,deal,INIO,2026-06-30,pct_of_13f_none,90.924,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,calls_pct_of_13f,0.000,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,puts_pct_of_13f,0.000,pct,sh_13f,13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,calls_pct_of_listed,0.000,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,puts_pct_of_listed,0.000,pct,listed-class shares outstanding at 2026-06-30 (first 10-Q),13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,n_filers_calls,0,count,13F filers in the deal's table,13f_to_2026-08-31
+Q6,deal,INIO,2026-06-30,n_filers_puts,0,count,13F filers in the deal's table,13f_to_2026-08-31
+Q7,deal,INIO,2026-06-30,pct_of_13f_held_by_filers_that_also_filed_13d_13g,73.661,pct,sh_13f,13f_to_2026-08-31
+Q3,measured_all,,,pooled_pct_of_listed,50.457,pct,"sum of listed-class quarter-end shares of the measured deals with a 10-Q: SPCX, CBRS, QNT, FRVO, INIO",13f_to_2026-08-31
+Q3,measured_all,,,weighted_pct_of_listed,52.005,pct,"proceeds-weighted mean of pct_of_listed, weights renormalised among deals with a 10-Q: SPCX, CBRS, QNT, FRVO, INIO",13f_to_2026-08-31
+Q3,measured_all,,,unweighted_median_pct_of_listed,64.688,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_all,,,unweighted_min_pct_of_listed,48.229,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_all,,,unweighted_max_pct_of_listed,94.104,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_ex_spcx,,,pooled_pct_of_listed,64.861,pct,"sum of listed-class quarter-end shares of the measured deals with a 10-Q: CBRS, QNT, FRVO, INIO",13f_to_2026-08-31
+Q3,measured_ex_spcx,,,weighted_pct_of_listed,83.059,pct,"proceeds-weighted mean of pct_of_listed, weights renormalised among deals with a 10-Q: CBRS, QNT, FRVO, INIO",13f_to_2026-08-31
+Q3,measured_ex_spcx,,,unweighted_median_pct_of_listed,75.329,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_ex_spcx,,,unweighted_min_pct_of_listed,60.614,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_ex_spcx,,,unweighted_max_pct_of_listed,94.104,pct,"pct_of_listed, deals with a 10-Q",13f_to_2026-08-31
+Q3,measured_all,INIO,,weight_pct_of_measured,0.000,pct,measured deals' primary base proceeds (INNIO's offering was all secondary),13f_to_2026-08-31
+Q9,measured_all,,2001-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2001-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2001-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2001-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2002-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2003-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2004-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2005-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2006-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2007-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-12-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-03-31,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-06-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-09-30,n_hr_filers_01jun2026-31aug2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-12-31,n_hr_filers_01jun2026-31aug2026_form13f,2,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-12-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-12-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-12-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-12-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-12-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-03-31,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-06-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-09-30,n_hr_filers_01jun2026-31aug2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-12-31,n_hr_filers_01jun2026-31aug2026_form13f,4,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-03-31,n_hr_filers_01jun2026-31aug2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-06-30,n_hr_filers_01jun2026-31aug2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-09-30,n_hr_filers_01jun2026-31aug2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-12-31,n_hr_filers_01jun2026-31aug2026_form13f,7,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-03-31,n_hr_filers_01jun2026-31aug2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-06-30,n_hr_filers_01jun2026-31aug2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-09-30,n_hr_filers_01jun2026-31aug2026_form13f,7,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-12-31,n_hr_filers_01jun2026-31aug2026_form13f,7,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-03-31,n_hr_filers_01jun2026-31aug2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-06-30,n_hr_filers_01jun2026-31aug2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-09-30,n_hr_filers_01jun2026-31aug2026_form13f,10,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-12-31,n_hr_filers_01jun2026-31aug2026_form13f,12,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-03-31,n_hr_filers_01jun2026-31aug2026_form13f,12,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-06-30,n_hr_filers_01jun2026-31aug2026_form13f,13,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-09-30,n_hr_filers_01jun2026-31aug2026_form13f,13,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-12-31,n_hr_filers_01jun2026-31aug2026_form13f,18,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-03-31,n_hr_filers_01jun2026-31aug2026_form13f,17,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-06-30,n_hr_filers_01jun2026-31aug2026_form13f,18,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-09-30,n_hr_filers_01jun2026-31aug2026_form13f,20,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-12-31,n_hr_filers_01jun2026-31aug2026_form13f,24,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-03-31,n_hr_filers_01jun2026-31aug2026_form13f,27,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-06-30,n_hr_filers_01jun2026-31aug2026_form13f,31,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-09-30,n_hr_filers_01jun2026-31aug2026_form13f,30,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-09-30,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-12-31,n_hr_filers_01jun2026-31aug2026_form13f,76,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-12-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-03-31,n_hr_filers_01jun2026-31aug2026_form13f,130,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-03-31,n_conf_omitted_01jun2026-31aug2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-06-30,n_hr_filers_01jun2026-31aug2026_form13f,8857,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-06-30,n_conf_omitted_01jun2026-31aug2026_form13f,83,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2008-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2009-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2010-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2011-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2012-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2013-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2014-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-03-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-06-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-09-30,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-12-31,n_hr_filers_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2015-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-03-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-06-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-09-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-12-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2016-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-03-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-06-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-09-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-12-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2017-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-03-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-06-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-09-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-12-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2018-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-03-31,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-06-30,n_hr_filers_01mar2026-31may2026_form13f,3,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-09-30,n_hr_filers_01mar2026-31may2026_form13f,4,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-12-31,n_hr_filers_01mar2026-31may2026_form13f,5,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2019-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-03-31,n_hr_filers_01mar2026-31may2026_form13f,5,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-06-30,n_hr_filers_01mar2026-31may2026_form13f,5,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-09-30,n_hr_filers_01mar2026-31may2026_form13f,6,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-12-31,n_hr_filers_01mar2026-31may2026_form13f,7,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2020-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-03-31,n_hr_filers_01mar2026-31may2026_form13f,8,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-06-30,n_hr_filers_01mar2026-31may2026_form13f,8,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-09-30,n_hr_filers_01mar2026-31may2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-12-31,n_hr_filers_01mar2026-31may2026_form13f,11,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2021-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-03-31,n_hr_filers_01mar2026-31may2026_form13f,8,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-06-30,n_hr_filers_01mar2026-31may2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-09-30,n_hr_filers_01mar2026-31may2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-12-31,n_hr_filers_01mar2026-31may2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2022-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-03-31,n_hr_filers_01mar2026-31may2026_form13f,10,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-06-30,n_hr_filers_01mar2026-31may2026_form13f,10,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-09-30,n_hr_filers_01mar2026-31may2026_form13f,9,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-12-31,n_hr_filers_01mar2026-31may2026_form13f,10,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2023-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-03-31,n_hr_filers_01mar2026-31may2026_form13f,14,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-06-30,n_hr_filers_01mar2026-31may2026_form13f,15,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-09-30,n_hr_filers_01mar2026-31may2026_form13f,15,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-12-31,n_hr_filers_01mar2026-31may2026_form13f,23,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2024-12-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-03-31,n_hr_filers_01mar2026-31may2026_form13f,24,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-03-31,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-06-30,n_hr_filers_01mar2026-31may2026_form13f,25,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-06-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-09-30,n_hr_filers_01mar2026-31may2026_form13f,32,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-09-30,n_conf_omitted_01mar2026-31may2026_form13f,0,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-12-31,n_hr_filers_01mar2026-31may2026_form13f,207,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2025-12-31,n_conf_omitted_01mar2026-31may2026_form13f,1,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-03-31,n_hr_filers_01mar2026-31may2026_form13f,8741,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q9,measured_all,,2026-03-31,n_conf_omitted_01mar2026-31may2026_form13f,89,count,13F-HR filers with this period in this zip,13f_to_2026-08-31
+Q10,measured_all,,,n_revision_rows,0,count,30 Jun deals compared across consecutive vintages,13f_to_2026-08-31
+Q11,deal,SPCX,2026-06-30,sh_13f_over_reference_pct,99.545,pct,published third-party aggregate for this deal at 30 Jun 2026 (reference only),13f_to_2026-08-31
+Q11,deal,CBRS,2026-06-30,sh_13f_over_reference_pct,99.994,pct,published third-party aggregate for this deal at 30 Jun 2026 (reference only),13f_to_2026-08-31
+Q8,deal,FRVO,2026-06-30,pct_of_indicated_up_to,105.211,pct,"indicated interest, up to, in shares at the offer price (a ceiling)",13f_to_2026-08-31

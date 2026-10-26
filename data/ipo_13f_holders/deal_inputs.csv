@@ -1,0 +1,56 @@
+ticker,class_label,is_listed_class,item,shares,asof,doc_form,doc_filing_date,doc_section,quote
+SPCX,,,pricing_date,,2026-06-11,424B4,2026-06-12,Cover page,"Prospectus Dated June 11, 2026."
+SPCX,,,first_trade_date,,2026-06-12,relayed web source,2026-06-12,"cnbc.com, SpaceX IPO live updates, 12 Jun 2026","SpaceX begins trading at the Nasdaq MarketSite on June 12, 2026"
+SPCX,Class A,yes,qe_balance_sheet,7607000000,2026-06-30,10-Q,2026-08-04,"Item 1, Consolidated Balance Sheets (shares in millions, rounded)","Class A common stock, par value 0.001; 7,607 and 2,036 shares issued; 7,607 and 1,952 shares outstanding as of June 30, 2026"
+SPCX,Class B,no,qe_balance_sheet,5569000000,2026-06-30,10-Q,2026-08-04,"Item 1, Consolidated Balance Sheets (shares in millions, rounded)","Class B common stock, par value $0.001; 5,569 and 644 shares issued and outstanding as of June 30, 2026"
+SPCX,Class A,yes,qe_cover,7696293669,2026-07-28,10-Q,2026-08-04,Cover page,"As of July 28, 2026, the registrant had 7,696,293,669 shares of Class A common stock"
+SPCX,Class B,no,qe_cover,5485486276,2026-07-28,10-Q,2026-08-04,Cover page,"5,485,486,276 shares of Class B common stock outstanding."
+SPCX,Class A,yes,after_offering_base,7380196910,,424B4,2026-06-12,"Prospectus Summary, The Offering","Class A common stock outstanding immediately after this offering 7,380,196,910 shares"
+SPCX,Class B,no,after_offering_base,5695668265,,424B4,2026-06-12,"Prospectus Summary, The Offering","Class B common stock outstanding immediately after this offering 5,695,668,265 shares."
+SPCX,Class A,yes,ipo_shares_base,555555555,,424B4,2026-06-12,Cover page,"We are offering 555,555,555 shares of our Class A common stock."
+SPCX,,,offer_price_usd,135.00,,424B4,2026-06-12,Cover page,The initial public offering price is $135.00 per share.
+CBRS,,,pricing_date,,2026-05-13,424B4,2026-05-14,Cover page,"Prospectus dated May 13, 2026"
+CBRS,,,first_trade_date,,2026-05-14,10-Q,2026-08-12,"Item 2, Management's Discussion and Analysis, Recent Developments, Initial Public Offering","our Class A common stock began trading on the Nasdaq Global Select Market on May 14, 2026"
+CBRS,Class A,yes,qe_balance_sheet,103220568,2026-06-30,10-Q,2026-08-12,"Item 1, Condensed Consolidated Balance Sheets","103,220,568 and 57,907,093 shares issued and outstanding as of June 30, 2026 and December 31, 2025, respectively"
+CBRS,Class B,no,qe_balance_sheet,121301359,2026-06-30,10-Q,2026-08-12,"Item 1, Condensed Consolidated Balance Sheets","121,301,359 and nil shares issued and outstanding as of June 30, 2026 and December 31, 2025, respectively"
+CBRS,Class N,no,qe_balance_sheet,3682000,2026-06-30,10-Q,2026-08-12,"Item 1, Condensed Consolidated Balance Sheets","3,682,000 and nil shares issued and outstanding as of June 30, 2026 and December 31, 2025, respectively"
+CBRS,Class A,yes,qe_cover,112247109,2026-08-05,10-Q,2026-08-12,Cover page,"As of August 5, 2026, the registrant had outstanding 112,247,109 shares of Class A common stock,"
+CBRS,Class B,no,qe_cover,111601424,2026-08-05,10-Q,2026-08-12,Cover page,"111,601,424 shares of Class B common stock,"
+CBRS,Class N,no,qe_cover,13715508,2026-08-05,10-Q,2026-08-12,Cover page,"13,715,508 shares of Class N common stock,"
+CBRS,Class A,yes,after_offering_base,30000000,,424B4,2026-05-14,"Prospectus Summary, The Offering","Class A common stock to be outstanding immediately after this offering 30,000,000 shares"
+CBRS,Class B,no,after_offering_base,185110345,,424B4,2026-05-14,"Prospectus Summary, The Offering","Class B common stock to be outstanding immediately after this offering 185,110,345 shares."
+CBRS,Class A,yes,ipo_shares_base,30000000,,424B4,2026-05-14,Cover page,"Cerebras Systems Inc. is offering 30,000,000 shares of its Class A common stock."
+CBRS,,,offer_price_usd,185.00,,424B4,2026-05-14,Cover page,The initial public offering price per share of our Class A common stock is $185.00.
+QNT,,,pricing_date,,2026-06-03,424B4,2026-06-05,Cover page,"Prospectus dated June 3, 2026."
+QNT,,,first_trade_date,,2026-06-04,relayed web source,,"conyers.com, Quantinuum IPO note",began trading on the Nasdaq Global Market on 4 June 2026
+QNT,Class A,yes,qe_balance_sheet,36134196,2026-06-30,10-Q,2026-08-13,"Item 1, Condensed Consolidated Balance Sheets","36,134,196 shares issued and outstanding as of June 30, 2026"
+QNT,Class B,no,qe_balance_sheet,226771877,2026-06-30,10-Q,2026-08-13,"Item 1, Condensed Consolidated Balance Sheets","226,771,877 shares issued and outstanding as of June 30, 2026"
+QNT,Class A,yes,qe_cover,36893857,2026-08-13,10-Q,2026-08-13,Cover page,"As of August 13, 2026, the registrant had 36,893,857 shares of Class A common stock"
+QNT,Class B,no,qe_cover,226414285,2026-08-13,10-Q,2026-08-13,Cover page,"226,414,285 shares of Class B common stock"
+QNT,Class A,yes,after_offering_base,32862895,,424B4,2026-06-05,"Prospectus Summary, The Offering","Class A common stock to be outstanding immediately after this offering 32,862,895 shares"
+QNT,Class B,no,after_offering_base,228107842,,424B4,2026-06-05,"Prospectus Summary, The Offering","Class B common stock to be outstanding immediately after this offering 228,107,842 shares."
+QNT,Class A,yes,ipo_shares_base,28000000,,424B4,2026-06-05,Cover page,"We are offering 28,000,000 shares of Class A common stock."
+QNT,,,offer_price_usd,60.00,,424B4,2026-06-05,Cover page,The initial public offering price per share of our Class A common stock is $60.00.
+FRVO,,,pricing_date,,2026-05-12,424B4,2026-05-14,Cover page,"Prospectus dated May 12, 2026."
+FRVO,,,first_trade_date,,2026-05-13,relayed web source,,"ir.fervoenergy.com, investor FAQs","begin trading on the Nasdaq? May 13, 2026"
+FRVO,Class A,yes,qe_balance_sheet,286869000,2026-06-30,10-Q,2026-08-13,"Item 1, Condensed Consolidated Balance Sheets (shares in thousands, rounded; shown as issued, no treasury stock at the date)","286,869 and 0 issued as of June 30, 2026 and December 31, 2025, respectively"
+FRVO,Class B,no,qe_balance_sheet,7785000,2026-06-30,10-Q,2026-08-13,"Item 1, Condensed Consolidated Balance Sheets (shares in thousands, rounded; shown as issued)","7,785 and 0 issued as of June 30, 2026 and December 31, 2025, respectively"
+FRVO,Class A,yes,qe_cover,286977787,2026-08-10,10-Q,2026-08-13,Cover page,"the number of shares of the registrant’s Class A common stock outstanding was 286,977,787,"
+FRVO,Class B,no,qe_cover,7785412,2026-08-10,10-Q,2026-08-13,Cover page,"the number of shares of the registrant’s Class B common stock outstanding was 7,785,412."
+FRVO,Class A,yes,after_offering_base,275776919,,424B4,2026-05-14,"Prospectus Summary, The Offering","Class A common stock to be outstanding after this offering 275,776,919 shares"
+FRVO,Class B,no,after_offering_base,7785414,,424B4,2026-05-14,"Prospectus Summary, The Offering","Class B common stock to be outstanding after this offering 7,785,414 shares."
+FRVO,Class A,yes,ipo_shares_base,70000000,,424B4,2026-05-14,Cover page,"We are offering 70,000,000 shares of our Class A common stock."
+FRVO,,,offer_price_usd,27.00,,424B4,2026-05-14,Cover page,initial public offering price per share of our Class A common stock is $27.00
+INIO,,,pricing_date,,2026-06-03,424B4,2026-06-04,Cover page,"Prospectus dated June 3, 2026"
+INIO,,,first_trade_date,,2026-06-04,relayed web source,2026-06-04,"Nasdaq opening-bell page of 4 Jun 2026; the issuer's pricing release said trading was expected on June 4, 2026","trading was expected on June 4, 2026"
+INIO,Common shares,yes,qe_balance_sheet,750000000,2026-06-30,10-Q,2026-07-28,"Item 1, Consolidated Balance Sheets, Shareholders' equity","€0.04 nominal value; 750,000,000 shares issued and outstanding"
+INIO,Common shares,yes,qe_cover,750000000,2026-07-27,10-Q,2026-07-28,Cover page,"As of July 27, 2026, the registrant had 750,000,000 common shares, nominal value €0.04"
+INIO,Common shares,yes,after_offering_base,750000000,,424B4,2026-06-04,The Offering,"Common shares to be outstanding immediately after completion of this offering 750,000,000 common shares."
+INIO,Common shares,yes,ipo_shares_base,90000000,,424B4,2026-06-04,Cover page,"is selling 90,000,000 common shares"
+INIO,,,offer_price_usd,27.00,,424B4,2026-06-04,Cover page,The initial public offering price is $27.00 per common share.
+BSP,,,pricing_date,,2026-06-30,issuer_release_relayed,,company pricing release (relayed by the supervisor; no 424B4 in the supervisor's copies),
+BSP,,,first_trade_date,,2026-07-01,web source verified by the supervisor,2026-07-02,"Nasdaq-hosted closing release, 2 Jul 2026","began trading on the Nasdaq Global Select Market on July 1, 2026"
+SKHY,,,pricing_date,,2026-07-09,issuer_release_relayed,,company pricing release (relayed by the supervisor; no 424B4 in the supervisor's copies),
+SKHY,,,first_trade_date,,2026-07-10,relayed web source,,Nasdaq Trader notice DTN2026-11 (when-issued from 10 Jul; regular way SKHY from 13 Jul),"began trading ... on July 10, 2026, on a when-issued basis"
+JMKE,,,pricing_date,,2026-07-29,issuer_release_relayed,,company pricing release (relayed by the supervisor; no 424B4 in the supervisor's copies),
+JMKE,,,first_trade_date,,2026-07-30,relayed web source,,the company's closing release,"began trading on the New York Stock Exchange (NYSE) on July 30, 2026"

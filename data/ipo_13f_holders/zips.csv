@@ -1,0 +1,4 @@
+# source: U.S. Securities and Exchange Commission, "Form 13F Data Sets", 01jun2026-31aug2026_form13f.zip, 01mar2026-31may2026_form13f.zip.
+zip_name,window_start,window_end,bytes,sha256,n_submissions,n_infotable_rows,role,vintage
+01mar2026-31may2026_form13f.zip,2026-03-01,2026-05-31,99411274,05f4da8f526cd471a387af45661a8cb3bbfaf345d3ec9c2cefd31349aa257e63,11761,3822885,pre_listing_control,13f_to_2026-08-31
+01jun2026-31aug2026_form13f.zip,2026-06-01,2026-08-31,100719015,4db97d5652e262de51617971104e06313211de4d092e6bcb5d7bf34ee7efe054,11852,3830274,first_qe,13f_to_2026-08-31

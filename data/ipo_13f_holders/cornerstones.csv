@@ -1,0 +1,3 @@
+# source: U.S. Securities and Exchange Commission, "Form 13F Data Sets", 01jun2026-31aug2026_form13f.zip, 01mar2026-31may2026_form13f.zip.
+ticker,cornerstone_label,indicated_usd_up_to,offer_price_usd,indicated_sh_up_to_at_offer,quarter_end,n_mapped_filers,sh_13f_mapped,pct_of_indicated_up_to,vintage
+FRVO,"4 named investors, aggregate (no per-investor split)",350000000.00,27.00,12962962.96,2026-06-30,3,13638503,105.211,13f_to_2026-08-31

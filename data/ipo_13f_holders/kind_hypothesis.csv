@@ -1,0 +1,52 @@
+# source: U.S. Securities and Exchange Commission, "Form 13F Data Sets", 01jun2026-31aug2026_form13f.zip, 01mar2026-31may2026_form13f.zip.
+ticker,quarter_end,rank,filer_label,holder_kind,kind_basis,vintage
+SPCX,2026-06-30,1,Alphabet Inc.,corporate_strategic,13g_type,13f_to_2026-08-31
+SPCX,2026-06-30,2,Valor Management LLC,venture_or_pre_ipo,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,3,FMR LLC,asset_manager,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,4,VY Capital Management Co. Ltd.,asset_manager,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,5,"Gigafund Management Company, LLC",venture_or_pre_ipo,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,6,PUBLIC INVESTMENT FUND,pension_endowment_sovereign,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,7,BAMCO INC /NY/,asset_manager,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,8,D1 Capital Partners L.P.,hedge_fund,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,9,NVIDIA CORP,corporate_strategic,name_review,13f_to_2026-08-31
+SPCX,2026-06-30,10,"SC US (TTGP), LTD.",venture_or_pre_ipo,name_review,13f_to_2026-08-31
+CBRS,2026-06-30,1,"ECLIPSE OPERATIONS, LLC",venture_or_pre_ipo,name_review,13f_to_2026-08-31
+CBRS,2026-06-30,2,FMR LLC,asset_manager,name_review,13f_to_2026-08-31
+CBRS,2026-06-30,3,"Altimeter Capital Management, LP",asset_manager,13g_type,13f_to_2026-08-31
+CBRS,2026-06-30,4,COATUE MANAGEMENT LLC,asset_manager,13g_type,13f_to_2026-08-31
+CBRS,2026-06-30,5,Capital World Investors,asset_manager,13g_type,13f_to_2026-08-31
+CBRS,2026-06-30,6,MORGAN STANLEY,bank_broker,name_review,13f_to_2026-08-31
+CBRS,2026-06-30,7,"Atreides Management, LP",asset_manager,13g_type,13f_to_2026-08-31
+CBRS,2026-06-30,8,JPMORGAN CHASE & CO,bank_broker,name_review,13f_to_2026-08-31
+CBRS,2026-06-30,9,TIGER GLOBAL MANAGEMENT LLC,asset_manager,13g_type,13f_to_2026-08-31
+CBRS,2026-06-30,10,VY Capital Management Co. Ltd.,asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,1,Capital World Investors,asset_manager,13g_type,13f_to_2026-08-31
+QNT,2026-06-30,2,CITADEL ADVISORS LLC,hedge_fund,name_review,13f_to_2026-08-31
+QNT,2026-06-30,3,"BlackRock, Inc.",asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,4,Capital Research Global Investors,asset_manager,13g_type,13f_to_2026-08-31
+QNT,2026-06-30,5,"Defiance ETFs, LLC",asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,6,Penserra Capital Management LLC,asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,7,WELLINGTON MANAGEMENT GROUP LLP,asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,8,VANGUARD PORTFOLIO MANAGEMENT LLC,asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,9,Capital International Investors,asset_manager,name_review,13f_to_2026-08-31
+QNT,2026-06-30,10,VANGUARD CAPITAL MANAGEMENT LLC,asset_manager,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,1,DEVON ENERGY CORP/DE,corporate_strategic,13g_type,13f_to_2026-08-31
+FRVO,2026-06-30,2,Capricorn Investment Group LLC,venture_or_pre_ipo,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,3,JPMORGAN CHASE & CO,bank_broker,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,4,CANADA PENSION PLAN INVESTMENT BOARD,pension_endowment_sovereign,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,5,Capital Research Global Investors,asset_manager,13g_type,13f_to_2026-08-31
+FRVO,2026-06-30,6,"BlackRock, Inc.",asset_manager,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,7,WELLINGTON MANAGEMENT GROUP LLP,asset_manager,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,8,"T. Rowe Price Investment Management, Inc.",asset_manager,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,9,Liberty Mutual Group Asset Management Inc.,insurer,name_review,13f_to_2026-08-31
+FRVO,2026-06-30,10,UBS Group AG,bank_broker,name_review,13f_to_2026-08-31
+INIO,2026-06-30,1,"Advent International, L.P.",venture_or_pre_ipo,name_review,13f_to_2026-08-31
+INIO,2026-06-30,2,JPMORGAN CHASE & CO,bank_broker,name_review,13f_to_2026-08-31
+INIO,2026-06-30,3,Capital Research Global Investors,asset_manager,13g_type,13f_to_2026-08-31
+INIO,2026-06-30,4,Aspex Management (HK) Ltd,hedge_fund,name_review,13f_to_2026-08-31
+INIO,2026-06-30,5,PRICE T ROWE ASSOCIATES INC /MD/,asset_manager,name_review,13f_to_2026-08-31
+INIO,2026-06-30,6,Capital International Investors,asset_manager,name_review,13f_to_2026-08-31
+INIO,2026-06-30,7,Jupiter Topco LLC,other,name_review,13f_to_2026-08-31
+INIO,2026-06-30,8,GF FUND MANAGEMENT CO. LTD.,asset_manager,name_review,13f_to_2026-08-31
+INIO,2026-06-30,9,MASSACHUSETTS FINANCIAL SERVICES CO /MA/,asset_manager,name_review,13f_to_2026-08-31
+INIO,2026-06-30,10,"Point72 Asset Management, L.P.",hedge_fund,name_review,13f_to_2026-08-31

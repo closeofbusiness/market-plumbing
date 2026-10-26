@@ -1188,6 +1188,187 @@ PY
   fi
 }
 
+# --- M24: IPO 13F HOLDERS GUARD (warn only) ----------------------------------
+# data/ipo_13f_holders/ holds statistics derived from the SEC Form 13F data sets and nothing raw (spec _research/2026-10-26-IPO-13F-Holders-Spec.md, sections 5, 6 and
+# 9.5; build bin/ipo_13f_holders.py). The zips, the filtered rows and the reviewed tables stay in the gitignored cache and the builder's cache folder. Seven things
+# would break that or the spec's rules, and none is visible to M5-M23:
+#   1. a file that is not one of the fifteen committed names (thirteen CSVs, README.md, SOURCES.md), a raw file (.tsv, .zip, .htm, .pdf, .json) under any name, and a
+#      missing name;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's thirteen canonical lines, typed here a second time
+#      (this guard never reads them from the script), whose sha256 must equal the pinned ee8cb56e...; and a column outside the allowlist named like cusip, isin, figi,
+#      cik or accession;
+#   3. a CUSIP-shaped token (eight alphanumerics with a letter, then a valid check digit) in any file; a bare nine-digit token with a valid check digit in README.md,
+#      SOURCES.md or a CSV column that is not a share, count, money or date column; an ISIN, FIGI or accession shape;
+#   4. a local path (/Users/, /private/, a tilde) or an at sign in any committed file;
+#   5. causal, flow, allocation or residual-as-holder wording (the spec's three patterns, pasted) in README.md anywhere but the one denial sentence, and a README heading
+#      "Builder decisions";
+#   6. reg_category.csv not summing to holdings.csv's sh_13f for a ticker and quarter-end (an error); pct_of_listed above 100 (a warning);
+#   7. a duplicate key in any file.
+# bin/ipo_13f_holders.py refuses the same things when it writes; this is the second, independent look. IPO13F_DIR overrides the folder (used to show that the guard
+# fires on a planted copy). It warns and never blocks (header doctrine).
+ipo13f_leak_check() {
+  echo "-- M24: IPO 13F holders guard (data/ipo_13f_holders/: the fifteen names, exact headers, no raw file, no CUSIP, ISIN, FIGI or accession shape, no local path or at sign, no causal/flow/allocation wording outside the denial sentence, reg_category sums to sh_13f, no duplicate key) --"
+  local dir="${IPO13F_DIR:-data/ipo_13f_holders}" out py
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  read -r -d '' py <<'PY' || true
+import csv, hashlib, os, re, sys
+from decimal import Decimal
+d = sys.argv[1]
+CANON = """deal_inputs.csv:ticker,class_label,is_listed_class,item,shares,asof,doc_form,doc_filing_date,doc_section,quote
+deals.csv:ticker,issuer,pricing_date,first_trade_date,first_trade_source,in_112bn,proceeds_usd,weight_pct_of_measured,offer_price_usd,ipo_shares_base,first_qe,status,den_listed_10q_sh,den_listed_10q_item,den_listed_10q_asof,den_listed_prosp_sh,den_all_classes_10q_sh,vintage
+holdings.csv:ticker,quarter_end,n_filers,sh_13f,sh_13f_sole,sh_pre_ipo_flagged,sh_13dg_holders_without_13f,pct_of_listed,pct_of_listed_prosp,pct_of_all_classes,ipo_shares_pct_of_listed,pct_of_ipo_shares,top1_pct_of_13f,top10_pct_of_13f,top10_pct_of_listed,sh_calls,sh_puts,n_filers_calls,n_filers_puts,sh_name_match_other_cusip,median_implied_price_usd,implied_to_offer_ratio,n_rows_value_blank,vintage
+reg_category.csv:ticker,quarter_end,reg_category,n_filers,sh_13f,pct_of_13f,pct_of_listed,vintage
+top_filers.csv:ticker,quarter_end,rank,filer_label,filed_13g_13d,sh_13f,pct_of_13f,pct_of_listed,vintage
+kind_hypothesis.csv:ticker,quarter_end,rank,filer_label,holder_kind,kind_basis,vintage
+overlap_i2.csv:ticker,quarter_end,i2_holder_label,i2_form,i2_type,i2_event_date,i2_shares,has_13f_row,sh_13f_matched,gap_sh,vintage
+cornerstones.csv:ticker,cornerstone_label,indicated_usd_up_to,offer_price_usd,indicated_sh_up_to_at_offer,quarter_end,n_mapped_filers,sh_13f_mapped,pct_of_indicated_up_to,vintage
+coverage.csv:quarter_end,zip_name,n_hr_filers,n_nt_filers,n_conf_omitted,pct_conf_omitted_of_hr,n_restatements,n_new_holdings,n_new_holdings_repeat_cusip,n_amend_orphans,n_amend_duplicates,n_filed_after_due,vintage
+summary.csv:question,scope,ticker,quarter_end,statistic,value,unit,denominator,vintage
+revisions.csv:vintage_prev,vintage_new,ticker,quarter_end,sh_13f_prev,sh_13f_new,change_sh,change_pct_of_prev
+zips.csv:zip_name,window_start,window_end,bytes,sha256,n_submissions,n_infotable_rows,role,vintage
+checks.csv:check_id,description,expected,observed,status
+"""
+PIN = "ee8cb56e1611e5586421bc59d7b2a87766937889bfb386d862f89a69323c8b65"
+want = dict(l.split(":", 1) for l in CANON.strip().split("\n"))
+keys = {
+ "deal_inputs.csv": ("ticker", "class_label", "item"), "deals.csv": ("ticker",), "holdings.csv": ("ticker", "quarter_end"), "reg_category.csv": ("ticker", "quarter_end", "reg_category"),
+ "top_filers.csv": ("ticker", "quarter_end", "rank"), "kind_hypothesis.csv": ("ticker", "quarter_end", "rank"), "overlap_i2.csv": ("ticker", "quarter_end", "i2_holder_label"),
+ "cornerstones.csv": ("ticker", "cornerstone_label", "quarter_end"), "coverage.csv": ("quarter_end", "zip_name"),
+ "summary.csv": ("question", "scope", "ticker", "quarter_end", "statistic"), "revisions.csv": ("vintage_prev", "vintage_new", "ticker", "quarter_end"), "zips.csv": ("zip_name",), "checks.csv": ("check_id",),
+}
+names = set(want) | {"README.md", "SOURCES.md"}
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)?flows?\b|\ballocat(?:e|ed|es|ing|ion|ions)\b|\b(?:ipo\s+)?buyers?\b|\bbought\b|\bpurchas(?:e|ed|es|ing)\b|\bdemand\b|\bappetite\b|\bsmart\s+money\b|\bpiled?\s+in(?:to)?\b|\bsnapped\s+up\b|\bdump(?:ed|ing|s)?\b|\bretail\b|\bunderpric(?:e|ed|ing)\b", re.I)
+RESID = re.compile(r"\b(?:rest|remainder|remaining|residual|balance)\b[^.]{0,80}\b(?:held|holds|owned|owns|belongs?|retail|insiders?|non-?filers?)\b", re.I)
+DENIAL = "Form 13F shows what each manager held at the quarter-end, not what it was allocated in the offering or when or at what price it bought, so none of these figures is an IPO allocation."
+EXEMPT = re.compile(r"(^sha256$|^sh_|_sh$|_sh_|^shares$|_shares$|^n_|_usd$|^bytes$|^rank$|date|^quarter_end$|^asof$|^first_qe$|^window_|^indicated_sh|^value$|_pct|^pct_|ratio|^change_|^gap_|^proceeds|^ipo_shares)", re.I)
+FORBID = re.compile(r"cusip|isin|figi|^cik$|accession", re.I)
+ISIN = re.compile(r"(?<![0-9A-Za-z])[A-Z]{2}[0-9A-Z]{9}[0-9](?![0-9A-Za-z])")
+FIGI = re.compile(r"(?<![0-9A-Za-z])BBG[0-9A-Z]{9}(?![0-9A-Za-z])")
+ACC = re.compile(r"\b\d{10}-\d{2}-\d{6}\b")
+TOK = re.compile(r"(?<![0-9A-Za-z,.])[0-9A-Za-z]{9}(?![0-9A-Za-z,])")
+def check_ok(c):
+    c = c.upper()
+    if len(c) != 9 or not re.fullmatch(r"[0-9A-Z*@#]{9}", c) or not c[8].isdigit():
+        return False
+    tot = 0
+    for i, ch in enumerate(c[:8]):
+        v = int(ch) if ch.isdigit() else (ord(ch) - 55 if ch.isalpha() else {"*": 36, "@": 37, "#": 38}[ch])
+        if i % 2 == 1:
+            v *= 2
+        tot += v // 10 + v % 10
+    return (10 - tot % 10) % 10 == int(c[8])
+def like(tok, digits_ok):
+    return check_ok(tok) and (bool(re.search(r"[A-Za-z]", tok[:8])) or digits_ok)
+bad = []
+if hashlib.sha256(CANON.encode("utf-8")).hexdigest() != PIN:
+    bad.append("this guard's own copy of the header allowlist does not hash to the pinned sha256")
+here, texts = set(), {}
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    here.add(n)
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    texts[n] = t
+    if n.lower().endswith((".tsv", ".zip", ".htm", ".html", ".pdf", ".json", ".xml", ".txt")) or t[:4] == "%PDF" or t[:2] == "PK":
+        bad.append("raw file in the committed folder (a tsv, zip, page, PDF or JSON): " + n)
+        continue
+    if n not in names:
+        bad.append("file that is not one of the fifteen committed names: " + n)
+        continue
+    if re.search(r"/Users/|/private/|~", t):
+        bad.append(n + " contains a local path (/Users/, /private/ or a tilde)")
+    if "@" in t:
+        bad.append(n + " contains an at sign")
+    if ACC.search(t):
+        bad.append(n + " contains an accession-number shape")
+    if ISIN.search(t):
+        bad.append(n + " contains an ISIN shape")
+    if FIGI.search(t):
+        bad.append(n + " contains a FIGI shape")
+    body = [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+    if n.endswith(".md"):
+        if any(like(tok, True) for tok in set(TOK.findall(t))):
+            bad.append(n + " contains a CUSIP-shaped token (letters, or nine digits with a valid check digit)")
+    else:
+        hdr = (body[0] if body else "").rstrip("\r")
+        cols = next(csv.reader([hdr])) if hdr else []
+        if hdr != want[n]:
+            bad.append("header of " + n + " is not its exact allowlist")
+        canon = want[n].split(",")
+        if any(FORBID.search(c) for c in cols if c not in canon):
+            bad.append(n + " has a column named like cusip, isin, figi, cik or accession")
+        hit = False
+        for r in list(csv.reader(body))[1:]:
+            for i, cell in enumerate(r):
+                cn = cols[i] if i < len(cols) else ""
+                if any(like(tok, not EXEMPT.search(cn)) for tok in TOK.findall(cell)):
+                    hit = True
+        if hit:
+            bad.append(n + " contains a CUSIP-shaped token")
+        if hdr == want[n] and n in keys:
+            rows = list(csv.reader(body))
+            head = rows[0]
+            idx = [head.index(k) for k in keys[n]]
+            seen, dup = set(), []
+            for r in rows[1:]:
+                k = tuple(r[i] if i < len(r) else "" for i in idx)
+                if k in seen:
+                    dup.append(k)
+                seen.add(k)
+            if dup:
+                bad.append("duplicate key in " + n + ": " + "|".join(dup[0]) + " (" + str(len(dup)) + " duplicate row(s))")
+    if n == "README.md":
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA, RESID) for m in rx.finditer(t2)})
+        if hits:
+            bad.append("README.md holds banned wording (spec R6): " + ", ".join(hits[:6]))
+        if re.search(r"^#+\s*Builder decisions", t, re.I | re.M):
+            bad.append("README.md has a 'Builder decisions' heading (build decisions belong in SOURCES.md)")
+for n in sorted(names - here):
+    bad.append("missing: " + n)
+warn = []
+def table(n):
+    t = texts.get(n)
+    if not t:
+        return None
+    body = [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+    rows = list(csv.reader(body))
+    if not rows or ",".join(rows[0]) != want[n]:
+        return None
+    return [dict(zip(rows[0], r)) for r in rows[1:]]
+H, R = table("holdings.csv"), table("reg_category.csv")
+if H is not None and R is not None:
+    tot = {(r["ticker"], r["quarter_end"]): Decimal(r["sh_13f"] or "0") for r in H}
+    got = {}
+    for r in R:
+        k = (r["ticker"], r["quarter_end"])
+        got[k] = got.get(k, Decimal(0)) + Decimal(r["sh_13f"] or "0")
+    off = [k for k in sorted(set(tot) | set(got)) if tot.get(k, Decimal(0)) != got.get(k, Decimal(0))]
+    if off:
+        k = off[0]
+        bad.append("reg_category.csv does not sum to holdings.csv's sh_13f for %d ticker-quarter(s), first %s (reg_category %s, holdings %s)" % (len(off), "/".join(k), got.get(k, Decimal(0)), tot.get(k, Decimal(0))))
+if H is not None:
+    for r in H:
+        if r["pct_of_listed"] and Decimal(r["pct_of_listed"]) > 100:
+            warn.append("holdings.csv: pct_of_listed above 100 for " + r["ticker"] + " " + r["quarter_end"] + " (" + r["pct_of_listed"] + ")")
+for b in bad:
+    print("BAD " + b)
+for w in warn:
+    print("WARN " + w)
+PY
+  out=$(python3 -c "$py" "$dir" 2>&1)
+  if [ -z "$(printf '%s' "$out" | grep -v '^WARN ' | tr -d '\n ')" ]; then
+    echo "  ✓ fifteen names, every header its exact allowlist, no raw file, CUSIP, ISIN, FIGI or accession shape, no local path or at sign, no banned wording outside the denial sentence, reg_category sums to sh_13f, and no duplicate key in $dir."
+  else
+    printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /'
+    printf '%s\n' "$out" | grep -v '^BAD \|^WARN \|^$' | sed 's/^/  ✗ guard error: /'
+    echo "  -> raw SEC files stay in data/vintages/ (gitignored); fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep '^WARN ' | sed 's/^WARN /  ⚠ /'
+}
+
 # --- M25: CENSUS PUBLIC-PENSION TOTALS LEAK AND WORDING GUARD (warn only) ------
 # data/census_public_pensions/ holds national statistics derived from the Census Bureau's Annual Survey of Public Pensions and nothing raw (spec
 # _research/2026-10-26-Census-Public-Pensions-Spec.md, sections 5, 6 and 9.6; build bin/census_public_pensions.py). The unit files and summary workbooks stay in the
@@ -1792,6 +1973,8 @@ if [ "$TARGET" = "--all" ]; then
   mmfnb_leak_check
   echo
   cpp_leak_check
+  echo
+  ipo13f_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
