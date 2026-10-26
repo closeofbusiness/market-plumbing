@@ -1,0 +1,3 @@
+# source: U.S. Census Bureau, Annual Survey of Public Pensions, survey years 2013-2025, unit files and summary tables, https://www.census.gov/programs-surveys/aspp.html, vintage 1e8f842133376a6b (newest unit file 2026-05-14), retrieved 2026-10-26
+vintage,newest_unit_file,newest_unit_file_date,files,requests,manifest_sha256
+1e8f842133376a6b,ASPP_Unit_File_2025.csv,2026-05-14,20,21,95dac9de0fe5d6d0e704918a917ec52d39aba87ef4c396545692bc2c25683bd3

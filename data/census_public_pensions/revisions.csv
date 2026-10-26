@@ -1,0 +1,26 @@
+# source: U.S. Census Bureau, Annual Survey of Public Pensions, survey years 2013-2025, unit files and summary tables, https://www.census.gov/programs-surveys/aspp.html, vintage 1e8f842133376a6b (newest unit file 2026-05-14), retrieved 2026-10-26; regenerated on every build from the cache, never appended
+survey_year,item,source_prev,date_prev,value_prev_usd_mn,source_new,date_new,value_new_usd_mn,change_usd_mn,change_pct
+2022,contrib_employee,summary,2025-05-23,64160.395,unit_file,2026-05-14,63949.400,-210.995,-0.329
+2022,contrib_government,summary,2025-05-23,218673.096,unit_file,2026-05-14,224009.118,5336.022,2.440
+2022,contrib_total,summary,2025-05-23,282833.491,unit_file,2026-05-14,287958.518,5125.027,1.812
+2022,benefits,summary,2025-05-23,368560.166,unit_file,2026-05-14,368117.415,-442.751,-0.120
+2022,withdrawals,summary,2025-05-23,7800.505,unit_file,2026-05-14,7670.228,-130.277,-1.670
+2022,earnings_ex_gains,summary,2025-05-23,109727.199,unit_file,2026-05-14,108914.830,-812.369,-0.740
+2022,gains_losses,summary,2025-05-23,-163541.867,unit_file,2026-05-14,-115465.262,48076.605,29.397
+2022,assets_end,summary,2025-05-23,5412589.230,unit_file,2026-05-14,5422683.528,10094.298,0.186
+2023,contrib_employee,summary,2025-05-23,68691.283,unit_file,2026-05-14,68422.583,-268.700,-0.391
+2023,contrib_government,summary,2025-05-23,226163.722,unit_file,2026-05-14,226323.615,159.893,0.071
+2023,contrib_total,summary,2025-05-23,294855.006,unit_file,2026-05-14,294746.197,-108.809,-0.037
+2023,benefits,summary,2025-05-23,386665.175,unit_file,2026-05-14,386915.776,250.601,0.065
+2023,withdrawals,summary,2025-05-23,8161.462,unit_file,2026-05-14,8073.515,-87.947,-1.078
+2023,earnings_ex_gains,summary,2025-05-23,109259.239,unit_file,2026-05-14,110686.544,1427.305,1.306
+2023,gains_losses,summary,2025-05-23,83792.371,unit_file,2026-05-14,79262.575,-4529.796,-5.406
+2023,assets_end,summary,2025-05-23,5483334.572,unit_file,2026-05-14,5484493.565,1158.993,0.021
+2024,contrib_employee,summary,2025-05-23,73913.855,unit_file,2026-05-14,73833.360,-80.495,-0.109
+2024,contrib_government,summary,2025-05-23,231877.902,unit_file,2026-05-14,230673.954,-1203.948,-0.519
+2024,contrib_total,summary,2025-05-23,305791.757,unit_file,2026-05-14,304507.314,-1284.443,-0.420
+2024,benefits,summary,2025-05-23,405454.166,unit_file,2026-05-14,404460.423,-993.743,-0.245
+2024,withdrawals,summary,2025-05-23,8640.241,unit_file,2026-05-14,8485.325,-154.916,-1.793
+2024,earnings_ex_gains,summary,2025-05-23,113631.756,unit_file,2026-05-14,114647.436,1015.680,0.894
+2024,gains_losses,summary,2025-05-23,464628.894,unit_file,2026-05-14,466422.725,1793.831,0.386
+2024,assets_end,summary,2025-05-23,5990130.946,unit_file,2026-05-14,5984012.295,-6118.651,-0.102

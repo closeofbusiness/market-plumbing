@@ -1,0 +1,23 @@
+# source: request log of bin/census_public_pensions.py fetch against www2.census.gov, retrieved 2026-10-26; one row per request
+utc_time,host,path,status,bytes,sha256,last_modified
+2026-10-26T07:02:19Z,www2.census.gov,/programs-surveys/aspp/datasets/,200,20787,ddf915916aeb7e0b30851aa9974124c23eced259a1b9c3dfe485087ceacc7b99,2026-10-26T07:02:20Z
+2026-10-26T07:02:22Z,www2.census.gov,/programs-surveys/aspp/tables/2013/aspp-historical-tables/2013asppsummary.xlsx,200,80510,5c380279f80468692a359df002cf685e7062294c0756349f414377d3fa2994dd,2018-08-06T19:04:22Z
+2026-10-26T07:02:25Z,www2.census.gov,/programs-surveys/aspp/tables/2014/aspp-historical-tables/2014asppsummary.xlsx,200,80637,5e8e52e12d7b5462b6eeacdf5e995b85cbf999c4cd8c6cbaadc83efd4f77da89,2018-08-06T19:04:02Z
+2026-10-26T07:02:28Z,www2.census.gov,/programs-surveys/aspp/tables/2015/aspp-historical-tables/2015asppsummary.xlsx,200,88301,5ae7b33a4e55696eacb340f1be5e6f561db4dffe42d87479e6ab63bd5a22434e,2018-08-06T19:02:49Z
+2026-10-26T07:02:31Z,www2.census.gov,/programs-surveys/aspp/tables/2016/aspp-historical-tables/2016asppsummary.xlsx,200,88055,3fbd45a949c974d1408bd52cbefcbf80152ba3ffdc124cbad02bb2185df5d3f9,2018-08-06T18:59:15Z
+2026-10-26T07:02:34Z,www2.census.gov,/programs-surveys/aspp/datasets/2017/aspp-historical-datasets/ASPP_Unit_File_2017.dsv,200,12944671,02a9421bc88f67cc57ebf79a8e6a8a0c2b1b1731dd4ac81ae842e4103545b14f,2025-05-23T17:00:31Z
+2026-10-26T07:02:37Z,www2.census.gov,/programs-surveys/aspp/datasets/2018/aspp-historical-datasets/ASPP_Unit_File_2018.dsv,200,4584477,8bb5f2dd3c523b679fee067fbbe8be4ddaab24ea7c0767bcfdd7c604672c0ea0,2025-05-23T17:00:32Z
+2026-10-26T07:02:40Z,www2.census.gov,/programs-surveys/aspp/datasets/2019/aspp-historical-datasets/ASPP_Unit_File_2019.dsv,200,7605304,f7e0fb453aa9c71fbb2cff3dd518fc71e1c170e7c97554437b1cd27e46283382,2025-05-23T17:00:32Z
+2026-10-26T07:02:43Z,www2.census.gov,/programs-surveys/aspp/datasets/2021/aspp-historical-datasets/ASPP_Unit_File_2021.dsv,200,7003313,0ff3408a543b64d16581b1c68768a6828516e1fd399cc5dfb8ab155cd6597b64,2025-05-23T17:00:32Z
+2026-10-26T07:02:46Z,www2.census.gov,/programs-surveys/aspp/datasets/2022/aspp-historical-datasets/ASPP_Unit_File_2022.dsv,200,16140954,cca4556bd31da6ca0aedaf647607c3f35b8ef954fe9a378baadf6ec5b6944cef,2026-05-14T15:15:31Z
+2026-10-26T07:02:49Z,www2.census.gov,/programs-surveys/aspp/datasets/2023/aspp-historical-datasets/ASPP_Unit_File_2023.dsv,200,7585272,f14067a9c86d7951bbf4dcd11be70773a5bbfa32190bbd00c101dd091c43d693,2026-05-14T15:15:31Z
+2026-10-26T07:02:52Z,www2.census.gov,/programs-surveys/aspp/datasets/2024/aspp-historical-datasets/ASPP_Unit_File_2024.csv,200,6969155,4d25da8943352b559e0c358d102a81762b89758a4c34ef2f8f9e3f44bbe76e4a,2026-05-14T15:15:32Z
+2026-10-26T07:02:55Z,www2.census.gov,/programs-surveys/aspp/datasets/2025/aspp-historical-datasets/ASPP_Unit_File_2025.csv,200,6750534,ce8e85af5917918c8263c589738619f75ef2124305505ac9e475de5895b1533e,2026-05-14T15:15:32Z
+2026-10-26T07:02:58Z,www2.census.gov,/programs-surveys/aspp/datasets/2017/aspp-historical-datasets/ASPP_2017_Summary.xlsx,200,35163,74fda1f30fce68d47a4c440c25131115450bfca4157916064706a2dccca99c30,2025-05-23T17:00:31Z
+2026-10-26T07:03:01Z,www2.census.gov,/programs-surveys/aspp/datasets/2018/aspp-historical-datasets/ASPP_2018_Summary.xlsx,200,56882,2cd469837e0bfcc1e99fe95bfda662e8608defbe2deac00d8f67e41c69fc3b90,2025-05-23T17:00:32Z
+2026-10-26T07:03:05Z,www2.census.gov,/programs-surveys/aspp/datasets/2019/aspp-historical-datasets/ASPP_2019_Summary.xlsx,200,56421,4d040eed8ca2d025cc5d538776950eabc1f24e3172b3cd6fa81a9fd4f162894e,2025-05-23T17:00:32Z
+2026-10-26T07:03:08Z,www2.census.gov,/programs-surveys/aspp/datasets/2020/aspp-historical-datasets/ASPP_2020_Summary.xlsx,200,60415,1be359863191766435424d8fd6c5b6c95266b6dbf9bf9f6ff8eb05a495771f7c,2025-05-23T17:00:32Z
+2026-10-26T07:03:11Z,www2.census.gov,/programs-surveys/aspp/datasets/2021/aspp-historical-datasets/ASPP_2021_Summary.xlsx,200,56774,dd8c08c9e44ecd3424ecfc80afc70ecfafb80417818b95006f5805e05f84e96b,2025-05-23T17:00:32Z
+2026-10-26T07:03:14Z,www2.census.gov,/programs-surveys/aspp/datasets/2022/aspp-historical-datasets/ASPP_2022_Summary.xlsx,200,35351,f5ce7cbe9a26acdd035c8fc0ccf1558feb6ab6deaaf99c53f1f3a45c9cdaedcb,2025-05-23T17:00:33Z
+2026-10-26T07:03:17Z,www2.census.gov,/programs-surveys/aspp/datasets/2023/aspp-historical-datasets/ASPP_2023_Summary.xlsx,200,59223,8f16519d2e3ba3cff4187831de553477d1177705a9357b9d673b1cfd9128c252,2025-05-23T17:00:33Z
+2026-10-26T07:03:20Z,www2.census.gov,/programs-surveys/aspp/datasets/2024/ASPP_2024_Summary.xlsx,200,58353,5629586c25a20f10d2a066aae58ee213ebecce58a793ef6e141c6adf0f829619,2025-05-23T16:45:31Z

@@ -1188,6 +1188,168 @@ PY
   fi
 }
 
+# --- M25: CENSUS PUBLIC-PENSION TOTALS LEAK AND WORDING GUARD (warn only) ------
+# data/census_public_pensions/ holds national statistics derived from the Census Bureau's Annual Survey of Public Pensions and nothing raw (spec
+# _research/2026-10-26-Census-Public-Pensions-Spec.md, sections 5, 6 and 9.6; build bin/census_public_pensions.py). The unit files and summary workbooks stay in the
+# gitignored cache data/vintages/census_public_pensions/. Seven things would break that or the spec's rules, and none is visible to M5-M23:
+#   1. a file that is not one of the nine committed names (seven CSVs, README.md, SOURCES.md), a raw file (.dsv, .xlsx, .txt, .pdf, .html, .zip) under any name, and a
+#      header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's seven canonical lines, typed here a second time: this
+#      guard never reads them from bin/census_public_pensions.py;
+#   2. a local path (/Users/, /private/, a tilde), an at sign, a SAMPLE_YEAR line, or a raw unit-file row (the spec's quote-aware pattern, no start-of-line anchor) in any
+#      committed file;
+#   3. causal, flow, sale or motive wording (the spec's two patterns, pasted) in README.md anywhere but the one denial sentence;
+#   4. a national.csv row where employee + government is not total contributions, or net cash is not contributions - benefits - withdrawals (within 0.002 $mn);
+#   5. a summary.csv change row inside the old years (2013-2016) or spanning 2016/2017;
+#   6. a summary.csv pattern outside above_band, below_band, within_band and n_a;
+#   7. a duplicate key in any CSV.
+# The script refuses the same things when it writes; this is the second, independent look. CPP_DIR overrides the folder (used to show that the guard fires on a planted
+# copy). It warns and never blocks (header doctrine).
+cpp_leak_check() {
+  echo "-- M25: Census public-pension guard (data/census_public_pensions/: the nine names, exact headers, no raw file, local path, at sign or unit-file row, no causal/flow/sale wording outside the denial sentence, employee + government = total and the net-cash identity on every national row, no change row in the old years or across 2016/2017, four pattern values, no duplicate key) --"
+  local dir="${CPP_DIR:-data/census_public_pensions}" f name want got bad="" raw committed out py
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md national.csv ratios.csv summary.csv revisions.csv checks.csv vintages.csv fetch_log.csv "
+  for name in ${committed}; do
+    [ -f "$dir/$name" ] || bad="${bad}  ✗ missing: $name
+"
+  done
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    raw=""
+    case "$name" in *.dsv|*.xlsx|*.xls|*.txt|*.pdf|*.html|*.htm|*.zip|*.gz) raw=1 ;; esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && raw=1
+    head -c 4 "$f" | grep -qF '%PDF' && raw=1
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw file in the committed folder (a unit file, workbook, PDF, page or archive): $name
+"
+      continue
+    fi
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the nine committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or a tilde)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      national.csv) want='survey_year,schema,year_kind,contrib_employee_usd_mn,contrib_government_usd_mn,contrib_total_usd_mn,benefits_usd_mn,withdrawals_usd_mn,net_cash_usd_mn,earnings_ex_gains_usd_mn,earnings_old_schema_usd_mn,gains_losses_usd_mn,expenses_admin_invest_usd_mn,assets_end_usd_mn,systems_published,cv_contrib_total,cv_benefits,cv_assets,summary_file_date,source_kind,source_file_date,vintage' ;;
+      ratios.csv) want='survey_year,schema,benefits_per_contrib_usd,benefits_withdrawals_per_contrib_usd,net_cash_pct_of_assets_start,net_cash_pct_of_assets_end,income_per_net_cash_gap_usd,income_per_gap_after_expenses_usd,ratio_cv_bound_pct,vintage' ;;
+      summary.csv) want='question,segment,from_year,to_year,statistic,value,unit,pattern,primary,vintage' ;;
+      revisions.csv) want='survey_year,item,source_prev,date_prev,value_prev_usd_mn,source_new,date_new,value_new_usd_mn,change_usd_mn,change_pct' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      vintages.csv) want='vintage,newest_unit_file,newest_unit_file_date,files,requests,manifest_sha256' ;;
+      fetch_log.csv) want='utc_time,host,path,status,bytes,sha256,last_modified' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+from decimal import Decimal, InvalidOperation
+d = sys.argv[1]
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)flows?\b|\bflows?\s+(?:into|out\s+of|from|to)\b|\bnet\s+(?:sell|buy)(?:ers?|ing)\b|\b(?:sell|sells|sold|selling|sale|sales|buy|buys|bought|buying|purchas(?:e|es|ed|ing))\s+(?:of\s+)?(?:equit(?:y|ies)|stocks?|shares|bonds|assets)\b|\bforced\s+(?:sell|sale)\w*|\bliquidat\w*|\bsell[- ]?off\b|\bbid\b|\bdrain\w*|\bdeplet\w*|\bunderfunded\b|\binsolven\w*|\bcrisis\b|\brunning\s+out\b|\bretirement\s+flows?\b", re.I)
+RAWROW = re.compile(r'(?<!\d)\d{4}(?:\|[^|\n]*\||,(?:"[^"]*"|[^,"\n]*),)\d{6}[|,][A-Z]{2}[|,]\d[|,]R[XZJP]\d\d[|,]')
+DENIAL = "It records the pension systems' own accounts only: a benefit payment is not a sale of equities, a contribution is not a purchase of them, and nothing here shows what the systems bought or sold in markets."
+KEYS = {
+ "national.csv": ("survey_year",),
+ "ratios.csv": ("survey_year",),
+ "summary.csv": ("question", "segment", "from_year", "to_year", "statistic"),
+ "revisions.csv": ("survey_year", "item", "date_prev", "date_new"),
+ "checks.csv": ("check_id",),
+ "vintages.csv": ("vintage",),
+ "fetch_log.csv": ("utc_time", "path"),
+ }
+HEADS = {
+ "national.csv": "survey_year,schema,year_kind,contrib_employee_usd_mn,contrib_government_usd_mn,contrib_total_usd_mn,benefits_usd_mn,withdrawals_usd_mn,net_cash_usd_mn,earnings_ex_gains_usd_mn,earnings_old_schema_usd_mn,gains_losses_usd_mn,expenses_admin_invest_usd_mn,assets_end_usd_mn,systems_published,cv_contrib_total,cv_benefits,cv_assets,summary_file_date,source_kind,source_file_date,vintage".split(","),
+ "summary.csv": "question,segment,from_year,to_year,statistic,value,unit,pattern,primary,vintage".split(","),
+ }
+PATTERNS = ("above_band", "below_band", "within_band", "n_a")
+bad = []
+def body(t):
+    return [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    if n.lower().endswith((".dsv", ".xlsx", ".xls", ".txt", ".pdf", ".html", ".htm", ".zip", ".gz")) or t[:2] == "PK" or t[:4] == "%PDF":
+        continue
+    if RAWROW.search(t):
+        bad.append(n + " holds a raw unit-file row (the spec's quote-aware pattern)")
+    if "SAMPLE_YEAR" in t:
+        bad.append(n + " holds a unit-file header line (SAMPLE_YEAR)")
+    if n == "README.md":
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t2)})
+        if hits:
+            bad.append("README.md holds banned wording (spec R6): " + ", ".join(hits[:6]))
+    if n in KEYS:
+        lines = body(t)
+        rows = list(csv.reader(lines))
+        if not rows:
+            continue
+        head = rows[0]
+        if n in HEADS and head != HEADS[n]:
+            continue
+        try:
+            idx = [head.index(k) for k in KEYS[n]]
+        except ValueError:
+            continue
+        seen, dup = set(), 0
+        for r in rows[1:]:
+            k = tuple(r[i] if i < len(r) else "" for i in idx)
+            if k in seen:
+                dup += 1
+            seen.add(k)
+        if dup:
+            bad.append("duplicate key in " + n + " (" + str(dup) + " duplicate row(s))")
+        if n == "national.csv" and head == HEADS[n]:
+            for r in rows[1:]:
+                x = dict(zip(head, r))
+                try:
+                    e, g, tot = (Decimal(x[k]) for k in ("contrib_employee_usd_mn", "contrib_government_usd_mn", "contrib_total_usd_mn"))
+                    b, w, nc = (Decimal(x[k]) for k in ("benefits_usd_mn", "withdrawals_usd_mn", "net_cash_usd_mn"))
+                except (InvalidOperation, KeyError):
+                    bad.append("national.csv survey year " + x.get("survey_year", "?") + ": a money cell is not a number")
+                    continue
+                if abs(e + g - tot) > Decimal("0.002"):
+                    bad.append("national.csv survey year " + x["survey_year"] + ": employee + government is not total contributions")
+                if abs(nc - (tot - b - w)) > Decimal("0.002"):
+                    bad.append("national.csv survey year " + x["survey_year"] + ": net cash is not contributions minus benefits minus withdrawals")
+        if n == "summary.csv" and head == HEADS[n]:
+            for r in rows[1:]:
+                x = dict(zip(head, r))
+                if x["pattern"] not in PATTERNS:
+                    bad.append("summary.csv pattern " + repr(x["pattern"]) + " is not one of the four allowed values")
+                if x["statistic"].startswith("change_") and x["from_year"]:
+                    a, z = int(x["from_year"]), int(x["to_year"])
+                    if a <= 2016 and z <= 2016:
+                        bad.append("summary.csv has a change row inside the old schema (" + str(a) + " to " + str(z) + ")")
+                    elif a <= 2016 < z:
+                        bad.append("summary.csv has a change row spanning 2016/2017 (" + str(a) + " to " + str(z) + ")")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ nine names, every header its exact allowlist, no raw file, local path, at sign or unit-file row, no banned wording outside the denial sentence, employee + government = total and the net-cash identity on every national row, no change row in the old years or across 2016/2017, four pattern values and no duplicate key in $dir."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> raw Census files stay in data/vintages/census_public_pensions/ (gitignored); fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -1628,6 +1790,8 @@ if [ "$TARGET" = "--all" ]; then
   bisids_leak_check
   echo
   mmfnb_leak_check
+  echo
+  cpp_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
