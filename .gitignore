@@ -113,3 +113,7 @@ data/bis_ids_dollar/_FAILED/
 data/vintages/mmf_nonus_banks/
 # A build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/mmf_nonus_banks/_FAILED/
+
+# 13F bulk zips and issuer filings for bin/ipo_13f_holders.py: fetched by the supervisor, not redistributed (size; personal data in SIGNATURE/COVERPAGE)
+data/vintages/form13f_zips/
+data/vintages/ipo_13f_holders/

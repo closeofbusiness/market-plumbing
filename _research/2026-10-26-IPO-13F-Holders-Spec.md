@@ -521,3 +521,11 @@ Grok (fenced, read + web; 16 fetches, no breaches) said BUILD WITH CHANGES. I ch
 - **O-19:** `pct_of_ipo_shares` stays as a memo column. The README says it exceeds 100 wherever pre-IPO holders file 13F, and no prose leads with it.
 - **O-20:** the placeholder line is reworded; the heading stays.
 - **C02 Cerebras price split:** resolved by the supervisor from the fetched zip before the build. Until then a failing C02 for CBRS is expected and is not a builder defect.
+
+## Supervisor rulings, round 5 (facts from the fetched files), 26 Oct 2026 — before the build
+
+- **C02 Cerebras split resolved.** In the Jun–Aug zip, accession `0000904454-26-000433` (13F-HR, period 30 Jun 2026) has no Cerebras shares row. It has three PUT rows of 40,000, 65,700 and 40,000 shares underlying, with VALUE 4,020,800, 7,085,285 and 5,234,720. The relayed pin (145,700 shares, VALUE 16,340,805, "112.15") is their sum. The corrected pins for that accession are shares rows 0 and `sh_puts` 145,700. Accession `0001193125-26-352454` (794,467 shares, VALUE 175,577,207) implies $221.00, the price 482 of the 547 Cerebras shares rows on the main identifier show. The other C02 pins stand.
+- **Readme (R11) read by the supervisor.** `VALUE`: "Starting on January 3, 2023, market value is reported rounded to the nearest dollar". `SECFILENUMBER` ("SEC File Number (if applicable)") is a separate field from `FORM13FFILENUMBER`, so `reg_category.csv` is produced (R3-6). `INFOTABLE.tsv` also carries `FIGI`, which falls under the R4 ban.
+- **Observed, for the builder.** Some filers report `VALUE` in thousands: Cerebras rows imply $0.22, SpaceX rows $0.17. These rows are caught by the ±1% check and listed. Shares count; values do not. Both issuers' shares appear under more than one identifier string in the raw file, so the R2-2 normalisation and the second scan matter for C19.
+- **Paths.** Raw files are in the repository's gitignored `data/vintages/form13f_zips/` and `data/vintages/ipo_13f_holders/docs/`, following the repository's practice for every other build, in place of the spec's `private/...`.
+- **First 10-Qs.** All five measured issuers filed a 10-Q for the period ended 30 Jun 2026, so C20 is expected to list none.
