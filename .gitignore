@@ -126,3 +126,10 @@ data/vintages/census_public_pensions/
 data/census_public_pensions/_FAILED/
 # 13F IPO holders build (bin/ipo_13f_holders.py): a build with a hard check FAIL writes its outputs here and leaves the committed files alone
 data/ipo_13f_holders/_FAILED/
+# Z.1 corporate and foreign bond holders (bin/z1_corporate_bond_holders.py): the Fed's z1_csv_files.zip is held in memory and never written to disk. The 14 member files
+# of each release ARE committed under data/vintages/z1_corporate_bond_holders/<release>/ (spec R4); these patterns are a second line of defence for what must never be:
+# a zip or json that lands in the cache, and the STOP_z1cb fetch latch (only a person deletes it).
+data/vintages/z1_corporate_bond_holders/STOP_z1cb
+data/vintages/z1_corporate_bond_holders/*.zip
+data/vintages/z1_corporate_bond_holders/**/*.zip
+data/vintages/z1_corporate_bond_holders/**/*.json

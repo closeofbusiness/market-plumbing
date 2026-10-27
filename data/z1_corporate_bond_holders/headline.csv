@@ -1,0 +1,23 @@
+# source: Board of Governors of the Federal Reserve System, Financial Accounts of the United States (Z.1), release 20260911, tables F3.5 and S1281; retrieved 2026-10-27 (fetch_log.csv)
+release,statistic,window,basis,group,flow_usd_mn,value,unit
+20260911,ins_share_wave_pct,wave,fu,ins,741258.000,33.264,pct
+20260911,group_share_wave_pct,wave,fu,ins,741258.000,33.264,pct
+20260911,group_share_wave_pct,wave,fu,pen,99267.000,4.455,pct
+20260911,group_share_wave_pct,wave,fu,funds,1081159.000,48.517,pct
+20260911,group_share_wave_pct,wave,fu,row,934248.000,41.924,pct
+20260911,group_share_wave_pct,wave,fu,banks,90297.000,4.052,pct
+20260911,group_share_wave_pct,wave,fu,hh_residual,-848639.000,-38.082,pct
+20260911,group_share_wave_pct,wave,fu,private_funds,52305.000,2.347,pct
+20260911,group_share_wave_pct,wave,fu,gse_bd,14718.000,0.660,pct
+20260911,group_share_wave_pct,wave,fu,other,63815.000,2.864,pct
+20260911,group_share_wave_pct,wave,fu,hh_plus_private_funds,-796334.000,-35.735,pct
+20260911,iss_share_wave_pct,wave,fu,iss_nfc,765892.000,34.369,pct
+20260911,iss_share_wave_pct,wave,fu,iss_domfin,819944.000,36.795,pct
+20260911,iss_share_wave_pct,wave,fu,iss_row,642592.000,28.836,pct
+20260911,rank_wave,wave,fu,ins,741258.000,3,rank
+20260911,rank_wave,wave,fu,pen,99267.000,4,rank
+20260911,rank_wave,wave,fu,funds,1081159.000,1,rank
+20260911,rank_wave,wave,fu,row,934248.000,2,rank
+20260911,rank_wave,wave,fu,banks,90297.000,5,rank
+20260911,rank_wave,wave,fu,hh_residual,-848639.000,7,rank
+20260911,rank_wave,wave,fu,private_funds,52305.000,6,rank

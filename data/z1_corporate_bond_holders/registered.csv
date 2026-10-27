@@ -1,0 +1,5 @@
+# source: Board of Governors of the Federal Reserve System, Financial Accounts of the United States (Z.1), release 20260911, tables F3.5 and S1281; retrieved 2026-10-27 (fetch_log.csv)
+statement_id,group,window,basis,release_base,release_new,share_base_pct,share_new_pct,abs_delta_pp,threshold_pp,label
+SREV,ins,wave,fu,20260911,,33.264,,,2.000,PENDING
+SREV-F,funds,wave,fu,20260911,,48.517,,,2.000,PENDING
+SREV-R,row,wave,fu,20260911,,41.924,,,2.000,PENDING

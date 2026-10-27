@@ -1,0 +1,2 @@
+# source: Board of Governors of the Federal Reserve System, Financial Accounts of the United States (Z.1), release 20260911, tables F3.5 and S1281; retrieved 2026-10-27 (fetch_log.csv)
+release_prev,release_new,window,side,group,basis,flow_prev_usd_mn,flow_new_usd_mn,share_prev_pct,share_new_pct,change_pp

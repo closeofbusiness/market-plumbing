@@ -1531,6 +1531,203 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M26: Z.1 CORPORATE AND FOREIGN BOND HOLDERS LEAK AND WORDING GUARD (warn only) ---
+# data/z1_corporate_bond_holders/ holds sector statistics derived from the Federal Reserve's Financial Accounts (Z.1 table F3.5) and nothing raw (spec
+# _research/2026-10-26-Z1-Corporate-Bond-Holders-Spec.md, sections 5, 6 and 9.7; build bin/z1_corporate_bond_holders.py). The Fed's zip is never written to disk;
+# the 14 member files of each release are committed under data/vintages/z1_corporate_bond_holders/<release>/ as the spec's R4 says. Nine things would break the
+# spec's rules, and none is visible to M5-M25:
+#   1. a file that is not one of the fourteen committed names (twelve CSVs, README.md, SOURCES.md), a raw file (.zip, .json, .html, .htm, .gz, .pdf, or a STOP file)
+#      under any name, a missing name, and a .zip, .json or STOP file tracked in git in either folder;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's twelve canonical lines, typed here a second time
+#      (this guard never reads them from bin/z1_corporate_bond_holders.py);
+#   3. a CUSIP-shaped token (nine characters, a valid check digit), a local path (/Users/, /private/, ~/) or an at sign in any committed file;
+#   4. causal, flow, sale, buyer, demand, composition or AI-wording (the spec's two patterns, pasted) in README.md anywhere but the one denial sentence;
+#   5. a verdict word of the retired band tests (HELD, FALSIFIED, NOT_HELD, INSIDE_BAND, ABOVE_BAND, BELOW_BAND) in any committed file (R1-1);
+#   6. a registered.csv label other than STABLE, MOVED or PENDING;
+#   7. a windows.csv `wave` row whose n_quarters is not 10;
+#   8. per window, basis and side: the nine holder (three issuer) group shares of the net not summing to 100 (within 0.01), the shares of the positive flows not
+#      summing to 100 over the groups with a positive flow, ins != ins_life + ins_pc or ins_life != general + separate accounts (within 0.002 $mn);
+#   9. a duplicate key in any CSV.
+# The script refuses the same things when it writes; this is the second, independent look. Z1CB_DIR overrides the folder (used to show that the guard fires on a
+# planted copy). It warns and never blocks (header doctrine).
+z1cb_leak_check() {
+  echo "-- M26: Z.1 corporate-bond holders guard (data/z1_corporate_bond_holders/: the fourteen names, exact headers, no raw file, CUSIP, local path or at sign, no causal/flow/buyer/demand wording outside the denial sentence, no verdict word, registered labels, wave n_quarters = 10, share sums, no duplicate key, no zip/json/STOP in git) --"
+  local dir="${Z1CB_DIR:-data/z1_corporate_bond_holders}" f name want got bad="" raw committed out py tracked
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md quarterly.csv levels.csv windows.csv level_shares.csv level_change.csv headline.csv registered.csv comparisons.csv revisions.csv checks.csv vintages.csv fetch_log.csv "
+  for name in ${committed}; do
+    [ -f "$dir/$name" ] || bad="${bad}  ✗ missing: $name
+"
+  done
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    raw=""
+    case "$name" in *.zip|*.json|*.html|*.htm|*.gz|*.pdf|STOP*) raw=1 ;; esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && raw=1
+    head -c 4 "$f" | grep -qF '%PDF' && raw=1
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw file in the committed folder (a zip, json, page, pdf or STOP file): $name
+"
+      continue
+    fi
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the fourteen committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      quarterly.csv) want='release,quarter,series_code,line,table,role,group,basis,value_usd_mn' ;;
+      levels.csv) want='release,quarter,series_code,line,table,role,group,valuation,level_usd_mn' ;;
+      windows.csv) want='release,window,from_quarter,to_quarter,n_quarters,side,role,group,basis,flow_usd_mn,avg_per_quarter_usd_mn,share_of_total_pct,total_usd_mn,share_of_positive_pct,positive_total_usd_mn,offset_ratio,stability_flag' ;;
+      level_shares.csv) want='release,quarter,group,level_usd_mn,share_of_holders_pct,holders_total_usd_mn,discrepancy_usd_mn' ;;
+      level_change.csv) want='release,window,group,level_start_usd_mn,level_end_usd_mn,flow_usd_mn,change_minus_flow_usd_mn' ;;
+      headline.csv) want='release,statistic,window,basis,group,flow_usd_mn,value,unit' ;;
+      registered.csv) want='statement_id,group,window,basis,release_base,release_new,share_base_pct,share_new_pct,abs_delta_pp,threshold_pp,label' ;;
+      comparisons.csv) want='release,side,group,basis,window_a,window_b,share_a_pct,share_b_pct,change_pp' ;;
+      revisions.csv) want='release_prev,release_new,window,side,group,basis,flow_prev_usd_mn,flow_new_usd_mn,share_prev_pct,share_new_pct,change_pp' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      vintages.csv) want='release,url_path,sha256,bytes,last_modified,retrieved_utc' ;;
+      fetch_log.csv) want='utc_time,host,path,status,bytes,sha256,last_modified' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  if [ -z "${Z1CB_DIR:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- data/z1_corporate_bond_holders data/vintages/z1_corporate_bond_holders 2>/dev/null | grep -E '\.(zip|json)$|(^|/)STOP' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a zip, json or STOP file must never be): $tracked
+"
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+from decimal import Decimal, InvalidOperation
+d = sys.argv[1]
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)flows?\b|\bflow(?:s|ed|ing)?\s+(?:into|out\s+of|from|to)\b|\bnet\s+(?:sell|buy)(?:ers?|ing)\b|\bbought\b|\bbuyers?\b|\bdemand\b|\b(?:sell|sells|sold|selling|sale|sales|buy|buys|buying|purchas(?:e|es|ed|ing))\s+(?:of\s+)?(?:equit(?:y|ies)|stocks?|shares|bonds|assets)\b|\bforced\s+(?:sell|sale)\w*|\bliquidat\w*|\bsell[- ]?off\b|\bbid\b|\bdrain\w*|\bdeplet\w*|\bcrisis\b|\b(?:fund|funds|funded|funding|financ\w+)\s+(?:of\s+)?(?:the\s+)?AI\b|\bAI(?:-era)?\s+(?:bond\s+)?(?:wave|boom|bonds?|debt|paper|issuance|supply)\b|\bcomposition\s+of\b", re.I)
+VERDICT = re.compile(r"HELD|FALSIFIED|INSIDE_BAND|ABOVE_BAND|BELOW_BAND")
+CUSIP = re.compile(r"\b[0-9]{3}[0-9A-Z]{5}[0-9]\b")
+DENIAL = "These are flows for the whole US corporate and foreign bond market; Z.1 has no line for the AI companies' bonds, so nothing here shows who holds AI debt or who bought any deal, and a net acquisition is purchases minus sales and redemptions, not purchases."
+KEYS = {
+ "quarterly.csv": ("release", "quarter", "series_code", "basis"),
+ "levels.csv": ("release", "quarter", "series_code"),
+ "windows.csv": ("release", "window", "side", "group", "basis"),
+ "level_shares.csv": ("release", "quarter", "group"),
+ "level_change.csv": ("release", "window", "group"),
+ "headline.csv": ("release", "statistic", "group"),
+ "registered.csv": ("statement_id", "release_new"),
+ "comparisons.csv": ("release", "side", "group", "basis", "window_a", "window_b"),
+ "revisions.csv": ("release_prev", "release_new", "window", "side", "group", "basis"),
+ "checks.csv": ("check_id",),
+ "vintages.csv": ("release",),
+ "fetch_log.csv": ("utc_time", "path"),
+ }
+WINDOWS_COLS = ["release", "window", "from_quarter", "to_quarter", "n_quarters", "side", "role", "group", "basis", "flow_usd_mn", "avg_per_quarter_usd_mn", "share_of_total_pct", "total_usd_mn", "share_of_positive_pct", "positive_total_usd_mn", "offset_ratio", "stability_flag"]
+bad = []
+def cusip_ok(s):
+    t = 0
+    for i, ch in enumerate(s[:8]):
+        v = int(ch) if ch.isdigit() else ord(ch) - 55
+        if i % 2 == 1:
+            v *= 2
+        t += v // 10 + v % 10
+    return (10 - t % 10) % 10 == int(s[8])
+def body(t):
+    return [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+def dec(x):
+    try:
+        return Decimal(x)
+    except (InvalidOperation, TypeError):
+        return None
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    if n.lower().endswith((".zip", ".json", ".html", ".htm", ".gz", ".pdf")) or n.startswith("STOP") or t[:2] == "PK" or t[:4] == "%PDF":
+        continue
+    if VERDICT.search(t):
+        bad.append(n + " holds a verdict word of the retired band tests (R1-1)")
+    for tok in set(CUSIP.findall(t)):
+        if cusip_ok(tok):
+            bad.append(n + " holds a CUSIP-shaped token")
+            break
+    if n == "README.md":
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t2)})
+        if hits:
+            bad.append("README.md holds banned wording (spec R6): " + ", ".join(hits[:6]))
+    if n in KEYS:
+        rows = list(csv.reader(body(t)))
+        if not rows:
+            continue
+        head = rows[0]
+        try:
+            idx = [head.index(k) for k in KEYS[n]]
+        except ValueError:
+            continue
+        seen, dup = set(), 0
+        for r in rows[1:]:
+            k = tuple(r[i] if i < len(r) else "" for i in idx)
+            if k in seen:
+                dup += 1
+            seen.add(k)
+        if dup:
+            bad.append("duplicate key in " + n + " (" + str(dup) + " duplicate row(s))")
+        if n == "registered.csv" and "label" in head:
+            i = head.index("label")
+            labs = sorted({r[i] for r in rows[1:] if i < len(r) and r[i] not in ("STABLE", "MOVED", "PENDING")})
+            if labs:
+                bad.append("registered.csv holds a label outside STABLE, MOVED, PENDING: " + ", ".join(labs))
+        if n == "windows.csv" and head == WINDOWS_COLS:
+            ix = {c: head.index(c) for c in head}
+            sets, flows = {}, {}
+            for r in rows[1:]:
+                k = (r[ix["release"]], r[ix["window"]], r[ix["basis"]], r[ix["side"]])
+                flows[k + (r[ix["group"]],)] = dec(r[ix["flow_usd_mn"]])
+                if r[ix["window"]] == "wave" and r[ix["n_quarters"]] != "10":
+                    bad.append("windows.csv has a wave row with n_quarters " + r[ix["n_quarters"]] + " (release " + r[ix["release"]] + ")")
+                if r[ix["role"]] in ("holder", "issuer"):
+                    sets.setdefault(k, []).append(r)
+            for k, rs in sets.items():
+                sh = [dec(r[ix["share_of_total_pct"]]) for r in rs if r[ix["share_of_total_pct"]] != ""]
+                if sh and abs(sum(sh) - 100) > Decimal("0.01"):
+                    bad.append("windows.csv " + "|".join(k) + ": the group shares of the net sum to " + str(sum(sh)) + ", not 100")
+                ps = [dec(r[ix["share_of_positive_pct"]]) for r in rs if r[ix["share_of_positive_pct"]] != ""]
+                if ps and abs(sum(ps) - 100) > Decimal("0.01"):
+                    bad.append("windows.csv " + "|".join(k) + ": the shares of the positive flows sum to " + str(sum(ps)) + ", not 100")
+            for k in {kk[:4] for kk in flows}:
+                if k[3] != "holder":
+                    continue
+                g = lambda nm: flows.get(k + (nm,))
+                a, b, c = g("ins"), g("ins_life"), g("ins_pc")
+                if None not in (a, b, c) and abs(a - (b + c)) > Decimal("0.002"):
+                    bad.append("windows.csv " + "|".join(k) + ": ins is not ins_life + ins_pc")
+                a, b, c = g("ins_life"), g("ins_life_ga"), g("ins_life_sa")
+                if None not in (a, b, c) and abs(a - (b + c)) > Decimal("0.002"):
+                    bad.append("windows.csv " + "|".join(k) + ": ins_life is not general + separate accounts")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ fourteen names, every header its exact allowlist, no raw file, CUSIP, local path or at sign, no banned wording outside the denial sentence, no verdict word, registered labels STABLE/MOVED/PENDING, every wave row 10 quarters, the share sums and the insurer identities close and no duplicate key in $dir; no zip, json or STOP file in git."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> the Fed's zip is never written; the member files of each release stay in data/vintages/z1_corporate_bond_holders/ and the build recomputes every table: fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -1975,6 +2172,8 @@ if [ "$TARGET" = "--all" ]; then
   cpp_leak_check
   echo
   ipo13f_leak_check
+  echo
+  z1cb_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")
