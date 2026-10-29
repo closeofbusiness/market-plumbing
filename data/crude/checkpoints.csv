@@ -71,24 +71,24 @@ flow_4wk_avg,30 Jun 2026,2026-05-30,2026-06-26,imports,5467.8,kb/d,mean of the f
 flow_4wk_avg,30 Jun 2026,2026-05-30,2026-06-26,exports,4461.0,kb/d,mean of the four weekly values ending at week_end
 flow_4wk_avg,30 Jun 2026,2026-05-30,2026-06-26,refinery_input,17115.2,kb/d,mean of the four weekly values ending at week_end
 flow_4wk_avg,30 Jun 2026,2026-05-30,2026-06-26,product_supplied,20638.5,kb/d,mean of the four weekly values ending at week_end
-level,latest week,,2026-10-16,commercial_crude_stocks,412517,kb,
-level,latest week,,2026-10-16,spr_crude_stocks,282683,kb,
-level,latest week,,2026-10-16,cushing_crude_stocks,27594,kb,
-level,latest week,,2026-10-16,gasoline_stocks,205310,kb,
-level,latest week,,2026-10-16,distillate_stocks,104286,kb,
-level,latest week,,2026-10-16,crude_total_incl_spr,695200,kb,
-level,latest week,,2026-10-16,wti_week_avg,99.93,$/bbl,
-level,latest week,,2026-10-16,brent_week_avg,125.59,$/bbl,
-level,latest week,,2026-10-16,commercial_stocks_value_at_wti,41.222,$bn,
-level,latest week,,2026-10-16,spr_value_at_wti,28.248,$bn,
-level,latest week,,2026-10-16,commercial_stocks_5y_min,419748,kb,
-level,latest week,,2026-10-16,commercial_stocks_5y_max,437357,kb,
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,production,13720.5,kb/d,mean of the four weekly values ending at week_end
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,net_imports,1999.5,kb/d,mean of the four weekly values ending at week_end
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,imports,6086.2,kb/d,mean of the four weekly values ending at week_end
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,exports,4086.8,kb/d,mean of the four weekly values ending at week_end
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,refinery_input,16500.2,kb/d,mean of the four weekly values ending at week_end
-flow_4wk_avg,latest week,2026-09-19,2026-10-16,product_supplied,21122.0,kb/d,mean of the four weekly values ending at week_end
+level,latest week,,2026-10-23,commercial_crude_stocks,410625,kb,
+level,latest week,,2026-10-23,spr_crude_stocks,282583,kb,
+level,latest week,,2026-10-23,cushing_crude_stocks,26970,kb,
+level,latest week,,2026-10-23,gasoline_stocks,209180,kb,
+level,latest week,,2026-10-23,distillate_stocks,102824,kb,
+level,latest week,,2026-10-23,crude_total_incl_spr,693208,kb,
+level,latest week,,2026-10-23,wti_week_avg,107.17,$/bbl,
+level,latest week,,2026-10-23,brent_week_avg,121.02,$/bbl,
+level,latest week,,2026-10-23,commercial_stocks_value_at_wti,44.006,$bn,
+level,latest week,,2026-10-23,spr_value_at_wti,30.284,$bn,
+level,latest week,,2026-10-23,commercial_stocks_5y_min,415966,kb,
+level,latest week,,2026-10-23,commercial_stocks_5y_max,439945,kb,
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,production,13729.8,kb/d,mean of the four weekly values ending at week_end
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,net_imports,1847.5,kb/d,mean of the four weekly values ending at week_end
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,imports,6255.2,kb/d,mean of the four weekly values ending at week_end
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,exports,4407.8,kb/d,mean of the four weekly values ending at week_end
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,refinery_input,16567.5,kb/d,mean of the four weekly values ending at week_end
+flow_4wk_avg,latest week,2026-09-26,2026-10-23,product_supplied,20799.2,kb/d,mean of the four weekly values ending at week_end
 window_change,2024,2023-12-29,2024-12-27,d_commercial_stocks,-15464,kb,
 window_change,2024,2023-12-29,2024-12-27,d_spr,39182,kb,
 window_change,2024,2023-12-29,2024-12-27,d_cushing,-12139,kb,
@@ -155,50 +155,50 @@ window_change,2026 H1 (to 30 Jun),2025-12-26,2026-06-26,production_at_wti,207996
 window_change,2026 H1 (to 30 Jun),2025-12-26,2026-06-26,imports_at_wti,92174.5,$mn,
 window_change,2026 H1 (to 30 Jun),2025-12-26,2026-06-26,exports_at_wti,69652.0,$mn,
 window_change,2026 H1 (to 30 Jun),2025-12-26,2026-06-26,refinery_input_at_wti,249854.7,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,d_commercial_stocks,4158,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,d_spr,-42972,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,d_cushing,7928,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,d_gasoline,-8656,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,d_distillate,-4313,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,production,1548197,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,transfers_to_crude_supply,55153,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,imports,699783,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,exports,425341,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,refinery_input,1910244,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,unaccounted_for,-6384,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,product_supplied_total_petroleum,2310973,kb,sum of 7 x weekly kb/d
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,balance_residual_sum,22,kb,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,commercial_change_at_wti,50.9,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,spr_change_at_wti,-3523.6,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,commercial_change_at_brent,-153.2,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,spr_change_at_brent,-3788.9,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,unaccounted_for_at_wti,-656.6,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,production_at_wti,136781.5,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,imports_at_wti,61905.2,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,exports_at_wti,37798.7,$mn,
-window_change,2026 Q3 to date,2026-06-26,2026-10-16,refinery_input_at_wti,168633.4,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,d_commercial_stocks,-10371,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,d_spr,-130536,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,d_cushing,5482,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,d_gasoline,-29024,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,d_distillate,-19393,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,production,4038216,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,transfers_to_crude_supply,159194,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,imports,1811971,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,exports,1246588,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,refinery_input,4899776,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,unaccounted_for,-3934,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,product_supplied_total_petroleum,6064121,kb,sum of 7 x weekly kb/d
-window_change,2026 to date,2025-12-26,2026-10-16,balance_residual_sum,10,kb,
-window_change,2026 to date,2025-12-26,2026-10-16,commercial_change_at_wti,-1859.3,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,spr_change_at_wti,-12022.0,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,commercial_change_at_brent,-1885.2,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,spr_change_at_brent,-12843.1,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,unaccounted_for_at_wti,-223.2,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,production_at_wti,344778.0,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,imports_at_wti,154079.7,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,exports_at_wti,107450.7,$mn,
-window_change,2026 to date,2025-12-26,2026-10-16,refinery_input_at_wti,418488.2,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,d_commercial_stocks,2266,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,d_spr,-43072,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,d_cushing,7304,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,d_gasoline,-4786,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,d_distillate,-5775,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,production,1646141,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,transfers_to_crude_supply,58933,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,imports,744401,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,exports,459319,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,refinery_input,2025926,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,unaccounted_for,-5061,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,product_supplied_total_petroleum,2452436,kb,sum of 7 x weekly kb/d
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,balance_residual_sum,25,kb,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,commercial_change_at_wti,-151.9,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,spr_change_at_wti,-3534.3,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,commercial_change_at_brent,-382.2,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,spr_change_at_brent,-3801.0,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,unaccounted_for_at_wti,-514.8,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,production_at_wti,147278.0,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,imports_at_wti,66686.9,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,exports_at_wti,41440.1,$mn,
+window_change,2026 Q3 to date,2026-06-26,2026-10-23,refinery_input_at_wti,181030.8,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,d_commercial_stocks,-12263,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,d_spr,-130636,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,d_cushing,4858,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,d_gasoline,-25154,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,d_distillate,-20855,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,production,4136160,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,transfers_to_crude_supply,162974,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,imports,1856589,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,exports,1280566,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,refinery_input,5015458,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,unaccounted_for,-2611,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,product_supplied_total_petroleum,6205584,kb,sum of 7 x weekly kb/d
+window_change,2026 to date,2025-12-26,2026-10-23,balance_residual_sum,13,kb,
+window_change,2026 to date,2025-12-26,2026-10-23,commercial_change_at_wti,-2062.1,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,spr_change_at_wti,-12032.7,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,commercial_change_at_brent,-2114.2,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,spr_change_at_brent,-12855.2,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,unaccounted_for_at_wti,-81.4,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,production_at_wti,355274.4,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,imports_at_wti,158861.3,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,exports_at_wti,111092.1,$mn,
+window_change,2026 to date,2025-12-26,2026-10-23,refinery_input_at_wti,430885.6,$mn,
 world_window,2024,2024-01-01,2024-12-01,implied_net_withdrawal,-18.5,mb,
 world_window,2024,2024-01-01,2024-12-01,implied_net_withdrawal_rate,-0.051,mb/d,
 world_window,2024,2024-01-01,2024-12-01,implied_net_withdrawal_at_brent,-2.104,$bn,
@@ -249,7 +249,7 @@ world_window,2026 full year (Oct-Dec forecast),2026-01-01,2026-12-01,oecd_commer
 world_window,2026 full year (Oct-Dec forecast),2026-01-01,2026-12-01,oecd_commercial_stocks_end,2644.5,mb,
 world_window,2026 full year (Oct-Dec forecast),2026-01-01,2026-12-01,months_historical,9,months,
 world_window,2026 full year (Oct-Dec forecast),2026-01-01,2026-12-01,months_forecast,3,months,
-identity,R1_published_balance,,,n,1293,weeks,"|residual|, kb (n in weeks)"
+identity,R1_published_balance,,,n,1294,weeks,"|residual|, kb (n in weeks)"
 identity,R1_published_balance,,,mean_signed,0.0,kb,"signed mean, kb"
 identity,R1_published_balance,,,max,14,kb,"|residual|, kb (n in weeks)"
 identity,R1_published_balance,,,p50,0,kb,"|residual|, kb (n in weeks)"
@@ -259,7 +259,7 @@ identity,R1_published_balance,,,p99,7,kb,"|residual|, kb (n in weeks)"
 identity,R1_published_balance,,,le7,0.999,share of weeks,"|residual|, kb (n in weeks)"
 identity,R1_published_balance,,,le14,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,R1_published_balance,,,le21,1.000,share of weeks,"|residual|, kb (n in weeks)"
-identity,R2_levels_identity_asserted,,,n,510,weeks,"|residual|, kb (n in weeks)"
+identity,R2_levels_identity_asserted,,,n,511,weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_asserted,,,mean_signed,0.0,kb,"signed mean, kb"
 identity,R2_levels_identity_asserted,,,max,11,kb,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_asserted,,,p50,2,kb,"|residual|, kb (n in weeks)"
@@ -269,7 +269,7 @@ identity,R2_levels_identity_asserted,,,p99,9,kb,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_asserted,,,le7,0.949,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_asserted,,,le14,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_asserted,,,le21,1.000,share of weeks,"|residual|, kb (n in weeks)"
-identity,R2_levels_identity_incl_revision_weeks,,,n,511,weeks,"|residual|, kb (n in weeks)"
+identity,R2_levels_identity_incl_revision_weeks,,,n,512,weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_incl_revision_weeks,,,mean_signed,-0.4,kb,"signed mean, kb"
 identity,R2_levels_identity_incl_revision_weeks,,,max,196,kb,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_incl_revision_weeks,,,p50,2,kb,"|residual|, kb (n in weeks)"
@@ -279,24 +279,24 @@ identity,R2_levels_identity_incl_revision_weeks,,,p99,9,kb,"|residual|, kb (n in
 identity,R2_levels_identity_incl_revision_weeks,,,le7,0.947,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_incl_revision_weeks,,,le14,0.998,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_levels_identity_incl_revision_weeks,,,le21,0.998,share of weeks,"|residual|, kb (n in weeks)"
-identity,R2_since_2023_11_10,,,n,153,weeks,"|residual|, kb (n in weeks)"
+identity,R2_since_2023_11_10,,,n,154,weeks,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,mean_signed,-0.1,kb,"signed mean, kb"
 identity,R2_since_2023_11_10,,,max,11,kb,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,p50,3,kb,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,p90,8,kb,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,p95,8,kb,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,p99,9,kb,"|residual|, kb (n in weeks)"
-identity,R2_since_2023_11_10,,,le7,0.889,share of weeks,"|residual|, kb (n in weeks)"
+identity,R2_since_2023_11_10,,,le7,0.890,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,le14,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_since_2023_11_10,,,le21,1.000,share of weeks,"|residual|, kb (n in weeks)"
-identity,R2_2026,,,n,42,weeks,"|residual|, kb (n in weeks)"
-identity,R2_2026,,,mean_signed,0.2,kb,"signed mean, kb"
+identity,R2_2026,,,n,43,weeks,"|residual|, kb (n in weeks)"
+identity,R2_2026,,,mean_signed,0.3,kb,"signed mean, kb"
 identity,R2_2026,,,max,9,kb,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,p50,3,kb,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,p90,7,kb,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,p95,8,kb,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,p99,9,kb,"|residual|, kb (n in weeks)"
-identity,R2_2026,,,le7,0.905,share of weeks,"|residual|, kb (n in weeks)"
+identity,R2_2026,,,le7,0.907,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,le14,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_2026,,,le21,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_before_2017_not_asserted,,,n,782,weeks,"|residual|, kb (n in weeks)"
@@ -309,13 +309,13 @@ identity,R2_before_2017_not_asserted,,,p99,1002,kb,"|residual|, kb (n in weeks)"
 identity,R2_before_2017_not_asserted,,,le7,0.785,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_before_2017_not_asserted,,,le14,0.789,share of weeks,"|residual|, kb (n in weeks)"
 identity,R2_before_2017_not_asserted,,,le21,0.795,share of weeks,"|residual|, kb (n in weeks)"
-identity,total_petroleum_identity,,,n,510,weeks,"|residual|, kb (n in weeks)"
+identity,total_petroleum_identity,,,n,511,weeks,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,mean_signed,-0.3,kb,"signed mean, kb"
 identity,total_petroleum_identity,,,max,14,kb,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,p50,3,kb,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,p90,7,kb,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,p95,8,kb,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,p99,11,kb,"|residual|, kb (n in weeks)"
-identity,total_petroleum_identity,,,le7,0.927,share of weeks,"|residual|, kb (n in weeks)"
+identity,total_petroleum_identity,,,le7,0.928,share of weeks,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,le14,1.000,share of weeks,"|residual|, kb (n in weeks)"
 identity,total_petroleum_identity,,,le21,1.000,share of weeks,"|residual|, kb (n in weeks)"

@@ -1,19 +1,19 @@
 CRUDE OIL PHYSICAL LEDGER  (E-021 follow-up: where the barrels came from and went)
-Sources: EIA dnav weekly history files, WPSR Table 1 history (psw01.xls, release 10/21/2026), EIA Short-Term Energy Outlook October 2026 (modelling completed 2026-10-01),
-EIA daily spot WTI (to 2026-10-20) and Brent (to 2026-10-20). Latest US week: ending 2026-10-16. STEO last historical month: 2026-09.
+Sources: EIA dnav weekly history files, WPSR Table 1 history (psw01.xls, release 10/28/2026), EIA Short-Term Energy Outlook October 2026 (modelling completed 2026-10-01),
+EIA daily spot WTI (to 2026-10-27) and Brent (to 2026-10-27). Latest US week: ending 2026-10-23. STEO last historical month: 2026-09.
 Units: kb = thousand barrels; kb/d = thousand barrels per day; mb = million barrels (1 mb = 1,000 kb); mb/d = million barrels per day; $mn / $bn = US$ millions / billions.
 A week is Saturday to Friday ending on the week_end date (7 days: a flow of F kb/d is 7 x F kb). Dollars = barrels x the week's mean EIA spot price (WTI unless stated).
 
 KEY RESULTS
-  Weekly identity (with the transfers term the brief omitted): |residual| <= 11 kb in 510 of 511 weeks since 2017-01-06 (median 2 kb, p99 9 kb); the exception is a stock-revision week
-    (2023-12-22 -196 kb). The published Table 1 closes within 14 kb in all 1,293 weeks since 2001-11-09.
-  Latest week 2026-10-16: commercial crude 412.5 mb, SPR 282.7 mb, Cushing 27.6 mb. Since the week ending 2025-12-26: SPR -130.5 mb
-    (-12.02 $bn at weekly WTI), commercial -10.4 mb (-1.86 $bn); WTI week mean $58.01 -> $99.93.
-  Where 2026's barrels went (mb, 42 weeks): refinery input 4,900 was supplied by production 4,038 + transfers 159 + net imports 565; the stock draw
-    -140.9 = those supplies - refinery input + unaccounted-for (-3.9); the plug is small beside the SPR draw.
+  Weekly identity (with the transfers term the brief omitted): |residual| <= 11 kb in 511 of 512 weeks since 2017-01-06 (median 2 kb, p99 9 kb); the exception is a stock-revision week
+    (2023-12-22 -196 kb). The published Table 1 closes within 14 kb in all 1,294 weeks since 2001-11-09.
+  Latest week 2026-10-23: commercial crude 410.6 mb, SPR 282.6 mb, Cushing 27.0 mb. Since the week ending 2025-12-26: SPR -130.6 mb
+    (-12.03 $bn at weekly WTI), commercial -12.3 mb (-2.06 $bn); WTI week mean $58.01 -> $107.17.
+  Where 2026's barrels went (mb, 43 weeks): refinery input 5,015 was supplied by production 4,136 + transfers 163 + net imports 576; the stock draw
+    -142.9 = those supplies - refinery input + unaccounted-for (-2.6); the plug is small beside the SPR draw.
   World (STEO October 2026, last historical month 2026-09): implied net stock withdrawal +657 mb (+3.07 mb/d) over Mar-Sep 2026, +424 mb Jan-Sep; 2025 -688 mb, 2024 -19 mb;
     +68.9 $bn for Mar-Sep at monthly Brent. All 2026 months to September are flagged historical (EIA estimates); October-December are forecast.
-  Brent 2026-10-02: $114.82 -> $135.51; it persists on the next 12 prints ($125.51, $125.44, $126.00, $130.18, $130.03, $129.95, $125.78, $126.55, $126.35, $119.33, $118.82, $115.22); spread rank 2 of 8,420. Reported, not corrected; unverified.
+  Brent 2026-10-02: $114.82 -> $135.51; it persists on the next 17 prints ($125.51, $125.44, $126.00, $130.18, $130.03, $129.95, $125.78, $126.55, $126.35, $119.33, $118.82, $115.22, $117.37, $125.39, $128.30, $128.12, $123.10); spread rank 2 of 8,425. Reported, not corrected; unverified.
   Term structure: EIA's NYMEX series ends 2024-04-05; no other free key-free official curve found; leg stopped.
   Spot check against EIA's current Table 1: 42 of 42 figures match exactly (3 weeks).
 
@@ -24,20 +24,20 @@ KEY RESULTS
    closes by construction; the tests below are rounding closure, the tie to the stock LEVELS, and the size of the plug.
 
    ASSERTED (the script stops otherwise):
-   (a) published balance sheet, every week 2001-11-09 to 2026-10-16 (1293 weeks; 9 weeks in 2005-2007 where EIA publishes no balancing item are excluded):
+   (a) published balance sheet, every week 2001-11-09 to 2026-10-23 (1294 weeks; 9 weeks in 2005-2007 where EIA publishes no balancing item are excluded):
        |7 x published stock change - 7 x terms| <= 24.5 kb.  Observed max 14 kb.
-   (b) THE BRIEF'S IDENTITY on the stock levels, weeks from 2017-01-06 to 2026-10-16 (511 weeks, of which 1 revision week(s) excluded: 510 asserted):
+   (b) THE BRIEF'S IDENTITY on the stock levels, weeks from 2017-01-06 to 2026-10-23 (512 weeks, of which 1 revision week(s) excluded: 511 asserted):
        |change in (WCESTUS1 + WCSSTUS1) - 7 x terms| <= 22.0 kb (the rounding bound: six published terms x 0.5 kb/d x 7 days = 21 kb, +1 kb for whole-barrel levels).
-       Observed max 11 kb, against a mean absolute weekly change in total crude stocks of 4,696 kb (denominator: the 510 asserted weeks).
+       Observed max 11 kb, against a mean absolute weekly change in total crude stocks of 4,690 kb (denominator: the 511 asserted weeks).
 
    Residual = (change in stocks) - 7 x (supply minus disposition), kb, absolute value, weeks from 2017-01-06, revision weeks excluded:
    residual set                            weeks  mean(signed)  median  p90  p95  p99  max  <=7 kb  <=14 kb  <=21 kb
    --------------------------------------  -----  ------------  ------  ---  ---  ---  ---  ------  -------  -------
-   all asserted weeks                        510          -0.0       2    6    8    9   11   94.9%   100.0%   100.0%
-   since 2023-11-10 (transfers in)           153          -0.1       3    8    8    9   11   88.9%   100.0%   100.0%
-   2026 to date                               42          +0.2       3    7    8    9    9   90.5%   100.0%   100.0%
-   published balance sheet, 2001-11-09 on   1293          +0.0       0    7    7    7   14   99.9%   100.0%   100.0%
-   total-petroleum identity                  510          -0.3       3    7    8   11   14   92.7%   100.0%   100.0%
+   all asserted weeks                        511          +0.0       2    6    8    9   11   94.9%   100.0%   100.0%
+   since 2023-11-10 (transfers in)           154          -0.1       3    8    8    9   11   89.0%   100.0%   100.0%
+   2026 to date                               43          +0.3       3    7    8    9    9   90.7%   100.0%   100.0%
+   published balance sheet, 2001-11-09 on   1294          +0.0       0    7    7    7   14   99.9%   100.0%   100.0%
+   total-petroleum identity                  511          -0.3       3    7    8   11   14   92.8%   100.0%   100.0%
    (signed mean: kb; the other columns: kb; the last three: share of weeks with |residual| at or under 7, 14 and 21 kb. 7 kb = 1 kb/d.)
 
    Revision weeks (level change differs from 7 x the published stock change by more than 14 kb; the stock history was revised after the line was published), from 2017-01-06:
@@ -45,7 +45,7 @@ KEY RESULTS
        2023-12-22: total petroleum, levels minus published -513 kb; residual -506 kb
    Before 2017-01-06 the level change and the published stock change disagree by up to 3,131 kb; 160 of 782 weeks exceed 22 kb; the last revision week before then is 2016-01-01. In 2010-2015, 69 of the 69 weeks that
    disagree by more than 14 kb are the first week of a month. Reading (INFERENCE, not stated by EIA in these files): the level history was re-benchmarked monthly and the flow lines were not restated.
-   Check on the check: leaving the transfers term out, the identity misses by a median 3,832 kb (max 6,218 kb) in each of the 154 weeks since 2023-11-10.
+   Check on the check: leaving the transfers term out, the identity misses by a median 3,827 kb (max 6,218 kb) in each of the 155 weeks since 2023-11-10.
 
    The balancing item ('unaccounted for', kb/d, annual mean of the weekly values) and the transfers line:
    year  unaccounted for, mean kb/d  transfers, mean kb/d  weeks
@@ -61,27 +61,27 @@ KEY RESULTS
    2023                         859           710 (8 wks)     52
    2024                           8          497 (52 wks)     52
    2025                          96          535 (52 wks)     52
-   2026                         -13          541 (42 wks)     42
+   2026                          -9          541 (43 wks)     43
    The balancing item fell from +600 to +860 kb/d (2022 to Oct 2023) to about zero from 2024, in the same weeks that the ~500-700 kb/d transfers line began. READING (inferred from timing and size,
    not stated by EIA in these files): the 2023 change was a redefinition that moved those barrels out of the plug, not a change in the oil. From 2024 the plug averages -8 to +96 kb/d (annual means).
 
 2. CHECKPOINTS (US, weekly; stocks are end-of-week levels, flows are 4-week averages of the weekly kb/d)
-                                            end-2023 (2023-12-29)  end-2024 (2024-12-27)  end-2025 (2025-12-26)  30 Jun 2026 (2026-06-26)  latest week (2026-10-16)
+                                            end-2023 (2023-12-29)  end-2024 (2024-12-27)  end-2025 (2025-12-26)  30 Jun 2026 (2026-06-26)  latest week (2026-10-23)
    ---------------------------------------  ---------------------  ---------------------  ---------------------  ------------------------  ------------------------
-   commercial crude stocks, kb                            431,065                415,601                422,888                   408,359                   412,517
-   SPR crude stocks, kb                                   354,388                393,570                413,219                   325,655                   282,683
-   Cushing crude stocks, kb                                34,679                 22,540                 22,112                    19,666                    27,594
-   gasoline stocks, kb                                    236,954                231,384                234,334                   213,966                   205,310
-   distillate stocks, kb                                  125,855                122,867                123,679                   108,599                   104,286
-   production, 4wk avg kb/d                              13,225.0               13,598.2               13,837.0                  13,808.5                  13,720.5
-   imports, 4wk avg kb/d                                  6,609.5                6,507.5                6,038.2                   5,467.8                   6,086.2
-   exports, 4wk avg kb/d                                  4,274.8                3,892.5                3,932.2                   4,461.0                   4,086.8
-   net imports (imports-exports), 4wk kb/d                2,334.8                2,615.0                2,106.0                   1,006.8                   1,999.5
-   refinery crude input, 4wk avg kb/d                    16,458.5               16,735.8               16,867.8                  17,115.2                  16,500.2
-   product supplied, total, 4wk kb/d                     20,584.5               20,338.5               20,335.2                  20,638.5                  21,122.0
-   WTI, week mean $/bbl                                     73.52                  70.51                  58.01                     73.59                     99.93
-   commercial stocks at WTI, $bn                             31.7                   29.3                   24.5                      30.1                      41.2
-   SPR at WTI, $bn                                           26.1                   27.7                   24.0                      24.0                      28.2
+   commercial crude stocks, kb                            431,065                415,601                422,888                   408,359                   410,625
+   SPR crude stocks, kb                                   354,388                393,570                413,219                   325,655                   282,583
+   Cushing crude stocks, kb                                34,679                 22,540                 22,112                    19,666                    26,970
+   gasoline stocks, kb                                    236,954                231,384                234,334                   213,966                   209,180
+   distillate stocks, kb                                  125,855                122,867                123,679                   108,599                   102,824
+   production, 4wk avg kb/d                              13,225.0               13,598.2               13,837.0                  13,808.5                  13,729.8
+   imports, 4wk avg kb/d                                  6,609.5                6,507.5                6,038.2                   5,467.8                   6,255.2
+   exports, 4wk avg kb/d                                  4,274.8                3,892.5                3,932.2                   4,461.0                   4,407.8
+   net imports (imports-exports), 4wk kb/d                2,334.8                2,615.0                2,106.0                   1,006.8                   1,847.5
+   refinery crude input, 4wk avg kb/d                    16,458.5               16,735.8               16,867.8                  17,115.2                  16,567.5
+   product supplied, total, 4wk kb/d                     20,584.5               20,338.5               20,335.2                  20,638.5                  20,799.2
+   WTI, week mean $/bbl                                     73.52                  70.51                  58.01                     73.59                    107.17
+   commercial stocks at WTI, $bn                             31.7                   29.3                   24.5                      30.1                      44.0
+   SPR at WTI, $bn                                           26.1                   27.7                   24.0                      24.0                      30.3
    (net imports = imports - exports, including SPR flows, as in WCRNTUS2; the SPR value is barrels at spot, not cost basis.)
 
 3. CHANGES IN STOCKS, BARRELS AND DOLLARS (sum of weekly changes; dollars = each week's change x that week's mean WTI; negative = draw)
@@ -90,10 +90,10 @@ KEY RESULTS
    2024 (52)                         -15,464   +39,182       -12,139         -5,570           -2,988          -1,205   +2,986            +3,144
    2025 (52)                          +7,287   +19,649          -428         +2,950             +812            +581   +1,254            +1,324
    2026 H1 (to 30 Jun) (26)          -14,529   -87,564        -2,446        -20,368          -15,080          -1,910   -8,498            -9,054
-   2026 Q3 to date (16)               +4,158   -42,972        +7,928         -8,656           -4,313             +51   -3,524            -3,789
-   2026 to date (42)                 -10,371  -130,536        +5,482        -29,024          -19,393          -1,859  -12,022           -12,843
-   2026 to date (after the week ending 2025-12-26, to 2026-10-16): SPR -130.5 mb = -12.02 $bn at weekly WTI (-12.84 $bn at weekly Brent);
-   commercial crude -10.4 mb = -1.86 $bn; SPR + commercial -140.9 mb = -13.88 $bn.
+   2026 Q3 to date (17)               +2,266   -43,072        +7,304         -4,786           -5,775            -152   -3,534            -3,801
+   2026 to date (43)                 -12,263  -130,636        +4,858        -25,154          -20,855          -2,062  -12,033           -12,855
+   2026 to date (after the week ending 2025-12-26, to 2026-10-23): SPR -130.6 mb = -12.03 $bn at weekly WTI (-12.86 $bn at weekly Brent);
+   commercial crude -12.3 mb = -2.06 $bn; SPR + commercial -142.9 mb = -14.09 $bn.
    The dollar figures are barrels at the week's spot: not proceeds to the Treasury, not the DOE's cost basis (the SPR level change nets sales, exchanges and returns).
 
    Where the barrels came from and went (sum of 7 x weekly kb/d, mb; dollars at weekly WTI, $bn):
@@ -102,8 +102,8 @@ KEY RESULTS
    2024                    4,827.2      181.0  2,393.1  1,489.0         5,891.3             +2.8                +23.7      +0.0           7,360.8
    2025                    4,921.8      194.9  2,213.8  1,407.0         5,931.5            +35.0                +26.9      +0.0           7,406.4
    2026 H1 (to 30 Jun)     2,490.0      104.0  1,112.2    821.2         2,989.5             +2.5               -102.1      +0.0           3,753.1
-   2026 Q3 to date         1,548.2       55.2    699.8    425.3         1,910.2             -6.4                -38.8      +0.0           2,311.0
-   2026 to date            4,038.2      159.2  1,812.0  1,246.6         4,899.8             -3.9               -140.9      +0.0           6,064.1
+   2026 Q3 to date         1,646.1       58.9    744.4    459.3         2,025.9             -5.1                -40.8      +0.0           2,452.4
+   2026 to date            4,136.2      163.0  1,856.6  1,280.6         5,015.5             -2.6               -142.9      +0.0           6,205.6
    (all in mb; 'residual' = change in stocks minus supply-minus-disposition, summed over the weeks; 'unaccounted-for' is EIA's plug and enters the identity; product supplied is
     total petroleum products, a different quantity from crude, shown for scale.)
    window ($bn at WTI)  production  imports  exports  refinery input  unaccounted-for
@@ -111,8 +111,8 @@ KEY RESULTS
    2024                      369.6    183.4    114.3           451.1             +0.4
    2025                      322.6    145.4     92.3           388.7             +2.0
    2026 H1 (to 30 Jun)       208.0     92.2     69.7           249.9             +0.4
-   2026 Q3 to date           136.8     61.9     37.8           168.6             -0.7
-   2026 to date              344.8    154.1    107.5           418.5             -0.2
+   2026 Q3 to date           147.3     66.7     41.4           181.0             -0.5
+   2026 to date              355.3    158.9    111.1           430.9             -0.1
 
 4. COMMERCIAL STOCKS AGAINST THE SAME WEEK'S FIVE-YEAR RANGE (the five preceding calendar years; 2021-2025 for 2026; kb)
    date-aligned (primary): the weekly observation within 3 days of the same calendar date
@@ -122,7 +122,7 @@ KEY RESULTS
    2024-12-27 (end-2024)     415,601  419,995  493,469  439,014     below      -1,178     -11,463      +1,694       -4,983    within
    2025-12-26 (end-2025)     422,888  415,601  493,469  435,816    within      -1,934      -6,065        +718       -3,121    within
    2026-06-26 (30 Jun 2026)  408,359  415,566  453,690  437,818     below      -3,775     -12,157      +3,845       -5,479    within
-   2026-10-16 (latest week)  412,517  419,748  437,357  426,499     below      -3,060      -4,491      +5,474         -427    within
+   2026-10-23 (latest week)  410,625  415,966  439,945  426,670     below      -1,892      -6,858      +4,268         +171    within
    ISO-week-aligned (the first-pass map's alignment)
    week ending                 level   5y min   5y max  5y mean  position  weekly chg  chg 5y min  chg 5y max  chg 5y mean  position
    ------------------------  -------  -------  -------  -------  --------  ----------  ----------  ----------  -----------  --------
@@ -130,10 +130,10 @@ KEY RESULTS
    2024-12-27 (end-2024)     415,601  417,851  493,469  438,585     below      -1,178     -11,463      +1,694       -4,696    within
    2025-12-26 (end-2025)     422,888  415,601  493,469  435,726    within      -1,934      -6,065      +1,694       -2,639    within
    2026-06-26 (30 Jun 2026)  408,359  418,951  452,182  437,790     below      -3,775     -12,157      +8,234       -1,690    within
-   2026-10-16 (latest week)  412,517  421,120  439,945  428,145     below      -3,060        -961      +5,474       +2,548     below
-   Weeks since 2025-12-26 (5y): 42; level above the five-year range in 0, below in 11, within in 31.
-   Weeks since 2025-12-26 (5yiso): 42; level above the five-year range in 1, below in 11, within in 30.
-   Latest week 2026-10-16: the commercial level is below the date-aligned range and below the ISO-aligned range; the week's change (-3,060 kb) is within / below the corresponding ranges of weekly changes.
+   2026-10-23 (latest week)  410,625  415,966  436,830  426,860     below      -1,892      -6,858      +3,290       -1,285    within
+   Weeks since 2025-12-26 (5y): 43; level above the five-year range in 0, below in 12, within in 31.
+   Weeks since 2025-12-26 (5yiso): 43; level above the five-year range in 1, below in 12, within in 30.
+   Latest week 2026-10-23: the commercial level is below the date-aligned range and below the ISO-aligned range; the week's change (-1,892 kb) is within / within the corresponding ranges of weekly changes.
 
 5. WORLD, MONTHLY (EIA Short-Term Energy Outlook; implied net stock WITHDRAWAL = consumption - production; positive = stocks drawn; mb/d and mb)
    STEO October 2026: last historical month 2026-09. 'Historical' months are EIA estimates of world data, not observations: consumption outside the OECD is apparent consumption and
@@ -180,11 +180,11 @@ KEY RESULTS
 
 6. THE BRENT PRINT OF 2026-10-02 (reported, not corrected)
    EIA Europe Brent spot: 2026-10-01 $114.82 -> 2026-10-02 $135.51 (+18.0%), while Cushing WTI went $99.77 -> $97.89.
-   It PERSISTS in the data: 2026-10-05 Brent $125.51 (WTI $96.13, spread $29.38); 2026-10-06 Brent $125.44 (WTI $96.24, spread $29.20); 2026-10-07 Brent $126.00 (WTI $95.02, spread $30.98); 2026-10-08 Brent $130.18 (WTI $98.26, spread $31.92); 2026-10-09 Brent $130.03 (WTI $98.73, spread $31.30); 2026-10-12 Brent $129.95 (WTI $94.99, spread $34.96); 2026-10-13 Brent $125.78 (WTI $95.39, spread $30.39); 2026-10-14 Brent $126.55 (WTI $96.34, spread $30.21); 2026-10-15 Brent $126.35 (WTI $104.71, spread $21.64); 2026-10-16 Brent $119.33 (WTI $108.21, spread $11.12); 2026-10-19 Brent $118.82 (WTI $110.01, spread $8.81); 2026-10-20 Brent $115.22 (WTI $107.89, spread $7.33). The file ends 2026-10-20; there is no later print.
-   Brent minus WTI: $15.05 on 2026-10-01, $37.62 on 2026-10-02: rank 2 of 8,420 days with both prices since 1987-05-20.
+   It PERSISTS in the data: 2026-10-05 Brent $125.51 (WTI $96.13, spread $29.38); 2026-10-06 Brent $125.44 (WTI $96.24, spread $29.20); 2026-10-07 Brent $126.00 (WTI $95.02, spread $30.98); 2026-10-08 Brent $130.18 (WTI $98.26, spread $31.92); 2026-10-09 Brent $130.03 (WTI $98.73, spread $31.30); 2026-10-12 Brent $129.95 (WTI $94.99, spread $34.96); 2026-10-13 Brent $125.78 (WTI $95.39, spread $30.39); 2026-10-14 Brent $126.55 (WTI $96.34, spread $30.21); 2026-10-15 Brent $126.35 (WTI $104.71, spread $21.64); 2026-10-16 Brent $119.33 (WTI $108.21, spread $11.12); 2026-10-19 Brent $118.82 (WTI $110.01, spread $8.81); 2026-10-20 Brent $115.22 (WTI $107.89, spread $7.33); 2026-10-21 Brent $117.37 (WTI $103.95, spread $13.42); 2026-10-22 Brent $125.39 (WTI $104.27, spread $21.12); 2026-10-23 Brent $128.30 (WTI $109.72, spread $18.58); 2026-10-26 Brent $128.12 (WTI $105.25, spread $22.87); 2026-10-27 Brent $123.10 (WTI $103.37, spread $19.73). The file ends 2026-10-27; there is no later print.
+   Brent minus WTI: $15.05 on 2026-10-01, $37.62 on 2026-10-02: rank 2 of 8,425 days with both prices since 1987-05-20.
    Largest spreads on record: $54.34 2020-04-20; $37.62 2026-10-02; $34.96 2026-10-12; $31.92 2026-10-08; $31.30 2026-10-09; $30.98 2026-10-07. (2020-04-20 is the day WTI settled at -$36.98.)
-   Before 2026 the largest spread outside Mar-Jun 2020 was $29.59 (2011-09-23). Monthly Brent minus WTI in 2026 (mean, min, max, days): Jan $6.5 (4.8-8.2, 20d); Feb $6.4 (4.4-7.4, 19d); Mar $11.8 (-0.3-23.8, 22d); Apr $17.7 (12.3-25.9, 20d); May $5.4 (1.7-12.9, 19d); Jun $0.8 (-2.5-3.0, 21d); Jul $4.0 (-1.2-12.2, 22d); Aug $7.3 (4.2-10.8, 20d); Sep $17.3 (4.5-30.8, 21d); Oct $25.0 (7.3-37.6, 14d).
-   One-day change: +18.0% is rank 8 of 9,111 daily Brent moves by log change; the largest are 2020-04-22 +51.0%; 2020-04-02 +35.2%; 2020-05-05 +24.8%; 2020-04-03 +20.2%; 2009-01-02 +19.9%; 1998-12-16 +19.5%.
+   Before 2026 the largest spread outside Mar-Jun 2020 was $29.59 (2011-09-23). Monthly Brent minus WTI in 2026 (mean, min, max, days): Jan $6.5 (4.8-8.2, 20d); Feb $6.4 (4.4-7.4, 19d); Mar $11.8 (-0.3-23.8, 22d); Apr $17.7 (12.3-25.9, 20d); May $5.4 (1.7-12.9, 19d); Jun $0.8 (-2.5-3.0, 21d); Jul $4.0 (-1.2-12.2, 22d); Aug $7.3 (4.2-10.8, 20d); Sep $17.3 (4.5-30.8, 21d); Oct $23.5 (7.3-37.6, 19d).
+   One-day change: +18.0% is rank 8 of 9,116 daily Brent moves by log change; the largest are 2020-04-22 +51.0%; 2020-04-02 +35.2%; 2020-05-05 +24.8%; 2020-04-03 +20.2%; 2009-01-02 +19.9%; 1998-12-16 +19.5%.
    So it is not a one-tick error in the file: the later prints stay at the new level and the spread had been widening for weeks (monthly line above). It is a record outside 2020 and no second free daily
    Brent series was fetched to corroborate it (STEO was completed on 1 Oct, before the print). Status: UNVERIFIED as a market price, PERSISTENT as a data point.
    Effect on this ledger: the week ending 2026-10-02 Brent mean is $120.03 (5 days) with the print, $115.90 if that one day were set to the day before. Brent-priced columns
@@ -194,13 +194,27 @@ KEY RESULTS
 
 7. TERM STRUCTURE (looked for briefly in EIA's own pages, then stopped)
    EIA's NYMEX WTI futures series (RCLC1, Cushing contract 1) ends 2024-04-05 (last print $86.91); EIA's page is titled 'NYMEX Futures Prices (Futures prices after April 5, 2024, are not available)'.
-   WTI spot prints since then: 633. CME refused scripted access in the first pass (HTTP 403) and was not retried here; CFTC data carry no prices.
+   WTI spot prints since then: 638. CME refused scripted access in the first pass (HTTP 403) and was not retried here; CFTC data carry no prices.
    No other free, key-free, official source of a WTI curve or of front- and second-month settlements was found in EIA's futures page, its STEO page or its 'What drives crude oil prices' page
    (the last two were opened and not saved; the last says updates to its figures were discontinued). That leg is stopped; no workaround was tried.
 
 8. SPOT CHECK AGAINST EIA'S CURRENT WPSR TABLE 1 (https://ir.eia.gov/wpsr/table1.csv, saved raw; three columns: latest week, previous week, a year earlier)
    week ending  line                               unit    Table 1  this ledger  result
    -----------  ---------------------------------  ----  ---------  -----------  ------
+   2026-10-23   commercial crude stocks excl. SPR  kb      410,625      410,625  match
+   2026-10-23   SPR crude stocks                   kb      282,583      282,583  match
+   2026-10-23   crude incl. SPR                    kb      693,208      693,208  match
+   2026-10-23   total motor gasoline               kb      209,180      209,180  match
+   2026-10-23   distillate fuel oil                kb      102,824      102,824  match
+   2026-10-23   total stocks incl. SPR             kb    1,495,139    1,495,139  match
+   2026-10-23   field production                   kb/d     13,992       13,992  match
+   2026-10-23   transfers to crude supply          kb/d        540          540  match
+   2026-10-23   imports                            kb/d      6,374        6,374  match
+   2026-10-23   exports                            kb/d      4,854        4,854  match
+   2026-10-23   unaccounted for (adjustment)       kb/d        189          189  match
+   2026-10-23   refinery crude input               kb/d     16,526       16,526  match
+   2026-10-23   stock change, published            kb/d       -285         -285  match
+   2026-10-23   product supplied, total            kb/d     20,209       20,209  match
    2026-10-16   commercial crude stocks excl. SPR  kb      412,517      412,517  match
    2026-10-16   SPR crude stocks                   kb      282,683      282,683  match
    2026-10-16   crude incl. SPR                    kb      695,200      695,200  match
@@ -215,73 +229,59 @@ KEY RESULTS
    2026-10-16   refinery crude input               kb/d     16,649       16,649  match
    2026-10-16   stock change, published            kb/d       -480         -480  match
    2026-10-16   product supplied, total            kb/d     21,231       21,231  match
-   2026-10-09   commercial crude stocks excl. SPR  kb      415,577      415,577  match
-   2026-10-09   SPR crude stocks                   kb      282,983      282,983  match
-   2026-10-09   crude incl. SPR                    kb      698,560      698,560  match
-   2026-10-09   total motor gasoline               kb      208,262      208,262  match
-   2026-10-09   distillate fuel oil                kb      102,611      102,611  match
-   2026-10-09   total stocks incl. SPR             kb    1,506,999    1,506,999  match
-   2026-10-09   field production                   kb/d     13,679       13,679  match
-   2026-10-09   transfers to crude supply          kb/d        542          542  match
-   2026-10-09   imports                            kb/d      6,049        6,049  match
-   2026-10-09   exports                            kb/d      4,570        4,570  match
-   2026-10-09   unaccounted for (adjustment)       kb/d       -308         -308  match
-   2026-10-09   refinery crude input               kb/d     16,615       16,615  match
-   2026-10-09   stock change, published            kb/d     -1,222       -1,222  match
-   2026-10-09   product supplied, total            kb/d     21,361       21,361  match
-   2025-10-17   commercial crude stocks excl. SPR  kb      422,824      422,824  match
-   2025-10-17   SPR crude stocks                   kb      408,564      408,564  match
-   2025-10-17   crude incl. SPR                    kb      831,388      831,388  match
-   2025-10-17   total motor gasoline               kb      216,679      216,679  match
-   2025-10-17   distillate fuel oil                kb      115,551      115,551  match
-   2025-10-17   total stocks incl. SPR             kb    1,693,212    1,693,212  match
-   2025-10-17   field production                   kb/d     13,629       13,629  match
-   2025-10-17   transfers to crude supply          kb/d        458          458  match
-   2025-10-17   imports                            kb/d      5,918        5,918  match
-   2025-10-17   exports                            kb/d      4,203        4,203  match
-   2025-10-17   unaccounted for (adjustment)       kb/d        -92          -92  match
-   2025-10-17   refinery crude input               kb/d     15,730       15,730  match
-   2025-10-17   stock change, published            kb/d        -20          -20  match
-   2025-10-17   product supplied, total            kb/d     20,014       20,014  match
+   2025-10-24   commercial crude stocks excl. SPR  kb      415,966      415,966  match
+   2025-10-24   SPR crude stocks                   kb      409,097      409,097  match
+   2025-10-24   crude incl. SPR                    kb      825,063      825,063  match
+   2025-10-24   total motor gasoline               kb      210,738      210,738  match
+   2025-10-24   distillate fuel oil                kb      112,189      112,189  match
+   2025-10-24   total stocks incl. SPR             kb    1,677,842    1,677,842  match
+   2025-10-24   field production                   kb/d     13,644       13,644  match
+   2025-10-24   transfers to crude supply          kb/d        463          463  match
+   2025-10-24   imports                            kb/d      5,051        5,051  match
+   2025-10-24   exports                            kb/d      4,361        4,361  match
+   2025-10-24   unaccounted for (adjustment)       kb/d       -481         -481  match
+   2025-10-24   refinery crude input               kb/d     15,219       15,219  match
+   2025-10-24   stock change, published            kb/d       -904         -904  match
+   2025-10-24   product supplied, total            kb/d     21,281       21,281  match
    42 of 42 comparisons match exactly (stocks converted from million barrels to kb); 0 differ.
 
 9. TWO ROUTES, ONE ANSWER: every series available both as a dnav history file and in psw01.xls is identical date by date:
-   WCESTUS1 (2299 weeks), WCSSTUS1 (2299 weeks), WCRSTUS1 (2299 weeks), WGTSTUS1 (1920 weeks), WDISTUS1 (2299 weeks), WTTSTUS1 (1920 weeks), WCRFPUS2 (2282 weeks), WCRIMUS2 (1492 weeks), WCREXUS2 (1749 weeks), WCRNTUS2 (1302 weeks), WCRRIUS2 (2299 weeks), WRPUPUS2 (1875 weeks), WTTNTUS2 (1863 weeks).
-   Line 18 (other production) = NGPL + renewables/oxygenates + processing gain: max difference 1 kb/d over 855 weeks. Transfers = Alaskan NGL/condensate + natural gasoline/unfinished oils: max difference 1 kb/d over 154 weeks.
+   WCESTUS1 (2300 weeks), WCSSTUS1 (2300 weeks), WCRSTUS1 (2300 weeks), WGTSTUS1 (1921 weeks), WDISTUS1 (2300 weeks), WTTSTUS1 (1921 weeks), WCRFPUS2 (2283 weeks), WCRIMUS2 (1493 weeks), WCREXUS2 (1750 weeks), WCRNTUS2 (1303 weeks), WCRRIUS2 (2300 weeks), WRPUPUS2 (1876 weeks), WTTNTUS2 (1864 weeks).
+   Line 18 (other production) = NGPL + renewables/oxygenates + processing gain: max difference 1 kb/d over 856 weeks. Transfers = Alaskan NGL/condensate + natural gasoline/unfinished oils: max difference 1 kb/d over 155 weeks.
 
 10. SERIES USED (id; unit read from the file's own header and asserted; first and last observation; observations)
    series id                 file                         unit (header)             first       last          obs  description
    ------------------------  ---------------------------  ------------------------  ----------  ----------  -----  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   WCESTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-16   2299  commercial crude oil stocks, excl. SPR
-   WCSSTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-16   2299  crude oil stocks in the SPR
-   WCRSTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-16   2299  crude oil stocks incl. SPR
-   W_EPC0_SAX_YCUOK_MBBL     dnav hist_xls                Thousand Barrels          2004-04-16  2026-10-16   1092  Cushing, OK crude oil stocks
-   WGTSTUS1                  dnav hist_xls                Thousand Barrels          1990-01-05  2026-10-16   1920  total motor gasoline stocks
-   WDISTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-16   2299  distillate fuel oil stocks
-   WTTSTUS1                  dnav hist_xls                Thousand Barrels          1990-01-05  2026-10-16   1920  crude oil and petroleum products stocks incl. SPR
-   WCRFPUS2                  dnav hist_xls                Thousand Barrels per Day  1983-01-07  2026-10-16   2282  field production of crude oil
-   WCRIMUS2                  dnav hist_xls                Thousand Barrels per Day  1990-01-05  2026-10-16   1492  imports of crude oil
-   WCREXUS2                  dnav hist_xls                Thousand Barrels per Day  1991-02-08  2026-10-16   1749  exports of crude oil
-   WCRNTUS2                  dnav hist_xls                Thousand Barrels per Day  2001-11-09  2026-10-16   1302  net imports of crude oil incl. SPR
-   WCRRIUS2                  dnav hist_xls                Thousand Barrels per Day  1982-08-20  2026-10-16   2299  refiner net input of crude oil
-   WRPUPUS2                  dnav hist_xls                Thousand Barrels per Day  1990-11-09  2026-10-16   1875  product supplied, total petroleum products
-   WTTNTUS2                  dnav hist_xls                Thousand Barrels per Day  1991-02-08  2026-10-16   1863  net imports of crude oil and petroleum products
-   WCRAUUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1293  Weekly U.S. Unaccounted for Crude Oil (Thousand Barrels per Day)
-   W_EPC0_TVP_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-16    154  Weekly U.S. Transfers to Crude Oil Supply of Crude Oil (Thousand Barrels per Day)
-   W_EPLLCL2A_TVP_NUS_MBBLD  psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-16    154  Weekly U.S. Transfers to Crude Oil Supply of Condensate Production and Alaskan NGL (Thousand Barrels per Day)
-   W_EPLLNGPU_TVP_NUS_MBBLD  psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-16    154  Weekly U.S. Transfers to Crude Oil Supply of Natural Gasoline and Unfinished Oils Product Supplied (Thousand Barrels per Day)
-   W_EPC0NG_TVP_NUS_MBBLD    psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-16    154  Weekly U.S. Transfers to Crude Oil Supply of Crude Oil (Thousand Barrels per Day)
-   W_EPC0_SCG_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1302  Weekly U.S. Crude Oil Stock Change (Thousand Barrels per Day)
-   WCESCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1294  Weekly U.S. Crude Oil Stock Change Excluding SPR (Thousand Barrels per Day)
-   WCSSCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1243  Weekly U.S. Crude Oil SPR Stock Change (Thousand Barrels per Day)
-   W_EPP1_YPT_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-16    855  Weekly U.S. Refiner and Blender Net Production of Petroleum Products less Natural Gas Plant Liquids, Renewable Fuels/Oxygenate Plant, and Refinery Processing Gain (Thousand Barrels per Day)
-   W_EPL0_YPG_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-16    855  Weekly U.S. Production of Natural Gas Plant Liquids (Thousand Barrels per Day)
-   W_EPOOXR_YPT_NUS_MBBLD    psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-16    855  Weekly U.S. Net Production of Oxygenates and Renewable Fuels (Thousand Barrels per Day)
-   WPGNPUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1299  Weekly U.S. Refiner and Blender Processing Gain (Thousand Barrels per Day)
-   WPESCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-16   1300  Weekly U.S. Total Petroleum Products Stock Change (Thousand Barrels per Day)
-   W_EPP0_VUA_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-16    855  Weekly U.S. Supply Adjustment of Total Petroleum (Excluding Crude Oil) (Thousand Barrels per Day)
-   RWTC                      dnav hist_xls (daily)        Dollars per Barrel        1986-01-02  2026-10-20   9527  Cushing, OK WTI Spot Price FOB (Dollars per Barrel)
-   RBRTE                     dnav hist_xls (daily)        Dollars per Barrel        1987-05-20  2026-10-20   9112  Europe Brent Spot Price FOB (Dollars per Barrel)
+   WCESTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-23   2300  commercial crude oil stocks, excl. SPR
+   WCSSTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-23   2300  crude oil stocks in the SPR
+   WCRSTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-23   2300  crude oil stocks incl. SPR
+   W_EPC0_SAX_YCUOK_MBBL     dnav hist_xls                Thousand Barrels          2004-04-16  2026-10-23   1093  Cushing, OK crude oil stocks
+   WGTSTUS1                  dnav hist_xls                Thousand Barrels          1990-01-05  2026-10-23   1921  total motor gasoline stocks
+   WDISTUS1                  dnav hist_xls                Thousand Barrels          1982-08-20  2026-10-23   2300  distillate fuel oil stocks
+   WTTSTUS1                  dnav hist_xls                Thousand Barrels          1990-01-05  2026-10-23   1921  crude oil and petroleum products stocks incl. SPR
+   WCRFPUS2                  dnav hist_xls                Thousand Barrels per Day  1983-01-07  2026-10-23   2283  field production of crude oil
+   WCRIMUS2                  dnav hist_xls                Thousand Barrels per Day  1990-01-05  2026-10-23   1493  imports of crude oil
+   WCREXUS2                  dnav hist_xls                Thousand Barrels per Day  1991-02-08  2026-10-23   1750  exports of crude oil
+   WCRNTUS2                  dnav hist_xls                Thousand Barrels per Day  2001-11-09  2026-10-23   1303  net imports of crude oil incl. SPR
+   WCRRIUS2                  dnav hist_xls                Thousand Barrels per Day  1982-08-20  2026-10-23   2300  refiner net input of crude oil
+   WRPUPUS2                  dnav hist_xls                Thousand Barrels per Day  1990-11-09  2026-10-23   1876  product supplied, total petroleum products
+   WTTNTUS2                  dnav hist_xls                Thousand Barrels per Day  1991-02-08  2026-10-23   1864  net imports of crude oil and petroleum products
+   WCRAUUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1294  Weekly U.S. Unaccounted for Crude Oil (Thousand Barrels per Day)
+   W_EPC0_TVP_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-23    155  Weekly U.S. Transfers to Crude Oil Supply of Crude Oil (Thousand Barrels per Day)
+   W_EPLLCL2A_TVP_NUS_MBBLD  psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-23    155  Weekly U.S. Transfers to Crude Oil Supply of Condensate Production and Alaskan NGL (Thousand Barrels per Day)
+   W_EPLLNGPU_TVP_NUS_MBBLD  psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-23    155  Weekly U.S. Transfers to Crude Oil Supply of Natural Gasoline and Unfinished Oils Product Supplied (Thousand Barrels per Day)
+   W_EPC0NG_TVP_NUS_MBBLD    psw01.xls (Table 1 history)  Thousand Barrels per Day  2023-11-10  2026-10-23    155  Weekly U.S. Transfers to Crude Oil Supply of Crude Oil (Thousand Barrels per Day)
+   W_EPC0_SCG_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1303  Weekly U.S. Crude Oil Stock Change (Thousand Barrels per Day)
+   WCESCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1295  Weekly U.S. Crude Oil Stock Change Excluding SPR (Thousand Barrels per Day)
+   WCSSCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1244  Weekly U.S. Crude Oil SPR Stock Change (Thousand Barrels per Day)
+   W_EPP1_YPT_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-23    856  Weekly U.S. Refiner and Blender Net Production of Petroleum Products less Natural Gas Plant Liquids, Renewable Fuels/Oxygenate Plant, and Refinery Processing Gain (Thousand Barrels per Day)
+   W_EPL0_YPG_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-23    856  Weekly U.S. Production of Natural Gas Plant Liquids (Thousand Barrels per Day)
+   W_EPOOXR_YPT_NUS_MBBLD    psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-23    856  Weekly U.S. Net Production of Oxygenates and Renewable Fuels (Thousand Barrels per Day)
+   WPGNPUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1300  Weekly U.S. Refiner and Blender Processing Gain (Thousand Barrels per Day)
+   WPESCUS2                  psw01.xls (Table 1 history)  Thousand Barrels per Day  2001-11-09  2026-10-23   1301  Weekly U.S. Total Petroleum Products Stock Change (Thousand Barrels per Day)
+   W_EPP0_VUA_NUS_MBBLD      psw01.xls (Table 1 history)  Thousand Barrels per Day  2010-06-04  2026-10-23    856  Weekly U.S. Supply Adjustment of Total Petroleum (Excluding Crude Oil) (Thousand Barrels per Day)
+   RWTC                      dnav hist_xls (daily)        Dollars per Barrel        1986-01-02  2026-10-27   9532  Cushing, OK WTI Spot Price FOB (Dollars per Barrel)
+   RBRTE                     dnav hist_xls (daily)        Dollars per Barrel        1987-05-20  2026-10-27   9117  Europe Brent Spot Price FOB (Dollars per Barrel)
    RCLC1                     dnav hist_xls (daily)        Dollars per Barrel        1983-04-04  2024-04-05  10183  Cushing, OK Crude Oil Future Contract 1 (Dollars per Barrel)
    (W_EPC0NG_TVP_NUS_MBBLD carries the same EIA title as W_EPC0_TVP_NUS_MBBLD; it is the products-side entry, equal to the negative of the crude-side line: asserted.)
    STEO_m.xlsx tab 3atab (million barrels per day unless stated): papr_world production, copr_world crude production, papr_opec OPEC production, patc_world consumption, t3_stchange_world / _us / _ooecd / _noecd
