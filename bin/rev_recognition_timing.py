@@ -3057,6 +3057,25 @@ def render_readme(c):
     A("## The result and the sensitivities\n")
     A("Under A1, T is %s (%s days of revenue). The direction is %s: T is %s. Its size relative to revenue is %s (the placebo windows, earlier periods used as a yardstick, are explained below).\n" % (
         money(st["t"]), dayx(sc["t_days_rev"]), sc["direction"], DIRECTION_WORDS[sc["direction"]], QUALIFIER_WORDS[sc["qualifier"]]))
+    # R4-1 (supervisor, 29 Oct 2026): T split by side. N = CA - CL is linear, so T = (the contract-asset part) - (the contract-liability part), each part computed as AA is
+    prim = next((recs for w_, s_, recs in c.get("sets", []) if w_ == w1 and s_ == "primary"), None)
+    if prim:
+        wb, we = WINDOWS[w1]["b"], WINDOWS[w1]["e"]
+
+        def side(k):
+            tot = Decimal(0)
+            for r in prim:
+                wc = r["wc"]
+                tot += (wc[k][we] - wc[k][we - 1] / wc["rev"][we - 1] * wc["rev"][we]) - (wc[k][wb] - wc[k][wb - 1] / wc["rev"][wb - 1] * wc["rev"][wb])
+            return tot
+        t_ca, t_cl = side("ca"), -side("cl")
+        n_ca = sum(1 for r in prim if any(r["wc"]["ca"][y] != 0 for y in r["wc"]["years"]))
+        gap = t_ca + t_cl - sum(r["t"] for r in prim)
+        if abs(gap) <= 1000:
+            A("By side, the contract-asset part of T is %s and the contract-liability part is %s (the two add up to T): relative to revenue, contract liabilities (billing or cash received before revenue is booked) built up %s in fiscal %d than in fiscal %d. %d of the %d firms show a contract asset other than zero in any year from fiscal %d to %d.\n" % (
+                money(t_ca), money(t_cl), "less" if t_cl > 0 else "more", we, wb, n_ca, len(prim), wb - 1, we))
+        else:
+            A("The split of T by side does not add up to T (difference %s); it is not reported.\n" % money(gap))
     A("Each row recomputes S1 and S1P on another sample or definition. Every row but the first is a sensitivity: it changes one rule to see whether the label survives.\n")
     rows = []
     for s in SAMPLES_S1:
@@ -3244,6 +3263,7 @@ DECISIONS = [
     ('Supervisor ruling R3-3 (28 Oct 2026): the README opening', "The ruling overrides the specification's wording of item (1), 'came from revenue booked ahead of or behind billing', which reads as attribution. The opening now states, in this order, that the share is a ceiling for the tagged balances under assumption A1 and not an estimate ('at most'); the S1 and S1P figures with their labels; and, after the denial sentence, one sentence on fragility (the firms whose removal takes S1 below 10%, how many of the 13 samples give a different label, and the same-filing figure). The denial sentence stays verbatim and is still the second sentence of the opening paragraph, as section 0 of the specification requires, so it sits between the figures and the fragility sentence. The direction ('T is above zero, so the timing added to reported growth') appears only later, after the ceiling. A short provenance paragraph follows; its sentence on the independent check appears only for the vintage it describes (20261028)."),
     ('Supervisor ruling R3-4 (28 Oct 2026): the README for a cold reader', "Fixes made after a reader who knows accounting read the README cold: the 500 firms are described (S&P 500 registrants as workstream W3 holds them); CIK, T, T_i, the labels, S1 and S1P, the base year (fiscal 2023), vintage and the placebo windows are defined at first use; the thresholds are said to have been fixed in advance by the project; the assumptions keep the names A1 and A3 and the text says why there is no A2; the receivables tag is called by its name instead of A1; company facts, dimensioned balances and extensions are explained; the one-line argument for 'at least as large as the effect' is given; every flag and every status is defined, with the reason year_gap firms are dropped; the megacap firms are named; NB1 and NB2 are expanded; N in days, costs in days and receivable days are defined; the cash-flow cross-check says why its figure differs from the headline; fiscalYearEnd and PENDING_THIN are explained; and the earnings weight states its denominator (455 of the 500 CIKs on vintage 20261028: 45 state no fiscal 2025 NetIncomeLoss fact, 10 of them financial firms and 35 not). Only the denominator counts are new numbers (headline.csv: ni_2025_missing_financial and ni_2025_missing_other)."),
     ('Supervisor ruling R3-5 (28 Oct 2026): wording for a firm whose year-end does not match', "The data do not show a completed change of fiscal year-end for the end_mismatch firm: the submissions file says fiscalYearEnd 1231, the firm's latest original 10-K covers the year to 30 June 2026, and no 10-KT (transition report) has been filed. The README says exactly that, built from the data for each such firm (the fiscalYearEnd read, the period end of the latest original 10-K, and whether a 10-KT is on file), and does not say that the year-end changed.")
+    , ('Supervisor decision R4-1 (29 Oct 2026): T split by side', "Added after the build, from the independent page audit of 29 October 2026, which found that the page's short name 'revenue booked ahead of billing' did not fit the data. Because N is contract assets minus contract liabilities, T splits exactly into a contract-asset part and a contract-liability part, each computed as the excess accrual is. The README reports the two parts and the number of firms with a contract asset other than zero. It is descriptive and not part of the rule set in advance; no rule, threshold, label or hashed block changes, and S1 and S1P are not re-scored.")
 ]
 
 

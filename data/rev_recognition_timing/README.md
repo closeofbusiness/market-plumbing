@@ -32,6 +32,8 @@ N moves for ordinary explanations: milestone billing, contract mix, a large cont
 
 Under A1, T is $26.1bn (0.86 days of revenue). The direction is with_growth: T is above zero, so the timing added to reported growth. Its size relative to revenue is inside the range of the placebo windows (the placebo windows, earlier periods used as a yardstick, are explained below).
 
+By side, the contract-asset part of T is -$2.4bn and the contract-liability part is $28.5bn (the two add up to T): relative to revenue, contract liabilities (billing or cash received before revenue is booked) built up less in fiscal 2025 than in fiscal 2023. 66 of the 274 firms show a contract asset other than zero in any year from fiscal 2022 to 2025.
+
 Each row recomputes S1 and S1P on another sample or definition. Every row but the first is a sensitivity: it changes one rule to see whether the label survives.
 
 | Sample | Firms | T | T in days of revenue | S1: T / change in net income | S1 label | S1P: positive T_i / change | S1P label | Direction | What it is |

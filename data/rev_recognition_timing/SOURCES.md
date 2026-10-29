@@ -139,7 +139,9 @@ Where the specification is ambiguous the stricter reading about leaks, blindness
 
 25. **Supervisor ruling R3-5 (28 Oct 2026): wording for a firm whose year-end does not match.** The data do not show a completed change of fiscal year-end for the end_mismatch firm: the submissions file says fiscalYearEnd 1231, the firm's latest original 10-K covers the year to 30 June 2026, and no 10-KT (transition report) has been filed. The README says exactly that, built from the data for each such firm (the fiscalYearEnd read, the period end of the latest original 10-K, and whether a 10-KT is on file), and does not say that the year-end changed.
 
-26. **Cash-flow sign convention, measured (R1-7).** Set on fiscal 2019-2022 for firms without acquisitions, as the sign that matches the balance-sheet change in most firm-years: contract assets 1 (8 firm-years agree, 3 oppose), contract liabilities 1 (64, 4), trade receivables 1 (167, 27). A sign of +1 means the tag is positive when the balance rises.
+26. **Supervisor decision R4-1 (29 Oct 2026): T split by side.** Added after the build, from the independent page audit of 29 October 2026, which found that the page's short name 'revenue booked ahead of billing' did not fit the data. Because N is contract assets minus contract liabilities, T splits exactly into a contract-asset part and a contract-liability part, each computed as the excess accrual is. The README reports the two parts and the number of firms with a contract asset other than zero. It is descriptive and not part of the rule set in advance; no rule, threshold, label or hashed block changes, and S1 and S1P are not re-scored.
+
+27. **Cash-flow sign convention, measured (R1-7).** Set on fiscal 2019-2022 for firms without acquisitions, as the sign that matches the balance-sheet change in most firm-years: contract assets 1 (8 firm-years agree, 3 oppose), contract liabilities 1 (64, 4), trade receivables 1 (167, 27). A sign of +1 means the tag is positive when the balance rises.
 
 ### Fixes after the first run (R9)
 
