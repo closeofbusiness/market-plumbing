@@ -1,0 +1,7 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL APIs (companyfacts, submissions, frames) on data.sec.gov, vintage 20261028; stage full; population data/w3_tax/firm_tax_panel.csv
+window,row_type,fiscal_year,measure,n_firms,ar_usd,rev_usd,ar_days,t_ar_usd,t_ar_days_rev
+fy2023_fy2025,level,2022,collection_not_recognition,205,730341384000,6783882500000,39.295,,
+fy2023_fy2025,level,2023,collection_not_recognition,205,764031069000,6802056701000,40.998,,
+fy2023_fy2025,level,2024,collection_not_recognition,205,821897448000,7159905780000,41.899,,
+fy2023_fy2025,level,2025,collection_not_recognition,205,926825909000,7685729124000,44.016,,
+fy2023_fy2025,window_t,2025,collection_not_recognition,205,,,,7490949430,0.356

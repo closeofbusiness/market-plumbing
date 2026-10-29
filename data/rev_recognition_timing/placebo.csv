@@ -1,0 +1,5 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL APIs (companyfacts, submissions, frames) on data.sec.gov, vintage 20261028; population data/w3_tax/firm_tax_panel.csv; placebo windows, fiscal 2019-2022 inputs only
+window,years,includes_fy2020,n_firms,t_usd,t_pos_usd,rev_end_usd,t_pct_rev,dni_usd,share_pct
+fy2020_fy2022,FY2019..FY2022,yes,238,66628327846,81789532669,8850353154000,0.753,441185460000,15.102
+fy2020_fy2021,FY2019..FY2021,yes,259,36300533510,49798597477,8204928183000,0.442,450370115000,8.060
+fy2021_fy2022,FY2020..FY2022,no,277,-56126791901,53726737231,9772716984000,-0.574,11627852000,

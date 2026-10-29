@@ -1728,6 +1728,262 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M27: REVENUE-RECOGNITION TIMING LEAK AND WORDING GUARD (warn only) ---
+# data/rev_recognition_timing/ holds statistics derived from the SEC's XBRL company facts, submissions and frames on data.sec.gov and nothing raw (spec
+# _research/2026-10-28-Revenue-Recognition-Timing-Spec.md, sections 5, 6 and 9.7; build bin/rev_recognition_timing.py). The raw JSON bodies stay in the gitignored raw/ folder of
+# each vintage under data/vintages/rev_recognition_timing/<YYYYMMDD>/, which commits only the three extract CSVs. Nine things would break the spec's rules, and none is visible to M5-M26:
+#   1. a file that is not one of the seventeen committed names (fifteen CSVs, README.md, SOURCES.md), a raw file (.zip, .json, .html, .htm, .gz, .pdf, or a STOP file) under any name,
+#      a file in a vintage folder that is not one of its three extracts, and a .zip, .json or STOP file tracked in git in either folder; names missing from a folder that holds a README.md
+#      (a folder with none is the pre stage, and its missing names are only a warning);
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's eighteen canonical lines, typed here a second time (this guard never
+#      reads them from bin/rev_recognition_timing.py);
+#   3. a local path (/Users/, /private/, ~/) or an at sign in any committed file;
+#   4. causal, price, motive or misconduct wording (the spec's two patterns, pasted) in README.md anywhere but the one denial sentence;
+#   5. a banned verdict word (HELD, FALSIFIED, PROVEN, CAUSED, REFUTED, MATERIAL, which also catches NOT_HELD and NOT_MATERIAL) in any file of the output folder;
+#   6. a registered.csv label, direction or qualifier outside the spec's lists, a prereg_sha256 that is not the 4.6 hash typed below, and a scored row (S1, S1P, a scored S2 or S2P) that
+#      does not close against headline.csv: n_firms, t_usd, dni_usd, ni_base_usd and numerator_usd (t_usd, or t_pos_usd for S1P and S2P) equal the headline values of the same vintage, window
+#      and sample, and share_pct recomputes from them to three decimals;
+#   7. per panel row N != CA - CL, and per window and sample the sum of contributions.csv not equal to the latest vintage's headline T, T_pos and dNI (within 1 USD);
+#   8. a duplicate key in any of the ten keyed CSVs.
+# The script refuses the same things when it writes; this is the second, independent look. RRT_DIR and RRT_VDIR override the folders (used to show that the guard fires on a planted
+# copy). It warns and never blocks (header doctrine).
+rrt_leak_check() {
+  echo "-- M27: revenue-recognition timing guard (data/rev_recognition_timing/: the seventeen names, exact headers, no raw file, local path or at sign, no causal/price/misconduct wording outside the denial sentence, no verdict word, registered labels and hash, panel and contribution sums, no duplicate key, no zip/json/STOP in git) --"
+  local dir="${RRT_DIR:-data/rev_recognition_timing}" vroot="${RRT_VDIR:-data/vintages/rev_recognition_timing}" f name want got bad="" raw committed extracts out py tracked kind list missing
+  local PREREG_SHA='6d113eb3905efff2447989c1de31475b7398e1d44def1cdec43cdd7eb80fc43e'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md firms.csv firm_years.csv firm_tags.csv panel.csv contributions.csv headline.csv registered.csv contributors.csv placebo.csv receivables.csv coverage.csv checks.csv vintages.csv fetch_log.csv revisions.csv "
+  extracts=" frames_extract.csv cf_extract.csv submissions_extract.csv "
+  missing=""
+  for name in ${committed}; do
+    [ -f "$dir/$name" ] || missing="${missing}${name} "
+  done
+  if [ -n "$missing" ]; then
+    if [ -f "$dir/README.md" ]; then
+      for name in $missing; do bad="${bad}  ✗ missing: $name
+"; done
+    else
+      echo "  ⚠ no README.md: the pre stage only (missing until the full stage: $missing)"
+    fi
+  fi
+  list=$( { for f in "$dir"/*; do [ -f "$f" ] && printf 'out\t%s\n' "$f"; done; for f in "$vroot"/*/*; do [ -f "$f" ] && printf 'vint\t%s\n' "$f"; done; } 2>/dev/null )
+  while IFS=$'\t' read -r kind f; do
+    [ -z "$f" ] && continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    raw=""
+    case "$name" in *.zip|*.json|*.html|*.htm|*.gz|*.pdf|STOP*) raw=1 ;; esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && raw=1
+    head -c 4 "$f" | grep -qF '%PDF' && raw=1
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw file in a committed folder (a zip, json, page, pdf or STOP file): $f
+"
+      continue
+    fi
+    if [ "$kind" = "out" ] && [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the seventeen committed names: $name
+"
+      continue
+    fi
+    if [ "$kind" = "vint" ] && [ "${extracts#* $name }" = "$extracts" ]; then
+      bad="${bad}  ✗ file in a vintage folder that is not one of the three extracts: $f
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      firms.csv) want='cik10,tickers,entity_name,sic,fye_mmdd,status,flags' ;;
+      firm_years.csv) want='cik10,fiscal_year,period_end,accession,filing_date' ;;
+      firm_tags.csv) want='window,cik10,component,structure,tags' ;;
+      panel.csv) want='window,basis,cik10,fiscal_year,period_end,revenue_tag,revenue_usd,ni_usd,ca_usd,cl_usd,n_usd,r,ar_usd,contract_cost_usd' ;;
+      contributions.csv) want='window,sample,cik10,ticker,aa_base_usd,aa_end_usd,t_usd,dni_usd,rev_end_usd,flags' ;;
+      headline.csv) want='vintage,window,sample,statistic,value,unit,n_firms' ;;
+      registered.csv) want='statement_id,window,sample,vintage,n_firms,numerator_usd,t_usd,dni_usd,ni_base_usd,share_pct,t_pct_rev,t_days_rev,noise_band_pct_rev,qualifier,direction,label,void_reason,prereg_sha256,population_sha256' ;;
+      contributors.csv) want='window,side,rank,cik10,ticker,entity_name,t_usd,share_of_side_pct,flags' ;;
+      placebo.csv) want='window,years,includes_fy2020,n_firms,t_usd,t_pos_usd,rev_end_usd,t_pct_rev,dni_usd,share_pct' ;;
+      receivables.csv) want='window,row_type,fiscal_year,measure,n_firms,ar_usd,rev_usd,ar_days,t_ar_usd,t_ar_days_rev' ;;
+      coverage.csv) want='tag,period,role,n_cik_all500,n_cik_in_scope' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      vintages.csv) want='vintage,url_path,status,bytes,sha256,retrieved_utc' ;;
+      fetch_log.csv) want='utc_time,vintage,host,path,status,bytes,sha256,elapsed_s' ;;
+      revisions.csv) want='vintage_prev,vintage_new,window,sample,statistic,value_prev,value_new' ;;
+      frames_extract.csv) want='vintage,tag,period,cik10,accn,start,end,val' ;;
+      cf_extract.csv) want='vintage,cik10,tag,start,end,val,accn,form,fp,fy,filed' ;;
+      submissions_extract.csv) want='vintage,cik10,sic,fye_mmdd,form,report_date,filing_date,accession' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done <<< "$list"
+  if [ -z "${RRT_DIR:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- data/rev_recognition_timing data/vintages/rev_recognition_timing 2>/dev/null | grep -E '\.(zip|json)$|(^|/)STOP' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a zip, json or STOP file must never be): $tracked
+"
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+from decimal import Decimal, InvalidOperation
+d, prereg = sys.argv[1], sys.argv[2]
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)flows?\b|\bflow(?:s|ed|ing)?\s+(?:into|out\s+of|from|to)\b|\bmanipulat\w*|\bmanag(?:e|ed|es|ing)\s+(?:earnings|results|revenue)\b|\bearnings\s+management\b|\baggressive\w*|\bfraud\w*|\bmisstat\w*|\binflat(?:e|ed|es|ing)\b|\bboost(?:s|ed|ing)?\b|\bpadd(?:ed|ing)\b|\bchannel[- ]stuff\w*|\blow[- ]quality\b|\bfake\b|\billusory\b|\bnot\s+real\b|\b(?:prices?|valuations?|multiples?|stocks?|shares)\s+(?:rose|fell|rallied|moved|jumped|dropped)\b|\bmaterial\w*|\boverstat\w*|\bpulled\s+forward\b|\bflatter\w*|\bprematur\w*|\bwindow[- ]dressing\b|\bred\s+flags?\b|\bfictitious\b|\bsmooth(?:ed|ing)\b|\babnormal\w*", re.I)
+VERDICT = re.compile(r"HELD|FALSIFIED|PROVEN|CAUSED|REFUTED|MATERIAL")
+DENIAL = "A change in contract assets or contract liabilities relative to revenue is a balance-sheet accrual: it shows when revenue was booked against billing, not why, and nothing here says it moved any price or any flow of money."
+LABELS = {"SHARE_BELOW_10", "SHARE_10_TO_25", "SHARE_ABOVE_25", "VOID", "PENDING", "PENDING_THIN"}
+DIRS = {"with_growth", "against_growth", "zero"}
+QUALS = {"within_pre_window_range", "outside_pre_window_range", "none"}
+KEYS = {
+ "firms.csv": ("cik10",),
+ "firm_years.csv": ("cik10", "fiscal_year"),
+ "firm_tags.csv": ("window", "cik10", "component"),
+ "panel.csv": ("window", "basis", "cik10", "fiscal_year"),
+ "contributions.csv": ("window", "sample", "cik10"),
+ "headline.csv": ("vintage", "window", "sample", "statistic"),
+ "registered.csv": ("statement_id", "vintage"),
+ "contributors.csv": ("window", "side", "rank"),
+ "placebo.csv": ("window",),
+ "receivables.csv": ("window", "row_type", "fiscal_year"),
+ }
+bad = []
+def body(t):
+    return [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+def dec(x):
+    try:
+        return Decimal(x)
+    except (InvalidOperation, TypeError):
+        return None
+def table(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    rows = list(csv.reader(body(open(p, encoding="utf-8", errors="replace", newline="").read())))
+    return (rows[0], rows[1:]) if rows else None
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    if n.lower().endswith((".zip", ".json", ".html", ".htm", ".gz", ".pdf")) or n.startswith("STOP") or t[:2] == "PK" or t[:4] == "%PDF":
+        continue
+    if VERDICT.search(t):
+        bad.append(n + " holds a banned verdict word (HELD, FALSIFIED, PROVEN, CAUSED, REFUTED or MATERIAL)")
+    if n == "README.md":
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t2)})
+        if hits:
+            bad.append("README.md holds banned wording (spec R6): " + ", ".join(hits[:6]))
+    if n in KEYS:
+        tb = table(n)
+        if not tb:
+            continue
+        head, rows = tb
+        try:
+            idx = [head.index(k) for k in KEYS[n]]
+        except ValueError:
+            continue
+        seen, dup = set(), 0
+        for r in rows:
+            k = tuple(r[i] if i < len(r) else "" for i in idx)
+            if k in seen:
+                dup += 1
+            seen.add(k)
+        if dup:
+            bad.append("duplicate key in " + n + " (" + str(dup) + " duplicate row(s))")
+tb = table("registered.csv")
+if tb:
+    head, rows = tb
+    for col, ok in (("label", LABELS), ("direction", DIRS | {""}), ("qualifier", QUALS)):
+        if col in head:
+            i = head.index(col)
+            bl = sorted({r[i] for r in rows if i < len(r) and r[i] not in ok})
+            if bl:
+                bad.append("registered.csv holds a " + col + " outside the spec's list: " + ", ".join(bl))
+    if "prereg_sha256" in head:
+        i = head.index("prereg_sha256")
+        if any(i < len(r) and r[i] != prereg for r in rows):
+            bad.append("registered.csv holds a prereg_sha256 that is not the 4.6 hash")
+# registered-closure begin
+tr, th0 = table("registered.csv"), table("headline.csv")
+if tr and th0:
+    try:
+        rh, rrows = tr
+        hh0, hrows0 = th0
+        hv0, hw0, hs0, hst0, hval0 = hh0.index("vintage"), hh0.index("window"), hh0.index("sample"), hh0.index("statistic"), hh0.index("value")
+        hmap0 = {(r[hv0], r[hw0], r[hs0], r[hst0]): dec(r[hval0]) for r in hrows0}
+        cix = {c: rh.index(c) for c in ("statement_id", "window", "sample", "vintage", "n_firms", "numerator_usd", "t_usd", "dni_usd", "ni_base_usd", "share_pct", "label")}
+        for r in rrows:
+            if len(r) < len(rh) or r[cix["t_usd"]] == "":
+                continue
+            sid, w, smp, v = r[cix["statement_id"]], r[cix["window"]], r[cix["sample"]], r[cix["vintage"]]
+            numstat = "t_pos_usd" if sid.endswith("P") else "t_usd"
+            diff = [name for name, stat in (("n_firms", "n_firms"), ("numerator_usd", numstat), ("t_usd", "t_usd"), ("dni_usd", "dni_usd"), ("ni_base_usd", "ni_base_usd"))
+                    if hmap0.get((v, w, smp, stat)) is None or dec(r[cix[name]]) != hmap0.get((v, w, smp, stat))]
+            if diff:
+                bad.append("registered.csv " + sid + " (vintage " + v + "): " + ", ".join(diff) + " differ from the headline.csv values of the same vintage, window and sample")
+            num, dn = dec(r[cix["numerator_usd"]]), dec(r[cix["dni_usd"]])
+            sh = r[cix["share_pct"]]
+            if sh == "":
+                if r[cix["label"]] != "VOID":
+                    bad.append("registered.csv " + sid + " (vintage " + v + "): share_pct is blank on a row labelled " + r[cix["label"]])
+            elif num is None or dn is None or dn == 0 or ("0.000" if (num / dn * 100).quantize(Decimal("0.001")) == 0 else str((num / dn * 100).quantize(Decimal("0.001")))) != sh:
+                bad.append("registered.csv " + sid + " (vintage " + v + "): share_pct " + sh + " does not recompute from numerator_usd and dni_usd")
+    except ValueError:
+        pass
+# registered-closure end
+tb = table("panel.csv")
+if tb:
+    head, rows = tb
+    try:
+        ca, cl, nn = head.index("ca_usd"), head.index("cl_usd"), head.index("n_usd")
+        nb = sum(1 for r in rows if None not in (dec(r[ca]), dec(r[cl]), dec(r[nn])) and abs(dec(r[nn]) - (dec(r[ca]) - dec(r[cl]))) > 1)
+        if nb:
+            bad.append("panel.csv has " + str(nb) + " row(s) where N is not CA - CL")
+    except ValueError:
+        pass
+tc, th = table("contributions.csv"), table("headline.csv")
+if tc and th:
+    try:
+        ch, crows = tc
+        hh, hrows = th
+        iw, isample, it, idni = ch.index("window"), ch.index("sample"), ch.index("t_usd"), ch.index("dni_usd")
+        hv, hw, hs, hst, hval = hh.index("vintage"), hh.index("window"), hh.index("sample"), hh.index("statistic"), hh.index("value")
+        latest = max([r[hv] for r in hrows] or [""])
+        head_v = {(r[hw], r[hs], r[hst]): dec(r[hval]) for r in hrows if r[hv] == latest}
+        sums = {}
+        for r in crows:
+            s = sums.setdefault((r[iw], r[isample]), [Decimal(0), Decimal(0), Decimal(0)])
+            t = dec(r[it])
+            if t is None:
+                continue
+            s[0] += t
+            s[1] += max(t, 0)
+            s[2] += dec(r[idni]) or 0
+        for (w, smp), got in sorted(sums.items()):
+            for nm, g, key in zip(("T", "T_pos", "dNI"), got, ("t_usd", "t_pos_usd", "dni_usd")):
+                exp = head_v.get((w, smp, key))
+                if exp is not None and abs(g - exp) > 1:
+                    bad.append("contributions.csv " + w + " " + smp + ": the contributions sum to " + nm + " " + str(g) + ", headline.csv says " + str(exp))
+    except ValueError:
+        pass
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ the committed names, every header its exact allowlist, no raw file, local path or at sign, no banned wording outside the denial sentence, no verdict word, registered labels, directions, qualifiers and hash as the spec says, the panel and contribution sums close and no duplicate key in $dir (and the extracts of the vintage folders); no zip, json or STOP file in git."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> the raw SEC bodies stay in data/vintages/rev_recognition_timing/<vintage>/raw/ (gitignored) and the build recomputes every table: fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -2174,6 +2430,8 @@ if [ "$TARGET" = "--all" ]; then
   ipo13f_leak_check
   echo
   z1cb_leak_check
+  echo
+  rrt_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

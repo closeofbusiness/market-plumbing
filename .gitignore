@@ -133,3 +133,10 @@ data/vintages/z1_corporate_bond_holders/STOP_z1cb
 data/vintages/z1_corporate_bond_holders/*.zip
 data/vintages/z1_corporate_bond_holders/**/*.zip
 data/vintages/z1_corporate_bond_holders/**/*.json
+# Revenue-recognition timing (bin/rev_recognition_timing.py): the SEC JSON bodies (submissions, companyfacts, frames) of every vintage stay in its raw/ folder and are never committed (the
+# companyfacts files alone run to about 2 GB); the three extract CSVs of each vintage ARE committed. The patterns after the first are a second line of defence for what must never be:
+# a zip or json outside raw/, and the STOP_rrt fetch latch (only a person deletes it).
+data/vintages/rev_recognition_timing/*/raw/
+data/vintages/rev_recognition_timing/STOP_rrt
+data/vintages/rev_recognition_timing/**/*.zip
+data/vintages/rev_recognition_timing/**/*.json

@@ -1,0 +1,2 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL APIs (companyfacts, submissions, frames) on data.sec.gov, vintage 20261028; stage full; population data/w3_tax/firm_tax_panel.csv; regenerated on every build
+vintage_prev,vintage_new,window,sample,statistic,value_prev,value_new

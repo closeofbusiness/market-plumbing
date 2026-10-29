@@ -1,0 +1,22 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL APIs (companyfacts, submissions, frames) on data.sec.gov, vintage 20261028; stage full; population data/w3_tax/firm_tax_panel.csv
+window,side,rank,cik10,ticker,entity_name,t_usd,share_of_side_pct,flags
+fy2023_fy2025,positive,1,0000012927,BA,Boeing Co,16074434292,26.570,rev_fallback
+fy2023_fy2025,positive,2,0001571996,DELL,Dell Technologies Inc.,6884577715,11.380,rev_fallback
+fy2023_fy2025,positive,3,0001018724,AMZN,Amazon Com Inc,5564543565,9.198,
+fy2023_fy2025,positive,4,0000040545,GE,General Electric Co,5255734046,8.687,disc_ops|rev_fallback
+fy2023_fy2025,positive,5,0000789019,MSFT,Microsoft Corp,3979316040,6.578,
+fy2023_fy2025,positive,6,0000040533,GD,General Dynamics Corp,3109282921,5.140,
+fy2023_fy2025,positive,7,0000078003,PFE,Pfizer Inc,1932861654,3.195,acq2|disc_ops|rev_fallback
+fy2023_fy2025,positive,8,0001013871,NRG,"Nrg Energy, Inc.",1544425578,2.553,total_gt_parts
+fy2023_fy2025,positive,9,0001274494,FSLR,"First Solar, Inc.",1186471651,1.961,rev_fallback
+fy2023_fy2025,positive,10,0000858877,CSCO,"Cisco Systems, Inc.",1035743593,1.712,acq2
+fy2023_fy2025,negative,1,0001175454,CPAY,"Corpay, Inc.",-3650244000,10.613,rev_fallback|extreme_r
+fy2023_fy2025,negative,2,0000093410,CVX,Chevron Corp,-3015056785,8.766,
+fy2023_fy2025,negative,3,0000815097,CCL,Carnival Corp Ltd.,-2473797971,7.192,
+fy2023_fy2025,negative,4,0001108524,CRM,"Salesforce, Inc.",-1915468388,5.569,acq2
+fy2023_fy2025,negative,5,0000064803,CVS,Cvs Health Corp,-1871325855,5.441,acq2|rev_fallback
+fy2023_fy2025,negative,6,0000936468,LMT,Lockheed Martin Corp,-1850139141,5.379,rev_fallback
+fy2023_fy2025,negative,7,0001645590,HPE,Hewlett Packard Enterprise Co,-1431283872,4.161,acq2|rev_fallback
+fy2023_fy2025,negative,8,0001513761,NCLH,Norwegian Cruise Line Holdings Ltd.,-1361978533,3.960,
+fy2023_fy2025,negative,9,0001335258,LYV,"Live Nation Entertainment, Inc.",-1248685545,3.630,rev_fallback
+fy2023_fy2025,negative,10,0001707925,LIN,Linde Plc,-1205658213,3.505,acq2|total_gt_parts
