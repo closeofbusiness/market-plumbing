@@ -602,6 +602,10 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        rescoped (C-096 — a tighter ceiling, not an estimate); the firm
                                                        panel and raw Z.1 pulls did not land (C-097); the panel landed 24 Sep (item 3 above), the raw Z.1 pulls have not.
                                                        Spec: _research/2026-09-20-W3-Tax-Decomposition-Spec.md (C-095).
+       REVENUE-RECOGNITION TIMING: DONE 29 Oct (g13) -> data/rev_recognition_timing (spec
+                                                       _research/2026-10-28-Revenue-Recognition-Timing-Spec.md). S1 and S1P scored once (labels
+                                                       in registered.csv); figures live in the folder, not here. OPEN: S2 (FY2025-26), serves A13 (what drove prices: the
+                                                       earnings side). Trigger: CALENDAR 2027-05-03; VOID row 2027-08-02.
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions
