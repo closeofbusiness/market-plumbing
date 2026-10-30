@@ -6,11 +6,11 @@ Collateral re-use and velocity — Singh’s channel — created the money that 
 
 ## Status
 
-**Failed as the proximate source of this equity window.** No measure shows re-use rising before the price rise (C-152). The channel stays on the map. Re-test when the next collateral census and the OFR repo print land.
+**Not shown to be the proximate source of this equity window.** For two of the six banks the re-pledged share rose both before and during the price rise, within the range of its 2011–19 two-year changes (C-156); for all six banks the only dated step is H1 2026, after most of the rise (C-152). A re-use share is not a speed (C-135). The channel stays on the map. Re-test when the next collateral census and the OFR repo print land.
 
 ## Evidence
 
-No measure shows collateral re-use rising before the price rise. The dated step in the six-bank collateral stock is the first half of 2026, after most of the price rise, and the banks' re-pledged share edged up in the same half-year, 81.7% to 83.2%; earlier shares are not measured (C-152). Source: [`2026-09-15-N4-Scale-Timing-Bound.md`](../2026-09-15-N4-Scale-Timing-Bound.md) and [`2026-08-30-D10-Reuse-On-The-Measured-Chain.md`](../2026-08-30-D10-Reuse-On-The-Measured-Chain.md).
+From December 2021 to December 2023, before the price rise, JPMorgan's and Goldman Sachs's combined re-pledged share of the collateral they may re-use rose 1.5 points, to 80.0%. It rose 2.6 points more by December 2025, during the price rise, to 82.6%; both rises are within the two banks' 2011–19 range of two-year changes; the 2021–23 rise is Goldman's and the 2023–25 rise JPMorgan's (C-156; `data/collateral_reuse`). The dated step in the six-bank collateral stock is the first half of 2026, after most of the price rise, and the banks' re-pledged share edged up in the same half-year, 81.7% to 83.2%; the six-bank share before 2025 is not measured (C-152). Source: [`2026-09-15-N4-Scale-Timing-Bound.md`](../2026-09-15-N4-Scale-Timing-Bound.md) and [`2026-08-30-D10-Reuse-On-The-Measured-Chain.md`](../2026-08-30-D10-Reuse-On-The-Measured-Chain.md).
 
 Velocity is carried as a range **about 1.3–2.0**, unsigned (C-135: the step that signed it at 1.3–1.5 did not hold; about 2.0 on Form PF securities posted alone, Singh's own figure). Source: [`2026-08-31-N3v4-Singh-Reconciliation.md`](../2026-08-31-N3v4-Singh-Reconciliation.md) (C-061). The US-five permitted-collateral panel is about **2.23×** from 2017 to mid-2026 in the monitor. That is a stock reconciliation, not a price impact.
 

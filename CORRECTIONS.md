@@ -990,6 +990,23 @@ principal asked whether the answer note was still up to date; superseded the sam
 
 ---
 
+## C-156 · "No measure shows collateral re-use rising before the price rise … earlier shares are not measured"
+
+**Mine: C-152's correct position, the page (§01, §04 table, the closing summary), the answer note and the collateral dossier. Superseded 30 Oct by
+the registered g14 build, independently verified.**
+
+- **Killed by:** `data/collateral_reuse/` (spec `_research/2026-10-30-Collateral-Reuse-History-Spec.md`, committed before any value was read).
+- **What was wrong.** A history now exists for two of the six banks. JPMorgan's and Goldman Sachs's combined re-pledged share (collateral re-used over
+  collateral they may re-use, fair values, first reported in each quarter's own filing) rose 1.462 points from 78.553% (Dec 2021) to 80.015% (Dec 2023),
+  before the price rise, and 2.572 points more to 82.587% (Dec 2025). So "no measure shows re-use rising" no longer holds as written.
+- **Correct position.** The two-bank share rose before and during the price rise, by amounts within the range of its two-year changes in 2011–19
+  (−7.446 to +7.836 points, 23 windows; both labels WITHIN_RANGE, sign RISE). The 2021–23 rise is Goldman's: JPMorgan's own share was flat (75.5% to
+  75.4%); the 2023–25 rise is JPMorgan's (its own share +5.2 points, Goldman's −0.7). The page's verdict on the channel softens from "Not the source"
+  to "Not shown to be the source": the evidence is timing and scale, and a within-range rise is not evidence of absence. The six-bank share before 2025 is not measured. A re-use share is not a velocity (C-135), and none of it says what moved prices.
+- **Still standing at:** nowhere live once this commit lands (page §01, §04 and the closing summary, answer note, dossier status and evidence lines). C-152 is kept as written; its correct position is superseded here.
+
+---
+
 ## C-155 · "Term premium versus expected rates … no free series for JGBs or Bunds"; "The term premium is not measured on free data in any of the three"
 
 **Mine, the page's §09 grading row, the "gaps that remain" item and the §05 "Supply is shared" paragraph. Found 19 Oct when the Japan
@@ -2702,4 +2719,6 @@ C-153	a range, not a split\.
 C-154	Revaluation splits into earnings growth
 C-155	no free series for JGBs or Bunds
 C-155	not measured on free data in any of the three
+C-156	No measure (here )?shows collateral re-use rising
+C-156	earlier shares are not measured
 ```
