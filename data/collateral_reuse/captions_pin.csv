@@ -1,0 +1,26 @@
+# source: US Securities and Exchange Commission, EDGAR filing archives on www.sec.gov, company label linkbase of the filing (accession in each row); read by the supervisor on 2026-10-30, wording only
+cik10,ticker,end,line,accession,class,caption_wording
+0000019617,JPM,2011-12-31,N,0000019617-12-000163,JN1,Assets accepted by the Firm as collateral that the Firm has sold or repledged
+0000019617,JPM,2011-12-31,D,0000019617-12-000163,JD1,"Assets accepted by the Firm as collateral that it could sell or repedge, deliver or otherwise use at fair value"
+0000019617,JPM,2013-12-31,N,0000019617-14-000289,JN1,Assets accepted by the Firm as collateral that the Firm has sold or repledged
+0000019617,JPM,2013-12-31,D,0000019617-14-000289,JD1,"Assets accepted by the Firm as collateral that it could sell or repedge, deliver or otherwise use at fair value"
+0000019617,JPM,2019-12-31,N,0000019617-20-000257,JN2,"Collateral sold, repledged, delivered or otherwise used"
+0000019617,JPM,2019-12-31,D,0000019617-20-000257,JD1,"Collateral permitted to be sold or repledged, delivered, or otherwise used"
+0000019617,JPM,2021-12-31,N,0000019617-22-000272,JN2,"Collateral sold, repledged, delivered or otherwise used"
+0000019617,JPM,2021-12-31,D,0000019617-22-000272,JD1,"Collateral permitted to be sold or repledged, delivered, or otherwise used"
+0000019617,JPM,2023-12-31,N,0000019617-24-000225,JN2,"Collateral sold, repledged, delivered or otherwise used"
+0000019617,JPM,2023-12-31,D,0000019617-24-000225,JD1,"Collateral permitted to be sold or repledged, delivered, or otherwise used"
+0000019617,JPM,2025-12-31,N,0001628280-26-008131,JN2,"Collateral sold, repledged, delivered or otherwise used"
+0000019617,JPM,2025-12-31,D,0001628280-26-008131,JD1,"Collateral permitted to be sold or repledged, delivered, or otherwise used"
+0000886982,GS,2011-12-31,N,0001193125-12-085822,GN1,Financial instruments received as collateral which the firm delivered or repledged
+0000886982,GS,2011-12-31,D,0001193125-12-085822,GD1,Fair value of financial instruments received as collateral by the firm that it was permitted to deliver or repledge
+0000886982,GS,2013-12-31,N,0001193125-14-073792,GN1,Financial instruments received as collateral which the firm delivered or repledged
+0000886982,GS,2013-12-31,D,0001193125-14-073792,GD1,Fair value of financial instruments received as collateral by the firm that it was permitted to deliver or repledge
+0000886982,GS,2019-12-31,N,0001193125-20-043853,GN1,Financial instruments at fair value received as collateral which the firm delivered or repledged
+0000886982,GS,2019-12-31,D,0001193125-20-043853,GD1,Financial instruments at fair value received as collateral by the firm that it was permitted to deliver or repledge
+0000886982,GS,2021-12-31,N,0001193125-22-052682,GN1,Financial instruments at fair value received as collateral which the firm delivered or repledged
+0000886982,GS,2021-12-31,D,0001193125-22-052682,GD1,Financial instruments at fair value received as collateral by the firm that it was permitted to deliver or repledge
+0000886982,GS,2023-12-31,N,0000886982-24-000006,GN1,Collateral that was delivered or repledged
+0000886982,GS,2023-12-31,D,0000886982-24-000006,GD1,Collateral available to be delivered or repledged
+0000886982,GS,2025-12-31,N,0000886982-26-000091,GN1,Collateral that was delivered or repledged
+0000886982,GS,2025-12-31,D,0000886982-26-000091,GD1,Collateral available to be delivered or repledged
