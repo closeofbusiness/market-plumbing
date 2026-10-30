@@ -1,0 +1,10 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; period-end counts per bank and tag
+cik10,ticker,entity_name,role,tag,n_period_ends,n_calendar,n_off_calendar,n_own_filing,first_end,last_end
+0000019617,JPM,Jpmorgan Chase & Co,primary,N,66,66,0,65,2009-12-31,2026-06-30
+0000019617,JPM,Jpmorgan Chase & Co,primary,D,66,66,0,65,2009-12-31,2026-06-30
+0000886982,GS,"The Goldman Sachs Group, Inc.",primary,N,66,66,0,65,2009-12-31,2026-06-30
+0000886982,GS,"The Goldman Sachs Group, Inc.",primary,D,66,66,0,65,2009-12-31,2026-06-30
+0000093751,STT,State Street Corporation,sens_stt,N,52,52,0,51,2013-12-31,2026-09-30
+0000093751,STT,State Street Corporation,sens_stt,D,52,52,0,51,2013-12-31,2026-09-30
+0000072971,WFC,Wells Fargo & Company/mn,sens_wfc,N,67,67,0,65,2009-12-31,2026-09-30
+0000072971,WFC,Wells Fargo & Company/mn,sens_wfc,D,67,67,0,65,2009-12-31,2026-09-30

@@ -140,3 +140,11 @@ data/vintages/rev_recognition_timing/*/raw/
 data/vintages/rev_recognition_timing/STOP_rrt
 data/vintages/rev_recognition_timing/**/*.zip
 data/vintages/rev_recognition_timing/**/*.json
+
+# Collateral re-use history (bin/collateral_reuse.py): the SEC companyconcept JSON bodies of every vintage stay in its raw/ folder and are never committed; the concept_extract.csv of each
+# vintage IS committed. The patterns after the first are a second line of defence for what must never be: a zip, json or xml outside raw/, and the STOP_cru fetch latch (only a person deletes it).
+data/vintages/collateral_reuse/*/raw/
+data/vintages/collateral_reuse/STOP_cru
+data/vintages/collateral_reuse/**/*.zip
+data/vintages/collateral_reuse/**/*.json
+data/vintages/collateral_reuse/**/*.xml

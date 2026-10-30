@@ -1,0 +1,8 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; exact Shapley split of the S1 and S3 changes
+window,sample,bank,weight_start_pct,weight_end_pct,share_start_pct,share_end_pct,within_pp,mix_pp,total_pp
+2021-12-31..2023-12-31,primary,JPM,58.189,56.524,75.511,75.374,-0.079,-1.256,-1.335
+2021-12-31..2023-12-31,primary,GS,41.811,43.476,82.786,86.050,1.392,1.405,2.797
+2021-12-31..2023-12-31,primary,ALL,100.000,100.000,78.553,80.015,1.313,0.149,1.462
+2023-12-31..2025-12-31,primary,JPM,56.524,57.443,75.374,80.542,2.945,0.716,3.661
+2023-12-31..2025-12-31,primary,GS,43.476,42.557,86.050,85.347,-0.302,-0.787,-1.089
+2023-12-31..2025-12-31,primary,ALL,100.000,100.000,80.015,82.587,2.643,-0.071,2.572

@@ -606,6 +606,9 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        _research/2026-10-28-Revenue-Recognition-Timing-Spec.md). S1 and S1P scored once (labels
                                                        in registered.csv); figures live in the folder, not here. OPEN: S2 (FY2025-26), serves A13 (what drove prices: the
                                                        earnings side). Trigger: CALENDAR 2027-05-03; VOID row 2027-08-02.
+       COLLATERAL RE-USE HISTORY: DONE 30 Oct (g14; C-156) -> bin/collateral_reuse.py, data/collateral_reuse; serves A13 (the collateral channel: whether re-use rose
+                                                       before the price rise, C-152). OPEN: the Q3 2026 re-run, CALENDAR 2026-11-09 (S1-S3 not re-scored). Deferred: g14b,
+                                                       the four-bank year-end sample.
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions

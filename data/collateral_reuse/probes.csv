@@ -1,0 +1,4 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; Wells Fargo counts and dates only (P5), no value
+cik10,ticker,tag,n_period_ends,n_calendar,first_end,last_end,n_both_tags,verdict
+0000072971,WFC,N,67,67,2009-12-31,2026-09-30,51,enters
+0000072971,WFC,D,67,67,2009-12-31,2026-09-30,51,enters

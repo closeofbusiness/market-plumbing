@@ -1984,6 +1984,274 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M28: COLLATERAL RE-USE HISTORY LEAK AND WORDING GUARD (warn only) ---
+# data/collateral_reuse/ holds statistics derived from the SEC's XBRL companyconcept facts on data.sec.gov and nothing raw (spec _research/2026-10-30-Collateral-Reuse-History-Spec.md, sections 5, 6
+# and 9.8; build bin/collateral_reuse.py). The raw JSON bodies stay in the gitignored raw/ folder of each vintage under data/vintages/collateral_reuse/<YYYYMMDD>/, which commits only
+# concept_extract.csv. Eight things would break the spec's rules, and none is visible to M5-M27:
+#   1. a file that is not one of the fourteen committed names (twelve CSVs, README.md, SOURCES.md), a raw file (.zip, .json, .xml, .html, .htm, .gz, .pdf, or a STOP file) under any name, a file in
+#      a vintage folder that is not concept_extract.csv, and a .zip, .json, .xml or STOP file tracked in git in either folder; names missing from a folder that holds a README.md (a folder with none is
+#      the pre stage, and its missing names are only a warning);
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's thirteen canonical lines, typed here a second time (this guard never reads
+#      them from bin/collateral_reuse.py);
+#   3. a local path (/Users/, /private/, ~/) or an at sign in any committed file;
+#   4. causal, price, speed or misconduct wording (the spec's two patterns, pasted) in README.md or SOURCES.md anywhere but the one denial sentence;
+#   5. a banned verdict word (HELD, FALSIFIED, PROVEN, CAUSED, REFUTED, MATERIAL) in any file of the output folder;
+#   6. a registered.csv label, sign, void reason, blind or superseded value outside the spec's lists, or a prereg_sha256 that is not the 4.6 hash typed below, and any other constrained column
+#      (status, flags, sample, basis, kind, role, class) outside its list;
+#   7. samples.csv that does not close against quarters.csv (n_usd and d_usd equal the sums of the banks' ok rows, share_pct recomputes to three decimals; C05) and changes.csv or registered.csv
+#      that do not recompute at full precision from the USD sums of quarters.csv (D8 to three decimals, the registered statistic and yardstick extremes of the vintage headline.csv holds; C08);
+#   8. a duplicate key in any of the eleven keyed CSVs.
+# The script refuses the same things when it writes; this is the second, independent look. CRU_DIR and CRU_VDIR override the folders (used to show that the guard fires on a planted copy).
+# It warns and never blocks (header doctrine).
+cru_leak_check() {
+  echo "-- M28: collateral re-use guard (data/collateral_reuse/: the fourteen names, exact headers, no raw file, local path or at sign, no causal/price/speed/misconduct wording outside the denial sentence, no verdict word, registered labels, signs, void reasons and hash, samples and changes close against quarters, no duplicate key, no zip/json/xml/STOP in git) --"
+  local dir="${CRU_DIR:-data/collateral_reuse}" vroot="${CRU_VDIR:-data/vintages/collateral_reuse}" f name want got bad="" raw committed extracts out py tracked kind list missing
+  local PREREG_SHA='4ca76d72f2e6050e5e6f11aea432195b170405d2391783de3cca3b90641cd55b'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md SOURCES.md banks.csv quarters.csv samples.csv changes.csv registered.csv decomposition.csv revisions.csv probes.csv headline.csv checks.csv vintages.csv captions_pin.csv "
+  extracts=" concept_extract.csv "
+  missing=""
+  for name in ${committed}; do
+    [ -f "$dir/$name" ] || missing="${missing}${name} "
+  done
+  if [ -n "$missing" ]; then
+    if [ -f "$dir/README.md" ]; then
+      for name in $missing; do bad="${bad}  ✗ missing: $name
+"; done
+    else
+      echo "  ⚠ no README.md: the pre stage only (missing until the full stage: $missing)"
+    fi
+  fi
+  list=$( { for f in "$dir"/*; do [ -f "$f" ] && printf 'out\t%s\n' "$f"; done; for f in "$vroot"/*/*; do [ -f "$f" ] && printf 'vint\t%s\n' "$f"; done; } 2>/dev/null )
+  while IFS=$'\t' read -r kind f; do
+    [ -z "$f" ] && continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    raw=""
+    case "$name" in *.zip|*.json|*.xml|*.html|*.htm|*.gz|*.pdf|STOP*) raw=1 ;; esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && raw=1
+    head -c 4 "$f" | grep -qF '%PDF' && raw=1
+    if [ -n "$raw" ]; then
+      bad="${bad}  ✗ raw file in a committed folder (a zip, json, xml, page, pdf or STOP file): $f
+"
+      continue
+    fi
+    if [ "$kind" = "out" ] && [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the fourteen committed names: $name
+"
+      continue
+    fi
+    if [ "$kind" = "vint" ] && [ "${extracts#* $name }" = "$extracts" ]; then
+      bad="${bad}  ✗ file in a vintage folder that is not concept_extract.csv: $f
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      banks.csv) want='cik10,ticker,entity_name,role,tag,n_period_ends,n_calendar,n_off_calendar,n_own_filing,first_end,last_end' ;;
+      quarters.csv) want='cik10,ticker,end,basis,accession,form,filing_date,n_usd,d_usd,share_pct,flags,status' ;;
+      samples.csv) want='sample,basis,end,n_banks,n_usd,d_usd,share_pct,flags' ;;
+      changes.csv) want='sample,basis,kind,start_end,end_end,share_start_pct,share_end_pct,change_pp,role' ;;
+      registered.csv) want='statement_id,version,superseded,sample,basis,vintage,n_dist,dist_min,dist_max,stat,unit,gap_to_extreme,rank,rank_of,sign,label,blind,void_reason,prereg_sha256,population_sha256' ;;
+      decomposition.csv) want='window,sample,bank,weight_start_pct,weight_end_pct,share_start_pct,share_end_pct,within_pp,mix_pp,total_pp' ;;
+      revisions.csv) want='cik10,ticker,end,tag,first_usd,latest_usd,rel_diff_pct,first_accession,latest_accession,flag' ;;
+      probes.csv) want='cik10,ticker,tag,n_period_ends,n_calendar,first_end,last_end,n_both_tags,verdict' ;;
+      headline.csv) want='vintage,sample,basis,statistic,value,unit,n' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+      vintages.csv) want='vintage,host,url_path,status,bytes,sha256,retrieved_utc,elapsed_s' ;;
+      captions_pin.csv) want='cik10,ticker,end,line,accession,class,caption_wording' ;;
+      concept_extract.csv) want='vintage,cik10,tag,accn,form,filed,fy,fp,end,val' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done <<< "$list"
+  if [ -z "${CRU_DIR:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- data/collateral_reuse data/vintages/collateral_reuse 2>/dev/null | grep -E '\.(zip|json|xml)$|(^|/)STOP' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a zip, json, xml or STOP file must never be): $tracked
+"
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+from decimal import Decimal, InvalidOperation, ROUND_HALF_EVEN
+d, prereg = sys.argv[1], sys.argv[2]
+CAUSAL = re.compile(r"\b(caus(?:e|ed|es|ing)|drove|driv(?:e|es|en|ing)|leaned?\s+against|because\s+of\s+(?:the\s+)?intervention|led\s+to|prompted|pushed|in\s+response\s+to|because\s+of)\b", re.I)
+EXTRA = re.compile(r"\b(?:in|out)flows?\b|\bflow(?:s|ed|ing)?\s+(?:into|out\s+of|from|to)\b|\bmanipulat\w*|\bmanag(?:e|ed|es|ing)\s+(?:earnings|results|revenue)\b|\bearnings\s+management\b|\baggressive\w*|\bfraud\w*|\bmisstat\w*|\binflat(?:e|ed|es|ing)\b|\bboost(?:s|ed|ing)?\b|\bpadd(?:ed|ing)\b|\blow[- ]quality\b|\bfake\b|\b(?:prices?|valuations?|multiples?|stocks?|shares)\s+(?:rose|fell|rallied|moved|jumped|dropped)\b|\bmaterial\w*|\boverstat\w*|\bpulled\s+forward\b|\bflatter\w*|\bwindow[- ]dressing\b|\bred\s+flags?\b|\bvelocity\b|\bintensity\b|\bmultiplier\b|\bleverag\w*|\bfuel(?:l?ed|s|ing)?\b|\bsupport(?:ed|s|ing)?\s+(?:the\s+)?(?:rally|prices?|valuations?)\b|\bsignifican\w*|\bpermissive\b|\bpropell\w*|\bpow(?:er|ered)\s+(?:the\s+)?(?:rally|rise)\b|\bproves?\b|\bproven\b", re.I)
+VERDICT = re.compile(r"HELD|FALSIFIED|PROVEN|CAUSED|REFUTED|MATERIAL")
+DENIAL = "A bank's re-pledged share is the part of the collateral it may re-use that it reports having re-used: it is a share at a date, not a speed, and nothing here says it moved any price or any flow of money."
+ALLOWED = {
+ "banks.csv": {"role": {"primary", "sens_stt", "sens_wfc", "probe"}, "tag": {"N", "D"}},
+ "quarters.csv": {"basis": {"own_filing", "latest_filed"}, "status": {"ok", "missing_n", "missing_d", "own_filing_lacks_tags", "ambiguous", "conflict", "unit_odd", "off_calendar", "ratio_gt_1"}},
+ "samples.csv": {"sample": {"primary", "sens_stt", "sens_wfc", "sens_jpm", "sens_gs", "sens_eqw", "sens_noflag"}, "basis": {"own_filing", "latest_filed"}},
+ "changes.csv": {"sample": {"primary", "sens_stt", "sens_wfc", "sens_jpm", "sens_gs", "sens_eqw", "sens_noflag"}, "basis": {"own_filing", "latest_filed"}, "kind": {"q8", "level"}, "role": {"yardstick", "registered", "described"}},
+ "registered.csv": {"statement_id": {"S1", "S2", "S3"}, "superseded": {"no", "yes"}, "sample": {"primary"}, "basis": {"own_filing"}, "unit": {"pp", "pct"}, "sign": {"RISE", "FALL", "ZERO", ""},
+                    "label": {"RISE_OUTSIDE_RANGE", "WITHIN_RANGE", "FALL_OUTSIDE_RANGE", "LEVEL_ABOVE_RANGE", "LEVEL_WITHIN_RANGE", "LEVEL_BELOW_RANGE", "VOID"}, "blind": {"full", "partial"},
+                    "void_reason": {"none", "endpoint_undefined", "thin_yardstick", "endpoint_recast", "caption_change", "mix_dominates", "yardstick_disagrees"}},
+ "probes.csv": {"tag": {"N", "D"}, "verdict": {"enters", "does_not_enter", "counts_only"}},
+ "checks.csv": {"status": {"PASS", "WARN", "FAIL", "INFO"}},
+ "captions_pin.csv": {"line": {"N", "D"}, "class": {"JN1", "JN2", "JD1", "GN1", "GD1"}},
+ }
+FLAGS = {"recast", "jump", "amended"}
+KEYS = {
+ "banks.csv": ("cik10", "role", "tag"),
+ "quarters.csv": ("cik10", "end", "basis"),
+ "samples.csv": ("sample", "basis", "end"),
+ "changes.csv": ("sample", "basis", "kind", "start_end", "end_end"),
+ "registered.csv": ("statement_id", "version"),
+ "decomposition.csv": ("window", "sample", "bank"),
+ "revisions.csv": ("cik10", "end", "tag"),
+ "probes.csv": ("cik10", "tag"),
+ "headline.csv": ("vintage", "sample", "basis", "statistic"),
+ "vintages.csv": ("vintage", "url_path"),
+ "captions_pin.csv": ("cik10", "end", "line"),
+ }
+JPM, GS, STT, WFC = "0000019617", "0000886982", "0000093751", "0000072971"
+SAMPLES = {"primary": (JPM, GS), "sens_stt": (JPM, GS, STT), "sens_wfc": (JPM, GS, STT, WFC), "sens_jpm": (JPM,), "sens_gs": (GS,), "sens_eqw": (JPM, GS), "sens_noflag": (JPM, GS)}
+S3_END, S1_END, S2_DATE = "2023-12-31", "2025-12-31", "2023-12-31"
+bad = []
+def body(t):
+    return [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+def dec(x):
+    try:
+        return Decimal(x)
+    except (InvalidOperation, TypeError):
+        return None
+def p3(v):
+    s = format(v.quantize(Decimal("0.001"), rounding=ROUND_HALF_EVEN), "f")
+    return s[1:] if s.startswith("-") and Decimal(s) == 0 else s
+def table(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    rows = list(csv.reader(body(open(p, encoding="utf-8", errors="replace", newline="").read())))
+    return (rows[0], rows[1:]) if rows else None
+def dicts(n):
+    tb = table(n)
+    return None if not tb else [dict(zip(tb[0], r)) for r in tb[1]]
+for n in sorted(os.listdir(d)):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p) or n == ".DS_Store":
+        continue
+    t = open(p, encoding="utf-8", errors="replace", newline="").read()
+    if n.lower().endswith((".zip", ".json", ".xml", ".html", ".htm", ".gz", ".pdf")) or n.startswith("STOP") or t[:2] == "PK" or t[:4] == "%PDF":
+        continue
+    if VERDICT.search(t):
+        bad.append(n + " holds a banned verdict word (HELD, FALSIFIED, PROVEN, CAUSED, REFUTED or MATERIAL)")
+    if n in ("README.md", "SOURCES.md"):
+        t2 = t.replace(DENIAL, "", 1)
+        hits = sorted({re.sub(r"\s+", " ", m.group(0).lower()) for rx in (CAUSAL, EXTRA) for m in rx.finditer(t2)})
+        if hits:
+            bad.append(n + " holds banned wording (spec R6): " + ", ".join(hits[:6]))
+    tb = table(n)
+    if tb and n in KEYS:
+        head, rows = tb
+        try:
+            idx = [head.index(k) for k in KEYS[n]]
+        except ValueError:
+            idx = None
+        if idx:
+            seen, dup = set(), 0
+            for r in rows:
+                k = tuple(r[i] if i < len(r) else "" for i in idx)
+                if k in seen:
+                    dup += 1
+                seen.add(k)
+            if dup:
+                bad.append("duplicate key in " + n + " (" + str(dup) + " duplicate row(s))")
+    if tb and n in ALLOWED:
+        head, rows = tb
+        for col, ok in ALLOWED[n].items():
+            if col in head:
+                i = head.index(col)
+                bl = sorted({r[i] for r in rows if i < len(r) and r[i] not in ok})
+                if bl:
+                    bad.append(n + " holds a " + col + " outside the spec's list: " + ", ".join(bl[:4]))
+    if tb and n in ("quarters.csv", "samples.csv") and "flags" in tb[0]:
+        i = tb[0].index("flags")
+        bl = sorted({f for r in tb[1] if i < len(r) for f in r[i].split("|") if f and f not in FLAGS})
+        if bl:
+            bad.append(n + " holds a flag outside the spec's list: " + ", ".join(bl[:4]))
+reg = dicts("registered.csv")
+if reg:
+    if any(r.get("prereg_sha256") != prereg for r in reg):
+        bad.append("registered.csv holds a prereg_sha256 that is not the 4.6 hash")
+Q, SM, CH, HD = dicts("quarters.csv"), dicts("samples.csv"), dicts("changes.csv"), dicts("headline.csv")
+qm = {(r["cik10"], r["basis"], r["end"]): r for r in Q} if Q else {}
+def share(sample, basis, end):
+    parts = [qm.get((c, basis, end)) for c in SAMPLES.get(sample, ())]
+    if not parts or any(p is None or p["status"] != "ok" or dec(p["n_usd"]) is None or dec(p["d_usd"]) is None for p in parts):
+        return None
+    ns, ds = [dec(p["n_usd"]) for p in parts], [dec(p["d_usd"]) for p in parts]
+    if sample == "sens_eqw":
+        s = sum(Decimal(100) * a / b for a, b in zip(ns, ds)) / len(ns)
+    else:
+        s = Decimal(100) * sum(ns) / sum(ds)
+    return sum(ns), sum(ds), len(parts), s
+# C05: samples.csv closes against quarters.csv
+if Q and SM:
+    for r in SM:
+        g = share(r["sample"], r["basis"], r["end"])
+        tag = "samples.csv " + r["sample"] + " " + r["basis"] + " " + r["end"]
+        if g is None:
+            bad.append(tag + ": a bank row is missing or not ok in quarters.csv")
+        elif dec(r["n_usd"]) != g[0] or dec(r["d_usd"]) != g[1] or r["n_banks"] != str(g[2]):
+            bad.append(tag + ": n_usd or d_usd is not the sum of the bank rows of quarters.csv")
+        elif p3(g[3]) != r["share_pct"]:
+            bad.append(tag + ": share_pct does not recompute to three decimals")
+# C08: changes.csv and registered.csv recompute at full precision from the USD sums of quarters.csv
+if Q and CH:
+    for r in CH:
+        e = share(r["sample"], r["basis"], r["end_end"])
+        tag = "changes.csv " + r["sample"] + " " + r["basis"] + " " + r["kind"] + " " + r["start_end"] + ".." + r["end_end"]
+        if e is None:
+            bad.append(tag + ": the end share cannot be recomputed from quarters.csv")
+        elif r["kind"] == "level":
+            if p3(e[3]) != r["share_end_pct"]:
+                bad.append(tag + ": the level does not recompute from quarters.csv")
+        else:
+            s = share(r["sample"], r["basis"], r["start_end"])
+            if s is None or p3(e[3] - s[3]) != r["change_pp"] or p3(s[3]) != r["share_start_pct"] or p3(e[3]) != r["share_end_pct"]:
+                bad.append(tag + ": D8 does not recompute from the USD sums of quarters.csv")
+    if reg and HD:
+        hv = {r["vintage"] for r in HD}
+        yard = [r for r in CH if r["sample"] == "primary" and r["basis"] == "own_filing" and r["role"] == "yardstick"]
+        for r in reg:
+            if r["superseded"] == "yes" or r["vintage"] not in hv:
+                continue
+            sid = r["statement_id"]
+            if sid == "S2":
+                dist = [dec(x["share_end_pct"]) for x in yard if x["kind"] == "level"]
+                stat = [x["share_end_pct"] for x in CH if x["sample"] == "primary" and x["basis"] == "own_filing" and x["kind"] == "level" and x["end_end"] == S2_DATE]
+            else:
+                dist = [dec(x["change_pp"]) for x in yard if x["kind"] == "q8"]
+                end = S3_END if sid == "S3" else S1_END
+                stat = [x["change_pp"] for x in CH if x["sample"] == "primary" and x["basis"] == "own_filing" and x["kind"] == "q8" and x["end_end"] == end]
+            if r["stat"] != (stat[0] if stat else ""):
+                bad.append("registered.csv " + sid + ": stat does not recompute from changes.csv")
+            if r["void_reason"] == "endpoint_undefined":
+                continue
+            if sid != "S2" and dist and (r["dist_min"] != p3(min(dist)) or r["dist_max"] != p3(max(dist))):
+                bad.append("registered.csv " + sid + ": dist_min or dist_max does not recompute from the yardstick rows of changes.csv")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ the committed names, every header its exact allowlist, no raw file, local path or at sign, no banned wording outside the denial sentence, no verdict word, registered labels, signs, void reasons and hash as the spec says, samples and changes close against quarters and no duplicate key in $dir (and the extract of the vintage folders); no zip, json, xml or STOP file in git."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> the raw SEC bodies stay in data/vintages/collateral_reuse/<vintage>/raw/ (gitignored) and the build recomputes every table: fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -2432,6 +2700,8 @@ if [ "$TARGET" = "--all" ]; then
   z1cb_leak_check
   echo
   rrt_leak_check
+  echo
+  cru_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

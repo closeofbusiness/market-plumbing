@@ -1,0 +1,5 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; registered once, by the first full build; never re-scored (P19)
+statement_id,version,superseded,sample,basis,vintage,n_dist,dist_min,dist_max,stat,unit,gap_to_extreme,rank,rank_of,sign,label,blind,void_reason,prereg_sha256,population_sha256
+S3,1,no,primary,own_filing,20261030,23,-7.446,7.836,1.462,pp,6.374058,15,24,RISE,WITHIN_RANGE,full,none,4ca76d72f2e6050e5e6f11aea432195b170405d2391783de3cca3b90641cd55b,6492ea1015b05b54cff27267e6228eb480e68ec7aa3f4533573c62b146b096fe
+S1,1,no,primary,own_filing,20261030,23,-7.446,7.836,2.572,pp,5.264600,13,24,RISE,WITHIN_RANGE,partial,none,4ca76d72f2e6050e5e6f11aea432195b170405d2391783de3cca3b90641cd55b,6492ea1015b05b54cff27267e6228eb480e68ec7aa3f4533573c62b146b096fe
+S2,1,no,primary,own_filing,20261030,12,78.907,82.532,80.015,pct,1.108229,10,13,FALL,LEVEL_WITHIN_RANGE,partial,none,4ca76d72f2e6050e5e6f11aea432195b170405d2391783de3cca3b90641cd55b,6492ea1015b05b54cff27267e6228eb480e68ec7aa3f4533573c62b146b096fe

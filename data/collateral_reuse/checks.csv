@@ -1,0 +1,34 @@
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; the pinned checks of section 8 of the spec
+check_id,description,expected,observed,status
+C01,"JPM N counts (period-ends in 2009-12-31..2026-06-30, own filing, off-calendar)",66 65 0,period_ends=66 own_filing=65 off_calendar=0,PASS
+C01,"JPM D counts (period-ends in 2009-12-31..2026-06-30, own filing, off-calendar)",66 65 0,period_ends=66 own_filing=65 off_calendar=0,PASS
+C01,"GS N counts (period-ends in 2009-12-31..2026-06-30, own filing, off-calendar)",66 65 0,period_ends=66 own_filing=65 off_calendar=0,PASS
+C01,"GS D counts (period-ends in 2009-12-31..2026-06-30, own filing, off-calendar)",66 65 0,period_ends=66 own_filing=65 off_calendar=0,PASS
+C01,"STT N counts (period-ends in 2013-12-31..2026-09-30, own filing, off-calendar)",52 51 0,period_ends=52 own_filing=51 off_calendar=0,PASS
+C01,"STT D counts (period-ends in 2013-12-31..2026-09-30, own filing, off-calendar)",52 51 0,period_ends=52 own_filing=51 off_calendar=0,PASS
+C01,"WFC N counts, printed for P3",none pinned,period_ends=66 own_filing=64 off_calendar=0,INFO
+C01,"WFC D counts, printed for P3",none pinned,period_ends=66 own_filing=64 off_calendar=0,INFO
+C02,JPM N expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C02,JPM D expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C02,GS N expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C02,GS D expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C02,STT N expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C02,STT D expected dates,"every quarter-end in own filing; 2010-03-31 absent; 2009-12-31 comparative-only (JPM, GS)",ok,PASS
+C19,captions_pin.csv equals SPEC_CAPTION_SHA256 and carries a class for each of the 24 bank-date-line cells,2cfe524cc2257ce2951445f4d759784dd776a71a4910528b050e1c319695c6aa,2cfe524cc2257ce2951445f4d759784dd776a71a4910528b050e1c319695c6aa,PASS
+C12,JPM own_filing status counts,reported,missing_n=1 ok=65 own_filing_lacks_tags=1,INFO
+C12,JPM latest_filed status counts,reported,missing_n=1 ok=66,INFO
+C12,GS own_filing status counts,reported,missing_n=1 ok=65 own_filing_lacks_tags=1,INFO
+C12,GS latest_filed status counts,reported,missing_n=1 ok=66,INFO
+C12,STT own_filing status counts,reported,ok=30 own_filing_lacks_tags=1 unit_odd=21,INFO
+C12,STT latest_filed status counts,reported,ok=29 unit_odd=23,INFO
+C12,WFC own_filing status counts,reported,missing_n=1 ok=65 own_filing_lacks_tags=2,INFO
+C12,WFC latest_filed status counts,reported,missing_n=1 ok=67,INFO
+C03,tie-outs against the nine KNOWN bank-date pairs (half the unit of the last printed digit),18 values within tolerance,"18 values, largest unrounded gap 35000000 USD",PASS
+C04,every primary quarter's N and D carry one accn,0 quarters otherwise,0,PASS
+C05,"samples.csv closes against quarters.csv (sums, share to three decimals)",0 problems,0,PASS
+C07,"the constants reproduce the hashes of 4.6, 4.7 and 5; registered.csv carries them",4 hashes,ok,PASS
+C08,changes.csv D8 and registered.csv recompute at full precision from quarters.csv,0 problems,0,PASS
+C09,each raw body's sha256 and size equal its vintages.csv row,8 bodies,ok,PASS
+C11,--stage full is the registering build; the pre stage read no val,pre-stage reads no val field,tested by the selftest (G17),INFO
+C14,"every unit key is USD; no primary quarter is unit_odd, conflict or ambiguous",0 quarters,0,PASS
+C20,yardstick counts on the real data,"n_Y = 23, n_YR = 17","n_Y = 23, n_YR = 17",PASS
