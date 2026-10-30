@@ -1228,6 +1228,9 @@ OTC derivatives data (`WS_OTC_DERIV2`).**
   - z_k has plateaued at about 23% since March 2026.
 - **Still standing at:** nowhere live. The S1 banner, the N2b update and the series notes carry the correction; the page's
   shadow-money row was reworded.
+- **Update, 30 Oct.** The cause of the varying offset is now identified by definition (`_research/2026-10-30-Grok-EFA-Z1-Issuance-Series.md`):
+  FU103164105 includes equity REITs and is unadjusted; FA103164155 excludes them and is seasonally adjusted. The gap is equity REITs' net
+  equity issuance plus a seasonal-adjustment term. Neither part is printed in a Z.1 table, so the split is not measured.
 
 ---
 
