@@ -148,3 +148,10 @@ data/vintages/collateral_reuse/STOP_cru
 data/vintages/collateral_reuse/**/*.zip
 data/vintages/collateral_reuse/**/*.json
 data/vintages/collateral_reuse/**/*.xml
+
+# CFO Survey equity expectations (bin/cfo_equity_expectations.py): the Richmond Fed's historical workbook of every vintage stays in its raw/ folder and is never committed (the Bank's terms
+# permit credited reproduction only when not for private or commercial gain, so derived statistics are committed and the raw file is not); the MANIFEST.csv of each vintage IS committed. The
+# full quarterly series path.csv is local too, like data/vintages/cot_prices/derived/ (R1-15). STOP_cfo is the fetch latch (only a person deletes it).
+data/vintages/cfo_survey/*/raw/
+data/vintages/cfo_survey/STOP_cfo
+data/cfo_equity_expectations/path.csv

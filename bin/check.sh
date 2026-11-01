@@ -2252,6 +2252,181 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M29: CFO SURVEY EQUITY-EXPECTATIONS LEAK AND WORDING GUARD (warn only) ---
+# data/cfo_equity_expectations/ holds statistics derived from the CFO Survey's historical workbook (Duke Fuqua School of Business, Federal Reserve Banks of Richmond and Atlanta) and nothing raw
+# (spec _research/2026-11-01-CFO-Equity-Expectations-Spec.md, sections 5, 6, 8.1 and 9.9; build bin/cfo_equity_expectations.py). The Richmond Fed's terms permit credited reproduction only
+# when not for private or commercial gain, so derived statistics are committed and the full quarterly series (path.csv) is local and gitignored (R1-15). The raw workbook stays in the
+# gitignored raw/ folder of each vintage under data/vintages/cfo_survey/<YYYYMMDD>/, which commits only MANIFEST.csv. Five things would break the spec's rules, and none is visible to M5-M28:
+#   1. registered.csv: a prereg_sha256 that is not the 4.6 hash typed below (PREREG_SHA); and, once REG_SHA below is filled in by the supervisor after reading the registering build, a
+#      registered.csv whose own sha256 differs from it (a supersede changes the file by design: the supervisor updates the pin in the same commit). REG_SHA empty prints an INFO line;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist -- the spec's four canonical lines, typed here a second time: this guard never reads
+#      them from bin/cfo_equity_expectations.py;
+#   3. README.md without any of the four required sentences R-A, R-B, R-C, R-D verbatim (grep -F), once README.md exists;
+#   4. a level compared across 2020: a yardstick.csv row whose first_end_quarter and last_end_quarter are not inside one era (Y10, Y12: 2004Q1 to 2020Q1; YC10, YC12: from 2022Q3), a
+#      registered start_quarter before 2020Q3, or README.md wording that matches `since 19xx/20xx` or highest, lowest, record, peak, trough;
+#   5. the leak rule (R1-15): a path.csv in the folder that git does not ignore (or any path.csv in a planted copy), an .xlsx, .xls, .zip, .json, .html or STOP file in the folder or in a vintage
+#      folder (outside the gitignored raw/), a file that is not one of the committed names, any such file tracked in git, and a local path (/Users/, /private/, ~/) or an at sign in a committed file.
+# The script refuses the same things when it writes; this is the second, independent look. CFO_DIR and CFO_VDIR override the folders and CFO_REG_SHA overrides REG_SHA (all used to show
+# that the guard fires on a planted copy). It warns and never blocks (header doctrine).
+cfo_leak_check() {
+  echo "-- M29: CFO Survey equity-expectations guard (data/cfo_equity_expectations/: the committed names, exact headers, the registered hash, the four required sentences, no level across 2020, no path.csv, workbook, json or STOP file in git, no local path or at sign) --"
+  local dir="${CFO_DIR:-data/cfo_equity_expectations}" vroot="${CFO_VDIR:-data/vintages/cfo_survey}" f name want got bad="" committed out py tracked s rel
+  local PREREG_SHA='2324862de97a98ee2b6b9de9576b0a3c43d7e3042b24289d5d3b97f05d2b230a'
+  local REG_SHA='02629eb0acb38baf2f2e181911a08769d3b9c781c141dc7f824f7e5e72e667ad'
+  [ -n "${CFO_REG_SHA:-}" ] && REG_SHA="$CFO_REG_SHA"
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  committed=" README.md registered.csv yardstick.csv checks.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    if [ "$name" = "path.csv" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = 'era,horizon,quarter,exp,status,survey_open,survey_close' ] || bad="${bad}  ✗ header of path.csv is not its exact allowlist
+"
+      if [ -n "${CFO_DIR:-}" ]; then
+        bad="${bad}  ✗ path.csv in the committed folder (the full quarterly series is local and gitignored, R1-15): $f
+"
+      elif command -v git >/dev/null 2>&1 && ! git check-ignore -q -- "$f" 2>/dev/null; then
+        bad="${bad}  ✗ path.csv is present and git does not ignore it (R1-15): $f
+"
+      fi
+      continue
+    fi
+    case "$name" in *.xlsx|*.xls|*.zip|*.json|*.html|*.htm|*.gz|*.pdf|STOP*)
+      bad="${bad}  ✗ raw file in the committed folder (a workbook, zip, json, page, pdf or STOP file): $f
+"
+      continue ;;
+    esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && { bad="${bad}  ✗ raw file in the committed folder (a zip container under another name): $f
+"; continue; }
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the four committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      registered.csv) want='statement_id,version,superseded,horizon,series,vintage,workbook_sha256,start_quarter,end_quarter,exp_start,exp_end,stat_pp,sign,void_reason,blind,pins,spf_stat_pp,spf_direction,prereg_sha256' ;;
+      yardstick.csv) want='yardstick,horizon,first_end_quarter,last_end_quarter,n_nominal,n_defined,min_change_pp,max_change_pp,max_disjoint_spans' ;;
+      checks.csv) want='check_id,description,expected,observed,status' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  for f in "$vroot"/*/* "$vroot"/STOP*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    case "$f" in
+      "$vroot"/STOP*) rel="stop" ;;
+      *) rel="vint" ;;
+    esac
+    if [ "$rel" = "stop" ]; then
+      continue      # the fetch latch lives here, ignored by git; a tracked one is caught below
+    fi
+    if [ "$name" != "MANIFEST.csv" ]; then
+      bad="${bad}  ✗ file in a vintage folder that is not MANIFEST.csv (the workbook belongs in the gitignored raw/): $f
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $f contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $f contains an at sign
+"
+  done
+  if [ -z "${CFO_DIR:-}" ] && [ -z "${CFO_VDIR:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- "$dir" "$vroot" 2>/dev/null | grep -E '(^|/)path\.csv$|\.(xlsx|xls|zip|json|html)$|(^|/)STOP|/raw/' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a path.csv, workbook, zip, json, page, STOP file or anything in raw/ must never be): $tracked
+"
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, hashlib, os, re, sys
+d, prereg, regsha = sys.argv[1], sys.argv[2], sys.argv[3]
+bad, info = [], []
+QRX = re.compile(r"^(\d{4})Q([1-4])$")
+def qk(s):
+    m = QRX.match(s or "")
+    return (int(m.group(1)), int(m.group(2))) if m else None
+def body(t):
+    return [l for l in t.split("\n") if not l.startswith("# source:") and l.strip()]
+def dicts(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    rows = list(csv.reader(body(open(p, encoding="utf-8", errors="replace", newline="").read())))
+    return [dict(zip(rows[0], r)) for r in rows[1:]] if rows else []
+# 1. the registered pin
+p = os.path.join(d, "registered.csv")
+reg = dicts("registered.csv")
+if reg is not None:
+    if not reg:
+        bad.append("registered.csv has no row")
+    if any(r.get("prereg_sha256") != prereg for r in reg):
+        bad.append("registered.csv holds a prereg_sha256 that is not the 4.6 hash")
+    if regsha:
+        if hashlib.sha256(open(p, "rb").read()).hexdigest() != regsha:
+            bad.append("registered.csv does not hash to REG_SHA (a supersede changes it by design: the supervisor updates the pin in the same commit)")
+    else:
+        info.append("REG_SHA is empty: registered.csv is pinned by its prereg_sha256 only until the supervisor fills REG_SHA in after reading the registering build")
+# 3. the four required sentences, once README.md exists
+RA = "This build measures one leg only, the expected return on the S&P 500 from a panel of financial decision-makers at US firms who say they follow the stock market; it builds no equity premium and subtracts no Treasury yield."
+RB = "Expectations of 12-month returns in this survey have been found to follow past returns (Greenwood and Shleifer 2014); for the 10-year horizon the evidence is weaker, so a change in either is not evidence about the discount rate."
+RC = "The survey changed in 2020 (new sponsors, different question wording and outlier treatment), so levels are never compared across 2020; only changes within each series are."
+RD = "The respondents are financial decision-makers at firms (chief financial officers and others), not investors; the figures are stated expectations, not market prices."
+rp = os.path.join(d, "README.md")
+if os.path.isfile(rp):
+    t = open(rp, encoding="utf-8", errors="replace", newline="").read()
+    for tag, s in (("R-A", RA), ("R-B", RB), ("R-C", RC), ("R-D", RD)):
+        if s not in t:
+            bad.append("README.md lacks the required sentence " + tag + " verbatim")
+    hits = sorted({m.group(0).lower() for m in re.finditer(r"\bsince\s+(?:19|20)\d\d\b|\b(?:highest|lowest|record|peak|trough)\b", t, re.I)})
+    if hits:
+        bad.append("README.md holds wording that implies a level against history: " + ", ".join(hits[:6]))
+# 4. no level across 2020
+yd = dicts("yardstick.csv")
+if yd is not None:
+    for r in yd:
+        y, a, b = r.get("yardstick", ""), qk(r.get("first_end_quarter")), qk(r.get("last_end_quarter"))
+        if a is None or b is None:
+            bad.append("yardstick.csv " + y + ": a quarter key does not parse")
+        elif y in ("Y10", "Y12"):
+            if not ((2004, 1) <= a <= b <= (2020, 1)):
+                bad.append("yardstick.csv " + y + ": end quarters " + r["first_end_quarter"] + " to " + r["last_end_quarter"] + " are not inside the Duke era (2004Q1 to 2020Q1)")
+        elif y in ("YC10", "YC12"):
+            if not ((2022, 3) <= a <= b):
+                bad.append("yardstick.csv " + y + ": end quarters " + r["first_end_quarter"] + " to " + r["last_end_quarter"] + " reach back before 2022Q3, so a window would start before 2020Q3")
+        else:
+            bad.append("yardstick.csv: unknown yardstick " + y)
+if reg:
+    for r in reg:
+        s = qk(r.get("start_quarter"))
+        if s is None or s < (2020, 3):
+            bad.append("registered.csv " + r.get("statement_id", "?") + ": start_quarter " + r.get("start_quarter", "") + " is before 2020Q3")
+for b in bad:
+    print("BAD " + b)
+for i in info:
+    print("INFO " + i)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" "$REG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ the committed names, every header its exact allowlist, the registered hash, the four required sentences, no level across 2020, no path.csv outside git's ignore, no workbook, zip, json or STOP file, no local path or at sign in $dir (and the MANIFEST of the vintage folders); nothing raw in git."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> the workbook stays in data/vintages/cfo_survey/<vintage>/raw/ (gitignored), path.csv stays local, and the build writes every table: fix the build, do not edit the committed tables by hand."
+  fi
+  printf '%s\n' "$out" | grep '^INFO ' | sed 's/^INFO /  ℹ /'
+  printf '%s\n' "$out" | grep -v '^BAD \|^INFO \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -2702,6 +2877,8 @@ if [ "$TARGET" = "--all" ]; then
   rrt_leak_check
   echo
   cru_leak_check
+  echo
+  cfo_leak_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

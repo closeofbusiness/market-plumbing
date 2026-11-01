@@ -1,0 +1,3 @@
+# source: The CFO Survey (Duke Fuqua School of Business, Federal Reserve Banks of Richmond and Atlanta), Richmond Fed historical workbook current_historical_cfo_data.xlsx, vintage 20261101; the request or supply record of this vintage's workbook (supplied by the supervisor)
+vintage,host,url_path,status,bytes,sha256,retrieved_utc,elapsed_s
+20261101,,,supplied,188861,1b4e215c5626b741182b8a647c7a66d5c6d448616942d27138f18d37acec6bca,,

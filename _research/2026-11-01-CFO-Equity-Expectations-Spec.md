@@ -410,3 +410,18 @@ Both are recorded; neither is resolved.
 - **R2-4 (O-4).** A refused later fetch is a STOP to report, never routed around; no contact is ever declared.
 - **Supervisor verification.** The 4.6 block's sha256 was re-derived by the supervisor from this file: `2324862de97a98ee2b6b9de9576b0a3c43d7e3042b24289d5d3b97f05d2b230a`
   (2697 bytes, 11 lines). Round 2 changes no registered text.
+
+## Rulings round 3 (supervisor, 1 Nov 2026, after the registering build and the independent verification)
+
+The registering build ran on the 1 Nov vintage: E1 +0.135778 (RISE, spf_direction SAME), E2 -0.161693 (FALL), pins match on all four. An independent verifier re-derived every
+number with its own parser (both statements, the four pins, all four yardstick rows, all 198 path rows) and found no mismatch. It found two wording defects in README.md.
+
+- **R3-1.** The current-dictionary lines carried a "[section: ...]" tag taken from the last single-text row above them, which was a bucket label of the GDP-probability block
+  ("16.0% or more"), not the S&P block's header. The tag is removed; the verbatim lines are unchanged.
+- **R3-2.** The E1 sentence asserted "among firms that follow the stock market"; the workbook does not state that filter (O-2, T10). It now says the series is the one whose recent
+  values the results pages give for that population (the four pins match), and points at "What is not known". R-A is fixed text from before the data and is left as written.
+- **R3-3.** The verifier doubted "in this survey" in R-B. Overruled: Greenwood and Shleifer (2014) include the Graham-Harvey CFO survey among their series; R-B is fixed text.
+- **R3-4.** Nothing had been committed, so instead of `--supersede` the first outputs were moved aside and the registering build re-run. registered.csv, yardstick.csv and path.csv
+  are byte-identical to the first run (`cmp`); only README.md and the C13 line of checks.csv changed. REG_SHA in M29 is the sha256 of that registered.csv.
+- **R3-5.** The older manifest row for `data/p5_third_measure/richmond_duke_cfo_survey_sp500_expected_return.csv` describes a file that is in neither git nor this disk (R1-1). It is
+  left in place as a record and is not used by this build.

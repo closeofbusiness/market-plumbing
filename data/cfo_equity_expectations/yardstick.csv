@@ -1,0 +1,6 @@
+# source: The CFO Survey (Duke Fuqua School of Business, Federal Reserve Banks of Richmond and Atlanta), Richmond Fed historical workbook current_historical_cfo_data.xlsx, vintage 20261101; described ranges of eight-quarter changes; nothing is registered against them
+yardstick,horizon,first_end_quarter,last_end_quarter,n_nominal,n_defined,min_change_pp,max_change_pp,max_disjoint_spans
+Y10,10y,2004Q1,2020Q1,65,63,-1.704068,1.240231,8
+Y12,12m,2004Q1,2020Q1,65,63,-4.863232,3.968651,8
+YC10,10y,2022Q3,2026Q3,17,16,-0.436950,1.279886,3
+YC12,12m,2022Q3,2026Q3,17,16,-3.738143,4.305490,3

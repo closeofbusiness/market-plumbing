@@ -1,0 +1,4 @@
+# source: The CFO Survey (Duke Fuqua School of Business, Federal Reserve Banks of Richmond and Atlanta), Richmond Fed historical workbook current_historical_cfo_data.xlsx, vintage 20261101; registered statements E1 and E2
+statement_id,version,superseded,horizon,series,vintage,workbook_sha256,start_quarter,end_quarter,exp_start,exp_end,stat_pp,sign,void_reason,blind,pins,spf_stat_pp,spf_direction,prereg_sha256
+E1,1,no,10y,CUR10,20261101,1b4e215c5626b741182b8a647c7a66d5c6d448616942d27138f18d37acec6bca,2024Q1,2026Q1,9.115756,9.251534,0.135778,RISE,none,full,match,0.1543,SAME,2324862de97a98ee2b6b9de9576b0a3c43d7e3042b24289d5d3b97f05d2b230a
+E2,1,no,12m,CUR12,20261101,1b4e215c5626b741182b8a647c7a66d5c6d448616942d27138f18d37acec6bca,2024Q1,2026Q1,6.744262,6.582569,-0.161693,FALL,none,full,match,,na,2324862de97a98ee2b6b9de9576b0a3c43d7e3042b24289d5d3b97f05d2b230a
