@@ -1,4 +1,4 @@
-# source: Board of Governors of the Federal Reserve System, H.8 release of 2026-10-23 (vintage 2026-10-23, route xml), retrieved 2026-10-25; derived by bin/h8_foreign_offices.py build; public domain, cite to the Board
+# source: Board of Governors of the Federal Reserve System, H.8 release of 2026-10-30 (vintage 2026-10-30, route xml), retrieved 2026-11-01; derived by bin/h8_foreign_offices.py build; public domain, cite to the Board
 question,window,group,statistic,value,unit,blind
 Q1,2019-01-02..2019-09-25,FRI,first_level,241674.0,usd_mn,no
 Q1,2019-01-02..2019-09-25,FRI,last_level,150607.0,usd_mn,no
@@ -20,42 +20,42 @@ Q1,2019-10-02..2022-03-30,FRI,level_on_2021-02-10,112904.0,usd_mn,no
 Q1,2019-10-02..2022-03-30,FRI,pct_of_total_liabilities_on_2021-02-10,4.75,pct,no
 Q1,2019-10-02..2022-03-30,FRI,level_on_2022-02-09,345774.0,usd_mn,no
 Q1,2019-10-02..2022-03-30,FRI,pct_of_total_liabilities_on_2022-02-09,12.40,pct,no
-Q1,2022-04-06..2026-10-14,FRI,first_level,449670.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,last_level,827769.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,min_level,367163.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,min_week,2022-04-20,date,no
-Q1,2022-04-06..2026-10-14,FRI,max_level,1007566.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,max_week,2025-07-23,date,no
-Q1,2022-04-06..2026-10-14,FRI,level_on_2023-02-08,770327.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,pct_of_total_liabilities_on_2023-02-08,24.11,pct,no
-Q1,2022-04-06..2026-10-14,FRI,level_on_2024-02-14,704646.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,pct_of_total_liabilities_on_2024-02-14,21.59,pct,no
-Q1,2022-04-06..2026-10-14,FRI,level_on_2025-02-12,849074.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,pct_of_total_liabilities_on_2025-02-12,25.71,pct,no
-Q1,2022-04-06..2026-10-14,FRI,level_on_2026-02-11,809580.0,usd_mn,no
-Q1,2022-04-06..2026-10-14,FRI,pct_of_total_liabilities_on_2026-02-11,24.05,pct,no
-Q1,2019-01-02..2026-10-14,DOM,first_level,-154927.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,last_level,-469256.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,min_level,-534805.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,min_week,2026-09-16,date,no
-Q1,2019-01-02..2026-10-14,DOM,max_level,-106939.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,max_week,2020-05-27,date,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2019-02-13,-154248.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2019-02-13,-1.20,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2020-02-12,-265394.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2020-02-12,-1.96,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2021-02-10,-229311.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2021-02-10,-1.42,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2022-02-09,-299234.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2022-02-09,-1.70,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2023-02-08,-332350.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2023-02-08,-1.89,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2024-02-14,-360685.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2024-02-14,-2.02,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2025-02-12,-400102.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2025-02-12,-2.21,pct,no
-Q1,2019-01-02..2026-10-14,DOM,level_on_2026-02-11,-417299.0,usd_mn,no
-Q1,2019-01-02..2026-10-14,DOM,pct_of_total_liabilities_on_2026-02-11,-2.20,pct,no
+Q1,2022-04-06..2026-10-21,FRI,first_level,449670.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,last_level,857879.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,min_level,367163.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,min_week,2022-04-20,date,no
+Q1,2022-04-06..2026-10-21,FRI,max_level,1007566.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,max_week,2025-07-23,date,no
+Q1,2022-04-06..2026-10-21,FRI,level_on_2023-02-08,770327.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,pct_of_total_liabilities_on_2023-02-08,24.11,pct,no
+Q1,2022-04-06..2026-10-21,FRI,level_on_2024-02-14,704646.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,pct_of_total_liabilities_on_2024-02-14,21.59,pct,no
+Q1,2022-04-06..2026-10-21,FRI,level_on_2025-02-12,849074.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,pct_of_total_liabilities_on_2025-02-12,25.71,pct,no
+Q1,2022-04-06..2026-10-21,FRI,level_on_2026-02-11,809580.0,usd_mn,no
+Q1,2022-04-06..2026-10-21,FRI,pct_of_total_liabilities_on_2026-02-11,24.05,pct,no
+Q1,2019-01-02..2026-10-21,DOM,first_level,-154927.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,last_level,-473322.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,min_level,-534805.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,min_week,2026-09-16,date,no
+Q1,2019-01-02..2026-10-21,DOM,max_level,-106939.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,max_week,2020-05-27,date,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2019-02-13,-154248.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2019-02-13,-1.20,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2020-02-12,-265394.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2020-02-12,-1.96,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2021-02-10,-229311.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2021-02-10,-1.42,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2022-02-09,-299234.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2022-02-09,-1.70,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2023-02-08,-332350.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2023-02-08,-1.89,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2024-02-14,-360685.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2024-02-14,-2.02,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2025-02-12,-400102.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2025-02-12,-2.21,pct,no
+Q1,2019-01-02..2026-10-21,DOM,level_on_2026-02-11,-417299.0,usd_mn,no
+Q1,2019-01-02..2026-10-21,DOM,pct_of_total_liabilities_on_2026-02-11,-2.20,pct,no
 Q2,2024-02-14..2025-02-12,FRI,level_start,704646.0,usd_mn,no
 Q2,2024-02-14..2025-02-12,FRI,level_end,849074.0,usd_mn,no
 Q2,2024-02-14..2025-02-12,FRI,change,144428.0,usd_mn,no
@@ -128,12 +128,12 @@ Q2,2026-02-11..2026-08-12,ALL,min_level,318986.0,usd_mn,no
 Q2,2026-02-11..2026-08-12,ALL,min_week,2026-07-01,date,no
 Q2,2026-02-11..2026-08-12,ALL,max_level,472820.0,usd_mn,no
 Q2,2026-02-11..2026-08-12,ALL,max_week,2026-04-29,date,no
-Q2,Lo,FRI,lo_week,2026-10-14,date,no
-Q2,Lo,FRI,level_on_lo,827769.0,usd_mn,no
-Q2,Lo,DOM,lo_week,2026-10-14,date,no
-Q2,Lo,DOM,level_on_lo,-469256.0,usd_mn,no
-Q2,Lo,ALL,lo_week,2026-10-14,date,no
-Q2,Lo,ALL,level_on_lo,358513.0,usd_mn,no
+Q2,Lo,FRI,lo_week,2026-10-21,date,no
+Q2,Lo,FRI,level_on_lo,857879.0,usd_mn,no
+Q2,Lo,DOM,lo_week,2026-10-21,date,no
+Q2,Lo,DOM,level_on_lo,-473322.0,usd_mn,no
+Q2,Lo,ALL,lo_week,2026-10-21,date,no
+Q2,Lo,ALL,level_on_lo,384557.0,usd_mn,no
 Q3,2020Q3 (2020-09-30),FRI,level_qe_wed,178366.0,usd_mn,yes
 Q3,2020Q3 (2020-09-30),FRI,delta_qe_wed,3149.0,usd_mn,yes
 Q3,2020Q3 (2020-09-30),FRI,delta_next,-13628.0,usd_mn,yes
@@ -158,12 +158,12 @@ Q3,2025Q4 (2025-12-31),FRI,delta_next,-36596.0,usd_mn,yes
 Q3,2025Q4 (2025-12-31),DOM,level_qe_wed,-387307.0,usd_mn,yes
 Q3,2025Q4 (2025-12-31),DOM,delta_qe_wed,20389.0,usd_mn,yes
 Q3,2025Q4 (2025-12-31),DOM,delta_next,-40117.0,usd_mn,yes
-Q3,2026Q3 (2026-09-30),FRI,level_qe_wed,855694.0,usd_mn,no
-Q3,2026Q3 (2026-09-30),FRI,delta_qe_wed,-22212.0,usd_mn,no
-Q3,2026Q3 (2026-09-30),FRI,delta_next,-18834.0,usd_mn,no
+Q3,2026Q3 (2026-09-30),FRI,level_qe_wed,855698.0,usd_mn,no
+Q3,2026Q3 (2026-09-30),FRI,delta_qe_wed,-22208.0,usd_mn,no
+Q3,2026Q3 (2026-09-30),FRI,delta_next,-19120.0,usd_mn,no
 Q3,2026Q3 (2026-09-30),DOM,level_qe_wed,-502585.0,usd_mn,no
 Q3,2026Q3 (2026-09-30),DOM,delta_qe_wed,25170.0,usd_mn,no
-Q3,2026Q3 (2026-09-30),DOM,delta_next,19027.0,usd_mn,no
+Q3,2026Q3 (2026-09-30),DOM,delta_next,19026.0,usd_mn,no
 Q4,2024-02-14..2025-02-12,FRI,change,144428.0,usd_mn,no
 Q4,2024-02-14..2025-02-12,DOM,change,-39417.0,usd_mn,no
 Q4,2024-02-14..2025-02-12,ALL,identity_gap_all_minus_dom_minus_fri_change,0.0,usd_mn,no
@@ -183,3 +183,15 @@ Q6,2026-10-16..2026-10-23,ALL,cells_changed,3,count,no
 Q6,2026-10-16..2026-10-23,ALL,largest_abs_change,1.0,usd_mn,no
 Q6,2026-10-16..2026-10-23,ALL,largest_abs_change_week,2026-08-12,date,no
 Q6,2026-10-16..2026-10-23,ALL,old_week_revised,no,yes_no,no
+Q6,2026-10-23..2026-10-30,FRI,cells_changed,3,count,no
+Q6,2026-10-23..2026-10-30,FRI,largest_abs_change,282.0,usd_mn,no
+Q6,2026-10-23..2026-10-30,FRI,largest_abs_change_week,2026-10-07,date,no
+Q6,2026-10-23..2026-10-30,FRI,old_week_revised,no,yes_no,no
+Q6,2026-10-23..2026-10-30,DOM,cells_changed,1,count,no
+Q6,2026-10-23..2026-10-30,DOM,largest_abs_change,1.0,usd_mn,no
+Q6,2026-10-23..2026-10-30,DOM,largest_abs_change_week,2026-10-07,date,no
+Q6,2026-10-23..2026-10-30,DOM,old_week_revised,no,yes_no,no
+Q6,2026-10-23..2026-10-30,ALL,cells_changed,3,count,no
+Q6,2026-10-23..2026-10-30,ALL,largest_abs_change,283.0,usd_mn,no
+Q6,2026-10-23..2026-10-30,ALL,largest_abs_change_week,2026-10-07,date,no
+Q6,2026-10-23..2026-10-30,ALL,old_week_revised,no,yes_no,no

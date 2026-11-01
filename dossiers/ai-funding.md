@@ -23,7 +23,7 @@ Oracle remaining performance obligations were **$664bn** at 31 August 2026, agai
 
 The "$750bn" in the press is the 2026 capex forecast, not borrowing. Source: [`_research/2026-10-13-Grok-Wave-Reviews-Return.md`](../_research/2026-10-13-Grok-Wave-Reviews-Return.md) (R1).
 
-The debt that does exist sits in a corporate bond market held mainly by long money; the AI names are not a separate Z.1 line, and free data count only two holder groups for them (C-139). The hyperscalers were 3% of outstanding US investment-grade debt at end-2025 but over 15% of 2026 issuance by early May (Bank of England, July 2026 FSR), and are close to 5% of the Bloomberg US IG corporate index, 7.5% at 10 years and over (CPRAM, Sep 2026). See the long-money dossier. Amazon’s **$17.5bn** delayed-draw term loan was undrawn at 30 June 2026; the draw window is a calendar item, not a completed taking of bank money.
+The debt that does exist sits in a corporate bond market held mainly by long money; the AI names are not a separate Z.1 line, and free data count only two holder groups for them (C-139). The hyperscalers were 3% of outstanding US investment-grade debt at end-2025 but over 15% of 2026 issuance by early May (Bank of England, July 2026 FSR), and are close to 5% of the Bloomberg US IG corporate index, 7.5% at 10 years and over (CPRAM, Sep 2026). See the long-money dossier. Amazon’s **$17.5bn** delayed-draw bank term loan, undrawn at 30 June 2026, was drawn in full in September 2026 and outstanding at 30 September (10-Q filed 30 Oct 2026); it matures in September 2029.
 
 ## What would change the conclusion
 
