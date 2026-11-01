@@ -609,6 +609,10 @@ Do not restate findings here. Status and detail stay in the home section named o
        COLLATERAL RE-USE HISTORY: DONE 30 Oct (g14; C-156) -> bin/collateral_reuse.py, data/collateral_reuse; serves A13 (the collateral channel: whether re-use rose
                                                        before the price rise, C-152). OPEN: the Q3 2026 re-run, CALENDAR 2026-11-09 (S1-S3 not re-scored). Deferred: g14b,
                                                        the four-bank year-end sample.
+       CFO SURVEY EQUITY EXPECTATIONS: DONE 1 Nov (g15) -> bin/cfo_equity_expectations.py, data/cfo_equity_expectations; serves A13 (the
+                                                       equity leg of the premium: a second panel beside the forecasters' survey, page §02). E1 and E2 scored once
+                                                       (labels in registered.csv); figures live in the folder, not here. OPEN: none registered. Next vintage: CALENDAR
+                                                       2026-12-31 (rebuild with --stage full; the row-count constants 74/25 need an amendment first).
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions
