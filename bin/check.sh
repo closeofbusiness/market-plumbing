@@ -2427,6 +2427,75 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^INFO \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M30: TERM-REPO TURNS GUARD (spec _research/2026-11-02-Term-Repo-Turns-Spec.md, section 7; build bin/term_repo_turns.py) ---
+# data/term_repo_turns/ holds the tri-party 2-7 day spread at the last business day before each month-end and one registered statement for 30 December 2026, which the spec sets to be
+# written once, from the first fetch on or after the gate (2027-01-05T20:00Z). The registered block is pinned by its sha256 (the literal PREREG_SHA below) and the file by its own sha256
+# (REG_SHA below), which stays EMPTY until January and lands in the same commit as registered.csv. Four things are errors, and none is visible to M5-M29:
+#   1. the script's prereg constant (SPEC_PREREG_SHA256 in bin/term_repo_turns.py) differs from PREREG_SHA, typed here a second time;
+#   2. turns.csv carries a target value before the gate (any cell of the target row other than t, t_minus_1, kind, status, or a status other than PENDING);
+#   3. registered.csv exists before the gate;
+#   4. once registered.csv is present after the gate, it does not hash to REG_SHA (an empty REG_SHA is a difference too: the literal lands with the file).
+# One warning: registered.csv is still absent after 2027-01-29, the last day the target may stay PENDING. With the folder absent, or present and empty of those files, the guard passes
+# before the gate. TERMREPO_DIR, TERMREPO_SCRIPT, TERMREPO_NOW (UTC, YYYY-MM-DDTHH:MM:SSZ) and TERMREPO_REG_SHA override the folder, the script, the clock and REG_SHA (used to show that
+# the guard fires on a planted copy). Errors are marked with a cross; the warning with a warning sign.
+term_repo_check() {
+  echo "-- M30: term-repo turns guard (data/term_repo_turns/: the script's prereg hash equals the literal, no target value in turns.csv and no registered.csv before the gate, registered.csv hashes to the pinned literal once present) --"
+  local dir="${TERMREPO_DIR:-data/term_repo_turns}" script="${TERMREPO_SCRIPT:-bin/term_repo_turns.py}" bad="" got out py
+  local PREREG_SHA='0592b8ed2d566d87664abba83196b660cfba4662bd95018b46e379923c325e36'
+  local REG_SHA=''
+  [ -n "${TERMREPO_REG_SHA:-}" ] && REG_SHA="$TERMREPO_REG_SHA"
+  local now="${TERMREPO_NOW:-$(date -u +%Y-%m-%dT%H:%M:%SZ)}"
+  if [ -f "$script" ]; then
+    got=$(grep -m1 '^SPEC_PREREG_SHA256 = ' "$script" | sed -E 's/^SPEC_PREREG_SHA256 = "([0-9a-f]*)".*$/\1/')
+    [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the prereg hash in $script ($got) is not the literal in check.sh
+"
+  else
+    bad="${bad}  ✗ $script is missing, so its prereg hash cannot be compared
+"
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, hashlib, os, sys
+d, now, regsha = sys.argv[1], sys.argv[2], sys.argv[3]
+GATE, WARN_AFTER = "2027-01-05T20:00:00Z", "2027-01-29"
+bad, warn = [], []
+t = os.path.join(d, "turns.csv")
+if os.path.isfile(t) and now < GATE:
+    for r in csv.DictReader(open(t, encoding="utf-8", errors="replace", newline="")):
+        if r.get("kind") == "target":
+            vals = [k for k, v in r.items() if k not in ("t", "t_minus_1", "kind", "status") and (v or "").strip()]
+            if vals or r.get("status") != "PENDING":
+                bad.append("turns.csv carries a target value before the gate (status " + str(r.get("status")) + (", cells: " + ",".join(vals[:5]) if vals else "") + ")")
+p = os.path.join(d, "registered.csv")
+if os.path.isfile(p):
+    if now < GATE:
+        bad.append("registered.csv exists before the gate (" + GATE + ")")
+    elif not regsha:
+        bad.append("registered.csv is present but REG_SHA in check.sh is empty (the literal lands in the same commit as the file)")
+    elif hashlib.sha256(open(p, "rb").read()).hexdigest() != regsha:
+        bad.append("registered.csv does not hash to REG_SHA")
+elif now[:10] > WARN_AFTER:
+    warn.append("registered.csv is still absent after " + WARN_AFTER)
+for b in bad:
+    print("BAD " + b)
+for w in warn:
+    print("WARN " + w)
+PY
+  out=$(python3 -c "$py" "$dir" "$now" "$REG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    if [ -d "$dir" ]; then
+      echo "  ✓ the script's prereg hash equals the literal; no target value in turns.csv and no registered.csv before the gate; registered.csv (when present) hashes to REG_SHA."
+    else
+      echo "  ✓ $dir is absent -- nothing to check beyond the script's prereg hash, which equals the literal."
+    fi
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> the target stays PENDING and empty until the first fetch on or after the gate; registered.csv is written once by 'build --stage register', and its sha256 goes into REG_SHA in the same commit."
+  fi
+  printf '%s\n' "$out" | grep '^WARN ' | sed 's/^WARN /  ⚠ /'
+  printf '%s\n' "$out" | grep -v '^BAD \|^WARN \|^$' | sed 's/^/  ✗ guard error: /'
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -2879,6 +2948,8 @@ if [ "$TARGET" = "--all" ]; then
   cru_leak_check
   echo
   cfo_leak_check
+  echo
+  term_repo_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

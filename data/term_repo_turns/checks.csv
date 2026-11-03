@@ -1,0 +1,14 @@
+id,status,detail
+rows_REPO-TRIV1_AR_B27-P,PASS,"303 rows, at least 302 expected"
+rows_REPO-TRIV1_AR_OO-P,PASS,"311 rows, at least 310 expected"
+rows_REPO-TRIV1_TV_B27-P,PASS,"303 rows, at least 302 expected"
+rows_REPO-TRIV1_TV_OO-P,PASS,"311 rows, at least 310 expected"
+rows_REPO-TRIV1_AR_B830-P,PASS,"303 rows, at least 302 expected"
+first_b27_date,PASS,"first B27 date 2025-08-13, expected 2025-08-13"
+complete_t_in_oo,PASS,every complete T is a date of the overnight series
+fence_t_minus_1,PASS,the fence's T-1 list equals the computed one for every complete placebo T
+finals_cover,PASS,finals and preliminary cover the same dates up to 2026-06-30
+second_path_e,PASS,E for 2025-08-29 re-derived by a second code path: equal
+pre_gate_cap,PASS,no date after 2026-12-23 in a vintage fetched before the gate
+business_days,INFO,303 business days (present and non-null in both B27 and OO); 0 null cells in B27 and OO
+rate_decimals,INFO,"decimals in the rate strings: 1, 2"

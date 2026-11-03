@@ -155,3 +155,7 @@ data/vintages/collateral_reuse/**/*.xml
 data/vintages/cfo_survey/*/raw/
 data/vintages/cfo_survey/STOP_cfo
 data/cfo_equity_expectations/path.csv
+
+# Term repo at the month-end turn (bin/term_repo_turns.py): the nine raw JSON files and MANIFEST.csv of each vintage under data/vintages/ofr_repo/ ARE committed (US government data, about ten small
+# files; only the vintages actually used). STOP_term_repo is the fetch latch written on any refusal, bot check or 403; only a person deletes it, and it is never committed.
+data/vintages/ofr_repo/STOP_term_repo

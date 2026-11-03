@@ -182,3 +182,13 @@ Grok's first attempt at this pass hit the 30-minute limit with no answer; a resu
 - **R2-3. The coupon date (accepted).** Defined on the data's business days; 17 Feb 2026 is the selftest case.
 - **R2-4. Left open, recorded.** Trades on an effective date may have been agreed before the announcement the previous afternoon; only trade-level timestamps would settle it. This goes in the README's limits.
 - **R2-5. Spec closed.** Next: commit, then the builder, working on synthetic data only.
+
+## Rulings round 3 (supervisor, 3 Nov 2026, after the first build and the independent verification)
+
+- **R3-1. The API refuses a future `end_date`** (HTTP 400, "Date must be between 1900-01-01 and" today, seen 2 Nov). The spec's cap was my error. Before the gate `fetch` now sends the earlier of today and 2026-12-23, with a selftest and a mutant. The fetch wrote a STOP on this; it was our own malformed request, not a refusal, so I cleared it in the clone.
+- **R3-2. The verifier matched every number:** 286 cells of `turns.csv`, 60 volume cells, 1,555 of `daily.csv`, all 33 revision values, and December and October 2025 by hand; zero differences. I reran its script on the landed vintage. Its Date-header point and `--out` route need deliberate tampering; recorded, not changed.
+- **R3-3. Four README fixes from the verifier.** A recommended early close was written as a past event. My sentence on Fed moves was wrong for most of the eight, and now says what it means. My explanation of the top of the range (rates adjusting at a different pace) was untested and rested on one month, so it is cut: the README now says that October 2025 alone sets the top (+8, next highest +1) and that one month sets the bar for ABOVE. "Both legs start at the new rate" becomes "no decision falls inside the loan".
+- **R3-4. The range is not changed after seeing it.** It is registered; October 2025 stays in.
+- **R3-5. The T−1 check stays a hard stop** (builder's question): a placebo T−1 that moves means the calendar or the data has changed, and a person should look, in January above all.
+- **R3-6. The FOMC recheck reads a saved page** (`dry --fomc-page`), as the script makes no request to the Board: the parser was fixed against the real page, and the page and the fence agree on 11 effective dates.
+
