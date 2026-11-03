@@ -513,7 +513,8 @@ Shares, correlations and intervals are written to 3 decimals, SDs to 0.1bp.
   protect the build. *Settled by:* fetching U4–U7 on 2 and 3 Nov 2026 and recording each file's span.
   *Record, 2 Nov 2026 07:50 CET (first business day of November):* U4 ends 2026-09-30, Last-Modified 1 Oct 23:30 GMT. U5 still holds October, 2026-10-01 to 2026-10-30 (21 rows), Last-Modified 2 Nov 00:30 GMT.
   U6 Last-Modified 2 Oct 15:36 GMT (ranged read only, 39,192,649 B). U7 holds 2026-10-01 to 2026-10-29 (21 rows), Last-Modified 30 Oct 11:49 GMT. So on the morning of the first business day neither current-month file
-  has rolled, and the archives still end at September. 3 Nov record to follow.
+  has rolled, and the archives still end at September.
+  *Record, 3 Nov 2026 05:45 UTC:* U4 and U5 unchanged (U5 still October, Last-Modified 2 Nov 00:30 GMT; 3 Nov is a Japanese holiday). U7 now holds 2026-10-01 to 2026-10-30 (22 rows), Last-Modified 2 Nov 11:04 GMT. **OPEN-2 settled for this month:** in a month's first two business days both current-month files still hold the previous month, up to its last print, so they overlap nothing new and the seam rule is not tested by them. One month only; a later month could differ. U6 was not re-read on 3 Nov.
 - **OPEN-3. Compounding** of the Bund series. It does not matter for correlation shares; `SOURCES.md` should state it. *Settled by:*
   the series documentation.
 - **OPEN-4. Placebo precision.** The 47 layouts overlap; only 2 are disjoint. `placebo_sd` could be dominated by one historical
