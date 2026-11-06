@@ -55,3 +55,30 @@ CANNOT|why; whether lenders charged for risk; anything about the election, the r
 The 4 Nov refunding pre-registration (CALENDAR) scored separately:
 - the 10y moved −5 bp and the 30y −4 bp, both inside ±8;
 - that is no supply-effect reading, and the session was declared unclean in advance.
+
+## Amendment LE1-A (6 Nov 2026, same day, still blind)
+
+Grok attacked the block above the same day. Its review, verbatim, is in [the attack note](2026-11-06-Grok-LE1-Attack.md). Its main points held when the supervisor checked them:
+- **5 Nov is a bill-settlement Thursday.** Treasury's tentative auction schedule shows the 6-, 13- and 26-week bills settling that day.
+- **The comparison days were a poor match.** They mix settlement, auction and holiday-bridge days, and nine of the ten fall after the event, so an after-effect of the event would end up in the baseline.
+- **2 Nov had already printed.** Its print was due on 4 Nov, before LE1 was written.
+- **The band is weak.** Even with no event effect, a day falls outside it about 12% of the time (4/33 under a uniform null).
+- **The E>0 and E<0 clauses do nothing.**
+
+**What the supervisor checked on pre-event data.** Do bill settlements move this spread? On the 155 mid-month days of the 20261103 vintage, the median S is 5bp on settlement days and 5bp on other days. LE1-A therefore compares 5 Nov with earlier bill-settlement Thursdays, chosen by the calendar rule below. Their spreads were already in the repository, and the supervisor saw them before writing this block. The 5 Nov value is still unread.
+
+**LE1's label is withdrawn. LE1-A is the scored statement.** Its SHA-256 is `bc39ff240caa0eac796fbed12075ea68ae1f1dde30ee814a1ef884ec6011e1ca` (2014 bytes):
+
+```
+LE1-A|amendment of LE1 (block sha fcdd50cc), written 6 Nov 2026 before any OFR print dated after 2026-11-04 was read; LE1's label is withdrawn and LE1-A is the scored statement
+SERIES|as LE1: OFR tri-party, Fed trades excluded, preliminary: REPO-TRIV1_AR_B27-P and REPO-TRIV1_AR_OO-P; S(t)=100*(B27(t)-OO(t)) bp
+EVENT|t*=2026-11-05 (a Thursday settling the 6-, 13- and 26-week bills; the day after the refunding statement; two days after the election)
+BASELINE|B = the 25 pre-event Thursdays from vintage 20261103 (data/term_repo_turns/daily.csv) with: day of month 5-24; bill settlement; no coupon settlement; no FOMC effective date in (t,t+7]; no early close; not within one calendar day of a federal holiday; not within three calendar days after an FOMC decision day. Dates: 2025-08-14,2025-08-21,2025-10-09,2025-10-16,2025-11-06,2025-11-13,2025-11-20,2025-12-18,2026-01-08,2026-02-05,2026-02-12,2026-02-19,2026-03-05,2026-04-09,2026-04-16,2026-05-07,2026-05-14,2026-05-21,2026-07-09,2026-07-16,2026-08-06,2026-08-13,2026-08-20,2026-09-24,2026-10-08
+BAND|S over B runs from 3 to 9 bp (median 5); these values were read before this block was written
+LABEL|ABOVE if S(t*)>9 (10 bp or more); BELOW if S(t*)<3 (2 bp or less); else INSIDE; two-sided; if t* were exchangeable with B the chance of a non-INSIDE label is at most 2/26
+VINTAGE|score on the first fetched vintage holding 2026-11-05; never rescored on a later vintage; a null on either leg means NO READING
+GATE|2026-11-10T20:00Z
+DESCRIBED|each leg on t*; S on 2026-11-06; LE1's original median and band (withdrawn: its control days mix settlement, auction and holiday-bridge days, nine of ten fall after the event, and 2 Nov printed before LE1 was written; Grok review 6 Nov)
+PRIOR|the literature found (BIS, FOMC minutes Sep 2024) points to INSIDE: secured overnight rates were largely unchanged around the August 2024 equity break
+CANNOT|why; anything about the election or the refunding, which share the window; anything about other repo segments; n=1
+```
