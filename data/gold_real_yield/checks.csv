@@ -1,5 +1,6 @@
-# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-11-06 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-11-06; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-11-06
 check_id,description,expected,observed,status
+I01,Revision report against the previous vintage,no revision above 0.5% (gold) or 0.0005 (dollar),gold column revision: largest over 801 shared months is 0.0000% at 2026-09  ok | dollar index revision: largest over 249 shared months is 0.00000 at 2026-09  ok,PASS
 I02,B1 at trim 0.15: regime residual variances (the Bai interval is labelled approximate if they differ by more than 2x),ratio <= 2,ratio 1.06,INFO
 K01a,Gold header and ($/troy oz) units sit in the same column,same column,same column (parse_gold),PASS
 K01b,"Gold months 2006M01 to 2026M09, no blanks","249 months, 0 blank","249 months, 0 blank",PASS
@@ -20,7 +21,7 @@ K05b,2026 changes slope over 8 months (official yields; a published checksum),-0
 K05c,levels slope over the 7 quarters 2025Q1-2026Q3 (log of the equal-weight quarterly mean) (official yields; a published checksum),-0.02101 +- 0.00005,-0.02101,PASS
 K05d,Number of quarters in the quarterly checksum,7,7,PASS
 K06,"Sample and lags: n changes, rule-of-thumb lag, L; trim table as the spec","n=248, rule 4, L=12; 2007-02/2025-08, 2009-03/2023-07, 2011-03/2021-07","n=248, rule 4, L=12; 2007-02/2025-08, 2009-03/2023-07, 2011-03/2021-07",PASS
-K07,Gold series seam at 2025-06 against the GLD-implied PM price (local only),median gap before 2025-06 <= 0.10%,file absent: SKIP (expected for an outside reader),SKIP
+K07,Gold series seam at 2025-06 against the GLD-implied PM price (local only; gap statistics only),median absolute gap before 2025-06 <= 0.10%,"median abs gap before 0.034%, after 0.098%; change in mean gap at the seam +0.030%",PASS
 K08,Leak scan: explicit file and column allowlist; rolling36.csv at most 2 decimals; no spreadsheet under the output directory,no problems,no problems,PASS
 K09,"P1 null size on the real regressors (20000 synthetic iid and AR(0.2) y; no gold), rejection rate at the fixed-b cv",each <= 0.065,"iid 0.0601, AR(0.2) 0.0623",PASS
 K10,Every results.csv row: ci_low and ci_high equal coef -/+ crit_value x se_hac (to printed rounding); the P1 band on stdout equals results.csv's,0 rows disagree,0 of 26 rows disagree,PASS

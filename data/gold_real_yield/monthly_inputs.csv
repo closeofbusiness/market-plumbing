@@ -1,4 +1,4 @@
-# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-10-18 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-10-18; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-10-18
+# source: World Bank Commodity Price Data (the Pink Sheet), monthly workbook retrieved 2026-11-06 (derived statistics only; the gold price is not redistributed); US Department of the Treasury, par real yield curve rates, retrieved 2026-11-06; Board of Governors of the Federal Reserve System, Data Download Program, H.10 nominal broad dollar index, retrieved 2026-11-06
 month,tips10_avg_pct_mc,tips10_avg_pct_official,tips10_days,tips10_mc_day_share,usd_broad_2006jan100,seam_flag
 2003-01,2.3209,2.2943,21,0.0000,,
 2003-02,2.0166,1.9900,19,0.0000,,
