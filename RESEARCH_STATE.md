@@ -610,6 +610,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        before the price rise, C-152). OPEN: the Q3 2026 re-run, CALENDAR 2026-11-09 (S1-S3 not re-scored). Deferred: g14b,
                                                        the four-bank year-end sample.
        TERM REPO AT THE TURN: DONE 3 Nov (g16) -> bin/term_repo_turns.py, data/term_repo_turns; serves the §09 quarter-end funding gap with one term reading beside the overnight prints. Five quarter-ends inside the range of eight ordinary month-ends (count, not a test); one registered statement for the 30 Dec print, read from 5 Jan (CALENDAR). Spec _research/2026-11-02-Term-Repo-Turns-Spec.md.
+       LIVE EVENT 5 NOV (LE1): REGISTERED 6 Nov, before any post-4-Nov print was read -> the 5 Nov equity sell-off (S&P -4.36%) in the same tri-party 2-7 day spread, against ten ordinary November days; two-sided, read from 27 Nov (CALENDAR). Other measures weighed and not registered are listed in [the note](_research/2026-11-06-Live-Event-5-Nov-Repo-Prereg.md)
        CFO SURVEY EQUITY EXPECTATIONS: DONE 1 Nov (g15) -> bin/cfo_equity_expectations.py, data/cfo_equity_expectations; serves A13 (the
                                                        equity leg of the premium: a second panel beside the forecasters' survey, page §02). E1 and E2 scored once
                                                        (labels in registered.csv); figures live in the folder, not here. OPEN: none registered. Next vintage: CALENDAR
