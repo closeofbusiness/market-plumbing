@@ -2,7 +2,7 @@
 
 7 November 2026. This note scores two forecasts written on 17 October, before the September-quarter filings, in [the g6 returns](2026-10-17-Grok-G6-Returns.md): leases signed but not yet commenced (parcel 1) and parent-company bonds issued in 2026 (parcel 2). The filed figures were read by Grok from each company's 10-Q on EDGAR, with quotations; its return is kept verbatim in [the readings note](2026-11-07-Grok-Q3-Leases-Bonds-Readings.md). Grok was not shown the forecasts. Gemini 3.8 Flash High then scored every clause independently from the forecasts and the readings and reached the same verdicts; its bond total was $229.06bn.
 
-**How far the readings were checked.** Meta's $355.73bn matches its XBRL fact at 30 Sep 2026 (`UnrecordedUnconditionalPurchaseObligationBalanceSheetAmount`, accession 0001628280-26-066773, read from data.sec.gov). Amazon's XBRL proceeds from long-term debt, 1 Jan to 30 Sep 2026, are $115.1bn; less the $17.5bn term loan that is $97.6bn, consistent with about $98bn of notes at issue discount. The other lease figures and the debt-note text rest on Grok's quotations from pages it fetched. They were not re-read against the source: Gemini was sent the three filings twice and fetched nothing either time, and this session has no declared contact for www.sec.gov. Re-read them when a supervisor session with the contact is available.
+**How far the readings were checked.** Meta's $355.73bn matches its XBRL fact at 30 Sep 2026 (`UnrecordedUnconditionalPurchaseObligationBalanceSheetAmount`, accession 0001628280-26-066773, read from data.sec.gov). Amazon's XBRL proceeds from long-term debt, 1 Jan to 30 Sep 2026, are $115.1bn; less the $17.5bn term loan that is $97.6bn, consistent with about $98bn of notes at issue discount. The other lease figures and the debt-note text first rested on Grok's quotations. On 8 November the supervisor re-read every figure in both tables in the filings' own text at www.sec.gov, and all match: leases Alphabet $130.5bn, Amazon $164.922bn, Microsoft $364.6bn, Meta $355.73bn; bonds Alphabet $45.0bn US-dollar plus $35.8bn foreign-currency notes, Meta $25.00bn (May 2026), Microsoft no 2026 row (latest issuance year 2024), Oracle $25.0bn of February 2026 notes (FY2026 10-K debt table, accession 0001193125-26-277521; with $18.0bn of September 2025 notes, the $43.0bn fiscal-2026 total the filing states).
 
 ## Leases not yet commenced, 30 September 2026
 
@@ -25,7 +25,7 @@ Forecast $229bn, falsified below $221bn or above $230bn.
 | Amazon | 98.2 | $37bn, EUR 14.5bn, CHF 2.8bn, C$14.0bn, $25bn, GBP 4.3bn | 98.2 |
 | Meta | 25 | $25.00bn (May 2026) | 25.0 |
 | Microsoft | 0 | no 2026 issue in the issuance-by-year table | 0 |
-| Oracle | 25 | no issue June-August in the Q1 FY2027 10-Q; the February $25bn sits in the FY2026 10-K, not re-read here | 25.0 (forecast value) |
+| Oracle | 25 | no issue June-August in the Q1 FY2027 10-Q; the February $25.0bn is in the FY2026 10-K debt table (re-read 8 Nov) | 25.0 (forecast value) |
 | **Total** | **229** | | **229.0** |
 
 Amazon's foreign faces are converted at the 17 Oct table's ECB crosses. The filed CHF 2.8bn and GBP 4.3bn are printed to one decimal against the table's CHF 2.82bn and GBP 4.25bn; together they move the total by +$0.04bn.
