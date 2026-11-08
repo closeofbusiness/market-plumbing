@@ -1,6 +1,6 @@
 # The fair-value share of collateral re-used at JPMorgan Chase and Goldman Sachs
 
-This is the fair-value share of the collateral they may re-use that JPMorgan Chase and Goldman Sachs report having re-used, at every quarter-end from June 2010 to June 2026, as first reported in the original 10-Q or 10-K of each period (vintage 20261030).
+This is the fair-value share of the collateral they may re-use that JPMorgan Chase and Goldman Sachs report having re-used, at every quarter-end from June 2010 to June 2026, as first reported in the original 10-Q or 10-K of each period (vintage 20261108).
 Three statements were registered before any value was read; each has a sign (RISE, FALL or ZERO, the zone being 0.1 point) and a range label that are separate, and the label only says whether the change was unusual against the yardstick of earlier eight-quarter changes, never whether the share rose.
 
 - Between December 2021 and December 2023 the share rose 1.462 points, inside the range of 2011-2019 two-year changes.
@@ -66,7 +66,7 @@ JPMorgan's numerator caption widened in the first quarter of 2017; windows that 
 | 2023-12-31 | 80.015 | 75.374 | 86.050 |
 | 2024-12-31 | 82.221 | 78.413 | 87.882 |
 | 2025-12-31 | 82.587 | 80.542 | 85.347 |
-| 2026-06-30 | 83.235 | 79.848 | 88.395 |
+| 2026-09-30 | 84.165 | 81.458 | 88.175 |
 
 Every quarter-end is in samples.csv and quarters.csv. The split of each registered change into a within-bank part and a weight-shift part is in decomposition.csv. The split is exact: each bank's within part is the change in its own share times the average of its start and end weights, and its weight-shift part is the change in its weight times the average of its start and end shares (a Shapley split); the weights are each bank's permitted collateral over the two banks' total.
 
@@ -139,8 +139,8 @@ The repository already held some filing-note values for these two banks (nine ba
 
 | bank | bank-quarter-tag rows | flagged recast (more than 1% apart) | rows with any difference |
 |---|---|---|---|
-| JPM | 132 | 2 | 5 |
-| GS | 132 | 0 | 0 |
+| JPM | 134 | 2 | 5 |
+| GS | 134 | 0 | 0 |
 | STT | 104 | 2 | 2 |
 | WFC | 134 | 2 | 4 |
 
@@ -150,10 +150,10 @@ recast: the latest-filed value differs from the first-reported one by more than 
 
 | bank | tag | role | period-ends | calendar | off calendar | own filing | first | last | quarters outside the unit band |
 |---|---|---|---|---|---|---|---|---|---|
-| JPM | N | primary | 66 | 66 | 0 | 65 | 2009-12-31 | 2026-06-30 | 0 |
-| JPM | D | primary | 66 | 66 | 0 | 65 | 2009-12-31 | 2026-06-30 | 0 |
-| GS | N | primary | 66 | 66 | 0 | 65 | 2009-12-31 | 2026-06-30 | 0 |
-| GS | D | primary | 66 | 66 | 0 | 65 | 2009-12-31 | 2026-06-30 | 0 |
+| JPM | N | primary | 67 | 67 | 0 | 66 | 2009-12-31 | 2026-09-30 | 0 |
+| JPM | D | primary | 67 | 67 | 0 | 66 | 2009-12-31 | 2026-09-30 | 0 |
+| GS | N | primary | 67 | 67 | 0 | 66 | 2009-12-31 | 2026-09-30 | 0 |
+| GS | D | primary | 67 | 67 | 0 | 66 | 2009-12-31 | 2026-09-30 | 0 |
 | STT | N | sens_stt | 52 | 52 | 0 | 51 | 2013-12-31 | 2026-09-30 | 21 |
 | STT | D | sens_stt | 52 | 52 | 0 | 51 | 2013-12-31 | 2026-09-30 | 21 |
 | WFC | N | sens_wfc | 67 | 67 | 0 | 65 | 2009-12-31 | 2026-09-30 | 0 |
@@ -174,4 +174,4 @@ Expected: 66 period-ends and 65 in own filing for each primary bank and tag (201
 
 ## Citation
 
-US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030. Caption pins: company label linkbase of the filing, read by the supervisor on 2026-10-30. Specification: _research/2026-10-30-Collateral-Reuse-History-Spec.md (commit ccacee1). See SOURCES.md.
+US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261108. Caption pins: company label linkbase of the filing, read by the supervisor on 2026-10-30. Specification: _research/2026-10-30-Collateral-Reuse-History-Spec.md (commit ccacee1). See SOURCES.md.

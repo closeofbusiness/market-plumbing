@@ -2,20 +2,20 @@
 
 ## Source
 
-US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030. US government works (17 U.S.C. 105). Caption pins: company label linkbase of the filing (wording only), read by the supervisor on 2026-10-30; the file is captions_pin.csv.
+US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261108. US government works (17 U.S.C. 105). Caption pins: company label linkbase of the filing (wording only), read by the supervisor on 2026-10-30; the file is captions_pin.csv.
 
-## Requests (data.sec.gov, vintage 20261030)
+## Requests (data.sec.gov, vintage 20261108)
 
 | URL | date (UTC) | HTTP status |
 |---|---|---|
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000019617/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000019617/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000886982/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000886982/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000093751/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000093751/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000072971/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-10-30 | 200 |
-| https://data.sec.gov/api/xbrl/companyconcept/CIK0000072971/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-10-30 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000019617/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000019617/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000886982/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000886982/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000093751/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000093751/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000072971/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatHaveBeenResoldOrRepledged.json | 2026-11-08 | 200 |
+| https://data.sec.gov/api/xbrl/companyconcept/CIK0000072971/us-gaap/FairValueOfSecuritiesReceivedAsCollateralThatCanBeResoldOrRepledged.json | 2026-11-08 | 200 |
 
 ## Specification and rules
 

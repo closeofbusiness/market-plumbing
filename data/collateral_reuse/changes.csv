@@ -1,4 +1,4 @@
-# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261030; caption pins from the company label linkbase of the filing; eight-quarter changes in percentage points and levels
+# source: US Securities and Exchange Commission, EDGAR XBRL API (companyconcept) on data.sec.gov, vintage 20261108; caption pins from the company label linkbase of the filing; eight-quarter changes in percentage points and levels
 sample,basis,kind,start_end,end_end,share_start_pct,share_end_pct,change_pp,role
 primary,own_filing,q8,2010-06-30,2012-06-30,70.740,74.033,3.293,yardstick
 primary,own_filing,q8,2010-09-30,2012-09-30,77.559,70.113,-7.446,yardstick
@@ -57,6 +57,7 @@ primary,own_filing,q8,2023-09-30,2025-09-30,80.399,82.367,1.968,described
 primary,own_filing,q8,2023-12-31,2025-12-31,80.015,82.587,2.572,registered
 primary,own_filing,q8,2024-03-31,2026-03-31,81.114,83.362,2.248,described
 primary,own_filing,q8,2024-06-30,2026-06-30,81.904,83.235,1.331,described
+primary,own_filing,q8,2024-09-30,2026-09-30,80.178,84.165,3.987,described
 primary,own_filing,level,,2017-03-31,,82.532,,yardstick
 primary,own_filing,level,,2017-06-30,,80.545,,yardstick
 primary,own_filing,level,,2017-09-30,,82.041,,yardstick
@@ -128,6 +129,7 @@ primary,latest_filed,q8,2023-09-30,2025-09-30,80.399,82.367,1.968,described
 primary,latest_filed,q8,2023-12-31,2025-12-31,80.015,82.587,2.572,described
 primary,latest_filed,q8,2024-03-31,2026-03-31,81.114,83.362,2.248,described
 primary,latest_filed,q8,2024-06-30,2026-06-30,81.904,83.235,1.331,described
+primary,latest_filed,q8,2024-09-30,2026-09-30,80.178,84.165,3.987,described
 primary,latest_filed,level,,2017-03-31,,82.532,,yardstick
 primary,latest_filed,level,,2017-06-30,,80.545,,yardstick
 primary,latest_filed,level,,2017-09-30,,82.041,,yardstick
@@ -153,6 +155,7 @@ sens_stt,own_filing,q8,2023-09-30,2025-09-30,80.303,82.295,1.992,described
 sens_stt,own_filing,q8,2023-12-31,2025-12-31,79.924,82.466,2.542,described
 sens_stt,own_filing,q8,2024-03-31,2026-03-31,81.006,83.151,2.145,described
 sens_stt,own_filing,q8,2024-06-30,2026-06-30,81.668,82.981,1.313,described
+sens_stt,own_filing,q8,2024-09-30,2026-09-30,79.912,83.982,4.070,described
 sens_stt,own_filing,level,,2018-06-30,,82.444,,yardstick
 sens_stt,own_filing,level,,2018-09-30,,82.381,,yardstick
 sens_stt,own_filing,level,,2018-12-31,,80.951,,yardstick
@@ -173,6 +176,7 @@ sens_wfc,own_filing,q8,2023-09-30,2025-09-30,78.584,80.580,1.996,described
 sens_wfc,own_filing,q8,2023-12-31,2025-12-31,77.169,80.292,3.124,described
 sens_wfc,own_filing,q8,2024-03-31,2026-03-31,79.104,81.460,2.357,described
 sens_wfc,own_filing,q8,2024-06-30,2026-06-30,79.230,81.818,2.588,described
+sens_wfc,own_filing,q8,2024-09-30,2026-09-30,77.236,82.650,5.414,described
 sens_wfc,own_filing,level,,2018-06-30,,80.378,,yardstick
 sens_wfc,own_filing,level,,2018-09-30,,80.274,,yardstick
 sens_wfc,own_filing,level,,2018-12-31,,79.066,,yardstick
@@ -238,6 +242,7 @@ sens_jpm,own_filing,q8,2023-09-30,2025-09-30,76.136,78.687,2.551,described
 sens_jpm,own_filing,q8,2023-12-31,2025-12-31,75.374,80.542,5.168,described
 sens_jpm,own_filing,q8,2024-03-31,2026-03-31,77.069,80.029,2.959,described
 sens_jpm,own_filing,q8,2024-06-30,2026-06-30,79.546,79.848,0.302,described
+sens_jpm,own_filing,q8,2024-09-30,2026-09-30,76.561,81.458,4.898,described
 sens_jpm,own_filing,level,,2017-03-31,,83.536,,yardstick
 sens_jpm,own_filing,level,,2017-06-30,,80.210,,yardstick
 sens_jpm,own_filing,level,,2017-09-30,,82.010,,yardstick
@@ -308,6 +313,7 @@ sens_gs,own_filing,q8,2023-09-30,2025-09-30,86.560,87.650,1.090,described
 sens_gs,own_filing,q8,2023-12-31,2025-12-31,86.050,85.347,-0.703,described
 sens_gs,own_filing,q8,2024-03-31,2026-03-31,86.661,87.998,1.338,described
 sens_gs,own_filing,q8,2024-06-30,2026-06-30,85.428,88.395,2.967,described
+sens_gs,own_filing,q8,2024-09-30,2026-09-30,85.862,88.175,2.313,described
 sens_gs,own_filing,level,,2017-03-31,,81.148,,yardstick
 sens_gs,own_filing,level,,2017-06-30,,81.023,,yardstick
 sens_gs,own_filing,level,,2017-09-30,,82.083,,yardstick
@@ -378,6 +384,7 @@ sens_eqw,own_filing,q8,2023-09-30,2025-09-30,81.348,83.169,1.821,described
 sens_eqw,own_filing,q8,2023-12-31,2025-12-31,80.712,82.945,2.233,described
 sens_eqw,own_filing,q8,2024-03-31,2026-03-31,81.865,84.014,2.149,described
 sens_eqw,own_filing,q8,2024-06-30,2026-06-30,82.487,84.121,1.635,described
+sens_eqw,own_filing,q8,2024-09-30,2026-09-30,81.211,84.817,3.605,described
 sens_eqw,own_filing,level,,2017-03-31,,82.342,,yardstick
 sens_eqw,own_filing,level,,2017-06-30,,80.616,,yardstick
 sens_eqw,own_filing,level,,2017-09-30,,82.047,,yardstick
@@ -444,6 +451,7 @@ sens_noflag,own_filing,q8,2023-09-30,2025-09-30,80.399,82.367,1.968,described
 sens_noflag,own_filing,q8,2023-12-31,2025-12-31,80.015,82.587,2.572,described
 sens_noflag,own_filing,q8,2024-03-31,2026-03-31,81.114,83.362,2.248,described
 sens_noflag,own_filing,q8,2024-06-30,2026-06-30,81.904,83.235,1.331,described
+sens_noflag,own_filing,q8,2024-09-30,2026-09-30,80.178,84.165,3.987,described
 sens_noflag,own_filing,level,,2017-03-31,,82.532,,yardstick
 sens_noflag,own_filing,level,,2017-06-30,,80.545,,yardstick
 sens_noflag,own_filing,level,,2017-09-30,,82.041,,yardstick
