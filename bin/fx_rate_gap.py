@@ -92,6 +92,28 @@ EXPECTED_COUNTS = {      # the reviewer's counts (spec 3.5): weeks, intervention
 EXPECTED_P_IV = ("2024-05-03", "2024-07-12", "2024-07-19", "2026-05-01", "2026-05-08", "2026-07-31", "2026-08-07", "2026-08-14", "2026-08-21",
                  "2026-08-28")
 EXPECTED_P_STALE = ("2025-01-03", "2025-01-10")
+# The pins above are the block run's (spec 3.4: the undated JPY 15,399.3bn of 30 Jul-26 Aug 2026 drops every week it meets). When the quarterly
+# CSV covers 30 Sep 2026 the block is replaced by its dated days (30 Jul, 31 Jul, 3 Aug: weeks ending 31 Jul and 7 Aug), so these three weeks,
+# dropped only by the block, come back. Added by the supervisor on 10 Nov 2026 when the dated run failed the block pins.
+BLOCK_ONLY_WEEKS = ("2026-08-14", "2026-08-21", "2026-08-28")
+
+
+def dated_run(label):
+    m = re.match(r"csv_through_(\d{4}-\d{2}-\d{2})_blocks_0$", label)
+    return bool(m) and m.group(1) >= "2026-09-30"
+
+
+def expected_counts(label):
+    """(counts per sample, P intervention weeks) the checks expect for this run_label: the reviewer's block-run pins, or for the dated run those
+    pins with BLOCK_ONLY_WEEKS moved from intervention to kept in every sample that contains them."""
+    if not dated_run(label):
+        return EXPECTED_COUNTS, EXPECTED_P_IV
+    out = {}
+    for nm, a, b in SAMPLES:
+        k = sum(1 for w in BLOCK_ONLY_WEEKS if a.isoformat() <= w <= b.isoformat())
+        wk, iv, st, kept = EXPECTED_COUNTS[nm]
+        out[nm] = (wk, iv - k, st, kept + k)
+    return out, tuple(w for w in EXPECTED_P_IV if w not in BLOCK_ONLY_WEEKS)
 MARKER_WEEK = dt.date(2025, 4, 11)
 
 # ------------------------------------------------------------------------------------------------------------------------
@@ -1667,17 +1689,19 @@ def run_checks(inp, rows, ctx, selfcheck, incomplete, quar, affected):
     # C08 sample P
     cn = ctx["counts"]
     P = cn["P"]
-    exp_p = EXPECTED_COUNTS["P"]
-    ok8 = (P["weeks"], P["iv"], P["stale"], P["kept"]) == exp_p and tuple(P["iv_weeks"]) == EXPECTED_P_IV and tuple(P["stale_weeks"]) == EXPECTED_P_STALE
-    add("C08", "Sample P: weekly changes, intervention weeks, stale weeks, kept", "130; 10 (%s); 2 (%s); 118" % (", ".join(EXPECTED_P_IV), ", ".join(EXPECTED_P_STALE)),
+    exp_counts, exp_iv = expected_counts(iv_inputs(inp)[2])
+    exp_p = exp_counts["P"]
+    ok8 = (P["weeks"], P["iv"], P["stale"], P["kept"]) == exp_p and tuple(P["iv_weeks"]) == exp_iv and tuple(P["stale_weeks"]) == EXPECTED_P_STALE
+    add("C08", "Sample P: weekly changes, intervention weeks, stale weeks, kept", "%d; %d (%s); 2 (%s); %d" % (exp_p[0], exp_p[1], ", ".join(exp_iv),
+                                                                                                       ", ".join(EXPECTED_P_STALE), exp_p[3]),
         "%d; %d (%s); %d (%s); %d" % (P["weeks"], P["iv"], ", ".join(P["iv_weeks"]), P["stale"], ", ".join(P["stale_weeks"]), P["kept"]), "PASS" if ok8 else "FAIL")
     parts = []
     allok = True
     for nm in ("FULL", "W1", "W2", "W3"):
-        c, e = cn[nm], EXPECTED_COUNTS[nm]
+        c, e = cn[nm], exp_counts[nm]
         parts.append("%s %d/%d iv/%d stale/%d kept" % (nm, c["weeks"], c["iv"], c["stale"], c["kept"]))
         allok &= (c["weeks"], c["iv"], c["stale"], c["kept"]) == e
-    add("C08b", "Other samples: weeks / intervention weeks / stale weeks / kept (reviewer's counts: FULL 455/13/6/436, W1 209/0/4/205, W2 104/3/0/101, W3 142/10/2/130)",
+    add("C08b", "Other samples: weeks / intervention weeks / stale weeks / kept (reviewer's counts: FULL 455/13/6/436, W1 209/0/4/205, W2 104/3/0/101, W3 142/10/2/130; the dated run moves 14, 21 and 28 Aug 2026 from intervention to kept in FULL and W3)",
         "reviewer's counts", "; ".join(parts), "PASS" if allok else "WARN")
     # C09 telescoping identity (INFO)
     Pw = week_rows(rows, "P")
@@ -1814,8 +1838,9 @@ def render_readme(ctx, log_rows):
     full = next(r for r in ctx["regs"] if r["pair"] == "yen" and r["sample"] == "FULL" and r["spec"] == "gap2" and r["variant"] == "base")
     slope = next(r for r in ctx["regs"] if r["role"] == "SEPARATE")
     diffs = []
+    exp_counts = expected_counts(ctx["dec"]["run_label"])[0]
     for nm, _, _ in SAMPLES:
-        c, e = cn[nm], EXPECTED_COUNTS[nm]
+        c, e = cn[nm], exp_counts[nm]
         if (c["weeks"], c["iv"], c["stale"], c["kept"]) != e:
             diffs.append("%s: weeks %d (reviewer %d), intervention weeks %d (%d), stale weeks %d (%d), kept %d (%d)" %
                          (nm, c["weeks"], e[0], c["iv"], e[1], c["stale"], e[2], c["kept"], e[3]))
@@ -1939,7 +1964,11 @@ def render_readme(ctx, log_rows):
     if diffs:
         w("Counts that differ from the reviewer's (specification 3.5): " + "; ".join(diffs) + ".")
     else:
-        w("Every count matches the reviewer's (specification 3.5): FULL 455 weeks (436 kept), W1 209 (205), W2 104 (101), W3 142 (130), P 130 (118).")
+        tail = "" if not dated_run(ctx["dec"]["run_label"]) else (
+            ", after the dated days of 30 Jul, 31 Jul and 3 Aug 2026 replace the undated block, which returns the weeks ending %s to the kept weeks"
+            % ", ".join(BLOCK_ONLY_WEEKS))
+        w("Every count matches the reviewer's (specification 3.5)%s: %s." % (tail, ", ".join(
+            "%s %d%s (%d%s)" % (nm, exp_counts[nm][0], " weeks" if nm == "FULL" else "", exp_counts[nm][3], " kept" if nm == "FULL" else "") for nm, _, _ in SAMPLES)))
     w("")
     notes = ctx.get("ecb_notes")
     if notes:
@@ -2673,6 +2702,14 @@ def t_x_iv_runs(ck):
     inp.monthly = covered
     days, blocks, label = iv_inputs(inp)
     ck.eq("a window the quarterly CSV covers is replaced by its dated days", (len(days), blocks, label), (1, [], "csv_through_2026-09-30_blocks_0"))
+    # the checks' pins follow the run: the block run keeps the reviewer's counts; the dated run returns the three block-only weeks
+    ck.eq("the block run expects the reviewer's P counts", expected_counts("csv_through_2026-06-30_blocks_1")[0]["P"], (130, 10, 2, 118))
+    ec, eiv = expected_counts(label)
+    ck.eq("the dated run expects P 130/7/2/121", ec["P"], (130, 7, 2, 121))
+    ck.eq("the dated run expects W3 142/7/2/133 and FULL 455/10/6/439, W1 and W2 unchanged",
+          (ec["W3"], ec["FULL"], ec["W1"], ec["W2"]), ((142, 7, 2, 133), (455, 10, 6, 439), (209, 0, 4, 205), (104, 3, 0, 101)))
+    ck.ok("the dated run's P intervention weeks end at 2026-08-07", eiv[-2:] == ("2026-07-31", "2026-08-07") and len(eiv) == 7, str(eiv))
+    ck.ok("a dated label with blocks still binding keeps the block pins", expected_counts("csv_through_2026-09-30_blocks_1")[0] is EXPECTED_COUNTS)
 
 
 def read_csv_rows_from_text(text):

@@ -1,4 +1,4 @@
-# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-18; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-18; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-18; Bank for International Settlements (stats.bis.org) retrieved 2026-10-18; at most five pinned values per source; project_computation rows are computed by bin/fx_rate_gap.py
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-18, 2026-11-09, 2026-11-10; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-18, 2026-11-09, 2026-11-10; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-18, 2026-11-10; Bank for International Settlements (stats.bis.org) retrieved 2026-10-18, 2026-11-10; at most five pinned values per source; project_computation rows are computed by bin/fx_rate_gap.py
 source,series,pin_date,value,unit
 U.S. Treasury,2 Yr par yield,2023-12-29,4.23,percent
 U.S. Treasury,2 Yr par yield,2024-03-21,4.62,percent
