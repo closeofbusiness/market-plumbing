@@ -1,4 +1,4 @@
-# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19; at most five pinned values per source
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19, 2026-11-06, 2026-11-10; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19, 2026-11-06, 2026-11-10; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19, 2026-11-10; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19, 2026-11-10; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19, 2026-11-10; at most five pinned values per source
 source,series,pin_date,value,unit
 U.S. Treasury,10 Yr par yield,2024-03-21,4.27,percent
 U.S. Treasury,10 Yr par yield,2026-09-18,5.01,percent

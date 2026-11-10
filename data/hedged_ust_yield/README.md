@@ -29,6 +29,7 @@ This folder measures the rolling 3-month carry of a currency-hedged 10-year US T
 | 2026-07 | 4.600 | 3.131 | -1.511 | 0.003 | 3.091 | -0.039 |
 | 2026-08 | 4.684 | 3.214 | -1.431 | 0.003 | 3.256 | 0.042 |
 | 2026-09 | 4.989 | 3.493 | -1.496 | 0.003 | 3.496 | 0.003 |
+| 2026-10 | 5.131 | 3.447 | -1.562 | -0.029 | 3.540 | 0.092 |
 
 **Yen-based investor**, annual means of complete months (the Bank of Japan's terms keep monthly yen figures out of this folder; see below). Variant H3 and the diagnostics (A_hist: the dated overnight rates, no basis; B: the realised overnight rates) are shown where they exist.
 
@@ -47,7 +48,7 @@ This folder measures the rolling 3-month carry of a currency-hedged 10-year US T
 | 2023 | B | -1.295711 | -1.866765 | -5.253244 | 0.000000 | 12 |
 | 2024 | B | -0.758706 | -1.665898 | -4.965909 | 0.000000 | 12 |
 | 2025 | B | 0.543344 | -0.993256 | -3.750229 | 0.000000 | 12 |
-| 2026_ytd | B | 1.450513 | -0.993954 | -2.892311 | 0.000000 | 7 |
+| 2026_ytd | B | 1.511253 | -0.978025 | -2.878848 | 0.000000 | 8 |
 | anchor_2025-03 | B | 0.332657 | -1.188533 | -3.947819 | 0.000000 | 1 |
 
 Validation: the build was compared with hedged yields published by Ginnie Mae, TD Economics and BlackRock (`references.csv`). The test is whether the median gap between this build and the published figures stays within 25 basis points (0.25 percentage points), separately for the two forms (H and P) and the two hedge lengths (3 months and 1 year). Results: H 1y PASS; H 3m PASS; P 1y PASS; P 3m PASS. The rules, including how whole-percent quotes are scored, are in the table's `note` column.
@@ -96,7 +97,7 @@ The Bank of Japan's copyright page allows copying with credit but excludes comme
 
 ## One worked row
 
-`monthly.csv`, euro, H3, 2026-09: 10-year Treasury 4.989048 + rate-gap term -1.496049 + basis term 0.002563 = hedged carry 3.495561. Minus the euro 10-year yield 3.493015, the pickup is 0.002546. The rate-gap term uses the 789 SOFR and 312 euro short-term-rate swap prints and the basis the 40 cross-currency prints of the month (ledger, DTCC).
+`monthly.csv`, euro, H3, 2026-10: 10-year Treasury 5.130952 + rate-gap term -1.561898 + basis term -0.029478 = hedged carry 3.539577. Minus the euro 10-year yield 3.447164, the pickup is 0.092412. The rate-gap term uses the 678 SOFR and 246 euro short-term-rate swap prints and the basis the 32 cross-currency prints of the month (ledger, DTCC).
 
 ## Provenance and terms
 

@@ -1,4 +1,4 @@
-# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19; euro rows only; one row per month and variant; monthly means of daily values (10-year yields, diagnostics) and the ledger's monthly medians (DTCC, THE_ASK.md E-024); euro 10-year yield: derived from ECB statistics (recomputed on a semiannual basis from the ECB AAA Svensson parameters)
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19, 2026-11-06, 2026-11-10; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19, 2026-11-06, 2026-11-10; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19, 2026-11-10; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19, 2026-11-10; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19, 2026-11-10; euro rows only; one row per month and variant; monthly means of daily values (10-year yields, diagnostics) and the ledger's monthly medians (DTCC, THE_ASK.md E-024); euro 10-year yield: derived from ECB statistics (recomputed on a semiannual basis from the ECB AAA Svensson parameters)
 month,pair,variant,role,n_days,partial,qe_turn_early,ust10_pct,home10_pct,rate_gap_term_pp,basis_term_pp,hedged_carry_pct,pickup_pp,form_gap_bp,basis_tenor,hedge_days_mean,n_ois_us,n_ois_home,n_basis
 2019-10,euro,A_rt,DIAGNOSTIC,21,0,0,1.709524,-0.395251,-2.457927,0.000000,-0.748403,-0.353153,,none,92.000,,,
 2019-10,euro,A_hist,DIAGNOSTIC,21,0,0,1.709524,-0.395251,-2.451913,0.000000,-0.742389,-0.347139,,none,92.000,,,
@@ -409,7 +409,7 @@ month,pair,variant,role,n_days,partial,qe_turn_early,ust10_pct,home10_pct,rate_g
 2026-07,euro,A_rt,DIAGNOSTIC,22,0,0,4.599545,3.130558,-1.484178,0.000000,3.115368,-0.015190,,none,92.000,,,
 2026-07,euro,A_hist,DIAGNOSTIC,22,0,0,4.599545,3.130558,-1.483152,0.000000,3.116393,-0.014164,,none,92.000,,,
 2026-07,euro,A_effr,DIAGNOSTIC,22,0,0,4.599545,3.130558,-1.492511,0.000000,3.107034,-0.023523,,none,92.000,,,
-2026-07,euro,B,DIAGNOSTIC,10,0,0,4.541000,3.070190,-1.488171,0.000000,3.052829,-0.017361,,none,92.000,,,
+2026-07,euro,B,DIAGNOSTIC,22,0,0,4.599545,3.130558,-1.491252,0.000000,3.108293,-0.022264,,none,92.000,,,
 2026-08,euro,H3,HEADLINE,21,0,0,4.684286,3.214318,-1.430795,0.002561,3.256051,0.041733,-3.618,3m,91.952,485,152,16
 2026-08,euro,P3,MAIN,21,0,0,4.684286,3.214318,-1.394550,0.002500,3.292236,0.077918,-3.618,3m,91.952,485,152,16
 2026-08,euro,H12,MAIN,21,0,0,4.684286,3.214318,-1.383911,-0.013803,3.286572,0.072253,-0.062,1y,365.000,1292,133,31
@@ -417,6 +417,7 @@ month,pair,variant,role,n_days,partial,qe_turn_early,ust10_pct,home10_pct,rate_g
 2026-08,euro,A_rt,DIAGNOSTIC,21,0,0,4.684286,3.214318,-1.503102,0.000000,3.181184,-0.033134,,none,91.952,,,
 2026-08,euro,A_hist,DIAGNOSTIC,21,0,0,4.684286,3.214318,-1.504036,0.000000,3.180250,-0.034068,,none,91.952,,,
 2026-08,euro,A_effr,DIAGNOSTIC,21,0,0,4.684286,3.214318,-1.491774,0.000000,3.192512,-0.021806,,none,91.952,,,
+2026-08,euro,B,DIAGNOSTIC,4,0,0,4.662500,3.145354,-1.498403,0.000000,3.164097,0.018742,,none,92.000,,,
 2026-09,euro,H3,HEADLINE,21,0,1,4.989048,3.493015,-1.496049,0.002563,3.495561,0.002546,-3.919,3m,91.000,789,312,40
 2026-09,euro,P3,MAIN,21,0,1,4.989048,3.493015,-1.456800,0.002500,3.534748,0.041733,-3.919,3m,91.000,789,312,40
 2026-09,euro,H12,MAIN,21,0,1,4.989048,3.493015,-1.408399,-0.016279,3.564370,0.071355,0.239,1y,365.000,1744,227,95
@@ -424,6 +425,13 @@ month,pair,variant,role,n_days,partial,qe_turn_early,ust10_pct,home10_pct,rate_g
 2026-09,euro,A_rt,DIAGNOSTIC,21,0,1,4.989048,3.493015,-1.482778,0.000000,3.506270,0.013255,,none,91.000,,,
 2026-09,euro,A_hist,DIAGNOSTIC,21,0,1,4.989048,3.493015,-1.481157,0.000000,3.507891,0.014876,,none,91.000,,,
 2026-09,euro,A_effr,DIAGNOSTIC,21,0,1,4.989048,3.493015,-1.479195,0.000000,3.509852,0.016837,,none,91.000,,,
-2026-10,euro,A_rt,DIAGNOSTIC,11,1,0,5.220909,3.493246,-1.497033,0.000000,3.723876,0.230630,,none,92.000,,,
-2026-10,euro,A_hist,DIAGNOSTIC,11,1,0,5.220909,3.493246,-1.495906,0.000000,3.725003,0.231757,,none,92.000,,,
-2026-10,euro,A_effr,DIAGNOSTIC,11,1,0,5.220909,3.493246,-1.493091,0.000000,3.727818,0.234572,,none,92.000,,,
+2026-10,euro,H3,HEADLINE,21,0,0,5.130952,3.447164,-1.561898,-0.029478,3.539577,0.092412,-4.223,3m,92.000,678,246,32
+2026-10,euro,P3,MAIN,21,0,0,5.130952,3.447164,-1.520400,-0.028750,3.581802,0.134638,-4.223,3m,92.000,678,246,32
+2026-10,euro,H12,MAIN,21,0,0,5.130952,3.447164,-1.579232,-0.040103,3.511617,0.064453,0.211,1y,365.000,1656,149,153
+2026-10,euro,P12,MAIN,21,0,0,5.130952,3.447164,-1.581445,-0.040000,3.509507,0.062343,0.211,1y,365.000,1656,149,153
+2026-10,euro,A_rt,DIAGNOSTIC,21,0,0,5.130952,3.447164,-1.508230,0.000000,3.622722,0.175558,,none,92.000,,,
+2026-10,euro,A_hist,DIAGNOSTIC,21,0,0,5.130952,3.447164,-1.510635,0.000000,3.620317,0.173153,,none,92.000,,,
+2026-10,euro,A_effr,DIAGNOSTIC,21,0,0,5.130952,3.447164,-1.491972,0.000000,3.638981,0.191816,,none,92.000,,,
+2026-11,euro,A_rt,DIAGNOSTIC,6,1,0,4.890000,3.312217,-1.546475,0.000000,3.343525,0.031308,,none,92.000,,,
+2026-11,euro,A_hist,DIAGNOSTIC,6,1,0,4.890000,3.312217,-1.535482,0.000000,3.354518,0.042302,,none,92.000,,,
+2026-11,euro,A_effr,DIAGNOSTIC,6,1,0,4.890000,3.312217,-1.487371,0.000000,3.402629,0.090412,,none,92.000,,,

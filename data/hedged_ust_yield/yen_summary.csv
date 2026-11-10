@@ -1,4 +1,4 @@
-# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19; yen annual means of complete months and two anchor months only (Bank of Japan terms); the credit is in each row
+# source: U.S. Department of the Treasury (home.treasury.gov) retrieved 2026-10-19, 2026-11-06, 2026-11-10; Ministry of Finance Japan (www.mof.go.jp) retrieved 2026-10-19, 2026-11-06, 2026-11-10; European Central Bank (data-api.ecb.europa.eu) retrieved 2026-10-19, 2026-11-10; Federal Reserve Bank of New York (markets.newyorkfed.org) retrieved 2026-10-19, 2026-11-10; Bank of Japan (www.stat-search.boj.or.jp) retrieved 2026-10-19, 2026-11-10; yen annual means of complete months and two anchor months only (Bank of Japan terms); the credit is in each row
 period,variant,statistic,value,credit
 2025,H3,hedged_carry_mean,0.318447,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 2025,H3,pickup_mean,-1.269988,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
@@ -110,11 +110,11 @@ L_2026-09,A_hist,n_months,1,"This service uses the API provided by the ""Bank of
 2025,B,rate_gap_term_mean,-3.750229,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 2025,B,basis_term_mean,0.000000,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 2025,B,n_months,12,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
-2026_ytd,B,hedged_carry_mean,1.450513,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
-2026_ytd,B,pickup_mean,-0.993954,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
-2026_ytd,B,rate_gap_term_mean,-2.892311,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
+2026_ytd,B,hedged_carry_mean,1.511253,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
+2026_ytd,B,pickup_mean,-0.978025,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
+2026_ytd,B,rate_gap_term_mean,-2.878848,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 2026_ytd,B,basis_term_mean,0.000000,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
-2026_ytd,B,n_months,7,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
+2026_ytd,B,n_months,8,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 anchor_2025-03,B,hedged_carry_mean,0.332657,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 anchor_2025-03,B,pickup_mean,-1.188533,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
 anchor_2025-03,B,rate_gap_term_mean,-3.947819,"This service uses the API provided by the ""Bank of Japan Time-Series Data Search."" The Bank of Japan does not guarantee the content of the service."
