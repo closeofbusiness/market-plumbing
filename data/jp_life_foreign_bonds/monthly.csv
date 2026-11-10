@@ -1,4 +1,4 @@
-# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19, 2026-11-10. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
 month,instrument,sector,acquisition_100m_yen,disposal_100m_yen,net_100m_yen,basis
 2005-01,ltd,designated_reporters_total,89060,83172,5888,old_to_2013
 2005-01,ltd,banks_banking,39989,39692,297,old_to_2013
@@ -6264,3 +6264,27 @@ month,instrument,sector,acquisition_100m_yen,disposal_100m_yen,net_100m_yen,basi
 2026-09,all,life,20525,22796,-2271,new_from_2014
 2026-09,all,nonlife,3,5,-2,new_from_2014
 2026-09,all,inv_trust,68960,56692,12268,new_from_2014
+2026-10,ltd,designated_reporters_total,403318,398746,4572,new_from_2014
+2026-10,ltd,banks_banking,36628,44963,-8335,new_from_2014
+2026-10,ltd,trust_accounts,73506,65732,7774,new_from_2014
+2026-10,ltd,life,7029,6407,623,new_from_2014
+2026-10,ltd,nonlife,0,13,-13,new_from_2014
+2026-10,ltd,inv_trust,13923,14110,-187,new_from_2014
+2026-10,equity_funds,designated_reporters_total,160420,145835,14586,new_from_2014
+2026-10,equity_funds,banks_banking,13173,6225,6949,new_from_2014
+2026-10,equity_funds,trust_accounts,54005,54314,-308,new_from_2014
+2026-10,equity_funds,life,7332,7559,-227,new_from_2014
+2026-10,equity_funds,nonlife,3,0,3,new_from_2014
+2026-10,equity_funds,inv_trust,48735,38524,10211,new_from_2014
+2026-10,std,designated_reporters_total,39964,39598,367,new_from_2014
+2026-10,std,banks_banking,2999,5597,-2598,new_from_2014
+2026-10,std,trust_accounts,2751,2687,64,new_from_2014
+2026-10,std,life,8327,7552,775,new_from_2014
+2026-10,std,nonlife,0,0,0,new_from_2014
+2026-10,std,inv_trust,3374,2562,812,new_from_2014
+2026-10,all,designated_reporters_total,603703,584178,19525,new_from_2014
+2026-10,all,banks_banking,52800,56785,-3984,new_from_2014
+2026-10,all,trust_accounts,130262,122732,7530,new_from_2014
+2026-10,all,life,22688,21517,1170,new_from_2014
+2026-10,all,nonlife,3,13,-9,new_from_2014
+2026-10,all,inv_trust,66032,55196,10837,new_from_2014

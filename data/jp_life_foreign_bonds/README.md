@@ -6,11 +6,11 @@ Japanese life insurers' monthly acquisitions and dispositions of foreign bonds i
 
 ## The latest result
 
-Life insurers, long-term debt (monthb3), Final Update 2026-10-08, latest published month 2026-09. Amounts are ¥ billion (the file's ¥100 million divided by 10); plus is net acquisition and minus is net disposition. `basis` is explained under the breaks below. The rows are sums of the months in the file.
+Life insurers, long-term debt (monthb3), Final Update 2026-11-10, latest published month 2026-10. Amounts are ¥ billion (the file's ¥100 million divided by 10); plus is net acquisition and minus is net disposition. `basis` is explained under the breaks below. The rows are sums of the months in the file.
 
 The windows used below and in `questions.csv`: W0 is 2014 to 2018, W1 is 2019 to 2023, W2 runs from March 2024 to the latest month, and W2b from April 2024.
 
-Life insurers' net, long-term debt: +19.04 trillion yen over W0 (18 of 60 months of net disposition), −14.23 trillion yen over W1 (39 of 60) and −3.84 trillion yen over W2 (23 of 31).
+Life insurers' net, long-term debt: +19.04 trillion yen over W0 (18 of 60 months of net disposition), −14.23 trillion yen over W1 (39 of 60) and −3.78 trillion yen over W2 (23 of 32).
 
 | period type | period | basis | months | acquisitions | dispositions | net |
 |---|---|---|---:|---:|---:|---:|
@@ -38,10 +38,10 @@ Life insurers' net, long-term debt: +19.04 trillion yen over W0 (18 of 60 months
 | FY | 2023 | new_from_2014 | 12 | 11428.9 | 13262.8 | -1834.0 |
 | FY | 2024 | new_from_2014 | 12 | 11139.5 | 13028.8 | -1889.7 |
 | FY | 2025 | new_from_2014 | 12 | 9599.3 | 10809.8 | -1210.3 |
-| CY_YTD | 2026-01..2026-09 | new_from_2014 | 9 | 6870.0 | 8627.1 | -1757.0 |
-| FY_YTD | 2026-04..2026-09 | new_from_2014 | 6 | 4199.3 | 4739.5 | -540.1 |
+| CY_YTD | 2026-01..2026-10 | new_from_2014 | 10 | 7572.9 | 9267.8 | -1694.7 |
+| FY_YTD | 2026-04..2026-10 | new_from_2014 | 7 | 4902.2 | 5380.2 | -477.8 |
 
-**The October 2026 rule.** The Net cell of life insurers' long-term debt for October 2026 is compared with a rule registered on 2026-10-19, before the print: point −¥78.2 billion, range −¥288.6 billion to +¥74.6 billion (the 24 monthly Net cells from 2024-10 to 2026-09; point is the median, range the 3rd to the 22nd order statistic; a print equal to an edge is inside). Status: PENDING: October 2026 is not yet published in any cached vintage; MoF publishes it on 10 Nov 2026 at 08:50 JST. This is a frozen rule on this net, redemptions included. It is not a forecast of sales.
+**The October 2026 rule.** The Net cell of life insurers' long-term debt for October 2026 is compared with a rule registered on 2026-10-19, before the print: point −¥78.2 billion, range −¥288.6 billion to +¥74.6 billion (the 24 monthly Net cells from 2024-10 to 2026-09; point is the median, range the 3rd to the 22nd order statistic; a print equal to an edge is inside). Status: vintage 2026-11-10: print 623 (100m yen), status INSIDE, of record yes This is a frozen rule on this net, redemptions included. It is not a forecast of sales.
 
 ## Defined terms
 
@@ -90,10 +90,10 @@ Life insurers' net, long-term debt: +19.04 trillion yen over W0 (18 of 60 months
 
 ## Provenance
 
-Source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+Source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19, 2026-11-10. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
 
 Bank of Japan, Statement on Monetary Policy, on the dates in `boj_dates.csv`; only dates and phrases under 15 words are cited.
 
 Build decisions, including two fixes made after the first build, are listed in [SOURCES.md](SOURCES.md).
 
-Vintages cached (file, Final Update, sha256 first 12): monthb3 2026-10-08 5c70e53f3c95; monthb1 2026-10-08 f9d96ca4553f; monthb2 2026-10-08 eb8570560c63; monthb4 2026-10-08 751df62b428c.
+Vintages cached (file, Final Update, sha256 first 12): monthb3 2026-10-08 5c70e53f3c95; monthb3 2026-11-10 5e777489f70f; monthb1 2026-10-08 f9d96ca4553f; monthb1 2026-11-10 75f39d8545b8; monthb2 2026-10-08 eb8570560c63; monthb2 2026-11-10 42b996f4d8f8; monthb4 2026-10-08 751df62b428c; monthb4 2026-11-10 d8a84b7bbd08.

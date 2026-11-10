@@ -1,4 +1,4 @@
-# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19, 2026-11-10. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
 # credit: Bank of Japan, Statement on Monetary Policy, on the dates shown
 decision_date,effective_date,month,action,phrase,url,sha256
 2013-04-04,,2013-04,introduces,Quantitative and Qualitative Monetary Easing,https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2013/k130404a.pdf,808a67d9016cf22ea6e4129f2084a5a0f2ca63e8b4af8d832aacf8d90fac3d0f

@@ -1,4 +1,4 @@
-# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
+# source: Ministry of Finance Japan, "International Transactions in Securities" (designated reporters, monthly; monthb1-b4.csv), https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/, PDL1.0, retrieved 2026-10-19, 2026-11-10. Processed by the Third Derivative project (re-laid out and summed; values unchanged).
 utc_time,host,path,status,bytes,sha256
 2026-10-19T13:24:11.726Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb3.csv,200,113821,5c70e53f3c95d5c7cdb5041195d386cec46e67860cd142e6f3f825bb72d26cc1
 2026-10-19T13:24:13.781Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb1.csv,200,116077,f9d96ca4553ff7dbe211fbc2d2667276dc25e027cc8f54906ca8290602d28584
@@ -16,3 +16,7 @@ utc_time,host,path,status,bytes,sha256
 2026-10-19T13:24:38.418Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2025/k251219a.pdf,200,228103,bcef45990da1895de03cb336cb4fdb17e4155df51f3f4b6def60afdea7968e4e
 2026-10-19T13:24:40.470Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2026/k260616a.pdf,200,190988,93fe8f756750d1b38be0b42887dddb69f78bfc00b701c8edc77052101cf9a399
 2026-10-19T13:24:42.525Z,www.boj.or.jp,/en/mopo/mpmdeci/mpr_2026/k260918a.pdf,200,208861,36d7aa63ff283e25dcc07bc1f6e0caaad8e6764d30cf22433b5c2dd0b6bda391
+2026-11-10T05:26:21.427Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb3.csv,200,114135,5e777489f70f909edb5819c0ec9f8c7ed1850db52ca3ae7bd53b789218bfe179
+2026-11-10T05:26:23.478Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb1.csv,200,116408,75f39d8545b8af53a8d304e5ae6fde280df24d25e3dc3650dc3baf142ca51216
+2026-11-10T05:26:25.956Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb2.csv,200,96501,42b996f4d8f858d7d54d6d56c5ffd4738961fc3ae605b90355bc265e4bb5e77a
+2026-11-10T05:26:29.380Z,www.mof.go.jp,/policy/international_policy/reference/itn_transactions_in_securities/monthb4.csv,200,84845,d8a84b7bbd08bdd1b6ab69fcd3c36e7a2b596ac18428cfe7bd14dc3d5f0cb2a2
