@@ -9,8 +9,9 @@ Specification: _research/2026-10-18-FX-Rate-Gap-Weekly-Spec.md (with its Amendme
 its section 4 was written before any FX series or coefficient was computed, and `build` applies it once, as written.
 
 WHAT TOUCHES THE NETWORK. Only `fetch`. Hosts: home.treasury.gov, www.mof.go.jp, stats.bis.org, data-api.ecb.europa.eu and
-api.statistiken.bundesbank.de (any other host, FRED included, is refused before a request is made, and each request must be one of the 19 exact
-URLs of the request table). GET only; one request at a time; at least 2 s between request starts, remembered across invocations in
+api.statistiken.bundesbank.de (any other host, FRED included, is refused before a request is made, and each request must be one of the 28 exact
+URLs of the request table: 19 files, of which the ECB yield-curve file is downloaded as ten requests, one per series, and joined into one file,
+written only if all ten arrive and pass). GET only; one request at a time; at least 2 s between request starts, remembered across invocations in
 <cache>/.last_request; at most 30 requests per run; the CLAUDE.md non-SEC identification string (no address, no name); no redirect is followed.
 Any HTTP status other than 200, or a body that fails its content test, writes <default cache>/STOP and ends the run. While STOP exists every
 fetch refuses; only a person deletes it. A socket fault ends the invocation without latching. Nothing retries. Every request is one row of
@@ -61,8 +62,13 @@ TSY_PATH = ("/resource-center/data-chart-center/interest-rates/daily-treasury-ra
             "?type=daily_treasury_yield_curve&field_tdr_date_value={Y}&page&_format=csv")
 FIRST_FETCH_YEAR, LAST_FETCH_YEAR = 2017, 2026
 JGB_PATH = "/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
-YC_PATH = ("/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.BETA0+BETA1+BETA2+BETA3+TAU1+TAU2+SR_2Y+SR_10Y+PY_2Y+PY_10Y"
-           "?format=csvdata&startPeriod=2017-12-01")
+YC_SERIES = ("BETA0", "BETA1", "BETA2", "BETA3", "TAU1", "TAU2", "SR_2Y", "SR_10Y", "PY_2Y", "PY_10Y")
+YC_BASE = "/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM."
+YC_TAIL = "?format=csvdata&startPeriod=2017-12-01"
+# The whole file as one query. The ECB answered it with HTTP 504 on 9 and 10 Nov 2026, so it is no longer sent: it names the data in SOURCES.md only.
+YC_PATH = YC_BASE + "+".join(YC_SERIES) + YC_TAIL
+# What is sent instead: one request per series, joined by merge_yc_pieces into the same cache file.
+YC_PIECES = tuple(YC_BASE + k + YC_TAIL for k in YC_SERIES)
 BIS_PATH = "/api/v2/data/dataflow/BIS/WS_XRU/1.0/D.JP+XM.JPY+EUR.A?startPeriod=2017-12-01&format=csv"
 EXR_PATH = "/service/data/EXR/D.JPY+USD.EUR.SP00.A?format=csvdata&startPeriod=2017-12-01"
 FEIO_PATH = "/english/policy/international_policy/reference/feio/foreign_exchange_intervention_operations.csv"
@@ -165,13 +171,14 @@ assert_ua()
 
 
 def request_table():
-    """The 19 requests of the spec (section 2), in fetch order: key, host, target (path and query), cache file, kind, argument, immutable."""
+    """The 19 files of the spec (section 2), in fetch order: key, host, target (path and query), cache file, kind, argument, immutable.
+    The "yc" file has no single target: `pieces` lists its ten requests (one per series); every other file has pieces=None."""
     reqs = []
     for y in range(FIRST_FETCH_YEAR, LAST_FETCH_YEAR + 1):
         reqs.append(dict(key="tsy%d" % y, host=TSY_HOST, target=TSY_PATH.format(Y=y), file="tsy_%d.csv" % y, kind="tsy", arg=y,
                          immutable=y < LAST_FETCH_YEAR))
     reqs += [dict(key="jgb", host=MOF_HOST, target=JGB_PATH, file="mof_jgbcme_all.csv", kind="jgb", arg=None, immutable=False),
-             dict(key="yc", host=ECB_HOST, target=YC_PATH, file="ecb_yc.csv", kind="yc", arg=None, immutable=False),
+             dict(key="yc", host=ECB_HOST, target=None, file="ecb_yc.csv", kind="yc", arg=None, immutable=False, pieces=YC_PIECES),
              dict(key="bis", host=BIS_HOST, target=BIS_PATH, file="bis_xru.csv", kind="bis", arg=None, immutable=False),
              dict(key="exr", host=ECB_HOST, target=EXR_PATH, file="ecb_exr.csv", kind="exr", arg=None, immutable=False),
              dict(key="feio", host=MOF_HOST, target=FEIO_PATH, file="mof_feio.csv", kind="feio", arg=None, immutable=False)]
@@ -182,11 +189,11 @@ def request_table():
     return reqs
 
 
-ALLOWED = frozenset((r["host"], r["target"]) for r in request_table())
+ALLOWED = frozenset((r["host"], t) for r in request_table() for t in (r.get("pieces") or [r["target"]]))
 
 
 def check_url(url):
-    """Only the 19 exact requests of the table, over https, on the five allowed hosts. Returns (host, target)."""
+    """Only the 28 exact requests of the table (19 files), over https, on the five allowed hosts. Returns (host, target)."""
     p = urlsplit(url)
     host = (p.hostname or "").lower()
     target = p.path + ("?" + p.query if p.query else "")
@@ -197,7 +204,7 @@ def check_url(url):
     if host not in HOST_ALLOW:
         raise Refused("host %s is not on the allowlist" % host)
     if (host, target) not in ALLOWED:
-        raise Refused("that path is not one of the 19 requests of the spec")
+        raise Refused("that path is not one of the 28 requests of the table")
     return host, target
 
 
@@ -472,6 +479,61 @@ def parse_bundesbank(text, min_rows=1):
     return out
 
 
+def merge_yc_pieces(pieces):
+    """Join the ten one-series downloads into the one file a single request used to return: one header line, then every row of every piece.
+    pieces: [(series, bytes)] in YC_SERIES order. Rows are sorted by KEY then TIME_PERIOD (the parser does not depend on row order: it keys by date
+    and data type; this order only makes the cache file the same whatever order the pieces arrive in). Raises DataError on anything odd; the
+    caller writes the result only if this returns."""
+    if [k for k, _ in pieces] != list(YC_SERIES):
+        raise DataError("yield-curve pieces are not exactly the ten series")
+    header, rows = None, []
+    for series, body in pieces:
+        rd = csv.reader(io.StringIO(decode_text(body)))
+        h = next(rd, None)
+        if not h:
+            raise DataError("empty ECB piece %s" % series)
+        if header is None:
+            header = h
+        elif h != header:
+            raise DataError("ECB piece %s has a different header" % series)
+        try:
+            ik, id_ = header.index("KEY"), header.index("TIME_PERIOD")
+        except ValueError:
+            raise DataError("ECB yield-curve header")
+        n = 0
+        for r in rd:
+            if not r:
+                continue
+            if r[ik] != YC_PREFIX + series:
+                raise DataError("ECB piece %s holds series key %r" % (series, r[ik]))
+            rows.append(r)
+            n += 1
+        if n == 0:
+            raise DataError("ECB piece %s has no rows" % series)
+    if M("yc_drop_piece"):
+        rows = [r for r in rows if r[ik] != YC_PREFIX + YC_SERIES[-1]]
+    rows.sort(key=lambda r: (r[ik], r[id_]))
+    out = io.StringIO()
+    w = csv.writer(out, lineterminator="\n")
+    w.writerow(header)
+    for r in rows:
+        w.writerow(r)
+    if M("yc_dup_header"):
+        w.writerow(header)
+    return out.getvalue().encode("utf-8")
+
+
+def yc_piece_problem(series, body):
+    """The content test of one one-series download: None if it is that series with a full history, else the reason."""
+    try:
+        yc = parse_ecb_yc(decode_text(body), min_dates=2000)
+        if any(set(p) != {series} for p in yc.values()):
+            raise DataError("rows of another series than %s" % series)
+    except (DataError, ValueError, UnicodeDecodeError, KeyError) as e:
+        return "%s: %s" % (type(e).__name__, e)
+    return None
+
+
 def body_problem(kind, arg, body):
     """The content test of a downloaded body: None if it is the expected file, else the reason."""
     try:
@@ -641,6 +703,8 @@ class Fetcher:
     def fetch_one(self, req):
         """Returns an outcome word; raises Latched / SocketFault / MaxRequests / Refused."""
         path = os.path.join(self.cache, req["file"])
+        if req.get("pieces"):
+            return self._fetch_pieces(req, path)
         if os.path.exists(path) and (req["immutable"] or self._done_today(req["host"], req["target"])):
             return "cached"
         self.check_stop()
@@ -662,6 +726,47 @@ class Fetcher:
         os.makedirs(self.cache, exist_ok=True)
         with open(path + ".part", "wb") as fh:
             fh.write(body)
+        os.replace(path + ".part", path)
+        return "saved"
+
+    def _fetch_pieces(self, req, path):
+        """One file, several requests (the ECB yield curve, one series each). Each piece is checked as it arrives; the joined file is checked as a
+        whole; the cache file is written once, at the end, and never when any piece failed. A failed piece latches exactly as a failed single request."""
+        if os.path.exists(path) and all(self._done_today(req["host"], t) for t in req["pieces"]):
+            return "cached"
+        self.check_stop()
+        got = []
+        for series, target in zip(YC_SERIES, req["pieces"]):
+            status, body, started = self._get(req["host"], target)
+            if status != 200:
+                self._log(started, req["host"], target, status, "", "")
+                if M("yc_write_partial") and got:             # mutant: keep what arrived so far
+                    with open(path, "wb") as fh:
+                        fh.write(b"".join(b for _, b in got))
+                if status // 100 == 3:
+                    if not M("no_latch_redirect"):
+                        self._latch("HTTP %d (a redirect, not followed) for %s" % (status, target[:80]))
+                elif not M("no_latch_non200"):
+                    self._latch("HTTP %d for %s" % (status, target[:80]))
+                return "refused_unlatched"
+            problem = "body larger than the cap" if body is None else yc_piece_problem(series, body)
+            self._log(started, req["host"], target, status, len(body or b""), sha256_of(body or b""))
+            if problem:
+                if not M("no_latch_bad_body"):
+                    self._latch("200 but not the expected file (%s) for %s" % (problem, target[:80]))
+                return "refused_unlatched"
+            got.append((series, body))
+        try:
+            merged = merge_yc_pieces(got)
+        except DataError as e:
+            merged, problem = None, "DataError: %s" % e
+        else:
+            problem = body_problem(req["kind"], req["arg"], merged)
+        if problem:
+            self._latch("the ten pieces do not join into the expected file (%s)" % problem)
+        os.makedirs(self.cache, exist_ok=True)
+        with open(path + ".part", "wb") as fh:
+            fh.write(merged)
         os.replace(path + ".part", path)
         return "saved"
 
@@ -1737,8 +1842,8 @@ def render_readme(ctx, log_rows):
     w("## Commands")
     w("")
     w("```")
-    w("python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X6 added by the builder; every mutant must be caught")
-    w("python3 bin/fx_rate_gap.py fetch      # the only network command: 19 requests, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP")
+    w("python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X7 added by the builder; every mutant must be caught")
+    w("python3 bin/fx_rate_gap.py fetch      # the only network command: 28 requests for 19 files, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP")
     w("python3 bin/fx_rate_gap.py build      # offline: writes the files in this folder; a second run is byte-identical")
     w("```")
     w("")
@@ -1868,7 +1973,7 @@ def render_sources(log_rows):
          "Public Data License 1.0, with numerical data outside copyright (as relayed in the specification). The Japan Securities Dealers Association's rights "
          "behind the yields were not read.", "Source: Ministry of Finance Japan, Interest Rate (JGB constant maturity) and Foreign Exchange Intervention Operations."),
         ("European Central Bank (data-api.ecb.europa.eu)", ECB_HOST,
-         "https://data-api.ecb.europa.eu" + YC_PATH + "; https://data-api.ecb.europa.eu" + EXR_PATH,
+         "https://data-api.ecb.europa.eu" + YC_PATH + " (downloaded as ten requests, one per series, and joined); https://data-api.ecb.europa.eu" + EXR_PATH,
          "Reuse with the source named, unmodified (as relayed in the specification). The semiannual par yield is a project computation from the ECB's "
          "parameters, not an ECB statistic. Data note: the euro gap uses the zero curve built from those parameters (it reproduces the published zero yields, "
          "SR, to 1e-10 on every date but one), not the ECB's published par yields (PY), which do not follow the parameters before 2024; `checks.csv` C05 "
@@ -2579,6 +2684,99 @@ def t_x_stop(ck):
     ck.raises("an existing STOP file blocks every fetch", Latched, lambda: fe.fetch_one(request_table()[9]))
 
 
+def yc_piece_body(series, n=2005):
+    lines = ["KEY,FREQ,DATA_TYPE_FM,TIME_PERIOD,OBS_VALUE"]
+    for i in range(n):
+        lines.append("%s%s,B,%s,%s,%.4f" % (YC_PREFIX, series, series, (dt.date(2018, 1, 1) + dt.timedelta(days=i)).isoformat(), 1.0 + i / 1000.0))
+    return ("\n".join(lines) + "\n").encode()
+
+
+def t_x_yc_merge(ck):
+    n = 2005
+    seen = []
+
+    def series_of(target):
+        return target[len(YC_BASE):target.index("?")]
+
+    def good(host, target, headers, timeout, cap):
+        seen.append(target)
+        return 200, yc_piece_body(series_of(target), n)
+
+    yc = [r for r in request_table() if r["key"] == "yc"][0]
+    ck.eq("the yield-curve file is requested as ten single-series URLs", [series_of(t) for t in yc.get("pieces") or []], list(YC_SERIES))
+    ck.ok("the one-query URL is no longer in the request table", ("data-api.ecb.europa.eu", YC_PATH) not in ALLOWED
+          and all(("data-api.ecb.europa.eu", t) in ALLOWED for t in yc.get("pieces") or []))
+    # (a) all ten arrive: one header, every row of every piece, order stable
+    tmp = tempfile.mkdtemp(prefix="fxst_")
+    fe, clock = fx_fetcher(tmp, good)
+    try:
+        out = fe.fetch_one(yc)
+    except (Latched, DataError) as e:
+        out = "raised %s: %s" % (type(e).__name__, e)
+    ck.eq("ten pieces are fetched and saved as one file", out, "saved")
+    ck.eq("ten requests were sent", fe.requests, 10)
+    path = os.path.join(tmp, "cache", "ecb_yc.csv")
+    text = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+    lines = text.splitlines()
+    ck.eq("exactly one header line", sum(1 for ln in lines if ln.startswith("KEY,")), 1)
+    ck.eq("the header is the first line", lines[:1], ["KEY,FREQ,DATA_TYPE_FM,TIME_PERIOD,OBS_VALUE"])
+    ck.eq("every row of every piece is there", len(lines), 1 + 10 * n)
+    per_key = {}
+    for ln in lines[1:]:
+        per_key[ln.split(",")[0]] = per_key.get(ln.split(",")[0], 0) + 1
+    ck.eq("each series has all its rows", sorted(per_key.items()), sorted((YC_PREFIX + k, n) for k in YC_SERIES))
+    ck.eq("rows are sorted by KEY then TIME_PERIOD", lines[1:], sorted(lines[1:], key=lambda ln: (ln.split(",")[0], ln.split(",")[3])))
+    ck.eq("the joined file reads as 2005 dates with all ten values", sorted({len(v) for v in parse_ecb_yc(text).values()}), [10])
+    pieces = [(k, yc_piece_body(k, n)) for k in YC_SERIES]
+    ck.ok("the saved file is exactly the join of the ten pieces", text != "" and merge_yc_pieces(pieces) == open(path, "rb").read())
+    ck.raises("nine pieces do not join", DataError, lambda: merge_yc_pieces(pieces[:-1]))
+    ck.raises("a piece holding another series does not join", DataError,
+              lambda: merge_yc_pieces(pieces[:-1] + [("PY_10Y", yc_piece_body("PY_2Y", n))]))
+    starts = []
+    # (b) a failed piece: nothing is written, STOP is latched
+    for label, fail in (("HTTP 504", lambda t: (504, b"")), ("a 200 with no rows", lambda t: (200, b"KEY,FREQ,DATA_TYPE_FM,TIME_PERIOD,OBS_VALUE\n")),
+                        ("a 200 that is not the file", lambda t: (200, b"<html>busy</html>"))):
+        def opener(host, target, headers, timeout, cap, fail=fail):
+            return fail(target) if series_of(target) == "BETA2" else (200, yc_piece_body(series_of(target), n))
+        tmp = tempfile.mkdtemp(prefix="fxst_")
+        fe, _ = fx_fetcher(tmp, opener)
+        try:
+            fe.fetch_one(yc)
+            latched = False
+        except Latched:
+            latched = True
+        c = os.path.join(tmp, "cache")
+        ck.ok("%s on one piece latches STOP" % label, latched and os.path.exists(os.path.join(c, "STOP")))
+        ck.ok("%s on one piece leaves no ecb_yc.csv (and no .part)" % label,
+              not os.path.exists(os.path.join(c, "ecb_yc.csv")) and not os.path.exists(os.path.join(c, "ecb_yc.csv.part")))
+        ck.eq("%s on the third piece ends the run after three requests" % label, fe.requests, 3)
+    def sock(host, target, headers, timeout, cap):
+        if series_of(target) == "SR_2Y":
+            raise SocketFault("timeout")
+        return 200, yc_piece_body(series_of(target), n)
+    tmp = tempfile.mkdtemp(prefix="fxst_")
+    fe, _ = fx_fetcher(tmp, sock)
+    try:
+        fe.fetch_one(yc)
+        ck.ok("a socket fault on one piece ends the run", False, "no exception")
+    except SocketFault:
+        c = os.path.join(tmp, "cache")
+        ck.ok("a socket fault on one piece writes no file and does not latch",
+              not os.path.exists(os.path.join(c, "ecb_yc.csv")) and not os.path.exists(os.path.join(c, "STOP")))
+    # pacing: starts at least 2 s apart across the ten requests
+    clock = FakeClock()
+    def timed(host, target, headers, timeout, cap):
+        starts.append(clock.t)
+        return 200, yc_piece_body(series_of(target), n)
+    tmp = tempfile.mkdtemp(prefix="fxst_")
+    fe, _ = fx_fetcher(tmp, timed, clock=clock)
+    try:
+        fe.fetch_one(yc)
+    except (Latched, DataError):
+        pass
+    ck.ok("the ten pieces start at least 2 s apart", len(starts) == 10 and all(b - a >= 2.0 for a, b in zip(starts, starts[1:])), "starts %s" % starts)
+
+
 GUARDS = [
     ("G1", "sign convention: both pairs foreign currency per USD", ["eur_usd_per_eur"], t_g1),
     ("G2", "gap direction: US minus foreign", ["gap_foreign_minus_us"], t_g2),
@@ -2607,6 +2805,8 @@ GUARDS = [
     ("X3", "an ECB date whose parameters do not reproduce its own SR is quarantined, named in C05", ["no_quarantine"], t_x_quarantine),
     ("X5", "build writes weekly_panel.csv to the cache only, never to the output folder", ["panel_to_output"], t_x_panel),
     ("X6", "kept_rows drops intervention weeks (primary 123, variant b 130 on the fixture)", ["kept_keeps_iv"], t_x_kept),
+    ("X7", "the yield-curve file is ten one-series requests joined: one header, every row; a failed piece writes nothing and latches STOP",
+     ["yc_drop_piece", "yc_dup_header", "yc_write_partial"], t_x_yc_merge),
     ("X4", "decision.csv keeps every run_label; a quarterly CSV that covers a block replaces it", ["decision_overwrite"], t_x_iv_runs),
 ]
 
@@ -2649,7 +2849,7 @@ def selftest(mutants=True):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
-    pf = sub.add_parser("fetch", help="download the 19 files into the cache (the only network command)")
+    pf = sub.add_parser("fetch", help="download the 19 files (28 requests) into the cache (the only network command)")
     pf.add_argument("--cache", default=CACHE_DEFAULT)
     pf.add_argument("--out", default=OUT_DEFAULT, help="where fetch_log.csv is kept")
     pf.add_argument("--sleep", type=float, default=MIN_SLEEP, help="seconds between request starts (at least 2)")

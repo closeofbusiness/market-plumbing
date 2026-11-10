@@ -26,8 +26,8 @@ This build is one test plus description: the regression of section 3.6 of the sp
 ## Commands
 
 ```
-python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X6 added by the builder; every mutant must be caught
-python3 bin/fx_rate_gap.py fetch      # the only network command: 19 requests, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP
+python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X7 added by the builder; every mutant must be caught
+python3 bin/fx_rate_gap.py fetch      # the only network command: 28 requests for 19 files, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP
 python3 bin/fx_rate_gap.py build      # offline: writes the files in this folder; a second run is byte-identical
 ```
 
