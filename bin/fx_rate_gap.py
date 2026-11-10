@@ -14,7 +14,7 @@ URLs of the request table: 19 files, of which the ECB yield-curve file is downlo
 written only if all ten arrive and pass). GET only; one request at a time; at least 2 s between request starts, remembered across invocations in
 <cache>/.last_request; at most 30 requests per run; the CLAUDE.md non-SEC identification string (no address, no name); no redirect is followed.
 Any HTTP status other than 200, or a body that fails its content test, writes <default cache>/STOP and ends the run. While STOP exists every
-fetch refuses; only a person deletes it. A socket fault ends the invocation without latching. Nothing retries. Every request is one row of
+fetch refuses; only a person deletes it. A socket fault ends the invocation without latching. Server errors (5xx) are retried twice, 60 s apart, before a STOP; nothing else is retried. Every request is one row of
 data/fx_rate_gap/fetch_log.csv.
 
 WHERE THE FILES LIVE. The cache (default data/vintages/fx_rate_gap/) holds every raw download and the weekly panel. It is gitignored. A --cache
@@ -51,6 +51,8 @@ UA = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial resea
 HEADERS = {"User-Agent": UA, "Accept-Encoding": "identity", "Accept": "*/*"}
 MIN_SLEEP = 2.05                 # R3 says at least 2 s between request starts; the 0.05 is a margin for clock granularity
 MAX_REQUESTS = 30
+RETRY_ATTEMPTS = 3               # a server error (HTTP 500-599) is tried 3 times in all ...
+RETRY_WAIT = 60                  # ... 60 s apart; nothing else is ever retried
 TIMEOUT = 120
 BODY_CAP = 64 * 1024 * 1024
 Z95 = 1.959964
@@ -637,6 +639,7 @@ class Fetcher:
         self.stop_path = stop_path
         self.now_utc = now_utc or (lambda: dt.datetime.now(dt.timezone.utc))
         self.requests = 0
+        self.last_attempts = 0
         self._last_mono = None
         self._last_file = os.path.join(self.cache, ".last_request")
         self.log_path = os.path.join(out_dir, "fetch_log.csv")
@@ -675,25 +678,48 @@ class Fetcher:
             fh.write("%s UTC  %s\n" % (self.now_utc().strftime("%Y-%m-%dT%H:%M:%S"), reason))
         raise Latched(reason)
 
+    def _retryable(self, status):
+        if M("no_retry"):
+            return False
+        return 500 <= status <= 599 or (M("retry_4xx") and status == 429)
+
     def _get(self, host, target):
+        """One request, or up to RETRY_ATTEMPTS for a 5xx, RETRY_WAIT seconds apart. Every attempt is paced, counted against the cap and
+        logged as its own row; a non-final 5xx attempt is logged here, the final outcome is logged by the caller as before."""
         check_url("https://" + host + target)
-        if self.requests >= self.max_requests:
-            raise MaxRequests("--max-requests reached (%d)" % self.max_requests)
-        self._pace()
-        started = self.wall()
-        self._last_mono = self.mono()
-        os.makedirs(self.cache, exist_ok=True)
-        with open(self._last_file, "w", encoding="utf-8") as fh:
-            fh.write("%r\n" % started)
-        self.requests += 1
-        try:
-            status, body = self.opener(host, target, HEADERS, TIMEOUT, BODY_CAP)
-        except SocketFault as e:
-            self._log(started, host, target, "socket_fault", "", "")
-            if M("latch_on_socket"):
-                self._latch("socket fault (%s) for %s" % (e, target))
-            raise
-        return status, body, started
+        limit = 10 ** 6 if M("retry_forever") else RETRY_ATTEMPTS
+        attempt = 0
+        while True:
+            attempt += 1
+            self.last_attempts = attempt
+            if self.requests >= self.max_requests:
+                raise MaxRequests("--max-requests reached (%d)" % self.max_requests)
+            self._pace()
+            started = self.wall()
+            self._last_mono = self.mono()
+            os.makedirs(self.cache, exist_ok=True)
+            with open(self._last_file, "w", encoding="utf-8") as fh:
+                fh.write("%r\n" % started)
+            self.requests += 1
+            try:
+                status, body = self.opener(host, target, HEADERS, TIMEOUT, BODY_CAP)
+            except SocketFault as e:
+                self._log(started, host, target, "socket_fault", "", "")
+                if M("latch_on_socket"):
+                    self._latch("socket fault (%s) for %s" % (e, target))
+                raise
+            if attempt >= limit or not self._retryable(status):
+                return status, body, started
+            self._log(started, host, target, status, "", "")
+            if self.requests >= self.max_requests:
+                self._latch("HTTP %d on attempt %d for %s, and a retry would exceed --max-requests (%d)" % (status, attempt, target[:80], self.max_requests))
+            if not M("retry_no_wait"):
+                self.sleeper(RETRY_WAIT)
+
+    def _status_reason(self, status, target):
+        if self.last_attempts > 1:
+            return "HTTP %d on %d attempts, %d s apart, for %s" % (status, self.last_attempts, RETRY_WAIT, target[:80])
+        return "HTTP %d for %s" % (status, target[:80])
 
     def _done_today(self, host, target):
         today = self.now_utc().strftime("%Y-%m-%d")
@@ -715,7 +741,7 @@ class Fetcher:
                 if not M("no_latch_redirect"):
                     self._latch("HTTP %d (a redirect, not followed) for %s" % (status, req["target"][:80]))
             elif not M("no_latch_non200"):
-                self._latch("HTTP %d for %s" % (status, req["target"][:80]))
+                self._latch(self._status_reason(status, req["target"]))
             return "refused_unlatched"
         problem = "body larger than the cap" if body is None else body_problem(req["kind"], req["arg"], body)
         self._log(started, req["host"], req["target"], status, len(body or b""), sha256_of(body or b""))
@@ -747,7 +773,7 @@ class Fetcher:
                     if not M("no_latch_redirect"):
                         self._latch("HTTP %d (a redirect, not followed) for %s" % (status, target[:80]))
                 elif not M("no_latch_non200"):
-                    self._latch("HTTP %d for %s" % (status, target[:80]))
+                    self._latch(self._status_reason(status, target))
                 return "refused_unlatched"
             problem = "body larger than the cap" if body is None else yc_piece_problem(series, body)
             self._log(started, req["host"], target, status, len(body or b""), sha256_of(body or b""))
@@ -1842,10 +1868,12 @@ def render_readme(ctx, log_rows):
     w("## Commands")
     w("")
     w("```")
-    w("python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X7 added by the builder; every mutant must be caught")
+    w("python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X8 added by the builder; every mutant must be caught")
     w("python3 bin/fx_rate_gap.py fetch      # the only network command: 28 requests for 19 files, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP")
     w("python3 bin/fx_rate_gap.py build      # offline: writes the files in this folder; a second run is byte-identical")
     w("```")
+    w("")
+    w("Server errors (5xx) are retried twice, 60 s apart, before a STOP; nothing else is retried.")
     w("")
     w("The raw downloads and the weekly panel stay in `data/vintages/fx_rate_gap/`, which `.gitignore` keeps out of the repository, because the panel "
       "would let a reader rebuild yield levels. This folder holds only statistics, the decision, a few pinned values, the intervention list, the checks "
@@ -1960,7 +1988,8 @@ def render_sources(log_rows):
     w("# Sources and column provenance")
     w("")
     w("Generated by `python3 bin/fx_rate_gap.py build`. Every web fact was fetched by `fetch` with the project's neutral identification string; "
-      "`fetch_log.csv` lists each request with its time, status, size and sha256. Retrieval dates below are read from that log.")
+      "`fetch_log.csv` lists each request with its time, status, size and sha256. Retrieval dates below are read from that log. "
+      "Server errors (5xx) are retried twice, 60 s apart, before a STOP; nothing else is retried.")
     w("")
     rows = [
         ("U.S. Department of the Treasury (home.treasury.gov)", TSY_HOST,
@@ -2749,7 +2778,8 @@ def t_x_yc_merge(ck):
         ck.ok("%s on one piece latches STOP" % label, latched and os.path.exists(os.path.join(c, "STOP")))
         ck.ok("%s on one piece leaves no ecb_yc.csv (and no .part)" % label,
               not os.path.exists(os.path.join(c, "ecb_yc.csv")) and not os.path.exists(os.path.join(c, "ecb_yc.csv.part")))
-        ck.eq("%s on the third piece ends the run after three requests" % label, fe.requests, 3)
+        want = 5 if label == "HTTP 504" else 3          # a 5xx is tried 3 times (X8): 2 pieces, then 3 attempts; a bad body is not retried
+        ck.eq("%s on the third piece ends the run after %d requests" % (label, want), fe.requests, want)
     def sock(host, target, headers, timeout, cap):
         if series_of(target) == "SR_2Y":
             raise SocketFault("timeout")
@@ -2775,6 +2805,120 @@ def t_x_yc_merge(ck):
     except (Latched, DataError):
         pass
     ck.ok("the ten pieces start at least 2 s apart", len(starts) == 10 and all(b - a >= 2.0 for a, b in zip(starts, starts[1:])), "starts %s" % starts)
+
+
+def t_x_retry(ck):
+    """X8: a 5xx is tried 3 times in all, 60 s apart, each attempt its own log row; nothing else is retried."""
+    treq = request_table()[9]                          # the 2026 Treasury file
+    assert treq["key"] == "tsy2026"
+    body = fx_tsy_body(2026)
+    yc = [r for r in request_table() if r["key"] == "yc"][0]
+    n = 2005
+
+    def series_of(target):
+        return target[len(YC_BASE):target.index("?")]
+
+    def scripted(statuses, clock=None, starts=None):
+        seq = list(statuses)
+
+        def opener(host, target, headers, timeout, cap):
+            if starts is not None:
+                starts.append(clock.t)
+            st = seq.pop(0) if seq else statuses[-1]
+            if st == "sock":
+                raise SocketFault("timeout")
+            return st, (body if st == 200 else b"")
+        return opener
+
+    def run(statuses, req=treq, **kw):
+        tmp = tempfile.mkdtemp(prefix="fxst_")
+        clock = FakeClock()
+        starts = []
+        fe, _ = fx_fetcher(tmp, scripted(statuses, clock, starts), clock=clock, **kw)
+        try:
+            out = fe.fetch_one(req)
+        except Latched:
+            out = "latched"
+        except SocketFault:
+            out = "socket"
+        except MaxRequests:
+            out = "maxrequests"
+        c = os.path.join(tmp, "cache")
+        _, rows = read_csv_rows(fe.log_path)
+        return dict(out=out, fe=fe, cache=c, rows=rows, starts=starts, stop=os.path.exists(os.path.join(c, "STOP")), tmp=tmp)
+    # (a) 504 then 200: saved, two requests, two log rows
+    r = run([504, 200])
+    ck.eq("a 504 then a 200 saves the file", r["out"], "saved")
+    ck.ok("the file is in the cache", os.path.exists(os.path.join(r["cache"], treq["file"])))
+    ck.eq("a 504 then a 200 sends 2 requests", r["fe"].requests, 2)
+    ck.eq("a 504 then a 200 logs 2 rows, one per attempt", [x[3] for x in r["rows"]], ["504", "200"])
+    ck.ok("a 504 then a 200 does not latch", not r["stop"])
+    # (b) three 504s: STOP after exactly 3 requests, 60 s apart
+    r = run([504])
+    ck.eq("three 504s latch", r["out"], "latched")
+    ck.ok("three 504s write STOP", r["stop"])
+    ck.eq("three 504s send exactly 3 requests", r["fe"].requests, 3)
+    ck.eq("three 504s log 3 rows", [x[3] for x in r["rows"]], ["504", "504", "504"])
+    ck.ok("attempts start at least 60 s apart on the fake clock", len(r["starts"]) == 3 and all(b - a >= 60 for a, b in zip(r["starts"], r["starts"][1:])),
+          "starts %s" % r["starts"])
+    why = open(os.path.join(r["cache"], "STOP"), encoding="utf-8").read() if r["stop"] else ""
+    ck.ok("the STOP reason says 3 attempts, 60 s apart", "HTTP 504 on 3 attempts, 60 s apart" in why, why)
+    # (c) the ten-piece ECB path
+    def yc_opener(bad, log):
+        seq = list(bad)
+
+        def opener(host, target, headers, timeout, cap):
+            log.append(target)
+            if series_of(target) == "BETA2" and seq:
+                return seq.pop(0), b""
+            return 200, yc_piece_body(series_of(target), n)
+        return opener
+    for label, bad, want in (("a 503 then a 200", [503], "saved"), ("three 5xx", [503, 502, 599], "latched")):
+        tmp = tempfile.mkdtemp(prefix="fxst_")
+        log = []
+        fe, _ = fx_fetcher(tmp, yc_opener(bad, log))
+        try:
+            out = fe.fetch_one(yc)
+        except Latched:
+            out = "latched"
+        c = os.path.join(tmp, "cache")
+        ck.eq("%s on one yield-curve piece: %s" % (label, want), out, want)
+        if want == "saved":
+            ck.ok("%s on one piece still saves the joined ecb_yc.csv" % label,
+                  os.path.exists(os.path.join(c, "ecb_yc.csv")) and open(os.path.join(c, "ecb_yc.csv"), "rb").read()
+                  == merge_yc_pieces([(k, yc_piece_body(k, n)) for k in YC_SERIES]))
+            ck.eq("%s on one piece sends 11 requests" % label, fe.requests, 11)
+        else:
+            ck.ok("%s on one piece latch STOP, with no ecb_yc.csv and no .part" % label,
+                  os.path.exists(os.path.join(c, "STOP")) and not os.path.exists(os.path.join(c, "ecb_yc.csv"))
+                  and not os.path.exists(os.path.join(c, "ecb_yc.csv.part")))
+            ck.eq("%s on the third piece send 5 requests (2 pieces, then 3 attempts)" % label, fe.requests, 5)
+    # (d) no retry for 4xx or 3xx
+    for st in (429, 403, 302):
+        r = run([st])
+        ck.eq("HTTP %d latches" % st, r["out"], "latched")
+        ck.eq("HTTP %d is sent exactly once" % st, r["fe"].requests, 1)
+        ck.eq("HTTP %d is logged once" % st, len(r["rows"]), 1)
+    # a 200 with a bad body latches at once
+    tmp = tempfile.mkdtemp(prefix="fxst_")
+    fe, _ = fx_fetcher(tmp, lambda *a: (200, b"<html>busy</html>"))
+    try:
+        fe.fetch_one(treq)
+        out = "no exception"
+    except Latched:
+        out = "latched"
+    ck.ok("a 200 with a bad body latches after 1 request", out == "latched" and fe.requests == 1)
+    # (e) a socket fault: one request, no STOP, no retry
+    r = run(["sock"])
+    ck.eq("a socket fault ends the run", r["out"], "socket")
+    ck.eq("a socket fault is sent once", r["fe"].requests, 1)
+    ck.ok("a socket fault does not latch", not r["stop"])
+    # the cap counts retries: a retry that would exceed it latches and says so
+    r = run([504], max_requests=2)
+    ck.eq("a retry that would exceed --max-requests latches", r["out"], "latched")
+    ck.eq("the cap is not exceeded", r["fe"].requests, 2)
+    why = open(os.path.join(r["cache"], "STOP"), encoding="utf-8").read() if r["stop"] else ""
+    ck.ok("the STOP reason names the cap", "--max-requests" in why, why)
 
 
 GUARDS = [
@@ -2807,6 +2951,8 @@ GUARDS = [
     ("X6", "kept_rows drops intervention weeks (primary 123, variant b 130 on the fixture)", ["kept_keeps_iv"], t_x_kept),
     ("X7", "the yield-curve file is ten one-series requests joined: one header, every row; a failed piece writes nothing and latches STOP",
      ["yc_drop_piece", "yc_dup_header", "yc_write_partial"], t_x_yc_merge),
+    ("X8", "a server error (5xx) is tried 3 times in all, 60 s apart, each attempt its own log row, the cap counts them; nothing else is retried",
+     ["no_retry", "retry_4xx", "retry_no_wait", "retry_forever"], t_x_retry),
     ("X4", "decision.csv keeps every run_label; a quarterly CSV that covers a block replaces it", ["decision_overwrite"], t_x_iv_runs),
 ]
 

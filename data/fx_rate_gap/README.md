@@ -26,10 +26,12 @@ This build is one test plus description: the regression of section 3.6 of the sp
 ## Commands
 
 ```
-python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X7 added by the builder; every mutant must be caught
+python3 bin/fx_rate_gap.py selftest   # synthetic data, no network: guards G1-G21 of the spec plus X1-X8 added by the builder; every mutant must be caught
 python3 bin/fx_rate_gap.py fetch      # the only network command: 28 requests for 19 files, 2 s apart; a refusal writes data/vintages/fx_rate_gap/STOP
 python3 bin/fx_rate_gap.py build      # offline: writes the files in this folder; a second run is byte-identical
 ```
+
+Server errors (5xx) are retried twice, 60 s apart, before a STOP; nothing else is retried.
 
 The raw downloads and the weekly panel stay in `data/vintages/fx_rate_gap/`, which `.gitignore` keeps out of the repository, because the panel would let a reader rebuild yield levels. This folder holds only statistics, the decision, a few pinned values, the intervention list, the checks and the fetch log.
 
