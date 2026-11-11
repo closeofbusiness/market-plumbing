@@ -89,4 +89,6 @@ CANNOT|why; anything about the election or the refunding, which share the window
 
 Described, not scored: S was 6 bp on 4 Nov and on 6 Nov. LE1's withdrawn median and band need its control days, which run to 23 Nov, so they are described on a later read; that read never changes the label.
 
+Independent check, 11 Nov: Gemini 3.8 Flash, given only the block, the two raw JSON files and the 20261103 daily file, returned the same values (S 6, 5 and 6 bp on 4, 5 and 6 Nov; baseline n 25, 3 to 9 bp, median 5; INSIDE). Before the 11 Nov fetch the vintage folder held only 20261103, so 20261111 is the first fetched vintage holding 5 Nov.
+
 As registered, this says nothing about the election or the refunding, which share the window, and nothing about other repo segments. It is one day.
