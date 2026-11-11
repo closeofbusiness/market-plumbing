@@ -668,7 +668,8 @@ Do not restate findings here. Status and detail stay in the home section named o
            every figure from the NY Fed API (14 annual means, the 12 Aug week, sponsored shares as means of weekly shares, and
            -36.1% on annual means, 2026 partial to 12 Aug). Series: data/history/collateral_multiplier_weekly.csv.
        (b) measurement_infrastructure_reviews.md: Handbook lines ~83, 171, 289, 345-347 quote it. ALFRED rows match the
-           private vintages (4 of 8 checked); the 11 Jun Z.1 package has no copy. REBUILD narrowly, undated.
+           private vintages (4 of 8 checked). REBUILT 11 Nov from the 11 Jun Z.1 package (now on disk): bin/measurement_infra_checks.py,
+           data/measurement_infra_checks (430 of 469 figures match; one wrong claim, C-157, fixed in the Handbook).
        (c) funding_identity_adversarial_reviews.md: the M2 half reproduces. REBUILT 11 Nov: bin/funding_identity_checks.py,
            data/funding_identity_checks (Z.1 of 2026-06-11 and BEA NIPA; 83 of 133 rows match; what does not is listed in its README).
        (d) paragon_burry_dossier.md is PRIVATE-ONLY since 24 Sep (private/_research/); 4 working files lost, no downstream

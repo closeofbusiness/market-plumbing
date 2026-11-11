@@ -990,6 +990,14 @@ principal asked whether the answer note was still up to date; superseded the sam
 
 ---
 
+## C-157 · "FL103193005 … $12.1trn — larger than the entire $14.45trn measured debt stock"
+
+**The supervisor's, 11 Nov. Found by the d1(b) rebuild (bin/measurement_infra_checks.py, a Sonnet build on the Z.1 release of 2026-06-11).**
+
+- **Killed by:** the claim's own numbers. NFC unidentified miscellaneous liabilities (FL103193005) at 2026:Q1 are $12,101.9bn, and the measured NFC debt stock is $14,453.8bn (both re-derived from the 11 Jun 2026 package; see data/measurement_infra_checks/ and data/funding_identity_checks/). $12.1trn is smaller than $14.45trn.
+- **Correct position.** The NFC unidentified-liabilities line is about 84% of the measured NFC debt stock (12,101.9 / 14,453.8 = 83.7%), up from $9,422.8bn at 2019:Q4. It is still the largest place unidentified borrowing could sit; it is not larger than the debt stock.
+- **Still standing at:** none. Fixed 11 Nov at Shadow_Debt_Measurement_Handbook.md:83 and marked in _research/measurement_infrastructure_reviews.md:797 (the research note keeps its original wording beside the marker).
+
 ## C-156 · "No measure shows collateral re-use rising before the price rise … earlier shares are not measured"
 
 **Mine: C-152's correct position, the page (§01, §04 table, the closing summary), the answer note and the collateral dossier. Superseded 30 Oct by
