@@ -673,7 +673,7 @@ Do not restate findings here. Status and detail stay in the home section named o
        (c) funding_identity_adversarial_reviews.md: the M2 half reproduces. REBUILT 11 Nov: bin/funding_identity_checks.py,
            data/funding_identity_checks (Z.1 of 2026-06-11 and BEA NIPA; 83 of 133 rows match; what does not is listed in its README).
        (d) paragon_burry_dossier.md is PRIVATE-ONLY since 24 Sep (private/_research/); 4 working files lost, no downstream
-           use. Keep; add a banner in the private copy.
+           use. Keep. DONE: the private copy carries a lost-files banner (added 8 Oct, checked 11 Nov).
    d2  Fourteen docs (thirteen on 21 Sep; Shadow_Debt_Channel_Map.md joined after the 8 Oct rebuild of
        bin/build_collateral_multiplier.py) carried a dead scratchpad citation ALONGSIDE a durable one. Cosmetic; the
        durable path is what a reader should use. REWRITTEN 9 Oct: the /private/tmp/claude-501/... prefix, which also
