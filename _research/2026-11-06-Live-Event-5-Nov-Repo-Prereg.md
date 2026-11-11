@@ -82,3 +82,11 @@ DESCRIBED|each leg on t*; S on 2026-11-06; LE1's original median and band (withd
 PRIOR|the literature found (BIS, FOMC minutes Sep 2024) points to INSIDE: secured overnight rates were largely unchanged around the August 2024 equity break
 CANNOT|why; anything about the election or the refunding, which share the window; anything about other repo segments; n=1
 ```
+
+## Result (scored 11 Nov 2026)
+
+**LE1-A: INSIDE.** On 5 Nov the tri-party 2-7 day rate was 3.96% and the overnight rate 3.91%, so S was 5 bp. That is the baseline median and inside the registered 3 to 9 bp band, as the prior expected. The read used vintage 20261111, fetched at about 05:48 UTC on 11 Nov after the gate, which is the first fetched vintage holding 5 Nov (manifest sha256 03e19965c158...). `bin/le1a_score.py --vintage 20261111` printed the label, and the supervisor re-derived S from the raw JSON. The block above still hashes to bc39ff24 (2014 bytes).
+
+Described, not scored: S was 6 bp on 4 Nov and on 6 Nov. LE1's withdrawn median and band need its control days, which run to 23 Nov, so they are described on a later read; that read never changes the label.
+
+As registered, this says nothing about the election or the refunding, which share the window, and nothing about other repo segments. It is one day.
