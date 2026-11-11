@@ -1554,6 +1554,27 @@ IV_ROW_PINS = {dt.date(2022, 9, 22): 28382, dt.date(2022, 10, 21): 56202, dt.dat
                dt.date(2026, 5, 4): 7802, dt.date(2026, 5, 6): 46759}
 IV_QUARTER_PINS = {dt.date(2022, 12, 31): (63498, 63499), dt.date(2024, 6, 30): (97885, 97885), dt.date(2024, 9, 30): (55348, 55348),
                    dt.date(2026, 6, 30): (117348, 117349)}
+# The dated run (quarterly CSV covering 30 Sep 2026): the Jul-Sep 2026 days MoF published on 9 Nov, and their quarter. C08's dated-run counts
+# (expected_counts) assume exactly these days, so C06 pins them; any other Jul-Sep 2026 day fails C06 (added 11 Nov after Grok's review).
+IV_Q3_2026_DAYS = {dt.date(2026, 7, 30): 79756, dt.date(2026, 7, 31): 55523, dt.date(2026, 8, 3): 18714}
+IV_Q3_2026_QUARTER = (dt.date(2026, 9, 30), 153993, 153993)
+
+
+def q3_2026_problems(days, quarters, covered_through):
+    """C06's dated-run pins: [] when the CSV does not yet cover 30 Sep 2026, or when its Jul-Sep 2026 days and quarter are exactly the pinned ones."""
+    if covered_through < dt.date(2026, 9, 30):
+        return []
+    bad = []
+    got = {d: v for d, v in days.items() if dt.date(2026, 7, 1) <= d <= dt.date(2026, 9, 30)}
+    if got != IV_Q3_2026_DAYS:
+        bad.append("Jul-Sep 2026 days %s, pinned %s" % (sorted((iso(d), v) for d, v in got.items()), sorted((iso(d), v) for d, v in IV_Q3_2026_DAYS.items())))
+    e, sum_exp, sub_exp = IV_Q3_2026_QUARTER
+    qq = [(s_, ssum) for e_, s_, n_, ssum in quarters if e_ == e]
+    if qq != [(sub_exp, sum_exp)]:
+        bad.append("quarter ending 2026-09-30: %s, pinned subtotal %d and days sum %d" % (qq, sub_exp, sum_exp))
+    return bad
+
+
 IV_MONTHLY_PINS = ((dt.date(2026, 6, 29), dt.date(2026, 7, 29), 0.0), (dt.date(2026, 7, 30), dt.date(2026, 8, 26), 153993.0),
                    (dt.date(2026, 8, 27), dt.date(2026, 9, 28), 0.0))
 TRIPLES = {dt.date(2024, 3, 29): (dt.date(2024, 3, 28), dt.date(2024, 3, 27), dt.date(2024, 3, 28)),
@@ -1675,10 +1696,11 @@ def run_checks(inp, rows, ctx, selfcheck, incomplete, quar, affected):
     for e, (sub, ssum, n) in q.items():
         if abs(ssum - sub) > max(n, 0):
             bad.append("quarter ending %s: days sum %s differs from subtotal %s by more than 1 per day" % (e, ssum, sub))
+    bad += q3_2026_problems(days, inp.feio["quarters"], inp.feio["covered_through"])
     quiet = [d for d in days if (dt.date(2018, 1, 1) <= d <= dt.date(2022, 8, 31)) or d.year in (2023, 2025)]
     if quiet:
         bad.append("day rows where none were expected: " + ", ".join(iso(d) for d in sorted(quiet)[:5]))
-    add("C06", "MoF intervention CSV: ten day rows exact; each quarter's days sum to its subtotal within 1 per day; no day rows Jan 2018-Aug 2022, 2023, 2025",
+    add("C06", "MoF intervention CSV: the ten pinned day rows exact, and once the CSV covers 30 Sep 2026 its three Jul-Sep 2026 days and quarter exact; each quarter's days sum to its subtotal within 1 per day; no day rows Jan 2018-Aug 2022, 2023, 2025",
         "10 day rows, 4 quarter sums, 0 stray rows", "%d day rows since 2018, %d subtotal rows; %s" % (sum(1 for d in days if d.year >= 2018), len(q),
                                                                                                      "all pins match" if not bad else "; ".join(bad)),
         "PASS" if not bad else "FAIL")
@@ -1820,8 +1842,8 @@ def plain_words(ctx):
     if d["verdict_of_record"].startswith("INCONCLUSIVE"):
         out.append("The 'what to expect' paragraph above anticipated INCONCLUSIVE (underpowered), and the verdict of record is %s." % d["verdict_of_record"])
     else:
-        out.append("The 'what to expect' paragraph above anticipated INCONCLUSIVE (underpowered); that did not happen, because the gate was passed: the half-width of "
-                   "the phi interval is %s against the limit 0.25. The gate needs |S| above about 0.08 to 0.11 (the specification's ex-ante arithmetic), and S = %s "
+        out.append("The 'what to expect' paragraph above anticipated INCONCLUSIVE (underpowered); that did not happen, because the gate was passed: the gate's half-width "
+                   "(from SE_gate) is %s against the limit 0.25. The gate needs |S| above about 0.08 to 0.11 (the specification's ex-ante arithmetic), and S = %s "
                    "is above it." % (f(d["halfwidth_phi"], 3), f(S, 3)))
     out.append("In plain words: over the %d kept weeks the 2-year gap %s by %s percentage points, which on the weekly slope goes with a %s yen (%s%% in log terms), "
                "while the yen %s by %s%% (log terms). The yen's move over those weeks sits in the constant term (n x alpha = %s), not in the gap term. "
@@ -1948,7 +1970,8 @@ def render_readme(ctx, log_rows):
     w("## What the registered run printed")
     w("")
     w("Run label `%s`. Verdict of record: **%s**. n = %d; beta = %s (HC3 SE %s, p %s; Newey-West SE %s, p %s); S = %s, X = %s pp, F = %s; phi = %s%s; "
-      "placebo SD %s over %d shifts; half-width of the phi interval %s (gate %s)." %
+      "placebo SD %s over %d shifts; the gate's half-width %s (1.96 x SE_gate x |X| / |S|, SE_gate the larger of the placebo SD and the HC3 SE, "
+      "specification 4.1; the interval above uses the HC3 SE alone) (gate %s)." %
       (d["run_label"], d["verdict_of_record"], d["n"], f(d["beta"], 6), f(d["se_hc3"], 6), pf(d["p_hc3"]), f(d["se_nw4"], 6), pf(d["p_nw4"]),
        f(d["S"], 6), f(d["X"], 6), f(d["F"], 6), f(d["phi"], 4) if d["phi"] is not None else "not defined",
        " (interval %s to %s)" % (f(d["phi_ci_lo"], 4), f(d["phi_ci_hi"], 4)) if d["phi"] is not None else "", f(d["se_placebo"], 6), d["n_placebo"],
@@ -1967,7 +1990,9 @@ def render_readme(ctx, log_rows):
         tail = "" if not dated_run(ctx["dec"]["run_label"]) else (
             ", after the dated days of 30 Jul, 31 Jul and 3 Aug 2026 replace the undated block, which returns the weeks ending %s to the kept weeks"
             % ", ".join(BLOCK_ONLY_WEEKS))
-        w("Every count matches the reviewer's (specification 3.5)%s: %s." % (tail, ", ".join(
+        w("%s: %s." % ("Every count matches the reviewer's (specification 3.5)" if not tail else
+                       "The counts are the reviewer's (specification 3.5) except that the dated days of 30 Jul, 31 Jul and 3 Aug 2026 replace the undated block, "
+                       "which returns the weeks ending %s to the kept weeks" % ", ".join(BLOCK_ONLY_WEEKS), ", ".join(
             "%s %d%s (%d%s)" % (nm, exp_counts[nm][0], " weeks" if nm == "FULL" else "", exp_counts[nm][3], " kept" if nm == "FULL" else "") for nm, _, _ in SAMPLES)))
     w("")
     notes = ctx.get("ecb_notes")
@@ -2710,6 +2735,13 @@ def t_x_iv_runs(ck):
           (ec["W3"], ec["FULL"], ec["W1"], ec["W2"]), ((142, 7, 2, 133), (455, 10, 6, 439), (209, 0, 4, 205), (104, 3, 0, 101)))
     ck.ok("the dated run's P intervention weeks end at 2026-08-07", eiv[-2:] == ("2026-07-31", "2026-08-07") and len(eiv) == 7, str(eiv))
     ck.ok("a dated label with blocks still binding keeps the block pins", expected_counts("csv_through_2026-09-30_blocks_1")[0] is EXPECTED_COUNTS)
+    good = dict(IV_Q3_2026_DAYS)
+    quarters = [(dt.date(2026, 9, 30), 153993, 3, 153993)]
+    ck.eq("C06 dated pins: the three published days pass", q3_2026_problems(good, quarters, dt.date(2026, 9, 30)), [])
+    ck.ok("C06 dated pins: an extra operation day on 18 Aug 2026 fails", q3_2026_problems(dict(good, **{}) | {dt.date(2026, 8, 18): 1}, quarters,
+                                                                                         dt.date(2026, 9, 30)) != [])
+    ck.ok("C06 dated pins: a different quarter subtotal fails", q3_2026_problems(good, [(dt.date(2026, 9, 30), 150000, 3, 153993)], dt.date(2026, 9, 30)) != [])
+    ck.eq("C06 dated pins: not applied before the CSV covers 30 Sep 2026", q3_2026_problems({}, [], dt.date(2026, 6, 30)), [])
 
 
 def read_csv_rows_from_text(text):

@@ -59,13 +59,13 @@ A move in an intervention week is not attributed to the intervention by `event_w
 
 ## What the registered run printed
 
-Run label `csv_through_2026-09-30_blocks_0`. Verdict of record: **WEEKLY 2Y-GAP TERM POINTS THE OTHER WAY**. n = 121; beta = 0.056700 (HC3 SE 0.012380, p <0.0001; Newey-West SE 0.013639, p <0.0001); S = 0.135397, X = -1.053000 pp, F = -0.059705; phi = -0.4410 (interval -0.6297 to -0.2523); placebo SD 0.012735 over 96 shifts; half-width of the phi interval 0.1941 (gate PASS).
+Run label `csv_through_2026-09-30_blocks_0`. Verdict of record: **WEEKLY 2Y-GAP TERM POINTS THE OTHER WAY**. n = 121; beta = 0.056700 (HC3 SE 0.012380, p <0.0001; Newey-West SE 0.013639, p <0.0001); S = 0.135397, X = -1.053000 pp, F = -0.059705; phi = -0.4410 (interval -0.6297 to -0.2523); placebo SD 0.012735 over 96 shifts; the gate's half-width 0.1941 (1.96 x SE_gate x |X| / |S|, SE_gate the larger of the placebo SD and the HC3 SE, specification 4.1; the interval above uses the HC3 SE alone) (gate PASS).
 
-The 'what to expect' paragraph above anticipated INCONCLUSIVE (underpowered); that did not happen, because the gate was passed: the half-width of the phi interval is 0.194 against the limit 0.25. The gate needs |S| above about 0.08 to 0.11 (the specification's ex-ante arithmetic), and S = 0.135 is above it. In plain words: over the 121 kept weeks the 2-year gap narrowed by 1.1 percentage points, which on the weekly slope goes with a stronger yen (-6.0% in log terms), while the yen weakened by 13.5% (log terms). The yen's move over those weeks sits in the constant term (n x alpha = 0.195), not in the gap term. This describes co-movement; it does not show what moved the yen.
+The 'what to expect' paragraph above anticipated INCONCLUSIVE (underpowered); that did not happen, because the gate was passed: the gate's half-width (from SE_gate) is 0.194 against the limit 0.25. The gate needs |S| above about 0.08 to 0.11 (the specification's ex-ante arithmetic), and S = 0.135 is above it. In plain words: over the 121 kept weeks the 2-year gap narrowed by 1.1 percentage points, which on the weekly slope goes with a stronger yen (-6.0% in log terms), while the yen weakened by 13.5% (log terms). The yen's move over those weeks sits in the constant term (n x alpha = 0.195), not in the gap term. This describes co-movement; it does not show what moved the yen.
 
 The same regression on the full sample (439 weeks): beta = 0.056352 (HC3 SE 0.005194). The separate slope-gap row: beta = -0.045877 (p 0.0187), phi = 0.0976; the sum of the slope-gap changes over the 121 kept weeks is -0.288 pp (+0.044 pp is the sum over all 130 weeks of P), so phi_s is near zero by construction.
 
-Every count matches the reviewer's (specification 3.5), after the dated days of 30 Jul, 31 Jul and 3 Aug 2026 replace the undated block, which returns the weeks ending 2026-08-14, 2026-08-21, 2026-08-28 to the kept weeks: FULL 455 weeks (439 kept), W1 209 (205), W2 104 (101), W3 142 (133), P 130 (121).
+The counts are the reviewer's (specification 3.5) except that the dated days of 30 Jul, 31 Jul and 3 Aug 2026 replace the undated block, which returns the weeks ending 2026-08-14, 2026-08-21, 2026-08-28 to the kept weeks: FULL 455 weeks (439 kept), W1 209 (205), W2 104 (101), W3 142 (133), P 130 (121).
 
 ## Data notes (what the checks found in the sources)
 
