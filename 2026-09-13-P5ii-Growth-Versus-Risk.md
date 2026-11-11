@@ -37,7 +37,7 @@ both bases. The growth floor was re-run 22 Sep (Grok) and **holds** — ~64% gro
 
 1. **It requires trusting a model we cannot inspect.** The 60% holds only if Damodaran's multi-stage model
    fully nets out a growth revision this large. His explicit-phase length and terminal growth rate are not in
-   the file. Unverifiable, and load-bearing.
+   the file. Unverifiable, and load-bearing. **[Update 11 Nov 2026: both are published. Damodaran uses five years of analysts' index growth, then sets terminal growth equal to the risk-free rate (the 10-year Treasury yield): "which I set equal to the risk free rate", Data Update 2 for 2022, 19 Jan 2022, aswathdamodaran.blogspot.com, re-read by the supervisor; the same rule is in his 2003 country-risk note and spring 2024 Stern slides (found by Grok). So the model nets out near-term growth revisions only; a revision to long-run growth is not netted out. The page says so.]**
 2. **The 2015-19 control period inverts the relationship.** There, ours fell 22.43bp while his real-basis
    measure fell 55.87bp — a ratio of **249%**, against 60% in the main window. And his growth input *fell*
    162bp in the control against *rising* 495bp in the main window (**both verified exactly by me**). The sign
