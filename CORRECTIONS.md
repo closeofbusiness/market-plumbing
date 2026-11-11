@@ -353,7 +353,7 @@ If you kill a claim, append it here *and* list every `file:line` where it still 
 - **Why the guard did not fire.** `bin/check.sh` greps against the ban list in this file. A caveat raised *inside a research document* and never promoted is **invisible to it by construction**. The detection existed, one day old, in a document I had read. Detection was never the problem — it is the same failure the register was built for, one level up.
 - **Confirmed still live:** "collateral velocity is X" phrasing appears in **3 current documents** despite item 10 of that list ruling it out (say *"Singh estimates"*, never *"velocity is"* — no independently verifiable ratio exists after 2017). **Update 9 Oct:** a grep of the top-level docs found no unqualified "velocity is <number>" sentence, so this item looks closed. The "only 3 of 17" count, Damodaran's 266bp (item 14) and the Bezemer item (15) were not re-checked.
 - **Correct practice, now binding:** when a research pass produces a *do-not-say* list, **promoting it to `CORRECTIONS.md` is part of landing that pass, not an optional follow-up.** A caveat that lives only in the document that raised it will be violated by the next document.
-- **Outstanding:** the remaining unpromoted items from the 21 Aug list need triage. Highest-value ones spotted so far — velocity phrasing (item 10), Damodaran's near-circular 266bp (item 14), Bezemer et al. used to characterise 2026 when the sample ends 2005 (item 15).
+- **Outstanding:** CLOSED 11 Nov by C-158 (all 17 triaged; 2 had been registered, not 3). WAS: the remaining unpromoted items from the 21 Aug list need triage. Highest-value ones spotted so far — velocity phrasing (item 10), Damodaran's near-circular 266bp (item 14), Bezemer et al. used to characterise 2026 when the sample ends 2005 (item 15).
 - **Still standing at:** `2026-08-21-Singh-And-The-Two-Circuits.md` holds the full list
 
 ## C-041 · GOAL DEFECT — "the ultimate goal is a publishable Substack essay"
@@ -989,6 +989,15 @@ principal asked whether the answer note was still up to date; superseded the sam
 - **Still standing at:** nowhere live; every file that described the arrangement was changed in the same commit.
 
 ---
+
+## C-158 · The 21 Aug "do not say" list (17 items, 2026-08-21-Singh-And-The-Two-Circuits.md §6), promoted
+
+**The supervisor's, 11 Nov. Closes C-040's outstanding item. Triage by a Sonnet agent (read only); the supervisor read every live hit before acting.**
+
+- **What was wrong.** C-040 said 3 of the 17 items reached this register. The triage counts 2 fully (items 3 = C-028, 6 = C-020) and 4 partly (5, 10, 11, 13); 11 were never registered. None of the 17 is said on the page (docs/index.html) or in answer/.
+- **Correct position, per item.** Each item's own text in §6 of the source note is the correct position. Where a later entry supersedes it, that entry governs: item 5 → C-020 and C-064 (the H.8 NDFI line has definitional reclassifications); item 10 → C-135 (velocity about 1.3-2.0, unsigned; say "Singh estimates", never "velocity is"); item 11 → C-156 (the forbidden form is the universal one: the FR 2004C dealer multiplier fell, while the two-bank re-pledged share rose within its range, so name the measure); item 13 → C-036 (q contested). Item 14 (Damodaran's 266bp, near-circular) is the least settled: its reconstruction lives only in _research/singh_two_circuits_lenses.md and was never re-checked.
+- **Ban patterns added** for the phrasings that can be matched narrowly (items 1, 2, 4, 8, 9, 14, 16, and item 11's "flat on every measurement system"). Items 12 ($6,906.97bn, false precision), 15 (Bezemer et al., sample ends 2005) and 17 (date the "goods prices did not inflate" window) have no safe pattern and are registered here only.
+- **Still standing at:** none in top-level documents. Banners added 11 Nov at Funding_Identity_First_Principles.md (the NDFI table and the review-status row), Shadow_Debt_Channel_Map.md ("reuse intensity is flat to falling": measure named), RESEARCH_STATE.md (two lines), 2026-09-15-N4-Scale-Timing-Bound.md, 2026-08-25-N3-Singhs-Denominator-Reconciled.md (two lines), and both dated review prompts (C-036 marks that C-036 said were there and were not). Mild cases left as they are: "$6,907bn" in about ten places (item 12, four significant figures) and RESEARCH_STATE.md's undated "asset-price inflation without goods-price inflation" question (item 17).
 
 ## C-157 · "FL103193005 … $12.1trn — larger than the entire $14.45trn measured debt stock"
 
@@ -2158,6 +2167,8 @@ are suppressed per-id in the `allow` block. Anything firing outside those files 
 propagation**, which is the only thing this check exists to catch.
 
 ```allow
+C-158	2026-08-21-Singh-And-The-Two-Circuits.md	# the source list quotes each forbidden statement in order to forbid it
+C-158	CORRECTIONS.md	# names the dead phrasing to kill it
 C-127	Parcel_R3R_JGB_EGB_Review_For_Grok_Cursor.md	# the review brief quotes R3's claim as an attack target
 C-089	direct-money-creation.md	# dossiers/ -- states the correct position and names the dead claim to kill it. NB allow entries match the BASENAME only (check.sh: base=${f##*/}); a path-style entry never matches, silently.
 C-116	CORRECTIONS.md	# names the dead phrasing to kill it
@@ -2436,6 +2447,14 @@ C-132	2026-10-12-E021-Where-The-Money-Comes-From-Rates-FX-Commodities.md	# its c
 ```
 
 ```banned
+C-158	zero multiple expansion
+C-158	40\.7% multiple
+C-158	40\.9% of marginal bank credit
+C-158	inverse velocit
+C-158	Clavero
+C-158	required return rose 266
+C-158	Werner'?s own falsification test fails
+C-158	flat on every measurement system
 C-086	P4 (elasticity|multiplier|LATE)
 C-086	rescale.{0,40}Russell
 C-086	rescale.{0,40}P4

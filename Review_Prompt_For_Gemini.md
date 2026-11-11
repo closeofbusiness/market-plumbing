@@ -109,7 +109,7 @@ table would carry it and why it is not obtainable.
   three observables. The discount-rate account fails on SIGN: 10-year TIPS went from −1.04% to
   +2.35% (+339bp) Dec-2021 to Aug-2026 while equity valuation did not revert — equity/profits
   +7.9%, equity/gross value added flat to three decimals, Tobin's q +6.9%, with 2025Q3 the
-  highest of 304 quarters since 1945.
+  highest of 304 quarters since 1945. [C-036: contested; the Z.1 q denominator does not capitalise intangibles.]
 - **Money-like liabilities.** Fed FSR Table 4.1 puts runnable money-like liabilities at
   $27,033bn, +12.0% y/y against a 5.4% long-run average, with repo the largest contributor at
   +19.1%. I suspect a large share of that repo growth is Treasury basis-trade leverage rather

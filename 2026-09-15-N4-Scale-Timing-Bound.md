@@ -106,7 +106,7 @@ handoff it is **~$136bn — an order of magnitude too small.** Under the frame's
 closes the 2024 question for *new* wholesale capacity. It does not close the possibility that
 *existing* wholesale stocks were used (the A1 amendment applies equally here: a $5trn W2 stock
 at end-2023 can rearrange without growing). Existing-stock reuse is a different claim, and
-the measured reuse *rate* did not rise.
+the measured reuse *rate* did not rise. [C-156: true of the FR 2004C dealer multiplier; the two-bank re-pledged share rose 2023-25, within its historical range.]
 
 The full-window raw ΔW2 ($1.8trn vs $3.1trn) is the same order of magnitude, so it does **not**
 fail the "order of magnitude too small" test. Strip the handoff and it is a quarter of

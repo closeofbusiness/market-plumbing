@@ -47,13 +47,13 @@ Attack any of these. They are load-bearing.
    $152.9trn rise in net worth — 24%.
 
 3. THE ILLUSION IS NEITHER MONETARY NOR A DISCOUNT-RATE ARTEFACT. Both explanations fail.
-   The collateral-circuit account fails on three observables (reuse intensity flat; the ECB's
+   The collateral-circuit account fails on three observables (reuse intensity flat [C-156: on FR 2004C only]; the ECB's
    transaction-level test for a "liquidity windfall" returns null; identified credit against
    securities has SHRUNK relative to the prices it should explain). The discount-rate account
    fails on SIGN: the 10-year TIPS yield rose from −1.04% to +2.35%, +339bp, Dec-2021 to
    Aug-2026, and equity valuation did NOT revert on any of three denominators — equity to
    profits +7.9%, equity to gross value added flat to three decimals, Tobin's q +6.9% with
-   2025Q3 the highest of 304 quarters since 1945.
+   2025Q3 the highest of 304 quarters since 1945. [C-036: contested; the Z.1 q denominator does not capitalise intangibles.]
    What I think does the work instead: factor-share reallocation to shareholders
    (Greenwald–Lettau–Ludvigson put 40.2% of the 1989–2017 real equity rise there against
    14.3% for interest rates), float retirement (−$1.90trn net equity issuance 2022Q1–2025Q4),

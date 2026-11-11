@@ -84,7 +84,7 @@ remaining step in N3, and it closes the denominator.** Until then the leg is *so
 cannot both be right. Either the round figures in a paywalled column are approximations carried forward, or
 **the composition has shifted so far toward hedge funds that the 2017 partition (59% hedge funds / 41% real
 money) no longer describes the market.** Both readings point the same way: **sources have grown faster than
-the pledged pool, so collateral velocity has kept falling — to roughly 1.5, from 2.0 in 2017 and 3.0 in
+the pledged pool, so collateral velocity has kept falling — to roughly 1.5 [C-135: about 1.3-2.0 and unsigned; Singh estimates about 2.0], from 2.0 in 2017 and 3.0 in
 2007.** That is the opposite of the "collateral is being re-used ever harder" intuition, and it is consistent
 with what our own FR 2004C reconstruction already said (`Shadow_Debt_Channel_Map.md`: reuse intensity flat to
 falling; the growth is in the *stock* of collateral and the *reach* of the pipes).
@@ -131,7 +131,7 @@ into 2026. The review's Attack 2 is right that the position is a free parameter 
 the metric's author — with seventeen years of hand-collected top-20-bank data cross-checked with investor
 relations and hedge funds, none of which we can see — states *"measured velocity has remained almost constant
 at around 2.0"* in the same January 2026 piece. At the securities-only floor our own inputs give
-13/(4.92+1.5) ≈ 2.0. **Corrected claim: velocity is in [≈1.5, ≈2.0], with Singh's 2.0 as the primary point
+13/(4.92+1.5) ≈ 2.0. **Corrected claim: velocity is in [≈1.5, ≈2.0] [C-135, 13 Oct: superseded, see the banner below], with Singh's 2.0 as the primary point
 and our 1.55 as the fitted-bracket alternative; the bracket position is unidentified in 2026.**
 
 **Survives — the mechanism, under every reading including the review's own alternative.** No reading has

@@ -126,7 +126,7 @@ legs, and *the nexus is that the same entities sit on both*:
 | Leg | What it is | Our coverage |
 |---|---|---|
 | **Money** | Asset managers and institutional cash pools are the dominant source of demand for **non-M2 money** — the money-like claims that never enter M1–M3 | **BUILT and joined 15 Sep (N4).** Measured as the offshore dollar leg (N2a) and `z_k` (N2b; §2 S-N2b). 2024 private-repo growth was the ON RRP handoff, not new cash (C-085). `2026-09-15-N4-Scale-Timing-Bound.md` |
-| **Collateral** | The same asset managers are the source collateral **"mines"**; banks fund themselves by **re-using pledged collateral mined from them** | **Covered, negatively.** Reuse flat, multiplier −36% from 2023 peak, "permissive condition, not proximate source" *(21 Aug summary, not re-verified since D10 and N3v4 measured the leg; current state in §2 S-N3 and `2026-08-30-D10-Reuse-On-The-Measured-Chain.md`, `2026-08-31-N3v4-Singh-Reconciliation.md`)* |
+| **Collateral** | The same asset managers are the source collateral **"mines"**; banks fund themselves by **re-using pledged collateral mined from them** | **Covered, negatively.** Reuse flat [C-156: on FR 2004C; the two-bank re-pledged share rose within range], multiplier −36% from 2023 peak, "permissive condition, not proximate source" *(21 Aug summary, not re-verified since D10 and N3v4 measured the leg; current state in §2 S-N3 and `2026-08-30-D10-Reuse-On-The-Measured-Chain.md`, `2026-08-31-N3v4-Singh-Reconciliation.md`)* |
 | **The interlock** | These are not two mechanisms. The nonbank supplies the funding *and* the collateral; the bank supplies the money-like claim *and* consumes the collateral | **RESULT 15 Sep (N4), mixed on 2024.** Both legs moved (wholesale share up, source collateral up, velocity not up). The 2024 expansion of measured private repo was the RRP handoff; the dated collateral-stock step is 2026. No funded-share percentage (C-085). `2026-09-15-N4-Scale-Timing-Bound.md` |
 
 **Their 2011 numbers, for calibration:** collateral mined from asset managers **$3.3trn
@@ -652,7 +652,7 @@ Do not restate findings here. Status and detail stay in the home section named o
   NUMBERED ITEMS FROM THE EARLIER PLAN (2-7)
    2 essay opening vs BEA 5.1 (outcome-side) · 3 verify the five numbers Grok could not ·
    4 name the q series (C-036) · 5 repo-attribution instrument (C-038) · 6 GLL out of sample (C-037) ·
-   7 triage the unpromoted caveats (C-040) — only 3 of 17 done
+   7 triage the unpromoted caveats (C-040) — DONE 11 Nov, C-158
 
   KNOWN DEFECTS — found in housekeeping 21 Sep, NOT yet fixed, listed so they are not rediscovered
    d1  Four docs cite scratchpad deliverables that are GONE with no vault copy: Shadow_Debt_Channel_Map.md
@@ -1083,7 +1083,7 @@ pipe, the largest money-creation channel still unmeasured in our map; **(2) the 
 (ratio corrected 30 Aug, C-063: 63.6%→44.4% matched-endpoint, falling); **(3) foreign inflow** — TIC, corrected for the
 ~$1.4trn Cayman hedge-fund undercount (Barth et al., FEDS 15 Oct 2025, verified); **(4) new money-like
 instruments** — stablecoins (D6); **(5) reallocation + leverage of existing money** — the MMF/deposit rotation
-(D1/D3, settled) and the collateral chains (N3: sources ×3, velocity ~1.3–1.5). Note the reflexive loop the
+(D1/D3, settled) and the collateral chains (N3: sources ×3, velocity ~1.3–1.5 [C-135: about 1.3-2.0, unsigned; Singh estimates]). Note the reflexive loop the
 closure would make visible: deficits CREATE the collateral that the leverage stands on, and the leverage buys
 the deficits — Treasuries as both the financed object and the financing instrument. Includes the buyback line:
 Z.1 net corporate equity issuance is deeply negative — a debt-funded structural buyback bid (C-065: the
@@ -1144,7 +1144,7 @@ produced agreement with one of them, which is worth nothing (C-045).
 6. **GLL out of sample, 2018–2026 (0e, C-037).** Do not import 1989–2017 variance shares into a
    2023–25 paragraph. If a clean decomposition is not possible, drop GLL from that paragraph.
    *Blocks: the discount-rate paragraph, which is now half-withdrawn under C-035.*
-7. **Triage the unpromoted caveats (C-040).** Only 3 of 17 items from the 21 Aug do-not-say list
+7. **Triage the unpromoted caveats (C-040).** DONE 11 Nov: C-158 registers all 17, with banners where they were still said. WAS: Only 3 of 17 items from the 21 Aug do-not-say list
    reached the register; one of the remainder reached an external reviewer as a load-bearing
    claim. Highest-value unpromoted: velocity phrasing, Damodaran's near-circular 266bp, Bezemer
    et al. used to characterise 2026 on a sample ending 2005. [Status 9 Oct: still OPEN. "Only 3 of 17" was not re-measured.
