@@ -1,4 +1,4 @@
-# source: UN Comtrade public preview (comtradeapi.un.org), Switzerland as reporter, HS 710812, flow X, retrieved 2026-10-19; completed calendar years only; monthly values stay in the cache
+# source: UN Comtrade public preview (comtradeapi.un.org), Switzerland as reporter, HS 710812, flow X, retrieved 2026-10-19, 2026-11-12; completed calendar years only; monthly values stay in the cache
 year,partner,hs6,net_mass_kg,net_mass_kg_known_months,months_n,months_blank,net_wgt_estimated_months,status,comtrade_annual_kg,monthly_sum_minus_annual_kg
 2012,CN,710812,,,12,2,0,partial,,
 2012,HK,710812,137662,137662,12,0,0,complete,137662,0

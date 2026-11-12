@@ -2,7 +2,7 @@
 
 ## HM Revenue and Customs (HMRC) Overseas Trade Statistics
 
-- URL: `https://api.uktradeinfo.com` (entity `/OTS`, lookups `/FlowType`, `/Country`, `/Commodity`); documentation https://www.uktradeinfo.com/api-documentation/. Retrieved: 2026-10-19.
+- URL: `https://api.uktradeinfo.com` (entity `/OTS`, lookups `/FlowType`, `/Country`, `/Commodity`); documentation https://www.uktradeinfo.com/api-documentation/. Retrieved: 2026-10-19, 2026-11-12.
 - Licence: Open Government Licence v3.0 ("All content is available under the Open Government Licence v3.0, except where otherwise stated"). Contains public sector information licensed under the Open Government Licence v3.0.
 - Feeds: `monthly.csv`, `annual.csv`, `revisions.csv`, `summary.csv`, the UK columns of `context.csv`, and the checks.
 - Filter: CN8 (eight-digit Combined Nomenclature) codes 71080000 to 71089999, FlowTypeId 4 (non-EU exports), every partner and month; `SuppressionIndex` 0 only; `Value` is used only for the implied-price check and no sterling value is committed.
@@ -12,7 +12,7 @@
 
 ## UN Comtrade public preview (Swiss mirror)
 
-- URL: `https://comtradeapi.un.org/public/v1/preview/C` (keyless preview), reporter 757, HS (Harmonized System) 710812, partners 156 and 344, flow X; UK cross-check reporter 826, HS 710813, partner 156, 2024. Retrieved: 2026-10-19.
+- URL: `https://comtradeapi.un.org/public/v1/preview/C` (keyless preview), reporter 757, HS (Harmonized System) 710812, partners 156 and 344, flow X; UK cross-check reporter 826, HS 710813, partner 156, 2024. Retrieved: 2026-10-19, 2026-11-12.
 - Terms: UN Comtrade data are for internal use only and may not be re-disseminated in any form without the permission of the United Nations Statistics Division (UNSD), except publication of limited amounts in a few tables. Only completed-year totals per partner are committed; monthly values stay in the ignored cache.
 - Feeds: `swiss_mirror_annual.csv` and the Swiss column of `context.csv`. Fields kept: `netWgt`, `isNetWgtEstimated`; a record is never dropped for `isReported` false.
 - Comtrade re-publishes the Swiss customs submission; no scriptable Swiss customs route exists (the tariff-by-country file is a 690 MB archive and its terms are by request).

@@ -2,7 +2,7 @@
 
 This table counts the kilograms of gold that UK customs export declarations sent to China and Hong Kong each month, from HMRC trade statistics. It counts declared shipments, not buyers, and it is not a measure of central-bank buying.
 
-CN (the Combined Nomenclature, the UK tariff's classification) 71081310 is the tariff's own heading for semi-manufactured gold (bars, rods, wire, sections, plates, sheets and strips over 0.15 mm). The kilograms are the declared net mass that HMRC (HM Revenue and Customs, the UK customs authority) records on export declarations to non-EU destinations; the latest HMRC pull in this folder is dated 2026-10-19 and its newest month is 2026-08.
+CN (the Combined Nomenclature, the UK tariff's classification) 71081310 is the tariff's own heading for semi-manufactured gold (bars, rods, wire, sections, plates, sheets and strips over 0.15 mm). The kilograms are the declared net mass that HMRC (HM Revenue and Customs, the UK customs authority) records on export declarations to non-EU destinations; the latest HMRC pull in this folder is dated 2026-11-12 and its newest month is 2026-09.
 
 ## What it leaves out
 
@@ -18,7 +18,7 @@ This folder prints three other magnitudes beside the UK kilograms, each in its o
 
 ## The latest result
 
-**UK declared net mass of CN 71081310, tonnes** (kilograms divided by 1,000; HMRC pull 2026-10-19). `provisional` counts the months of the year that are within 18 months of first publication; a year with a blank month has no total. Hong Kong and China are separate columns; `CN_HK` is their sum.
+**UK declared net mass of CN 71081310, tonnes** (kilograms divided by 1,000; HMRC pull 2026-11-12). `provisional` counts the months of the year that are within 18 months of first publication; a year with a blank month has no total. Hong Kong and China are separate columns; `CN_HK` is their sum.
 
 | year | trade_system | China | Hong Kong | China + Hong Kong | provisional months | blank months |
 |---|---|---:|---:|---:|---:|---:|
@@ -28,8 +28,8 @@ This folder prints three other magnitudes beside the UK kilograms, each in its o
 | 2022 | special | 300.165 | 260.169 | 560.334 | 0 | 0 |
 | 2023 | special | 281.283 | 111.605 | 392.888 | 0 | 0 |
 | 2024 | special | 382.786 | 26.044 | 408.830 | 0 | 0 |
-| 2025 | special | 186.866 | 30.304 | 217.170 | 10 | 0 |
-| 2026 (2026-01 to 2026-08) | special | 193.084 | 27.771 | 220.855 | 8 | 0 |
+| 2025 | special | 186.866 | 30.304 | 217.170 | 9 | 0 |
+| 2026 (2026-01 to 2026-09) | special | 213.005 | 27.771 | 240.776 | 9 | 0 |
 
 **Switzerland's exports of HS (Harmonized System) 710812 (unwrought gold), as reported to UN Comtrade, tonnes, completed years only.** HS 710812 and the UK's CN 71081310 are different headings, and Switzerland records imports by origin, so these are not a mirror of the UK figures and nothing here adds or compares the two.
 
@@ -61,7 +61,7 @@ This folder prints three other magnitudes beside the UK kilograms, each in its o
 | 2023 | special | 392.888 | 224.878 | 1050.800 | 541.589 |
 | 2024 | special | 408.830 | 44.167 | 1092.400 | 830.336 |
 | 2025 | special | 217.170 | 26.749 | 863.300 | 557.257 |
-| 2026_to_2026-08 | special | 220.855 | 80.247 | blank | blank |
+| 2026_to_2026-09 | special | 240.776 | 103.264 | blank | blank |
 
 ## Blank months
 
@@ -75,8 +75,8 @@ The two sources are treated differently, on purpose. A month for which HMRC has 
 
 ## One worked row
 
-China, CN 71081310, January 2024: HMRC holds a row for port 428 of 25046 kg and a row for port 434 of 0 kg; their sum is the single `monthly.csv` row `2024-01,CN,cn71081310,25046,25049.455,2,ok,special,no,2026-10-19`.
+China, CN 71081310, January 2024: HMRC holds a row for port 428 of 25046 kg and a row for port 434 of 0 kg; their sum is the single `monthly.csv` row `2024-01,CN,cn71081310,25046,25049.455,2,ok,special,no,2026-11-12`.
 
 ## Provenance
 
-Contains public sector information licensed under the Open Government Licence v3.0. HMRC Overseas Trade Statistics (`api.uktradeinfo.com`), non-EU exports, retrieved 2026-10-19. Swiss figures: UN Comtrade public preview (`comtradeapi.un.org`), reporter Switzerland, retrieved 2026-10-19. UN Comtrade data are for internal use and may not be re-disseminated without the permission of the United Nations Statistics Division (UNSD), except limited amounts in a few tables; only completed-year totals per partner are published here, and monthly Swiss values stay in an ignored cache. The first Comtrade backfill is about 176 calls (about 18 minutes at 6 seconds) and may end on a 429, in which case the build ships UK-only and says so. SAFE: "Official Reserve Assets"; WGC: Gold Demand Trends; both as the gold ledger (`data/gold/`) cites them. Build decisions, including one fix made after the first build, are listed in [SOURCES.md](SOURCES.md).
+Contains public sector information licensed under the Open Government Licence v3.0. HMRC Overseas Trade Statistics (`api.uktradeinfo.com`), non-EU exports, retrieved 2026-10-19, 2026-11-12. Swiss figures: UN Comtrade public preview (`comtradeapi.un.org`), reporter Switzerland, retrieved 2026-10-19, 2026-11-12. UN Comtrade data are for internal use and may not be re-disseminated without the permission of the United Nations Statistics Division (UNSD), except limited amounts in a few tables; only completed-year totals per partner are published here, and monthly Swiss values stay in an ignored cache. The first Comtrade backfill is about 176 calls (about 18 minutes at 6 seconds) and may end on a 429, in which case the build ships UK-only and says so. SAFE: "Official Reserve Assets"; WGC: Gold Demand Trends; both as the gold ledger (`data/gold/`) cites them. Build decisions, including one fix made after the first build, are listed in [SOURCES.md](SOURCES.md).
