@@ -1,6 +1,6 @@
 # CV1 stage 2 — did managers' perceived uncertainty fall? Aggregate proxies: registration (13 Nov 2026)
 
-**Status: REGISTERED v1, NOT BUILT, not yet attacked.** Companion to `_research/2026-11-13-CV1-Confidence-Velocity-Spec.md`
+**Status: REGISTERED v2 (amended blind 13 Nov after the Grok attack; the v1 table below is superseded), NOT BUILT.** Companion to `_research/2026-11-13-CV1-Confidence-Velocity-Spec.md`
 (stages 3–4), which this file does not amend. The principal ruled on 13 Nov that stage 2 should be tested on cheap free
 aggregate proxies, rather than on a firm-level 10-K corpus pulled from `www.sec.gov`. Source inventory: a Sonnet scout
 on 13 Nov, which read shape only; the supervisor spot-checked the SBU sheet and column names and the Dallas file type.
@@ -54,6 +54,54 @@ uncertainty sentences and of policy-linked ones, edition by edition, and S2 is a
 - **CFO Survey.** It has no continuous uncertainty series across the 2020 break.
 - **NFIB.** The host returned 403 and no free machine-readable series was found.
 - **Regional surveys other than Dallas.** None has an uncertainty variable.
+
+## Version 2 (amended 13 Nov after the Grok attack, still blind) — supersedes the table and rules above
+
+Attack: `_research/2026-11-13-Grok-CV1-Stage2-Attack.md`. Accepted:
+- S3's question measures a month-on-month *change*, not a level, and S2's substring stems match inside ordinary words
+  ("war" in "toward", "rates" in "moderates", "trade" in "retail trade"); the Beige Book was redesigned on
+  18 Jan 2017, inside the baseline.
+- S4's denominator moves with cross-firm heterogeneity and common inflation.
+- The pooled residual is not the partial window effect.
+- The daily EPU file is unfit for multi-year comparison, and its authors use the monthly 10-paper index instead.
+- Inflation uncertainty is inside nominal-sales uncertainty and was uncontrolled.
+- Smoothing and instrument changes split the SBU baseline.
+- The BTOS question numbers were wrong.
+
+**Overruled:** Grok's rule that "S1 alone cannot refute stage 2". S1 is the only free series that measures the right
+object, an activity-weighted mean of firms' own subjective standard deviations. If S1 is AGAINST after the controls below,
+stage 2 has failed its one necessary-condition test on free data, and the note says so. Also overruled: the call to
+winsorize firm-level standard deviations, because only the published aggregate is free.
+
+**Labelled statements (only these two).**
+
+| id | statistic | SUPPORT (consistent, not attributed) if | AGAINST if |
+|---|---|---|---|
+| CV1-S1 v2 | From one frozen, hashed SBU workbook, take the **unsmoothed** sales-revenue subjective-uncertainty series, `Index Values (unsmoothed) `, `SalesRevGrowthUnc_percent`, Dec 2016 – Dec 2019 and Jan 2023 – Dec 2025 (December 2016 is the first full month after the September 2016 instrument change; earlier months are dropped). OLS: Y = a + b1·log(monthly 10-paper EPU, `Main News Index`) + b2·log(monthly mean VIX close) + b3·log(SPF one-year CPI forecast dispersion, Philadelphia Fed) + d·Treatment + e. Effect size = d ÷ the standard deviation of the residuals in baseline months. If the SPF dispersion series cannot be fetched free and scripted, the builder stops S1 and reports, and does not substitute a series | effect size ≤ −0.5 | effect size ≥ 0 |
+| CV1-S4 v2 | Same workbook. Numerator: the unsmoothed `SalesRevGrowthUnc_percent`. Denominator: `RealizedSalesGrowth_p90` − `RealizedSalesGrowth_p10` (observed rows only; if the sheet has no observed/projected flag, keep only months at least 12 months before the vintage date). Months whose four-quarter look-back overlaps 2020–2022 are dropped, which removes all of 2023. R = (window mean of numerator) ÷ (window mean of denominator). Baseline Dec 2016 – Dec 2019; treatment Jan 2024 – Dec 2025. Both means are printed beside R. **Labelled only if S1 v2 is SUPPORT** (the thesis's boundary presupposes stage 2); otherwise it is reported unlabelled | R_T ≤ 0.9 × R_B | R_T ≥ R_B |
+
+**Descriptive only (no label; none may be read as supporting or weakening stage 2):**
+- **S2 v2, Beige Book.** Per edition, uncertainty sentences per 1,000 sentences under two dictionaries:
+  - (a) a whole-word match on `uncertain|uncertainty|uncertainties`;
+  - (b) the same, dropping a sentence only if it contains a whole word from {tariff, tariffs, election, elections,
+    shutdown, regulation, regulations, regulatory, tax, taxes, fiscal, geopolitical, sanctions, immigration, pandemic,
+    covid, brexit, congress, legislation} or one of the phrases {federal reserve, interest rate, interest rates, debt
+    ceiling, stock market, financial market, financial markets}.
+
+  The national summary is excluded by a fixed list of District headings. The sentence splitter must not break on
+  "U.S." or "St." Editions are dated by release month. The 18 Jan 2017 format change is marked on the chart. No
+  residualising.
+- **S3 v2, Dallas Fed.** The not-seasonally-adjusted balance `uncri − uncrd`, reported separately for TMOS and TSSOS from
+  the frozen vintage, captioned "negative = more firms said uncertainty fell this month than rose". Not averaged, not
+  residualised, and not compared with 2018–2019 as a level.
+- **S5 v2, Bank of England DMP.** Only if the free monthly workbook has the column "average within-firm standard deviation
+  of expected sales growth" (sheet `Subjective uncertainty`): the ratio of its Jan 2023 – Dec 2025 mean to its Jan 2017 –
+  Dec 2019 mean, with the caveat that the comparison mixes Brexit, the energy shock and carried-forward answers. If the
+  column is absent, the readout says "not in the free monthly file".
+- **S6 v2, Census BTOS.** The share answering "difficult" or "very difficult to forecast", for the question whose text
+  begins "Thinking about the future performance of this business". Census's original AI series, its series from 4 Dec
+  2025, and the "Super Intelligence" wording from 19 Oct 2026 are plotted as separate lines. Never spliced, never
+  correlated, never referred to by question number.
 
 ## Build (not started; after the attack)
 
