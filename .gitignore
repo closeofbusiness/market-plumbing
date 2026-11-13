@@ -162,3 +162,7 @@ data/vintages/ofr_repo/STOP_term_repo
 
 # Funding-identity checks: raw Z.1 zip (8 MB) and BEA NIPA flat files (48 MB), fetched by bin/funding_identity_checks.py fetch
 data/vintages/funding_identity_checks/
+# CV1 raw downloads (BEA, Z.1, C30, data.sec.gov frames and submissions)
+data/vintages/cv1/
+# CV1 stage-2 raw downloads (SBU, EPU, VIX, SPF, Beige Book, Dallas Fed, BoE DMP, BTOS)
+data/vintages/cv1_stage2/

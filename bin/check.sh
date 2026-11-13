@@ -2496,6 +2496,223 @@ PY
   printf '%s\n' "$out" | grep -v '^BAD \|^WARN \|^$' | sed 's/^/  ✗ guard error: /'
 }
 
+# --- M31: CV1 CONFIDENCE-VELOCITY GUARD (spec _research/2026-11-13-CV1-Confidence-Velocity-Spec.md, "Registered statements - version 2"; build bin/cv1_confidence_velocity.py) ---
+# data/cv1_confidence_velocity/ holds statistics derived from BEA, Federal Reserve Board, Census and SEC files and nothing raw. The raw downloads stay in the gitignored cache
+# data/vintages/cv1/ (gitignored). Six things would break the spec's rules, and none is visible to M5-M30:
+#   1. the spec file's sha256, the script's SPEC_SHA256 and the prereg_sha256 of every row of registered.csv are not all the literal typed below (PREREG_SHA); registered.csv does not hold
+#      CV1-P1..P7 once each;
+#   2. a header line (skipping every "# source:" line) that is not that file's exact column allowlist, typed here a second time, or a scores.csv row without a label from the allowed set,
+#      a statement missing from scores.csv, or a NOT BUILT or NOT SCORED row that carries a statistic;
+#   3. a file in the folder that is not one of the five committed names, a workbook, zip, json, gz, html, pdf or STOP file there, a zip container under another name;
+#   4. a local path (/Users/, /private/, ~/) or an at sign in a committed file;
+#   5. anything of the cache or of the folder's raw kinds tracked in git, or a cache path that git does not ignore;
+#   6. README.md without the sentence that a SUPPORT label is never evidence that AI lowered managers' uncertainty, or with wording that claims proof or a cause.
+# The script refuses the same things when it writes; this is the second, independent look. CV1_DIR, CV1_CACHE and CV1_SPEC override the folder, the cache and the spec path (used to show
+# that the guard fires on a planted copy). It warns and never blocks (header doctrine).
+cv1_check() {
+  echo "-- M31: CV1 confidence-velocity guard (data/cv1_confidence_velocity/: the spec hash in the spec, the script and every registered row, exact headers, the seven statements and their labels, nothing raw in the folder or in git, the cache ignored, no local path or at sign, the SUPPORT-is-not-identification sentence) --"
+  local dir="${CV1_DIR:-data/cv1_confidence_velocity}" cache="${CV1_CACHE:-data/vintages/cv1}" spec="${CV1_SPEC:-_research/2026-11-13-CV1-Confidence-Velocity-Spec.md}" f name bad="" got want out py tracked committed
+  local PREREG_SHA='26672bd1f1632ddab839780b219724773cab83f63dae082c87e838cc1a7a6104'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  got=$(shasum -a 256 "$spec" 2>/dev/null | cut -d' ' -f1)
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the spec file ($spec) hashes to ${got:-nothing}, not the registered literal
+"
+  got=$(grep -m1 '^SPEC_SHA256 = ' bin/cv1_confidence_velocity.py 2>/dev/null | sed -E 's/^SPEC_SHA256 = "([0-9a-f]*)".*$/\1/')
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ SPEC_SHA256 in bin/cv1_confidence_velocity.py (${got:-missing}) is not the literal in check.sh
+"
+  committed=" README.md registered.csv scores.csv detail.csv vintages.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    case "$name" in *.xlsx|*.xls|*.zip|*.json|*.gz|*.html|*.htm|*.pdf|STOP*)
+      bad="${bad}  ✗ raw file in the committed folder (a workbook, zip, json, gz, page, pdf or STOP file): $f
+"
+      continue ;;
+    esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && { bad="${bad}  ✗ raw file in the committed folder (a zip container under another name): $f
+"; continue; }
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the five committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      registered.csv) want='statement_id,version,superseded,scored,statement,statistic,support_if,against_if,treatment_window,placebo_window,prereg_sha256' ;;
+      scores.csv) want='statement_id,label,primary_statistic,primary_value,unit,statistics,denominators,caveats' ;;
+      detail.csv) want='statement_id,item,value,unit' ;;
+      vintages.csv) want='source,key,url,fetched_utc,status,bytes,sha256,note' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  if [ -z "${CV1_DIR:-}" ] && [ -z "${CV1_CACHE:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- "$dir" data/vintages/funding_identity_checks data/vintages/cv1 2>/dev/null | grep -E '\.(xlsx|xls|zip|json|gz|html|pdf)$|(^|/)STOP|/raw/|manifest\.csv|fetch_log\.csv' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a raw download, a cache manifest or a STOP file must never be): $tracked
+"
+    if [ -d "$cache" ]; then
+      git check-ignore -q -- "$cache/raw/x.zip" 2>/dev/null || bad="${bad}  ✗ the cache ($cache) is not ignored by git: a raw download there could be committed
+"
+    fi
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+d, prereg = sys.argv[1], sys.argv[2]
+bad = []
+def rows(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    t = [l for l in open(p, encoding="utf-8", errors="replace", newline="").read().split("\n") if not l.startswith("# source:") and l.strip()]
+    r = list(csv.reader(t))
+    return [dict(zip(r[0], x)) for x in r[1:]] if r else []
+ids = ["CV1-P%d" % i for i in range(1, 8)]
+reg = rows("registered.csv")
+if reg is None:
+    bad.append("registered.csv is missing")
+else:
+    if sorted(r.get("statement_id", "") for r in reg) != ids:
+        bad.append("registered.csv does not hold CV1-P1..P7 once each")
+    if any(r.get("prereg_sha256") != prereg for r in reg):
+        bad.append("registered.csv holds a prereg_sha256 that is not the registered literal")
+    if any(r.get("version") != "2" for r in reg):
+        bad.append("registered.csv holds a row that is not version 2")
+sc = rows("scores.csv")
+if sc is None:
+    bad.append("scores.csv is missing")
+else:
+    allowed = {"SUPPORT", "AGAINST", "INCONCLUSIVE", "NOT BUILT", "NOT SCORED", "DESCRIPTIVE"}
+    if sorted(r.get("statement_id", "") for r in sc) != ids:
+        bad.append("scores.csv does not hold CV1-P1..P7 once each")
+    for r in sc:
+        lab = r.get("label", "")
+        if lab not in allowed:
+            bad.append("scores.csv " + r.get("statement_id", "?") + ": label " + repr(lab) + " is not an allowed label")
+        if lab in ("NOT BUILT", "NOT SCORED") and (r.get("primary_value") or r.get("statistics")):
+            bad.append("scores.csv " + r.get("statement_id", "?") + ": a " + lab + " row carries a statistic")
+        if r.get("statement_id") == "CV1-P6" and lab in ("SUPPORT", "AGAINST", "INCONCLUSIVE"):
+            bad.append("scores.csv CV1-P6 carries a label that the spec denies it (descriptive only)")
+        if r.get("statement_id") == "CV1-P7" and lab != "NOT SCORED":
+            bad.append("scores.csv CV1-P7 is scored before its inputs exist")
+rp = os.path.join(d, "README.md")
+if os.path.isfile(rp):
+    t = open(rp, encoding="utf-8", errors="replace").read()
+    if "It is never evidence that AI lowered managers' uncertainty" not in t:
+        bad.append("README.md lacks the sentence that SUPPORT is never evidence that AI lowered managers' uncertainty")
+    hits = sorted({m.group(0).lower() for m in re.finditer(r"\bproves?\b|\bproven\b|\bAI caused\b|\bcaused by AI\b|\bconfirms? the thesis\b", t, re.I)})
+    if hits:
+        bad.append("README.md holds wording that claims proof or a cause: " + ", ".join(hits[:5]))
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ] && [ -z "$(printf '%s\n' "$out" | grep -v '^BAD \|^$')" ]; then
+    echo "  ✓ the spec hash in the spec, the script and every registered row; the five committed names, every header its exact allowlist; P1..P7 once each with an allowed label (P6 unlabeled, P7 not scored); no workbook, zip, json, gz or STOP file; the cache ignored and nothing raw in git; no local path or at sign; the SUPPORT sentence present."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+    echo "  -> raw downloads stay in data/vintages/cv1/ (gitignored) and the build writes every table: fix the build, do not edit the committed tables by hand."
+  fi
+}
+
+# --- M32: CV1 STAGE-2 UNCERTAINTY GUARD (spec _research/2026-11-13-CV1-Stage2-Aggregate-Proxies-Spec.md, section Version 2; build bin/cv1_stage2_uncertainty.py) ---
+# data/cv1_stage2_uncertainty/ holds derived statistics only; the raw workbooks, Beige Book pages and the local S1 panel stay in data/vintages/cv1_stage2/ (nested .gitignore of "*").
+# Five things are errors, and none is visible to M5-M30:
+#   1. the spec file does not hash to PREREG_SHA (typed here a second time), or SPEC's pin in bin/cv1_stage2_uncertainty.py (PREREG_SHA256) differs from it;
+#   2. a file in the folder that is not one of the eight committed names, or a raw file (xlsx, xls, zip, json, html, htm, pdf, gz, a STOP file, a zip container under another name);
+#   3. a header line (skipping every line that starts with #) that is not that file's exact column allowlist, typed here a second time;
+#   4. registered.csv holding a prereg_sha256 that is not PREREG_SHA, or a data/vintages/cv1_stage2 file (or raw file under the folder) tracked in git;
+#   5. a local path (/Users/, /private/, ~/) or an at sign in a committed file.
+# CV1S2_DIR overrides the folder and CV1S2_SCRIPT the script (used to show that the guard fires on a planted copy). It warns and never blocks (header doctrine).
+cv1s2_check() {
+  echo "-- M32: CV1 stage-2 guard (data/cv1_stage2_uncertainty/: the spec and the script carry the registered hash, the eight committed names, exact headers, no raw file in git, no local path or at sign) --"
+  local dir="${CV1S2_DIR:-data/cv1_stage2_uncertainty}" script="${CV1S2_SCRIPT:-bin/cv1_stage2_uncertainty.py}" bad="" f name want got committed tracked
+  local PREREG_SHA='7cda4b28fe824781f426ea9f3d76ad6f4caa09c7a104792b5f332c0a6bc7b270'
+  local spec="_research/2026-11-13-CV1-Stage2-Aggregate-Proxies-Spec.md"
+  if [ -f "$spec" ]; then
+    got=$(shasum -a 256 "$spec" | cut -d' ' -f1)
+    [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the spec file hashes to $got, not the registered hash
+"
+  else
+    bad="${bad}  ✗ $spec is missing
+"
+  fi
+  if [ -f "$script" ]; then
+    got=$(grep -m1 '^PREREG_SHA256 = ' "$script" | sed -E 's/^PREREG_SHA256 = "([0-9a-f]*)".*$/\1/')
+    [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the pin in $script ($got) is not the literal in check.sh
+"
+  else
+    bad="${bad}  ✗ $script is missing, so its pin cannot be compared
+"
+  fi
+  if [ ! -d "$dir" ]; then
+    if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then echo "  ✓ $dir is absent -- only the spec and script pins were checked, and they equal the literal."; else printf '%s\n' "$bad" | sed '/^$/d'; fi
+    return
+  fi
+  committed=" README.md registered.csv scores.csv sensitivity.csv s2_beigebook_editions.csv s3_dallas_uncertainty.csv s5_boe_dmp.csv s6_btos.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    case "$name" in *.xlsx|*.xls|*.zip|*.json|*.html|*.htm|*.gz|*.pdf|STOP*)
+      bad="${bad}  ✗ raw file in the committed folder: $f
+"
+      continue ;;
+    esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && { bad="${bad}  ✗ raw file in the committed folder (a zip container under another name): $f
+"; continue; }
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the eight committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      registered.csv) want='statement_id,version,labelled,support_if,against_if,baseline_window,treatment_window,controls,input_files,input_sha256,prereg_sha256' ;;
+      scores.csv) want='statement_id,item,value,n_baseline_months,n_treatment_months,note' ;;
+      sensitivity.csv) want='statement_id,variant,value,n_baseline_months,n_treatment_months,note' ;;
+      s2_beigebook_editions.csv) want='edition_date,release_month,page_code,page_format,after_2017_01_18_redesign,n_district_sections,n_sentences,n_dictionary_a,n_dictionary_b,rate_a_per_1000,rate_b_per_1000' ;;
+      s3_dallas_uncertainty.csv) want='month,tmos_uncri,tmos_uncrd,tmos_uncri_minus_uncrd,tssos_uncri,tssos_uncrd,tssos_uncri_minus_uncrd' ;;
+      s5_boe_dmp.csv) want='series,baseline_window,n_baseline_months,baseline_mean_pct,treatment_window,n_treatment_months,treatment_mean_pct,ratio_treatment_to_baseline' ;;
+      s6_btos.csv) want='line,wording,cycle_smpdt,collection_start,collection_end,publication_date,share_pct' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^#' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+    if [ "$name" = "registered.csv" ]; then
+      got=$(grep -v '^#' "$f" | tail -n +2 | awk -F, '{print $NF}' | sort -u | tr '\n' ' ')
+      [ "$got" = "$PREREG_SHA " ] || bad="${bad}  ✗ registered.csv holds a prereg_sha256 that is not the registered hash: $got
+"
+    fi
+  done
+  if [ -z "${CV1S2_DIR:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- "$dir" data/vintages/cv1_stage2 2>/dev/null | grep -E '\.(xlsx|xls|zip|json|html|htm|pdf|gz)$|(^|/)STOP|data/vintages/cv1_stage2/' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a raw workbook, page, zip, json, pdf, STOP file or anything under data/vintages/cv1_stage2 must never be): $tracked
+"
+  fi
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ]; then
+    echo "  ✓ the spec and the script carry the registered hash; only the eight committed names, each with its exact header; registered.csv carries the hash; nothing raw in git; no local path or at sign in $dir."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    echo "  -> raw files stay in data/vintages/cv1_stage2/ (ignored by its own .gitignore) and the build writes every table: fix the build, do not edit the committed tables by hand."
+  fi
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -2950,6 +3167,10 @@ if [ "$TARGET" = "--all" ]; then
   cfo_leak_check
   echo
   term_repo_check
+  echo
+  cv1_check
+  echo
+  cv1s2_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

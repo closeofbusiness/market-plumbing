@@ -1,0 +1,18 @@
+# source: bin/cv1_stage2_uncertainty.py build; SBU workbook vintage 2026-10-28; inputs hashed in registered.csv
+statement_id,item,value,n_baseline_months,n_treatment_months,note
+CV1-S1 v2,coef_a_constant,3.318252,37,36,
+CV1-S1 v2,coef_b1_log_epu,-0.029741,37,36,
+CV1-S1 v2,coef_b2_log_vix,0.009583,37,36,
+CV1-S1 v2,coef_b3_log_spf_cpi_dispersion,0.252120,37,36,
+CV1-S1 v2,coef_d_treatment,0.929020,37,36,
+CV1-S1 v2,baseline_residual_sd_ddof1,0.294451,37,36,"sample SD (n-1) of the residuals in the 37 baseline months, residuals from the full regression"
+CV1-S1 v2,effect_size,3.155098,37,36,d / baseline residual SD
+CV1-S1 v2,label,AGAINST,37,36,SUPPORT if effect size <= -0.5; AGAINST if >= 0; else INCONCLUSIVE
+CV1-S4 v2,mean_numerator_baseline,3.034216,37,24,
+CV1-S4 v2,mean_denominator_baseline,21.111946,37,24,
+CV1-S4 v2,R_B,0.143720,37,24,
+CV1-S4 v2,mean_numerator_treatment,3.796583,37,24,
+CV1-S4 v2,mean_denominator_treatment,24.842542,37,24,
+CV1-S4 v2,R_T,0.152826,37,24,
+CV1-S4 v2,R_T_over_R_B,1.063356,37,24,
+CV1-S4 v2,label,UNLABELLED_S1_NOT_SUPPORT,37,24,labelled only if CV1-S1 v2 is SUPPORT; SUPPORT if R_T <= 0.9 R_B; AGAINST if R_T >= R_B

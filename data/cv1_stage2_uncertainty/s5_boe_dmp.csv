@@ -1,0 +1,5 @@
+# source: Bank of England Decision Maker Panel monthly workbook, sheet Subjective uncertainty, block Sales growth uncertainty (%); no label
+# caveat: this comparison mixes Brexit, the UK energy shock and carried-forward scenario answers, and is not in US residual units
+series,baseline_window,n_baseline_months,baseline_mean_pct,treatment_window,n_treatment_months,treatment_mean_pct,ratio_treatment_to_baseline
+single_month,2017-01..2019-12,36,4.5270,2023-01..2025-12,36,4.7248,1.0437
+three_month_average,2017-01..2019-12,36,4.5198,2023-01..2025-12,36,4.7541,1.0518

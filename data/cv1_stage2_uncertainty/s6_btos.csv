@@ -1,0 +1,163 @@
+# source: Census Bureau Business Trends and Outlook Survey national workbook and its AI Core (original) workbook; lines are never spliced, never correlated, and not referred to by question number; no label
+line,wording,cycle_smpdt,collection_start,collection_end,publication_date,share_pct
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202622,2026-10-19,2026-11-01,2026-11-05,46.4
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202621,2026-10-05,2026-10-18,2026-10-22,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202620,2026-09-21,2026-10-04,2026-10-08,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202619,2026-09-07,2026-09-20,2026-09-24,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202618,2026-08-24,2026-09-06,2026-09-10,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202617,2026-08-10,2026-08-23,2026-08-27,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202616,2026-07-27,2026-08-09,2026-08-13,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202615,2026-07-13,2026-07-26,2026-07-30,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202614,2026-06-29,2026-07-12,2026-07-16,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202613,2026-06-15,2026-06-28,2026-07-02,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202612,2026-06-01,2026-06-14,2026-06-18,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202611,2026-05-18,2026-05-31,2026-06-04,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202610,2026-05-04,2026-05-17,2026-05-21,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202609,2026-04-20,2026-05-03,2026-05-07,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202608,2026-04-06,2026-04-19,2026-04-23,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202607,2026-03-23,2026-04-05,2026-04-09,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202606,2026-03-09,2026-03-22,2026-03-26,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202605,2026-02-23,2026-03-08,2026-03-12,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202604,2026-02-09,2026-02-22,2026-02-26,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202603,2026-01-26,2026-02-08,2026-02-12,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202602,2026-01-12,2026-01-25,2026-01-29,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202601,2025-12-29,2026-01-11,2026-01-15,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202526,2025-12-15,2025-12-28,2025-12-31,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202525,2025-12-01,2025-12-14,2025-12-18,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202524,2025-11-17,2025-11-30,2025-12-04,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202523,2025-11-03,2025-11-16,,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202522,2025-10-20,2025-11-02,,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202521,2025-10-06,2025-10-19,,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202520,2025-09-22,2025-10-05,2025-10-09,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202519,2025-09-08,2025-09-21,2025-09-25,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202518,2025-08-25,2025-09-07,2025-09-11,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202517,2025-08-11,2025-08-24,2025-08-28,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202516,2025-07-28,2025-08-10,2025-08-14,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202515,2025-07-14,2025-07-27,2025-07-31,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202514,2025-06-30,2025-07-13,2025-07-17,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202513,2025-06-16,2025-06-29,2025-07-03,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202512,2025-06-02,2025-06-15,2025-06-19,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202511,2025-05-19,2025-06-01,2025-06-05,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202510,2025-05-05,2025-05-18,2025-05-22,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202509,2025-04-21,2025-05-04,2025-05-08,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202508,2025-04-07,2025-04-20,2025-04-24,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202507,2025-03-24,2025-04-06,2025-04-10,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202506,2025-03-10,2025-03-23,2025-03-27,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202505,2025-02-24,2025-03-09,2025-03-13,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202504,2025-02-10,2025-02-23,2025-02-27,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202503,2025-01-27,2025-02-09,2025-02-13,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202502,2025-01-13,2025-01-26,2025-01-30,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202501,2024-12-30,2025-01-12,2025-01-16,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202426,2024-12-16,2024-12-29,2025-01-02,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202425,2024-12-02,2024-12-15,2024-12-19,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202424,2024-11-18,2024-12-01,2024-12-05,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202423,2024-11-04,2024-11-17,2024-11-21,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202422,2024-10-21,2024-11-03,2024-11-07,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202421,2024-10-07,2024-10-20,2024-10-24,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202420,2024-09-23,2024-10-06,2024-10-10,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202419,2024-09-09,2024-09-22,2024-09-26,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202418,2024-08-26,2024-09-08,2024-09-12,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202417,2024-08-12,2024-08-25,2024-08-29,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202416,2024-07-29,2024-08-11,2024-08-15,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202415,2024-07-15,2024-07-28,2024-08-01,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202414,2024-07-01,2024-07-14,2024-07-18,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202413,2024-06-17,2024-06-30,2024-07-03,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202412,2024-06-03,2024-06-16,2024-06-20,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202411,2024-05-20,2024-06-02,2024-06-06,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202410,2024-05-06,2024-05-19,2024-05-23,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202409,2024-04-22,2024-05-05,2024-05-09,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202408,2024-04-08,2024-04-21,2024-04-25,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202407,2024-03-25,2024-04-07,2024-04-11,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202406,2024-03-11,2024-03-24,2024-03-28,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202405,2024-02-26,2024-03-10,2024-03-14,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202404,2024-02-12,2024-02-25,2024-02-29,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202403,2024-01-29,2024-02-11,2024-02-15,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202402,2024-01-15,2024-01-28,2024-02-01,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202401,2024-01-01,2024-01-14,2024-01-18,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202326,2023-12-18,2023-12-31,2024-01-04,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202325,2023-12-04,2023-12-17,2023-12-21,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202324,2023-11-20,2023-12-03,2023-12-07,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202323,2023-11-06,2023-11-19,2023-11-23,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202322,2023-10-23,2023-11-05,2023-11-09,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202321,2023-10-09,2023-10-22,2023-10-26,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202320,2023-09-25,2023-10-08,2023-10-12,not asked
+difficult_or_very_difficult_to_forecast,question text begins: Thinking about the future performance of this business,202319,2023-09-11,2023-09-24,2023-09-28,not asked
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202520,,,,10.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202519,,,,9.9
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202518,,,,9.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202517,,,,9.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202516,,,,8.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202515,,,,9.4
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202514,,,,9.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202513,,,,9.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202512,,,,9.2
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202511,,,,9.2
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202510,,,,8.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202509,,,,8.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202508,,,,8.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202507,,,,8.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202506,,,,7.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202505,,,,7.4
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202504,,,,7.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202503,,,,6.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202502,,,,6.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202501,,,,6.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202426,,,,6.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202425,,,,6.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202424,,,,6.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202423,,,,6.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202422,,,,6.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202421,,,,6.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202420,,,,6.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202419,,,,5.9
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202418,,,,5.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202417,,,,5.5
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202416,,,,5.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202415,,,,5.1
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202414,,,,5.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202413,,,,4.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202412,,,,5.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202411,,,,4.6
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202410,,,,4.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202409,,,,4.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202408,,,,4.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202407,,,,4.2
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202406,,,,4.4
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202405,,,,4.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202404,,,,5.4
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202403,,,,5.0
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202402,,,,5.3
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202401,,,,4.6
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202326,,,,4.9
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202325,,,,4.9
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202324,,,,4.6
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202323,,,,4.4
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202322,,,,3.9
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202321,,,,3.8
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202320,,,,3.7
+ai_use_original_wording,"in producing goods or services (Census original series, to 2025-10-05)",202319,,,,3.7
+ai_use_super_intelligence_wording,Super Intelligence (formerly AI) wording from 2026-10-19,202622,2026-10-19,2026-11-01,2026-11-05,24.2
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202621,2026-10-05,2026-10-18,2026-10-22,24.6
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202620,2026-09-21,2026-10-04,2026-10-08,23.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202619,2026-09-07,2026-09-20,2026-09-24,23.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202618,2026-08-24,2026-09-06,2026-09-10,23.2
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202617,2026-08-10,2026-08-23,2026-08-27,22.4
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202616,2026-07-27,2026-08-09,2026-08-13,21.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202615,2026-07-13,2026-07-26,2026-07-30,21.5
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202614,2026-06-29,2026-07-12,2026-07-16,21.7
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202613,2026-06-15,2026-06-28,2026-07-02,20.6
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202612,2026-06-01,2026-06-14,2026-06-18,20.6
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202611,2026-05-18,2026-05-31,2026-06-04,20.6
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202610,2026-05-04,2026-05-17,2026-05-21,19.5
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202609,2026-04-20,2026-05-03,2026-05-07,19.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202608,2026-04-06,2026-04-19,2026-04-23,19.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202607,2026-03-23,2026-04-05,2026-04-09,19.1
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202606,2026-03-09,2026-03-22,2026-03-26,18.9
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202605,2026-02-23,2026-03-08,2026-03-12,18.2
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202604,2026-02-09,2026-02-22,2026-02-26,17.5
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202603,2026-01-26,2026-02-08,2026-02-12,18.9
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202602,2026-01-12,2026-01-25,2026-01-29,18.2
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202601,2025-12-29,2026-01-11,2026-01-15,17.7
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202526,2025-12-15,2025-12-28,2025-12-31,17.8
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202525,2025-12-01,2025-12-14,2025-12-18,17.2
+ai_use_business_functions_wording,"AI, in any of its business functions (Census series from 2025-12-04)",202524,2025-11-17,2025-11-30,2025-12-04,17.3

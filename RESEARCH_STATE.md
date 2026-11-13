@@ -623,7 +623,14 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        source, and FRBSF EL 2026-13 already reports no capex growth outside AI-positive firms. Stage 2 (the mediator) is
                                                        untestable at firm level on free data; principal ruled 13 Nov: test it on cheap aggregate proxies instead ->
                                                        _research/2026-11-13-CV1-Stage2-Aggregate-Proxies-Spec.md (S1-S6: SBU, Beige Book, Dallas Fed, boundary ratio, BoE,
-                                                       BTOS; asymmetric labels). Stages 3-4 amended blind to v2 after the Grok attack; builder running.
+                                                       BTOS; asymmetric labels). Stages 3-4 amended blind to v2 after the Grok attack; SCORED 13 Nov (g-M31) ->
+                                                       bin/cv1_confidence_velocity.py, data/cv1_confidence_velocity: P1-P5 all AGAINST, so stage 4 fails on free data. Non-AI
+                                                       investment did not gain share of GDP; ex-AI listed firms' median capex growth slowed against 2016-19;
+                                                       nonfinancial corporate liquid assets ROSE 38% 2022Q4-2025Q4 (supervisor re-derived from Z.1); no cash-rich or
+                                                       hard-asset lead. P6 not built (census.gov 403), P7 due 2029. Stage 2 SCORED 13 Nov (g-M32) -> bin/cv1_stage2_uncertainty.py,
+                                                       data/cv1_stage2_uncertainty: S1 AGAINST (SBU firms' own sales uncertainty rose, 3.03 -> 3.98 window means,
+                                                       effect +3.2 baseline residual SDs net of EPU, VIX and SPF CPI dispersion; supervisor re-derived the means);
+                                                       S4 unlabelled by rule; UK DMP ratio 1.04 (descriptive). Result note: 2026-11-13-CV1-Result.md. Only P7 (2029) remains.
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions

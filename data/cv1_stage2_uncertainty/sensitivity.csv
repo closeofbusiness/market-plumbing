@@ -1,0 +1,11 @@
+# source: non-registered variants, printed for transparency only; none carries a label
+statement_id,variant,value,n_baseline_months,n_treatment_months,note
+CV1-S1 v2,spf_horizon_T,3.237649,37,36,"effect size with the SPF dispersion taken at this horizon; a non-registered variant, no label"
+CV1-S1 v2,spf_horizon_T+1,2.814498,37,36,"effect size with the SPF dispersion taken at this horizon; a non-registered variant, no label"
+CV1-S1 v2,spf_horizon_T+2,3.117563,37,36,"effect size with the SPF dispersion taken at this horizon; a non-registered variant, no label"
+CV1-S1 v2,spf_horizon_T+3,3.189337,37,36,"effect size with the SPF dispersion taken at this horizon; a non-registered variant, no label"
+CV1-S1 v2,spf_horizon_T+4 (registered),3.155098,37,36,effect size with the SPF dispersion taken at this horizon; this is the registered horizon (same as scores.csv)
+CV1-S1 v2,sd_ddof0 (population SD of baseline residuals),3.198618,37,36,effect size using n instead of n-1
+CV1-S4 v2,R_B_under_12_month_rule,0.143720,37,22,denominator months restricted to at least 12 months before the workbook's last-updated date
+CV1-S4 v2,R_T_under_12_month_rule,0.151471,37,22,same restriction; treatment loses the months after 2025-10
+CV1-S4 v2,R_T_over_R_B_under_12_month_rule,1.053928,37,22,reported for transparency; the registered rule is the one in scores.csv

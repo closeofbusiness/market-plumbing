@@ -1,0 +1,175 @@
+# source: bin/cv1_confidence_velocity.py build; scores computed after registered.csv (sha256 e6caae637cc89eaecb9a26f17187b282487cb26e7ceb2c94e6753474a16ec7e7) was written; spec _research/2026-11-13-CV1-Confidence-Velocity-Spec.md sha256 26672bd1f1632ddab839780b219724773cab83f63dae082c87e838cc1a7a6104
+statement_id,item,value,unit
+CV1-P1,variant A nominal residual share of GDP 2022Q4,8.0807,percent
+CV1-P1,variant A nominal residual share of GDP 2025Q4,7.9991,percent
+CV1-P1,variant A nominal residual share of GDP 2015Q4,8.1812,percent
+CV1-P1,variant A nominal residual share of GDP 2019Q4,8.2737,percent
+CV1-P1,"variant A nominal annualised change, treatment",-0.0272,pp per year
+CV1-P1,"variant A nominal annualised change, placebo",0.0231,pp per year
+CV1-P1,variant A nominal gap,-0.0503,pp per year
+CV1-P1,variant A real residual share of GDP 2022Q4,7.8403,percent
+CV1-P1,variant A real residual share of GDP 2025Q4,7.6888,percent
+CV1-P1,variant A real residual share of GDP 2015Q4,8.1312,percent
+CV1-P1,variant A real residual share of GDP 2019Q4,8.2430,percent
+CV1-P1,"variant A real annualised change, treatment",-0.0505,pp per year
+CV1-P1,"variant A real annualised change, placebo",0.0280,pp per year
+CV1-P1,variant A real gap,-0.0785,pp per year
+CV1-P1,variant A label,AGAINST,
+CV1-P1,variant B nominal residual share of GDP 2022Q4,9.2726,percent
+CV1-P1,variant B nominal residual share of GDP 2025Q4,9.2086,percent
+CV1-P1,variant B nominal residual share of GDP 2015Q4,9.6291,percent
+CV1-P1,variant B nominal residual share of GDP 2019Q4,9.5400,percent
+CV1-P1,"variant B nominal annualised change, treatment",-0.0213,pp per year
+CV1-P1,"variant B nominal annualised change, placebo",-0.0223,pp per year
+CV1-P1,variant B nominal gap,0.0009,pp per year
+CV1-P1,variant B real residual share of GDP 2022Q4,9.4182,percent
+CV1-P1,variant B real residual share of GDP 2025Q4,9.3047,percent
+CV1-P1,variant B real residual share of GDP 2015Q4,9.4485,percent
+CV1-P1,variant B real residual share of GDP 2019Q4,9.6827,percent
+CV1-P1,"variant B real annualised change, treatment",-0.0378,pp per year
+CV1-P1,"variant B real annualised change, placebo",0.0586,pp per year
+CV1-P1,variant B real gap,-0.0964,pp per year
+CV1-P1,variant B label,INCONCLUSIVE,
+CV1-P1,variant C nominal residual share of GDP 2022,8.5350,percent
+CV1-P1,variant C nominal residual share of GDP 2025,8.6738,percent
+CV1-P1,variant C nominal residual share of GDP 2015,8.9353,percent
+CV1-P1,variant C nominal residual share of GDP 2019,9.1372,percent
+CV1-P1,"variant C nominal annualised change, treatment",0.0463,pp per year
+CV1-P1,"variant C nominal annualised change, placebo",0.0505,pp per year
+CV1-P1,variant C nominal gap,-0.0042,pp per year
+CV1-P1,variant C real residual share of GDP 2022,8.4374,percent
+CV1-P1,variant C real residual share of GDP 2025,8.5607,percent
+CV1-P1,variant C real residual share of GDP 2015,8.8339,percent
+CV1-P1,variant C real residual share of GDP 2019,9.1303,percent
+CV1-P1,"variant C real annualised change, treatment",0.0411,pp per year
+CV1-P1,"variant C real annualised change, placebo",0.0741,pp per year
+CV1-P1,variant C real gap,-0.0330,pp per year
+CV1-P1,variant C label,AGAINST,
+CV1-P1,Table 5.3.5 A008 level 2015Q4,2500420,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 A008 level 2019Q4,3010301,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 A008 level 2022Q4,3645358,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 A008 level 2025Q4,4482556,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B935 level 2015Q4,98360,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B935 level 2019Q4,117920,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B935 level 2022Q4,155868,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B935 level 2025Q4,339515,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 Y034 level 2015Q4,365281,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 Y034 level 2019Q4,395667,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 Y034 level 2022Q4,474990,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 Y034 level 2025Q4,720051,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B985 level 2015Q4,324687,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B985 level 2019Q4,461752,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B985 level 2022Q4,619716,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 B985 level 2025Q4,774944,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 C307 level 2015Q4,81386,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 C307 level 2019Q4,79883,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 C307 level 2022Q4,151153,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 C307 level 2025Q4,191681,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 W003 level 2015Q4,120130,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 W003 level 2019Q4,150399,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 W003 level 2022Q4,136218,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 W003 level 2025Q4,181805,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 E318 level 2015Q4,100722,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 E318 level 2019Q4,107909,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 E318 level 2022Q4,99755,"millions of dollars, SAAR"
+CV1-P1,Table 5.3.5 E318 level 2025Q4,97350,"millions of dollars, SAAR"
+CV1-P1,memo: Census C30 private Data center Dec-15,3094,"millions of dollars, SAAR (memo only, not subtracted)"
+CV1-P1,"memo: Census C30 Data center as share of GDP, Dec-15",0.0168,percent (memo)
+CV1-P1,memo: Census C30 private Data center Dec-19,7920,"millions of dollars, SAAR (memo only, not subtracted)"
+CV1-P1,"memo: Census C30 Data center as share of GDP, Dec-19",0.0361,percent (memo)
+CV1-P1,memo: Census C30 private Data center Dec-22,14244,"millions of dollars, SAAR (memo only, not subtracted)"
+CV1-P1,"memo: Census C30 Data center as share of GDP, Dec-22",0.0532,percent (memo)
+CV1-P1,memo: Census C30 private Data center Dec-25,55461,"millions of dollars, SAAR (memo only, not subtracted)"
+CV1-P1,"memo: Census C30 Data center as share of GDP, Dec-25",0.1763,percent (memo)
+CV1-P2,window T firms,788,firms
+CV1-P2,window T median annualised capex growth,0.4210,percent per year
+CV1-P2,window T capex-weighted mean growth,3.7583,percent per year
+CV1-P2,window T aggregate (sum) growth,5.8546,percent per year
+CV1-P2,window T base-year capex of panel,240.7,billions of dollars
+CV1-P2,window T annualised nominal GDP growth (calendar years),5.7990,percent per year
+CV1-P2,window T dropped by the acquisition rule (PPE up more than 25% in a year with acquisitions > 0),50,firms
+CV1-P2,window T acquisition-rule years untestable (acquisition > 0 but no usable PPE pair),252,firm-years
+CV1-P2,window P firms,716,firms
+CV1-P2,window P median annualised capex growth,6.5259,percent per year
+CV1-P2,window P capex-weighted mean growth,3.1244,percent per year
+CV1-P2,window P aggregate (sum) growth,5.6910,percent per year
+CV1-P2,window P base-year capex of panel,169.4,billions of dollars
+CV1-P2,window P annualised nominal GDP growth (calendar years),4.6304,percent per year
+CV1-P2,window P dropped by the acquisition rule (PPE up more than 25% in a year with acquisitions > 0),122,firms
+CV1-P2,window P acquisition-rule years untestable (acquisition > 0 but no usable PPE pair),51,firm-years
+CV1-P2,treatment panel CY2025 capex,285.5,billions of dollars
+CV1-P2,"treatment panel share of 2025 ex-AI capex (AI complex and firms without a SIC out; finance, utilities, REITs in)",0.4105,fraction
+CV1-P2,"treatment panel share of 2025 headline-class capex (AI complex, finance, utilities, REITs, no-SIC out)",0.6511,fraction
+CV1-P2,placebo panel CY2025 capex,264.7,billions of dollars
+CV1-P2,"placebo panel share of 2025 ex-AI capex (AI complex and firms without a SIC out; finance, utilities, REITs in)",0.3805,fraction
+CV1-P2,"placebo panel share of 2025 headline-class capex (AI complex, finance, utilities, REITs, no-SIC out)",0.6035,fraction
+CV1-P2,panel waterfall: candidates,1464,
+CV1-P2,panel waterfall: ai_ciks_in_intersection,3,
+CV1-P2,panel waterfall: frame_facts_by_year,"{2016: 4324, 2019: 4347, 2022: 4415, 2025: 3578}",
+CV1-P2,panel waterfall: no_submission_file,0,
+CV1-P2,panel waterfall: dropped_form_not_10k,107,
+CV1-P2,panel waterfall: dropped_form_unresolved,0,
+CV1-P2,panel waterfall: common_firms_10k,1357,
+CV1-P2,panel waterfall: by_class,"{'HEAD': 838, 'AI': 162, 'UTIL': 57, 'FIN': 292, 'REIT': 8}",
+CV1-P2,"CY2025 frame, positive capex, class AI: firms",569,firms
+CV1-P2,"CY2025 frame, positive capex, class AI: capex",397.1,billions of dollars
+CV1-P2,"CY2025 frame, positive capex, class FIN: firms",551,firms
+CV1-P2,"CY2025 frame, positive capex, class FIN: capex",61.2,billions of dollars
+CV1-P2,"CY2025 frame, positive capex, class HEAD: firms",2274,firms
+CV1-P2,"CY2025 frame, positive capex, class HEAD: capex",438.5,billions of dollars
+CV1-P2,"CY2025 frame, positive capex, class NOSIC: firms",1,firms
+CV1-P2,"CY2025 frame, positive capex, class NOSIC: capex",0.0,billions of dollars
+CV1-P2,"CY2025 frame, positive capex, class REIT: firms",16,firms
+CV1-P2,"CY2025 frame, positive capex, class REIT: capex",6.7,billions of dollars
+CV1-P2,"CY2025 frame, positive capex, class UTIL: firms",101,firms
+CV1-P2,"CY2025 frame, positive capex, class UTIL: capex",189.1,billions of dollars
+CV1-P2,stratum UTIL window T firms,56,firms
+CV1-P2,stratum UTIL window P firms,56,firms
+CV1-P2,stratum UTIL median gap,3.5472,pp per year
+CV1-P2,stratum UTIL weighted gap,7.3383,pp per year
+CV1-P2,"stratum UTIL label rule applied, for information",SUPPORT,
+CV1-P2,stratum REIT window T firms,8,firms
+CV1-P2,stratum REIT window P firms,8,firms
+CV1-P2,stratum REIT median gap,-16.2881,pp per year
+CV1-P2,stratum REIT weighted gap,-8.2784,pp per year
+CV1-P2,"stratum REIT label rule applied, for information",AGAINST,
+CV1-P3,FL103069100 description,Nonfinancial corporate business; commercial paper; asset,
+CV1-P3,FL103069100 Q4 2015 / Q4 2019 / Q4 2022 / Q4 2025,139396 / 217568 / 216872 / 244495,millions of dollars
+CV1-P3,FL103061703 description,Nonfinancial corporate business; agency- and GSE-backed securities; asset,
+CV1-P3,FL103061703 Q4 2015 / Q4 2019 / Q4 2022 / Q4 2025,12475 / 21210 / 29660 / 77482,millions of dollars
+CV1-P3,FL103061103 description,Nonfinancial corporate business; Treasury securities; asset,
+CV1-P3,FL103061103 Q4 2015 / Q4 2019 / Q4 2022 / Q4 2025,37425 / 63629 / 88981 / 236348,millions of dollars
+CV1-P3,FL104001105 description,Nonfinancial corporate business; liquid assets (core measure) (FSIs),
+CV1-P3,FL104001105 Q4 2015 / Q4 2019 / Q4 2022 / Q4 2025,1679669 / 2263534 / 3236873 / 4378292,millions of dollars
+CV1-P3,"sum of the four series, Q4 2015 / Q4 2019 / Q4 2022 / Q4 2025",1868965 / 2565941 / 3572386 / 4936617,millions of dollars
+CV1-P3,last quarter in the Z.1 file for all four series,2026Q2,
+CV1-P4,window T bottom tercile firms,268,firms
+CV1-P4,window T bottom tercile capex-weighted growth,4.9071,percent per year
+CV1-P4,window T bottom tercile base-year capex,133.7,billions of dollars
+CV1-P4,window T middle tercile firms,254,firms
+CV1-P4,window T middle tercile capex-weighted growth,0.3040,percent per year
+CV1-P4,window T middle tercile base-year capex,55.1,billions of dollars
+CV1-P4,window T top tercile firms,237,firms
+CV1-P4,window T top tercile capex-weighted growth,-1.9469,percent per year
+CV1-P4,window T top tercile base-year capex,30.3,billions of dollars
+CV1-P4,window T firms without usable cash and assets (dropped),20,firms
+CV1-P4,window P bottom tercile firms,220,firms
+CV1-P4,window P bottom tercile capex-weighted growth,3.6963,percent per year
+CV1-P4,window P bottom tercile base-year capex,84.3,billions of dollars
+CV1-P4,window P middle tercile firms,208,firms
+CV1-P4,window P middle tercile capex-weighted growth,3.2142,percent per year
+CV1-P4,window P middle tercile base-year capex,43.9,billions of dollars
+CV1-P4,window P top tercile firms,193,firms
+CV1-P4,window P top tercile capex-weighted growth,6.9039,percent per year
+CV1-P4,window P top tercile base-year capex,19.8,billions of dollars
+CV1-P4,window P firms without usable cash and assets (dropped),79,firms
+CV1-P5,window T n_high,566,firms
+CV1-P5,window T n_high_trimmed,537,firms
+CV1-P5,window T n_removed,29,firms
+CV1-P5,window T n_low,200,firms
+CV1-P5,window T median growth of the removed SICs,11.0594,percent per year
+CV1-P5,window P n_high,517,firms
+CV1-P5,window P n_high_trimmed,491,firms
+CV1-P5,window P n_removed,26,firms
+CV1-P5,window P n_low,182,firms
+CV1-P5,window P median growth of the removed SICs,34.0025,percent per year
