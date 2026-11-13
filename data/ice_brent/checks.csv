@@ -1,4 +1,4 @@
-# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-11-06; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-11-06
+# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-11-13; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-11-13
 check_id,check,expected,observed,status,note
 K01,"futures-only identities (5 classes + spreading + non-reportable = open interest, both sides; five nets = 0)",0 and 0,0 and 0,PASS,"maximum absolute residual over all 827 futures-only rows, contracts; the cells add up as one set on each side; blind to two classes exchanged on the same side (K03 sees that) and does not show that non-reportable is measured"
 K02,"combined identities, same, to rounding","<=4 per side, <=8 on the net sum","3 per side, 3 on the net sum",PASS,"maximum absolute residual over all 827 combined rows, contracts"
@@ -11,7 +11,7 @@ K08,"pinned managed-money net, 2026-03-31, fo",382072,382072,PASS,
 K09,"pinned managed-money net, 2026-03-31, combined",429853,429853,PASS,
 K10,"Kemp (relayed, not verified at source): combined managed-money net, 2026-06-02, barrels",253000000 +-1%,252500000 (-0.20%),PASS,warn only; futures and options
 K11,last report date equals the last date in the newest year file,2026-11-03,2026-11-03,PASS,
-K12,last report date equals the latest expected report Tuesday as of the newest file's retrieval (2026-11-06),2026-11-03,2026-11-03,PASS,
+K12,last report date equals the latest expected report Tuesday as of the newest file's retrieval (2026-11-13),2026-11-10,2026-11-03,WARN,ICE publishes on Fridays; a shortfall means the file may pre-date the release
 K13,window anchor 'since end-2023' is the 2023-12-26 report,2023-12-26,2023-12-26,PASS,
 K14,window anchor 'since end-2025 (new)' is the 2025-12-30 report,2025-12-30,2025-12-30,PASS,
 K15,every output header equals its allowlist and carries no banned gross name,all 6 output files,"5 of 6 verified when this row was made (brent_file_stats.csv, brent_leadlag.csv, brent_ledger.csv, brent_windows.csv, fetch_log.csv): 105 header cells, 0 banned names",PASS,checks.csv itself is verified as it is written

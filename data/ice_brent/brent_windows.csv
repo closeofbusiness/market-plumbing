@@ -1,4 +1,4 @@
-# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-11-06; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-11-06
+# source: ICE Futures Europe, Commitments of Traders historical files (ice.com/publicdocs/futures), derived statistics only; non-commercial research (THE_ASK.md E-025); ICE files retrieved 2026-10-15 to 2026-11-13; EIA Europe Brent spot price (eia.gov, US government, public domain) retrieved 2026-11-13
 contract,report_type,window,weeks,from_date,to_date,mm_net_from,mm_net_to,mm_net_chg,mm_net_chg_bbl,mm_net_pct_oi_from,mm_net_pct_oi_to
 brent,fo,4 weeks,4,2026-10-06,2026-11-03,186288,171603,-14685,-14685000,7.5,7.1
 brent,fo,12 weeks,12,2026-08-11,2026-11-03,245941,171603,-74338,-74338000,9.4,7.1

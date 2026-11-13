@@ -8,9 +8,9 @@ It records balances at Wednesday closes only; it does not show why they changed,
 
 ## The sign, and the trap
 
-Positive means the US offices owe their related foreign offices, net. Negative means they are owed, net. **The line for domestically chartered banks is negative (-483.6 $bn on 2026-10-07, vintage 2026-11-06) and is not the foreign banks' line.** Read the `FRI` rows for the foreign banks. The foreign-related line was itself negative on 755 weeks of its history from 1973-01-03, the last on 2011-06-15, so the sign alone does not tell a reader which group a number belongs to. The groups are told apart by the series group code (which the script asserts on every series) and by domestic line 40 being larger than foreign-related line 40 on every week; the accounting identity below holds for both groups and does not tell them apart.
+Positive means the US offices owe their related foreign offices, net. Negative means they are owed, net. **The line for domestically chartered banks is negative (-483.6 $bn on 2026-10-07, vintage 2026-11-13) and is not the foreign banks' line.** Read the `FRI` rows for the foreign banks. The foreign-related line was itself negative on 755 weeks of its history from 1973-01-03, the last on 2011-06-15, so the sign alone does not tell a reader which group a number belongs to. The groups are told apart by the series group code (which the script asserts on every series) and by domestic line 40 being larger than foreign-related line 40 on every week; the accounting identity below holds for both groups and does not tell them apart.
 
-The Board's footnote 24 says: "Excludes the due-from position with related foreign offices which is included in line 38." The line is the balance-sheet residual of the liabilities side: line 38 = line 40 (total liabilities) - (line 34 deposits + line 37 borrowings + line 39 other liabilities). Worked example, foreign-related institutions, NSA, 2026-10-07 (vintage 2026-11-06, usd_mn): 3,641,032 - (1,611,515 + 981,294 + 211,645) = 836,578. Domestically chartered banks on the same date: 19,890,339 - (18,124,016 + 1,371,543 + 878,339) = -483,559.
+The Board's footnote 24 says: "Excludes the due-from position with related foreign offices which is included in line 38." The line is the balance-sheet residual of the liabilities side: line 38 = line 40 (total liabilities) - (line 34 deposits + line 37 borrowings + line 39 other liabilities). Worked example, foreign-related institutions, NSA, 2026-10-07 (vintage 2026-11-13, usd_mn): 3,641,032 - (1,611,515 + 981,294 + 211,645) = 836,578. Domestically chartered banks on the same date: 19,890,330 - (18,124,054 + 1,371,542 + 878,345) = -483,611.
 
 ## What the line contains
 
@@ -22,7 +22,7 @@ The paths are split at every published break: 6 April 2022 (allowances moved int
 
 ## Endpoints of the multi-year changes
 
-Multi-year changes run between named ordinary Wednesdays: the Wednesday between the 8th and the 14th of February or August, each at least 39 days from any quarter-end day. The endpoints are 2024-02-14, 2025-02-12, 2026-02-11, 2026-08-12. The reason: the weeks around quarter-ends swing, so an endpoint on such a week would put a quarter-end move into a multi-year change. `Lo`, the latest Wednesday at least 7 days from every quarter-end day and not a break week, is 2026-10-28; it is printed in `summary.csv` and never used as an endpoint.
+Multi-year changes run between named ordinary Wednesdays: the Wednesday between the 8th and the 14th of February or August, each at least 39 days from any quarter-end day. The endpoints are 2024-02-14, 2025-02-12, 2026-02-11, 2026-08-12. The reason: the weeks around quarter-ends swing, so an endpoint on such a week would put a quarter-end move into a multi-year change. `Lo`, the latest Wednesday at least 7 days from every quarter-end day and not a break week, is 2026-11-04; it is printed in `summary.csv` and never used as an endpoint.
 
 ## Quarter-ends
 
@@ -34,7 +34,7 @@ Only quarter-end days that are themselves Wednesdays count as observations; sinc
 | 2021Q1 | 2021-03-31 | 145,720.0 | 33,566.0 | -20,422.0 | -328,851.0 | -66,516.0 | 34,170.0 |
 | 2021Q2 | 2021-06-30 | 162,131.0 | -31,818.0 | 16,178.0 | -301,253.0 | -60,621.0 | -23,707.0 |
 | 2025Q4 | 2025-12-31 | 869,545.0 | 24,169.0 | -36,596.0 | -387,307.0 | 20,389.0 | -40,117.0 |
-| 2026Q3 | 2026-09-30 | 855,698.0 | -22,208.0 | -19,120.0 | -502,585.0 | 25,170.0 | 19,026.0 |
+| 2026Q3 | 2026-09-30 | 855,696.0 | -22,210.0 | -19,118.0 | -502,585.0 | 25,170.0 | 18,974.0 |
 
 Wednesday levels cannot show a position that is not held at a Wednesday close. When the quarter-end day falls before the Wednesday (a negative offset in `quarter_ends.csv`), the day sits in the change that ends one week after that Wednesday, so the table below gives both changes and marks which one contains the quarter-end day. Two quarters, 2019Q3 and 2022Q1, have a change that ends on a break week.
 
@@ -73,13 +73,13 @@ A blank cell is a change that ends on a break week: it spans the break (2 Octobe
 
 ## Latest levels
 
-Latest week 2026-10-28, vintage 2026-11-06 (usd_mn; the share is line 38 as a percentage of the same group's line 40, total liabilities, on the same Wednesday).
+Latest week 2026-11-04, vintage 2026-11-13 (usd_mn; the share is line 38 as a percentage of the same group's line 40, total liabilities, on the same Wednesday).
 
 | group | line 38 | line 40 | share of line 40 (%) |
 |---|---:|---:|---:|
-| FRI | 860,396.0 | 3,577,986.0 | 24.05 |
-| DOM | -471,221.0 | 19,948,907.0 | -2.36 |
-| ALL | 389,175.0 | 23,526,893.0 | 1.65 |
+| FRI | 876,038.0 | 3,591,365.0 | 24.39 |
+| DOM | -475,182.0 | 20,017,332.0 | -2.37 |
+| ALL | 400,856.0 | 23,608,697.0 | 1.70 |
 
 Changes between the named Wednesdays (usd_mn; the share is the change as a percentage of the group's line 40 on the starting Wednesday):
 
@@ -97,9 +97,9 @@ Changes between the named Wednesdays (usd_mn; the share is the change as a perce
 
 ## Seasonal adjustment, revisions and vintages
 
-Every table here uses the not seasonally adjusted weekly level (NSA), because seasonal adjustment would remove part of any pattern around quarter-ends, and because the Board's About page says the seasonally adjusted foreign-related data are "derived as residuals" from other groups. The seasonally adjusted foreign-related line (887,584.8 usd_mn on 2026-10-28, against 860,396.0 NSA) is in `weekly.csv` as context so that a reader can match Table 10 of the release; no figure in `summary.csv` or `quarter_ends.csv` is taken from it.
+Every table here uses the not seasonally adjusted weekly level (NSA), because seasonal adjustment would remove part of any pattern around quarter-ends, and because the Board's About page says the seasonally adjusted foreign-related data are "derived as residuals" from other groups. The seasonally adjusted foreign-related line (895,119.1 usd_mn on 2026-11-04, against 876,038.0 NSA) is in `weekly.csv` as context so that a reader can match Table 10 of the release; no figure in `summary.csv` or `quarter_ends.csv` is taken from it.
 
-The weekly figures use weights carried forward from the latest Call Reports. When new Call Report data arrive the weights are updated, which the Fed calls benchmarking, and the change is interpolated over the previous quarter; seasonal factors are updated once a year and affect only the seasonally adjusted series. For example, a project note records $834.4 bn for the week of 5 Aug 2026 from the 14 Aug 2026 release (taken from that note, not re-read at the source); vintage 2026-10-16 has 839,732 usd_mn, and vintage 2026-11-06 has 839,732. Each fetch saves the 20-series subset of its vintage in a git-ignored cache, and `revisions.csv` is regenerated on every build from all adjacent pairs of cached subsets (vintages so far: 2026-10-16, 2026-10-23, 2026-10-30, 2026-11-06; `vintages.csv` lists them with the zip hash). The release XML file is the primary source. If it cannot be fetched, the build can run from the Board's Data Download Program (DDP) packages instead, the route is then `ddp_fallback`, and the vintage is keyed by the fetch date.
+The weekly figures use weights carried forward from the latest Call Reports. When new Call Report data arrive the weights are updated, which the Fed calls benchmarking, and the change is interpolated over the previous quarter; seasonal factors are updated once a year and affect only the seasonally adjusted series. For example, a project note records $834.4 bn for the week of 5 Aug 2026 from the 14 Aug 2026 release (taken from that note, not re-read at the source); vintage 2026-10-16 has 839,732 usd_mn, and vintage 2026-11-13 has 839,732. Each fetch saves the 20-series subset of its vintage in a git-ignored cache, and `revisions.csv` is regenerated on every build from all adjacent pairs of cached subsets (vintages so far: 2026-10-16, 2026-10-23, 2026-10-30, 2026-11-06, 2026-11-13; `vintages.csv` lists them with the zip hash). The release XML file is the primary source. If it cannot be fetched, the build can run from the Board's Data Download Program (DDP) packages instead, the route is then `ddp_fallback`, and the vintage is keyed by the fetch date.
 
 ## Column dictionary
 
@@ -116,4 +116,4 @@ The weekly figures use weights carried forward from the latest Call Reports. Whe
 
 ## Provenance
 
-Source: Board of Governors of the Federal Reserve System, "Assets and Liabilities of Commercial Banks in the United States - H.8" (https://www.federalreserve.gov/releases/h8/), release of 2026-11-06 (vintage 2026-11-06). The Board's website policy says: "Unless otherwise indicated, information on Board's website is in the public domain and may be copied and distributed without permission. Please cite to the Board as the source of the information." The Board has announced that its Data Download Program is being retired, with the "Build Your Package" feature to be removed in the week of 9 November 2026; the XML files on the release pages remain. Method, sources and the choices made in building this folder are in [SOURCES.md](SOURCES.md).
+Source: Board of Governors of the Federal Reserve System, "Assets and Liabilities of Commercial Banks in the United States - H.8" (https://www.federalreserve.gov/releases/h8/), release of 2026-11-13 (vintage 2026-11-13). The Board's website policy says: "Unless otherwise indicated, information on Board's website is in the public domain and may be copied and distributed without permission. Please cite to the Board as the source of the information." The Board has announced that its Data Download Program is being retired, with the "Build Your Package" feature to be removed in the week of 9 November 2026; the XML files on the release pages remain. Method, sources and the choices made in building this folder are in [SOURCES.md](SOURCES.md).
