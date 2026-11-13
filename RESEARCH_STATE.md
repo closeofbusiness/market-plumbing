@@ -615,6 +615,14 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        equity leg of the premium: a second panel beside the forecasters' survey, page §02). E1 and E2 scored once
                                                        (labels in registered.csv); figures live in the folder, not here. OPEN: none registered. Next vintage: CALENDAR
                                                        2026-12-31 (rebuild with --stage full; the row-count constants 74/25 need an amendment first).
+       CONFIDENCE / CAPITAL VELOCITY (CV1): REGISTERED 13 Nov, NOT BUILT -> _research/2026-11-13-CV1-Confidence-Velocity-Spec.md (scoping:
+                                                       _research/2026-11-13-CV1-Scoping-Evidence-And-Prior-Art.md). The principal's thesis that AI lowers managers'
+                                                       perceived uncertainty so firms deploy idle cash into capex and M&A, held as a funding-source hypothesis; serves A13.
+                                                       Seven blind statements P1-P7 on free data (BEA, C30, Z.1, data.sec.gov XBRL, BTOS). Found at scoping: the thesis's
+                                                       "top motive" survey claim is wrong as stated (third of nine), "despite heavy capital deployment" is not in its
+                                                       source, and FRBSF EL 2026-13 already reports no capex growth outside AI-positive firms. Stage 2 (the mediator) is
+                                                       untestable at firm level on free data without a www.sec.gov 10-K corpus pull (principal's ruling). Next: Grok
+                                                       attack (in flight 13 Nov), supervisor re-spec, builder.
 
    D5   Securities lenders' cash-collateral reinvestment ... flagged directions; "sharpest test of the nexus"
    D7a  Goldsmith layering ratio (Z.1) ..................... flagged directions
