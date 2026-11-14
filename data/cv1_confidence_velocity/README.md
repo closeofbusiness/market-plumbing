@@ -115,3 +115,13 @@ python3 bin/cv1_confidence_velocity.py build
 ```
 
 `fetch` is resumable (files already in the cache are skipped); `build` is offline and reads only the cache. Checking the work: `bash bin/check.sh --all` runs gate M31 over this folder.
+
+## Independent recompute of P3 (14 Nov 2026)
+
+Gemini 4 Hydrogen (Medium) recomputed CV1-P3 blind from the raw Z.1 CSV package and the BEA Section 1 workbook. It was given the method, not our result. Its results agree with `scores.csv`:
+- the four Z.1 series descriptions;
+- the stock at 2022Q4 ($3,572.386bn) and 2025Q4 ($4,936.617bn);
+- the GDP quarters (2025Q4: $31,462.5bn SAAR);
+- both window changes (+2.3478 and +1.5608 pp) and the difference (+0.7870 pp).
+
+It also answered two questions about quarters the files do not yet contain (2026Q3 in Z.1, 2026Q4 in NIPA) with "not in the files". The supervisor confirmed both against the files.
