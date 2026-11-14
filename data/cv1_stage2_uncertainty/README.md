@@ -87,3 +87,7 @@ Workbook note defining the S5 column (verbatim): "Data are percentage growth rat
 - The Beige Book fetch honours at most two requests a second to federalreserve.gov (about one every 0.65 s).
 
 Projected-only rows in the realised-growth sheet (no observed percentiles, only `postline*` columns): 2027-10.
+
+## Independent recompute (14 Nov 2026)
+
+Gemini 4 Hydrogen (Medium) recomputed CV1-S1 v2 blind. It was given the four raw files and the registered method, but not our result. Every coefficient, the baseline residual SD (0.294451), the effect size (3.155098) and both Ns (37 and 36) agree with `scores.csv` to six decimal places. It identified the SPF column `CPI_D1(T+4)` from the header rows by itself. Asked about three values the files do not contain (SPF 2026Q4, SBU November 2026, VIX 14 November 2026), it answered "not in the files" each time. The supervisor confirmed each against the files.
