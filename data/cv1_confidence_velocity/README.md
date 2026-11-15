@@ -70,6 +70,8 @@ Denominators (firms): treatment high 566 (trimmed 537, removed 29), low 200; pla
 
 NOT BUILT. The one request for the Census BTOS downloads index (https://www.census.gov/hfp/btos/downloads/, sent with the neutral User-Agent, after a first request without the trailing slash answered 301) came back HTTP 403. The rule was applied: the STOP latch `STOP_www_census_gov` is in the cache, no further request went to www.census.gov, and nothing was fetched from any other host in its place. Without the AI Core Questions (Original) table and the 1987-SIC-to-2002-NAICS concordance (also on www.census.gov), no sector AI-use share and no SIC-to-NAICS map exist, so the Spearman and the leave-one-sector-out range were not computed. The Spearman function exists and is exercised on synthetic data in the selftest. The C30 workbook had been fetched from the same host before the block.
 
+Outside test, 15 Nov 2026 (Grok, from Cursor's servers, not this machine): the downloads index timed out three times; the BTOS API paths on api.census.gov answered 403 while that host's home page was served; the AI Core Questions workbook and the concordance file (on www2.census.gov) both answered 500, which may be the reader failing on binary files. So the cause is not settled from outside. The STOP stays, and P6 waits for the principal's decision.
+
 ### P7: not scored
 
 The inputs are not available: P7 needs `GoodwillImpairmentLoss` facts for CY2026, CY2027 and CY2028 10-Ks (the last are filed from about February 2029) and the acquisition-spend and goodwill facts for CY2024 and CY2025 and for the baseline cohorts 2012 to 2015. The spec dates its first scoring to about April 2029. No P7 number is computed or implied.
