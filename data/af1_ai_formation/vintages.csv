@@ -1,0 +1,6 @@
+# source: fetch manifest of the raw cache (data/vintages/af1); raw files are not committed
+source,key,url,fetched_utc,status,bytes,sha256,note
+census-bfs,bfs-monthly-csv,https://www.census.gov/econ/bfs/csv/bfs_monthly.csv,2026-11-15T18:43:17Z,200,2868247,47975a1c7bca0aad7e8206bc40cbf4545c84b4cf5cc44aa9aeb8380b1b57b0cf,"BFS monthly release of November 12, 2026; Last-Modified header Thu, 12 Nov 2026 15:00:01 GMT; sha256 pinned in bin/af1_ai_formation.py"
+census-bfs,bfs-current-release-page,https://www.census.gov/econ/bfs/current/index.html,2026-11-15T18:43:21Z,200,344721,fe9d4c5575aa4d58da173220ac8413489cc0fa2786400b68f6bf7395629e8543,"gives the release date (November 12, 2026)"
+census-bfs,bfs-monthly-data-dictionary,https://www.census.gov/econ/bfs/pdf/bfs_monthly_data_dictionary.pdf,2026-11-15T18:43:24Z,200,145260,3be30bf37e85ec9893ac72fa7b78c2fbb81543f4c206c89d7a123f96051dd99b,documentation only; not read by the script
+census-btos,btos-ai-core-questions,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,2026-11-15,hand download,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce,"the CV1-P6 input, downloaded by the principal through a browser and hash-pinned in bin/cv1_confidence_velocity.py; read through its code, never fetched here"

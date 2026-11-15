@@ -2713,6 +2713,169 @@ cv1s2_check() {
   fi
 }
 
+# --- M33: AF1 AI-USE x BUSINESS-APPLICATIONS GUARD (spec _research/2026-11-15-AF1-AI-Company-Formation-Spec.md, "Version 2"; build bin/af1_ai_formation.py) ---
+# data/af1_ai_formation/ holds statistics derived from Census BFS and BTOS files and nothing raw. The raw downloads stay in the gitignored cache data/vintages/af1/. Things that would break the
+# spec's rules, none visible to M5-M32:
+#   1. the spec file's sha256, the script's SPEC_SHA256 and the prereg_sha256 of every row of registered.csv are not all the literal typed below (PREREG_SHA); registered.csv does not hold
+#      AF1-P1, P2, P1w, P2w and P3 once each, all version 2;
+#   2. a header that is not that file's exact column allowlist (typed here a second time), a scores.csv row without an allowed label (P3 cannot be INCONCLUSIVE), a statement missing from scores.csv;
+#   3. a label that disagrees with its own numbers: for P1, P2, P1w and P2w the label is recomputed from detail.csv (SUPPORT = one-sided p for a positive rho <= 0.05 and every leave-one-out rho > 0;
+#      AGAINST = one-sided p for a negative rho <= 0.05; else INCONCLUSIVE), the permutation count must be 10000 and the seed 20261115, and P3 must follow its two means;
+#   4. a file in the folder that is not one of the five committed names, a workbook, zip, json, gz, html, pdf, BFS download, manifest or STOP file there, a zip container under another name;
+#   5. a local path (/Users/, /private/, ~/) or an at sign in a committed file;
+#   6. anything of the cache tracked in git, or a cache path that git does not ignore;
+#   7. README.md without the sentences that neither label identifies AI as the cause and that BTOS measures AI use by existing employers, not by new applicants, or with wording that claims proof or a cause.
+# The script refuses the same things when it writes; this is the second, independent look. AF1_DIR, AF1_CACHE and AF1_SPEC override the folder, the cache and the spec path (used to show that
+# the guard fires on a planted copy). It warns and never blocks (header doctrine).
+af1_check() {
+  echo "-- M33: AF1 guard (data/af1_ai_formation/: the spec hash in the spec, the script and every registered row, exact headers, the five statements and their labels recomputed from their own numbers, nothing raw in the folder or in git, the cache ignored, no local path or at sign, the not-identification and BTOS sentences) --"
+  local dir="${AF1_DIR:-data/af1_ai_formation}" cache="${AF1_CACHE:-data/vintages/af1}" spec="${AF1_SPEC:-_research/2026-11-15-AF1-AI-Company-Formation-Spec.md}" f name bad="" got want out py tracked committed
+  local PREREG_SHA='5f4a4dd08c08015ebb83e0c76bca531f18f3a6dfaddf5eb36be83e2730f75969'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  got=$(shasum -a 256 "$spec" 2>/dev/null | cut -d' ' -f1)
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the spec file ($spec) hashes to ${got:-nothing}, not the registered literal
+"
+  got=$(grep -m1 '^SPEC_SHA256 = ' bin/af1_ai_formation.py 2>/dev/null | sed -E 's/^SPEC_SHA256 = "([0-9a-f]*)".*$/\1/')
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ SPEC_SHA256 in bin/af1_ai_formation.py (${got:-missing}) is not the literal in check.sh
+"
+  committed=" README.md registered.csv scores.csv detail.csv vintages.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    case "$name" in *.xlsx|*.xls|*.zip|*.json|*.gz|*.html|*.htm|*.pdf|STOP*|bfs_*|manifest*)
+      bad="${bad}  ✗ raw file in the committed folder (a workbook, zip, json, gz, page, pdf, BFS download, manifest or STOP file): $f
+"
+      continue ;;
+    esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && { bad="${bad}  ✗ raw file in the committed folder (a zip container under another name): $f
+"; continue; }
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the five committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      registered.csv) want='statement_id,version,superseded,scored,statement,statistic,support_if,against_if,treatment_window,placebo_window,prereg_sha256' ;;
+      scores.csv) want='statement_id,label,primary_statistic,primary_value,unit,statistics,denominators,caveats' ;;
+      detail.csv) want='statement_id,item,value,unit' ;;
+      vintages.csv) want='source,key,url,fetched_utc,status,bytes,sha256,note' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  if [ -z "${AF1_DIR:-}" ] && [ -z "${AF1_CACHE:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- "$dir" data/vintages/af1 2>/dev/null | grep -E '\.(xlsx|xls|zip|json|gz|html|pdf)$|(^|/)STOP|/raw/|manifest\.csv|bfs_monthly|data/vintages/af1/' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a raw download, a cache manifest or a STOP file must never be): $tracked
+"
+    if [ -d "$cache" ]; then
+      git check-ignore -q -- "$cache/raw/x.csv" 2>/dev/null || bad="${bad}  ✗ the cache ($cache) is not ignored by git: a raw download there could be committed
+"
+    fi
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, os, re, sys
+d, prereg = sys.argv[1], sys.argv[2]
+bad = []
+def rows(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    t = [l for l in open(p, encoding="utf-8", errors="replace", newline="").read().split("\n") if not l.startswith("# source:") and l.strip()]
+    r = list(csv.reader(t))
+    return [dict(zip(r[0], x)) for x in r[1:]] if r else []
+ids = ["AF1-P1", "AF1-P1w", "AF1-P2", "AF1-P2w", "AF1-P3"]
+reg = rows("registered.csv")
+if reg is None:
+    bad.append("registered.csv is missing")
+else:
+    if sorted(r.get("statement_id", "") for r in reg) != ids:
+        bad.append("registered.csv does not hold AF1-P1, P2, P1w, P2w and P3 once each")
+    if any(r.get("prereg_sha256") != prereg for r in reg):
+        bad.append("registered.csv holds a prereg_sha256 that is not the registered literal")
+    if any(r.get("version") != "2" for r in reg):
+        bad.append("registered.csv holds a row that is not version 2")
+sc = rows("scores.csv")
+dt = rows("detail.csv")
+if sc is None:
+    bad.append("scores.csv is missing")
+else:
+    allowed = {"SUPPORT", "AGAINST", "INCONCLUSIVE"}
+    if sorted(r.get("statement_id", "") for r in sc) != ids:
+        bad.append("scores.csv does not hold AF1-P1, P2, P1w, P2w and P3 once each")
+    det = {}
+    for r in (dt or []):
+        det.setdefault(r.get("statement_id", ""), {})[r.get("item", "")] = r.get("value", "")
+    if dt is None:
+        bad.append("detail.csv is missing")
+    for r in sc:
+        sid, lab = r.get("statement_id", "?"), r.get("label", "")
+        if lab not in allowed:
+            bad.append("scores.csv " + sid + ": label " + repr(lab) + " is not an allowed label")
+            continue
+        if sid == "AF1-P3":
+            if lab == "INCONCLUSIVE":
+                bad.append("scores.csv AF1-P3 is INCONCLUSIVE, which the spec does not allow")
+            try:
+                m24, m25 = float(det["AF1-P3"]["mean_monthly_BA_JanNov_2024"]), float(det["AF1-P3"]["mean_monthly_BA_JanNov_2025"])
+                if lab != ("SUPPORT" if m25 > m24 else "AGAINST"):
+                    bad.append("scores.csv AF1-P3 label %s disagrees with its two means (%s, %s)" % (lab, m24, m25))
+            except (KeyError, ValueError):
+                bad.append("detail.csv lacks the two AF1-P3 means")
+            continue
+        dd = det.get(sid, {})
+        try:
+            pp, pn = float(dd["perm_p_pos"]), float(dd["perm_p_neg"])
+            lmin, lun = float(dd["loo_min"]), int(dd["loo_undefined"])
+            nperm, seed = int(dd["permutations"]), int(dd["seed"])
+            rho = float(dd["rho"])
+        except (KeyError, ValueError):
+            bad.append("detail.csv lacks the permutation numbers of " + sid)
+            continue
+        if nperm != 10000 or seed != 20261115:
+            bad.append("detail.csv " + sid + ": permutations %d / seed %d are not the registered 10000 / 20261115" % (nperm, seed))
+        want = "SUPPORT" if (round(pp, 9) <= 0.05 and lun == 0 and round(lmin, 9) > 0) else ("AGAINST" if round(pn, 9) <= 0.05 else "INCONCLUSIVE")
+        if want != lab:
+            bad.append("scores.csv %s label %s disagrees with its own numbers (p_pos %s, p_neg %s, loo_min %s): the rule gives %s" % (sid, lab, pp, pn, lmin, want))
+        try:
+            if abs(float(r.get("primary_value", "x")) - rho) > 1e-9:
+                bad.append("scores.csv " + sid + " primary_value differs from the rho in detail.csv")
+        except ValueError:
+            bad.append("scores.csv " + sid + " primary_value is not a number")
+rp = os.path.join(d, "README.md")
+if os.path.isfile(rp):
+    t = open(rp, encoding="utf-8", errors="replace").read()
+    if "Neither label identifies AI as the cause" not in t:
+        bad.append("README.md lacks the sentence that neither label identifies AI as the cause")
+    if "BTOS measures AI use by existing employers, not by new applicants" not in t:
+        bad.append("README.md lacks the BTOS limit (existing employers, not new applicants)")
+    hits = sorted({m.group(0).lower() for m in re.finditer(r"\bproves?\b|\bproven\b|\bAI caused\b|\bcaused by AI\b|\bconfirms? the thesis\b", t, re.I)})
+    if hits:
+        bad.append("README.md holds wording that claims proof or a cause: " + ", ".join(hits[:5]))
+else:
+    bad.append("README.md is missing")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ] && [ -z "$(printf '%s\n' "$out" | grep -v '^BAD \|^$')" ]; then
+    echo "  ✓ the spec hash in the spec, the script and every registered row; the five committed names, every header its exact allowlist; the five statements once each, every label recomputed from its own permutation numbers (10000 permutations, seed 20261115); no raw file in the folder or in git; the cache ignored; no local path or at sign; the not-identification and BTOS sentences present."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+    echo "  -> raw downloads stay in data/vintages/af1/ (gitignored) and the build writes every table: fix the build, do not edit the committed tables by hand."
+  fi
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -3171,6 +3334,8 @@ if [ "$TARGET" = "--all" ]; then
   cv1_check
   echo
   cv1s2_check
+  echo
+  af1_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

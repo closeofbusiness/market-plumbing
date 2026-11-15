@@ -1,0 +1,562 @@
+# source: bin/af1_ai_formation.py build; scores computed after registered.csv (sha256 18a0808f35998a2588f9e004cdfe1f31de33e9080332fb3fd0ad879bf001c9ca) was written; spec _research/2026-11-15-AF1-AI-Company-Formation-Spec.md sha256 5f4a4dd08c08015ebb83e0c76bca531f18f3a6dfaddf5eb36be83e2730f75969; BFS release November 12, 2026; permutations 10000 seed 20261115
+statement_id,item,value,unit
+AF1-SEC,bfs_release,"November 12, 2026",date
+AF1-SEC,btos_cycles_required,46,cycles
+AF1-SEC,sectors_kept,14,sectors
+AF1-SEC,sectors_dropped,5,sectors
+AF1-SEC,kept_list,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-SEC,dropped_sector_11,AI share published in 2 of 46 cycles (suppressed in 44),text
+AF1-SEC,dropped_sector_21,AI share published in 3 of 46 cycles (suppressed in 43),text
+AF1-SEC,dropped_sector_22,AI share published in 4 of 46 cycles (suppressed in 42),text
+AF1-SEC,dropped_sector_52,BTOS excludes NAICS 525 but BFS includes it (spec ruling 7),text
+AF1-SEC,dropped_sector_55,AI share published in 7 of 46 cycles (suppressed in 39),text
+AF1-P1,rho,0.3978,rank correlation
+AF1-P1,perm_p_pos,0.0812,probability
+AF1-P1,perm_p_neg,0.9212,probability
+AF1-P1,loo_min,0.2967,rank correlation
+AF1-P1,loo_max,0.5659,rank correlation
+AF1-P1,loo_undefined,0,count
+AF1-P1,n_sectors,14,sectors
+AF1-P1,permutations,10000,count
+AF1-P1,seed,20261115,integer
+AF1-P1,loo_without_sector_23,0.3736,rank correlation
+AF1-P1,loo_without_sector_31,0.4176,rank correlation
+AF1-P1,loo_without_sector_42,0.4176,rank correlation
+AF1-P1,loo_without_sector_44,0.4835,rank correlation
+AF1-P1,loo_without_sector_48,0.3571,rank correlation
+AF1-P1,loo_without_sector_51,0.2967,rank correlation
+AF1-P1,loo_without_sector_53,0.5659,rank correlation
+AF1-P1,loo_without_sector_54,0.2967,rank correlation
+AF1-P1,loo_without_sector_56,0.5000,rank correlation
+AF1-P1,loo_without_sector_61,0.3022,rank correlation
+AF1-P1,loo_without_sector_62,0.3626,rank correlation
+AF1-P1,loo_without_sector_71,0.3901,rank correlation
+AF1-P1,loo_without_sector_72,0.3846,rank correlation
+AF1-P1,loo_without_sector_81,0.3901,rank correlation
+AF1-P2,rho,0.4989,rank correlation
+AF1-P2,perm_p_pos,0.0337,probability
+AF1-P2,perm_p_neg,0.9681,probability
+AF1-P2,loo_min,0.3736,rank correlation
+AF1-P2,loo_max,0.6319,rank correlation
+AF1-P2,loo_undefined,0,count
+AF1-P2,n_sectors,14,sectors
+AF1-P2,permutations,10000,count
+AF1-P2,seed,20261115,integer
+AF1-P2,loo_without_sector_23,0.4725,rank correlation
+AF1-P2,loo_without_sector_31,0.6044,rank correlation
+AF1-P2,loo_without_sector_42,0.4890,rank correlation
+AF1-P2,loo_without_sector_44,0.5769,rank correlation
+AF1-P2,loo_without_sector_48,0.4011,rank correlation
+AF1-P2,loo_without_sector_51,0.3736,rank correlation
+AF1-P2,loo_without_sector_53,0.6319,rank correlation
+AF1-P2,loo_without_sector_54,0.4505,rank correlation
+AF1-P2,loo_without_sector_56,0.5714,rank correlation
+AF1-P2,loo_without_sector_61,0.4505,rank correlation
+AF1-P2,loo_without_sector_62,0.4835,rank correlation
+AF1-P2,loo_without_sector_71,0.4835,rank correlation
+AF1-P2,loo_without_sector_72,0.5000,rank correlation
+AF1-P2,loo_without_sector_81,0.4725,rank correlation
+AF1-P1w,rho,0.3099,rank correlation
+AF1-P1w,perm_p_pos,0.1420,probability
+AF1-P1w,perm_p_neg,0.8619,probability
+AF1-P1w,loo_min,0.1758,rank correlation
+AF1-P1w,loo_max,0.4396,rank correlation
+AF1-P1w,loo_undefined,0,count
+AF1-P1w,n_sectors,14,sectors
+AF1-P1w,permutations,10000,count
+AF1-P1w,seed,20261115,integer
+AF1-P1w,loo_without_sector_23,0.3132,rank correlation
+AF1-P1w,loo_without_sector_31,0.3681,rank correlation
+AF1-P1w,loo_without_sector_42,0.3516,rank correlation
+AF1-P1w,loo_without_sector_44,0.3297,rank correlation
+AF1-P1w,loo_without_sector_48,0.2857,rank correlation
+AF1-P1w,loo_without_sector_51,0.2967,rank correlation
+AF1-P1w,loo_without_sector_53,0.4396,rank correlation
+AF1-P1w,loo_without_sector_54,0.1868,rank correlation
+AF1-P1w,loo_without_sector_56,0.3132,rank correlation
+AF1-P1w,loo_without_sector_61,0.1758,rank correlation
+AF1-P1w,loo_without_sector_62,0.2363,rank correlation
+AF1-P1w,loo_without_sector_71,0.2637,rank correlation
+AF1-P1w,loo_without_sector_72,0.4396,rank correlation
+AF1-P1w,loo_without_sector_81,0.3132,rank correlation
+AF1-P2w,rho,0.3758,rank correlation
+AF1-P2w,perm_p_pos,0.0921,probability
+AF1-P2w,perm_p_neg,0.9099,probability
+AF1-P2w,loo_min,0.2473,rank correlation
+AF1-P2w,loo_max,0.5000,rank correlation
+AF1-P2w,loo_undefined,0,count
+AF1-P2w,n_sectors,14,sectors
+AF1-P2w,permutations,10000,count
+AF1-P2w,seed,20261115,integer
+AF1-P2w,loo_without_sector_23,0.3626,rank correlation
+AF1-P2w,loo_without_sector_31,0.5000,rank correlation
+AF1-P2w,loo_without_sector_42,0.4176,rank correlation
+AF1-P2w,loo_without_sector_44,0.4286,rank correlation
+AF1-P2w,loo_without_sector_48,0.2912,rank correlation
+AF1-P2w,loo_without_sector_51,0.2857,rank correlation
+AF1-P2w,loo_without_sector_53,0.4615,rank correlation
+AF1-P2w,loo_without_sector_54,0.2857,rank correlation
+AF1-P2w,loo_without_sector_56,0.4176,rank correlation
+AF1-P2w,loo_without_sector_61,0.2473,rank correlation
+AF1-P2w,loo_without_sector_62,0.3022,rank correlation
+AF1-P2w,loo_without_sector_71,0.3901,rank correlation
+AF1-P2w,loo_without_sector_72,0.4505,rank correlation
+AF1-P2w,loo_without_sector_81,0.3901,rank correlation
+AF1-P3,mean_monthly_BA_JanNov_2024,445841.64,applications
+AF1-P3,mean_monthly_BA_JanNov_2025,478331.91,applications
+AF1-P3,months_used_per_year,11,months
+AF1-TABLE,sector_23_ai_mean_pct,2.3826,percent of firms
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2017,29079.64,applications
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2018,31311.36,applications
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2019,32694.00,applications
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2023,47038.55,applications
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2024,44919.55,applications
+AF1-TABLE,sector_23_BA_mean_monthly_JanNov_2025,44313.91,applications
+AF1-TABLE,sector_23_BA_g_pre,0.117153,log points
+AF1-TABLE,sector_23_BA_g_post,-0.059669,log points
+AF1-TABLE,sector_23_BA_diff,-0.176822,log points
+AF1-TABLE,sector_23_BA_g_post_2425,-0.013574,log points
+AF1-TABLE,sector_23_BA_g_pre_1819,0.043210,log points
+AF1-TABLE,sector_31_ai_mean_pct,3.3370,percent of firms
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2017,5690.55,applications
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2018,5633.27,applications
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2019,5719.00,applications
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2023,7878.64,applications
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2024,8113.91,applications
+AF1-TABLE,sector_31_BA_mean_monthly_JanNov_2025,8366.18,applications
+AF1-TABLE,sector_31_BA_g_pre,0.004988,log points
+AF1-TABLE,sector_31_BA_g_post,0.060043,log points
+AF1-TABLE,sector_31_BA_diff,0.055055,log points
+AF1-TABLE,sector_31_BA_g_post_2425,0.030618,log points
+AF1-TABLE,sector_31_BA_g_pre_1819,0.015103,log points
+AF1-TABLE,sector_42_ai_mean_pct,3.8500,percent of firms
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2017,8648.09,applications
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2018,8520.82,applications
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2019,8570.82,applications
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2023,10893.00,applications
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2024,10683.00,applications
+AF1-TABLE,sector_42_BA_mean_monthly_JanNov_2025,10173.18,applications
+AF1-TABLE,sector_42_BA_g_pre,-0.008975,log points
+AF1-TABLE,sector_42_BA_g_post,-0.068365,log points
+AF1-TABLE,sector_42_BA_diff,-0.059390,log points
+AF1-TABLE,sector_42_BA_g_post_2425,-0.048899,log points
+AF1-TABLE,sector_42_BA_g_pre_1819,0.005851,log points
+AF1-TABLE,sector_44_ai_mean_pct,4.1870,percent of firms
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2017,38328.73,applications
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2018,41030.73,applications
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2019,44282.18,applications
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2023,82826.18,applications
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2024,80560.00,applications
+AF1-TABLE,sector_44_BA_mean_monthly_JanNov_2025,99143.64,applications
+AF1-TABLE,sector_44_BA_g_pre,0.144383,log points
+AF1-TABLE,sector_44_BA_g_post,0.179825,log points
+AF1-TABLE,sector_44_BA_diff,0.035443,log points
+AF1-TABLE,sector_44_BA_g_post_2425,0.207567,log points
+AF1-TABLE,sector_44_BA_g_pre_1819,0.076261,log points
+AF1-TABLE,sector_48_ai_mean_pct,2.0783,percent of firms
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2017,17108.55,applications
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2018,20370.27,applications
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2019,20242.82,applications
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2023,33945.00,applications
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2024,30001.09,applications
+AF1-TABLE,sector_48_BA_mean_monthly_JanNov_2025,30655.09,applications
+AF1-TABLE,sector_48_BA_g_pre,0.168222,log points
+AF1-TABLE,sector_48_BA_g_post,-0.101943,log points
+AF1-TABLE,sector_48_BA_diff,-0.270165,log points
+AF1-TABLE,sector_48_BA_g_post_2425,0.021565,log points
+AF1-TABLE,sector_48_BA_g_pre_1819,-0.006277,log points
+AF1-TABLE,sector_51_ai_mean_pct,20.8978,percent of firms
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2017,6205.55,applications
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2018,6312.27,applications
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2019,6234.18,applications
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2023,8737.09,applications
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2024,8514.82,applications
+AF1-TABLE,sector_51_BA_mean_monthly_JanNov_2025,9426.64,applications
+AF1-TABLE,sector_51_BA_g_pre,0.004604,log points
+AF1-TABLE,sector_51_BA_g_post,0.075962,log points
+AF1-TABLE,sector_51_BA_diff,0.071358,log points
+AF1-TABLE,sector_51_BA_g_post_2425,0.101731,log points
+AF1-TABLE,sector_51_BA_g_pre_1819,-0.012448,log points
+AF1-TABLE,sector_53_ai_mean_pct,9.4391,percent of firms
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2017,17743.00,applications
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2018,22371.18,applications
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2019,19016.45,applications
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2023,25090.36,applications
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2024,22142.55,applications
+AF1-TABLE,sector_53_BA_mean_monthly_JanNov_2025,22059.36,applications
+AF1-TABLE,sector_53_BA_g_pre,0.069314,log points
+AF1-TABLE,sector_53_BA_g_post,-0.128747,log points
+AF1-TABLE,sector_53_BA_diff,-0.198060,log points
+AF1-TABLE,sector_53_BA_g_post_2425,-0.003764,log points
+AF1-TABLE,sector_53_BA_g_pre_1819,-0.162469,log points
+AF1-TABLE,sector_54_ai_mean_pct,16.2478,percent of firms
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2017,36060.55,applications
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2018,38816.91,applications
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2019,38619.18,applications
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2023,57716.55,applications
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2024,56955.73,applications
+AF1-TABLE,sector_54_BA_mean_monthly_JanNov_2025,61900.18,applications
+AF1-TABLE,sector_54_BA_g_pre,0.068550,log points
+AF1-TABLE,sector_54_BA_g_post,0.069979,log points
+AF1-TABLE,sector_54_BA_diff,0.001429,log points
+AF1-TABLE,sector_54_BA_g_post_2425,0.083249,log points
+AF1-TABLE,sector_54_BA_g_pre_1819,-0.005107,log points
+AF1-TABLE,sector_56_ai_mean_pct,6.0804,percent of firms
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2017,18512.27,applications
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2018,19677.45,applications
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2019,20359.27,applications
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2023,35230.18,applications
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2024,32054.27,applications
+AF1-TABLE,sector_56_BA_mean_monthly_JanNov_2025,31723.27,applications
+AF1-TABLE,sector_56_BA_g_pre,0.095103,log points
+AF1-TABLE,sector_56_BA_g_post,-0.104853,log points
+AF1-TABLE,sector_56_BA_diff,-0.199955,log points
+AF1-TABLE,sector_56_BA_g_post_2425,-0.010380,log points
+AF1-TABLE,sector_56_BA_g_pre_1819,0.034063,log points
+AF1-TABLE,sector_61_ai_mean_pct,12.2304,percent of firms
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2017,4521.55,applications
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2018,4890.45,applications
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2019,5053.18,applications
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2023,6918.82,applications
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2024,7113.00,applications
+AF1-TABLE,sector_61_BA_mean_monthly_JanNov_2025,7596.64,applications
+AF1-TABLE,sector_61_BA_g_pre,0.111164,log points
+AF1-TABLE,sector_61_BA_g_post,0.093461,log points
+AF1-TABLE,sector_61_BA_diff,-0.017704,log points
+AF1-TABLE,sector_61_BA_g_post_2425,0.065781,log points
+AF1-TABLE,sector_61_BA_g_pre_1819,0.032733,log points
+AF1-TABLE,sector_62_ai_mean_pct,7.0457,percent of firms
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2017,17390.82,applications
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2018,18555.09,applications
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2019,19129.73,applications
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2023,27907.73,applications
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2024,27739.18,applications
+AF1-TABLE,sector_62_BA_mean_monthly_JanNov_2025,29225.82,applications
+AF1-TABLE,sector_62_BA_g_pre,0.095301,log points
+AF1-TABLE,sector_62_BA_g_post,0.046149,log points
+AF1-TABLE,sector_62_BA_diff,-0.049152,log points
+AF1-TABLE,sector_62_BA_g_post_2425,0.052207,log points
+AF1-TABLE,sector_62_BA_g_pre_1819,0.030499,log points
+AF1-TABLE,sector_71_ai_mean_pct,6.4739,percent of firms
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2017,9604.36,applications
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2018,10116.73,applications
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2019,9827.36,applications
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2023,13728.36,applications
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2024,12214.27,applications
+AF1-TABLE,sector_71_BA_mean_monthly_JanNov_2025,13270.18,applications
+AF1-TABLE,sector_71_BA_g_pre,0.022953,log points
+AF1-TABLE,sector_71_BA_g_post,-0.033944,log points
+AF1-TABLE,sector_71_BA_diff,-0.056898,log points
+AF1-TABLE,sector_71_BA_g_post_2425,0.082914,log points
+AF1-TABLE,sector_71_BA_g_pre_1819,-0.029020,log points
+AF1-TABLE,sector_72_ai_mean_pct,1.8761,percent of firms
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2017,14515.91,applications
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2018,15199.82,applications
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2019,15662.00,applications
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2023,25983.55,applications
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2024,24048.36,applications
+AF1-TABLE,sector_72_BA_mean_monthly_JanNov_2025,25085.45,applications
+AF1-TABLE,sector_72_BA_g_pre,0.075992,log points
+AF1-TABLE,sector_72_BA_g_post,-0.035175,log points
+AF1-TABLE,sector_72_BA_diff,-0.111167,log points
+AF1-TABLE,sector_72_BA_g_post_2425,0.042221,log points
+AF1-TABLE,sector_72_BA_g_pre_1819,0.029954,log points
+AF1-TABLE,sector_81_ai_mean_pct,3.1000,percent of firms
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2017,24460.27,applications
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2018,26132.36,applications
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2019,27860.18,applications
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2023,45054.36,applications
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2024,41641.55,applications
+AF1-TABLE,sector_81_BA_mean_monthly_JanNov_2025,44166.45,applications
+AF1-TABLE,sector_81_BA_g_pre,0.130148,log points
+AF1-TABLE,sector_81_BA_g_post,-0.019904,log points
+AF1-TABLE,sector_81_BA_diff,-0.150053,log points
+AF1-TABLE,sector_81_BA_g_post_2425,0.058867,log points
+AF1-TABLE,sector_81_BA_g_pre_1819,0.064024,log points
+AF1-TABLE,sector_23_ai_mean_pct,2.3826,percent of firms
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2017,4813.64,applications
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2018,4986.82,applications
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2019,4698.82,applications
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2023,5580.45,applications
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2024,5097.55,applications
+AF1-TABLE,sector_23_WBA_mean_monthly_JanNov_2025,4476.64,applications
+AF1-TABLE,sector_23_WBA_g_pre,-0.024142,log points
+AF1-TABLE,sector_23_WBA_g_post,-0.220398,log points
+AF1-TABLE,sector_23_WBA_diff,-0.196257,log points
+AF1-TABLE,sector_23_WBA_g_post_2425,-0.129887,log points
+AF1-TABLE,sector_23_WBA_g_pre_1819,-0.059487,log points
+AF1-TABLE,sector_31_ai_mean_pct,3.3370,percent of firms
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2017,1096.18,applications
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2018,1060.91,applications
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2019,1025.18,applications
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2023,1024.00,applications
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2024,1027.09,applications
+AF1-TABLE,sector_31_WBA_mean_monthly_JanNov_2025,949.27,applications
+AF1-TABLE,sector_31_WBA_g_pre,-0.066963,log points
+AF1-TABLE,sector_31_WBA_g_post,-0.075776,log points
+AF1-TABLE,sector_31_WBA_diff,-0.008813,log points
+AF1-TABLE,sector_31_WBA_g_post_2425,-0.078790,log points
+AF1-TABLE,sector_31_WBA_g_pre_1819,-0.034256,log points
+AF1-TABLE,sector_42_ai_mean_pct,3.8500,percent of firms
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2017,1245.27,applications
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2018,1144.27,applications
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2019,1066.00,applications
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2023,1086.45,applications
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2024,995.73,applications
+AF1-TABLE,sector_42_WBA_mean_monthly_JanNov_2025,808.18,applications
+AF1-TABLE,sector_42_WBA_g_pre,-0.155441,log points
+AF1-TABLE,sector_42_WBA_g_post,-0.295888,log points
+AF1-TABLE,sector_42_WBA_diff,-0.140447,log points
+AF1-TABLE,sector_42_WBA_g_post_2425,-0.208686,log points
+AF1-TABLE,sector_42_WBA_g_pre_1819,-0.070856,log points
+AF1-TABLE,sector_44_ai_mean_pct,4.1870,percent of firms
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2017,4827.27,applications
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2018,4883.64,applications
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2019,4722.55,applications
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2023,8513.00,applications
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2024,5918.18,applications
+AF1-TABLE,sector_44_WBA_mean_monthly_JanNov_2025,4715.73,applications
+AF1-TABLE,sector_44_WBA_g_pre,-0.021934,log points
+AF1-TABLE,sector_44_WBA_g_post,-0.590691,log points
+AF1-TABLE,sector_44_WBA_diff,-0.568758,log points
+AF1-TABLE,sector_44_WBA_g_post_2425,-0.227126,log points
+AF1-TABLE,sector_44_WBA_g_pre_1819,-0.033542,log points
+AF1-TABLE,sector_48_ai_mean_pct,2.0783,percent of firms
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2017,2350.00,applications
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2018,2697.00,applications
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2019,2440.64,applications
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2023,3500.18,applications
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2024,3059.00,applications
+AF1-TABLE,sector_48_WBA_mean_monthly_JanNov_2025,2608.82,applications
+AF1-TABLE,sector_48_WBA_g_pre,0.037843,log points
+AF1-TABLE,sector_48_WBA_g_post,-0.293918,log points
+AF1-TABLE,sector_48_WBA_diff,-0.331761,log points
+AF1-TABLE,sector_48_WBA_g_post_2425,-0.159191,log points
+AF1-TABLE,sector_48_WBA_g_pre_1819,-0.099881,log points
+AF1-TABLE,sector_51_ai_mean_pct,20.8978,percent of firms
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2017,815.73,applications
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2018,858.91,applications
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2019,775.27,applications
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2023,845.18,applications
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2024,821.91,applications
+AF1-TABLE,sector_51_WBA_mean_monthly_JanNov_2025,762.55,applications
+AF1-TABLE,sector_51_WBA_g_pre,-0.050865,log points
+AF1-TABLE,sector_51_WBA_g_post,-0.102890,log points
+AF1-TABLE,sector_51_WBA_diff,-0.052024,log points
+AF1-TABLE,sector_51_WBA_g_post_2425,-0.074968,log points
+AF1-TABLE,sector_51_WBA_g_pre_1819,-0.102448,log points
+AF1-TABLE,sector_53_ai_mean_pct,9.4391,percent of firms
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2017,1302.73,applications
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2018,1439.09,applications
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2019,1319.73,applications
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2023,1625.36,applications
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2024,1332.36,applications
+AF1-TABLE,sector_53_WBA_mean_monthly_JanNov_2025,1205.09,applications
+AF1-TABLE,sector_53_WBA_g_pre,0.012965,log points
+AF1-TABLE,sector_53_WBA_g_post,-0.299177,log points
+AF1-TABLE,sector_53_WBA_diff,-0.312142,log points
+AF1-TABLE,sector_53_WBA_g_post_2425,-0.100400,log points
+AF1-TABLE,sector_53_WBA_g_pre_1819,-0.086586,log points
+AF1-TABLE,sector_54_ai_mean_pct,16.2478,percent of firms
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2017,4486.55,applications
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2018,4790.36,applications
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2019,4462.36,applications
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2023,5300.45,applications
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2024,5207.45,applications
+AF1-TABLE,sector_54_WBA_mean_monthly_JanNov_2025,5045.27,applications
+AF1-TABLE,sector_54_WBA_g_pre,-0.005404,log points
+AF1-TABLE,sector_54_WBA_g_post,-0.049341,log points
+AF1-TABLE,sector_54_WBA_diff,-0.043936,log points
+AF1-TABLE,sector_54_WBA_g_post_2425,-0.031639,log points
+AF1-TABLE,sector_54_WBA_g_pre_1819,-0.070928,log points
+AF1-TABLE,sector_56_ai_mean_pct,6.0804,percent of firms
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2017,3056.82,applications
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2018,3217.36,applications
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2019,3086.55,applications
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2023,4286.00,applications
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2024,3864.91,applications
+AF1-TABLE,sector_56_WBA_mean_monthly_JanNov_2025,3407.45,applications
+AF1-TABLE,sector_56_WBA_g_pre,0.009678,log points
+AF1-TABLE,sector_56_WBA_g_post,-0.229388,log points
+AF1-TABLE,sector_56_WBA_diff,-0.239066,log points
+AF1-TABLE,sector_56_WBA_g_post_2425,-0.125973,log points
+AF1-TABLE,sector_56_WBA_g_pre_1819,-0.041510,log points
+AF1-TABLE,sector_61_ai_mean_pct,12.2304,percent of firms
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2017,656.27,applications
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2018,696.18,applications
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2019,650.73,applications
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2023,714.00,applications
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2024,755.91,applications
+AF1-TABLE,sector_61_WBA_mean_monthly_JanNov_2025,718.09,applications
+AF1-TABLE,sector_61_WBA_g_pre,-0.008486,log points
+AF1-TABLE,sector_61_WBA_g_post,0.005713,log points
+AF1-TABLE,sector_61_WBA_diff,0.014199,log points
+AF1-TABLE,sector_61_WBA_g_post_2425,-0.051325,log points
+AF1-TABLE,sector_61_WBA_g_pre_1819,-0.067520,log points
+AF1-TABLE,sector_62_ai_mean_pct,7.0457,percent of firms
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2017,3875.91,applications
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2018,4034.09,applications
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2019,3920.18,applications
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2023,4957.64,applications
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2024,4968.82,applications
+AF1-TABLE,sector_62_WBA_mean_monthly_JanNov_2025,4756.73,applications
+AF1-TABLE,sector_62_WBA_g_pre,0.011358,log points
+AF1-TABLE,sector_62_WBA_g_post,-0.041369,log points
+AF1-TABLE,sector_62_WBA_diff,-0.052727,log points
+AF1-TABLE,sector_62_WBA_g_post_2425,-0.043622,log points
+AF1-TABLE,sector_62_WBA_g_pre_1819,-0.028643,log points
+AF1-TABLE,sector_71_ai_mean_pct,6.4739,percent of firms
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2017,1128.91,applications
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2018,1251.82,applications
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2019,1163.18,applications
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2023,1317.55,applications
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2024,1162.73,applications
+AF1-TABLE,sector_71_WBA_mean_monthly_JanNov_2025,1128.18,applications
+AF1-TABLE,sector_71_WBA_g_pre,0.029907,log points
+AF1-TABLE,sector_71_WBA_g_post,-0.155163,log points
+AF1-TABLE,sector_71_WBA_diff,-0.185071,log points
+AF1-TABLE,sector_71_WBA_g_post_2425,-0.030161,log points
+AF1-TABLE,sector_71_WBA_g_pre_1819,-0.073438,log points
+AF1-TABLE,sector_72_ai_mean_pct,1.8761,percent of firms
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2017,5680.36,applications
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2018,5762.64,applications
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2019,5588.18,applications
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2023,6546.00,applications
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2024,6270.18,applications
+AF1-TABLE,sector_72_WBA_mean_monthly_JanNov_2025,5958.82,applications
+AF1-TABLE,sector_72_WBA_g_pre,-0.016361,log points
+AF1-TABLE,sector_72_WBA_g_post,-0.093982,log points
+AF1-TABLE,sector_72_WBA_diff,-0.077621,log points
+AF1-TABLE,sector_72_WBA_g_post_2425,-0.050933,log points
+AF1-TABLE,sector_72_WBA_g_pre_1819,-0.030741,log points
+AF1-TABLE,sector_81_ai_mean_pct,3.1000,percent of firms
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2017,3520.00,applications
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2018,3558.91,applications
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2019,3535.55,applications
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2023,4540.55,applications
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2024,4010.82,applications
+AF1-TABLE,sector_81_WBA_mean_monthly_JanNov_2025,3840.64,applications
+AF1-TABLE,sector_81_WBA_g_pre,0.004407,log points
+AF1-TABLE,sector_81_WBA_g_post,-0.167409,log points
+AF1-TABLE,sector_81_WBA_diff,-0.171816,log points
+AF1-TABLE,sector_81_WBA_g_post_2425,-0.043357,log points
+AF1-TABLE,sector_81_WBA_g_pre_1819,-0.006586,log points
+AF1-R-P1_2425,rho,0.4857,rank correlation
+AF1-R-P1_2425,perm_p_pos,0.0415,probability
+AF1-R-P1_2425,perm_p_neg,0.9594,probability
+AF1-R-P1_2425,loo_min,0.3956,rank correlation
+AF1-R-P1_2425,loo_max,0.5934,rank correlation
+AF1-R-P1_2425,n_sectors,14,sectors
+AF1-R-P1_2425,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P1_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AF1-R-P1_no5154,rho,0.1538,rank correlation
+AF1-R-P1_no5154,perm_p_pos,0.3161,probability
+AF1-R-P1_no5154,perm_p_neg,0.6914,probability
+AF1-R-P1_no5154,loo_min,-0.0545,rank correlation
+AF1-R-P1_no5154,loo_max,0.4091,rank correlation
+AF1-R-P1_no5154,n_sectors,12,sectors
+AF1-R-P1_no5154,sectors,"23,31,42,44,48,53,56,61,62,71,72,81",list
+AF1-R-P1_no5154,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P1w_2425,rho,0.3231,rank correlation
+AF1-R-P1w_2425,perm_p_pos,0.1287,probability
+AF1-R-P1w_2425,perm_p_neg,0.8756,probability
+AF1-R-P1w_2425,loo_min,0.2088,rank correlation
+AF1-R-P1w_2425,loo_max,0.4780,rank correlation
+AF1-R-P1w_2425,n_sectors,14,sectors
+AF1-R-P1w_2425,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P1w_2425,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P1w_no5154,rho,0.1329,rank correlation
+AF1-R-P1w_no5154,perm_p_pos,0.3359,probability
+AF1-R-P1w_no5154,perm_p_neg,0.6712,probability
+AF1-R-P1w_no5154,loo_min,-0.1273,rank correlation
+AF1-R-P1w_no5154,loo_max,0.3364,rank correlation
+AF1-R-P1w_no5154,n_sectors,12,sectors
+AF1-R-P1w_no5154,sectors,"23,31,42,44,48,53,56,61,62,71,72,81",list
+AF1-R-P1w_no5154,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P2_2425,rho,0.6088,rank correlation
+AF1-R-P2_2425,perm_p_pos,0.0124,probability
+AF1-R-P2_2425,perm_p_neg,0.9883,probability
+AF1-R-P2_2425,loo_min,0.5659,rank correlation
+AF1-R-P2_2425,loo_max,0.6703,rank correlation
+AF1-R-P2_2425,n_sectors,14,sectors
+AF1-R-P2_2425,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P2_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AF1-R-P2_2425_regpre,rho,0.3846,rank correlation
+AF1-R-P2_2425_regpre,perm_p_pos,0.0870,probability
+AF1-R-P2_2425_regpre,perm_p_neg,0.9162,probability
+AF1-R-P2_2425_regpre,loo_min,0.2308,rank correlation
+AF1-R-P2_2425_regpre,loo_max,0.4945,rank correlation
+AF1-R-P2_2425_regpre,n_sectors,14,sectors
+AF1-R-P2_2425_regpre,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P2_2425_regpre,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P2_no5154,rho,0.3007,rank correlation
+AF1-R-P2_no5154,perm_p_pos,0.1693,probability
+AF1-R-P2_no5154,perm_p_neg,0.8359,probability
+AF1-R-P2_no5154,loo_min,0.1364,rank correlation
+AF1-R-P2_no5154,loo_max,0.5000,rank correlation
+AF1-R-P2_no5154,n_sectors,12,sectors
+AF1-R-P2_no5154,sectors,"23,31,42,44,48,53,56,61,62,71,72,81",list
+AF1-R-P2_no5154,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P2w_2425,rho,0.6088,rank correlation
+AF1-R-P2w_2425,perm_p_pos,0.0128,probability
+AF1-R-P2w_2425,perm_p_neg,0.9879,probability
+AF1-R-P2w_2425,loo_min,0.5385,rank correlation
+AF1-R-P2w_2425,loo_max,0.6648,rank correlation
+AF1-R-P2w_2425,n_sectors,14,sectors
+AF1-R-P2w_2425,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P2w_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AF1-R-P2w_2425_regpre,rho,0.2352,rank correlation
+AF1-R-P2w_2425_regpre,perm_p_pos,0.2048,probability
+AF1-R-P2w_2425_regpre,perm_p_neg,0.7989,probability
+AF1-R-P2w_2425_regpre,loo_min,0.0934,rank correlation
+AF1-R-P2w_2425_regpre,loo_max,0.3846,rank correlation
+AF1-R-P2w_2425_regpre,n_sectors,14,sectors
+AF1-R-P2w_2425_regpre,sectors,"23,31,42,44,48,51,53,54,56,61,62,71,72,81",list
+AF1-R-P2w_2425_regpre,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-P2w_no5154,rho,0.1538,rank correlation
+AF1-R-P2w_no5154,perm_p_pos,0.3085,probability
+AF1-R-P2w_no5154,perm_p_neg,0.7013,probability
+AF1-R-P2w_no5154,loo_min,-0.1000,rank correlation
+AF1-R-P2w_no5154,loo_max,0.2818,rank correlation
+AF1-R-P2w_no5154,n_sectors,12,sectors
+AF1-R-P2w_no5154,sectors,"23,31,42,44,48,53,56,61,62,71,72,81",list
+AF1-R-P2w_no5154,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AF1-R-WEIGHTED,pearson_weighted_AI_vs_g_post_BA,0.2399,correlation
+AF1-R-WEIGHTED,pearson_weighted_AI_vs_g_post_minus_g_pre_BA,0.4525,correlation
+AF1-R-WEIGHTED,weights_sum_mean_monthly_BA_JanNov_2019_kept_sectors,273270.36,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2017,0.010182,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2017,0.911936,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2017,271806.27,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2018,0.012246,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2018,0.903798,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2018,297565.00,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2019,0.013210,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2019,0.917969,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2019,297690.18,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2023,0.021036,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2023,0.915426,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2023,468578.00,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2024,0.020319,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2024,0.912210,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2024,445841.64,applications
+AF1-R-NONAICS,BA_no_naics_share_JanNov_2025,0.021410,share of national total
+AF1-R-NONAICS,BA_kept_sectors_share_of_national_JanNov_2025,0.913813,share of national total
+AF1-R-NONAICS,BA_national_total_mean_monthly_JanNov_2025,478331.91,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2017,0.006414,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2017,0.942697,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2017,41217.55,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2018,0.006046,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2018,0.942922,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2018,42826.45,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2019,0.005622,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2019,0.944509,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2019,40714.18,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2023,0.009470,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2023,0.949962,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2023,52461.91,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2024,0.004965,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2024,0.951152,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2024,46777.64,applications
+AF1-R-NONAICS,WBA_no_naics_share_JanNov_2025,0.004606,share of national total
+AF1-R-NONAICS,WBA_kept_sectors_share_of_national_JanNov_2025,0.948154,share of national total
+AF1-R-NONAICS,WBA_national_total_mean_monthly_JanNov_2025,42589.55,applications

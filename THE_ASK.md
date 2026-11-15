@@ -19,7 +19,7 @@ wording, stop — that is the failure this file prevents.
 Changing it here without changing it there — or the reverse — fails the check.
 
 ```goal
-Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Track AI adoption and the other measures of AI use, and test the thesis that AI is raising business investment and the formation of new companies. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
+Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Track AI adoption and its effects with a standing set of AI metrics, and keep a register of the theses about what AI is doing to the economy and to markets — among them that it raises business investment, the formation of new companies, productivity and profits, and that it changes the demand for labour — testing each thesis as its own hypothesis. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 ```
 
 **The principal asked on 25 Sep for one clear mission statement to be the standing goal (E-015).** The agent worded it from
@@ -27,6 +27,22 @@ E-003 (the goal), E-004 (the confirmed additions), E-005 (the standard of eviden
 tested) and E-015 (the scope). **The principal confirmed this exact wording on 26 Sep (E-016).** The 11 Sep string it replaces is
 quoted in E-015. If you believe the mission no longer matches the verbatim record, **do not rewrite it**: raise it with the
 principal and append a new entry.
+
+---
+
+## E-029 · 15 November 2026 — the AI sentence is too narrow: track several AI theses
+
+Given after the supervisor put the E-028 wording to him for confirmation ("Track AI adoption and the other measures of AI use, and
+test the thesis that AI is raising business investment and the formation of new companies") and asked whether census downloads
+through the browser may be approved again if needed:
+
+> *"1) it is not wide enough and too generic, we need to track multiple thesis on AI 2) yes"*
+
+**Reading notes.** The E-028 sentence is replaced in the goal block by a wider one that names a standing set of AI metrics and a
+register of AI theses (`dossiers/ai-theses.md`), each tested as its own hypothesis. **This wording is again the agent's and
+awaits his confirmation.** The theses named in the sentence beyond his two (productivity and profits; labour demand) are the
+agent's proposals, drawn from the Apollo note he cited (its employment claim) and from CV1; he may strike or add. Answer 2: if
+a Census host refuses a script during AF1, he will approve browser downloads again.
 
 ---
 

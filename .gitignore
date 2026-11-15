@@ -166,3 +166,6 @@ data/vintages/funding_identity_checks/
 data/vintages/cv1/
 # CV1 stage-2 raw downloads (SBU, EPU, VIX, SPF, Beige Book, Dallas Fed, BoE DMP, BTOS)
 data/vintages/cv1_stage2/
+
+# AF1 raw downloads (Census BFS monthly file, release page, data dictionary)
+data/vintages/af1/
