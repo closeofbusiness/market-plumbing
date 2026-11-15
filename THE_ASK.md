@@ -19,7 +19,7 @@ wording, stop — that is the failure this file prevents.
 Changing it here without changing it there — or the reverse — fails the check.
 
 ```goal
-Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
+Establish, in numbers with ranges rather than false precision, what is driving asset prices and where the money is coming from: above all the run-up in US equities and the funding of the AI build-out and the IPO boom, and also rates, FX and commodities. Track AI adoption and the other measures of AI use, and test the thesis that AI is raising business investment and the formation of new companies. Test every channel against fundamentals (earnings, interest rates and risk premia) as the benchmark — direct money creation, shadow banking and shadow money, the collateral channel, market structure such as the passive bid and ETF creation, and any other driver the evidence reveals — and record a channel that turns out not to matter as a result. For every flow, name the buyer, the seller and the funding; treat every claim as a hypothesis until it is tested; use free data only; and publish the work openly.
 ```
 
 **The principal asked on 25 Sep for one clear mission statement to be the standing goal (E-015).** The agent worded it from
@@ -27,6 +27,29 @@ E-003 (the goal), E-004 (the confirmed additions), E-005 (the standard of eviden
 tested) and E-015 (the scope). **The principal confirmed this exact wording on 26 Sep (E-016).** The 11 Sep string it replaces is
 quoted in E-015. If you believe the mission no longer matches the verbatim record, **do not rewrite it**: raise it with the
 principal and append a new entry.
+
+---
+
+## E-028 · 15 November 2026 — the goal adds AI adoption and the AI-investment thesis; P6 is built from browser downloads
+
+Given after the supervisor pasted the canonical mission verbatim for the recurring read-back (CALENDAR row 2026-11-15) and asked
+whether it still describes the intent, and reported that www.census.gov had refused the CV1-P6 inputs to a script (HTTP 403) and
+that an outside test had not settled why:
+
+> *"Goal should include tracking AI metrics like AI adoption - our thesis on AI supported increased investment (or company formation) as already evidenced by https://www.apollo.com/insights-news/insights/daily-spark/the-ai-entrepreneurship-boom; consider other way to get the data (maybe using local browser?) P6 should be build, continue with Hydrogen"*
+
+During the same turn, when the browser pane asked him to approve each download:
+
+> *"I had to action / agree the download"* and *"done"*
+
+**Reading notes.** The agent added one sentence to the mission ("Track AI adoption and the other measures of AI use, and test the
+thesis that AI is raising business investment and the formation of new companies"), placed after the scope sentence. **This
+wording is the agent's and is not yet confirmed by the principal**; it is put to him in the next report, as E-016 did for E-015.
+The Apollo note is a published claim and enters as a hypothesis to test, not as evidence. The two Census files for P6 were
+downloaded through the desktop app's browser pane with his approval of each download (sha256 recorded in
+`data/cv1_confidence_velocity/README.md`). The 403 on 13 Nov was to the folder index `/hfp/btos/downloads/`, which the browser
+was refused too; the files themselves were served to the browser. The goal read-back due 15 Nov is done; the next is due about
+6 Dec (CALENDAR).
 
 ---
 
