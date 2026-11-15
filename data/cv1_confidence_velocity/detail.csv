@@ -173,3 +173,124 @@ CV1-P5,window P n_high_trimmed,491,firms
 CV1-P5,window P n_removed,26,firms
 CV1-P5,window P n_low,182,firms
 CV1-P5,window P median growth of the removed SICs,34.0025,percent per year
+CV1-P6,sector 31 AI use mean,3.3370,percent of firms
+CV1-P6,sector 31 cycles used / suppressed,46 / 0,cycles
+CV1-P6,sector 31 firms treatment / placebo,344 / 320,firms
+CV1-P6,sector 31 P2 median gap,-11.0520,pp per year
+CV1-P6,sector 51 AI use mean,20.8978,percent of firms
+CV1-P6,sector 51 cycles used / suppressed,46 / 0,cycles
+CV1-P6,sector 51 firms treatment / placebo,30 / 21,firms
+CV1-P6,sector 51 P2 median gap,-14.0760,pp per year
+CV1-P6,sector 56 AI use mean,6.0804,percent of firms
+CV1-P6,sector 56 cycles used / suppressed,46 / 0,cycles
+CV1-P6,sector 56 firms treatment / placebo,30 / 27,firms
+CV1-P6,sector 56 P2 median gap,1.4538,pp per year
+CV1-P6,sector 72 AI use mean,1.8761,percent of firms
+CV1-P6,sector 72 cycles used / suppressed,46 / 0,cycles
+CV1-P6,sector 72 firms treatment / placebo,27 / 26,firms
+CV1-P6,sector 72 P2 median gap,2.6044,pp per year
+CV1-P6,"all-sector table: sector 11 AI use mean (cycles used 2, suppressed 44)",4.8500,percent of firms
+CV1-P6,"all-sector table: sector 21 AI use mean (cycles used 3, suppressed 43)",3.3333,percent of firms
+CV1-P6,"all-sector table: sector 22 AI use mean (cycles used 4, suppressed 42)",10.0500,percent of firms
+CV1-P6,"all-sector table: sector 23 AI use mean (cycles used 46, suppressed 0)",2.3826,percent of firms
+CV1-P6,"all-sector table: sector 31 AI use mean (cycles used 46, suppressed 0)",3.3370,percent of firms
+CV1-P6,"all-sector table: sector 42 AI use mean (cycles used 46, suppressed 0)",3.8500,percent of firms
+CV1-P6,"all-sector table: sector 44 AI use mean (cycles used 46, suppressed 0)",4.1870,percent of firms
+CV1-P6,"all-sector table: sector 48 AI use mean (cycles used 46, suppressed 0)",2.0783,percent of firms
+CV1-P6,"all-sector table: sector 51 AI use mean (cycles used 46, suppressed 0)",20.8978,percent of firms
+CV1-P6,"all-sector table: sector 52 AI use mean (cycles used 46, suppressed 0)",9.5826,percent of firms
+CV1-P6,"all-sector table: sector 53 AI use mean (cycles used 46, suppressed 0)",9.4391,percent of firms
+CV1-P6,"all-sector table: sector 54 AI use mean (cycles used 46, suppressed 0)",16.2478,percent of firms
+CV1-P6,"all-sector table: sector 55 AI use mean (cycles used 7, suppressed 39)",18.3571,percent of firms
+CV1-P6,"all-sector table: sector 56 AI use mean (cycles used 46, suppressed 0)",6.0804,percent of firms
+CV1-P6,"all-sector table: sector 61 AI use mean (cycles used 46, suppressed 0)",12.2304,percent of firms
+CV1-P6,"all-sector table: sector 62 AI use mean (cycles used 46, suppressed 0)",7.0457,percent of firms
+CV1-P6,"all-sector table: sector 71 AI use mean (cycles used 46, suppressed 0)",6.4739,percent of firms
+CV1-P6,"all-sector table: sector 72 AI use mean (cycles used 46, suppressed 0)",1.8761,percent of firms
+CV1-P6,"all-sector table: sector 81 AI use mean (cycles used 46, suppressed 0)",3.1000,percent of firms
+CV1-P6,sector 21 dropped by the firm filter (firms treatment / placebo),11 / 12,firms
+CV1-P6,sector 23 dropped by the firm filter (firms treatment / placebo),21 / 16,firms
+CV1-P6,sector 42 dropped by the firm filter (firms treatment / placebo),12 / 11,firms
+CV1-P6,sector 44 dropped by the firm filter (firms treatment / placebo),16 / 14,firms
+CV1-P6,sector 48 dropped by the firm filter (firms treatment / placebo),15 / 15,firms
+CV1-P6,sector 53 dropped by the firm filter (firms treatment / placebo),4 / 4,firms
+CV1-P6,sector 54 dropped by the firm filter (firms treatment / placebo),20 / 17,firms
+CV1-P6,sector 62 dropped by the firm filter (firms treatment / placebo),18 / 15,firms
+CV1-P6,sector 71 dropped by the firm filter (firms treatment / placebo),1 / 0,firms
+CV1-P6,leave out sector 31: spearman,-1.0000,rank correlation
+CV1-P6,leave out sector 51: spearman,-0.5000,rank correlation
+CV1-P6,leave out sector 56: spearman,-1.0000,rank correlation
+CV1-P6,leave out sector 72: spearman,-0.5000,rank correlation
+CV1-P6,spearman,-0.8000,rank correlation
+CV1-P6,sectors kept,4,sectors
+CV1-P6,variant dropping split-SIC firms: spearman,n/a,rank correlation
+CV1-P6,variant dropping split-SIC firms: sectors kept,1,sectors
+CV1-P6,window T panel firms,788,firms
+CV1-P6,window T firms not in the concordance (dropped),230,firms
+CV1-P6,window T firms on tied SICs (dropped),9,firms
+CV1-P6,window T firms in sectors without an AI mean (dropped),0,firms
+CV1-P6,window T firms on split SICs (kept in the main result unless tied),75,firms
+CV1-P6,window P panel firms,716,firms
+CV1-P6,window P firms not in the concordance (dropped),209,firms
+CV1-P6,window P firms on tied SICs (dropped),9,firms
+CV1-P6,window P firms in sectors without an AI mean (dropped),0,firms
+CV1-P6,window P firms on split SICs (kept in the main result unless tied),66,firms
+CV1-P6,POST HOC prefix-fallback variant: spearman,0.0818,rank correlation
+CV1-P6,POST HOC prefix-fallback variant: sectors kept,11,sectors
+CV1-P6,POST HOC prefix-fallback variant: leave-one-out minimum / maximum,-0.0424 / 0.3576,rank correlation
+CV1-P6,prefix variant sector 21 AI use mean,3.3333,percent of firms
+CV1-P6,prefix variant sector 21 firms treatment / placebo,23 / 22,firms
+CV1-P6,prefix variant sector 21 P2 median gap,-22.9731,pp per year
+CV1-P6,prefix variant sector 23 AI use mean,2.3826,percent of firms
+CV1-P6,prefix variant sector 23 firms treatment / placebo,31 / 24,firms
+CV1-P6,prefix variant sector 23 P2 median gap,-5.2035,pp per year
+CV1-P6,prefix variant sector 31 AI use mean,3.3370,percent of firms
+CV1-P6,prefix variant sector 31 firms treatment / placebo,472 / 436,firms
+CV1-P6,prefix variant sector 31 P2 median gap,-8.9703,pp per year
+CV1-P6,prefix variant sector 42 AI use mean,3.8500,percent of firms
+CV1-P6,prefix variant sector 42 firms treatment / placebo,26 / 26,firms
+CV1-P6,prefix variant sector 42 P2 median gap,-0.6854,pp per year
+CV1-P6,prefix variant sector 44 AI use mean,4.1870,percent of firms
+CV1-P6,prefix variant sector 44 firms treatment / placebo,25 / 23,firms
+CV1-P6,prefix variant sector 44 P2 median gap,0.5391,pp per year
+CV1-P6,prefix variant sector 48 AI use mean,2.0783,percent of firms
+CV1-P6,prefix variant sector 48 firms treatment / placebo,29 / 28,firms
+CV1-P6,prefix variant sector 48 P2 median gap,-4.5448,pp per year
+CV1-P6,prefix variant sector 51 AI use mean,20.8978,percent of firms
+CV1-P6,prefix variant sector 51 firms treatment / placebo,32 / 23,firms
+CV1-P6,prefix variant sector 51 P2 median gap,-14.0760,pp per year
+CV1-P6,prefix variant sector 54 AI use mean,16.2478,percent of firms
+CV1-P6,prefix variant sector 54 firms treatment / placebo,28 / 23,firms
+CV1-P6,prefix variant sector 54 P2 median gap,-6.3792,pp per year
+CV1-P6,prefix variant sector 56 AI use mean,6.0804,percent of firms
+CV1-P6,prefix variant sector 56 firms treatment / placebo,37 / 33,firms
+CV1-P6,prefix variant sector 56 P2 median gap,1.2173,pp per year
+CV1-P6,prefix variant sector 62 AI use mean,7.0457,percent of firms
+CV1-P6,prefix variant sector 62 firms treatment / placebo,24 / 21,firms
+CV1-P6,prefix variant sector 62 P2 median gap,3.3409,pp per year
+CV1-P6,prefix variant sector 72 AI use mean,1.8761,percent of firms
+CV1-P6,prefix variant sector 72 firms treatment / placebo,30 / 29,firms
+CV1-P6,prefix variant sector 72 P2 median gap,-4.1001,pp per year
+CV1-P6,prefix variant leave out sector 21: spearman,-0.0424,rank correlation
+CV1-P6,prefix variant leave out sector 23: spearman,0.1273,rank correlation
+CV1-P6,prefix variant leave out sector 31: spearman,0.0303,rank correlation
+CV1-P6,prefix variant leave out sector 42: spearman,-0.0303,rank correlation
+CV1-P6,prefix variant leave out sector 44: spearman,-0.0303,rank correlation
+CV1-P6,prefix variant leave out sector 48: spearman,0.1273,rank correlation
+CV1-P6,prefix variant leave out sector 51: spearman,0.3576,rank correlation
+CV1-P6,prefix variant leave out sector 54: spearman,0.2970,rank correlation
+CV1-P6,prefix variant leave out sector 56: spearman,-0.0303,rank correlation
+CV1-P6,prefix variant leave out sector 62: spearman,-0.0303,rank correlation
+CV1-P6,prefix variant leave out sector 72: spearman,0.1273,rank correlation
+CV1-P6,prefix variant sector 53 dropped by the firm filter (firms treatment / placebo),7 / 8,firms
+CV1-P6,prefix variant sector 61 dropped by the firm filter (firms treatment / placebo),5 / 3,firms
+CV1-P6,prefix variant sector 71 dropped by the firm filter (firms treatment / placebo),5 / 4,firms
+CV1-P6,prefix variant sector 81 dropped by the firm filter (firms treatment / placebo),4 / 4,firms
+CV1-P6,prefix variant window T firms mapped through a prefix,230,firms
+CV1-P6,prefix variant window T firms still unmapped (dropped),0,firms
+CV1-P6,prefix variant window T firms on tied SICs or tied prefixes (dropped),10,firms
+CV1-P6,prefix variant window P firms mapped through a prefix,209,firms
+CV1-P6,prefix variant window P firms still unmapped (dropped),0,firms
+CV1-P6,prefix variant window P firms on tied SICs or tied prefixes (dropped),9,firms
+CV1-P6,concordance SICs,1004,SICs
+CV1-P6,concordance SICs split across sectors (of which tied),139 (46),SICs

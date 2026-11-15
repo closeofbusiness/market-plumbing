@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CV1: the confidence / capital-velocity channel. Registered statements CV1-P1..P6 (P7 is not scored), version 2 of the spec. Python 3 standard library plus openpyxl.
+"""CV1: the confidence / capital-velocity channel. Registered statements CV1-P1..P6 (P7 is not scored), version 2 of the spec. Python 3 standard library plus openpyxl (and xlrd for the P6 concordance, an old-format .xls).
 
   python3 bin/cv1_confidence_velocity.py selftest                                   # synthetic data only; no network
   python3 bin/cv1_confidence_velocity.py fetch --what bea|z1|census|frames|submissions|btos|all [--max-requests N] [--budget-seconds S]
@@ -734,6 +734,231 @@ def p3_stats(stock, gdp):
 # ------------------------------------------------------------------------------------------------------------------------
 # SEC panel loader
 # ------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------
+# P6: sector AI use (Census BTOS) against the P2 statistic by sector. Descriptive: no label. Inputs are two files the principal downloaded by hand; they are never fetched.
+# ------------------------------------------------------------------------------------------------------------------------
+BTOS_REL = "raw/census/AI Core Questions.xlsx"
+BTOS_SHA256 = "e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce"
+BTOS_URL = "https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx"
+CONC_REL = "raw/census/1987_sic_to_2002_naics.xls"
+CONC_SHA256 = "fcb8ad7e4162a4d95c39ebe51c12e8ec20dfa6a31f2e81bf8fb1de08fbedc937"
+CONC_URL = "https://www2.census.gov/library/reference/naics/technical-documentation/concordance/1987_sic_to_2002_naics.xls"
+P6_YEARS = (2024, 2025)
+P6_CUTOFF = dt.date(2025, 11, 17)             # a cycle counts only if its collection ended strictly before this date
+P6_MIN_FIRMS = 20
+BTOS_QID = 7                                   # "...use Artificial Intelligence (AI) in producing goods or services?"
+NAICS2_TO_BTOS = {"31": "31", "32": "31", "33": "31", "44": "44", "45": "44", "48": "48", "49": "48"}
+
+
+def parse_pct(v):
+    """'12.3%' -> 12.3 (percent). 'S' (suppressed), blanks and anything else -> None. A bare number is taken as a percentage."""
+    if isinstance(v, bool):
+        return None
+    if isinstance(v, (int, float)):
+        return float(v)
+    if isinstance(v, str):
+        s = v.strip()
+        if s.endswith("%"):
+            try:
+                return float(s[:-1])
+            except ValueError:
+                return None
+    return None
+
+
+def btos_cycles(date_rows):
+    """date_rows: (smpdt, col_start, col_end, ...) rows of the Collection and Reference Dates sheet. Returns {cycle label (str): col_end date} for the rows that parse."""
+    out = {}
+    for r in date_rows:
+        try:
+            label = str(int(r[0]))
+            m, d, y = [int(x) for x in str(r[2]).split("/")]
+            out[label] = dt.date(y, m, d)
+        except (TypeError, ValueError, IndexError):
+            continue
+    return out
+
+
+def btos_ai_means(header, rows, cycles):
+    """header = column names of the Sector Estimates sheet; rows = its data rows. For each numeric sector, Question ID 7, Answer 'Yes': the mean of the unsuppressed percentages over the
+    cycle columns whose label begins with 2024 or 2025 and whose collection ended before P6_CUTOFF. Returns (per-sector dict, list of in-window cycles missing from the sheet, cycle columns used)."""
+    cols = {}
+    for j, h in enumerate(header):
+        if j >= 5 and h is not None:
+            lab = str(h).strip()
+            if re.match(r"^\d{6}$", lab) and int(lab[:4]) in P6_YEARS and lab in cycles and cycles[lab] < P6_CUTOFF:
+                cols[lab] = j
+    missing = sorted(l for l, d in cycles.items() if int(l[:4]) in P6_YEARS and d < P6_CUTOFF and l not in cols)
+    out = {}
+    for r in rows:
+        sec = r[0]
+        if isinstance(sec, float) and sec == int(sec):
+            sec = int(sec)
+        if not isinstance(sec, int):                      # the 'XX' multi-unit row, the footer, blanks
+            continue
+        if r[1] != BTOS_QID or str(r[4]).strip() != "Yes":
+            continue
+        used, supp = [], []
+        for lab in sorted(cols):
+            x = parse_pct(r[cols[lab]])
+            (supp if x is None else used).append(lab if x is None else (lab, x))
+        vals = [x for _l, x in used]
+        out[str(sec)] = {"mean": (sum(vals) / len(vals)) if vals else None, "used": [l for l, _x in used], "suppressed": supp}
+    return out, missing, sorted(cols)
+
+
+def btos_sector_of_naics(naics):
+    n2 = str(naics)[:2]
+    return NAICS2_TO_BTOS.get(n2, n2)
+
+
+def sic_sector_map(conc_rows):
+    """conc_rows: (sic, naics) pairs. Returns {sic: (sector or None, kind)}, kind in 'single' (every row reaches one sector), 'majority' (split; the sector with strictly most rows),
+    'tie' (split; no unique majority; sector None, the firm is dropped). Rows are counted, not distinct NAICS codes."""
+    votes = {}
+    for sic, naics in conc_rows:
+        votes.setdefault(sic, {})
+        s = btos_sector_of_naics(naics)
+        votes[sic][s] = votes[sic].get(s, 0) + 1
+    out = {}
+    for sic, v in votes.items():
+        if len(v) == 1:
+            out[sic] = (next(iter(v)), "single")
+            continue
+        top = max(v.values())
+        winners = [s for s, c in v.items() if c == top]
+        out[sic] = (winners[0], "majority") if len(winners) == 1 else (None, "tie")
+    return out
+
+
+def prefix_sector_map(conc_rows, n):
+    """Variant only. {n-digit SIC prefix (SIC zero-padded to 4 digits): (sector or None, kind)}: every concordance row whose SIC starts with the prefix votes, with the split-SIC majority/tie rule."""
+    votes = {}
+    for sic, naics in conc_rows:
+        pre = "%04d" % sic
+        pre = pre[:n]
+        v = votes.setdefault(pre, {})
+        sec = btos_sector_of_naics(naics)
+        v[sec] = v.get(sec, 0) + 1
+    out = {}
+    for pre, v in votes.items():
+        top = max(v.values())
+        w = [x for x, c in v.items() if c == top]
+        out[pre] = (w[0], "single" if len(v) == 1 else "majority") if len(w) == 1 else (None, "tie")
+    return out
+
+
+def read_concordance_xls(path):
+    import xlrd                                              # old-format workbook; openpyxl cannot read it
+    sh = xlrd.open_workbook(path).sheet_by_index(0)
+    rows, skipped = [], 0
+    for i in range(1, sh.nrows):
+        a, c = sh.row_values(i)[0], sh.row_values(i)[2]
+        try:
+            sic = int(float(a))
+            nstr = str(int(float(str(c).strip())))
+        except (TypeError, ValueError):
+            skipped += 1                                     # 'Aux' and 'Null Set' rows, blanks
+            continue
+        if len(nstr) != 6:
+            skipped += 1
+            continue
+        rows.append((sic, nstr))
+    return rows, skipped
+
+
+def p6_load_inputs(cache):
+    """Hash-check and read the two hand-downloaded files. Raises Refused (with the reason) if either is missing or differs. No network."""
+    paths = {}
+    for rel, want in ((BTOS_REL, BTOS_SHA256), (CONC_REL, CONC_SHA256)):
+        p = os.path.join(cache, *rel.split("/"))
+        if not os.path.exists(p):
+            raise Refused("P6 input missing: %s" % rel)
+        got = sha256_of(open(p, "rb").read())
+        if got != want:
+            raise Refused("P6 input %s has sha256 %s, not the pinned %s" % (rel, got, want))
+        paths[rel] = p
+    import openpyxl
+    wb = openpyxl.load_workbook(paths[BTOS_REL], read_only=True, data_only=True)
+    sec = list(wb["Sector Estimates"].iter_rows(values_only=True))
+    dates = list(wb["Collection and Reference Dates"].iter_rows(values_only=True))
+    wb.close()
+    conc, skipped = read_concordance_xls(paths[CONC_REL])
+    return {"sector_header": sec[0], "sector_rows": sec[1:], "date_rows": dates[1:], "conc_rows": conc, "conc_skipped": skipped}
+
+
+def p6_stats(firms_t, firms_p, gdp_g, ai, smap, min_firms=P6_MIN_FIRMS, drop_split=False, prefix_maps=None):
+    """Per BTOS sector: the P2 median gap (p2_stats, unchanged) on that sector's firms, for sectors with at least min_firms firms in EACH window and a usable AI mean.
+    drop_split drops every firm whose SIC is split across sectors (kinds 'majority' and 'tie'). Then Spearman and leave-one-sector-out."""
+    def assign(firms):
+        by, drop = {}, {"not_in_concordance": 0, "tie": 0, "split_dropped": 0, "sector_without_ai_mean": 0, "prefix_mapped": 0}
+        for f in firms:
+            m = smap.get(f["sic"])
+            if m is None and prefix_maps:
+                for n, pm in prefix_maps:                       # 3-digit prefix first, then 2-digit; the first prefix with any rows decides
+                    pre = ("%04d" % f["sic"])[:n]
+                    if pre in pm:
+                        m = pm[pre]
+                        drop["prefix_mapped"] += 1
+                        break
+            if m is None:
+                drop["not_in_concordance"] += 1
+                continue
+            sector, kind = m
+            if kind == "tie":
+                drop["tie"] += 1
+                continue
+            if drop_split and kind != "single":
+                drop["split_dropped"] += 1
+                continue
+            if sector not in ai or ai[sector]["mean"] is None:
+                drop["sector_without_ai_mean"] += 1
+                continue
+            by.setdefault(sector, []).append(f)
+        return by, drop
+    bt, dt_ = assign(firms_t)
+    bp, dp_ = assign(firms_p)
+    rows, small = [], []
+    for s in sorted(set(bt) | set(bp), key=int):
+        nt, np_ = len(bt.get(s, [])), len(bp.get(s, []))
+        if nt >= min_firms and np_ >= min_firms:
+            rows.append({"sector": s, "ai_mean": ai[s]["mean"], "n_t": nt, "n_p": np_, "stat": p2_stats(bt[s], bp[s], gdp_g)["median_gap_pp"]})
+        else:
+            small.append((s, nt, np_))
+    xs, ys = [r["ai_mean"] for r in rows], [r["stat"] for r in rows]
+    rho = spearman(xs, ys)
+    loo = []
+    for i, r in enumerate(rows):
+        loo.append((r["sector"], spearman(xs[:i] + xs[i + 1:], ys[:i] + ys[i + 1:])))
+    vals = [v for _s, v in loo if v is not None]
+    return {"rows": rows, "rho": rho, "n": len(rows), "loo": loo, "loo_min": min(vals) if vals else None, "loo_max": max(vals) if vals else None,
+            "small": small, "drop_T": dt_, "drop_P": dp_, "n_firms_T": sum(r["n_t"] for r in rows), "n_firms_P": sum(r["n_p"] for r in rows)}
+
+
+def compute_p6(cache, H, gdp_g):
+    """H = {'T': firms, 'P': firms}, the P2 headline window sets. Returns a dict, or {'refused': reason}."""
+    try:
+        inp = p6_load_inputs(cache)
+    except Refused as e:
+        return {"refused": str(e)}
+    cycles = btos_cycles(inp["date_rows"])
+    ai, missing, used_cols = btos_ai_means(inp["sector_header"], inp["sector_rows"], cycles)
+    smap = sic_sector_map(inp["conc_rows"])
+    split = {s: v for s, v in smap.items() if v[1] != "single"}
+    res = p6_stats(H["T"], H["P"], gdp_g, ai, smap)
+    alt = p6_stats(H["T"], H["P"], gdp_g, ai, smap, drop_split=True)
+    pre = p6_stats(H["T"], H["P"], gdp_g, ai, smap, prefix_maps=[(3, prefix_sector_map(inp["conc_rows"], 3)), (2, prefix_sector_map(inp["conc_rows"], 2))])
+    sic_n = {w: {} for w in ("T", "P")}
+    for w in ("T", "P"):
+        for f in H[w]:
+            if f["sic"] in split:
+                sic_n[w][f["sic"]] = sic_n[w].get(f["sic"], 0) + 1
+    return {"pre": pre, "ai": ai, "missing_cycles": missing, "used_cols": used_cols, "smap": smap, "res": res, "alt": alt, "n_sic_total": len(smap),
+            "n_split": len(split), "n_tie": sum(1 for v in split.values() if v[1] == "tie"),
+            "firms_in_split": {w: sum(sic_n[w].values()) for w in ("T", "P")}, "split_sics_with_firms": {w: len(sic_n[w]) for w in ("T", "P")},
+            "n_firms": {w: len(H[w]) for w in ("T", "P")}, "conc_rows": len(inp["conc_rows"]), "conc_skipped": inp["conc_skipped"]}
+
+
 TENK = ("10-K", "10-K/A")
 
 
@@ -1095,6 +1320,7 @@ def run_scores(cache, out_note=None):
     R["p4"]["label"] = label_p4(R["p4"]["stat_pp"], R["p4"]["top_net_of_gdp_pp"])
     R["p5"] = p5_stats(H["T"], H["P"])
     R["p5"]["label"] = label_p5(R["p5"]["trimmed_gap_pp"], R["p5"]["untrimmed_gap_pp"])
+    R["p6"] = compute_p6(cache, H, gdp_g)
     R["cov"] = {"P2_T": coverage(P, H["T"]), "P2_P": coverage(P, H["P"]), "P4_T": coverage(P, P.p4_firms["T"]), "P4_P": coverage(P, P.p4_firms["P"]),
                 "UTIL_T": coverage(P, P.window[("UTIL", "T")]), "REIT_T": coverage(P, P.window[("REIT", "T")])}
     return R
@@ -1212,9 +1438,63 @@ def make_rows(R):
             D("CV1-P5", "window %s %s" % (w, k), x[k], "firms")
         D("CV1-P5", "window %s median growth of the removed SICs" % w, f4(pp(x["med_removed"])) if x["med_removed"] is not None else "n/a", "percent per year")
     # ---- P6, P7
-    scores.append(["CV1-P6", "NOT BUILT", "", "", "", "",
-                   "none",
-                   "the Census BTOS downloads page (https://www.census.gov/hfp/btos/downloads/) answered HTTP 403 to one request with the neutral User-Agent; the STOP latch for www.census.gov is in place, no further request was made to that host, so neither the AI Core Questions (Original) table nor the SIC-to-NAICS concordance was obtained"])
+    p6 = R["p6"]
+    if "refused" in p6:
+        scores.append(["CV1-P6", "NOT BUILT", "", "", "", "", "none",
+                       "P6 refused: %s. The two Census files are never fetched by this script (www.census.gov answered 403 to a script on 13 Nov 2026); place them in the cache and rebuild" % p6["refused"]])
+    else:
+        r6, a6, v6 = p6["res"], p6["alt"], p6["pre"]
+        f = lambda x: "n/a" if x is None else f4(x)
+        scores.append(["CV1-P6", "DESCRIPTIVE", "spearman_sector_AI_use_vs_P2_median_gap", f(r6["rho"]), "rank correlation",
+                       "n_sectors=%d; leave_one_sector_out_range=[%s, %s]; variant dropping every firm on a split SIC: n_sectors=%d spearman=%s leave_one_out_range=[%s, %s]; POST HOC variant (not the headline; added after the headline was seen) mapping firms not in the concordance through their 3-digit then 2-digit SIC prefix: n_sectors=%d spearman=%s leave_one_out_range=[%s, %s]" % (
+                           r6["n"], f(r6["loo_min"]), f(r6["loo_max"]), a6["n"], f(a6["rho"]), f(a6["loo_min"]), f(a6["loo_max"]), v6["n"], f(v6["rho"]), f(v6["loo_min"]), f(v6["loo_max"])),
+                       "sectors kept (at least %d firms in each of the treatment and placebo P2 headline panels) = %d of %d BTOS sectors with an AI mean; firms in kept sectors T=%d of %d, P=%d of %d; "
+                       "dropped before the sector filter T: %d not in concordance, %d on tied SICs; P: %d not in concordance, %d on tied SICs" % (
+                           P6_MIN_FIRMS, r6["n"], len([1 for v in p6["ai"].values() if v["mean"] is not None]), r6["n_firms_T"], p6["n_firms"]["T"], r6["n_firms_P"], p6["n_firms"]["P"],
+                           r6["drop_T"]["not_in_concordance"], r6["drop_T"]["tie"], r6["drop_P"]["not_in_concordance"], r6["drop_P"]["tie"]),
+                       "descriptive only, no label by registration; the BTOS question measures AI use in producing goods or services, not decision support, which is the thesis's own channel; sector cross-section, not causal; "
+                       "AI use is a mean over %d unsuppressed cycles of 2024-2025 (cycles 202521 to 202523 are not in the workbook and are not filled); SIC is current, mapped through the 1987-SIC to 2002-NAICS concordance" % len(p6["used_cols"])])
+        for rr in r6["rows"]:
+            sid = rr["sector"]
+            D("CV1-P6", "sector %s AI use mean" % sid, f4(rr["ai_mean"]), "percent of firms")
+            D("CV1-P6", "sector %s cycles used / suppressed" % sid, "%d / %d" % (len(p6["ai"][sid]["used"]), len(p6["ai"][sid]["suppressed"])), "cycles")
+            D("CV1-P6", "sector %s firms treatment / placebo" % sid, "%d / %d" % (rr["n_t"], rr["n_p"]), "firms")
+            D("CV1-P6", "sector %s P2 median gap" % sid, f4(rr["stat"]), "pp per year")
+        for sid in sorted(p6["ai"], key=int):
+            v = p6["ai"][sid]
+            D("CV1-P6", "all-sector table: sector %s AI use mean (cycles used %d, suppressed %d)" % (sid, len(v["used"]), len(v["suppressed"])), f4(v["mean"]) if v["mean"] is not None else "n/a", "percent of firms")
+        for sid, nt, np_ in r6["small"]:
+            D("CV1-P6", "sector %s dropped by the firm filter (firms treatment / placebo)" % sid, "%d / %d" % (nt, np_), "firms")
+        for sid, v in r6["loo"]:
+            D("CV1-P6", "leave out sector %s: spearman" % sid, f(v), "rank correlation")
+        D("CV1-P6", "spearman", f(r6["rho"]), "rank correlation")
+        D("CV1-P6", "sectors kept", r6["n"], "sectors")
+        D("CV1-P6", "variant dropping split-SIC firms: spearman", f(a6["rho"]), "rank correlation")
+        D("CV1-P6", "variant dropping split-SIC firms: sectors kept", a6["n"], "sectors")
+        for w in ("T", "P"):
+            D("CV1-P6", "window %s panel firms" % w, p6["n_firms"][w], "firms")
+            D("CV1-P6", "window %s firms not in the concordance (dropped)" % w, r6["drop_" + w]["not_in_concordance"], "firms")
+            D("CV1-P6", "window %s firms on tied SICs (dropped)" % w, r6["drop_" + w]["tie"], "firms")
+            D("CV1-P6", "window %s firms in sectors without an AI mean (dropped)" % w, r6["drop_" + w]["sector_without_ai_mean"], "firms")
+            D("CV1-P6", "window %s firms on split SICs (kept in the main result unless tied)" % w, p6["firms_in_split"][w], "firms")
+        D("CV1-P6", "POST HOC prefix-fallback variant: spearman", f(v6["rho"]), "rank correlation")
+        D("CV1-P6", "POST HOC prefix-fallback variant: sectors kept", v6["n"], "sectors")
+        D("CV1-P6", "POST HOC prefix-fallback variant: leave-one-out minimum / maximum", "%s / %s" % (f(v6["loo_min"]), f(v6["loo_max"])), "rank correlation")
+        for rr in v6["rows"]:
+            sid = rr["sector"]
+            D("CV1-P6", "prefix variant sector %s AI use mean" % sid, f4(rr["ai_mean"]), "percent of firms")
+            D("CV1-P6", "prefix variant sector %s firms treatment / placebo" % sid, "%d / %d" % (rr["n_t"], rr["n_p"]), "firms")
+            D("CV1-P6", "prefix variant sector %s P2 median gap" % sid, f4(rr["stat"]), "pp per year")
+        for sid, v in v6["loo"]:
+            D("CV1-P6", "prefix variant leave out sector %s: spearman" % sid, f(v), "rank correlation")
+        for sid, nt, np_ in v6["small"]:
+            D("CV1-P6", "prefix variant sector %s dropped by the firm filter (firms treatment / placebo)" % sid, "%d / %d" % (nt, np_), "firms")
+        for w in ("T", "P"):
+            D("CV1-P6", "prefix variant window %s firms mapped through a prefix" % w, v6["drop_" + w]["prefix_mapped"], "firms")
+            D("CV1-P6", "prefix variant window %s firms still unmapped (dropped)" % w, v6["drop_" + w]["not_in_concordance"], "firms")
+            D("CV1-P6", "prefix variant window %s firms on tied SICs or tied prefixes (dropped)" % w, v6["drop_" + w]["tie"], "firms")
+        D("CV1-P6", "concordance SICs", p6["n_sic_total"], "SICs")
+        D("CV1-P6", "concordance SICs split across sectors (of which tied)", "%d (%d)" % (p6["n_split"], p6["n_tie"]), "SICs")
     scores.append(["CV1-P7", "NOT SCORED", "", "", "", "", "none",
                    "inputs not yet available: GoodwillImpairmentLoss for CY2026 to CY2028 (the CY2028 10-Ks are filed from about February 2029); first scorable about April 2029 per the spec"])
     return scores, detail
@@ -1240,12 +1520,68 @@ def vintage_rows(cache):
         rows.append([label, prefix + "*", "https://data.sec.gov/submissions/", "%s .. %s" % (dates[0], dates[-1]) if dates else "", 200, sum(int(r["bytes"]) for r in sel), h,
                      "%d files; sha256 is of the concatenated per-file sha256 values in key order" % len(sel)])
     rows.append(["census-btos", "btos-downloads-page", "https://www.census.gov/hfp/btos/downloads/", "2026-11-13T14:31:01Z", 403, 0, "", "HTTP 403; STOP_www_census_gov written; a first request to the same path without the trailing slash answered 301 (250 bytes)"])
+    for key, url, rel, sha in (("btos-ai-core-questions", BTOS_URL, BTOS_REL, BTOS_SHA256), ("sic1987-naics2002-concordance", CONC_URL, CONC_REL, CONC_SHA256)):
+        p = os.path.join(cache, *rel.split("/"))
+        rows.append(["census-p6-input", key, url, "2026-11-15", "hand download", os.path.getsize(p) if os.path.exists(p) else 0, sha,
+                     "downloaded by the principal through a browser on 15 Nov 2026 and placed in the cache; never fetched by this script"])
     return rows
 
 
 # ------------------------------------------------------------------------------------------------------------------------
 # README
 # ------------------------------------------------------------------------------------------------------------------------
+def p6_readme(R):
+    p6 = R["p6"]
+    out = []
+    if "refused" in p6:
+        out.append("NOT BUILT. %s. The build reads the two hand-downloaded Census files from the cache (`%s`, `%s`), checks their sha256 and never fetches them; www.census.gov answered 403 to a script on 13 Nov 2026 and the STOP latch stays.\n" % (p6["refused"], BTOS_REL, CONC_REL))
+        return out
+    r6, a6, v6 = p6["res"], p6["alt"], p6["pre"]
+    f = lambda x: "n/a" if x is None else f4(x)
+    out.append("Descriptive only: no label, by registration. The BTOS question measures AI use in producing goods or services, not AI used for decision support, which is the thesis's own channel. A rank correlation across sectors says nothing about cause, and capex is worldwide consolidated while BTOS covers US business units.\n")
+    out.append("Inputs (never fetched by the script; downloaded by the principal through the desktop app's browser on 15 Nov 2026, after www.census.gov refused the folder index to a script on 13 Nov (HTTP 403); placed in the cache and checked against the pinned sha256, and the build writes NOT BUILT instead if a file is missing or differs):\n")
+    out.append("- Census BTOS, \"AI Core Questions (Original)\" workbook, sheets `Sector Estimates` and `Collection and Reference Dates`; Last-Modified 3 Nov 2026; %s; sha256 `%s`." % (BTOS_URL, BTOS_SHA256))
+    out.append("- Census 1987 SIC to 2002 NAICS concordance (old-format .xls, read with xlrd); %s; sha256 `%s`.\n" % (CONC_URL, CONC_SHA256))
+    out.append("Method. (1) AI use per BTOS sector: Question ID %d (\"...use Artificial Intelligence (AI) in producing goods or services?\"), answer Yes, the mean of the unsuppressed percentages over the %d cycles whose label begins 2024 or 2025 and whose collection ended before 17 Nov 2025 (%s to %s); suppressed cells (\"S\") are skipped; the in-window cycles missing from the workbook (%s) are not filled; nothing from the 4 Dec 2025 new series. (2) Firm to sector: current SIC from the submissions file, through the concordance to NAICS 2002, the first two digits, then BTOS grouping (31/32/33 to 31, 44/45 to 44, 48/49 to 48). (3) Sector statistic: the P2 median gap (treatment minus placebo of firm annualised capex growth net of annualised nominal GDP growth, `p2_stats`, unchanged) on the sector's firms of the P2 headline window sets; a sector is kept with at least %d firms in each of the two window sets. (4) Spearman rank correlation of sector AI mean and sector statistic across kept sectors, and the range when each kept sector is left out in turn.\n" % (
+        BTOS_QID, len(p6["used_cols"]), p6["used_cols"][-1], p6["used_cols"][0], ", ".join(p6["missing_cycles"]) or "none", P6_MIN_FIRMS))
+    out.append("Result. Spearman %s across n = %d sectors (of %d BTOS sectors with an AI mean); leave-one-sector-out range [%s, %s]. Variant dropping every firm on a split SIC: Spearman %s across n = %d sectors, leave-one-out range [%s, %s]. Firms in the kept sectors: treatment %d of %d P2 headline firms, placebo %d of %d.\n" % (
+        f(r6["rho"]), r6["n"], len([1 for v in p6["ai"].values() if v["mean"] is not None]), f(r6["loo_min"]), f(r6["loo_max"]), f(a6["rho"]), a6["n"], f(a6["loo_min"]), f(a6["loo_max"]),
+        r6["n_firms_T"], p6["n_firms"]["T"], r6["n_firms_P"], p6["n_firms"]["P"]))
+    out.append("| BTOS sector | AI use mean (%) | cycles used | cycles suppressed | firms treatment | firms placebo | P2 median gap (pp/yr) | Spearman with this sector left out |")
+    out.append("|---|---|---|---|---|---|---|---|")
+    loo = dict(r6["loo"])
+    for rr in r6["rows"]:
+        v = p6["ai"][rr["sector"]]
+        out.append("| %s | %s | %d | %d | %d | %d | %s | %s |" % (rr["sector"], f4(rr["ai_mean"]), len(v["used"]), len(v["suppressed"]), rr["n_t"], rr["n_p"], f4(rr["stat"]), f(loo[rr["sector"]])))
+    out.append("")
+    out.append("All BTOS sectors, before the firm filter (mean over unsuppressed cycles; denominators are the cycles):\n")
+    out.append("| BTOS sector | AI use mean (%) | cycles used | cycles suppressed | in the kept set |")
+    out.append("|---|---|---|---|---|")
+    kept = {rr["sector"] for rr in r6["rows"]}
+    for sid in sorted(p6["ai"], key=int):
+        v = p6["ai"][sid]
+        out.append("| %s | %s | %d | %d | %s |" % (sid, f4(v["mean"]) if v["mean"] is not None else "n/a (all suppressed)", len(v["used"]), len(v["suppressed"]), "yes" if sid in kept else "no"))
+    out.append("")
+    out.append("Sectors with an AI mean but fewer than %d firms in a window (treatment / placebo firms): %s.\n" % (P6_MIN_FIRMS, "; ".join("%s (%d / %d)" % x for x in r6["small"]) or "none"))
+    out.append("Post hoc robustness variant (not the headline, not a registered statistic). The headline uses the rule fixed before the result was seen: a firm whose SIC is not in the concordance is dropped. The prefix-fallback variant was added by the supervisor AFTER seeing the headline (n = %d sectors, Spearman %s), because %d of %d treatment-panel firms (%s%%) were unmapped, and these are EDGAR group-level SIC codes (all end in 0). It is a robustness reading chosen post hoc. Rule: a firm whose SIC is not in the concordance is mapped through its 3-digit SIC prefix (every concordance row whose SIC starts with that prefix votes, with the same strict-majority and tie rule as for split SICs); a firm whose 3-digit prefix has no rows is mapped through its 2-digit prefix the same way; firms still unmapped (or on a tie) are dropped and counted. The sector filter (at least %d firms in each window set) is then re-applied.\n" % (
+        r6["n"], f(r6["rho"]), r6["drop_T"]["not_in_concordance"], p6["n_firms"]["T"], "%.0f" % (100.0 * r6["drop_T"]["not_in_concordance"] / p6["n_firms"]["T"]), P6_MIN_FIRMS))
+    out.append("Variant result. Spearman %s across n = %d sectors; leave-one-sector-out range [%s, %s]. Firms in kept sectors: treatment %d of %d, placebo %d of %d. Mapped through a prefix (treatment / placebo): %d / %d; still unmapped and dropped: %d / %d; dropped on ties (SIC or prefix): %d / %d.\n" % (
+        f(v6["rho"]), v6["n"], f(v6["loo_min"]), f(v6["loo_max"]), v6["n_firms_T"], p6["n_firms"]["T"], v6["n_firms_P"], p6["n_firms"]["P"],
+        v6["drop_T"]["prefix_mapped"], v6["drop_P"]["prefix_mapped"], v6["drop_T"]["not_in_concordance"], v6["drop_P"]["not_in_concordance"], v6["drop_T"]["tie"], v6["drop_P"]["tie"]))
+    out.append("| BTOS sector (variant) | AI use mean (%) | firms treatment | firms placebo | P2 median gap (pp/yr) | Spearman with this sector left out |")
+    out.append("|---|---|---|---|---|---|")
+    vloo = dict(v6["loo"])
+    for rr in v6["rows"]:
+        out.append("| %s | %s | %d | %d | %s | %s |" % (rr["sector"], f4(rr["ai_mean"]), rr["n_t"], rr["n_p"], f4(rr["stat"]), f(vloo[rr["sector"]])))
+    out.append("")
+    out.append("Variant sectors with an AI mean but fewer than %d firms in a window (treatment / placebo): %s.\n" % (P6_MIN_FIRMS, "; ".join("%s (%d / %d)" % x for x in v6["small"]) or "none"))
+    out.append("Mapping counts. The concordance has %d distinct SICs (%d usable rows; %d non-numeric rows skipped); %d are split across BTOS sectors (%d of them tied, so their firms are dropped). Firms on split SICs: treatment %d firms on %d SICs of %d, placebo %d firms on %d SICs of %d (tied SICs are dropped in the main result, majority-sector SICs are kept; the variant above drops all of them). Dropped before the sector filter, treatment / placebo: not in the concordance %d / %d, on tied SICs %d / %d, in sectors with no AI mean %d / %d." % (
+        p6["n_sic_total"], p6["conc_rows"], p6["conc_skipped"], p6["n_split"], p6["n_tie"], p6["firms_in_split"]["T"], p6["split_sics_with_firms"]["T"], p6["n_firms"]["T"], p6["firms_in_split"]["P"], p6["split_sics_with_firms"]["P"], p6["n_firms"]["P"],
+        r6["drop_T"]["not_in_concordance"], r6["drop_P"]["not_in_concordance"], r6["drop_T"]["tie"], r6["drop_P"]["tie"], r6["drop_T"]["sector_without_ai_mean"], r6["drop_P"]["sector_without_ai_mean"]))
+    out.append("")
+    return out
+
+
 def readme_text(R, scores, vint, sha):
     P = R["panel"]
     S = {r[0]: r for r in scores}
@@ -1306,7 +1642,8 @@ def readme_text(R, scores, vint, sha):
     a("Denominators (firms): treatment high %d (trimmed %d, removed %d), low %d; placebo high %d (trimmed %d, removed %d), low %d. Firms with SIC 1500-1799, 4900 and above 5999 (other than the low bin) or 9000 and above are in neither bin.\n" % (
         p5["T"]["n_high"], p5["T"]["n_high_trimmed"], p5["T"]["n_removed"], p5["T"]["n_low"], p5["P"]["n_high"], p5["P"]["n_high_trimmed"], p5["P"]["n_removed"], p5["P"]["n_low"]))
     a("### P6: sector AI use against sector capex change (descriptive, no label)\n")
-    a("NOT BUILT. The one request for the Census BTOS downloads index (https://www.census.gov/hfp/btos/downloads/, sent with the neutral User-Agent, after a first request without the trailing slash answered 301) came back HTTP 403. The rule was applied: the STOP latch `STOP_www_census_gov` is in the cache, no further request went to www.census.gov, and nothing was fetched from any other host in its place. Without the AI Core Questions (Original) table and the 1987-SIC-to-2002-NAICS concordance (also on www.census.gov), no sector AI-use share and no SIC-to-NAICS map exist, so the Spearman and the leave-one-sector-out range were not computed. The Spearman function exists and is exercised on synthetic data in the selftest. The C30 workbook had been fetched from the same host before the block.\n")
+    for ln in p6_readme(R):
+        a(ln)
     a("### P7: not scored\n")
     a("The inputs are not available: P7 needs `GoodwillImpairmentLoss` facts for CY2026, CY2027 and CY2028 10-Ks (the last are filed from about February 2029) and the acquisition-spend and goodwill facts for CY2024 and CY2025 and for the baseline cohorts 2012 to 2015. The spec dates its first scoring to about April 2029. No P7 number is computed or implied.\n")
     a("## Implementation choices (where the spec is silent or cannot be followed as written)\n")
@@ -1325,6 +1662,10 @@ def readme_text(R, scores, vint, sha):
         "Thresholds. The spec's inequalities are inclusive where it writes at least or at most, so a value exactly on such a threshold takes the SUPPORT or AGAINST label; where it writes above or more than (P2 weighted gap, P4 own growth, P3 stock against GDP), a value exactly on the threshold fails the condition and the label is INCONCLUSIVE unless the other side holds. Comparisons use values rounded to 9 decimals. If both SUPPORT and AGAINST conditions held the label would be INCONCLUSIVE; none did.",
         "Coverage. Share of 2025 ex-AI capex = sum of the panel's CY2025 capex over the sum of all positive CY2025 `%s` facts of firms that are neither in the AI complex nor without a SIC (any form, any year-end; SIC for all %d CIKs was fetched). Two denominators are given: all ex-AI classes, and the headline class alone." % (CAPEX_TAG, sum(P.denom_count.values()) - P.denom_count.get("NOSIC", 0)),
         "P3 uses Q4 values not seasonally adjusted for the Z.1 stocks and the seasonally adjusted annual rate for GDP.",
+        "P6 cycles. A cycle is in the window if its `Smpdt` label begins 2024 or 2025 and its `Col End` (Collection and Reference Dates sheet) is before 17 Nov 2025; the workbook has no column for 202521 to 202523, so no cycle after 202520 is used. The mean is of the unsuppressed percentages; a cell that is not a number followed by a percent sign (\"S\") is skipped. The `XX` row (multi-unit companies, defined in the Data Dictionary as operating in several sectors or states) has no SIC and is ignored. BTOS has no sector 92 (public administration).",
+        "P6 SIC to sector. Each concordance row is one vote for the BTOS sector of its NAICS 2002 first two digits (31/32/33 to 31, 44/45 to 44, 48/49 to 48; other two-digit codes stay as they are, including codes BTOS does not publish). A SIC whose rows all reach one sector maps to it; a SIC split across sectors maps to the sector with strictly the most rows; a tie drops the firm. Rows, not distinct NAICS codes, are counted. A firm whose SIC is not in the concordance is dropped and counted. Concordance rows with a non-numeric SIC or a NAICS that is not six digits (Aux, Null Set, blank) are skipped and counted.",
+        "P6 sector filter. \"At least 20 common firms\" is read as at least 20 firms in each of the treatment and placebo P2 headline window sets (the window sets differ because the acquisition rule is applied by window, so P2 has no single common panel after that rule; the common-firm requirement across CY2016, 2019, 2022 and 2025 is already inside both sets). The sector statistic is `p2_stats(...)[\"median_gap_pp\"]` on the sector's firms, unchanged. Utilities, REITs, finance and the AI complex are outside the P2 headline sets and so outside P6.",
+        "P6 Spearman and leave-one-out. Spearman is the existing average-rank function; the leave-one-sector-out range is the minimum and maximum over the kept sectors of the Spearman with that sector removed (None if fewer than 3 sectors remain). No p-value and no label are given.",
     ], 1):
         a("%d. %s" % (i, s))
     a("")
@@ -1332,13 +1673,17 @@ def readme_text(R, scores, vint, sha):
     a("| source | url | fetched (UTC) | bytes | sha256 |")
     a("|---|---|---|---|---|")
     for r in vint:
-        if r[0] in ("bea1", "bea5", "z1", "c30", "fed-series-page", "census-btos", "sec-submissions", "sec-submissions-older-pages"):
+        if r[0] in ("bea1", "bea5", "z1", "c30", "fed-series-page", "census-btos", "census-p6-input", "sec-submissions", "sec-submissions-older-pages"):
             a("| %s | %s | %s | %s | %s |" % (r[0], r[2], r[3], r[5], (r[6] or "-")[:16]))
     a("")
     a("The 24 SEC frames (tags %s; periods CY2016, CY2019, CY2022, CY2025, and the PPE, acquisition, cash and assets periods named in the code) are listed one per row in `vintages.csv` with their fetch time, size and sha256. BEA files: %s (Section 5) and %s (Section 1). Z.1 release: Fed Board file dated 11 Sep 2026. C30: file dated 2 Nov 2026, latest month Sep-26. SIC history is not reconstructed. All requests to data.sec.gov carried the declared tool name only and ran at most 4 a second; no request went to www.sec.gov or FRED. The first four rows' fetch times are the files' modification times, because they were downloaded by a first probe before the fetch log existed.\n" % (", ".join(sorted({CAPEX_TAG, PPE_TAG, ACQ_TAG, CASH_TAG, CASH_ALT_TAG, ASSETS_TAG})), R["p1"]["pub5"].replace("Data published ", "published "), R["p1"]["pub1"].replace("Data published ", "published ")))
     a("## Reproduce\n")
     a("```\npython3 bin/cv1_confidence_velocity.py selftest\npython3 bin/cv1_confidence_velocity.py fetch --what bea|z1|census|frames|submissions|submissions-all [--max-requests N] [--budget-seconds S]\npython3 bin/cv1_confidence_velocity.py build\n```\n")
     a("`fetch` is resumable (files already in the cache are skipped); `build` is offline and reads only the cache. Checking the work: `bash bin/check.sh --all` runs gate M31 over this folder.\n")
+    # kept verbatim from the committed README, where it had been appended by hand (14 Nov 2026); without this a rebuild would drop it
+    for ln in ['## Independent recompute of P3 (14 Nov 2026)', '', 'Gemini 4 Hydrogen (Medium) recomputed CV1-P3 blind from the raw Z.1 CSV package and the BEA Section 1 workbook. It was given the method, not our result. Its results agree with `scores.csv`:', '- the four Z.1 series descriptions;', '- the stock at 2022Q4 ($3,572.386bn) and 2025Q4 ($4,936.617bn);', '- the GDP quarters (2025Q4: $31,462.5bn SAAR);', '- both window changes (+2.3478 and +1.5608 pp) and the difference (+0.7870 pp).', '', 'It also answered two questions about quarters the files do not yet contain (2026Q3 in Z.1, 2026Q4 in NIPA) with "not in the files". The supervisor confirmed both against the files.']:
+        a(ln)
+    a("")
     return "\n".join(A)
 
 
@@ -1650,6 +1995,58 @@ def selftest():
     fl = frame_list()
     ck.eq("frame list: 4 capex, 8 PPE, 6 acquisition, 6 cash and assets", len(fl), 24)
     ck.ok("every frame period is CY####, or CY####Q4I for instants", all(re.match(r"^CY\d{4}(Q4I)?$", per) for _t, per in fl))
+    # P6: BTOS means, SIC to sector map, sector filter, input refusal
+    ck.eq("parse_pct: percent, suppressed, blank", (parse_pct("12.5%"), parse_pct("S"), parse_pct(None)), (12.5, None, None))
+    cyc = btos_cycles([(202426, "12/16/2024", "12/29/2024"), (202501, "12/30/2024", "01/12/2025"), (202523, "11/03/2025", "11/16/2025"), (202524, "11/17/2025", "11/30/2025"), (202326, "12/18/2023", "12/31/2023")])
+    hdr = ("Sector", "Question ID", "Question", "Answer ID", "Answer", "202524", "202501", "202426", "202326")
+    rws = [(54, 7, "q", 1, "Yes", "9.0%", "10.0%", "S", "1.0%"), (54, 7, "q", 2, "No", "50.0%", "50.0%", "50.0%", "50.0%"), (54, 24, "q", 1, "Yes", "9.0%", "9.0%", "9.0%", "9.0%"),
+           (55, 7, "q", 1, "Yes", "S", "S", "S", "S"), ("XX", 7, "q", 1, "Yes", "8.0%", "8.0%", "8.0%", "8.0%")]
+    aim, miss, ucols = btos_ai_means(hdr, rws, cyc)
+    ck.eq("BTOS means: only Question 7 Yes, only 2024/2025 cycles ended before 17 Nov 2025, S skipped, 2023 and 202524 excluded", (aim["54"]["mean"], aim["54"]["used"], aim["54"]["suppressed"], ucols), (10.0, ["202501"], ["202426"], ["202426", "202501"]))
+    ck.eq("BTOS means: a sector with every cell suppressed has no mean; XX is ignored", (aim["55"]["mean"], sorted(aim)), (None, ["54", "55"]))
+    ck.eq("BTOS means: an in-window cycle missing from the sheet is reported, not filled", miss, ["202523"])
+    smp = sic_sector_map([(100, "111110"), (100, "112111"), (200, "311111"), (200, "322222"), (200, "334444"), (300, "441110"), (300, "541110"), (400, "541110"), (400, "541120"), (400, "441110"), (400, "451110"), (500, "481111"), (500, "491111")])
+    ck.eq("SIC map: every row in one sector", smp[100], ("11", "single"))
+    ck.eq("SIC map: 31/32/33 group to 31 so a SIC across them is not split", smp[200], ("31", "single"))
+    ck.eq("SIC map: 44/45 and 48/49 group", (smp[500], sic_sector_map([(1, "441110"), (1, "451110")])[1]), (("48", "single"), ("44", "single")))
+    ck.eq("SIC map: split SIC with one row each is a tie, no sector", smp[300], (None, "tie"))
+    ck.eq("SIC map: split SIC with rows 2 to 2 is a tie; 3 to 1 would go to the majority", (smp[400], sic_sector_map([(9, "541110"), (9, "541120"), (9, "541130"), (9, "441110")])[9]), ((None, "tie"), ("54", "majority")))
+    ck.ok("SIC map: an unmapped SIC is absent", 999 not in smp)
+    ai6 = {"54": {"mean": 20.0, "used": [], "suppressed": []}, "44": {"mean": 5.0, "used": [], "suppressed": []}, "52": {"mean": 15.0, "used": [], "suppressed": []}, "55": {"mean": None, "used": [], "suppressed": []}}
+    sm6 = {5400: ("54", "single"), 4400: ("44", "single"), 5200: ("52", "majority"), 5500: ("55", "single"), 7000: (None, "tie"), 7100: ("54", "majority")}
+    ggt = {"T": 0.02, "P": 0.02}
+
+    def fleet(sic, n, k0, endt):
+        return [synth_firm(k0 + i, sic, 100.0, endt) for i in range(n)]
+    ft = fleet(5400, 20, 0, 133.1) + fleet(4400, 20, 100, 100.0) + fleet(5200, 19, 200, 110.0) + fleet(5500, 25, 300, 100.0) + fleet(7000, 3, 400, 100.0) + fleet(6000, 2, 500, 100.0) + fleet(7100, 2, 600, 100.0)
+    fp = fleet(5400, 20, 0, 100.0) + fleet(4400, 20, 100, 100.0) + fleet(5200, 20, 200, 100.0) + fleet(5500, 25, 300, 100.0) + fleet(7000, 3, 400, 100.0) + fleet(6000, 2, 500, 100.0) + fleet(7100, 2, 600, 100.0)
+    r = p6_stats(ft, fp, ggt, ai6, sm6)
+    ck.eq("sector filter: 20 and 20 kept; 19 in one window dropped; no AI mean dropped; tied SIC and unmapped SIC dropped", ([x["sector"] for x in r["rows"]], r["small"]), (["44", "54"], [("52", 19, 20)]))
+    ck.eq("sector filter: drop counts (treatment): not in concordance 2, tie 3, sector without AI mean 25", (r["drop_T"]["not_in_concordance"], r["drop_T"]["tie"], r["drop_T"]["sector_without_ai_mean"]), (2, 3, 25))
+    ck.near("sector statistic is the P2 median gap: sector 54 grows 10 percent a year in T, 0 in P, GDP 2 percent in both -> 10 pp", [x["stat"] for x in r["rows"] if x["sector"] == "54"][0], 10.0, 1e-9)
+    ck.eq("sector filter: fewer than 3 sectors gives no Spearman", r["rho"], None)
+    rd = p6_stats(ft, fp, ggt, ai6, sm6, drop_split=True)
+    ck.eq("split-SIC variant drops the majority-mapped firms too (treatment: 19 on SIC 5200 and 2 on SIC 7100; the 3 tied firms stay counted as ties)", (rd["drop_T"]["split_dropped"], rd["drop_T"]["tie"]), (21, 3))
+    r4 = p6_stats(ft + fleet(5200, 1, 700, 110.0) + fleet(5100, 20, 800, 120.0), fp + fleet(5100, 20, 800, 100.0), ggt, dict(ai6, **{"51": {"mean": 30.0, "used": [], "suppressed": []}}), dict(list(sm6.items()) + [(5100, ("51", "single"))]))
+    ck.eq("Spearman and leave-one-out run once 4 sectors are kept (AI means 5, 15, 20, 30; statistics 0, 0, 10, 10 pp... ranks hand-checked in the next line)", (r4["n"], len(r4["loo"])), (4, 4))
+    ck.ok("leave-one-out minimum and maximum are among the four leave-out values", r4["loo_min"] == min(v for _s, v in r4["loo"] if v is not None) and r4["loo_max"] == max(v for _s, v in r4["loo"] if v is not None))
+    pm3, pm2 = prefix_sector_map([(2860, "325110"), (2869, "325199"), (2865, "325110"), (2810, "325120"), (2800, "999999")], 3), prefix_sector_map([(2860, "325110"), (2900, "324110"), (2950, "324121"), (2960, "541110"), (2961, "551111")], 2)
+    ck.eq("prefix map: 3-digit prefix 286 votes across its SICs (majority 31 -> single sector)", pm3["286"], ("31", "single"))
+    ck.eq("prefix map: 2-digit prefix 29 has rows for 31, 31, 54, 55: majority 31", pm2["29"], ("31", "majority"))
+    ck.eq("prefix map: a 1-1 split across prefix rows is a tie", prefix_sector_map([(3001, "541110"), (3002, "441110")], 3)["300"], (None, "tie"))
+    fb = [(3, {"540": ("54", "single"), "510": (None, "tie")}), (2, {"44": ("44", "single")})]
+    ft2 = fleet(5401, 20, 0, 133.1) + fleet(4410, 20, 100, 100.0) + fleet(5101, 3, 200, 100.0) + fleet(9999, 4, 300, 100.0)
+    fp2 = fleet(5401, 20, 0, 100.0) + fleet(4410, 20, 100, 100.0) + fleet(5101, 3, 200, 100.0) + fleet(9999, 4, 300, 100.0)
+    rv = p6_stats(ft2, fp2, ggt, ai6, {}, prefix_maps=fb)
+    ck.eq("prefix variant: 3-digit prefix, then 2-digit prefix, tie dropped, no-rows dropped; sector filter re-applied", ([x["sector"] for x in rv["rows"]], rv["drop_T"]["prefix_mapped"], rv["drop_T"]["tie"], rv["drop_T"]["not_in_concordance"]), (["44", "54"], 43, 3, 4))
+    ck.eq("headline rule unchanged by the variant code: without prefix maps the same firms are dropped as unmapped", p6_stats(ft2, fp2, ggt, ai6, {})["rows"], [])
+    with tempfile.TemporaryDirectory() as td:
+        ck.ok("P6 inputs missing: refused with the file named", "missing" in compute_p6(td, {"T": [], "P": []}, ggt).get("refused", ""))
+        os.makedirs(os.path.join(td, "raw", "census"))
+        for rel in (BTOS_REL, CONC_REL):
+            with open(os.path.join(td, *rel.split("/")), "wb") as fh:
+                fh.write(b"not the pinned file")
+        ck.ok("P6 inputs with a different hash: refused, nothing read", "pinned" in compute_p6(td, {"T": [], "P": []}, ggt).get("refused", ""))
     # leak guard
     ck.raises("an at sign in an output is refused", Refused, lambda: no_leak("x", "a@b"))
     ck.raises("a local path in an output is refused", Refused, lambda: no_leak("x", "see /Users/x"))

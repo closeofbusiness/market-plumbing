@@ -15,7 +15,7 @@ Capex in P2 to P5 is worldwide consolidated capex of US-GAAP USD filers; GDP is 
 | CV1-P3 | AGAINST | difference_in_change | 0.7870 pp (Q4-to-Q4 change, treatment minus placebo, not annualised) | four Z.1 series, one sector (nonfinancial corporate business), 2 windows of Q4 values; GDP = Table 1.1.5 Q4 SAAR |
 | CV1-P4 | AGAINST | difference_in_top_minus_bottom | -10.0617 pp per year | firms with cash and assets T=768 P=637 (of 788 and 716 in the P2 sets); 2-digit SIC groups used T=49 P=45; firms in groups of fewer than 3 dropped T=9 P=16; share of 2025 ex-AI capex covered T=0.4038 P=0.3629 |
 | CV1-P5 | AGAINST | trimmed_gap | -5.2533 pp per year | firms T: high untrimmed=566 trimmed=537 (removed 29) low=200; P: high untrimmed=517 trimmed=491 (removed 26) low=182; high+low firms outside the two bins (SIC 1500-1799 and 4900+, 6000+, 9000+) are not used |
-| CV1-P6 | NOT BUILT | - | -  | none |
+| CV1-P6 | DESCRIPTIVE | spearman_sector_AI_use_vs_P2_median_gap | -0.8000 rank correlation | sectors kept (at least 20 firms in each of the treatment and placebo P2 headline panels) = 4 of 19 BTOS sectors with an AI mean; firms in kept sectors T=431 of 788, P=394 of 716; dropped before the sector filter T: 230 not in concordance, 9 on tied SICs; P: 209 not in concordance, 9 on tied SICs |
 | CV1-P7 | NOT SCORED | - | -  | none |
 
 Full statistics for each statement are in `scores.csv` (one row per statement); every supporting number is a row of `detail.csv`.
@@ -68,9 +68,71 @@ Denominators (firms): treatment high 566 (trimmed 537, removed 29), low 200; pla
 
 ### P6: sector AI use against sector capex change (descriptive, no label)
 
-NOT BUILT. The one request for the Census BTOS downloads index (https://www.census.gov/hfp/btos/downloads/, sent with the neutral User-Agent, after a first request without the trailing slash answered 301) came back HTTP 403. The rule was applied: the STOP latch `STOP_www_census_gov` is in the cache, no further request went to www.census.gov, and nothing was fetched from any other host in its place. Without the AI Core Questions (Original) table and the 1987-SIC-to-2002-NAICS concordance (also on www.census.gov), no sector AI-use share and no SIC-to-NAICS map exist, so the Spearman and the leave-one-sector-out range were not computed. The Spearman function exists and is exercised on synthetic data in the selftest. The C30 workbook had been fetched from the same host before the block.
+Descriptive only: no label, by registration. The BTOS question measures AI use in producing goods or services, not AI used for decision support, which is the thesis's own channel. A rank correlation across sectors says nothing about cause, and capex is worldwide consolidated while BTOS covers US business units.
 
-Outside test, 15 Nov 2026 (Grok, from Cursor's servers, not this machine): the downloads index timed out three times; the BTOS API paths on api.census.gov answered 403 while that host's home page was served; the AI Core Questions workbook and the concordance file (on www2.census.gov) both answered 500, which may be the reader failing on binary files. So the cause is not settled from outside. The STOP stays, and P6 waits for the principal's decision.
+Inputs (never fetched by the script; downloaded by the principal through the desktop app's browser on 15 Nov 2026, after www.census.gov refused the folder index to a script on 13 Nov (HTTP 403); placed in the cache and checked against the pinned sha256, and the build writes NOT BUILT instead if a file is missing or differs):
+
+- Census BTOS, "AI Core Questions (Original)" workbook, sheets `Sector Estimates` and `Collection and Reference Dates`; Last-Modified 3 Nov 2026; https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx; sha256 `e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce`.
+- Census 1987 SIC to 2002 NAICS concordance (old-format .xls, read with xlrd); https://www2.census.gov/library/reference/naics/technical-documentation/concordance/1987_sic_to_2002_naics.xls; sha256 `fcb8ad7e4162a4d95c39ebe51c12e8ec20dfa6a31f2e81bf8fb1de08fbedc937`.
+
+Method. (1) AI use per BTOS sector: Question ID 7 ("...use Artificial Intelligence (AI) in producing goods or services?"), answer Yes, the mean of the unsuppressed percentages over the 46 cycles whose label begins 2024 or 2025 and whose collection ended before 17 Nov 2025 (202520 to 202401); suppressed cells ("S") are skipped; the in-window cycles missing from the workbook (202521, 202522, 202523) are not filled; nothing from the 4 Dec 2025 new series. (2) Firm to sector: current SIC from the submissions file, through the concordance to NAICS 2002, the first two digits, then BTOS grouping (31/32/33 to 31, 44/45 to 44, 48/49 to 48). (3) Sector statistic: the P2 median gap (treatment minus placebo of firm annualised capex growth net of annualised nominal GDP growth, `p2_stats`, unchanged) on the sector's firms of the P2 headline window sets; a sector is kept with at least 20 firms in each of the two window sets. (4) Spearman rank correlation of sector AI mean and sector statistic across kept sectors, and the range when each kept sector is left out in turn.
+
+Result. Spearman -0.8000 across n = 4 sectors (of 19 BTOS sectors with an AI mean); leave-one-sector-out range [-1.0000, -0.5000]. Variant dropping every firm on a split SIC: Spearman n/a across n = 1 sectors, leave-one-out range [n/a, n/a]. Firms in the kept sectors: treatment 431 of 788 P2 headline firms, placebo 394 of 716.
+
+| BTOS sector | AI use mean (%) | cycles used | cycles suppressed | firms treatment | firms placebo | P2 median gap (pp/yr) | Spearman with this sector left out |
+|---|---|---|---|---|---|---|---|
+| 31 | 3.3370 | 46 | 0 | 344 | 320 | -11.0520 | -1.0000 |
+| 51 | 20.8978 | 46 | 0 | 30 | 21 | -14.0760 | -0.5000 |
+| 56 | 6.0804 | 46 | 0 | 30 | 27 | 1.4538 | -1.0000 |
+| 72 | 1.8761 | 46 | 0 | 27 | 26 | 2.6044 | -0.5000 |
+
+All BTOS sectors, before the firm filter (mean over unsuppressed cycles; denominators are the cycles):
+
+| BTOS sector | AI use mean (%) | cycles used | cycles suppressed | in the kept set |
+|---|---|---|---|---|
+| 11 | 4.8500 | 2 | 44 | no |
+| 21 | 3.3333 | 3 | 43 | no |
+| 22 | 10.0500 | 4 | 42 | no |
+| 23 | 2.3826 | 46 | 0 | no |
+| 31 | 3.3370 | 46 | 0 | yes |
+| 42 | 3.8500 | 46 | 0 | no |
+| 44 | 4.1870 | 46 | 0 | no |
+| 48 | 2.0783 | 46 | 0 | no |
+| 51 | 20.8978 | 46 | 0 | yes |
+| 52 | 9.5826 | 46 | 0 | no |
+| 53 | 9.4391 | 46 | 0 | no |
+| 54 | 16.2478 | 46 | 0 | no |
+| 55 | 18.3571 | 7 | 39 | no |
+| 56 | 6.0804 | 46 | 0 | yes |
+| 61 | 12.2304 | 46 | 0 | no |
+| 62 | 7.0457 | 46 | 0 | no |
+| 71 | 6.4739 | 46 | 0 | no |
+| 72 | 1.8761 | 46 | 0 | yes |
+| 81 | 3.1000 | 46 | 0 | no |
+
+Sectors with an AI mean but fewer than 20 firms in a window (treatment / placebo firms): 21 (11 / 12); 23 (21 / 16); 42 (12 / 11); 44 (16 / 14); 48 (15 / 15); 53 (4 / 4); 54 (20 / 17); 62 (18 / 15); 71 (1 / 0).
+
+Post hoc robustness variant (not the headline, not a registered statistic). The headline uses the rule fixed before the result was seen: a firm whose SIC is not in the concordance is dropped. The prefix-fallback variant was added by the supervisor AFTER seeing the headline (n = 4 sectors, Spearman -0.8000), because 230 of 788 treatment-panel firms (29%) were unmapped, and these are EDGAR group-level SIC codes (all end in 0). It is a robustness reading chosen post hoc. Rule: a firm whose SIC is not in the concordance is mapped through its 3-digit SIC prefix (every concordance row whose SIC starts with that prefix votes, with the same strict-majority and tie rule as for split SICs); a firm whose 3-digit prefix has no rows is mapped through its 2-digit prefix the same way; firms still unmapped (or on a tie) are dropped and counted. The sector filter (at least 20 firms in each window set) is then re-applied.
+
+Variant result. Spearman 0.0818 across n = 11 sectors; leave-one-sector-out range [-0.0424, 0.3576]. Firms in kept sectors: treatment 757 of 788, placebo 688 of 716. Mapped through a prefix (treatment / placebo): 230 / 209; still unmapped and dropped: 0 / 0; dropped on ties (SIC or prefix): 10 / 9.
+
+| BTOS sector (variant) | AI use mean (%) | firms treatment | firms placebo | P2 median gap (pp/yr) | Spearman with this sector left out |
+|---|---|---|---|---|---|
+| 21 | 3.3333 | 23 | 22 | -22.9731 | -0.0424 |
+| 23 | 2.3826 | 31 | 24 | -5.2035 | 0.1273 |
+| 31 | 3.3370 | 472 | 436 | -8.9703 | 0.0303 |
+| 42 | 3.8500 | 26 | 26 | -0.6854 | -0.0303 |
+| 44 | 4.1870 | 25 | 23 | 0.5391 | -0.0303 |
+| 48 | 2.0783 | 29 | 28 | -4.5448 | 0.1273 |
+| 51 | 20.8978 | 32 | 23 | -14.0760 | 0.3576 |
+| 54 | 16.2478 | 28 | 23 | -6.3792 | 0.2970 |
+| 56 | 6.0804 | 37 | 33 | 1.2173 | -0.0303 |
+| 62 | 7.0457 | 24 | 21 | 3.3409 | -0.0303 |
+| 72 | 1.8761 | 30 | 29 | -4.1001 | 0.1273 |
+
+Variant sectors with an AI mean but fewer than 20 firms in a window (treatment / placebo): 53 (7 / 8); 61 (5 / 3); 71 (5 / 4); 81 (4 / 4).
+
+Mapping counts. The concordance has 1004 distinct SICs (2164 usable rows; 4 non-numeric rows skipped); 139 are split across BTOS sectors (46 of them tied, so their firms are dropped). Firms on split SICs: treatment 75 firms on 21 SICs of 788, placebo 66 firms on 18 SICs of 716 (tied SICs are dropped in the main result, majority-sector SICs are kept; the variant above drops all of them). Dropped before the sector filter, treatment / placebo: not in the concordance 230 / 209, on tied SICs 9 / 9, in sectors with no AI mean 0 / 0.
 
 ### P7: not scored
 
@@ -92,6 +154,10 @@ The inputs are not available: P7 needs `GoodwillImpairmentLoss` facts for CY2026
 12. Thresholds. The spec's inequalities are inclusive where it writes at least or at most, so a value exactly on such a threshold takes the SUPPORT or AGAINST label; where it writes above or more than (P2 weighted gap, P4 own growth, P3 stock against GDP), a value exactly on the threshold fails the condition and the label is INCONCLUSIVE unless the other side holds. Comparisons use values rounded to 9 decimals. If both SUPPORT and AGAINST conditions held the label would be INCONCLUSIVE; none did.
 13. Coverage. Share of 2025 ex-AI capex = sum of the panel's CY2025 capex over the sum of all positive CY2025 `PaymentsToAcquirePropertyPlantAndEquipment` facts of firms that are neither in the AI complex nor without a SIC (any form, any year-end; SIC for all 3511 CIKs was fetched). Two denominators are given: all ex-AI classes, and the headline class alone.
 14. P3 uses Q4 values not seasonally adjusted for the Z.1 stocks and the seasonally adjusted annual rate for GDP.
+15. P6 cycles. A cycle is in the window if its `Smpdt` label begins 2024 or 2025 and its `Col End` (Collection and Reference Dates sheet) is before 17 Nov 2025; the workbook has no column for 202521 to 202523, so no cycle after 202520 is used. The mean is of the unsuppressed percentages; a cell that is not a number followed by a percent sign ("S") is skipped. The `XX` row (multi-unit companies, defined in the Data Dictionary as operating in several sectors or states) has no SIC and is ignored. BTOS has no sector 92 (public administration).
+16. P6 SIC to sector. Each concordance row is one vote for the BTOS sector of its NAICS 2002 first two digits (31/32/33 to 31, 44/45 to 44, 48/49 to 48; other two-digit codes stay as they are, including codes BTOS does not publish). A SIC whose rows all reach one sector maps to it; a SIC split across sectors maps to the sector with strictly the most rows; a tie drops the firm. Rows, not distinct NAICS codes, are counted. A firm whose SIC is not in the concordance is dropped and counted. Concordance rows with a non-numeric SIC or a NAICS that is not six digits (Aux, Null Set, blank) are skipped and counted.
+17. P6 sector filter. "At least 20 common firms" is read as at least 20 firms in each of the treatment and placebo P2 headline window sets (the window sets differ because the acquisition rule is applied by window, so P2 has no single common panel after that rule; the common-firm requirement across CY2016, 2019, 2022 and 2025 is already inside both sets). The sector statistic is `p2_stats(...)["median_gap_pp"]` on the sector's firms, unchanged. Utilities, REITs, finance and the AI complex are outside the P2 headline sets and so outside P6.
+18. P6 Spearman and leave-one-out. Spearman is the existing average-rank function; the leave-one-sector-out range is the minimum and maximum over the kept sectors of the Spearman with that sector removed (None if fewer than 3 sectors remain). No p-value and no label are given.
 
 ## Sources and vintages
 
@@ -105,6 +171,8 @@ The inputs are not available: P7 needs `GoodwillImpairmentLoss` facts for CY2026
 | sec-submissions | https://data.sec.gov/submissions/ | 2026-11-13T14:32:03Z .. 2026-11-13T14:52:11Z | 385886651 | 4e3bbb048ec44f52 |
 | sec-submissions-older-pages | https://data.sec.gov/submissions/ | 2026-11-13T14:38:37Z .. 2026-11-13T14:41:44Z | 79668729 | 57b4497a89c94b42 |
 | census-btos | https://www.census.gov/hfp/btos/downloads/ | 2026-11-13T14:31:01Z | 0 | - |
+| census-p6-input | https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx | 2026-11-15 | 1109824 | e058a098af64427b |
+| census-p6-input | https://www2.census.gov/library/reference/naics/technical-documentation/concordance/1987_sic_to_2002_naics.xls | 2026-11-15 | 406016 | fcb8ad7e4162a4d9 |
 
 The 24 SEC frames (tags Assets, CashAndCashEquivalentsAtCarryingValue, CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents, PaymentsToAcquireBusinessesNetOfCashAcquired, PaymentsToAcquirePropertyPlantAndEquipment, PropertyPlantAndEquipmentNet; periods CY2016, CY2019, CY2022, CY2025, and the PPE, acquisition, cash and assets periods named in the code) are listed one per row in `vintages.csv` with their fetch time, size and sha256. BEA files: published October 29, 2026 (Section 5) and published October 29, 2026 (Section 1). Z.1 release: Fed Board file dated 11 Sep 2026. C30: file dated 2 Nov 2026, latest month Sep-26. SIC history is not reconstructed. All requests to data.sec.gov carried the declared tool name only and ran at most 4 a second; no request went to www.sec.gov or FRED. The first four rows' fetch times are the files' modification times, because they were downloaded by a first probe before the fetch log existed.
 
