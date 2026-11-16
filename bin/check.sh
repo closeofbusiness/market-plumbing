@@ -3181,6 +3181,155 @@ PY
   fi
 }
 
+# --- M36: AP1 AI-USE x PRODUCTIVITY & GOS-SHARE GUARD (spec _research/2026-11-16-AP1-AI-Productivity-Spec.md, "Version 2"; build bin/ap1_ai_productivity.py) ---
+ap1_check() {
+  echo "-- M36: AP1 guard (data/ap1_ai_productivity/: the spec hash in the spec, the script and every registered row, exact headers, the four statements and their labels recomputed from their own numbers, nothing raw in the folder or in git, the cache ignored, no local path or at sign, the asymmetry, GOS-not-profit, definitions, revision and BTOS sentences) --"
+  local dir="${AP1_DIR:-data/ap1_ai_productivity}" cache="${AP1_CACHE:-data/vintages/ap1}" spec="${AP1_SPEC:-_research/2026-11-16-AP1-AI-Productivity-Spec.md}" f name bad="" got want out py tracked committed
+  local PREREG_SHA='822c7c8a7eac38dadabbb1860eb0eaf0972709c6eb8487a237ce8398b5a8866d'
+  [ -d "$dir" ] || { echo "  ✓ $dir is absent -- nothing to leak."; return; }
+  got=$(shasum -a 256 "$spec" 2>/dev/null | cut -d' ' -f1)
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ the spec file ($spec) hashes to ${got:-nothing}, not the registered literal
+"
+  got=$(grep -m1 '^SPEC_SHA256 = ' bin/ap1_ai_productivity.py 2>/dev/null | sed -E 's/^SPEC_SHA256 = "([0-9a-f]*)".*$/\1/')
+  [ "$got" = "$PREREG_SHA" ] || bad="${bad}  ✗ SPEC_SHA256 in bin/ap1_ai_productivity.py (${got:-missing}) is not the literal in check.sh
+"
+  committed=" README.md registered.csv scores.csv detail.csv vintages.csv "
+  for f in "$dir"/*; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f")
+    [ "$name" = ".DS_Store" ] && continue
+    case "$name" in *.xlsx|*.xls|*.zip|*.json|*.gz|*.html|*.htm|*.pdf|*.txt|STOP*|ValueAdded*|NipaData*|SeriesRegister*|manifest*)
+      bad="${bad}  ✗ raw file in the committed folder (a workbook, zip, json, gz, page, pdf, txt, BEA download, manifest or STOP file): $f
+"
+      continue ;;
+    esac
+    [ "$(head -c 2 "$f" | tr -d '\0')" = "PK" ] && { bad="${bad}  ✗ raw file in the committed folder (a zip container under another name): $f
+"; continue; }
+    if [ "${committed#* $name }" = "$committed" ]; then
+      bad="${bad}  ✗ file that is not one of the five committed names: $name
+"
+      continue
+    fi
+    grep -qE '/Users/|/private/|~/' "$f" && bad="${bad}  ✗ $name contains a local path (/Users/, /private/ or ~/)
+"
+    grep -qF '@' "$f" && bad="${bad}  ✗ $name contains an at sign
+"
+    want=""
+    case "$name" in
+      registered.csv) want='statement_id,version,superseded,scored,statement,statistic,support_if,against_if,treatment_window,placebo_window,prereg_sha256' ;;
+      scores.csv) want='statement_id,label,primary_statistic,primary_value,unit,statistics,denominators,caveats' ;;
+      detail.csv) want='statement_id,item,value,unit' ;;
+      vintages.csv) want='source,key,url,fetched_utc,status,bytes,sha256,note' ;;
+    esac
+    if [ -n "$want" ]; then
+      got=$(grep -v '^# source:' "$f" | head -1 | tr -d '\r')
+      [ "$got" = "$want" ] || bad="${bad}  ✗ header of $name is not its exact allowlist
+"
+    fi
+  done
+  if [ -z "${AP1_DIR:-}" ] && [ -z "${AP1_CACHE:-}" ] && command -v git >/dev/null 2>&1; then
+    tracked=$(git ls-files -- "$dir" data/vintages/ap1 2>/dev/null | grep -E '\.(xlsx|xls|zip|json|gz|html|pdf|txt)$|(^|/)STOP|/raw/|manifest\.csv|ValueAdded|NipaData|SeriesRegister|data/vintages/ap1/' | head -3 | tr '\n' ' ')
+    [ -n "$tracked" ] && bad="${bad}  ✗ tracked in git (a raw download, a cache manifest or a STOP file must never be): $tracked
+"
+    if [ -d "$cache" ]; then
+      git check-ignore -q -- "$cache/raw/ValueAdded.xlsx" 2>/dev/null || bad="${bad}  ✗ the cache ($cache) is not ignored by git: a raw download there could be committed
+"
+    fi
+  fi
+  read -r -d '' py <<'PY' || true
+import csv, math, os, re, sys
+d, prereg = sys.argv[1], sys.argv[2]
+bad = []
+def rows(n):
+    p = os.path.join(d, n)
+    if not os.path.isfile(p):
+        return None
+    t = [l for l in open(p, encoding="utf-8", errors="replace", newline="").read().split("\n") if not l.startswith("# source:") and l.strip()]
+    r = list(csv.reader(t))
+    return [dict(zip(r[0], x)) for x in r[1:]] if r else []
+ids = ["AP1-P1", "AP1-P2", "AP1-P3", "AP1-P4"]
+reg = rows("registered.csv")
+if reg is None:
+    bad.append("registered.csv is missing")
+else:
+    if sorted(r.get("statement_id", "") for r in reg) != ids:
+        bad.append("registered.csv does not hold AP1-P1, P2, P3 and P4 once each")
+    if any(r.get("prereg_sha256") != prereg for r in reg):
+        bad.append("registered.csv holds a prereg_sha256 that is not the registered literal")
+    if any(r.get("version") != "2" for r in reg):
+        bad.append("registered.csv holds a row that is not version 2")
+sc = rows("scores.csv")
+dt = rows("detail.csv")
+if sc is None:
+    bad.append("scores.csv is missing")
+else:
+    allowed = {"SUPPORT", "AGAINST", "INCONCLUSIVE"}
+    if sorted(r.get("statement_id", "") for r in sc) != ids:
+        bad.append("scores.csv does not hold AP1-P1, P2, P3 and P4 once each")
+    det = {}
+    for r in (dt or []):
+        det.setdefault(r.get("statement_id", ""), {})[r.get("item", "")] = r.get("value", "")
+    if dt is None:
+        bad.append("detail.csv is missing")
+    for r in sc:
+        sid, lab = r.get("statement_id", "?"), r.get("label", "")
+        if lab not in allowed:
+            bad.append("scores.csv " + sid + ": label " + repr(lab) + " is not an allowed label")
+            continue
+        dd = det.get(sid, {})
+        try:
+            pp, pn = float(dd["perm_p_pos"]), float(dd["perm_p_neg"])
+            lmin, lmax, lun = float(dd["loo_min"]), float(dd["loo_max"]), int(dd["loo_undefined"])
+            nperm, seed = int(dd["permutations"]), int(dd["seed"])
+            rho = float(dd["rho"])
+        except (KeyError, ValueError):
+            bad.append("detail.csv lacks the permutation numbers of " + sid)
+            continue
+        if nperm != 100000 or seed != 20261116:
+            bad.append("detail.csv " + sid + ": permutations %d / seed %d are not the registered 100000 / 20261116" % (nperm, seed))
+        se = math.sqrt(0.05 * 0.95 / float(nperm))
+        pos_ok = round(pp, 9) <= 0.05 and abs(pp - 0.05) > 2.0 * se and lun == 0 and round(lmin, 9) > 0
+        neg_ok = round(pn, 9) <= 0.05 and abs(pn - 0.05) > 2.0 * se and lun == 0 and round(lmax, 9) < 0
+        want = "SUPPORT" if pos_ok else ("AGAINST" if neg_ok else "INCONCLUSIVE")
+        if want != lab:
+            bad.append("scores.csv %s label %s disagrees with its own numbers (p_pos %s, p_neg %s, loo_min %s, loo_max %s): the rule gives %s" % (sid, lab, pp, pn, lmin, lmax, want))
+        try:
+            if abs(float(r.get("primary_value", "x")) - rho) > 1e-9:
+                bad.append("scores.csv " + sid + " primary_value differs from the rho in detail.csv")
+        except ValueError:
+            bad.append("scores.csv " + sid + " primary_value is not a number")
+rp = os.path.join(d, "README.md")
+if os.path.isfile(rp):
+    t = open(rp, encoding="utf-8", errors="replace").read()
+    if "Neither label identifies AI as the cause" not in t:
+        bad.append("README.md lacks the sentence that neither label identifies AI as the cause")
+    if "not profit margins" not in t:
+        bad.append("README.md lacks the ruling-2 statement that P3/P4 are not profit margins")
+    if "establishment-basis residual" not in t:
+        bad.append("README.md lacks the ruling-10 definitions sentence")
+    if "2027 annual update" not in t:
+        bad.append("README.md lacks the ruling-6 revision re-score sentence")
+    if "original wording" not in t or "2024-2025" not in t:
+        bad.append("README.md lacks the BTOS original wording / cycles 2024-2025 statement")
+    hits = sorted({m.group(0).lower() for m in re.finditer(r"\bproves?\b|\bproven\b|\bAI caused\b|\bcaused by AI\b|\bconfirms? the thesis\b", t, re.I)})
+    if hits:
+        bad.append("README.md holds wording that claims proof or a cause: " + ", ".join(hits[:5]))
+else:
+    bad.append("README.md is missing")
+for b in bad:
+    print("BAD " + b)
+PY
+  out=$(python3 -c "$py" "$dir" "$PREREG_SHA" 2>&1)
+  bad="${bad}$(printf '%s\n' "$out" | grep '^BAD ' | sed 's/^BAD /  ✗ /')"
+  if [ -z "$(printf '%s' "$bad" | tr -d '\n ')" ] && [ -z "$(printf '%s\n' "$out" | grep -v '^BAD \|^$')" ]; then
+    echo "  ✓ the spec hash in the spec, the script and every registered row; the five committed names, every header its exact allowlist; the four statements once each, every label recomputed from its own permutation numbers (100000 permutations, seed 20261116); no raw file in the folder or in git; the cache ignored; no local path or at sign; the asymmetry, GOS, definitions, revision and BTOS sentences present."
+  else
+    printf '%s\n' "$bad" | sed '/^$/d'
+    printf '%s\n' "$out" | grep -v '^BAD \|^$' | sed 's/^/  ✗ guard error: /'
+    echo "  -> raw downloads stay in data/vintages/ap1/ (gitignored) and the build writes every table: fix the build, do not edit the committed tables by hand."
+  fi
+}
+
 # --- M21: H.8 NET DUE TO RELATED FOREIGN OFFICES GUARD (warn only) -----------
 # data/h8_foreign_offices/ holds Federal Reserve Board tables (public domain, cited to the Board) and nothing raw (spec
 # _research/2026-10-23-H8-Foreign-Offices-Spec.md, sections 5, 6 and 9.5). The raw zip, the DDP packages and the notes page stay in the gitignored cache
@@ -3645,6 +3794,8 @@ if [ "$TARGET" = "--all" ]; then
   aj1_check
   echo
   av1_check
+  echo
+  ap1_check
   echo
 else
   FILELIST=$(printf '%s\n' "$@")

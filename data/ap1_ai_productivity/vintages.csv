@@ -1,0 +1,6 @@
+# source: fetch manifest of the raw cache (data/vintages/ap1); raw files are not committed
+source,key,url,fetched_utc,status,bytes,sha256,note
+bea,bea-valueadded,https://apps.bea.gov/industry/Release/XLS/GDPxInd/ValueAdded.xlsx,2026-11-16T10:02:21Z,200,822351,737628be9c44bbb49c2a9ec5c9c7c8d843cf849aa6f0e46024a02f0875818b74,BEA plain HTTPS GET
+bea,bea-nipa-data-a,https://apps.bea.gov/national/Release/TXT/NipaDataA.txt,2026-11-16T10:02:26Z,200,12093612,adef98fd3e86b492d37ceb4b10004d17902987bdd7b6c0a7672fa1c68760675c,BEA plain HTTPS GET
+bea,bea-series-register,https://apps.bea.gov/national/Release/TXT/SeriesRegister.txt,2026-11-16T10:02:30Z,200,968442,f2426f6b219fb06c731ff298e66bb53fab5f60c6e0f637b24c92263150d82259,BEA plain HTTPS GET
+census-btos,btos-ai-core-questions,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,2026-11-15,hand download,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce,"AI Core Questions (Original), hash-pinned in bin/cv1_confidence_velocity.py; read through aj1.load_btos_inputs"

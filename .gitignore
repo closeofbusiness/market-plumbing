@@ -175,3 +175,6 @@ data/vintages/aj1/
 
 # AV1 raw downloads (NYU Stern Damodaran .xls files, manifest and STOP latch)
 data/vintages/av1/
+
+# AP1 raw downloads (BEA ValueAdded.xlsx, NipaDataA.txt, SeriesRegister.txt, manifest and STOP latch)
+data/vintages/ap1/

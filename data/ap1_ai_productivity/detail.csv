@@ -1,0 +1,611 @@
+# source: bin/ap1_ai_productivity.py build; scores computed after registered.csv (sha256 3c1a1322131d422c3eb871b08c5352af954e08601516bc791a56477871729c5e) was written; spec _research/2026-11-16-AP1-AI-Productivity-Spec.md sha256 822c7c8a7eac38dadabbb1860eb0eaf0972709c6eb8487a237ce8398b5a8866d; permutations 100000 seed 20261116
+statement_id,item,value,unit
+AP1-SEC,bea_release_TVA105-A,not stated,text
+AP1-SEC,bea_release_TVA106-A,not stated,text
+AP1-SEC,bea_release_TVA113-A,not stated,text
+AP1-SEC,btos_cycles_required_2024_2025,46,cycles
+AP1-SEC,btos_cycles_required_2023,8,cycles
+AP1-SEC,p1_p2_kept_count,13,industries
+AP1-SEC,p1_p2_kept_list,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-SEC,p3_p4_kept_count,15,industries
+AP1-SEC,p3_p4_kept_list,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-SEC,dropped_ai_count,0,industries
+AP1-SEC,dropped_real_va_count,0,industries
+AP1-P1,rho,0.4396,rank correlation
+AP1-P1,perm_p_pos,0.06846,probability
+AP1-P1,perm_p_neg,0.93457,probability
+AP1-P1,loo_min,0.2867,rank correlation
+AP1-P1,loo_max,0.6224,rank correlation
+AP1-P1,loo_undefined,0,count
+AP1-P1,n,13,industries
+AP1-P1,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-P1,permutations,100000,count
+AP1-P1,seed,20261116,integer
+AP1-P1,mc_se_at_0.05,0.000689,probability
+AP1-P1,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AP1-P1,loo_without_441,0.6224,rank correlation
+AP1-P1,loo_without_511,0.3427,rank correlation
+AP1-P1,loo_without_512,0.3497,rank correlation
+AP1-P1,loo_without_523,0.5315,rank correlation
+AP1-P1,loo_without_524,0.4685,rank correlation
+AP1-P1,loo_without_541,0.3497,rank correlation
+AP1-P1,loo_without_561,0.4615,rank correlation
+AP1-P1,loo_without_621,0.4685,rank correlation
+AP1-P1,loo_without_713,0.4685,rank correlation
+AP1-P1,loo_without_722,0.2867,rank correlation
+AP1-P1,loo_without_23,0.3706,rank correlation
+AP1-P1,loo_without_31-33,0.4825,rank correlation
+AP1-P1,loo_without_42,0.4825,rank correlation
+AP1-P2,rho,0.0604,rank correlation
+AP1-P2,perm_p_pos,0.42265,probability
+AP1-P2,perm_p_neg,0.58435,probability
+AP1-P2,loo_min,-0.1538,rank correlation
+AP1-P2,loo_max,0.1888,rank correlation
+AP1-P2,loo_undefined,0,count
+AP1-P2,n,13,industries
+AP1-P2,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-P2,permutations,100000,count
+AP1-P2,seed,20261116,integer
+AP1-P2,mc_se_at_0.05,0.000689,probability
+AP1-P2,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AP1-P2,loo_without_441,0.1888,rank correlation
+AP1-P2,loo_without_511,0.0979,rank correlation
+AP1-P2,loo_without_512,-0.1049,rank correlation
+AP1-P2,loo_without_523,-0.0629,rank correlation
+AP1-P2,loo_without_524,0.0629,rank correlation
+AP1-P2,loo_without_541,0.0979,rank correlation
+AP1-P2,loo_without_561,0.0979,rank correlation
+AP1-P2,loo_without_621,0.0629,rank correlation
+AP1-P2,loo_without_713,0.1119,rank correlation
+AP1-P2,loo_without_722,-0.1538,rank correlation
+AP1-P2,loo_without_23,0.1259,rank correlation
+AP1-P2,loo_without_31-33,0.1259,rank correlation
+AP1-P2,loo_without_42,0.1259,rank correlation
+AP1-P3,rho,0.6607,rank correlation
+AP1-P3,perm_p_pos,0.00471,probability
+AP1-P3,perm_p_neg,0.99549,probability
+AP1-P3,loo_min,0.6044,rank correlation
+AP1-P3,loo_max,0.8066,rank correlation
+AP1-P3,loo_undefined,0,count
+AP1-P3,n,15,industries
+AP1-P3,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-P3,permutations,100000,count
+AP1-P3,seed,20261116,integer
+AP1-P3,mc_se_at_0.05,0.000689,probability
+AP1-P3,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AP1-P3,loo_without_441,0.6044,rank correlation
+AP1-P3,loo_without_511,0.6220,rank correlation
+AP1-P3,loo_without_512,0.8066,rank correlation
+AP1-P3,loo_without_523,0.6527,rank correlation
+AP1-P3,loo_without_524,0.6923,rank correlation
+AP1-P3,loo_without_541,0.6791,rank correlation
+AP1-P3,loo_without_561,0.6879,rank correlation
+AP1-P3,loo_without_611,0.6615,rank correlation
+AP1-P3,loo_without_621,0.6615,rank correlation
+AP1-P3,loo_without_624,0.6484,rank correlation
+AP1-P3,loo_without_713,0.6308,rank correlation
+AP1-P3,loo_without_722,0.6835,rank correlation
+AP1-P3,loo_without_23,0.6132,rank correlation
+AP1-P3,loo_without_31-33,0.6132,rank correlation
+AP1-P3,loo_without_42,0.6176,rank correlation
+AP1-P4,rho,0.8786,rank correlation
+AP1-P4,perm_p_pos,0.00006,probability
+AP1-P4,perm_p_neg,0.99995,probability
+AP1-P4,loo_min,0.8505,rank correlation
+AP1-P4,loo_max,0.8945,rank correlation
+AP1-P4,loo_undefined,0,count
+AP1-P4,n,15,industries
+AP1-P4,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-P4,permutations,100000,count
+AP1-P4,seed,20261116,integer
+AP1-P4,mc_se_at_0.05,0.000689,probability
+AP1-P4,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AP1-P4,loo_without_441,0.8813,rank correlation
+AP1-P4,loo_without_511,0.8681,rank correlation
+AP1-P4,loo_without_512,0.8681,rank correlation
+AP1-P4,loo_without_523,0.8857,rank correlation
+AP1-P4,loo_without_524,0.8813,rank correlation
+AP1-P4,loo_without_541,0.8901,rank correlation
+AP1-P4,loo_without_561,0.8549,rank correlation
+AP1-P4,loo_without_611,0.8725,rank correlation
+AP1-P4,loo_without_621,0.8637,rank correlation
+AP1-P4,loo_without_624,0.8549,rank correlation
+AP1-P4,loo_without_713,0.8505,rank correlation
+AP1-P4,loo_without_722,0.8945,rank correlation
+AP1-P4,loo_without_23,0.8945,rank correlation
+AP1-P4,loo_without_31-33,0.8857,rank correlation
+AP1-P4,loo_without_42,0.8857,rank correlation
+AP1-TABLE,ind_441_ai_mean_2024_2025_pct,4.0283,percent of firms
+AP1-TABLE,ind_441_va_curr_2019,257498.00,millions USD
+AP1-TABLE,ind_441_d_pre,0.1944,percentage points
+AP1-TABLE,ind_441_d_post,-1.2646,percentage points
+AP1-TABLE,ind_441_d_diff,-1.4590,percentage points
+AP1-TABLE,ind_441_d_1923,3.3719,percentage points
+AP1-TABLE,ind_441_d_post_2425,-0.5843,percentage points
+AP1-TABLE,ind_441_g_pre,0.079240,log points
+AP1-TABLE,ind_441_g_post,0.348402,log points
+AP1-TABLE,ind_441_g_diff,0.269162,log points
+AP1-TABLE,ind_441_g_1923,-0.179627,log points
+AP1-TABLE,ind_441_g_post_2425,-0.039459,log points
+AP1-TABLE,ind_511_ai_mean_2024_2025_pct,25.0217,percent of firms
+AP1-TABLE,ind_511_ai_mean_2023_pct,19.6875,percent of firms
+AP1-TABLE,ind_511_va_curr_2019,278387.00,millions USD
+AP1-TABLE,ind_511_d_pre,-0.6697,percentage points
+AP1-TABLE,ind_511_d_post,2.3104,percentage points
+AP1-TABLE,ind_511_d_diff,2.9801,percentage points
+AP1-TABLE,ind_511_d_1923,2.2747,percentage points
+AP1-TABLE,ind_511_d_post_2425,0.4451,percentage points
+AP1-TABLE,ind_511_g_pre,0.161761,log points
+AP1-TABLE,ind_511_g_post,0.206500,log points
+AP1-TABLE,ind_511_g_diff,0.044738,log points
+AP1-TABLE,ind_511_g_1923,0.293528,log points
+AP1-TABLE,ind_511_g_post_2425,0.096710,log points
+AP1-TABLE,ind_512_ai_mean_2024_2025_pct,18.4891,percent of firms
+AP1-TABLE,ind_512_ai_mean_2023_pct,14.9500,percent of firms
+AP1-TABLE,ind_512_va_curr_2019,88545.00,millions USD
+AP1-TABLE,ind_512_d_pre,-8.6105,percentage points
+AP1-TABLE,ind_512_d_post,-0.9725,percentage points
+AP1-TABLE,ind_512_d_diff,7.6380,percentage points
+AP1-TABLE,ind_512_d_1923,10.5498,percentage points
+AP1-TABLE,ind_512_d_post_2425,0.3385,percentage points
+AP1-TABLE,ind_512_g_pre,-0.133091,log points
+AP1-TABLE,ind_512_g_post,0.075718,log points
+AP1-TABLE,ind_512_g_diff,0.208809,log points
+AP1-TABLE,ind_512_g_1923,0.376860,log points
+AP1-TABLE,ind_512_g_post_2425,0.072497,log points
+AP1-TABLE,ind_518_519_ai_mean_2024_2025_pct,25.8924,percent of firms
+AP1-TABLE,ind_518_519_ai_mean_2023_pct,19.2312,percent of firms
+AP1-TABLE,ind_518_519_va_curr_2019,274130.00,millions USD
+AP1-TABLE,ind_518_519_d_pre,0.7365,percentage points
+AP1-TABLE,ind_518_519_d_post,1.2973,percentage points
+AP1-TABLE,ind_518_519_d_diff,0.5608,percentage points
+AP1-TABLE,ind_518_519_d_1923,2.9003,percentage points
+AP1-TABLE,ind_518_519_d_post_2425,2.1641,percentage points
+AP1-TABLE,ind_518_519_g_pre,0.208523,log points
+AP1-TABLE,ind_518_519_g_post,0.285746,log points
+AP1-TABLE,ind_518_519_g_diff,0.077223,log points
+AP1-TABLE,ind_518_519_g_1923,0.317827,log points
+AP1-TABLE,ind_518_519_g_post_2425,0.153271,log points
+AP1-TABLE,ind_522_ai_mean_2024_2025_pct,7.4696,percent of firms
+AP1-TABLE,ind_522_ai_mean_2023_pct,4.6250,percent of firms
+AP1-TABLE,ind_522_va_curr_2019,740089.00,millions USD
+AP1-TABLE,ind_522_d_pre,1.6216,percentage points
+AP1-TABLE,ind_522_d_post,1.9145,percentage points
+AP1-TABLE,ind_522_d_diff,0.2929,percentage points
+AP1-TABLE,ind_522_d_1923,7.4408,percentage points
+AP1-TABLE,ind_522_d_post_2425,0.7563,percentage points
+AP1-TABLE,ind_522_g_pre,-0.001470,log points
+AP1-TABLE,ind_522_g_post,0.057803,log points
+AP1-TABLE,ind_522_g_diff,0.059274,log points
+AP1-TABLE,ind_522_g_1923,0.117960,log points
+AP1-TABLE,ind_522_g_post_2425,0.030188,log points
+AP1-TABLE,ind_523_ai_mean_2024_2025_pct,13.5413,percent of firms
+AP1-TABLE,ind_523_ai_mean_2023_pct,7.5875,percent of firms
+AP1-TABLE,ind_523_va_curr_2019,279030.00,millions USD
+AP1-TABLE,ind_523_d_pre,-4.9798,percentage points
+AP1-TABLE,ind_523_d_post,9.1120,percentage points
+AP1-TABLE,ind_523_d_diff,14.0918,percentage points
+AP1-TABLE,ind_523_d_1923,3.1718,percentage points
+AP1-TABLE,ind_523_d_post_2425,3.2473,percentage points
+AP1-TABLE,ind_523_g_pre,-0.126970,log points
+AP1-TABLE,ind_523_g_post,-0.002265,log points
+AP1-TABLE,ind_523_g_diff,0.124705,log points
+AP1-TABLE,ind_523_g_1923,0.154823,log points
+AP1-TABLE,ind_523_g_post_2425,-0.006908,log points
+AP1-TABLE,ind_524_ai_mean_2024_2025_pct,7.1652,percent of firms
+AP1-TABLE,ind_524_ai_mean_2023_pct,4.3750,percent of firms
+AP1-TABLE,ind_524_va_curr_2019,631397.00,millions USD
+AP1-TABLE,ind_524_d_pre,0.2835,percentage points
+AP1-TABLE,ind_524_d_post,3.0395,percentage points
+AP1-TABLE,ind_524_d_diff,2.7560,percentage points
+AP1-TABLE,ind_524_d_1923,0.8660,percentage points
+AP1-TABLE,ind_524_d_post_2425,2.4973,percentage points
+AP1-TABLE,ind_524_g_pre,0.021559,log points
+AP1-TABLE,ind_524_g_post,0.036158,log points
+AP1-TABLE,ind_524_g_diff,0.014599,log points
+AP1-TABLE,ind_524_g_1923,0.079190,log points
+AP1-TABLE,ind_524_g_post_2425,0.040079,log points
+AP1-TABLE,ind_541_ai_mean_2024_2025_pct,16.2478,percent of firms
+AP1-TABLE,ind_541_ai_mean_2023_pct,10.1250,percent of firms
+AP1-TABLE,ind_541_va_curr_2019,1653122.00,millions USD
+AP1-TABLE,ind_541_d_pre,-0.5476,percentage points
+AP1-TABLE,ind_541_d_post,0.8507,percentage points
+AP1-TABLE,ind_541_d_diff,1.3983,percentage points
+AP1-TABLE,ind_541_d_1923,-0.6517,percentage points
+AP1-TABLE,ind_541_d_post_2425,0.3176,percentage points
+AP1-TABLE,ind_541_g_pre,0.053527,log points
+AP1-TABLE,ind_541_g_post,0.077032,log points
+AP1-TABLE,ind_541_g_diff,0.023505,log points
+AP1-TABLE,ind_541_g_1923,0.132352,log points
+AP1-TABLE,ind_541_g_post_2425,0.044402,log points
+AP1-TABLE,ind_561_ai_mean_2024_2025_pct,6.3109,percent of firms
+AP1-TABLE,ind_561_ai_mean_2023_pct,4.1000,percent of firms
+AP1-TABLE,ind_561_va_curr_2019,611250.00,millions USD
+AP1-TABLE,ind_561_d_pre,-0.0957,percentage points
+AP1-TABLE,ind_561_d_post,1.2835,percentage points
+AP1-TABLE,ind_561_d_diff,1.3792,percentage points
+AP1-TABLE,ind_561_d_1923,-0.3046,percentage points
+AP1-TABLE,ind_561_d_post_2425,0.4266,percentage points
+AP1-TABLE,ind_561_g_pre,0.055670,log points
+AP1-TABLE,ind_561_g_post,0.025362,log points
+AP1-TABLE,ind_561_g_diff,-0.030308,log points
+AP1-TABLE,ind_561_g_1923,0.119269,log points
+AP1-TABLE,ind_561_g_post_2425,0.010820,log points
+AP1-TABLE,ind_611_ai_mean_2024_2025_pct,12.2304,percent of firms
+AP1-TABLE,ind_611_ai_mean_2023_pct,7.6125,percent of firms
+AP1-TABLE,ind_611_va_curr_2019,270279.00,millions USD
+AP1-TABLE,ind_611_d_pre,-0.6839,percentage points
+AP1-TABLE,ind_611_d_post,0.8190,percentage points
+AP1-TABLE,ind_611_d_diff,1.5030,percentage points
+AP1-TABLE,ind_611_d_1923,-3.4275,percentage points
+AP1-TABLE,ind_611_d_post_2425,-0.1794,percentage points
+AP1-TABLE,ind_611_g_pre,0.019340,log points
+AP1-TABLE,ind_611_g_post,0.028820,log points
+AP1-TABLE,ind_611_g_diff,0.009480,log points
+AP1-TABLE,ind_611_g_1923,-0.014497,log points
+AP1-TABLE,ind_611_g_post_2425,0.002380,log points
+AP1-TABLE,ind_621_ai_mean_2024_2025_pct,7.4826,percent of firms
+AP1-TABLE,ind_621_ai_mean_2023_pct,4.5875,percent of firms
+AP1-TABLE,ind_621_va_curr_2019,783449.00,millions USD
+AP1-TABLE,ind_621_d_pre,-0.6457,percentage points
+AP1-TABLE,ind_621_d_post,0.7493,percentage points
+AP1-TABLE,ind_621_d_diff,1.3950,percentage points
+AP1-TABLE,ind_621_d_1923,-0.2701,percentage points
+AP1-TABLE,ind_621_d_post_2425,-0.0063,percentage points
+AP1-TABLE,ind_621_g_pre,0.029190,log points
+AP1-TABLE,ind_621_g_post,0.031931,log points
+AP1-TABLE,ind_621_g_diff,0.002742,log points
+AP1-TABLE,ind_621_g_1923,0.068590,log points
+AP1-TABLE,ind_621_g_post_2425,0.017169,log points
+AP1-TABLE,ind_624_ai_mean_2024_2025_pct,6.3696,percent of firms
+AP1-TABLE,ind_624_ai_mean_2023_pct,3.1500,percent of firms
+AP1-TABLE,ind_624_va_curr_2019,146904.00,millions USD
+AP1-TABLE,ind_624_d_pre,-0.6172,percentage points
+AP1-TABLE,ind_624_d_post,-0.2621,percentage points
+AP1-TABLE,ind_624_d_diff,0.3551,percentage points
+AP1-TABLE,ind_624_d_1923,-0.0592,percentage points
+AP1-TABLE,ind_624_d_post_2425,-0.3895,percentage points
+AP1-TABLE,ind_624_g_pre,0.004606,log points
+AP1-TABLE,ind_624_g_post,0.038153,log points
+AP1-TABLE,ind_624_g_diff,0.033547,log points
+AP1-TABLE,ind_624_g_1923,-0.002102,log points
+AP1-TABLE,ind_624_g_post_2425,-0.002784,log points
+AP1-TABLE,ind_711_ai_mean_2024_2025_pct,7.8435,percent of firms
+AP1-TABLE,ind_711_ai_mean_2023_pct,4.6500,percent of firms
+AP1-TABLE,ind_711_va_curr_2019,140509.00,millions USD
+AP1-TABLE,ind_711_d_pre,0.2254,percentage points
+AP1-TABLE,ind_711_d_post,1.2527,percentage points
+AP1-TABLE,ind_711_d_diff,1.0273,percentage points
+AP1-TABLE,ind_711_d_1923,-6.1443,percentage points
+AP1-TABLE,ind_711_d_post_2425,0.6999,percentage points
+AP1-TABLE,ind_711_g_pre,0.006952,log points
+AP1-TABLE,ind_711_g_post,-0.003564,log points
+AP1-TABLE,ind_711_g_diff,-0.010515,log points
+AP1-TABLE,ind_711_g_1923,-0.050498,log points
+AP1-TABLE,ind_711_g_post_2425,0.037411,log points
+AP1-TABLE,ind_713_ai_mean_2024_2025_pct,4.5543,percent of firms
+AP1-TABLE,ind_713_ai_mean_2023_pct,2.8875,percent of firms
+AP1-TABLE,ind_713_va_curr_2019,96607.00,millions USD
+AP1-TABLE,ind_713_d_pre,-0.2069,percentage points
+AP1-TABLE,ind_713_d_post,-0.1972,percentage points
+AP1-TABLE,ind_713_d_diff,0.0096,percentage points
+AP1-TABLE,ind_713_d_1923,-4.0315,percentage points
+AP1-TABLE,ind_713_d_post_2425,-0.3592,percentage points
+AP1-TABLE,ind_713_g_pre,-0.036570,log points
+AP1-TABLE,ind_713_g_post,-0.009138,log points
+AP1-TABLE,ind_713_g_diff,0.027432,log points
+AP1-TABLE,ind_713_g_1923,0.021496,log points
+AP1-TABLE,ind_713_g_post_2425,-0.006864,log points
+AP1-TABLE,ind_722_ai_mean_2024_2025_pct,1.7348,percent of firms
+AP1-TABLE,ind_722_ai_mean_2023_pct,1.3125,percent of firms
+AP1-TABLE,ind_722_va_curr_2019,490182.00,millions USD
+AP1-TABLE,ind_722_d_pre,-0.0046,percentage points
+AP1-TABLE,ind_722_d_post,-0.6377,percentage points
+AP1-TABLE,ind_722_d_diff,-0.6331,percentage points
+AP1-TABLE,ind_722_d_1923,1.1080,percentage points
+AP1-TABLE,ind_722_d_post_2425,-0.7824,percentage points
+AP1-TABLE,ind_722_g_pre,0.001463,log points
+AP1-TABLE,ind_722_g_post,-0.011226,log points
+AP1-TABLE,ind_722_g_diff,-0.012689,log points
+AP1-TABLE,ind_722_g_1923,0.006264,log points
+AP1-TABLE,ind_722_g_post_2425,-0.007918,log points
+AP1-TABLE,ind_23_ai_mean_2024_2025_pct,2.3826,percent of firms
+AP1-TABLE,ind_23_ai_mean_2023_pct,1.2500,percent of firms
+AP1-TABLE,ind_23_va_curr_2019,952959.00,millions USD
+AP1-TABLE,ind_23_d_pre,-0.8448,percentage points
+AP1-TABLE,ind_23_d_post,-2.1466,percentage points
+AP1-TABLE,ind_23_d_diff,-1.3018,percentage points
+AP1-TABLE,ind_23_d_1923,1.2106,percentage points
+AP1-TABLE,ind_23_d_post_2425,-2.1694,percentage points
+AP1-TABLE,ind_23_g_pre,-0.026310,log points
+AP1-TABLE,ind_23_g_post,0.020825,log points
+AP1-TABLE,ind_23_g_diff,0.047135,log points
+AP1-TABLE,ind_23_g_1923,-0.132041,log points
+AP1-TABLE,ind_23_g_post_2425,-0.012179,log points
+AP1-TABLE,ind_31-33_ai_mean_2024_2025_pct,3.3370,percent of firms
+AP1-TABLE,ind_31-33_ai_mean_2023_pct,2.3125,percent of firms
+AP1-TABLE,ind_31-33_va_curr_2019,2268790.00,millions USD
+AP1-TABLE,ind_31-33_d_pre,0.2863,percentage points
+AP1-TABLE,ind_31-33_d_post,-1.4620,percentage points
+AP1-TABLE,ind_31-33_d_diff,-1.7482,percentage points
+AP1-TABLE,ind_31-33_d_1923,3.2713,percentage points
+AP1-TABLE,ind_31-33_d_post_2425,-0.9140,percentage points
+AP1-TABLE,ind_31-33_g_pre,0.025116,log points
+AP1-TABLE,ind_31-33_g_post,0.071837,log points
+AP1-TABLE,ind_31-33_g_diff,0.046722,log points
+AP1-TABLE,ind_31-33_g_1923,0.028984,log points
+AP1-TABLE,ind_31-33_g_post_2425,0.027043,log points
+AP1-TABLE,ind_42_ai_mean_2024_2025_pct,3.8500,percent of firms
+AP1-TABLE,ind_42_ai_mean_2023_pct,2.0875,percent of firms
+AP1-TABLE,ind_42_va_curr_2019,1296792.00,millions USD
+AP1-TABLE,ind_42_d_pre,-0.4409,percentage points
+AP1-TABLE,ind_42_d_post,-5.4126,percentage points
+AP1-TABLE,ind_42_d_diff,-4.9717,percentage points
+AP1-TABLE,ind_42_d_1923,4.8470,percentage points
+AP1-TABLE,ind_42_d_post_2425,-5.0557,percentage points
+AP1-TABLE,ind_42_g_pre,0.021689,log points
+AP1-TABLE,ind_42_g_post,0.067552,log points
+AP1-TABLE,ind_42_g_diff,0.045863,log points
+AP1-TABLE,ind_42_g_1923,-0.032276,log points
+AP1-TABLE,ind_42_g_post_2425,0.070291,log points
+AP1-TABLE,ind_48-49_ai_mean_2024_2025_pct,2.0783,percent of firms
+AP1-TABLE,ind_48-49_va_curr_2019,709954.00,millions USD
+AP1-TABLE,ind_48-49_d_pre,-2.6311,percentage points
+AP1-TABLE,ind_48-49_d_post,-1.0230,percentage points
+AP1-TABLE,ind_48-49_d_diff,1.6081,percentage points
+AP1-TABLE,ind_48-49_d_1923,0.2852,percentage points
+AP1-TABLE,ind_48-49_d_post_2425,0.1553,percentage points
+AP1-TABLE,ind_48-49_g_pre,-0.064017,log points
+AP1-TABLE,ind_48-49_g_post,0.013425,log points
+AP1-TABLE,ind_48-49_g_diff,0.077441,log points
+AP1-TABLE,ind_48-49_g_1923,-0.077052,log points
+AP1-TABLE,ind_48-49_g_post_2425,-0.007297,log points
+AP1-TABLE,ind_81_ai_mean_2024_2025_pct,3.1000,percent of firms
+AP1-TABLE,ind_81_ai_mean_2023_pct,2.2125,percent of firms
+AP1-TABLE,ind_81_va_curr_2019,477864.00,millions USD
+AP1-TABLE,ind_81_d_pre,-0.1016,percentage points
+AP1-TABLE,ind_81_d_post,-0.2405,percentage points
+AP1-TABLE,ind_81_d_diff,-0.1389,percentage points
+AP1-TABLE,ind_81_d_1923,-1.4220,percentage points
+AP1-TABLE,ind_81_d_post_2425,-0.5210,percentage points
+AP1-TABLE,ind_81_g_pre,-0.014540,log points
+AP1-TABLE,ind_81_g_post,-0.041823,log points
+AP1-TABLE,ind_81_g_diff,-0.027283,log points
+AP1-TABLE,ind_81_g_1923,-0.077697,log points
+AP1-TABLE,ind_81_g_post_2425,-0.023259,log points
+AP1-R-P1_1923,rho,0.8681,rank correlation
+AP1-R-P1_1923,perm_p_pos,0.00007,probability
+AP1-R-P1_1923,perm_p_neg,0.99994,probability
+AP1-R-P1_1923,loo_min,0.8392,rank correlation
+AP1-R-P1_1923,loo_max,0.9091,rank correlation
+AP1-R-P1_1923,n,13,industries
+AP1-R-P1_1923,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-P1_1923,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P1_2023ai,rho,0.6084,rank correlation
+AP1-R-P1_2023ai,perm_p_pos,0.02012,probability
+AP1-R-P1_2023ai,perm_p_neg,0.98124,probability
+AP1-R-P1_2023ai,loo_min,0.4909,rank correlation
+AP1-R-P1_2023ai,loo_max,0.7182,rank correlation
+AP1-R-P1_2023ai,n,12,industries
+AP1-R-P1_2023ai,members,"511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-P1_2023ai,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P1_2425,rho,0.6209,rank correlation
+AP1-R-P1_2425,perm_p_pos,0.01345,probability
+AP1-R-P1_2425,perm_p_neg,0.98738,probability
+AP1-R-P1_2425,loo_min,0.5175,rank correlation
+AP1-R-P1_2425,loo_max,0.7622,rank correlation
+AP1-R-P1_2425,n,13,industries
+AP1-R-P1_2425,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-P1_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P1_no_ai_suppliers,rho,0.2182,rank correlation
+AP1-R-P1_no_ai_suppliers,perm_p_pos,0.26340,probability
+AP1-R-P1_no_ai_suppliers,perm_p_neg,0.74518,probability
+AP1-R-P1_no_ai_suppliers,loo_min,-0.0424,rank correlation
+AP1-R-P1_no_ai_suppliers,loo_max,0.3576,rank correlation
+AP1-R-P1_no_ai_suppliers,n,11,industries
+AP1-R-P1_no_ai_suppliers,members,"441,512,523,524,561,621,713,722,23,31-33,42",list
+AP1-R-P1_no_ai_suppliers,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P1_no_finance,rho,0.5636,rank correlation
+AP1-R-P1_no_finance,perm_p_pos,0.03806,probability
+AP1-R-P1_no_finance,perm_p_neg,0.96451,probability
+AP1-R-P1_no_finance,loo_min,0.4182,rank correlation
+AP1-R-P1_no_finance,loo_max,0.7576,rank correlation
+AP1-R-P1_no_finance,n,11,industries
+AP1-R-P1_no_finance,members,"441,511,512,541,561,621,713,722,23,31-33,42",list
+AP1-R-P1_no_finance,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P1_subsectors_only,rho,0.4667,rank correlation
+AP1-R-P1_subsectors_only,perm_p_pos,0.08823,probability
+AP1-R-P1_subsectors_only,perm_p_neg,0.91745,probability
+AP1-R-P1_subsectors_only,loo_min,0.2667,rank correlation
+AP1-R-P1_subsectors_only,loo_max,0.8667,rank correlation
+AP1-R-P1_subsectors_only,n,10,industries
+AP1-R-P1_subsectors_only,members,"441,511,512,523,524,541,561,621,713,722",list
+AP1-R-P1_subsectors_only,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P1_v1_20,rho,0.4902,rank correlation
+AP1-R-P1_v1_20,perm_p_pos,0.01541,probability
+AP1-R-P1_v1_20,perm_p_neg,0.98489,probability
+AP1-R-P1_v1_20,loo_min,0.4105,rank correlation
+AP1-R-P1_v1_20,loo_max,0.6070,rank correlation
+AP1-R-P1_v1_20,n,20,industries
+AP1-R-P1_v1_20,members,"441,511,512,518_519,522,523,524,541,561,611,621,624,711,713,722,23,31-33,42,48-49,81",list
+AP1-R-P1_v1_20,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P2_2023ai,rho,0.1399,rank correlation
+AP1-R-P2_2023ai,perm_p_pos,0.33326,probability
+AP1-R-P2_2023ai,perm_p_neg,0.67508,probability
+AP1-R-P2_2023ai,loo_min,-0.0727,rank correlation
+AP1-R-P2_2023ai,loo_max,0.3182,rank correlation
+AP1-R-P2_2023ai,n,12,industries
+AP1-R-P2_2023ai,members,"511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-P2_2023ai,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P2_2425,rho,0.0604,rank correlation
+AP1-R-P2_2425,perm_p_pos,0.42436,probability
+AP1-R-P2_2425,perm_p_neg,0.58244,probability
+AP1-R-P2_2425,loo_min,-0.1189,rank correlation
+AP1-R-P2_2425,loo_max,0.2937,rank correlation
+AP1-R-P2_2425,n,13,industries
+AP1-R-P2_2425,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-P2_2425,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P2_no_ai_suppliers,rho,0.1636,rank correlation
+AP1-R-P2_no_ai_suppliers,perm_p_pos,0.31668,probability
+AP1-R-P2_no_ai_suppliers,perm_p_neg,0.69244,probability
+AP1-R-P2_no_ai_suppliers,loo_min,-0.0424,rank correlation
+AP1-R-P2_no_ai_suppliers,loo_max,0.2970,rank correlation
+AP1-R-P2_no_ai_suppliers,n,11,industries
+AP1-R-P2_no_ai_suppliers,members,"441,512,523,524,561,621,713,722,23,31-33,42",list
+AP1-R-P2_no_ai_suppliers,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P2_no_finance,rho,-0.0545,rank correlation
+AP1-R-P2_no_finance,perm_p_pos,0.57097,probability
+AP1-R-P2_no_finance,perm_p_neg,0.43976,probability
+AP1-R-P2_no_finance,loo_min,-0.3333,rank correlation
+AP1-R-P2_no_finance,loo_max,0.0424,rank correlation
+AP1-R-P2_no_finance,n,11,industries
+AP1-R-P2_no_finance,members,"441,511,512,541,561,621,713,722,23,31-33,42",list
+AP1-R-P2_no_finance,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P2_subsectors_only,rho,0.3212,rank correlation
+AP1-R-P2_subsectors_only,perm_p_pos,0.18352,probability
+AP1-R-P2_subsectors_only,perm_p_neg,0.82642,probability
+AP1-R-P2_subsectors_only,loo_min,0.1167,rank correlation
+AP1-R-P2_subsectors_only,loo_max,0.6833,rank correlation
+AP1-R-P2_subsectors_only,n,10,industries
+AP1-R-P2_subsectors_only,members,"441,511,512,523,524,541,561,621,713,722",list
+AP1-R-P2_subsectors_only,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P2_v1_20,rho,0.1549,rank correlation
+AP1-R-P2_v1_20,perm_p_pos,0.25611,probability
+AP1-R-P2_v1_20,perm_p_neg,0.74610,probability
+AP1-R-P2_v1_20,loo_min,0.0333,rank correlation
+AP1-R-P2_v1_20,loo_max,0.2561,rank correlation
+AP1-R-P2_v1_20,n,20,industries
+AP1-R-P2_v1_20,members,"441,511,512,518_519,522,523,524,541,561,611,621,624,711,713,722,23,31-33,42,48-49,81",list
+AP1-R-P2_v1_20,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P3_1923,rho,-0.1036,rank correlation
+AP1-R-P3_1923,perm_p_pos,0.64814,probability
+AP1-R-P3_1923,perm_p_neg,0.35677,probability
+AP1-R-P3_1923,loo_min,-0.3363,rank correlation
+AP1-R-P3_1923,loo_max,-0.0110,rank correlation
+AP1-R-P3_1923,n,15,industries
+AP1-R-P3_1923,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P3_1923,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P3_2023ai,rho,0.6264,rank correlation
+AP1-R-P3_2023ai,perm_p_pos,0.00964,probability
+AP1-R-P3_2023ai,perm_p_neg,0.99092,probability
+AP1-R-P3_2023ai,loo_min,0.5440,rank correlation
+AP1-R-P3_2023ai,loo_max,0.8022,rank correlation
+AP1-R-P3_2023ai,n,14,industries
+AP1-R-P3_2023ai,members,"511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P3_2023ai,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P3_2425,rho,0.7964,rank correlation
+AP1-R-P3_2425,perm_p_pos,0.00037,probability
+AP1-R-P3_2425,perm_p_neg,0.99966,probability
+AP1-R-P3_2425,loo_min,0.7495,rank correlation
+AP1-R-P3_2425,loo_max,0.8462,rank correlation
+AP1-R-P3_2425,n,15,industries
+AP1-R-P3_2425,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P3_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P3_no_ai_suppliers,rho,0.6374,rank correlation
+AP1-R-P3_no_ai_suppliers,perm_p_pos,0.01106,probability
+AP1-R-P3_no_ai_suppliers,perm_p_neg,0.98970,probability
+AP1-R-P3_no_ai_suppliers,loo_min,0.5734,rank correlation
+AP1-R-P3_no_ai_suppliers,loo_max,0.8182,rank correlation
+AP1-R-P3_no_ai_suppliers,n,13,industries
+AP1-R-P3_no_ai_suppliers,members,"441,512,523,524,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P3_no_ai_suppliers,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P3_no_finance,rho,0.6868,rank correlation
+AP1-R-P3_no_finance,perm_p_pos,0.00585,probability
+AP1-R-P3_no_finance,perm_p_neg,0.99450,probability
+AP1-R-P3_no_finance,loo_min,0.6014,rank correlation
+AP1-R-P3_no_finance,loo_max,0.8252,rank correlation
+AP1-R-P3_no_finance,n,13,industries
+AP1-R-P3_no_finance,members,"441,511,512,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P3_no_finance,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P3_subsectors_only,rho,0.4406,rank correlation
+AP1-R-P3_subsectors_only,perm_p_pos,0.07752,probability
+AP1-R-P3_subsectors_only,perm_p_neg,0.92608,probability
+AP1-R-P3_subsectors_only,loo_min,0.2909,rank correlation
+AP1-R-P3_subsectors_only,loo_max,0.7091,rank correlation
+AP1-R-P3_subsectors_only,n,12,industries
+AP1-R-P3_subsectors_only,members,"441,511,512,523,524,541,561,611,621,624,713,722",list
+AP1-R-P3_subsectors_only,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AP1-R-P3_v1_20,rho,0.6632,rank correlation
+AP1-R-P3_v1_20,perm_p_pos,0.00091,probability
+AP1-R-P3_v1_20,perm_p_neg,0.99916,probability
+AP1-R-P3_v1_20,loo_min,0.6298,rank correlation
+AP1-R-P3_v1_20,loo_max,0.7667,rank correlation
+AP1-R-P3_v1_20,n,20,industries
+AP1-R-P3_v1_20,members,"441,511,512,518_519,522,523,524,541,561,611,621,624,711,713,722,23,31-33,42,48-49,81",list
+AP1-R-P3_v1_20,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_2023ai,rho,0.8769,rank correlation
+AP1-R-P4_2023ai,perm_p_pos,0.00003,probability
+AP1-R-P4_2023ai,perm_p_neg,0.99998,probability
+AP1-R-P4_2023ai,loo_min,0.8462,rank correlation
+AP1-R-P4_2023ai,loo_max,0.9121,rank correlation
+AP1-R-P4_2023ai,n,14,industries
+AP1-R-P4_2023ai,members,"511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P4_2023ai,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_2425,rho,0.8679,rank correlation
+AP1-R-P4_2425,perm_p_pos,0.00004,probability
+AP1-R-P4_2425,perm_p_neg,0.99997,probability
+AP1-R-P4_2425,loo_min,0.8374,rank correlation
+AP1-R-P4_2425,loo_max,0.8989,rank correlation
+AP1-R-P4_2425,n,15,industries
+AP1-R-P4_2425,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P4_2425,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_no_ai_suppliers,rho,0.8791,rank correlation
+AP1-R-P4_no_ai_suppliers,perm_p_pos,0.00009,probability
+AP1-R-P4_no_ai_suppliers,perm_p_neg,0.99994,probability
+AP1-R-P4_no_ai_suppliers,loo_min,0.8462,rank correlation
+AP1-R-P4_no_ai_suppliers,loo_max,0.9161,rank correlation
+AP1-R-P4_no_ai_suppliers,n,13,industries
+AP1-R-P4_no_ai_suppliers,members,"441,512,523,524,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P4_no_ai_suppliers,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_no_finance,rho,0.8901,rank correlation
+AP1-R-P4_no_finance,perm_p_pos,0.00008,probability
+AP1-R-P4_no_finance,perm_p_neg,0.99993,probability
+AP1-R-P4_no_finance,loo_min,0.8601,rank correlation
+AP1-R-P4_no_finance,loo_max,0.9301,rank correlation
+AP1-R-P4_no_finance,n,13,industries
+AP1-R-P4_no_finance,members,"441,511,512,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-P4_no_finance,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_subsectors_only,rho,0.8741,rank correlation
+AP1-R-P4_subsectors_only,perm_p_pos,0.00024,probability
+AP1-R-P4_subsectors_only,perm_p_neg,0.99985,probability
+AP1-R-P4_subsectors_only,loo_min,0.8364,rank correlation
+AP1-R-P4_subsectors_only,loo_max,0.9182,rank correlation
+AP1-R-P4_subsectors_only,n,12,industries
+AP1-R-P4_subsectors_only,members,"441,511,512,523,524,541,561,611,621,624,713,722",list
+AP1-R-P4_subsectors_only,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-P4_v1_20,rho,0.6496,rank correlation
+AP1-R-P4_v1_20,perm_p_pos,0.00121,probability
+AP1-R-P4_v1_20,perm_p_neg,0.99882,probability
+AP1-R-P4_v1_20,loo_min,0.6158,rank correlation
+AP1-R-P4_v1_20,loo_max,0.8000,rank correlation
+AP1-R-P4_v1_20,n,20,industries
+AP1-R-P4_v1_20,members,"441,511,512,518_519,522,523,524,541,561,611,621,624,711,713,722,23,31-33,42,48-49,81",list
+AP1-R-P4_v1_20,label_if_it_were_primary_not_used,SUPPORT,text
+AP1-R-WEIGHTED-P1,pearson_weighted_2019_nominal_va,0.2653,correlation
+AP1-R-WEIGHTED-P1,weights_total_2019_nominal_va,9688008.00,millions USD
+AP1-R-WEIGHTED-P1,n,13,industries
+AP1-R-WEIGHTED-P1,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-WEIGHTED-P2,pearson_weighted_2019_nominal_va,-0.0114,correlation
+AP1-R-WEIGHTED-P2,weights_total_2019_nominal_va,9688008.00,millions USD
+AP1-R-WEIGHTED-P2,n,13,industries
+AP1-R-WEIGHTED-P2,members,"441,511,512,523,524,541,561,621,713,722,23,31-33,42",list
+AP1-R-WEIGHTED-P3,pearson_weighted_2019_nominal_va,0.5483,correlation
+AP1-R-WEIGHTED-P3,weights_total_2019_nominal_va,10105191.00,millions USD
+AP1-R-WEIGHTED-P3,n,15,industries
+AP1-R-WEIGHTED-P3,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-WEIGHTED-P4,pearson_weighted_2019_nominal_va,0.5816,correlation
+AP1-R-WEIGHTED-P4,weights_total_2019_nominal_va,10105191.00,millions USD
+AP1-R-WEIGHTED-P4,n,15,industries
+AP1-R-WEIGHTED-P4,members,"441,511,512,523,524,541,561,611,621,624,713,722,23,31-33,42",list
+AP1-R-NATIONAL,n,1,industry
+AP1-R-NATIONAL,members,Private industries (A4303C),series
+AP1-R-NATIONAL,private_real_va_per_fte_2017,147.656898,millions 2017 USD per thousand FTE
+AP1-R-NATIONAL,private_real_va_per_fte_2019,151.221250,millions 2017 USD per thousand FTE
+AP1-R-NATIONAL,private_real_va_per_fte_2023,161.336618,millions 2017 USD per thousand FTE
+AP1-R-NATIONAL,private_real_va_per_fte_2024,165.300203,millions 2017 USD per thousand FTE
+AP1-R-NATIONAL,private_real_va_per_fte_2025,169.313828,millions 2017 USD per thousand FTE
+AP1-R-NATIONAL,private_g_pre,0.023853,log points
+AP1-R-NATIONAL,private_g_post,0.048261,log points
+AP1-R-NATIONAL,private_g_diff,0.024408,log points
+AP1-R-NATIONAL,private_g_1923,0.064749,log points
+AP1-R-NATIONAL,private_g_post_2425,0.023991,log points
