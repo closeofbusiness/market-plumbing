@@ -205,7 +205,7 @@ from outside 13 Oct, when one FX claim fell (C-136), one commodities claim fell 
   what caused either price move is HYPOTHESIS).
 Derivatives as a market-structure flow remain open. Fifteen follow-up items had first tests on 14 Oct, each checked at source
 (the E-021 note's last section). Three tests are written down before their data: Japan's August Treasury holdings (16 Oct), the
-refunding statement (4 Nov) and the BIS stock of dollar FX forwards and swaps (by 16 Nov). The swap-dealer line failed as a stand-in for commodity index
+refunding statement (4 Nov) and the BIS stock of dollar FX forwards and swaps (7 Dec). The swap-dealer line failed as a stand-in for commodity index
 investment. Gold's link to real yields is not established on public monthly data (HYPOTHESIS). Two builds followed on 15 Oct.
 Registered funds took about a sixth of the new Treasury duration on their own filings: $549bn of $3,218bn, or $450bn scaled to
 Z.1. The first-order verdict is not established, but in 2026H1 they took 23–29%, well above their 15% share (R2b; the measured arm

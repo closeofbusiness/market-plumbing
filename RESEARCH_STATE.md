@@ -643,7 +643,7 @@ Do not restate findings here. Status and detail stay in the home section named o
                                                        C-131, C-132). Next: TIC closure ledger (test 16 Oct), COT ledger, gold tonnes ledger.
                                                        FIFTEEN FOLLOW-UP ITEMS, first tests 14 Oct (Grok batch g4, every item checked at source by
                                                        the supervisor): see the E-021 note's last section and _research/2026-10-14-Grok-G4-Returns.md.
-                                                       Pre-registered in CALENDAR.tsv: 16 Oct (Japan TIC), 4 Nov (refunding), by 16 Nov (BIS). Build
+                                                       Pre-registered in CALENDAR.tsv: 16 Oct (Japan TIC), 4 Nov (refunding), 7 Dec (BIS). Build
                                                        queue there. Builds 1-2 DONE 15 Oct: ST1 (swap tape, E-024) and R2b (N-PORT duration, verdict NOT ESTABLISHED).
                                                        The four next builds all landed 18 Oct: bin/cot_horizons.py, bin/fx_rate_gap.py (the yen regression; dated-days run 10 Nov), bin/gold_real_yield_break.py, bin/r15_yield_comovement.py. Results are in their data folders and CALENDAR rows, not here.
    --   Who funds the ~89% private share of record issuance  S1 / I1b raise it; nobody has taken it
