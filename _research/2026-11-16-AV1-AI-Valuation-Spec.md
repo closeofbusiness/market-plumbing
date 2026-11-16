@@ -93,3 +93,61 @@ SEC earnings and market values) need a price source and the SEC route, and are a
 statistic, `scores.csv`, `detail.csv`, README). Industries are matched by exact name (whitespace normalised); the header row is found
 by the "Industry" cell and columns by exact header text. A gate is registered in `bin/check.sh` at landing. Every statistic carries
 its denominator (industries kept and dropped, dates used).
+
+## Version 2 — amended after the attack, still blind (16 November 2026)
+
+Grok (Cursor, read and web, blind rule) attacked version 1; its return is filed as `_research/2026-11-16-AV1-Grok-Attack.md`. It
+fetched nine Damodaran documentation pages, cited only those, and reported no figure. **Its own blind check says web-search snippets
+showed it a current industry PE table and other market figures; it states none was used, and none appears in the return.** Grok is
+not the builder and no figure reached the supervisor. The supervisor re-read three of its quotes verbatim (`datacurrent.html`: trailing
+data "through the third quarter of the prior year"; `sourcedata.htm`: the trailing-twelve-month and the 10-K sentences), and read the
+"Variables & FAQ" sheet (text only) of `DollarUS22.xls`, the current `DollarUS.xls`, `pedata22.xls` and the current `pedata.xls`:
+"Market Cap" and "Net Income" are defined in the same words in both dollar files ("Aggregated value of net income across all companies
+in the group"), and the all-firms multiple in the same words in both PE files. **This section replaces the Measure and Statements
+sections of version 1. Where the two disagree, this section governs.**
+
+**Rulings.**
+1. *F1 (fatal): a positive gap is SUPPORT even if the AI complex's own multiple fell.* Accepted. SUPPORT also needs the AI pool's own
+   multiple to have risen; AGAINST also needs it to have fallen.
+2. *F2 (fatal): the January 2023 file pairs end-2022 prices with earnings to September 2022, after ChatGPT's release.* Overruled for the
+   label: ChatGPT was released on 30 November 2022, one month before the price date, and the repricing of AI firms the thesis concerns
+   came in 2023-25; a January 2022 baseline would put the 2022 rate shock inside the window. **Reported:** the same statistic from
+   January 2022 (`pedata21.xls` / `DollarUS21.xls`, checked by their "Date updated" cells).
+3. *F3 (fatal): industry buckets hold non-AI business and the AI firms are not all in them.* Accepted as the binding limit, not fatal:
+   AV1 tests seven named industries, not "AI firms". A frozen firm list needs firm-level values and is AV2. The build-out group stays
+   reported only.
+4. *F4: equal-weighted log multiples let a small industry with near-zero profit decide the result.* Accepted. **The labelled statistic
+   is pooled from the dollar files**: the AI pool's ln(ΣMarket Cap / ΣNet Income) change minus the same change for the pool of all
+   other kept industries.
+5. *F5, F11: re-sorting and renamed industries.* Accepted in part: the number of firms in each AI-complex industry at both dates is
+   printed; a frozen firm list is AV2. The "Date updated" cell is the only clock.
+6. *F6: which earnings.* Settled from the files' own definitions (above): aggregate net income of all firms in the group; the
+   documentation says trailing data run to the third quarter of the prior year. The README states this. If the definition text of
+   "Net Income" or "Market Cap" differs between the two dollar files used for the label, the build stops.
+7. *F7: P2 has no dollar file for 2017 and spans an unexplained gap.* Accepted: P2 is reported, not labelled.
+8. *F8: draw size and leave-one-out.* Accepted: K is the number of AI-complex industries kept; if K < 7 the result is INCONCLUSIVE; the
+   permutation reassigns the AI label to K of the kept industries; k counts draws with a gap at least as far in the tested tail as the
+   observed one; for each leave-one-out the permutation p is recomputed with K - 1 and must meet the same rule.
+9. *F9: dropping loss-making industries.* Accepted: an industry is dropped only if a required cell is missing or non-numeric; pooled
+   sums stay defined with loss-makers in them. If the AI pool's or the comparison pool's net income is non-positive at either date,
+   nothing is labelled.
+10. *F10: universe.* Accepted: the README describes the frame as Damodaran's: firms classified by country of incorporation (the US),
+    all listed firms with a market price, no size cut-off.
+
+**Measure (version 2).** For a pool P of industries at date t: M(P,t) = ln(Σ Market Cap / Σ Net Income), sums over the industries in
+P from the dollar file of date t. Price leg: Δln Σ Market Cap; earnings leg: Δln Σ Net Income (defined only when both sums are positive).
+Dates: January 2023 (`DollarUS22.xls`) and January 2026 (current `DollarUS.xls`). Kept industries: every industry present by exact name
+(whitespace normalised) in both dollar files, except the two total rows and "Diversified".
+
+**Statement (version 2).**
+
+| id | statement | statistic | SUPPORT | AGAINST |
+|---|---|---|---|---|
+| AV1-P1 | The AI complex's price-to-earnings multiple rose from January 2023 to January 2026, and by more than the rest of the market's | G = ΔM(AI pool) - ΔM(all other kept industries) | ΔM(AI pool) > 0, G > 0, one-sided permutation p ≤ 0.05, and every leave-one-out meets the same three conditions | ΔM(AI pool) < 0, G < 0, one-sided permutation p ≤ 0.05 (lower tail), and every leave-one-out meets the same three conditions |
+
+Otherwise INCONCLUSIVE. Seed 20261116, 100,000 permutations, p = (1 + k) / 100,001; a p within two Monte Carlo standard errors of 0.05
+is INCONCLUSIVE.
+
+**Reported, not labelled:** the price and earnings legs for both pools; version 1's P1 (equal-weighted mean of industry Δm from the PE
+files) and its median; version 1's P2 (Δm_post - Δm_pre from the PE files); the January 2022 baseline; January 2024 to January 2026;
+the money-making-firms multiple; the AI build-out group in place of the AI complex; firm counts; the BTOS-sector Spearman.
