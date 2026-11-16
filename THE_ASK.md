@@ -30,6 +30,19 @@ principal and append a new entry.
 
 ---
 
+## E-030 · 16 November 2026 — the wider AI wording confirmed; T4-T6 kept; T5 next
+
+Given after the supervisor quoted the E-029 sentence verbatim, listed theses T1-T6 (T4-T6 marked as the agent's proposals) and
+proposed T5 (jobs created against jobs displaced) as the next test:
+
+> *"Wording ok, keep T4-T6, do T5 next with Hydrogen"*
+
+**Reading notes.** The goal block sentence recorded under E-029 is now the principal's confirmed wording; no text changes. T4,
+T5 and T6 stay in `dossiers/ai-theses.md` as confirmed register entries. T5 is the next registered test, with Gemini 4 Hydrogen
+doing the delegable work (reads, build, blind recompute) under the usual ladder.
+
+---
+
 ## E-029 · 15 November 2026 — the AI sentence is too narrow: track several AI theses
 
 Given after the supervisor put the E-028 wording to him for confirmation ("Track AI adoption and the other measures of AI use, and
