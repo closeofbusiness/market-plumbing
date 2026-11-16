@@ -1,0 +1,882 @@
+# source: bin/aj1_ai_jobs.py build; scores computed after registered.csv (sha256 3a9e727210c3896db3eb97f48aff04ce563e687c533aa019ec456d21c26bd1a1) was written; spec _research/2026-11-16-AJ1-AI-Jobs-Spec.md sha256 53b53f49a93d55910f03088a9b5bbbbfcbd46e0bf6617fce8238efc8c45571c1; permutations 100000 seed 20261116
+statement_id,item,value,unit
+AJ1-SEC,ces_release_note,preliminary,text
+AJ1-SEC,jolts_release_note,preliminary,text
+AJ1-SEC,btos_cycles_required_2024_2025,46,cycles
+AJ1-SEC,btos_cycles_required_2023,8,cycles
+AJ1-SEC,subsectors_kept,19,subsectors
+AJ1-SEC,subsectors_dropped,64,subsectors
+AJ1-SEC,kept_subsectors_list,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-SEC,jolts_industries_count,15,industries
+AJ1-SEC,jolts_industries_list,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-SEC,ces_latest_12_months_span,2025-11..2026-10,YYYY-MM
+AJ1-SEC,jolts_latest_12_months_span,2025-10..2026-09,YYYY-MM
+AJ1-SEC,dropped_subsector_113,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_114,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_115,AI share published in 1 of 46 cycles (suppressed in 45),text
+AJ1-SEC,dropped_subsector_211,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_212,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_213,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_221,AI share published in 4 of 46 cycles (suppressed in 42),text
+AJ1-SEC,dropped_subsector_236,AI share published in 45 of 46 cycles (suppressed in 1),text
+AJ1-SEC,dropped_subsector_237,AI share published in 5 of 46 cycles (suppressed in 41),text
+AJ1-SEC,dropped_subsector_311,AI share published in 17 of 46 cycles (suppressed in 29),text
+AJ1-SEC,dropped_subsector_312,AI share published in 17 of 46 cycles (suppressed in 29),text
+AJ1-SEC,dropped_subsector_313,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_314,AI share published in 1 of 46 cycles (suppressed in 45),text
+AJ1-SEC,dropped_subsector_315,AI share published in 2 of 46 cycles (suppressed in 44),text
+AJ1-SEC,dropped_subsector_316,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_321,AI share published in 3 of 46 cycles (suppressed in 43),text
+AJ1-SEC,dropped_subsector_322,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_323,AI share published in 35 of 46 cycles (suppressed in 11),text
+AJ1-SEC,dropped_subsector_324,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_325,AI share published in 9 of 46 cycles (suppressed in 37),text
+AJ1-SEC,dropped_subsector_326,AI share published in 3 of 46 cycles (suppressed in 43),text
+AJ1-SEC,dropped_subsector_327,AI share published in 1 of 46 cycles (suppressed in 45),text
+AJ1-SEC,dropped_subsector_331,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_332,AI share published in 37 of 46 cycles (suppressed in 9),text
+AJ1-SEC,dropped_subsector_333,AI share published in 22 of 46 cycles (suppressed in 24),text
+AJ1-SEC,dropped_subsector_334,AI share published in 22 of 46 cycles (suppressed in 24),text
+AJ1-SEC,dropped_subsector_335,AI share published in 4 of 46 cycles (suppressed in 42),text
+AJ1-SEC,dropped_subsector_336,AI share published in 3 of 46 cycles (suppressed in 43),text
+AJ1-SEC,dropped_subsector_337,AI share published in 5 of 46 cycles (suppressed in 41),text
+AJ1-SEC,dropped_subsector_339,AI share published in 33 of 46 cycles (suppressed in 13),text
+AJ1-SEC,dropped_subsector_425,AI share published in 44 of 46 cycles (suppressed in 2),text
+AJ1-SEC,dropped_subsector_442,AI share published in 17 of 46 cycles (suppressed in 29),text
+AJ1-SEC,dropped_subsector_443,AI share published in 18 of 46 cycles (suppressed in 28),text
+AJ1-SEC,dropped_subsector_444,AI share published in 13 of 46 cycles (suppressed in 33),text
+AJ1-SEC,dropped_subsector_445,AI share published in 27 of 46 cycles (suppressed in 19),text
+AJ1-SEC,dropped_subsector_446,AI share published in 35 of 46 cycles (suppressed in 11),text
+AJ1-SEC,dropped_subsector_447,AI share published in 2 of 46 cycles (suppressed in 44),text
+AJ1-SEC,dropped_subsector_448,AI share published in 40 of 46 cycles (suppressed in 6),text
+AJ1-SEC,dropped_subsector_451,AI share published in 34 of 46 cycles (suppressed in 12),text
+AJ1-SEC,dropped_subsector_452,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_453,AI share published in 44 of 46 cycles (suppressed in 2),text
+AJ1-SEC,dropped_subsector_454,abolished in NAICS 2022 (spec ruling 5),text
+AJ1-SEC,dropped_subsector_481,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_483,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_484,AI share published in 32 of 46 cycles (suppressed in 14),text
+AJ1-SEC,dropped_subsector_485,AI share published in 7 of 46 cycles (suppressed in 39),text
+AJ1-SEC,dropped_subsector_486,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_487,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_488,AI share published in 19 of 46 cycles (suppressed in 27),text
+AJ1-SEC,dropped_subsector_492,AI share published in 8 of 46 cycles (suppressed in 38),text
+AJ1-SEC,dropped_subsector_493,AI share published in 1 of 46 cycles (suppressed in 45),text
+AJ1-SEC,dropped_subsector_511,"matched to CES 513, scope changed materially in NAICS 2022 (spec ruling 5; reported only)",text
+AJ1-SEC,dropped_subsector_515,AI share published in 20 of 46 cycles (suppressed in 26),text
+AJ1-SEC,dropped_subsector_517,AI share published in 33 of 46 cycles (suppressed in 13),text
+AJ1-SEC,dropped_subsector_519,scope changed materially in NAICS 2022 (spec ruling 5; reported only),text
+AJ1-SEC,dropped_subsector_523,"CES 523 includes NAICS 525, which BTOS excludes (spec ruling 6; reported only)",text
+AJ1-SEC,dropped_subsector_532,AI share published in 11 of 46 cycles (suppressed in 35),text
+AJ1-SEC,dropped_subsector_533,AI share published in 6 of 46 cycles (suppressed in 40),text
+AJ1-SEC,dropped_subsector_551,AI share published in 7 of 46 cycles (suppressed in 39),text
+AJ1-SEC,dropped_subsector_562,AI share published in 11 of 46 cycles (suppressed in 35),text
+AJ1-SEC,dropped_subsector_622,AI share published in 0 of 46 cycles (suppressed in 46),text
+AJ1-SEC,dropped_subsector_623,AI share published in 20 of 46 cycles (suppressed in 26),text
+AJ1-SEC,dropped_subsector_712,AI share published in 26 of 46 cycles (suppressed in 20),text
+AJ1-SEC,dropped_subsector_721,AI share published in 36 of 46 cycles (suppressed in 10),text
+AJ1-SEC,ces_2019_emp_sector_54,9535.73,thousands
+AJ1-SEC,ces_2019_emp_sector_55,2517.20,thousands
+AJ1-SEC,ces_2019_emp_sector_56,9318.95,thousands
+AJ1-SEC,sector_55_share_of_54_55_56_emp_2019,0.117781,share
+AJ1-SEC,jolts_540099_weighted_ai_mean_pct,11.2226,percent of firms
+AJ1-SEC,utilities_22_share_of_48_49_22_emp_2019,not fetched (no CES 22 or 48-49 series in spec 40-series list),note
+AJ1-P1,rho,-0.2263,rank correlation
+AJ1-P1,perm_p_pos,0.82671,probability
+AJ1-P1,perm_p_neg,0.17518,probability
+AJ1-P1,loo_min,-0.3065,rank correlation
+AJ1-P1,loo_max,-0.0960,rank correlation
+AJ1-P1,loo_undefined,0,count
+AJ1-P1,n,19,industries
+AJ1-P1,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-P1,permutations,100000,count
+AJ1-P1,seed,20261116,integer
+AJ1-P1,mc_se_at_0.05,0.000689,probability
+AJ1-P1,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AJ1-P1,loo_without_238,-0.2219,rank correlation
+AJ1-P1,loo_without_423,-0.2632,rank correlation
+AJ1-P1,loo_without_424,-0.2632,rank correlation
+AJ1-P1,loo_without_441,-0.2343,rank correlation
+AJ1-P1,loo_without_512,-0.0960,rank correlation
+AJ1-P1,loo_without_518,-0.1269,rank correlation
+AJ1-P1,loo_without_522,-0.2074,rank correlation
+AJ1-P1,loo_without_524,-0.2322,rank correlation
+AJ1-P1,loo_without_531,-0.1827,rank correlation
+AJ1-P1,loo_without_541,-0.1207,rank correlation
+AJ1-P1,loo_without_561,-0.2570,rank correlation
+AJ1-P1,loo_without_611,-0.3065,rank correlation
+AJ1-P1,loo_without_621,-0.2921,rank correlation
+AJ1-P1,loo_without_624,-0.2549,rank correlation
+AJ1-P1,loo_without_711,-0.2921,rank correlation
+AJ1-P1,loo_without_713,-0.2219,rank correlation
+AJ1-P1,loo_without_722,-0.2425,rank correlation
+AJ1-P1,loo_without_811,-0.2219,rank correlation
+AJ1-P1,loo_without_812,-0.2508,rank correlation
+AJ1-P2,rho,-0.2579,rank correlation
+AJ1-P2,perm_p_pos,0.86012,probability
+AJ1-P2,perm_p_neg,0.14174,probability
+AJ1-P2,loo_min,-0.3664,rank correlation
+AJ1-P2,loo_max,-0.1290,rank correlation
+AJ1-P2,loo_undefined,0,count
+AJ1-P2,n,19,industries
+AJ1-P2,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-P2,permutations,100000,count
+AJ1-P2,seed,20261116,integer
+AJ1-P2,mc_se_at_0.05,0.000689,probability
+AJ1-P2,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AJ1-P2,loo_without_238,-0.3209,rank correlation
+AJ1-P2,loo_without_423,-0.2859,rank correlation
+AJ1-P2,loo_without_424,-0.2735,rank correlation
+AJ1-P2,loo_without_441,-0.2838,rank correlation
+AJ1-P2,loo_without_512,-0.1290,rank correlation
+AJ1-P2,loo_without_518,-0.1290,rank correlation
+AJ1-P2,loo_without_522,-0.2446,rank correlation
+AJ1-P2,loo_without_524,-0.2322,rank correlation
+AJ1-P2,loo_without_531,-0.1620,rank correlation
+AJ1-P2,loo_without_541,-0.1476,rank correlation
+AJ1-P2,loo_without_561,-0.2570,rank correlation
+AJ1-P2,loo_without_611,-0.3664,rank correlation
+AJ1-P2,loo_without_621,-0.3251,rank correlation
+AJ1-P2,loo_without_624,-0.2838,rank correlation
+AJ1-P2,loo_without_711,-0.3251,rank correlation
+AJ1-P2,loo_without_713,-0.2693,rank correlation
+AJ1-P2,loo_without_722,-0.2755,rank correlation
+AJ1-P2,loo_without_811,-0.2838,rank correlation
+AJ1-P2,loo_without_812,-0.2838,rank correlation
+AJ1-P3,rho,0.7954,rank correlation
+AJ1-P3,perm_p_pos,0.00031,probability
+AJ1-P3,perm_p_neg,0.99970,probability
+AJ1-P3,loo_min,0.7657,rank correlation
+AJ1-P3,loo_max,0.8405,rank correlation
+AJ1-P3,loo_undefined,0,count
+AJ1-P3,n,15,industries
+AJ1-P3,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-P3,permutations,100000,count
+AJ1-P3,seed,20261116,integer
+AJ1-P3,mc_se_at_0.05,0.000689,probability
+AJ1-P3,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AJ1-P3,loo_without_230000,0.7833,rank correlation
+AJ1-P3,loo_without_320000,0.7978,rank correlation
+AJ1-P3,loo_without_340000,0.8066,rank correlation
+AJ1-P3,loo_without_420000,0.7943,rank correlation
+AJ1-P3,loo_without_440000,0.7745,rank correlation
+AJ1-P3,loo_without_480099,0.7943,rank correlation
+AJ1-P3,loo_without_510000,0.7657,rank correlation
+AJ1-P3,loo_without_520000,0.7833,rank correlation
+AJ1-P3,loo_without_530000,0.8053,rank correlation
+AJ1-P3,loo_without_540099,0.8229,rank correlation
+AJ1-P3,loo_without_610000,0.7657,rank correlation
+AJ1-P3,loo_without_620000,0.7701,rank correlation
+AJ1-P3,loo_without_710000,0.7745,rank correlation
+AJ1-P3,loo_without_720000,0.8405,rank correlation
+AJ1-P3,loo_without_810000,0.8053,rank correlation
+AJ1-TABLE,ces_238_ai_mean_2024_2025_pct,2.0152,percent of firms
+AJ1-TABLE,ces_238_ai_mean_2023_pct,1.0125,percent of firms
+AJ1-TABLE,ces_238_mean_2017,4427.18,thousands
+AJ1-TABLE,ces_238_mean_2018,4612.47,thousands
+AJ1-TABLE,ces_238_mean_2019,4750.02,thousands
+AJ1-TABLE,ces_238_mean_2023,5085.51,thousands
+AJ1-TABLE,ces_238_mean_2024,5200.57,thousands
+AJ1-TABLE,ces_238_mean_2025,5228.01,thousands
+AJ1-TABLE,ces_238_g_pre,0.070386,log points
+AJ1-TABLE,ces_238_g_post,0.027635,log points
+AJ1-TABLE,ces_238_diff,-0.042751,log points
+AJ1-TABLE,ces_238_g_1923,0.068247,log points
+AJ1-TABLE,ces_238_g_post_2425,0.005261,log points
+AJ1-TABLE,ces_238_g_pre_1819,0.029384,log points
+AJ1-TABLE,ces_238_g_latest,0.032485,log points
+AJ1-TABLE,ces_423_ai_mean_2024_2025_pct,3.8391,percent of firms
+AJ1-TABLE,ces_423_ai_mean_2023_pct,2.1500,percent of firms
+AJ1-TABLE,ces_423_mean_2017,3108.25,thousands
+AJ1-TABLE,ces_423_mean_2018,3148.72,thousands
+AJ1-TABLE,ces_423_mean_2019,3201.88,thousands
+AJ1-TABLE,ces_423_mean_2023,3394.45,thousands
+AJ1-TABLE,ces_423_mean_2024,3421.27,thousands
+AJ1-TABLE,ces_423_mean_2025,3403.01,thousands
+AJ1-TABLE,ces_423_g_pre,0.029677,log points
+AJ1-TABLE,ces_423_g_post,0.002518,log points
+AJ1-TABLE,ces_423_diff,-0.027159,log points
+AJ1-TABLE,ces_423_g_1923,0.058405,log points
+AJ1-TABLE,ces_423_g_post_2425,-0.005351,log points
+AJ1-TABLE,ces_423_g_pre_1819,0.016742,log points
+AJ1-TABLE,ces_423_g_latest,0.003957,log points
+AJ1-TABLE,ces_424_ai_mean_2024_2025_pct,3.4043,percent of firms
+AJ1-TABLE,ces_424_ai_mean_2023_pct,1.6500,percent of firms
+AJ1-TABLE,ces_424_mean_2017,2152.67,thousands
+AJ1-TABLE,ces_424_mean_2018,2151.38,thousands
+AJ1-TABLE,ces_424_mean_2019,2162.34,thousands
+AJ1-TABLE,ces_424_mean_2023,2205.21,thousands
+AJ1-TABLE,ces_424_mean_2024,2208.80,thousands
+AJ1-TABLE,ces_424_mean_2025,2210.39,thousands
+AJ1-TABLE,ces_424_g_pre,0.004484,log points
+AJ1-TABLE,ces_424_g_post,0.002348,log points
+AJ1-TABLE,ces_424_diff,-0.002137,log points
+AJ1-TABLE,ces_424_g_1923,0.019630,log points
+AJ1-TABLE,ces_424_g_post_2425,0.000720,log points
+AJ1-TABLE,ces_424_g_pre_1819,0.005081,log points
+AJ1-TABLE,ces_424_g_latest,0.000669,log points
+AJ1-TABLE,ces_441_ai_mean_2024_2025_pct,4.0283,percent of firms
+AJ1-TABLE,ces_441_mean_2017,2012.32,thousands
+AJ1-TABLE,ces_441_mean_2018,2022.98,thousands
+AJ1-TABLE,ces_441_mean_2019,2034.14,thousands
+AJ1-TABLE,ces_441_mean_2023,2037.48,thousands
+AJ1-TABLE,ces_441_mean_2024,2047.46,thousands
+AJ1-TABLE,ces_441_mean_2025,2049.26,thousands
+AJ1-TABLE,ces_441_g_pre,0.010787,log points
+AJ1-TABLE,ces_441_g_post,0.005763,log points
+AJ1-TABLE,ces_441_diff,-0.005025,log points
+AJ1-TABLE,ces_441_g_1923,0.001641,log points
+AJ1-TABLE,ces_441_g_post_2425,0.000879,log points
+AJ1-TABLE,ces_441_g_pre_1819,0.005505,log points
+AJ1-TABLE,ces_441_g_latest,0.006259,log points
+AJ1-TABLE,ces_512_ai_mean_2024_2025_pct,18.4891,percent of firms
+AJ1-TABLE,ces_512_ai_mean_2023_pct,14.9500,percent of firms
+AJ1-TABLE,ces_512_mean_2017,432.55,thousands
+AJ1-TABLE,ces_512_mean_2018,441.31,thousands
+AJ1-TABLE,ces_512_mean_2019,437.77,thousands
+AJ1-TABLE,ces_512_mean_2023,405.63,thousands
+AJ1-TABLE,ces_512_mean_2024,385.90,thousands
+AJ1-TABLE,ces_512_mean_2025,354.43,thousands
+AJ1-TABLE,ces_512_g_pre,0.011988,log points
+AJ1-TABLE,ces_512_g_post,-0.134953,log points
+AJ1-TABLE,ces_512_diff,-0.146941,log points
+AJ1-TABLE,ces_512_g_1923,-0.076236,log points
+AJ1-TABLE,ces_512_g_post_2425,-0.085082,log points
+AJ1-TABLE,ces_512_g_pre_1819,-0.008058,log points
+AJ1-TABLE,ces_512_g_latest,-0.194833,log points
+AJ1-TABLE,ces_518_ai_mean_2024_2025_pct,26.7783,percent of firms
+AJ1-TABLE,ces_518_ai_mean_2023_pct,18.9375,percent of firms
+AJ1-TABLE,ces_518_mean_2017,318.01,thousands
+AJ1-TABLE,ces_518_mean_2018,331.03,thousands
+AJ1-TABLE,ces_518_mean_2019,343.23,thousands
+AJ1-TABLE,ces_518_mean_2023,485.43,thousands
+AJ1-TABLE,ces_518_mean_2024,481.30,thousands
+AJ1-TABLE,ces_518_mean_2025,479.85,thousands
+AJ1-TABLE,ces_518_g_pre,0.076333,log points
+AJ1-TABLE,ces_518_g_post,-0.011551,log points
+AJ1-TABLE,ces_518_diff,-0.087884,log points
+AJ1-TABLE,ces_518_g_1923,0.346614,log points
+AJ1-TABLE,ces_518_g_post_2425,-0.003017,log points
+AJ1-TABLE,ces_518_g_pre_1819,0.036217,log points
+AJ1-TABLE,ces_518_g_latest,-0.046902,log points
+AJ1-TABLE,ces_522_ai_mean_2024_2025_pct,7.4696,percent of firms
+AJ1-TABLE,ces_522_ai_mean_2023_pct,4.6250,percent of firms
+AJ1-TABLE,ces_522_mean_2017,2646.76,thousands
+AJ1-TABLE,ces_522_mean_2018,2653.13,thousands
+AJ1-TABLE,ces_522_mean_2019,2650.88,thousands
+AJ1-TABLE,ces_522_mean_2023,2627.50,thousands
+AJ1-TABLE,ces_522_mean_2024,2569.23,thousands
+AJ1-TABLE,ces_522_mean_2025,2564.78,thousands
+AJ1-TABLE,ces_522_g_pre,0.001554,log points
+AJ1-TABLE,ces_522_g_post,-0.024159,log points
+AJ1-TABLE,ces_522_diff,-0.025713,log points
+AJ1-TABLE,ces_522_g_1923,-0.008857,log points
+AJ1-TABLE,ces_522_g_post_2425,-0.001734,log points
+AJ1-TABLE,ces_522_g_pre_1819,-0.000852,log points
+AJ1-TABLE,ces_522_g_latest,-0.033564,log points
+AJ1-TABLE,ces_524_ai_mean_2024_2025_pct,7.1652,percent of firms
+AJ1-TABLE,ces_524_ai_mean_2023_pct,4.3750,percent of firms
+AJ1-TABLE,ces_524_mean_2017,2659.59,thousands
+AJ1-TABLE,ces_524_mean_2018,2712.72,thousands
+AJ1-TABLE,ces_524_mean_2019,2802.33,thousands
+AJ1-TABLE,ces_524_mean_2023,2969.33,thousands
+AJ1-TABLE,ces_524_mean_2024,2999.29,thousands
+AJ1-TABLE,ces_524_mean_2025,3013.34,thousands
+AJ1-TABLE,ces_524_g_pre,0.052277,log points
+AJ1-TABLE,ces_524_g_post,0.014712,log points
+AJ1-TABLE,ces_524_diff,-0.037565,log points
+AJ1-TABLE,ces_524_g_1923,0.057888,log points
+AJ1-TABLE,ces_524_g_post_2425,0.004674,log points
+AJ1-TABLE,ces_524_g_pre_1819,0.032499,log points
+AJ1-TABLE,ces_524_g_latest,-0.004585,log points
+AJ1-TABLE,ces_531_ai_mean_2024_2025_pct,10.0326,percent of firms
+AJ1-TABLE,ces_531_ai_mean_2023_pct,7.1500,percent of firms
+AJ1-TABLE,ces_531_mean_2017,1605.48,thousands
+AJ1-TABLE,ces_531_mean_2018,1662.87,thousands
+AJ1-TABLE,ces_531_mean_2019,1717.71,thousands
+AJ1-TABLE,ces_531_mean_2023,1851.88,thousands
+AJ1-TABLE,ces_531_mean_2024,1859.67,thousands
+AJ1-TABLE,ces_531_mean_2025,1857.80,thousands
+AJ1-TABLE,ces_531_g_pre,0.067566,log points
+AJ1-TABLE,ces_531_g_post,0.003190,log points
+AJ1-TABLE,ces_531_diff,-0.064376,log points
+AJ1-TABLE,ces_531_g_1923,0.075212,log points
+AJ1-TABLE,ces_531_g_post_2425,-0.001009,log points
+AJ1-TABLE,ces_531_g_pre_1819,0.032448,log points
+AJ1-TABLE,ces_531_g_latest,-0.001261,log points
+AJ1-TABLE,ces_541_ai_mean_2024_2025_pct,16.2478,percent of firms
+AJ1-TABLE,ces_541_ai_mean_2023_pct,10.1250,percent of firms
+AJ1-TABLE,ces_541_mean_2017,9057.78,thousands
+AJ1-TABLE,ces_541_mean_2018,9281.65,thousands
+AJ1-TABLE,ces_541_mean_2019,9535.73,thousands
+AJ1-TABLE,ces_541_mean_2023,10766.88,thousands
+AJ1-TABLE,ces_541_mean_2024,10802.22,thousands
+AJ1-TABLE,ces_541_mean_2025,10778.90,thousands
+AJ1-TABLE,ces_541_g_pre,0.051421,log points
+AJ1-TABLE,ces_541_g_post,0.001115,log points
+AJ1-TABLE,ces_541_diff,-0.050305,log points
+AJ1-TABLE,ces_541_g_1923,0.121430,log points
+AJ1-TABLE,ces_541_g_post_2425,-0.002161,log points
+AJ1-TABLE,ces_541_g_pre_1819,0.027006,log points
+AJ1-TABLE,ces_541_g_latest,0.004823,log points
+AJ1-TABLE,ces_561_ai_mean_2024_2025_pct,6.3109,percent of firms
+AJ1-TABLE,ces_561_ai_mean_2023_pct,4.1000,percent of firms
+AJ1-TABLE,ces_561_mean_2017,8726.26,thousands
+AJ1-TABLE,ces_561_mean_2018,8857.98,thousands
+AJ1-TABLE,ces_561_mean_2019,8867.58,thousands
+AJ1-TABLE,ces_561_mean_2023,8895.84,thousands
+AJ1-TABLE,ces_561_mean_2024,8650.89,thousands
+AJ1-TABLE,ces_561_mean_2025,8492.27,thousands
+AJ1-TABLE,ces_561_g_pre,0.016066,log points
+AJ1-TABLE,ces_561_g_post,-0.046428,log points
+AJ1-TABLE,ces_561_diff,-0.062494,log points
+AJ1-TABLE,ces_561_g_1923,0.003182,log points
+AJ1-TABLE,ces_561_g_post_2425,-0.018506,log points
+AJ1-TABLE,ces_561_g_pre_1819,0.001083,log points
+AJ1-TABLE,ces_561_g_latest,-0.044976,log points
+AJ1-TABLE,ces_611_ai_mean_2024_2025_pct,12.2304,percent of firms
+AJ1-TABLE,ces_611_ai_mean_2023_pct,7.6125,percent of firms
+AJ1-TABLE,ces_611_mean_2017,3668.39,thousands
+AJ1-TABLE,ces_611_mean_2018,3714.88,thousands
+AJ1-TABLE,ces_611_mean_2019,3741.41,thousands
+AJ1-TABLE,ces_611_mean_2023,3847.04,thousands
+AJ1-TABLE,ces_611_mean_2024,3982.84,thousands
+AJ1-TABLE,ces_611_mean_2025,4048.78,thousands
+AJ1-TABLE,ces_611_g_pre,0.019709,log points
+AJ1-TABLE,ces_611_g_post,0.051112,log points
+AJ1-TABLE,ces_611_diff,0.031403,log points
+AJ1-TABLE,ces_611_g_1923,0.027842,log points
+AJ1-TABLE,ces_611_g_post_2425,0.016421,log points
+AJ1-TABLE,ces_611_g_pre_1819,0.007117,log points
+AJ1-TABLE,ces_611_g_latest,0.050404,log points
+AJ1-TABLE,ces_621_ai_mean_2024_2025_pct,7.4826,percent of firms
+AJ1-TABLE,ces_621_ai_mean_2023_pct,4.5875,percent of firms
+AJ1-TABLE,ces_621_mean_2017,7297.28,thousands
+AJ1-TABLE,ces_621_mean_2018,7477.36,thousands
+AJ1-TABLE,ces_621_mean_2019,7704.38,thousands
+AJ1-TABLE,ces_621_mean_2023,8449.51,thousands
+AJ1-TABLE,ces_621_mean_2024,8793.20,thousands
+AJ1-TABLE,ces_621_mean_2025,9028.71,thousands
+AJ1-TABLE,ces_621_g_pre,0.054287,log points
+AJ1-TABLE,ces_621_g_post,0.066301,log points
+AJ1-TABLE,ces_621_diff,0.012014,log points
+AJ1-TABLE,ces_621_g_1923,0.092319,log points
+AJ1-TABLE,ces_621_g_post_2425,0.026431,log points
+AJ1-TABLE,ces_621_g_pre_1819,0.029910,log points
+AJ1-TABLE,ces_621_g_latest,0.085006,log points
+AJ1-TABLE,ces_624_ai_mean_2024_2025_pct,6.3696,percent of firms
+AJ1-TABLE,ces_624_ai_mean_2023_pct,3.1500,percent of firms
+AJ1-TABLE,ces_624_mean_2017,3803.03,thousands
+AJ1-TABLE,ces_624_mean_2018,3958.30,thousands
+AJ1-TABLE,ces_624_mean_2019,4151.98,thousands
+AJ1-TABLE,ces_624_mean_2023,4591.96,thousands
+AJ1-TABLE,ces_624_mean_2024,4875.74,thousands
+AJ1-TABLE,ces_624_mean_2025,5184.63,thousands
+AJ1-TABLE,ces_624_g_pre,0.087787,log points
+AJ1-TABLE,ces_624_g_post,0.121393,log points
+AJ1-TABLE,ces_624_diff,0.033605,log points
+AJ1-TABLE,ces_624_g_1923,0.100720,log points
+AJ1-TABLE,ces_624_g_post_2425,0.061427,log points
+AJ1-TABLE,ces_624_g_pre_1819,0.047771,log points
+AJ1-TABLE,ces_624_g_latest,0.154458,log points
+AJ1-TABLE,ces_711_ai_mean_2024_2025_pct,7.8435,percent of firms
+AJ1-TABLE,ces_711_ai_mean_2023_pct,4.6500,percent of firms
+AJ1-TABLE,ces_711_mean_2017,493.79,thousands
+AJ1-TABLE,ces_711_mean_2018,506.40,thousands
+AJ1-TABLE,ces_711_mean_2019,518.93,thousands
+AJ1-TABLE,ces_711_mean_2023,564.51,thousands
+AJ1-TABLE,ces_711_mean_2024,580.53,thousands
+AJ1-TABLE,ces_711_mean_2025,601.02,thousands
+AJ1-TABLE,ces_711_g_pre,0.049662,log points
+AJ1-TABLE,ces_711_g_post,0.062668,log points
+AJ1-TABLE,ces_711_diff,0.013006,log points
+AJ1-TABLE,ces_711_g_1923,0.084180,log points
+AJ1-TABLE,ces_711_g_post_2425,0.034675,log points
+AJ1-TABLE,ces_711_g_pre_1819,0.024449,log points
+AJ1-TABLE,ces_711_g_latest,0.054467,log points
+AJ1-TABLE,ces_713_ai_mean_2024_2025_pct,4.5543,percent of firms
+AJ1-TABLE,ces_713_ai_mean_2023_pct,2.8875,percent of firms
+AJ1-TABLE,ces_713_mean_2017,1673.82,thousands
+AJ1-TABLE,ces_713_mean_2018,1706.62,thousands
+AJ1-TABLE,ces_713_mean_2019,1745.36,thousands
+AJ1-TABLE,ces_713_mean_2023,1768.38,thousands
+AJ1-TABLE,ces_713_mean_2024,1857.48,thousands
+AJ1-TABLE,ces_713_mean_2025,1900.67,thousands
+AJ1-TABLE,ces_713_g_pre,0.041853,log points
+AJ1-TABLE,ces_713_g_post,0.072143,log points
+AJ1-TABLE,ces_713_diff,0.030290,log points
+AJ1-TABLE,ces_713_g_1923,0.013106,log points
+AJ1-TABLE,ces_713_g_post_2425,0.022987,log points
+AJ1-TABLE,ces_713_g_pre_1819,0.022447,log points
+AJ1-TABLE,ces_713_g_latest,0.067419,log points
+AJ1-TABLE,ces_722_ai_mean_2024_2025_pct,1.7348,percent of firms
+AJ1-TABLE,ces_722_ai_mean_2023_pct,1.3125,percent of firms
+AJ1-TABLE,ces_722_mean_2017,11714.98,thousands
+AJ1-TABLE,ces_722_mean_2018,11878.21,thousands
+AJ1-TABLE,ces_722_mean_2019,12066.43,thousands
+AJ1-TABLE,ces_722_mean_2023,12157.63,thousands
+AJ1-TABLE,ces_722_mean_2024,12223.11,thousands
+AJ1-TABLE,ces_722_mean_2025,12266.37,thousands
+AJ1-TABLE,ces_722_g_pre,0.029559,log points
+AJ1-TABLE,ces_722_g_post,0.008904,log points
+AJ1-TABLE,ces_722_diff,-0.020655,log points
+AJ1-TABLE,ces_722_g_1923,0.007530,log points
+AJ1-TABLE,ces_722_g_post_2425,0.003533,log points
+AJ1-TABLE,ces_722_g_pre_1819,0.015722,log points
+AJ1-TABLE,ces_722_g_latest,0.016915,log points
+AJ1-TABLE,ces_811_ai_mean_2024_2025_pct,2.2609,percent of firms
+AJ1-TABLE,ces_811_ai_mean_2023_pct,1.2875,percent of firms
+AJ1-TABLE,ces_811_mean_2017,1310.51,thousands
+AJ1-TABLE,ces_811_mean_2018,1326.69,thousands
+AJ1-TABLE,ces_811_mean_2019,1346.89,thousands
+AJ1-TABLE,ces_811_mean_2023,1449.21,thousands
+AJ1-TABLE,ces_811_mean_2024,1462.55,thousands
+AJ1-TABLE,ces_811_mean_2025,1471.41,thousands
+AJ1-TABLE,ces_811_g_pre,0.027384,log points
+AJ1-TABLE,ces_811_g_post,0.015203,log points
+AJ1-TABLE,ces_811_diff,-0.012182,log points
+AJ1-TABLE,ces_811_g_1923,0.073218,log points
+AJ1-TABLE,ces_811_g_post_2425,0.006039,log points
+AJ1-TABLE,ces_811_g_pre_1819,0.015111,log points
+AJ1-TABLE,ces_811_g_latest,0.017573,log points
+AJ1-TABLE,ces_812_ai_mean_2024_2025_pct,3.9913,percent of firms
+AJ1-TABLE,ces_812_ai_mean_2023_pct,3.2250,percent of firms
+AJ1-TABLE,ces_812_mean_2017,1478.43,thousands
+AJ1-TABLE,ces_812_mean_2018,1506.64,thousands
+AJ1-TABLE,ces_812_mean_2019,1534.95,thousands
+AJ1-TABLE,ces_812_mean_2023,1544.07,thousands
+AJ1-TABLE,ces_812_mean_2024,1582.01,thousands
+AJ1-TABLE,ces_812_mean_2025,1598.48,thousands
+AJ1-TABLE,ces_812_g_pre,0.037515,log points
+AJ1-TABLE,ces_812_g_post,0.034630,log points
+AJ1-TABLE,ces_812_diff,-0.002884,log points
+AJ1-TABLE,ces_812_g_1923,0.005922,log points
+AJ1-TABLE,ces_812_g_post_2425,0.010355,log points
+AJ1-TABLE,ces_812_g_pre_1819,0.018615,log points
+AJ1-TABLE,ces_812_g_latest,0.043423,log points
+AJ1-TABLE,ces_reported_513_ai_mean_2024_2025_pct,25.0217,percent of firms
+AJ1-TABLE,ces_reported_513_mean_2017,776.41,thousands
+AJ1-TABLE,ces_reported_513_mean_2018,790.94,thousands
+AJ1-TABLE,ces_reported_513_mean_2019,822.88,thousands
+AJ1-TABLE,ces_reported_513_mean_2023,940.69,thousands
+AJ1-TABLE,ces_reported_513_mean_2024,910.53,thousands
+AJ1-TABLE,ces_reported_513_mean_2025,906.76,thousands
+AJ1-TABLE,ces_reported_513_g_pre,0.058136,log points
+AJ1-TABLE,ces_reported_513_g_post,-0.036739,log points
+AJ1-TABLE,ces_reported_513_diff,-0.094875,log points
+AJ1-TABLE,ces_reported_513_g_1923,0.133801,log points
+AJ1-TABLE,ces_reported_513_g_post_2425,-0.004155,log points
+AJ1-TABLE,ces_reported_519_ai_mean_2024_2025_pct,25.0065,percent of firms
+AJ1-TABLE,ces_reported_519_mean_2017,144.37,thousands
+AJ1-TABLE,ces_reported_519_mean_2018,154.60,thousands
+AJ1-TABLE,ces_reported_519_mean_2019,166.90,thousands
+AJ1-TABLE,ces_reported_519_mean_2023,182.16,thousands
+AJ1-TABLE,ces_reported_519_mean_2024,182.87,thousands
+AJ1-TABLE,ces_reported_519_mean_2025,181.78,thousands
+AJ1-TABLE,ces_reported_519_g_pre,0.145038,log points
+AJ1-TABLE,ces_reported_519_g_post,-0.002107,log points
+AJ1-TABLE,ces_reported_519_diff,-0.147145,log points
+AJ1-TABLE,ces_reported_519_g_1923,0.087481,log points
+AJ1-TABLE,ces_reported_519_g_post_2425,-0.005988,log points
+AJ1-TABLE,ces_reported_523_ai_mean_2024_2025_pct,13.5413,percent of firms
+AJ1-TABLE,ces_reported_523_mean_2017,938.27,thousands
+AJ1-TABLE,ces_reported_523_mean_2018,953.56,thousands
+AJ1-TABLE,ces_reported_523_mean_2019,962.28,thousands
+AJ1-TABLE,ces_reported_523_mean_2023,1100.83,thousands
+AJ1-TABLE,ces_reported_523_mean_2024,1114.63,thousands
+AJ1-TABLE,ces_reported_523_mean_2025,1141.41,thousands
+AJ1-TABLE,ces_reported_523_g_pre,0.025266,log points
+AJ1-TABLE,ces_reported_523_g_post,0.036195,log points
+AJ1-TABLE,ces_reported_523_diff,0.010930,log points
+AJ1-TABLE,ces_reported_523_g_1923,0.134514,log points
+AJ1-TABLE,ces_reported_523_g_post_2425,0.023737,log points
+AJ1-TABLE,jolts_230000_ai_mean_2024_2025_pct,2.3826,percent of firms
+AJ1-TABLE,jolts_230000_mean_2017,199.75,thousands
+AJ1-TABLE,jolts_230000_mean_2018,273.67,thousands
+AJ1-TABLE,jolts_230000_mean_2019,318.58,thousands
+AJ1-TABLE,jolts_230000_mean_2023,386.83,thousands
+AJ1-TABLE,jolts_230000_mean_2024,300.58,thousands
+AJ1-TABLE,jolts_230000_mean_2025,239.92,thousands
+AJ1-TABLE,jolts_230000_g_pre,0.466817,log points
+AJ1-TABLE,jolts_230000_g_post,-0.477702,log points
+AJ1-TABLE,jolts_230000_diff,-0.944520,log points
+AJ1-TABLE,jolts_230000_g_1923,0.194110,log points
+AJ1-TABLE,jolts_230000_g_post_2425,-0.225433,log points
+AJ1-TABLE,jolts_230000_g_latest,-0.392835,log points
+AJ1-TABLE,jolts_320000_ai_mean_2024_2025_pct,3.3370,percent of firms
+AJ1-TABLE,jolts_320000_mean_2017,226.00,thousands
+AJ1-TABLE,jolts_320000_mean_2018,289.25,thousands
+AJ1-TABLE,jolts_320000_mean_2019,273.25,thousands
+AJ1-TABLE,jolts_320000_mean_2023,379.83,thousands
+AJ1-TABLE,jolts_320000_mean_2024,317.50,thousands
+AJ1-TABLE,jolts_320000_mean_2025,267.08,thousands
+AJ1-TABLE,jolts_320000_g_pre,0.189852,log points
+AJ1-TABLE,jolts_320000_g_post,-0.352172,log points
+AJ1-TABLE,jolts_320000_diff,-0.542024,log points
+AJ1-TABLE,jolts_320000_g_1923,0.329345,log points
+AJ1-TABLE,jolts_320000_g_post_2425,-0.172917,log points
+AJ1-TABLE,jolts_320000_g_latest,-0.132091,log points
+AJ1-TABLE,jolts_340000_ai_mean_2024_2025_pct,3.3370,percent of firms
+AJ1-TABLE,jolts_340000_mean_2017,168.67,thousands
+AJ1-TABLE,jolts_340000_mean_2018,176.50,thousands
+AJ1-TABLE,jolts_340000_mean_2019,163.67,thousands
+AJ1-TABLE,jolts_340000_mean_2023,223.00,thousands
+AJ1-TABLE,jolts_340000_mean_2024,165.08,thousands
+AJ1-TABLE,jolts_340000_mean_2025,139.92,thousands
+AJ1-TABLE,jolts_340000_g_pre,-0.030093,log points
+AJ1-TABLE,jolts_340000_g_post,-0.466125,log points
+AJ1-TABLE,jolts_340000_diff,-0.436032,log points
+AJ1-TABLE,jolts_340000_g_1923,0.309340,log points
+AJ1-TABLE,jolts_340000_g_post_2425,-0.165403,log points
+AJ1-TABLE,jolts_340000_g_latest,-0.356248,log points
+AJ1-TABLE,jolts_420000_ai_mean_2024_2025_pct,3.8500,percent of firms
+AJ1-TABLE,jolts_420000_mean_2017,195.08,thousands
+AJ1-TABLE,jolts_420000_mean_2018,209.50,thousands
+AJ1-TABLE,jolts_420000_mean_2019,211.75,thousands
+AJ1-TABLE,jolts_420000_mean_2023,264.17,thousands
+AJ1-TABLE,jolts_420000_mean_2024,162.08,thousands
+AJ1-TABLE,jolts_420000_mean_2025,177.17,thousands
+AJ1-TABLE,jolts_420000_g_pre,0.081980,log points
+AJ1-TABLE,jolts_420000_g_post,-0.399489,log points
+AJ1-TABLE,jolts_420000_diff,-0.481469,log points
+AJ1-TABLE,jolts_420000_g_1923,0.221174,log points
+AJ1-TABLE,jolts_420000_g_post_2425,0.088980,log points
+AJ1-TABLE,jolts_420000_g_latest,-0.332191,log points
+AJ1-TABLE,jolts_440000_ai_mean_2024_2025_pct,4.1870,percent of firms
+AJ1-TABLE,jolts_440000_mean_2017,734.58,thousands
+AJ1-TABLE,jolts_440000_mean_2018,937.17,thousands
+AJ1-TABLE,jolts_440000_mean_2019,782.42,thousands
+AJ1-TABLE,jolts_440000_mean_2023,708.17,thousands
+AJ1-TABLE,jolts_440000_mean_2024,513.33,thousands
+AJ1-TABLE,jolts_440000_mean_2025,566.25,thousands
+AJ1-TABLE,jolts_440000_g_pre,0.063084,log points
+AJ1-TABLE,jolts_440000_g_post,-0.223644,log points
+AJ1-TABLE,jolts_440000_diff,-0.286728,log points
+AJ1-TABLE,jolts_440000_g_1923,-0.099708,log points
+AJ1-TABLE,jolts_440000_g_post_2425,0.098110,log points
+AJ1-TABLE,jolts_440000_g_latest,-0.046240,log points
+AJ1-TABLE,jolts_480099_ai_mean_2024_2025_pct,2.0783,percent of firms
+AJ1-TABLE,jolts_480099_mean_2017,218.08,thousands
+AJ1-TABLE,jolts_480099_mean_2018,297.08,thousands
+AJ1-TABLE,jolts_480099_mean_2019,321.58,thousands
+AJ1-TABLE,jolts_480099_mean_2023,475.75,thousands
+AJ1-TABLE,jolts_480099_mean_2024,324.83,thousands
+AJ1-TABLE,jolts_480099_mean_2025,313.50,thousands
+AJ1-TABLE,jolts_480099_g_pre,0.388379,log points
+AJ1-TABLE,jolts_480099_g_post,-0.417093,log points
+AJ1-TABLE,jolts_480099_diff,-0.805473,log points
+AJ1-TABLE,jolts_480099_g_1923,0.391636,log points
+AJ1-TABLE,jolts_480099_g_post_2425,-0.035513,log points
+AJ1-TABLE,jolts_480099_g_latest,-0.374423,log points
+AJ1-TABLE,jolts_510000_ai_mean_2024_2025_pct,20.8978,percent of firms
+AJ1-TABLE,jolts_510000_mean_2017,100.33,thousands
+AJ1-TABLE,jolts_510000_mean_2018,137.33,thousands
+AJ1-TABLE,jolts_510000_mean_2019,141.33,thousands
+AJ1-TABLE,jolts_510000_mean_2023,136.75,thousands
+AJ1-TABLE,jolts_510000_mean_2024,122.50,thousands
+AJ1-TABLE,jolts_510000_mean_2025,121.17,thousands
+AJ1-TABLE,jolts_510000_g_pre,0.342623,log points
+AJ1-TABLE,jolts_510000_g_post,-0.120987,log points
+AJ1-TABLE,jolts_510000_diff,-0.463611,log points
+AJ1-TABLE,jolts_510000_g_1923,-0.032967,log points
+AJ1-TABLE,jolts_510000_g_post_2425,-0.010944,log points
+AJ1-TABLE,jolts_510000_g_latest,-0.404551,log points
+AJ1-TABLE,jolts_520000_ai_mean_2024_2025_pct,9.5826,percent of firms
+AJ1-TABLE,jolts_520000_mean_2017,288.67,thousands
+AJ1-TABLE,jolts_520000_mean_2018,300.25,thousands
+AJ1-TABLE,jolts_520000_mean_2019,268.58,thousands
+AJ1-TABLE,jolts_520000_mean_2023,336.58,thousands
+AJ1-TABLE,jolts_520000_mean_2024,309.17,thousands
+AJ1-TABLE,jolts_520000_mean_2025,271.08,thousands
+AJ1-TABLE,jolts_520000_g_pre,-0.072111,log points
+AJ1-TABLE,jolts_520000_g_post,-0.216419,log points
+AJ1-TABLE,jolts_520000_diff,-0.144308,log points
+AJ1-TABLE,jolts_520000_g_1923,0.225685,log points
+AJ1-TABLE,jolts_520000_g_post_2425,-0.131454,log points
+AJ1-TABLE,jolts_520000_g_latest,-0.146382,log points
+AJ1-TABLE,jolts_530000_ai_mean_2024_2025_pct,9.4391,percent of firms
+AJ1-TABLE,jolts_530000_mean_2017,89.25,thousands
+AJ1-TABLE,jolts_530000_mean_2018,88.92,thousands
+AJ1-TABLE,jolts_530000_mean_2019,103.75,thousands
+AJ1-TABLE,jolts_530000_mean_2023,130.50,thousands
+AJ1-TABLE,jolts_530000_mean_2024,127.92,thousands
+AJ1-TABLE,jolts_530000_mean_2025,118.08,thousands
+AJ1-TABLE,jolts_530000_g_pre,0.150543,log points
+AJ1-TABLE,jolts_530000_g_post,-0.099983,log points
+AJ1-TABLE,jolts_530000_diff,-0.250525,log points
+AJ1-TABLE,jolts_530000_g_1923,0.229389,log points
+AJ1-TABLE,jolts_530000_g_post_2425,-0.079988,log points
+AJ1-TABLE,jolts_530000_g_latest,-0.422857,log points
+AJ1-TABLE,jolts_540099_ai_mean_2024_2025_pct,11.2226,percent of firms
+AJ1-TABLE,jolts_540099_mean_2017,1078.33,thousands
+AJ1-TABLE,jolts_540099_mean_2018,1255.00,thousands
+AJ1-TABLE,jolts_540099_mean_2019,1271.42,thousands
+AJ1-TABLE,jolts_540099_mean_2023,1601.50,thousands
+AJ1-TABLE,jolts_540099_mean_2024,1312.58,thousands
+AJ1-TABLE,jolts_540099_mean_2025,1246.33,thousands
+AJ1-TABLE,jolts_540099_g_pre,0.164715,log points
+AJ1-TABLE,jolts_540099_g_post,-0.250735,log points
+AJ1-TABLE,jolts_540099_diff,-0.415450,log points
+AJ1-TABLE,jolts_540099_g_1923,0.230809,log points
+AJ1-TABLE,jolts_540099_g_post_2425,-0.051791,log points
+AJ1-TABLE,jolts_540099_g_latest,-0.233303,log points
+AJ1-TABLE,jolts_610000_ai_mean_2024_2025_pct,12.2304,percent of firms
+AJ1-TABLE,jolts_610000_mean_2017,100.67,thousands
+AJ1-TABLE,jolts_610000_mean_2018,105.33,thousands
+AJ1-TABLE,jolts_610000_mean_2019,120.17,thousands
+AJ1-TABLE,jolts_610000_mean_2023,176.83,thousands
+AJ1-TABLE,jolts_610000_mean_2024,173.17,thousands
+AJ1-TABLE,jolts_610000_mean_2025,142.92,thousands
+AJ1-TABLE,jolts_610000_g_pre,0.177065,log points
+AJ1-TABLE,jolts_610000_g_post,-0.212946,log points
+AJ1-TABLE,jolts_610000_diff,-0.390011,log points
+AJ1-TABLE,jolts_610000_g_1923,0.386328,log points
+AJ1-TABLE,jolts_610000_g_post_2425,-0.191993,log points
+AJ1-TABLE,jolts_610000_g_latest,-0.396084,log points
+AJ1-TABLE,jolts_620000_ai_mean_2024_2025_pct,7.0457,percent of firms
+AJ1-TABLE,jolts_620000_mean_2017,1046.00,thousands
+AJ1-TABLE,jolts_620000_mean_2018,1129.33,thousands
+AJ1-TABLE,jolts_620000_mean_2019,1186.00,thousands
+AJ1-TABLE,jolts_620000_mean_2023,1753.08,thousands
+AJ1-TABLE,jolts_620000_mean_2024,1567.75,thousands
+AJ1-TABLE,jolts_620000_mean_2025,1408.17,thousands
+AJ1-TABLE,jolts_620000_g_pre,0.125613,log points
+AJ1-TABLE,jolts_620000_g_post,-0.219088,log points
+AJ1-TABLE,jolts_620000_diff,-0.344700,log points
+AJ1-TABLE,jolts_620000_g_1923,0.390790,log points
+AJ1-TABLE,jolts_620000_g_post_2425,-0.107353,log points
+AJ1-TABLE,jolts_620000_g_latest,-0.216369,log points
+AJ1-TABLE,jolts_710000_ai_mean_2024_2025_pct,6.4739,percent of firms
+AJ1-TABLE,jolts_710000_mean_2017,91.75,thousands
+AJ1-TABLE,jolts_710000_mean_2018,109.33,thousands
+AJ1-TABLE,jolts_710000_mean_2019,120.92,thousands
+AJ1-TABLE,jolts_710000_mean_2023,183.08,thousands
+AJ1-TABLE,jolts_710000_mean_2024,145.75,thousands
+AJ1-TABLE,jolts_710000_mean_2025,144.67,thousands
+AJ1-TABLE,jolts_710000_g_pre,0.276034,log points
+AJ1-TABLE,jolts_710000_g_post,-0.235509,log points
+AJ1-TABLE,jolts_710000_diff,-0.511543,log points
+AJ1-TABLE,jolts_710000_g_1923,0.414840,log points
+AJ1-TABLE,jolts_710000_g_post_2425,-0.007461,log points
+AJ1-TABLE,jolts_710000_g_latest,-0.309617,log points
+AJ1-TABLE,jolts_720000_ai_mean_2024_2025_pct,1.8761,percent of firms
+AJ1-TABLE,jolts_720000_mean_2017,742.67,thousands
+AJ1-TABLE,jolts_720000_mean_2018,888.75,thousands
+AJ1-TABLE,jolts_720000_mean_2019,875.25,thousands
+AJ1-TABLE,jolts_720000_mean_2023,1093.92,thousands
+AJ1-TABLE,jolts_720000_mean_2024,875.08,thousands
+AJ1-TABLE,jolts_720000_mean_2025,850.17,thousands
+AJ1-TABLE,jolts_720000_g_pre,0.164262,log points
+AJ1-TABLE,jolts_720000_g_post,-0.252087,log points
+AJ1-TABLE,jolts_720000_diff,-0.416350,log points
+AJ1-TABLE,jolts_720000_g_1923,0.223010,log points
+AJ1-TABLE,jolts_720000_g_post_2425,-0.028887,log points
+AJ1-TABLE,jolts_720000_g_latest,-0.367826,log points
+AJ1-TABLE,jolts_810000_ai_mean_2024_2025_pct,3.1000,percent of firms
+AJ1-TABLE,jolts_810000_mean_2017,273.08,thousands
+AJ1-TABLE,jolts_810000_mean_2018,243.67,thousands
+AJ1-TABLE,jolts_810000_mean_2019,246.42,thousands
+AJ1-TABLE,jolts_810000_mean_2023,352.67,thousands
+AJ1-TABLE,jolts_810000_mean_2024,294.08,thousands
+AJ1-TABLE,jolts_810000_mean_2025,274.08,thousands
+AJ1-TABLE,jolts_810000_g_pre,-0.102753,log points
+AJ1-TABLE,jolts_810000_g_post,-0.252091,log points
+AJ1-TABLE,jolts_810000_diff,-0.149338,log points
+AJ1-TABLE,jolts_810000_g_1923,0.358499,log points
+AJ1-TABLE,jolts_810000_g_post_2425,-0.070431,log points
+AJ1-TABLE,jolts_810000_g_latest,-0.220960,log points
+AJ1-R-P1_1923,rho,0.2807,rank correlation
+AJ1-R-P1_1923,perm_p_pos,0.12164,probability
+AJ1-R-P1_1923,perm_p_neg,0.87981,probability
+AJ1-R-P1_1923,loo_min,0.1538,rank correlation
+AJ1-R-P1_1923,loo_max,0.4696,rank correlation
+AJ1-R-P1_1923,n,19,industries
+AJ1-R-P1_1923,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_1923,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_2023ai,rho,-0.3230,rank correlation
+AJ1-R-P1_2023ai,perm_p_pos,0.90523,probability
+AJ1-R-P1_2023ai,perm_p_neg,0.09625,probability
+AJ1-R-P1_2023ai,loo_min,-0.4069,rank correlation
+AJ1-R-P1_2023ai,loo_max,-0.2034,rank correlation
+AJ1-R-P1_2023ai,n,18,industries
+AJ1-R-P1_2023ai,members,"238,423,424,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_2023ai,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_2425,rho,-0.1877,rank correlation
+AJ1-R-P1_2425,perm_p_pos,0.78264,probability
+AJ1-R-P1_2425,perm_p_neg,0.21945,probability
+AJ1-R-P1_2425,loo_min,-0.2817,rank correlation
+AJ1-R-P1_2425,loo_max,-0.0506,rank correlation
+AJ1-R-P1_2425,n,19,industries
+AJ1-R-P1_2425,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_2425,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_latest,rho,-0.2667,rank correlation
+AJ1-R-P1_latest,perm_p_pos,0.86692,probability
+AJ1-R-P1_latest,perm_p_neg,0.13471,probability
+AJ1-R-P1_latest,loo_min,-0.3581,rank correlation
+AJ1-R-P1_latest,loo_max,-0.1393,rank correlation
+AJ1-R-P1_latest,n,19,industries
+AJ1-R-P1_latest,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_latest,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_no441_518,rho,-0.1348,rank correlation
+AJ1-R-P1_no441_518,perm_p_pos,0.70003,probability
+AJ1-R-P1_no441_518,perm_p_neg,0.30339,probability
+AJ1-R-P1_no441_518,loo_min,-0.2206,rank correlation
+AJ1-R-P1_no441_518,loo_max,0.0382,rank correlation
+AJ1-R-P1_no441_518,n,17,industries
+AJ1-R-P1_no441_518,members,"238,423,424,512,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_no441_518,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_no518_541,rho,0.0049,rank correlation
+AJ1-R-P1_no518_541,perm_p_pos,0.49392,probability
+AJ1-R-P1_no518_541,perm_p_neg,0.50995,probability
+AJ1-R-P1_no518_541,loo_min,-0.0912,rank correlation
+AJ1-R-P1_no518_541,loo_max,0.2059,rank correlation
+AJ1-R-P1_no518_541,n,17,industries
+AJ1-R-P1_no518_541,members,"238,423,424,441,512,522,524,531,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_no518_541,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P1_with_513_519,rho,-0.3779,rank correlation
+AJ1-R-P1_with_513_519,perm_p_pos,0.95512,probability
+AJ1-R-P1_with_513_519,perm_p_neg,0.04548,probability
+AJ1-R-P1_with_513_519,loo_min,-0.4421,rank correlation
+AJ1-R-P1_with_513_519,loo_max,-0.2962,rank correlation
+AJ1-R-P1_with_513_519,n,21,industries
+AJ1-R-P1_with_513_519,members,"238,423,424,441,512,513,518,519,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P1_with_513_519,label_if_it_were_primary_not_used,AGAINST,text
+AJ1-R-P2_2023ai,rho,-0.3375,rank correlation
+AJ1-R-P2_2023ai,perm_p_pos,0.91478,probability
+AJ1-R-P2_2023ai,perm_p_neg,0.08677,probability
+AJ1-R-P2_2023ai,loo_min,-0.4559,rank correlation
+AJ1-R-P2_2023ai,loo_max,-0.2157,rank correlation
+AJ1-R-P2_2023ai,n,18,industries
+AJ1-R-P2_2023ai,members,"238,423,424,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_2023ai,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_2425,rho,-0.1965,rank correlation
+AJ1-R-P2_2425,perm_p_pos,0.79203,probability
+AJ1-R-P2_2425,perm_p_neg,0.21012,probability
+AJ1-R-P2_2425,loo_min,-0.2879,rank correlation
+AJ1-R-P2_2425,loo_max,-0.0568,rank correlation
+AJ1-R-P2_2425,n,19,industries
+AJ1-R-P2_2425,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_2425,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_2425_regpre,rho,-0.3105,rank correlation
+AJ1-R-P2_2425_regpre,perm_p_pos,0.90468,probability
+AJ1-R-P2_2425_regpre,perm_p_neg,0.09667,probability
+AJ1-R-P2_2425_regpre,loo_min,-0.4324,rank correlation
+AJ1-R-P2_2425_regpre,loo_max,-0.1909,rank correlation
+AJ1-R-P2_2425_regpre,n,19,industries
+AJ1-R-P2_2425_regpre,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_2425_regpre,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_latest,rho,-0.2842,rank correlation
+AJ1-R-P2_latest,perm_p_pos,0.88357,probability
+AJ1-R-P2_latest,perm_p_neg,0.11818,probability
+AJ1-R-P2_latest,loo_min,-0.3932,rank correlation
+AJ1-R-P2_latest,loo_max,-0.1600,rank correlation
+AJ1-R-P2_latest,n,19,industries
+AJ1-R-P2_latest,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_latest,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_no441_518,rho,-0.1520,rank correlation
+AJ1-R-P2_no441_518,perm_p_pos,0.72328,probability
+AJ1-R-P2_no441_518,perm_p_neg,0.28018,probability
+AJ1-R-P2_no441_518,loo_min,-0.2794,rank correlation
+AJ1-R-P2_no441_518,loo_max,0.0176,rank correlation
+AJ1-R-P2_no441_518,n,17,industries
+AJ1-R-P2_no441_518,members,"238,423,424,512,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_no441_518,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_no518_541,rho,0.0098,rank correlation
+AJ1-R-P2_no518_541,perm_p_pos,0.48575,probability
+AJ1-R-P2_no518_541,perm_p_neg,0.51833,probability
+AJ1-R-P2_no518_541,loo_min,-0.1235,rank correlation
+AJ1-R-P2_no518_541,loo_max,0.2118,rank correlation
+AJ1-R-P2_no518_541,n,17,industries
+AJ1-R-P2_no518_541,members,"238,423,424,441,512,522,524,531,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_no518_541,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P2_with_513_519,rho,-0.4403,rank correlation
+AJ1-R-P2_with_513_519,perm_p_pos,0.97699,probability
+AJ1-R-P2_with_513_519,perm_p_neg,0.02327,probability
+AJ1-R-P2_with_513_519,loo_min,-0.5263,rank correlation
+AJ1-R-P2_with_513_519,loo_max,-0.3594,rank correlation
+AJ1-R-P2_with_513_519,n,21,industries
+AJ1-R-P2_with_513_519,members,"238,423,424,441,512,513,518,519,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-P2_with_513_519,label_if_it_were_primary_not_used,AGAINST,text
+AJ1-R-P3_1923,rho,-0.0626,rank correlation
+AJ1-R-P3_1923,perm_p_pos,0.58768,probability
+AJ1-R-P3_1923,perm_p_neg,0.41473,probability
+AJ1-R-P3_1923,loo_min,-0.1804,rank correlation
+AJ1-R-P3_1923,loo_max,0.1232,rank correlation
+AJ1-R-P3_1923,n,15,industries
+AJ1-R-P3_1923,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_1923,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P3_2023ai,rho,0.8383,rank correlation
+AJ1-R-P3_2023ai,perm_p_pos,0.00014,probability
+AJ1-R-P3_2023ai,perm_p_neg,0.99987,probability
+AJ1-R-P3_2023ai,loo_min,0.7978,rank correlation
+AJ1-R-P3_2023ai,loo_max,0.8913,rank correlation
+AJ1-R-P3_2023ai,n,14,industries
+AJ1-R-P3_2023ai,members,"230000,320000,340000,420000,440000,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_2023ai,label_if_it_were_primary_not_used,SUPPORT,text
+AJ1-R-P3_2425,rho,0.0054,rank correlation
+AJ1-R-P3_2425,perm_p_pos,0.49296,probability
+AJ1-R-P3_2425,perm_p_neg,0.50988,probability
+AJ1-R-P3_2425,loo_min,-0.1408,rank correlation
+AJ1-R-P3_2425,loo_max,0.1408,rank correlation
+AJ1-R-P3_2425,n,15,industries
+AJ1-R-P3_2425,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_2425,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P3_diff,rho,0.4039,rank correlation
+AJ1-R-P3_diff,perm_p_pos,0.06911,probability
+AJ1-R-P3_diff,perm_p_neg,0.93176,probability
+AJ1-R-P3_diff,loo_min,0.3014,rank correlation
+AJ1-R-P3_diff,loo_max,0.5435,rank correlation
+AJ1-R-P3_diff,n,15,industries
+AJ1-R-P3_diff,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_diff,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P3_latest,rho,-0.0947,rank correlation
+AJ1-R-P3_latest,perm_p_pos,0.63583,probability
+AJ1-R-P3_latest,perm_p_neg,0.36675,probability
+AJ1-R-P3_latest,loo_min,-0.1716,rank correlation
+AJ1-R-P3_latest,loo_max,0.0968,rank correlation
+AJ1-R-P3_latest,n,15,industries
+AJ1-R-P3_latest,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_latest,label_if_it_were_primary_not_used,INCONCLUSIVE,text
+AJ1-R-P3_no52,rho,0.7833,rank correlation
+AJ1-R-P3_no52,perm_p_pos,0.00072,probability
+AJ1-R-P3_no52,perm_p_neg,0.99937,probability
+AJ1-R-P3_no52,loo_min,0.7455,rank correlation
+AJ1-R-P3_no52,loo_max,0.8446,rank correlation
+AJ1-R-P3_no52,n,14,industries
+AJ1-R-P3_no52,members,"230000,320000,340000,420000,440000,480099,510000,530000,540099,610000,620000,710000,720000,810000",list
+AJ1-R-P3_no52,label_if_it_were_primary_not_used,SUPPORT,text
+AJ1-R-P3_no52_540099,rho,0.7950,rank correlation
+AJ1-R-P3_no52_540099,perm_p_pos,0.00088,probability
+AJ1-R-P3_no52_540099,perm_p_neg,0.99922,probability
+AJ1-R-P3_no52_540099,loo_min,0.7391,rank correlation
+AJ1-R-P3_no52_540099,loo_max,0.8862,rank correlation
+AJ1-R-P3_no52_540099,n,13,industries
+AJ1-R-P3_no52_540099,members,"230000,320000,340000,420000,440000,480099,510000,530000,610000,620000,710000,720000,810000",list
+AJ1-R-P3_no52_540099,label_if_it_were_primary_not_used,SUPPORT,text
+AJ1-R-P3_no540099,rho,0.8229,rank correlation
+AJ1-R-P3_no540099,perm_p_pos,0.00034,probability
+AJ1-R-P3_no540099,perm_p_neg,0.99968,probability
+AJ1-R-P3_no540099,loo_min,0.7785,rank correlation
+AJ1-R-P3_no540099,loo_max,0.8941,rank correlation
+AJ1-R-P3_no540099,n,14,industries
+AJ1-R-P3_no540099,members,"230000,320000,340000,420000,440000,480099,510000,520000,530000,610000,620000,710000,720000,810000",list
+AJ1-R-P3_no540099,label_if_it_were_primary_not_used,SUPPORT,text
+AJ1-R-WEIGHTED,pearson_weighted_AI_vs_g_post_CES,-0.0807,correlation
+AJ1-R-WEIGHTED,pearson_weighted_AI_vs_g_post_minus_g_pre_CES,-0.2346,correlation
+AJ1-R-WEIGHTED,weights_total_2019_emp,71313.93,thousands
+AJ1-R-WEIGHTED,n,19,subsectors
+AJ1-R-WEIGHTED,members,"238,423,424,441,512,518,522,524,531,541,561,611,621,624,711,713,722,811,812",list
+AJ1-R-NATIONAL,n,1,series
+AJ1-R-NATIONAL,members,CEU0500000001,series
+AJ1-R-NATIONAL,ces_private_mean_2017,124256.92,thousands
+AJ1-R-NATIONAL,ces_private_mean_2018,126454.00,thousands
+AJ1-R-NATIONAL,ces_private_mean_2019,128291.50,thousands
+AJ1-R-NATIONAL,ces_private_mean_2023,133074.00,thousands
+AJ1-R-NATIONAL,ces_private_mean_2024,134323.58,thousands
+AJ1-R-NATIONAL,ces_private_mean_2025,134947.83,thousands
+AJ1-R-NATIONAL,ces_private_g_pre,0.031954,log points
+AJ1-R-NATIONAL,ces_private_g_post,0.013983,log points
+AJ1-R-NATIONAL,ces_private_diff,-0.017971,log points
+AJ1-R-NATIONAL,ces_private_g_1923,0.036600,log points
+AJ1-R-NATIONAL,ces_private_g_post_2425,0.004637,log points
+AJ1-R-NATIONAL,ces_private_g_latest,0.017809,log points

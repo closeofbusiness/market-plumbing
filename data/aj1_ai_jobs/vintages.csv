@@ -1,0 +1,5 @@
+# source: fetch manifest of the raw cache (data/vintages/aj1); raw files are not committed
+source,key,url,fetched_utc,status,bytes,sha256,note
+bls-api-v1,bls-ces,https://api.bls.gov/publicAPI/v1/timeseries/data/,2026-11-16T07:57:38Z,200,259583,2ad142c03335a5433b802af735eddc8bcbc37b9704de752fb55a8e40a377963c,"BLS Public Data API v1 POST (25 series, 2017-2026)"
+bls-api-v1,bls-jolts,https://api.bls.gov/publicAPI/v1/timeseries/data/,2026-11-16T07:57:42Z,200,149294,c4ded6787bbf377c5b99f2f4aa6569d2834b04dd57a4ea86ecb73a24a31f2786,"BLS Public Data API v1 POST (15 series, 2017-2026)"
+census-btos,btos-ai-core-questions,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,2026-11-15,hand download,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce,"AI Core Questions (Original), hash-pinned in bin/cv1_confidence_velocity.py; read through its code, never fetched here"
