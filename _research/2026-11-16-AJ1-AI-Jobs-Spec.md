@@ -79,3 +79,69 @@ microdata. BTOS's own questions on AI's effect on a firm's headcount are not in 
 `bin/aj1_ai_jobs.py` with `selftest`, `fetch` and `build`; outputs in `data/aj1_ai_jobs/` (`registered.csv` written before any
 statistic, `scores.csv`, `detail.csv`, README). The BTOS sector means come from the CV1-P6 code path (imported). A gate is
 registered in `bin/check.sh` at landing. Every statistic carries its denominator (subsectors kept and dropped, months used).
+
+## Version 2 — amended after the attack, still blind (16 November 2026)
+
+Grok (Cursor, read and web, blind rule) attacked version 1, fetched only documentation and reported no employment or openings
+figure; its return is filed as `_research/2026-11-16-AJ1-Grok-Attack.md`. The supervisor re-read, in the desktop browser (scripts
+get HTTP 403 from www.bls.gov), its quotes on the CES NAICS 2022 page (the 513 and 454 sentences, the sector-54 and sector-61 series
+IDs, the history rebuilt on NAICS 2022) and on the CES published-series page (722, 811, 812 published from 1990; the 523 series
+titled "Securities, commodity contracts, funds, trusts, and other financial vehicles"). Note: Grok read `download.bls.gov` from
+Cursor's servers, so that host's 403 is a refusal of this machine's requests, not an outage; it is still not used.
+**This section replaces the Matching, Windows and Statements sections of version 1. Where the two disagree, this section governs.**
+
+**Rulings.**
+1. *F1, "fatal": a 2023-25 shock that ranks industries like AI use is labelled as AI.* Accepted as the binding limit, not fatal (as
+   in AF1). Labels name the pattern, never the cause. Partialling out a hand-picked "rate-sensitive" list (Grok's amendment 12) is
+   **overruled**: the list would be the supervisor's choice and would decide the result; it is not added.
+2. *F2: asymmetric rules.* Accepted. Both sides need one-sided permutation p ≤ 0.05 **and** every leave-one-out rho of that sign.
+   P1 now reads "grew more".
+3. *F3: the openings rate has employment in its denominator, and 2019-25 includes the pandemic.* Accepted. P3 uses the log of the
+   openings **level** (series ending `JOL`), on the same windows as employment.
+4. *F4, F14: JOLTS nesting.* Accepted: the 15 non-overlapping private child industries listed in the attack, parents and government
+   dropped. Professional and business services (54 + 55 + 56) is **kept** (it is where AI use is highest): its AI value is the 2019
+   CES-employment-weighted mean of 54 and 56, and the share of 55 in that industry's 2019 employment is printed; P3 is also reported
+   without it. Transportation, warehousing and utilities takes sector 48-49's mean (utilities, 22, has no BTOS mean; its 2019 share
+   is printed). Durable and nondurable manufacturing share one value; ties take average ranks.
+5. *F5, F6, F15: NAICS 2022 matching.* CES rebuilt its history on NAICS 2022, so each CES series is consistent over time; the
+   mismatch is only between the BTOS 2017 subsector and the CES 2022 series. **Labelled sample: drop 511→513 and 519** (their
+   scope changed materially) and 454. 441 and 518 (minor changes) stay, flagged. 541 is sector 54 exactly (CEU6054000001) and stays.
+   Reported: without 441 and 518; without 518 and 541 (the AI suppliers).
+6. *F7: CES 523 includes NAICS 525, which BTOS excludes.* Accepted: 523 dropped (the AF1 rule for sector 52).
+7. *F9, F10: which BTOS series.* Overruled in part, as in AF1: the file held is "AI Core Questions (Original)", whose codes (454,
+   511) are NAICS 2017; its last cycle is 202520, so no new-wording cycle is in it.
+8. *F12: AI use measured inside the outcome window.* Noted, not adopted for the label: the 2024-25 mean is kept for comparability
+   with AF1 and CV1-P6. Reported: the same tests on the mean of the 2023 cycles (202319-202326) for subsectors with all 8 published.
+   The asymmetry statement adds that fast-growing industries may adopt AI because they are growing.
+9. *F13: the 2019-23 change sits in neither window.* Reported, not labelled: ln(mean 2023) - ln(mean 2019) beside each result.
+10. *F11, amendment 15.* Accepted into the asymmetry statement: a rank association among firm-weighted AI rates in a
+    suppression-selected set of industries.
+11. *F16-F18: fetch and permutation details.* Accepted: POST bodies of at most 25 series, startyear 2017, endyear 2026, period M13
+    dropped, stop on "series does not exist" or any non-success status; the raw JSON is hashed and not refetched; the CES and JOLTS
+    release dates are recorded from the response's own messages or footnotes, or "not stated". Seed 20261116; 100,000 permutations
+    of the AI values; p = (1 + k) / 100,001; a p within two Monte Carlo standard errors of 0.05 is labelled INCONCLUSIVE. Three
+    statements, no multiplicity adjustment; this is said in the README.
+
+**Series (version 2).** CES all employees, NSA: 238 CEU2023800001; 423 CEU4142300001; 424 CEU4142400001; 441 CEU4244100001;
+512 CEU5051200001; 518 CEU5051800001; 522 CEU5552200001; 524 CEU5552400001; 531 CEU5553100001; 541 CEU6054000001;
+561 CEU6056100001; 611 CEU6561000001; 621 CEU6562100001; 624 CEU6562400001; 711 CEU7071100001; 713 CEU7071300001;
+722 CEU7072200001; 811 CEU8081100001; 812 CEU8081200001 (19 labelled subsectors). Reported only: 513 CEU5051300001,
+519 CEU5051900001, 523 CEU5552300001. Weights and national: CEU0500000001 (total private), CEU6055000001 (55),
+CEU6056000001 (56). JOLTS openings level, NSA, the 15 child industries: JTU{code}000000000JOL for codes 230000, 320000, 340000,
+420000, 440000, 480099, 510000, 520000, 530000, 540099, 610000, 620000, 710000, 720000, 810000, with each industry's AI value
+from its BTOS sector (31-33, 42, 44-45, 48-49, 51, 52, 53, 54+56, 61, 62, 71, 72, 81, 23). Sector 52 (finance and insurance)
+takes the CV1-P6 sector-52 mean, flagged because BTOS excludes 525; P3 is also reported without it.
+
+**Windows (version 2).** Annual means of the twelve monthly NSA values. g_post = ln(mean 2025) - ln(mean 2023); g_pre = ln(mean
+2019) - ln(mean 2017). Reported: 2024-25; the latest twelve months available against the same months of 2023; 2019-23.
+
+**Statements (version 2).**
+
+| id | statement | statistic | SUPPORT | AGAINST |
+|---|---|---|---|---|
+| AJ1-P1 | Employment grew more after 2023 in subsectors that use more AI | Spearman, AI use vs g_post (CES), 19 subsectors | permutation p ≤ 0.05 (positive) and all leave-one-out rho > 0 | permutation p ≤ 0.05 (negative) and all leave-one-out rho < 0 |
+| AJ1-P2 | ...relative to their own 2017-19 growth | Spearman, AI use vs g_post - g_pre | same rule | same rule |
+| AJ1-P3 | Job openings fell less after 2023 where AI use is higher | Spearman across the 15 JOLTS industries, AI use vs ln(mean openings 2025) - ln(mean 2023) | same rule | same rule |
+
+Otherwise INCONCLUSIVE. SUPPORT means the displacement pattern is absent and the industries that use more AI kept up or pulled
+ahead; AGAINST means they fell behind. Neither identifies AI as the cause or measures the economy-wide net.
