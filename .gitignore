@@ -172,3 +172,6 @@ data/vintages/af1/
 
 # AJ1 raw downloads (BLS API v1 CES and JOLTS JSON replies, manifest and STOP latch)
 data/vintages/aj1/
+
+# AV1 raw downloads (NYU Stern Damodaran .xls files, manifest and STOP latch)
+data/vintages/av1/

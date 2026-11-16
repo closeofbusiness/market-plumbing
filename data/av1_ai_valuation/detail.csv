@@ -1,0 +1,225 @@
+# source: bin/av1_ai_valuation.py build; scores computed after registered.csv (sha256 39f20a5e2ed00461a89a7d7a6cca207571a5fa451317532b235a576f9cbed9e6) was written; spec _research/2026-11-16-AV1-AI-Valuation-Spec.md sha256 c8b3f868d1ad9525aad9307934d29f480c5315e36f0cf8ec9f500559d4d526da; permutations 100000 seed 20261116
+statement_id,item,value,unit
+AV1-SEC,date_check,all 10 files matched expected year-month,text
+AV1-SEC,faq_definition_check,Market Cap and Net Income definitions match between DollarUS22 and DollarUS_current,text
+AV1-SEC,ai_complex_kept_K,7,industries
+AV1-SEC,comparison_kept_n,85,industries
+AV1-SEC,dropped_count,5,industries
+AV1-SEC,dropped_list,Diversified (excluded (Diversified)); Retail (Online) (missing at t1); Retail (REITs) (missing at t0); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-P1,G,0.034582,log points
+AV1-P1,delta_M_ai,0.415662,log points
+AV1-P1,delta_M_other,0.381080,log points
+AV1-P1,perm_p_pos,0.39076,probability
+AV1-P1,perm_p_neg,0.60906,probability
+AV1-P1,loo_min_G,-0.140366,log points
+AV1-P1,loo_max_G,0.303642,log points
+AV1-P1,loo_all_pos_rule,False,boolean
+AV1-P1,loo_all_neg_rule,False,boolean
+AV1-P1,K,7,industries
+AV1-P1,n_ai,7,industries
+AV1-P1,n_other,85,industries
+AV1-P1,members_ai,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (Internet),Software (System & Application),Telecom. Equipment",list
+AV1-P1,members_other,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Diversified),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electrical Equipment,Electronics (Consumer & Office),Electronics (General),Engineering/Construction,Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-P1,permutations,100000,count
+AV1-P1,seed,20261116,integer
+AV1-P1,mc_se_at_0.05,0.000689,probability
+AV1-P1,within_2_mc_se_of_0.05,pos=False;neg=False,boolean
+AV1-P1,nonpositive_pool,False,boolean
+AV1-P1,loo_without_Computer_Services_G,0.053861,log points
+AV1-P1,loo_without_Computer_Services_delta_M_ai,0.434940,log points
+AV1-P1,loo_without_Computer_Services_p_pos,0.37381,probability
+AV1-P1,loo_without_Computer_Services_p_neg,0.62557,probability
+AV1-P1,loo_without_Computers_Peripherals_G,-0.071204,log points
+AV1-P1,loo_without_Computers_Peripherals_delta_M_ai,0.309876,log points
+AV1-P1,loo_without_Computers_Peripherals_p_pos,0.51115,probability
+AV1-P1,loo_without_Computers_Peripherals_p_neg,0.48823,probability
+AV1-P1,loo_without_Semiconductor_G,-0.140366,log points
+AV1-P1,loo_without_Semiconductor_delta_M_ai,0.240714,log points
+AV1-P1,loo_without_Semiconductor_p_pos,0.64222,probability
+AV1-P1,loo_without_Semiconductor_p_neg,0.35691,probability
+AV1-P1,loo_without_Semiconductor_Equip_G,0.011575,log points
+AV1-P1,loo_without_Semiconductor_Equip_delta_M_ai,0.392655,log points
+AV1-P1,loo_without_Semiconductor_Equip_p_pos,0.41847,probability
+AV1-P1,loo_without_Semiconductor_Equip_p_neg,0.58066,probability
+AV1-P1,loo_without_Software_Internet_G,0.055353,log points
+AV1-P1,loo_without_Software_Internet_delta_M_ai,0.436433,log points
+AV1-P1,loo_without_Software_Internet_p_pos,0.36920,probability
+AV1-P1,loo_without_Software_Internet_p_neg,0.63016,probability
+AV1-P1,loo_without_Software_System_Application_G,0.303642,log points
+AV1-P1,loo_without_Software_System_Application_delta_M_ai,0.684722,log points
+AV1-P1,loo_without_Software_System_Application_p_pos,0.13863,probability
+AV1-P1,loo_without_Software_System_Application_p_neg,0.86049,probability
+AV1-P1,loo_without_Telecom_Equipment_G,0.032457,log points
+AV1-P1,loo_without_Telecom_Equipment_delta_M_ai,0.413536,log points
+AV1-P1,loo_without_Telecom_Equipment_p_pos,0.39370,probability
+AV1-P1,loo_without_Telecom_Equipment_p_neg,0.60542,probability
+AV1-R-LEGS,ai_price_leg_dln_mkt_cap,0.952634,log points
+AV1-R-LEGS,ai_earnings_leg_dln_net_income,0.536972,log points
+AV1-R-LEGS,ai_delta_M,0.415662,log points
+AV1-R-LEGS,ai_n,7,industries
+AV1-R-LEGS,ai_members,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (Internet),Software (System & Application),Telecom. Equipment",list
+AV1-R-LEGS,other_price_leg_dln_mkt_cap,0.444661,log points
+AV1-R-LEGS,other_earnings_leg_dln_net_income,0.063582,log points
+AV1-R-LEGS,other_delta_M,0.381080,log points
+AV1-R-LEGS,other_n,85,industries
+AV1-R-LEGS,other_members,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Diversified),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electrical Equipment,Electronics (Consumer & Office),Electronics (General),Engineering/Construction,Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-V1-P1,ai_mean,0.660921,log points
+AV1-R-V1-P1,other_mean,0.406199,log points
+AV1-R-V1-P1,diff_mean,0.254722,log points
+AV1-R-V1-P1,ai_median,0.645038,log points
+AV1-R-V1-P1,other_median,0.311482,log points
+AV1-R-V1-P1,diff_median,0.333557,log points
+AV1-R-V1-P1,n_ai,6,industries
+AV1-R-V1-P1,members_ai,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (System & Application),Telecom. Equipment",list
+AV1-R-V1-P1,n_other,76,industries
+AV1-R-V1-P1,members_other,"Advertising,Aerospace/Defense,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Pharmaceutical),Education,Electronics (General),Engineering/Construction,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-V1-P1,dropped_count,15,industries
+AV1-R-V1-P1,dropped_list,Air Transport (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Broadcasting (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Chemical (Diversified) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Diversified (excluded (Diversified)); Drugs (Biotechnology) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Electrical Equipment (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Electronics (Consumer & Office) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Entertainment (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Hotel/Gaming (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Real Estate (Operations & Services) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Retail (Online) (missing at file 1); Retail (REITs) (missing at file 0); Software (Internet) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-V1-P2,ai_mean,0.461215,log points
+AV1-R-V1-P2,other_mean,0.261903,log points
+AV1-R-V1-P2,diff_mean,0.199313,log points
+AV1-R-V1-P2,ai_median,0.322700,log points
+AV1-R-V1-P2,other_median,0.241161,log points
+AV1-R-V1-P2,diff_median,0.081539,log points
+AV1-R-V1-P2,n_ai,6,industries
+AV1-R-V1-P2,members_ai,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (System & Application),Telecom. Equipment",list
+AV1-R-V1-P2,n_other,66,industries
+AV1-R-V1-P2,members_other,"Advertising,Aerospace/Defense,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Specialty),Construction Supplies,Drugs (Pharmaceutical),Electronics (General),Engineering/Construction,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Power,R.E.I.T.,Real Estate (General/Diversified),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-V1-P2,dropped_count,25,industries
+AV1-R-V1-P2,dropped_list,Air Transport (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 2); Broadcasting (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 3); Chemical (Diversified) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 3); Coal & Related Energy (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Diversified (excluded (Diversified)); Drugs (Biotechnology) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 3); Education (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Electrical Equipment (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 3); Electronics (Consumer & Office) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 1); Entertainment (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 3); Green & Renewable Energy (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Hotel/Gaming (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 2); Metals & Mining (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Oil/Gas (Production and Exploration) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Paper/Forest Products (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Precious Metals (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Publishing & Newspapers (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Real Estate (Development) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Real Estate (Operations & Services) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 2); Retail (Online) (missing at file 3); Retail (REITs) (missing at file 0); Software (Internet) (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 2); Steel (non-positive or non-numeric Aggregate Mkt Cap/ Net Income (all firms) at file 0); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-MM,ai_mean,0.456535,log points
+AV1-R-MM,other_mean,0.317040,log points
+AV1-R-MM,diff_mean,0.139496,log points
+AV1-R-MM,ai_median,0.475077,log points
+AV1-R-MM,other_median,0.239796,log points
+AV1-R-MM,diff_median,0.235281,log points
+AV1-R-MM,n_ai,7,industries
+AV1-R-MM,members_ai,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (Internet),Software (System & Application),Telecom. Equipment",list
+AV1-R-MM,n_other,82,industries
+AV1-R-MM,members_other,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electrical Equipment,Electronics (General),Engineering/Construction,Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-MM,dropped_count,8,industries
+AV1-R-MM,dropped_list,Chemical (Diversified) (non-positive or non-numeric Aggregate Mkt Cap/ Trailing Net Income (only money making firms) at file 1); Diversified (excluded (Diversified)); Electronics (Consumer & Office) (non-positive or non-numeric Aggregate Mkt Cap/ Trailing Net Income (only money making firms) at file 1); Retail (Online) (missing at file 1); Retail (REITs) (missing at file 0); Rubber& Tires (non-positive or non-numeric Aggregate Mkt Cap/ Trailing Net Income (only money making firms) at file 1); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-2022,G,0.050006,log points
+AV1-R-2022,group_delta_M,0.085845,log points
+AV1-R-2022,group_price_leg,0.533564,log points
+AV1-R-2022,group_earnings_leg,0.447719,log points
+AV1-R-2022,other_delta_M,0.035839,log points
+AV1-R-2022,other_price_leg,0.239329,log points
+AV1-R-2022,other_earnings_leg,0.203490,log points
+AV1-R-2022,n_group,7,industries
+AV1-R-2022,members_group,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (Internet),Software (System & Application),Telecom. Equipment",list
+AV1-R-2022,n_other,85,industries
+AV1-R-2022,members_other,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Diversified),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electrical Equipment,Electronics (Consumer & Office),Electronics (General),Engineering/Construction,Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-2022,dropped_count,5,industries
+AV1-R-2022,dropped_list,Diversified (excluded (Diversified)); Retail (Online) (missing at t1); Retail (REITs) (missing at t0); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-2024,G,-0.151557,log points
+AV1-R-2024,group_delta_M,-0.013576,log points
+AV1-R-2024,group_price_leg,0.505848,log points
+AV1-R-2024,group_earnings_leg,0.519423,log points
+AV1-R-2024,other_delta_M,0.137982,log points
+AV1-R-2024,other_price_leg,0.293105,log points
+AV1-R-2024,other_earnings_leg,0.155123,log points
+AV1-R-2024,n_group,7,industries
+AV1-R-2024,members_group,"Computer Services,Computers/Peripherals,Semiconductor,Semiconductor Equip,Software (Internet),Software (System & Application),Telecom. Equipment",list
+AV1-R-2024,n_other,86,industries
+AV1-R-2024,members_other,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Diversified),Chemical (Specialty),Coal & Related Energy,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electrical Equipment,Electronics (Consumer & Office),Electronics (General),Engineering/Construction,Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Power,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (REITs),Retail (Special Lines),Rubber& Tires,Shipbuilding & Marine,Shoe,Software (Entertainment),Steel,Telecom (Wireless),Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (General),Utility (Water)",list
+AV1-R-2024,dropped_count,3,industries
+AV1-R-2024,dropped_list,Diversified (excluded (Diversified)); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-BUILDOUT,G,-0.259421,log points
+AV1-R-BUILDOUT,group_delta_M,0.173011,log points
+AV1-R-BUILDOUT,group_price_leg,0.421716,log points
+AV1-R-BUILDOUT,group_earnings_leg,0.248705,log points
+AV1-R-BUILDOUT,other_delta_M,0.432433,log points
+AV1-R-BUILDOUT,other_price_leg,0.583090,log points
+AV1-R-BUILDOUT,other_earnings_leg,0.150657,log points
+AV1-R-BUILDOUT,n_group,4,industries
+AV1-R-BUILDOUT,members_group,"Electrical Equipment,Engineering/Construction,Power,Utility (General)",list
+AV1-R-BUILDOUT,n_other,88,industries
+AV1-R-BUILDOUT,members_other,"Advertising,Aerospace/Defense,Air Transport,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Broadcasting,Brokerage & Investment Banking,Building Materials,Business & Consumer Services,Cable TV,Chemical (Basic),Chemical (Diversified),Chemical (Specialty),Coal & Related Energy,Computer Services,Computers/Peripherals,Construction Supplies,Drugs (Biotechnology),Drugs (Pharmaceutical),Education,Electronics (Consumer & Office),Electronics (General),Entertainment,Environmental & Waste Services,Farming/Agriculture,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Green & Renewable Energy,Healthcare Products,Healthcare Support Services,Heathcare Information and Technology,Homebuilding,Hospitals/Healthcare Facilities,Hotel/Gaming,Household Products,Information Services,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Metals & Mining,Office Equipment & Services,Oil/Gas (Integrated),Oil/Gas (Production and Exploration),Oil/Gas Distribution,Oilfield Svcs/Equip.,Packaging & Container,Paper/Forest Products,Precious Metals,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Real Estate (Operations & Services),Recreation,Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Semiconductor,Semiconductor Equip,Shipbuilding & Marine,Shoe,Software (Entertainment),Software (Internet),Software (System & Application),Steel,Telecom (Wireless),Telecom. Equipment,Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking,Utility (Water)",list
+AV1-R-BUILDOUT,dropped_count,5,industries
+AV1-R-BUILDOUT,dropped_list,Diversified (excluded (Diversified)); Retail (Online) (missing at t1); Retail (REITs) (missing at t0); Total Market (excluded (Total Market)); Total Market (without financials) (excluded (Total Market (without financials))),text
+AV1-R-FIRM-COUNTS,n,7,industries
+AV1-R-FIRM-COUNTS,members,"Semiconductor,Semiconductor Equip,Software (System & Application),Software (Internet),Computer Services,Computers/Peripherals,Telecom. Equipment",list
+AV1-R-FIRM-COUNTS,Semiconductor_2023,68,firms
+AV1-R-FIRM-COUNTS,Semiconductor_2026,66,firms
+AV1-R-FIRM-COUNTS,Semiconductor_Equip_2023,30,firms
+AV1-R-FIRM-COUNTS,Semiconductor_Equip_2026,31,firms
+AV1-R-FIRM-COUNTS,Software_System_Application_2023,390,firms
+AV1-R-FIRM-COUNTS,Software_System_Application_2026,309,firms
+AV1-R-FIRM-COUNTS,Software_Internet_2023,33,firms
+AV1-R-FIRM-COUNTS,Software_Internet_2026,29,firms
+AV1-R-FIRM-COUNTS,Computer_Services_2023,80,firms
+AV1-R-FIRM-COUNTS,Computer_Services_2026,64,firms
+AV1-R-FIRM-COUNTS,Computers_Peripherals_2023,42,firms
+AV1-R-FIRM-COUNTS,Computers_Peripherals_2026,36,firms
+AV1-R-FIRM-COUNTS,Telecom_Equipment_2023,79,firms
+AV1-R-FIRM-COUNTS,Telecom_Equipment_2026,57,firms
+AV1-R-BTOS-SPEARMAN,spearman_rho,0.026657,rank correlation
+AV1-R-BTOS-SPEARMAN,n,64,industries
+AV1-R-BTOS-SPEARMAN,members,"Advertising,Aerospace/Defense,Apparel,Auto & Truck,Auto Parts,Bank (Money Center),Banks (Regional),Beverage (Alcoholic),Beverage (Soft),Brokerage & Investment Banking,Building Materials,Cable TV,Chemical (Basic),Chemical (Specialty),Computer Services,Computers/Peripherals,Construction Supplies,Drugs (Pharmaceutical),Education,Electronics (General),Engineering/Construction,Environmental & Waste Services,Financial Svcs. (Non-bank & Insurance),Food Processing,Food Wholesalers,Furn/Home Furnishings,Healthcare Products,Homebuilding,Hospitals/Healthcare Facilities,Household Products,Insurance (General),Insurance (Life),Insurance (Prop/Cas.),Investments & Asset Management,Machinery,Packaging & Container,Paper/Forest Products,Publishing & Newspapers,R.E.I.T.,Real Estate (Development),Real Estate (General/Diversified),Reinsurance,Restaurant/Dining,Retail (Automotive),Retail (Building Supply),Retail (Distributors),Retail (General),Retail (Grocery and Food),Retail (Special Lines),Rubber& Tires,Semiconductor,Semiconductor Equip,Shipbuilding & Marine,Shoe,Software (Entertainment),Software (System & Application),Steel,Telecom (Wireless),Telecom. Equipment,Telecom. Services,Tobacco,Transportation,Transportation (Railroads),Trucking",list
+AV1-R-BTOS-SPEARMAN,dropped_count,18,industries
+AV1-R-BTOS-SPEARMAN,dropped_list,Business & Consumer Services (not in fixed Damodaran->NAICS table); Coal & Related Energy (not in fixed Damodaran->NAICS table); Farming/Agriculture (not in fixed Damodaran->NAICS table); Green & Renewable Energy (not in fixed Damodaran->NAICS table); Healthcare Support Services (not in fixed Damodaran->NAICS table); Heathcare Information and Technology (not in fixed Damodaran->NAICS table); Information Services (not in fixed Damodaran->NAICS table); Metals & Mining (not in fixed Damodaran->NAICS table); Office Equipment & Services (not in fixed Damodaran->NAICS table); Oil/Gas (Integrated) (not in fixed Damodaran->NAICS table); Oil/Gas (Production and Exploration) (not in fixed Damodaran->NAICS table); Oil/Gas Distribution (not in fixed Damodaran->NAICS table); Oilfield Svcs/Equip. (not in fixed Damodaran->NAICS table); Power (not in fixed Damodaran->NAICS table); Precious Metals (not in fixed Damodaran->NAICS table); Recreation (not in fixed Damodaran->NAICS table); Utility (General) (not in fixed Damodaran->NAICS table); Utility (Water) (not in fixed Damodaran->NAICS table),text
+AV1-R-BTOS-SPEARMAN,map_Advertising,naics=54;btos_ai=16.2478;delta_m_post=2.624973,mapping
+AV1-R-BTOS-SPEARMAN,map_Aerospace_Defense,naics=31;btos_ai=3.3370;delta_m_post=0.750730,mapping
+AV1-R-BTOS-SPEARMAN,map_Apparel,naics=31;btos_ai=3.3370;delta_m_post=1.351006,mapping
+AV1-R-BTOS-SPEARMAN,map_Auto_Truck,naics=31;btos_ai=3.3370;delta_m_post=1.983116,mapping
+AV1-R-BTOS-SPEARMAN,map_Auto_Parts,naics=31;btos_ai=3.3370;delta_m_post=0.623820,mapping
+AV1-R-BTOS-SPEARMAN,map_Bank_Money_Center,naics=52;btos_ai=9.5826;delta_m_post=0.710273,mapping
+AV1-R-BTOS-SPEARMAN,map_Banks_Regional,naics=52;btos_ai=9.5826;delta_m_post=0.369177,mapping
+AV1-R-BTOS-SPEARMAN,map_Beverage_Alcoholic,naics=31;btos_ai=3.3370;delta_m_post=-0.709086,mapping
+AV1-R-BTOS-SPEARMAN,map_Beverage_Soft,naics=31;btos_ai=3.3370;delta_m_post=-0.133155,mapping
+AV1-R-BTOS-SPEARMAN,map_Brokerage_Investment_Banking,naics=52;btos_ai=9.5826;delta_m_post=0.808308,mapping
+AV1-R-BTOS-SPEARMAN,map_Building_Materials,naics=31;btos_ai=3.3370;delta_m_post=-0.098427,mapping
+AV1-R-BTOS-SPEARMAN,map_Cable_TV,naics=51;btos_ai=20.8978;delta_m_post=-0.157988,mapping
+AV1-R-BTOS-SPEARMAN,map_Chemical_Basic,naics=31;btos_ai=3.3370;delta_m_post=1.121610,mapping
+AV1-R-BTOS-SPEARMAN,map_Chemical_Specialty,naics=31;btos_ai=3.3370;delta_m_post=0.785348,mapping
+AV1-R-BTOS-SPEARMAN,map_Computer_Services,naics=54;btos_ai=16.2478;delta_m_post=0.186313,mapping
+AV1-R-BTOS-SPEARMAN,map_Computers_Peripherals,naics=31;btos_ai=3.3370;delta_m_post=0.613990,mapping
+AV1-R-BTOS-SPEARMAN,map_Construction_Supplies,naics=31;btos_ai=3.3370;delta_m_post=-0.074506,mapping
+AV1-R-BTOS-SPEARMAN,map_Drugs_Pharmaceutical,naics=31;btos_ai=3.3370;delta_m_post=0.771202,mapping
+AV1-R-BTOS-SPEARMAN,map_Education,naics=61;btos_ai=12.2304;delta_m_post=0.318274,mapping
+AV1-R-BTOS-SPEARMAN,map_Electronics_General,naics=31;btos_ai=3.3370;delta_m_post=0.752451,mapping
+AV1-R-BTOS-SPEARMAN,map_Engineering_Construction,naics=23;btos_ai=2.3826;delta_m_post=-0.216094,mapping
+AV1-R-BTOS-SPEARMAN,map_Environmental_Waste_Services,naics=56;btos_ai=6.0804;delta_m_post=-0.043397,mapping
+AV1-R-BTOS-SPEARMAN,map_Financial_Svcs_Non_bank_Insurance,naics=52;btos_ai=9.5826;delta_m_post=1.202946,mapping
+AV1-R-BTOS-SPEARMAN,map_Food_Processing,naics=31;btos_ai=3.3370;delta_m_post=-0.307563,mapping
+AV1-R-BTOS-SPEARMAN,map_Food_Wholesalers,naics=42;btos_ai=3.8500;delta_m_post=-0.107468,mapping
+AV1-R-BTOS-SPEARMAN,map_Furn_Home_Furnishings,naics=31;btos_ai=3.3370;delta_m_post=2.339053,mapping
+AV1-R-BTOS-SPEARMAN,map_Healthcare_Products,naics=31;btos_ai=3.3370;delta_m_post=-0.040192,mapping
+AV1-R-BTOS-SPEARMAN,map_Homebuilding,naics=23;btos_ai=2.3826;delta_m_post=0.588072,mapping
+AV1-R-BTOS-SPEARMAN,map_Hospitals_Healthcare_Facilities,naics=62;btos_ai=7.0457;delta_m_post=0.422778,mapping
+AV1-R-BTOS-SPEARMAN,map_Household_Products,naics=31;btos_ai=3.3370;delta_m_post=-0.136800,mapping
+AV1-R-BTOS-SPEARMAN,map_Insurance_General,naics=52;btos_ai=9.5826;delta_m_post=0.808618,mapping
+AV1-R-BTOS-SPEARMAN,map_Insurance_Life,naics=52;btos_ai=9.5826;delta_m_post=0.181958,mapping
+AV1-R-BTOS-SPEARMAN,map_Insurance_Prop_Cas,naics=52;btos_ai=9.5826;delta_m_post=0.299707,mapping
+AV1-R-BTOS-SPEARMAN,map_Investments_Asset_Management,naics=52;btos_ai=9.5826;delta_m_post=0.777798,mapping
+AV1-R-BTOS-SPEARMAN,map_Machinery,naics=31;btos_ai=3.3370;delta_m_post=0.087003,mapping
+AV1-R-BTOS-SPEARMAN,map_Packaging_Container,naics=31;btos_ai=3.3370;delta_m_post=-0.304302,mapping
+AV1-R-BTOS-SPEARMAN,map_Paper_Forest_Products,naics=31;btos_ai=3.3370;delta_m_post=0.949025,mapping
+AV1-R-BTOS-SPEARMAN,map_Publishing_Newspapers,naics=51;btos_ai=20.8978;delta_m_post=-0.044901,mapping
+AV1-R-BTOS-SPEARMAN,map_R_E_I_T,naics=53;btos_ai=9.4391;delta_m_post=0.644755,mapping
+AV1-R-BTOS-SPEARMAN,map_Real_Estate_Development,naics=53;btos_ai=9.4391;delta_m_post=-0.158928,mapping
+AV1-R-BTOS-SPEARMAN,map_Real_Estate_General_Diversified,naics=53;btos_ai=9.4391;delta_m_post=0.743593,mapping
+AV1-R-BTOS-SPEARMAN,map_Reinsurance,naics=52;btos_ai=9.5826;delta_m_post=0.191870,mapping
+AV1-R-BTOS-SPEARMAN,map_Restaurant_Dining,naics=72;btos_ai=1.8761;delta_m_post=0.230017,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_Automotive,naics=44;btos_ai=4.1870;delta_m_post=0.693784,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_Building_Supply,naics=44;btos_ai=4.1870;delta_m_post=0.297457,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_Distributors,naics=42;btos_ai=3.8500;delta_m_post=0.304690,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_General,naics=44;btos_ai=4.1870;delta_m_post=0.662696,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_Grocery_and_Food,naics=44;btos_ai=4.1870;delta_m_post=0.188764,mapping
+AV1-R-BTOS-SPEARMAN,map_Retail_Special_Lines,naics=44;btos_ai=4.1870;delta_m_post=0.643266,mapping
+AV1-R-BTOS-SPEARMAN,map_Rubber_Tires,naics=31;btos_ai=3.3370;delta_m_post=2.421052,mapping
+AV1-R-BTOS-SPEARMAN,map_Semiconductor,naics=31;btos_ai=3.3370;delta_m_post=1.514791,mapping
+AV1-R-BTOS-SPEARMAN,map_Semiconductor_Equip,naics=31;btos_ai=3.3370;delta_m_post=0.845585,mapping
+AV1-R-BTOS-SPEARMAN,map_Shipbuilding_Marine,naics=31;btos_ai=3.3370;delta_m_post=0.592416,mapping
+AV1-R-BTOS-SPEARMAN,map_Shoe,naics=31;btos_ai=3.3370;delta_m_post=-0.132772,mapping
+AV1-R-BTOS-SPEARMAN,map_Software_Entertainment,naics=51;btos_ai=20.8978;delta_m_post=0.943513,mapping
+AV1-R-BTOS-SPEARMAN,map_Software_System_Application,naics=51;btos_ai=20.8978;delta_m_post=0.128762,mapping
+AV1-R-BTOS-SPEARMAN,map_Steel,naics=31;btos_ai=3.3370;delta_m_post=1.625102,mapping
+AV1-R-BTOS-SPEARMAN,map_Telecom_Wireless,naics=51;btos_ai=20.8978;delta_m_post=-0.682098,mapping
+AV1-R-BTOS-SPEARMAN,map_Telecom_Equipment,naics=31;btos_ai=3.3370;delta_m_post=0.676087,mapping
+AV1-R-BTOS-SPEARMAN,map_Telecom_Services,naics=51;btos_ai=20.8978;delta_m_post=0.759468,mapping
+AV1-R-BTOS-SPEARMAN,map_Tobacco,naics=31;btos_ai=3.3370;delta_m_post=-0.075679,mapping
+AV1-R-BTOS-SPEARMAN,map_Transportation,naics=48;btos_ai=2.0783;delta_m_post=0.729438,mapping
+AV1-R-BTOS-SPEARMAN,map_Transportation_Railroads,naics=48;btos_ai=2.0783;delta_m_post=0.092085,mapping
+AV1-R-BTOS-SPEARMAN,map_Trucking,naics=48;btos_ai=2.0783;delta_m_post=0.133698,mapping

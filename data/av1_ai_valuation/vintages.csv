@@ -1,0 +1,13 @@
+# source: fetch manifest of the raw cache (data/vintages/av1); raw files are not committed
+source,key,url,fetched_utc,status,bytes,sha256,note
+nyu-stern-damodaran,pedata16,https://pages.stern.nyu.edu/~adamodar/pc/archives/pedata16.xls,2026-11-16T09:38:27Z,200,92672,4ec09517773f1b3395bc29c16749a1c64d4ecd6c5d75cb47b100735b87d22e96,Damodaran US industry .xls
+nyu-stern-damodaran,pedata19,https://pages.stern.nyu.edu/~adamodar/pc/archives/pedata19.xls,2026-11-16T09:38:31Z,200,49664,54d1cf02269f1355f072eb6635bf27c65dcccaed198be59e23a3393bf8859607,Damodaran US industry .xls
+nyu-stern-damodaran,pedata21,https://pages.stern.nyu.edu/~adamodar/pc/archives/pedata21.xls,2026-11-16T09:38:34Z,200,52224,f9bb7303a23b0601580d95c7b0faaf4f79204356d318c0a58ad271147ad1604a,Damodaran US industry .xls
+nyu-stern-damodaran,pedata22,https://pages.stern.nyu.edu/~adamodar/pc/archives/pedata22.xls,2026-11-16T09:38:38Z,200,62464,879cc6710f4c9d545eb7f5f0c190463f637c8c796d1b3909288925f7c655b296,Damodaran US industry .xls
+nyu-stern-damodaran,pedata23,https://pages.stern.nyu.edu/~adamodar/pc/archives/pedata23.xls,2026-11-16T09:38:41Z,200,62464,218bfb8cc2083d47062f868894cb6fb966fa1af9c3e9b92ceb27502f428da263,Damodaran US industry .xls
+nyu-stern-damodaran,pedata_current,https://pages.stern.nyu.edu/~adamodar/pc/datasets/pedata.xls,2026-11-16T09:38:45Z,200,61952,e9b839c046a8ff2786d81faedc603cd91d7c6d8b2bad9f895d821e2d6bd1e04f,Damodaran US industry .xls
+nyu-stern-damodaran,DollarUS21,https://pages.stern.nyu.edu/~adamodar/pc/archives/DollarUS21.xls,2026-11-16T09:38:49Z,200,64000,f25fa1ab543580cc8ad910168dfae88520bfab032274540fabf98b187d195143,Damodaran US industry .xls
+nyu-stern-damodaran,DollarUS22,https://pages.stern.nyu.edu/~adamodar/pc/archives/DollarUS22.xls,2026-11-16T09:38:53Z,200,67072,e49990e943aee84a2562b4dd717db24199bfd0973bd69ef1429018df5e6032a0,Damodaran US industry .xls
+nyu-stern-damodaran,DollarUS23,https://pages.stern.nyu.edu/~adamodar/pc/archives/DollarUS23.xls,2026-11-16T09:38:56Z,200,67072,02959734dff4a49f21c0ac6b2d38926005c35a551f923bb2ecf46621a2f5c839,Damodaran US industry .xls
+nyu-stern-damodaran,DollarUS_current,https://pages.stern.nyu.edu/~adamodar/pc/datasets/DollarUS.xls,2026-11-16T09:39:00Z,200,66048,9c930283839351764f4eba646f0cea16d7af3ca5a620c8079897ad0ceb585d77,Damodaran US industry .xls
+census-btos,btos-ai-core-questions,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,2026-11-15,hand download,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce,"AI Core Questions (Original), hash-pinned in bin/cv1_confidence_velocity.py; read through aj1_ai_jobs.load_btos_inputs"
