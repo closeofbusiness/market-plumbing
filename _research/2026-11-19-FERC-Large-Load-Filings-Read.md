@@ -5,22 +5,23 @@ orders in dockets EL26-67 (PJM), EL26-69 (NYISO), EL26-70 (MISO), EL26-71 (CAISO
 20 November. The question carried here since August ([the Parcel C note](../2026-08-22-Parcel-C-FERC-Return.md), section 6.4) is
 whether any of them creates a large-load or flexible-load service whose rights can be **sold, assigned or traded** to another load.
 Grok found the filings and read them first; its two returns are kept verbatim in
-[the readings note](2026-11-19-FERC-Large-Load-Grok-Readings.md). Every finding marked "read" below was re-read by the supervisor
-in the filed document itself, downloaded from the operator's own site (sha256 in the last section).
+[the readings note](2026-11-19-FERC-Large-Load-Grok-Readings.md). Every finding below was re-read by the supervisor in the filed document itself, downloaded from the operator's own site or from
+FERC eLibrary (sha256 in the last section).
 
-## The answer so far: no tradeable right in the three filings read; two are unread
+## The answer: no filing creates a tradeable right
 
 | operator | filing | new service | can the right be sold or moved to another load? | read by |
 |---|---|---|---|---|
 | PJM | ER27-531, 16 Nov | Interim Network Integration Transmission Service; Firm and Non-Firm Contract Demand Transmission Service | **No.** Proposed tariff §701.4 bars use of the interim service for "sales of energy to loads other than" the load named in the agreement, and for "provision of transmission service ... to third parties"; the transmittal (p. 38) states the same for Contract Demand service. §711(a) lets a *successor customer* take over service to the same load under a new agreement; that changes who serves the load, not where the right is used | supervisor |
 | NYISO | ER27-517, 16 Nov (Attachment LL); NYTOs ER27-529 | Firm and Non-Firm Withdrawal Service | **No, not on its own.** Attachment LL §44.7.1.3 allows a queue position to move to another entity "only if" it "acquires the specific Large Load Project", at the same point of interconnection. The transmission owners' cost-recovery agreement (§4.2) is "specific to a single Large Load Facility"; §9.7 allows assignment only with consent and with the other agreements | supervisor |
 | CAISO | ER27-532, 16 Nov | Flexible Interim Load Interconnection (FILI): curtailable connection before upgrades are built | **Silent.** Tariff §25.7.2 provides FILI through a three-party agreement for one named Large Load, setting when it is curtailed; it has no resale, assignment or transfer provision. The participating transmission owners' own tariffs, which actually provide FILI, were not read | supervisor |
-| MISO | ER27-527 (GRITS, the filed name of FLITS) and ER27-526, 16 Nov | Grid Responsive Integration Transmission Service; Interim NITS; Firm Service Step Up | **Not read.** FERC's file list for accession 20261116-5326 names the clean tariff (Tab B, 2.8 MB), but its download service answered a script with HTTP 401; MISO's own filings page lists no 16 Nov documents | — |
-| ISO-NE | ER27-484, 13 Nov | Firm, Interim and Non-Firm Contract Demand Service | **Not read.** The filing's PDFs on iso-ne.com returned errors to Grok; FERC's download as for MISO | — |
+| MISO | ER27-527 (GRITS, the filed name of FLITS), 16 Nov | Grid Responsive Integration Transmission Service: firm and non-firm, to the customer's point(s) of delivery | **Silent; resale routed elsewhere.** The clean tariff (Tab B) has no assignment, reassignment or resale provision for GRITS. §37B.7 requires a GRITS customer to "use Point-To-Point Transmission Service" for any third-party sale outside the MISO region. The operating agreement (Attachment G-1) has no transfer clause. The companion ER27-526 (Interim NITS, Firm Service Step Up) was not read | supervisor |
+| ISO-NE | ER27-484, 13 Nov | Firm, Interim and Non-Firm Contract Demand Service | **Silent; tied to a named project.** Part II.J (§II.57) and the service agreement (Attachment S) have no assignment, resale or transfer clause; the agreement names the project, location and points of delivery, and resuming service after termination needs a new application. The tariff's resale and reassignment provisions (Schedule 20B, Attachment H-1) cover point-to-point service only. The study agreement (Attachment U §14.1) needs ISO consent to assign; it covers the study, not the service | supervisor |
 | SPP | EL26-68, due 20 Nov | — | not yet filed; SPP's existing CHILLS service is non-transferable (read 12 Nov) | — |
 
-Every operator proposes a *non-firm* or *curtailable* service alongside firm service. None read so far lets a data centre's
-capacity right detach from the facility it was granted for.
+Every operator proposes a *non-firm* or *curtailable* service alongside firm service. None lets a data centre's capacity right
+detach from the facility it was granted for: two bar it (PJM, NYISO), three are silent and tie the service to a named load or
+project (CAISO, MISO, ISO-NE).
 
 ## What this does to the three panel positions
 
@@ -29,12 +30,12 @@ tariffs" plus a GE Vernova order leg (lens D).
 
 - **Lens D (cover): does not cover.** Its first leg needed operators to defend firm-only service. All five filers instead propose
   non-firm or curtailable services, so the leg did not fire, whatever GE Vernova's Q3 order book shows.
-- **Lenses A and C: not fired on the three filings read, not yet resolved.** A tradeable right would have to be in the MISO or
-  ISO-NE tariff text or in SPP's filing. The resolution is carried to the SPP row (21 November), with the two unread tariffs.
+- **Lenses A and C: did not fire at any of the five filers.** Decline-to-answer and size zero stand. The last leg is SPP
+  (due 20 November, read on the 21 November row); its existing CHILLS service is already non-transferable.
 
 ## What would change this
 
-A clause in the MISO, ISO-NE or SPP tariffs permitting resale, reassignment or redirection of the new service to another load.
+A clause in SPP's filing permitting resale, reassignment or redirection of a new service to another load.
 Comments and protests are due over the next 30-60 days (PJM asked for 60), and FERC's orders would follow; an order could add
 transfer rights none of the filings proposes.
 
@@ -46,3 +47,10 @@ transfer rights none of the filings proposes.
 | CAISO large-loads amendment | caiso.com/documents/nov-16-2026-tariff-amendment-large-loads-er27-532.pdf | d7c1b0f4febe6d25a498bc1d8b0b7ebd9409a157059e27c2e8139803ac5f7f45 |
 | NYISO OATT Attachment LL (clean) | nyisoviewer.etariff.biz/ViewerDocLibrary/Filing/Filing5488/Attachments/Att%20VIII%20Clean%20OATT%20Att%20LL.pdf | 1c987df3808971ab1d6507607701dd3430a8af4be124b7a76c855a4785ab5cd5 |
 | NYTOs pro forma Large Load Cost Recovery Agreement | nyisoviewer.etariff.biz/ViewerDocLibrary/Filing/Filing5490/Attachments/Att%20E%20Pro%20Forma%20LL%20CRA.pdf | 89d0812cfba6bbe2f59edd2946bd4c611cf138aa1de7be377852885e7d906a68 |
+| MISO GRITS clean tariff (Tab B, accession 20261116-5326) | FERC eLibrary | 607586ea9676ab2c37cd2703b37fb4e64d34ed8b345f6183fbfda77f9f16aacd |
+| ISO-NE clean tariff, ISO files (accession 20261113-5007) | FERC eLibrary | 98e3829ab1944d92344d788a30116ed0734a7d6519f0e29e41733e541227449c |
+| ISO-NE clean tariff, transmission-owner files (same accession) | FERC eLibrary | be854c08b8bf28c323fa22a747446e2e42a228f5aab51a86fa1695dc11e05dc0 |
+
+The MISO and ISO-NE files came through FERC eLibrary's public download, the request its file-list page makes (the principal
+approved the download). An earlier "401" from that service was the supervisor's malformed request, not a refusal.
+
