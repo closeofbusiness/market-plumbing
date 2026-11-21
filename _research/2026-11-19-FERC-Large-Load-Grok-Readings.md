@@ -124,3 +124,105 @@ Fetched in call 2 (two URLs in the answer were not fetched successfully: the MIS
 - error: https://www.iso-ne.com/static-assets/documents/100041/er27-484_large_loads_integration.pdf
 - error: https://www.iso-ne.com/static-assets/documents/100040/a02_tc_large_load_oatt_redlines.pdf
 - error: https://cdn.misoenergy.org/2026-11-16%20Docket%20No.%20ER27-527-000.pdf
+
+## Call 3 (spp-el26-68, 21 November 2026, 704 s)
+
+Grok fetched some SPP pages through a third-party reader service (r.jina.ai); several of those returned 401 and it moved on. The decisive PDF was fetched from spp.org directly, and the supervisor re-downloaded it from spp.org.
+
+I'll look up SPP's FERC filings around 20 November 2026 in EL26-68 and any companion ER tariff filing, then read whether any large-load or flexible-load service is transferable.The package is three tariff filings (ER27-559, ER27-577, ER27-578), including a Price Adaptive Load Service. I’ll open the transmittal and tariff text for the transfer language.**Price Adaptive Load Service is not transferable.** SPP filed it on 19 November 2026. No separate EL26-68 response, and no further abeyance, showed up in the record searched through 21 November 2026.
+
+FILINGS
+- 18 November 2026; Southwest Power Pool, Inc.; Submission of Tariff Revisions to Enhance Transmission Service Provisions for High Impact Large Loads and Clarify Interconnection and Market Registration Requirements for Non-Transmission Facilities in Response to Show Cause Order; ER27-559-000; 20261118-5252
+- 19 November 2026; Southwest Power Pool, Inc.; Submission of Tariff Revisions to Establish Load Safe Harbor Limit for Delivery Point Costs; ER27-577-000; 20261119-5227
+- 19 November 2026; Southwest Power Pool, Inc.; Submission of Tariff Revisions to Add the Price Adaptive Load Service; ER27-578-000 (related to EL26-68-000); 20261119-5243
+
+SERVICE CLASS
+- ER27-578: Price Adaptive Load Service (PALS). Non-firm, as-available, price-adaptive, curtailable transmission service for a commercial or industrial load (or a portion of one), including large load and loads below the large-load thresholds. Term one to ten years. $25/MWh bid cap. Not limited to High Impact Large Loads, and not a bridge to firm service.
+- ER27-559: NO CLASS. Study, pro forma agreement, cost-transparency, and non-transmission-facility revisions. It does not create a new large-load or flexible-load service.
+- ER27-577: NO CLASS, on the filing description and on how the other two letters describe it (a cap on regional funding of delivery-point upgrades). The transmittal itself was not opened. See the uncertainty note below.
+
+TRANSFERABLE
+- PALS: NO
+- ER27-559 and ER27-577: NO CLASS
+
+QUOTE
+"PALS is not available for resale, redirection, reassignment, or transfer of service."
+
+WHERE
+Transmittal letter, section III.B.1, footnote 59, which cites Proposed Tariff Part VIII, section 54.5. The same letter says the pro forma PALS Service Agreement, Attachment BG, Addendum 2, section 14.0, may not be assigned, resold, or transferred. The paragraph sits before the running header "Page 26," which appears later in section III.B.10. The attached tariff sheets were past the extraction cutoff of that PDF, so the sheet’s exact punctuation was not read. The sentence above is from the transmittal.
+
+URL fetched
+https://spp.org/Documents/78398/20261119_Revisions%20to%20Add%20Price%20Adaptive%20Load%20Service_ER27-578-000.pdf
+
+eLibrary file list (public; download links on the page do not resolve to a file URL): https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261119-5243
+
+ER27-559 letter, read, and it creates no such service: https://spp.org/Documents/78389/20261118_Revisions%20to%20Enhance%20Transmission%20Service%20Provisions%20for%20HILLs%20and%20Clarify%20Requirements%20for%20Non-Transmission%20Facilities_ER27-559-000.pdf
+
+Date change
+None found. The 18 November letter restates the 14 August 2026 abeyance: responses due 20 November 2026. An eLibrary search for "EL26-68" filed 20–21 November 2026 returned no documents. No extension order appeared.
+
+EL26-68 response
+Not found. Both section 205 letters say a separate response in EL26-68-000 covers transmission and ancillary service rates for co-located load, among other things. SPP’s 20 November document list has no EL26-68 filing. Assumption: that response was still unfiled when these searches ran. What would settle it is the EL26-68 docket sheet for 20–21 November 2026.
+
+Uncertainty
+ER27-577’s transmittal (eLibrary file RR814_Transmittal Letter.pdf) was not opened. SPP has not posted that PDF; the library hit for "Load Safe Harbor" is a 17 November stakeholder zip, not the filing. Opening accession 20261119-5227 would confirm it creates no service. The PALS tariff-sheet text of section 54.5 was not extracted from the PDF; the transmittal states that section’s rule in the quote above.
+
+URLs that refused or returned nothing usable
+- https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Price+Adaptive&p=1&search_type=filtered_search — 401
+- https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Safe%20Harbor&search_type=filtered_search — 401
+- https://r.jina.ai/https://www.spp.org/spp-documents-filings/?id=18449 — timeout
+- https://www.spp.org/robots.txt — 404
+- https://elibrary.ferc.gov/eLibrarywebapi/api/File/GetFileList?accessionnumber=20261119-5243 — empty body
+- https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261119-5227 — first fetch returned only the page footer (document info later loaded)
+- https://elibrary.ferc.gov/eLibrary/search?q=searchText%3D%22Southwest%20Power%20Pool%22%26dateType%3Dfiled_date%26startDate%3D2026-11-20%26endDate%3D2026-11-21 — empty search form, query not applied
+- https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=ER27-578&per_page=20 — zero hits (the 19 November Federal Register notice that was opened is the 16 November combined notice and does not include these SPP dockets)
+- https://www.federalregister.gov/api/v1/public-inspection-documents.json?conditions%5Bterm%5D=ER27-578&per_page=20 — public-inspection list unavailable until Monday 23 November 2026
+
+Fetched in call 3:
+
+- success: https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261119-5227
+- success: https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261119-5243
+- success: https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261118-5252
+- success: https://elibrary.ferc.gov/eLibrarywebapi/api/File/GetFileList?accessionnumber=20261119-5243
+- success: https://loadfactornews.com/readings/2026/11/20/spp-er27-577-load-safe-harbor-limit-25-million-pals-er27-578/
+- success: https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=ER27-578&per_page=20
+- success: https://theduckcurve.com/posts/spp-price-adaptive-load-service-large-load-ferc-filings
+- success: https://spp.org/spp-documents-filings/?document_name=RR791&p=1&search_type=filtered_search
+- success: https://spp.org/spp-documents-filings/?document_name=EL26-68&p=1&search_type=filtered_search
+- success: https://spp.org/spp-documents-filings/?document_name=Price+Adaptive&p=1&search_type=filtered_search
+- success: https://elibrary.ferc.gov/idmws/file_list.asp?accession_num=20261119-5243
+- success: https://elibrary.ferc.gov/eLibrary/docketsheet?docket_number=EL26-68&page=2
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3D*%26dateType%3Dfiled_date%26startDate%3D2026-11-18%26endDate%3D2026-11-21%26docketNumber%3DEL26-68
+- success: https://www.federalregister.gov/documents/2026/11/19/2026-23607/combined-notice-of-filings-1
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3DEL26-68%26dateType%3Dfiled_date%26startDate%3D2026-11-13%26endDate%3D2026-11-21
+- success: https://www.spp.org/markets-operations/high-impact-large-load-hill-integration/
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3D%22Price%20Adaptive%20Load%22%26dateType%3Dfiled_date%26startDate%3D2026-11-13%26endDate%3D2026-11-21
+- error: https://www.spp.org/robots.txt
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=ER27-578&search_type=filtered_search
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3D%22Southwest%20Power%20Pool%22%26dateType%3Dfiled_date%26startDate%3D2026-11-20%26endDate%3D2026-11-21
+- success: https://www.spp.org/governance/spp-revision-requests/
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3DSouthwest%20Power%20Pool%26dateType%3Dfiled_date%26startDate%3D2026-11-20%26endDate%3D2026-11-21
+- error: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Price+Adaptive&p=1&search_type=filtered_search
+- success: https://r.jina.ai/https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20261119-5243
+- success: https://spp.org/spp-documents-filings/?document_name=ER27-577&p=1&search_type=filtered_search
+- success: https://spp.org/spp-documents-filings/?document_name=show+cause&p=1&search_type=filtered_search
+- success: https://r.jina.ai/https://www.spp.org/markets-operations/high-impact-large-load-hill-integration/
+- error: https://r.jina.ai/https://github.com/4very/ferc-elibrary-api
+- success: https://www.spp.org/documents/78411/SPP%20Large%20Load%20Presentation%20November%202026.pptx
+- success: https://www.spp.org/calendar-list/spp-large-load-processes-qa-net-conference-20261119/
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Price%20Adaptive&search_type=filtered_search
+- success: https://elibrary.ferc.gov/eLibrary/search?q=searchText%3DEL26-68%26dateType%3Dfiled_date%26startDate%3D2026-11-20%26endDate%3D2026-11-21
+- error: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Safe%20Harbor&search_type=filtered_search
+- success: https://spp.org/Documents/78398/20261119_Revisions%20to%20Add%20Price%20Adaptive%20Load%20Service_ER27-578-000.pdf
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=RR808&search_type=filtered_search
+- success: https://www.federalregister.gov/api/v1/public-inspection-documents.json?conditions%5Bterm%5D=ER27-578&per_page=20
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=20261118&search_type=filtered_search
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=20261119&search_type=filtered_search
+- success: https://spp.org/Documents/78389/20261118_Revisions%20to%20Enhance%20Transmission%20Service%20Provisions%20for%20HILLs%20and%20Clarify%20Requirements%20for%20Non-Transmission%20Facilities_ER27-559-000.pdf
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=ER27-577&search_type=filtered_search
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=20261120&search_type=filtered_search
+- error: https://r.jina.ai/https://www.spp.org/spp-documents-filings/?id=18449
+- success: https://elibrary.ferc.gov/eLibrary/docinfo?accession_number=20261119-5227
+- success: https://elibrary.ferc.gov/eLibrary/docinfo?accession_number=20261119-5243
+- success: https://elibrary.ferc.gov/eLibrary/docinfo?accession_number=20261118-5252
+- success: https://r.jina.ai/https://spp.org/spp-documents-filings/?document_name=Load%20Safe%20Harbor&search_type=filtered_search
