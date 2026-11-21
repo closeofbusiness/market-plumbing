@@ -99,7 +99,12 @@ UA = "Mozilla/5.0 (compatible; ThirdDerivativeResearch/1.0; non-commercial resea
 HEADERS = {"User-Agent": UA, "Accept-Encoding": "identity"}
 ICE_HOST, EIA_HOST = "www.ice.com", "www.eia.gov"
 ICE_PREFIX = "/publicdocs/futures/"
-ICE_RX = re.compile(r"/publicdocs/futures/COTHist(20[0-9]{2})\.csv")
+# From the report of 10 Nov 2026 ICE updates the current-year file only under /publicdocs/cot_report/automated/; the old path froze at
+# 3 Nov 2026 (byte-identical on 13 and 21 Nov). The two copies agree on every Brent position cell for 6 Jan-3 Nov 2026 (checked 21 Nov;
+# they differ only in number and date formatting). Past years (2025 and earlier) exist only under /publicdocs/futures/.
+ICE_AUTO_PREFIX = "/publicdocs/cot_report/automated/"
+ICE_AUTO_FROM = 2026
+ICE_RX = re.compile(r"/publicdocs/(?:futures|cot_report/automated)/COTHist(20[0-9]{2})\.csv")
 EIA_PATH = "/dnav/pet/hist_xls/RBRTEd.xls"
 EIA_RAW_NAME = "eia_RBRTEd.xls"
 XLS_MAGIC = b"\xd0\xcf\x11\xe0"
@@ -792,7 +797,7 @@ def log_path(out_dir):
 
 
 def ice_path(year):
-    return "%sCOTHist%d.csv" % (ICE_PREFIX, year)
+    return "%sCOTHist%d.csv" % (ICE_AUTO_PREFIX if year >= ICE_AUTO_FROM else ICE_PREFIX, year)
 
 
 def log_row_for(rows, host, path, sha):
