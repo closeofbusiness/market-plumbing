@@ -1029,6 +1029,7 @@ def parse_file(raw, year, name="", url=""):
     allc, areas, periods_num, periods_all = {}, set(), set(), set()
     n_rows = n_dash = n_x = n_dd = 0
     codes = collections.Counter()
+    raw_rows, n_exact_dup, dup_areas = {}, 0, collections.Counter()
     crude_rows = 0
     prods = (PRODUCT,) if on("crude_primary_only") else (PRODUCT, "TOTCRUDE")
     for r in rd:
@@ -1059,7 +1060,14 @@ def parse_file(raw, year, name="", url=""):
                 raise DataError("%s: unknown unit %r" % (name, unit))
             key = (area, per, flow, unit)
             if key in allc and on("crude_primary_only"):
+                # JODI's 2026 file of 19 Nov 2026 repeats every Peru row twice, byte for byte (1,600 rows, Jan-Aug 2026).
+                # An exact repeat of the whole row is dropped and counted; a repeated cell with any different field still stops.
+                if raw_rows.get(key) == tuple(r):
+                    n_exact_dup += 1
+                    dup_areas[area] += 1
+                    continue
                 raise DataError("%s: duplicate crude cell %s" % (name, key))
+            raw_rows[key] = tuple(r)
             try:
                 c = int(code)
             except ValueError:
@@ -1072,6 +1080,7 @@ def parse_file(raw, year, name="", url=""):
     fd.cells = {k: v for k, v in allc.items() if k[2] in FLOWS}
     fd.areas = areas
     fd.rows, fd.n_dash, fd.n_x, fd.n_dd = n_rows, n_dash, n_x, n_dd
+    fd.n_exact_dup, fd.dup_areas = n_exact_dup, dict(dup_areas)
     fd.codes = {k: codes.get(k, 0) for k in "1234"}
     fd.codes_other = sum(v for k, v in codes.items() if k not in "1234")
     fd.first_period, fd.max_period = min(periods_all), (max(periods_num) if periods_num else "")
@@ -2264,6 +2273,9 @@ def _pins(ctx, inp, p, world, add, files, fs_rows, E, maxp, spr_res, ident_rows,
     ok = bool(f26 and f26.rows == 134400 and len(f26.areas) == 96 and f26.max_period == "2026-07" and f26.sha == PIN_SHA[2026])
     add("C1a", "primaryyear2026.csv: rows, areas, max period, sha256", "134,400 rows; 96 areas; max 2026-07; 909a7330...", "%s rows; %s areas; max %s; %s..." % (
         f26.rows if f26 else "-", len(f26.areas) if f26 else "-", f26.max_period if f26 else "-", f26.sha[:8] if f26 else "-"), ok)
+    dups = sorted((y, f.n_exact_dup, f.dup_areas) for y, f in inp.files.items() if getattr(f, "n_exact_dup", 0))
+    add("C1f", "exact repeats of whole crude rows, dropped (a repeat with any different field stops the build)", "none",
+        "; ".join("%d: %d rows (%s)" % (y, n, ", ".join("%s %d" % kv for kv in sorted(ar.items()))) for y, n, ar in dups) or "none", not dups, "warn")
     ok = bool(f25 and f25.rows == 283200 and len(f25.areas) == 118 and f25.sha == PIN_SHA[2025])
     add("C1b", "2025.csv: rows, areas, sha256", "283,200 rows; 118 areas; 5726e6e7...", "%s rows; %s areas; %s..." % (f25.rows if f25 else "-", len(f25.areas) if f25 else "-", f25.sha[:8] if f25 else "-"), ok)
     r15 = next((r for r in fs_rows if r["file"] == "2015.csv"), None)
@@ -2911,6 +2923,14 @@ def suite_pure(ck):
     ck.ok("an HTML body is a problem", jodi_csv_problem(b"<html>blocked</html>", PRIMARY_DIR + "2030.csv") is not None)
     ck.raises("parse_file refuses a file with no CRUDEOIL rows", DataError, lambda: parse_file(fx_csv(2030, fx_model(), no_crude=True), 2030, "2030.csv"))
     # G5: assessment codes
+    def dup_rows(change):
+        lines = fx_csv(2030, fx_model()).decode("utf-8").splitlines()
+        crude = next(l for l in lines[1:] if ",CRUDEOIL," in l and l.split(",")[5] not in MARKERS)
+        twin = crude if not change else ",".join(crude.split(",")[:5] + [str(float(crude.split(",")[5]) + 1.0)] + crude.split(",")[6:])
+        return ("\n".join(lines + [twin]) + "\n").encode("utf-8")
+    fd_dup = parse_file(dup_rows(False), 2030, "2030.csv")
+    ck.eq("an exact repeat of a whole crude row is dropped and counted (JODI 2026 file of 19 Nov 2026, Peru)", fd_dup.n_exact_dup, 1)
+    ck.raises("a repeated crude cell with a different value is a hard failure", DataError, lambda: parse_file(dup_rows(True), 2030, "2030.csv"), "duplicate")
     ck.raises("a numeric cell with assessment code 5 is a hard failure", DataError, lambda: parse_file(fx_csv(2030, fx_model(), code5=True), 2030, "2030.csv"), "code")
     # G4: unit relation
     def bent():

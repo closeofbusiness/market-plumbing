@@ -1,6 +1,6 @@
 <!--
-# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 23 October 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
-# source: U.S. Energy Information Administration (Oct 2026): STEO bulk file (release of 6 Oct 2026); Petroleum Supply Monthly series MCRSTUS1, MCESTUS1, MCSSTUS1, MCRFPUS2.
+# source: International Energy Forum (IEF). Joint Organizations Data Initiative (JODI) Database. JODI Oil and Gas World Databases: www.jodidata.org, Accessed 21 November 2026. Derived statistics only; JODI reserves all rights; no JODI file is redistributed.
+# source: U.S. Energy Information Administration (Nov 2026): STEO bulk file (release of 10 Nov 2026); Petroleum Supply Monthly series MCRSTUS1, MCESTUS1, MCSSTUS1, MCRFPUS2.
 # vintage: see file_stats.csv and report.txt for the JODI files, their Last-Modified dates and the months covered. (These three lines are the acknowledgement every file in this folder begins with.)
 -->
 # JODI world oil ledger
