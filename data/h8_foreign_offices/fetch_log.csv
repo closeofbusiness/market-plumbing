@@ -1,4 +1,4 @@
-# source: Board of Governors of the Federal Reserve System (www.federalreserve.gov) retrieved 2026-10-23, 2026-10-25, 2026-11-01, 2026-11-06, 2026-11-13; request log of bin/h8_foreign_offices.py fetch (one row per request)
+# source: Board of Governors of the Federal Reserve System (www.federalreserve.gov) retrieved 2026-10-23, 2026-10-25, 2026-11-01, 2026-11-06, 2026-11-13, 2026-11-21; request log of bin/h8_foreign_offices.py fetch (one row per request)
 utc_time,host,path_and_query,status,bytes,sha256
 2026-10-23T13:16:31.574Z,www.federalreserve.gov,/releases/h8/data/FRB_h8_xml.zip,200,8438469,2ce2d425cdc21fe7fe3623aec6fe0dc273438e6887cdea813a69e188344c222b
 2026-10-23T13:16:34.629Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=0e569516edadaa66168c115e5016ff16&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,657564,450307fee2d2f2e5dbc0d87a4f2393c3d62daeb658bdafb1562b3a18ff18cad6
@@ -30,3 +30,9 @@ utc_time,host,path_and_query,status,bytes,sha256
 2026-11-13T21:32:04.358Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=c8dfa96ef1d2db40ce57121ffdddf59d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,777718,97b6d2fd90c3e115325bf580c0ed5bddb7ad8a7b36fa7f158ac0430cc4e47167
 2026-11-13T21:32:07.418Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=53b903ce661b8534202a6d5e36db960d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,661358,46dd90ecfba5cbeec8fe51a2f5b408b996a0041b6d17077a1e8f41ecb115517a
 2026-11-13T21:32:10.479Z,www.federalreserve.gov,/releases/h8/h8notes.htm,200,248173,c041fd2225c5326225e82489896acb7de071a1e43fedb25e194e5cfa49c8409f
+2026-11-21T12:01:22.730Z,www.federalreserve.gov,/releases/h8/data/FRB_h8_xml.zip,200,8460628,839aaa7fbbe7317ed5d34e84a29d6757ba0e3a3c5322ed46b32bcbe39d3ff59f
+2026-11-21T12:01:25.785Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=0e569516edadaa66168c115e5016ff16&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,659236,f2bdb9fda236210917dc726babd67582271609998578b295486623c3f646c76e
+2026-11-21T12:01:28.840Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=18461c27aa45d43aa804016497d92ece&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,775134,ce6086e45e07026e0d2342e0df464f6f7c6bbefcfc410a119d052e3046b0996b
+2026-11-21T12:01:31.896Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=c8dfa96ef1d2db40ce57121ffdddf59d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,778134,1230b4b972041d943f80c8f752b2e90e416e5adf004cdc2c8dfa2b0392409883
+2026-11-21T12:01:34.951Z,www.federalreserve.gov,/datadownload/Output.aspx?rel=H8&series=53b903ce661b8534202a6d5e36db960d&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package,200,661694,442241d2984607756195a7e75a0081b2796ab70956a1a41d95e531eb9ad70645
+2026-11-21T12:01:38.006Z,www.federalreserve.gov,/releases/h8/h8notes.htm,200,248777,14d21945d7db01c2754fc70a968b2f3de91b72188de8820dc031d9993c952473
