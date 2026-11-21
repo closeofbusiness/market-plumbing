@@ -1,6 +1,6 @@
 # Can a data centre's grid right be sold? The 16 November 2026 FERC filings, read
 
-19 November 2026. Five grid operators filed their large-load proposals at FERC on 13-16 November 2026, answering the show-cause
+19 November 2026. Five grid operators filed their large-load proposals at FERC on 13-16 November 2026, and SPP on 18-19 November, answering the show-cause
 orders in dockets EL26-67 (PJM), EL26-69 (NYISO), EL26-70 (MISO), EL26-71 (CAISO) and EL26-72 (ISO-NE). SPP (EL26-68) is due on
 20 November. The question carried here since August ([the Parcel C note](../2026-08-22-Parcel-C-FERC-Return.md), section 6.4) is
 whether any of them creates a large-load or flexible-load service whose rights can be **sold, assigned or traded** to another load.
@@ -17,7 +17,7 @@ FERC eLibrary (sha256 in the last section).
 | CAISO | ER27-532, 16 Nov | Flexible Interim Load Interconnection (FILI): curtailable connection before upgrades are built | **Silent.** Tariff §25.7.2 provides FILI through a three-party agreement for one named Large Load, setting when it is curtailed; it has no resale, assignment or transfer provision. The participating transmission owners' own tariffs, which actually provide FILI, were not read | supervisor |
 | MISO | ER27-527 (GRITS, the filed name of FLITS), 16 Nov | Grid Responsive Integration Transmission Service: firm and non-firm, to the customer's point(s) of delivery | **Silent; resale routed elsewhere.** The clean tariff (Tab B) has no assignment, reassignment or resale provision for GRITS. §37B.7 requires a GRITS customer to "use Point-To-Point Transmission Service" for any third-party sale outside the MISO region. The operating agreement (Attachment G-1) has no transfer clause. The companion ER27-526 (Interim NITS, Firm Service Step Up) was not read | supervisor |
 | ISO-NE | ER27-484, 13 Nov | Firm, Interim and Non-Firm Contract Demand Service | **Silent; tied to a named project.** Part II.J (§II.57) and the service agreement (Attachment S) have no assignment, resale or transfer clause; the agreement names the project, location and points of delivery, and resuming service after termination needs a new application. The tariff's resale and reassignment provisions (Schedule 20B, Attachment H-1) cover point-to-point service only. The study agreement (Attachment U §14.1) needs ISO consent to assign; it covers the study, not the service | supervisor |
-| SPP | EL26-68, due 20 Nov | — | not yet filed; SPP's existing CHILLS service is non-transferable (read 12 Nov) | — |
+| SPP | ER27-578, 19 Nov (Price Adaptive Load Service, "related to" EL26-68); also ER27-559 (18 Nov) and ER27-577 (19 Nov), which create no service | Price Adaptive Load Service (PALS): non-firm, curtailable, price-adaptive, one to ten years, any commercial or industrial load | **No.** Proposed tariff §54.5: "PALS is not available for resale, redirection, reassignment, or transfer of service under this Tariff." The service agreement (Attachment BG, §14.0) "may not be assigned, resold, or transferred by either Party." SPP's existing CHILLS is likewise non-transferable | supervisor (added 21 Nov) |
 
 Every operator proposes a *non-firm* or *curtailable* service alongside firm service. None lets a data centre's capacity right
 detach from the facility it was granted for: two bar it (PJM, NYISO), three are silent and tie the service to a named load or
@@ -30,12 +30,12 @@ tariffs" plus a GE Vernova order leg (lens D).
 
 - **Lens D (cover): does not cover.** Its first leg needed operators to defend firm-only service. All five filers instead propose
   non-firm or curtailable services, so the leg did not fire, whatever GE Vernova's Q3 order book shows.
-- **Lenses A and C: did not fire at any of the five filers.** Decline-to-answer and size zero stand. The last leg is SPP
-  (due 20 November, read on the 21 November row); its existing CHILLS service is already non-transferable.
+- **Lenses A and C: did not fire at any of the six operators.** Decline-to-answer and size zero stand. SPP, the last leg, filed
+  its new service on 19 November with an express bar on transfer (added 21 November).
 
 ## What would change this
 
-A clause in SPP's filing permitting resale, reassignment or redirection of a new service to another load.
+Nothing filed so far. FERC's orders on the six proposals could add transfer rights that none of them asks for.
 Comments and protests are due over the next 30-60 days (PJM asked for 60), and FERC's orders would follow; an order could add
 transfer rights none of the filings proposes.
 
@@ -53,4 +53,4 @@ transfer rights none of the filings proposes.
 
 The MISO and ISO-NE files came through FERC eLibrary's public download, the request its file-list page makes (the principal
 approved the download). An earlier "401" from that service was the supervisor's malformed request, not a refusal.
-
+| SPP ER27-578 transmittal and tariff (Price Adaptive Load Service) | spp.org/documents/78398/ | 108f9650ab0a08a57054e8dcc5ca1500dac8250d9a2ca1c090f896924b28629c |
