@@ -25,6 +25,17 @@ The "$750bn" in the press is the 2026 capex forecast, not borrowing. Source: [`_
 
 The debt that does exist sits in a corporate bond market held mainly by long money; the AI names are not a separate Z.1 line, and free data count only two holder groups for them (C-139). The hyperscalers were 3% of outstanding US investment-grade debt at end-2025 but over 15% of 2026 issuance by early May (Bank of England, July 2026 FSR), and are close to 5% of the Bloomberg US IG corporate index, 7.5% at 10 years and over (CPRAM, Sep 2026). See the long-money dossier. Amazon’s **$17.5bn** delayed-draw bank term loan, undrawn at 30 June 2026, was drawn in full in September 2026 and outstanding at 30 September (10-Q filed 30 Oct 2026); it matures in September 2029.
 
+**The wider debt measure (24 Nov 2026).** The Fed's November 2026 Financial Stability Report (box 2.2, "Leverage in the Data
+Center buildout") puts advanced computing–related debt issuance at more than **$680bn** by October 2026, against $130bn in all of
+2023. That is about **31%** of non-financial investment-grade issuance in 2026, and public debt outstanding is above **$1.1trn**.
+
+It is a different and wider denominator than the hyperscalers' own bonds above ($229bn to 13 October; Grok counted $284bn of
+SEC-registered bonds to 4 November). It also takes in loans, project finance and smaller borrowers.
+
+The report also describes a "circular financing" dynamic: hyperscalers and GPU designers lend to smaller firms and take equity
+in them. The self-funded finding holds for the five spenders. The debt sits around them, which is the open SPV and
+private-credit leg below. Source: [`_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md`](../_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md).
+
 ## What would change the conclusion
 
 Hyperscaler free cash flow crossing zero and staying there. A draw of the delayed-draw loan, or a roll of the maturing guarantees that enlarges the live stack. A private-credit or SPV leg that the filings do not yet show, large beside the lease stack.
