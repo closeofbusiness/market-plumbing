@@ -1,0 +1,10 @@
+check,status,reason
+unique_code_date,PASS,duplicates=0
+all_11_codes,PASS,present=11 missing=[]
+identical_report_dates,PASS,distinct_date_sets=1
+no_negative_positions,PASS,negative_values=0
+spec_v2_present,PASS,Version 2 marker checked
+yardstick_end_bound,PASS,max_end=2026-11-10 <= 2026-11-10
+primary_end_excluded,PASS,2026-11-24 not in yardstick
+h10_jpy_present,PASS,h10_days=6741
+mof_week_descriptive,PASS,parsed
