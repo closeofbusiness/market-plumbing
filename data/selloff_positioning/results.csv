@@ -330,5 +330,6 @@ code,class,field,window,start,end,change,percentile,n,sd,flag
 020604,nonrept,gross_short,primary,2026-11-10,2026-11-24,,,461,15312.0190,-
 020604,nonrept,gross_short,secondary,2026-11-10,2026-11-17,-1275,0.4199,462,13897.4264,-
 1170E1,lev_money,gross_short,secondary_no_vx,2026-11-10,2026-11-17,30886,1.0000,356,10435.3333,High
-H10_JPY,fx,log_change,primary,2026-11-10,2026-11-24,,,461,0.016465,-
+1170E1,lev_money,gross_short,secondary_no_vx_actual,2026-11-10,2026-11-17,30886,1.0000,356,10327.8550,High
+H10_JPY,fx,log_change,primary,2026-11-10,2026-11-24,,,459,0.016428,-
 UST_ALL6,lev_money,gross_short_10yeq_bn,primary,2026-11-10,2026-11-24,,,461,17.9700,-

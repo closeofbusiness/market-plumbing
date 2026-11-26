@@ -8,7 +8,8 @@ fetched, no fence breach, every cited URL fetched); its return is kept verbatim 
 **The supervisor re-read:**
 - the November 2026 Financial Stability Report (box 2.2);
 - the 28 October FOMC statement;
-- CoreWeave's 30 September XBRL (debt carrying amount $47.5bn, equity $4.0bn).
+- CoreWeave's 30 September XBRL (debt $47.5bn under the tag DebtInstrumentCarryingAmount; the balance-sheet debt lines Grok
+  sums come to $46.9bn; equity $4.0bn).
 
 Grok's four-firm trailing free cash flow (+$61.5bn) matches the project's own XBRL figure (+$61.4bn, row 2026-11-06).
 
@@ -22,7 +23,27 @@ Grok's four-firm trailing free cash flow (+$61.5bn) matches the project's own XB
 - Advanced-computing debt issuance passed $680bn by October 2026, about 31% of non-financial investment-grade issuance.
 - Public advanced-computing debt outstanding is above $1.1trn.
 
-That is beyond the hyperscalers' own $229-284bn of bonds; see dossiers/ai-funding.md.
+That is beyond the hyperscalers' own bonds: about $229bn to 13 October on the project's count from the 8-Ks. See
+dossiers/ai-funding.md.
+
+## Corrections to Grok's return (supervisor, 26 November)
+
+Read the return below with these in mind. None changes the one-line verdict.
+
+- **"$3 trillion of leases and guarantees" (closing paragraph) is not a project figure.** The project's own totals are
+  $1,122.9bn of leases signed but not yet commenced and $228.3bn of guarantees contracted (dossiers/ai-funding.md).
+- **"43 cents per capex dollar" (V2 and closing paragraph) has no stated numerator.** On capex of $615.4bn, the project's
+  $229bn of bonds is 37 cents and the $284.4bn tally is 46 cents.
+- **The $284.4bn (V1) is a third-party tally** (yieldtheory.app, 18 deals, 1 January to 4 November 2026). The project has not
+  rebuilt it from the filings; the checked figure is $229bn to 13 October.
+- **V6 bond prices and V7 note prices come from a third-party compilation of the TRACE tape,** not from FINRA. Treat them as
+  indicative.
+- **V7 market value.** $26.9bn counts every share class; the listed Class A shares alone were about $22.5bn.
+- **V8.** Jensen Huang resigned as Nvidia's chief executive on 11 November and was reinstated on 22 November (8-Ks of 12 and
+  23 November). "Former chief executive" was out of date by the day of the webcast.
+- **V9 "cannot terminate the lease"** is a Reuters report carried by Yahoo. No Oracle filing or lease was read.
+- **V14 misreads its own source.** The headline it cites says revenue may rise fivefold to $200bn; the return calls that
+  "about double". The article body did not load, so neither reading is checked.
 
 ## Grok's return (verbatim)
 

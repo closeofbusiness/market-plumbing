@@ -5,7 +5,7 @@ P2,am_net_chg > lev_net_chg,holds,55%,PENDING,n/a,missing end row
 P3,209742 lev_money net primary Low,fires,45%,PENDING,n/a,missing end row
 P3s,209742 lev_money net secondary Low,fires,50%,FIRED,RIGHT,chg=-24895 pct=0.0130 n=462 flag=Low
 P4,1170E1 lev_money gross_short secondary_no_vx Low,fires,45%,NOT_FIRED,WRONG,chg=30886 pct=1.0000 n=356 flag=High
-P5a,H10_JPY log_change primary Low,does_not_fire,60%,PENDING,n/a,missing 2026-11-24 H.10
+P5a,H10_JPY log_change primary Low,does_not_fire,60%,PENDING,n/a,missing H.10 rate on a primary date (start_used=2026-11-10 end_used=None)
 P5b,097741 lev_money net primary High,does_not_fire,55%,PENDING,n/a,missing end row
 P6,UST_ALL6 lev_money gross_short_10yeq_bn primary Low,does_not_fire,70%,PENDING,n/a,missing end row
 SELLER,lev_money most negative of 5 classes (13874A primary),n/a,n/a,PENDING,n/a,missing end row

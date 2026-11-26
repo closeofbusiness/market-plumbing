@@ -164,3 +164,23 @@ new test, under a new name, reported beside this one.
 - The dollar-value column is dropped.
 - Windows are kept only when the as-of dates are the right distance apart.
 - The release date is corrected to 30 November.
+
+## Errata (added 26 November 2026, after an audit; the test is unchanged)
+
+Nothing above this line has been edited. These are corrections to what it says and notes on how it is applied.
+
+- **The opening sentence is too wide.** Leveraged Funds' Treasury-futures positions to 17 November were already in the repo
+  when this was written, as "What the supervisor already knew" says. So P6 was written knowing the net Treasury short at
+  17 November (not the gross short it scores, and not the 24 November report). No equity-index, VIX or yen position and no
+  November dollar-yen rate had been read.
+- **Dollar-yen source.** The script reads the Federal Reserve's H.10 historical table for Japan, not the DDP download. It is
+  the same series. Rates are taken on the report dates themselves; a yardstick window with no rate on either date is
+  dropped (459 windows remain).
+- **"VIX settlement Wednesday" (P4).** Four settlements since 2018 were moved to a Tuesday by a holiday (19 March 2019,
+  15 March 2022, 18 June 2024, 18 March 2025). P4 is scored by the rule as written. The same line against the actual dates
+  is reported beside it and gives the same result.
+- **INCONCLUSIVE and the "does not fire" predictions.** The rule that a primary miss is INCONCLUSIVE applies to the position
+  lines P1, P3, P5b and P6. For P5b and P6 the prediction was "does not fire", so those two predictions can be scored wrong
+  (if the line fires) but not right. P5a is a price with a daily series, so the path inside the window can be read; it is
+  scored fired or not fired.
+- **The 72% probability of a Bank of Japan rise** was one vendor's reading on the day; other sources that day gave 70% to 86%.

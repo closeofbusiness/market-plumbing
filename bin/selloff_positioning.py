@@ -10,30 +10,38 @@ MODES
   python3 bin/selloff_positioning.py build      # offline: reads raw files, writes outputs
 
 AMBIGUITIES
-1. Fed H.10 DDP URL series parameter: bin/gold_real_yield_break.py uses hardcoded
-   32-hex-char DDP package hashes from Choose.aspx (e.g. D5_SID, D6_SID) in DDP_FMT
-   rather than computing them from the series mnemonic. Because fetch cannot be run
-   or Choose.aspx queried here, fetch substitutes H10/H10/RXI_N.B.JA directly into
-   the series= parameter of the DDP URL pattern; parse_h10() matches on Unique
-   Identifier 'H10/H10/RXI_N.B.JA', so it works with either a single-series CSV or
-   the multi-column H.10 Daily Rates package.
-2. CFTC Socrata $order parameter: the brief specifies `$order=report_date` while the
-   selected column is `report_date_as_yyyy_mm_dd` (used by bin/pull_cftc_tff.py).
-   fetch sends `$order=report_date` per the brief and sorts rows locally by
-   (cftc_contract_market_code, report_date_as_yyyy_mm_dd) before writing raw_tff.csv.
-3. VX settlement Wednesday holiday adjustment: per the brief, the third Friday of
-   month M+1 is computed without an exchange holiday calendar, and the settlement
-   Wednesday is 30 calendar days before that third Friday.
+1. Fed H.10 source: fetch reads the Federal Reserve's H.10 historical table for Japan
+   (releases/h10/hist/dat00_ja.htm) and h10_html_to_csv() turns it into the DDP-style CSV
+   that parse_h10() reads. It is the same noon buying rate as the DDP series
+   H10/H10/RXI_N.B.JA named in the pre-registration; the DDP download needs a package
+   hash that cannot be derived from the mnemonic.
+2. CFTC Socrata query: `$order=report_date_as_yyyy_mm_dd`; rows are also sorted locally
+   by (cftc_contract_market_code, report_date_as_yyyy_mm_dd) before raw_tff.csv is written.
+3. VX settlement dates: the registered P4 line uses the rule as written in version 2,
+   the Wednesday 30 calendar days before the third Friday of month M+1, with no holiday
+   table. Four settlements since 2018 were in fact moved to a Tuesday by a holiday
+   (2019-03-19, 2022-03-15, 2025-03-18: the third Friday was Good Friday; 2024-06-18:
+   Juneteenth). A second line, window `secondary_no_vx_actual`, uses the actual dates. It
+   is reported beside the registered line and carries no verdict.
 4. Standard deviation (reported for information only, never used to score): computed
    as sample standard deviation (ddof=1) when n >= 2, and 0.0 when n < 2.
 5. Seller rule tie-breaking: Leveraged Funds are named seller only if their primary
    E-mini S&P 500 net change is strictly negative (< 0) and strictly less than all
    other four classes' net changes.
-6. Yardstick window dates for P5a and P6: P5a uses 097741 report dates; P6 uses the
-   common report dates across the six Treasury codes (043602 as reference).
+6. Yardstick window dates for P5a and P6: P5a uses 097741 report dates and the H.10 rate
+   on exactly those dates (version 2: "rates on report Tuesdays"); a window with no H.10
+   print on either date is dropped, and P5a is PENDING if either primary date has none.
+   P6 uses the report dates common to the six Treasury codes.
 7. MoF week.csv parsing: MoF weekly CSVs may be Shift-JIS (cp932) or UTF-8 with
    Japanese/English multi-row headers; build tries utf-8-sig then cp932 and prints
    the last 6 non-empty rows with header labels if parseable, else notes "unparsed".
+8. INCONCLUSIVE: version 2 records a primary-window miss as INCONCLUSIVE. For P1, P3,
+   P5b and P6 (position lines, where a sale rebuilt by the end date cancels out) a miss
+   gets status INCONCLUSIVE and outcome n/a; the prediction stays in the row. P5a is a
+   price with a daily series, so its path inside the window can be read; it keeps a
+   plain fired / not-fired score.
+9. Bad input: build stops before writing any output if raw_tff.csv holds a duplicate
+   (code, date) row or a negative position.
 """
 import argparse
 import contextlib
@@ -185,6 +193,24 @@ def vx_settlement_dates(start_year, end_year):
         for m in range(1, 13):
             out.append(vx_settlement_wednesday(y, m).isoformat())
     return sorted(set(out))
+
+
+# Settlements moved off the rule's Wednesday by a holiday: {rule date: actual date}.
+# Good Friday was the third Friday in April 2019, 2022 and 2025 (settlement is then 30 days
+# before the Thursday); 19 June 2024 (Juneteenth) was itself the rule's Wednesday.
+VX_HOLIDAY_MOVES = {
+    "2019-03-20": "2019-03-19",
+    "2022-03-16": "2022-03-15",
+    "2024-06-19": "2024-06-18",
+    "2025-03-19": "2025-03-18",
+}
+
+
+def vx_settlement_dates_actual(start_year, end_year):
+    rule = vx_settlement_dates(start_year, end_year)
+    missing = [d for d in VX_HOLIDAY_MOVES if d not in rule]
+    assert not missing, f"holiday table names dates the rule does not produce: {missing}"
+    return sorted({VX_HOLIDAY_MOVES.get(d, d) for d in rule})
 
 
 def qualifying_windows(dates, kind, exclude_dates=None):
@@ -383,8 +409,13 @@ def h10_html_to_csv(html_text):
         raise SystemExit("STOP: H.10 historical table not found or too short (%d rows)" % len(rows))
     out = ['"Series Description","Japan -- spot exchange rate, yen/US$ (H.10 historical table)"',
            '"Unit:","Currency:_Per_USD"', '"Multiplier:","1"', '"Unique Identifier:","%s"' % H10_SERIES_ID, '"Time Period","RXI_N.B.JA"']
+    months = {m: i + 1 for i, m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split())}
     for d, v in rows:
-        iso = dt.datetime.strptime(d.title(), "%d-%b-%y").date().isoformat()
+        dd, mon, yy = d.split("-")
+        if mon not in months:
+            raise SystemExit("STOP: unknown month in H.10 table: %r" % d)
+        year = 2000 + int(yy) if int(yy) < 70 else 1900 + int(yy)  # the table starts in 2000
+        iso = dt.date(year, months[mon], int(dd)).isoformat()
         out.append("%s,%s" % (iso, v.strip()))
     return "\n".join(out) + "\n"
 
@@ -495,6 +526,8 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
     raw_mof = os.path.join(data_dir, "raw_mof_week.csv")
 
     by_code, dup_count, neg_count = parse_tff(raw_tff)
+    if dup_count or neg_count:
+        raise SystemExit(f"STOP: raw_tff.csv has {dup_count} duplicate (code, date) rows and {neg_count} negative positions; nothing written")
     h10_map = parse_h10(raw_h10) if os.path.exists(raw_h10) else {}
     mof_ok, mof_lines = parse_mof_last6(raw_mof)
 
@@ -574,17 +607,38 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         "sd": fmt_num(p4_sd, nd=4),
         "flag": p4_flag,
     })
+    # Beside the registered line, no verdict: the same test against actual settlement dates
+    vx_excl_actual = set(vx_settlement_dates_actual(YARDSTICK_START_YEAR, 2027))
+    win_one_novx_actual = qualifying_windows(vix_dates, "one_week", exclude_dates=vx_excl_actual)
+    p4a_ys = [
+        by_code["1170E1"][d2]["lev_money_positions_short"] - by_code["1170E1"][d1]["lev_money_positions_short"]
+        for d1, d2 in win_one_novx_actual
+    ]
+    p4a_pct, p4a_n, p4a_sd, p4a_flag = compute_score(p4a_ys, p4_obs)
+    results_rows.append({
+        "code": "1170E1",
+        "class": "lev_money",
+        "field": "gross_short",
+        "window": "secondary_no_vx_actual",
+        "start": SECONDARY_START,
+        "end": SECONDARY_END,
+        "change": fmt_num(p4_obs, is_int=True),
+        "percentile": fmt_num(p4a_pct, nd=4),
+        "n": str(p4a_n),
+        "sd": fmt_num(p4a_sd, nd=4),
+        "flag": p4a_flag,
+    })
 
     # 2. P5a H10_JPY (primary)
     jpy_dates = sorted(by_code["097741"].keys())
     jpy_two = qualifying_windows(jpy_dates, "two_week")
     p5a_ys = []
     for d1, d2 in jpy_two:
-        _, r1 = nearest_h10(h10_map, d1, allow_earlier=True)
-        _, r2 = nearest_h10(h10_map, d2, allow_earlier=True)
+        _, r1 = nearest_h10(h10_map, d1, allow_earlier=False)
+        _, r2 = nearest_h10(h10_map, d2, allow_earlier=False)
         if r1 is not None and r2 is not None and r1 > 0 and r2 > 0:
             p5a_ys.append(math.log(r2 / r1))
-    s_used, r_start = nearest_h10(h10_map, PRIMARY_START, allow_earlier=True)
+    s_used, r_start = nearest_h10(h10_map, PRIMARY_START, allow_earlier=False)
     e_used, r_end = nearest_h10(h10_map, PRIMARY_END, allow_earlier=False)
     if r_start is not None and r_end is not None and r_start > 0 and r_end > 0:
         p5a_obs = math.log(r_end / r_start)
@@ -649,6 +703,9 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         else:
             outcome = "WRONG" if fired else "RIGHT"
         detail = f"chg={r['change']} pct={r['percentile']} n={r['n']} flag={r['flag']}"
+        if status == "INCONCLUSIVE":
+            outcome = "n/a"
+            detail += f" (primary miss: not scored; prediction was {pred})"
         return {"id": id_, "rule": rule, "prediction": pred, "credence": cred, "status": status, "outcome": outcome, "detail": detail}
 
     # P2: Asset Manager net change > Leveraged Funds net change (13874A, primary)
@@ -694,12 +751,12 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         {
             **score_fire("P5a", "H10_JPY log_change primary Low", "does_not_fire", "60%", ("H10_JPY", "fx", "log_change", "primary"), "Low"),
             "detail": (
-                "missing 2026-11-24 H.10" if res_map[("H10_JPY", "fx", "log_change", "primary")]["change"] == ""
+                "missing H.10 rate on a primary date (start_used=%s end_used=%s)" % (s_used, e_used) if res_map[("H10_JPY", "fx", "log_change", "primary")]["change"] == ""
                 else f"start_used={s_used} end_used={e_used} chg={res_map[('H10_JPY', 'fx', 'log_change', 'primary')]['change']} pct={res_map[('H10_JPY', 'fx', 'log_change', 'primary')]['percentile']}"
             ),
         },
-        score_fire("P5b", "097741 lev_money net primary High", "does_not_fire", "55%", ("097741", "lev_money", "net", "primary"), "High"),
-        score_fire("P6", "UST_ALL6 lev_money gross_short_10yeq_bn primary Low", "does_not_fire", "70%", ("UST_ALL6", "lev_money", "gross_short_10yeq_bn", "primary"), "Low"),
+        score_fire("P5b", "097741 lev_money net primary High", "does_not_fire", "55%", ("097741", "lev_money", "net", "primary"), "High", primary_inconclusive=True),
+        score_fire("P6", "UST_ALL6 lev_money gross_short_10yeq_bn primary Low", "does_not_fire", "70%", ("UST_ALL6", "lev_money", "gross_short_10yeq_bn", "primary"), "Low", primary_inconclusive=True),
         seller_row,
     ]
 
@@ -749,7 +806,8 @@ def _write_csv(path, fieldnames, rows):
 # --------------------------------------------------------------------------------------------------
 # SELFTEST (synthetic fixtures only, no network)
 # --------------------------------------------------------------------------------------------------
-def _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True, lev_most_negative=True, lev_fires=True):
+def _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True, lev_most_negative=True, lev_fires=True,
+                            h10_nov10_nd=False, h10_nov24_value=None, lev_short_cut=False, duplicate_row=False):
     # Generate weekly Tuesday dates from 2018-01-02 to 2026-11-24 (with a Monday-dated holiday report)
     dates = []
     d = dt.date(2018, 1, 2)
@@ -786,6 +844,8 @@ def _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True, lev_
                     lm_l = 12000  # rise (+2000) -> INCONCLUSIVE
                 if not lev_most_negative:
                     am_l = 1000  # Asset Manager drops more than Leveraged Funds
+                if lev_short_cut:
+                    lm_s = 5000  # gross short halved (P6 sign test)
             rows.append({
                 "report_date_as_yyyy_mm_dd": ds,
                 "cftc_contract_market_code": code,
@@ -796,9 +856,11 @@ def _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True, lev_
                 "other_rept_positions_long": str(ot_l), "other_rept_positions_short": str(ot_s),
                 "nonrept_positions_long_all": str(nr_l), "nonrept_positions_short_all": str(nr_s),
             })
+    if duplicate_row:
+        rows.append(dict(rows[0]))
     _write_csv(os.path.join(td, "raw_tff.csv"), raw_cols, rows)
 
-    # Synthetic H.10 JPY (skip 2026-11-10 to test nearest-earlier rule on start date)
+    # Synthetic H.10 JPY (h10_nov10_nd leaves the primary start date without a print)
     h10_lines = [
         '"Series Description","Japan -- Spot Exchange Rate, Yen/US$"',
         '"Unit:","Currency:_Per_USD"',
@@ -811,7 +873,11 @@ def _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True, lev_
     h_end = dt.date(2026, 11, 24) if include_h10_nov24 else dt.date(2026, 11, 23)
     while hd <= h_end:
         if hd.weekday() < 5:
-            val = "ND" if hd == dt.date(2026, 11, 10) else f"{150.0 + (hd.toordinal() % 5):.2f}"
+            val = f"{150.0 + (hd.toordinal() % 5):.2f}"
+            if h10_nov10_nd and hd == dt.date(2026, 11, 10):
+                val = "ND"
+            if h10_nov24_value is not None and hd == dt.date(2026, 11, 24):
+                val = f"{h10_nov24_value:.2f}"
             h10_lines.append(f"{hd.isoformat()},{val}")
         hd += dt.timedelta(days=1)
     with open(os.path.join(td, "raw_h10_jpy.csv"), "w", encoding="utf-8") as f:
@@ -856,7 +922,11 @@ def run_selftest():
         gaps = [(dt.date.fromisoformat(b) - dt.date.fromisoformat(a)).days for a, b in w if a == ds[0]]
         assert gaps == [13, 14, 15], f"got {gaps}"
         assert (base.isoformat(), (base + dt.timedelta(days=13)).isoformat()) in w
-        return True, f"gaps={gaps} (Monday +13d kept)"
+        ds1 = [base.isoformat()] + [(base + dt.timedelta(days=k)).isoformat() for k in (5, 6, 7, 8, 9)]
+        w1 = qualifying_windows(ds1, "one_week")
+        gaps1 = [(dt.date.fromisoformat(b) - dt.date.fromisoformat(a)).days for a, b in w1 if a == ds1[0]]
+        assert gaps1 == [6, 7, 8], f"got {gaps1}"
+        return True, f"two-week gaps={gaps} (Monday +13d kept); one-week gaps={gaps1}"
 
     # 3. VX settlement Nov 2026 = 2026-11-18 and expiry-window exclusion
     def g_vx():
@@ -870,7 +940,12 @@ def run_selftest():
         ds2 = ["2026-10-13", "2026-10-20", "2026-10-27"]
         w = qualifying_windows(ds2, "one_week", exclude_dates={oct_wed})
         assert ("2026-10-20", "2026-10-27") not in w and ("2026-10-13", "2026-10-20") in w
-        return True, f"nov26_vx={wed}, oct26_vx_excluded={oct_wed}"
+        actual = set(vx_settlement_dates_actual(2018, 2027))
+        rule = set(vx_settlement_dates(2018, 2027))
+        assert len(actual) == len(rule)
+        assert actual - rule == {"2019-03-19", "2022-03-15", "2024-06-18", "2025-03-18"}, sorted(actual - rule)
+        assert rule - actual == {"2019-03-20", "2022-03-16", "2024-06-19", "2025-03-19"}, sorted(rule - actual)
+        return True, f"nov26_vx={wed}, oct26_vx_excluded={oct_wed}, 4 holiday moves in the actual-date set"
 
     # 4. P6 10y-equivalent arithmetic
     def g_p6():
@@ -880,7 +955,7 @@ def run_selftest():
         assert abs(got - exp) < 1e-12
         return True, f"1000x043602={got:.6f}bn"
 
-    # 5. PENDING when end row missing + P5a PENDING & nearest-earlier start
+    # 5. PENDING when end row missing; P5a needs an H.10 print on both primary dates (no fallback)
     def g_pending_and_p5a():
         with tempfile.TemporaryDirectory() as td:
             _make_synthetic_dataset(td, include_nov24=False, include_h10_nov24=False)
@@ -890,29 +965,101 @@ def run_selftest():
             assert rmap["P5a"]["status"] == "PENDING"
             assert rmap["P1s"]["status"] != "PENDING"
         with tempfile.TemporaryDirectory() as td:
-            _make_synthetic_dataset(td, include_nov24=True, include_h10_nov24=True)
+            _make_synthetic_dataset(td)
             _, reg, _ = build_all(td, quiet=True)
             rmap = {r["id"]: r for r in reg}
             assert rmap["P5a"]["status"] != "PENDING"
-            assert "start_used=2026-11-09" in rmap["P5a"]["detail"], rmap["P5a"]["detail"]
-        return True, "PENDING & nearest-earlier start verified"
+            assert "start_used=2026-11-10 end_used=2026-11-24" in rmap["P5a"]["detail"], rmap["P5a"]["detail"]
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td, h10_nov10_nd=True)
+            res, reg, _ = build_all(td, quiet=True)
+            rmap = {r["id"]: r for r in reg}
+            assert rmap["P5a"]["status"] == "PENDING", rmap["P5a"]
+            assert "start_used=None" in rmap["P5a"]["detail"], rmap["P5a"]["detail"]
+        return True, "PENDING verified; a missing print on a primary date is PENDING, never an earlier day's rate"
 
-    # 6. Seller rule both ways & INCONCLUSIVE wording
+    # 5b. P5a yardstick drops a window with no print on the report date
+    def g_p5a_yardstick_exact():
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td)
+            res, _, _ = build_all(td, quiet=True)
+            n_full = int([r for r in res if r["code"] == "H10_JPY"][0]["n"])
+            # blank one yardstick report date in the H.10 file: every window that touches it must go
+            path = os.path.join(td, "raw_h10_jpy.csv")
+            txt = open(path, encoding="utf-8").read()
+            assert "2024-03-05,15" in txt
+            txt = re.sub(r"2024-03-05,[0-9.]+", "2024-03-05,ND", txt)
+            open(path, "w", encoding="utf-8").write(txt)
+            res2, _, _ = build_all(td, quiet=True)
+            n_cut = int([r for r in res2 if r["code"] == "H10_JPY"][0]["n"])
+            assert n_cut == n_full - 2, (n_full, n_cut)
+        return True, f"n {n_full} -> {n_cut} when one report date has no print"
+
+    # 5c. Signs and the does_not_fire mapping
+    def g_signs_and_mapping():
+        with tempfile.TemporaryDirectory() as td:
+            # yen much stronger on the end date -> log change Low -> P5a FIRED -> prediction does_not_fire is WRONG
+            _make_synthetic_dataset(td, h10_nov24_value=100.0, lev_short_cut=True, lev_fires=False)
+            res, reg, _ = build_all(td, quiet=True)
+            rmap = {r["id"]: r for r in reg}
+            p5a = [r for r in res if r["code"] == "H10_JPY"][0]
+            assert float(p5a["change"]) < 0 and p5a["flag"] == "Low", p5a
+            assert rmap["P5a"]["status"] == "FIRED" and rmap["P5a"]["outcome"] == "WRONG", rmap["P5a"]
+            # gross short halved -> P6 change negative, Low -> FIRED -> WRONG
+            p6 = [r for r in res if r["code"] == "UST_ALL6"][0]
+            assert float(p6["change"]) < 0 and p6["flag"] == "Low", p6
+            assert rmap["P6"]["status"] == "FIRED" and rmap["P6"]["outcome"] == "WRONG", rmap["P6"]
+            # lev net rises sharply on the yen contract -> High -> P5b FIRED -> WRONG
+            assert rmap["P5b"]["status"] == "FIRED" and rmap["P5b"]["outcome"] == "WRONG", rmap["P5b"]
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td)  # no yen strength, no short cut
+            _, reg, _ = build_all(td, quiet=True)
+            rmap = {r["id"]: r for r in reg}
+            assert rmap["P5a"]["status"] == "NOT_FIRED" and rmap["P5a"]["outcome"] == "RIGHT", rmap["P5a"]
+            for k in ("P5b", "P6"):
+                assert rmap[k]["status"] == "INCONCLUSIVE" and rmap[k]["outcome"] == "n/a", rmap[k]
+                assert "prediction was does_not_fire" in rmap[k]["detail"], rmap[k]
+        return True, "P5a/P5b/P6 signs, FIRED->WRONG for does_not_fire, primary miss -> INCONCLUSIVE n/a"
+
+    # 5d. Bad input stops the build before any output is written
+    def g_bad_input_aborts():
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td, duplicate_row=True)
+            try:
+                build_all(td, quiet=True)
+            except SystemExit as e:
+                assert "duplicate" in str(e)
+                assert not os.path.exists(os.path.join(td, "registration_score.csv"))
+                return True, "duplicate row -> STOP, no score file"
+        return False, "build ran on a duplicate row"
+
+    # 6. Seller rule (sign and cross-class ranking), P2 both ways, INCONCLUSIVE with outcome n/a
     def g_seller_and_inconclusive():
         with tempfile.TemporaryDirectory() as td:
             _make_synthetic_dataset(td, lev_most_negative=True, lev_fires=True)
             _, reg, _ = build_all(td, quiet=True)
             rmap = {r["id"]: r for r in reg}
             assert rmap["SELLER"]["status"] == "MET", rmap["SELLER"]
+            assert rmap["P1"]["status"] == "FIRED" and rmap["P1"]["outcome"] == "RIGHT", rmap["P1"]
+            assert rmap["P2"]["status"] == "HOLDS" and rmap["P2"]["outcome"] == "RIGHT", rmap["P2"]
+        with tempfile.TemporaryDirectory() as td:
+            # Leveraged Funds sell, but Asset Managers sell more: ranking, not sign, must decide
+            _make_synthetic_dataset(td, lev_most_negative=False, lev_fires=True)
+            _, reg, _ = build_all(td, quiet=True)
+            rmap = {r["id"]: r for r in reg}
             assert rmap["P1"]["status"] == "FIRED", rmap["P1"]
+            assert rmap["SELLER"]["status"] == "NOT_MET", rmap["SELLER"]
+            assert rmap["P2"]["status"] == "FAILS" and rmap["P2"]["outcome"] == "WRONG", rmap["P2"]
         with tempfile.TemporaryDirectory() as td:
             _make_synthetic_dataset(td, lev_most_negative=False, lev_fires=False)
             _, reg, _ = build_all(td, quiet=True)
             rmap = {r["id"]: r for r in reg}
             assert rmap["SELLER"]["status"] == "NOT_MET", rmap["SELLER"]
-            assert rmap["P1"]["status"] == "INCONCLUSIVE", rmap["P1"]
-            assert rmap["P3"]["status"] == "INCONCLUSIVE", rmap["P3"]
-        return True, "SELLER MET/NOT_MET & INCONCLUSIVE verified"
+            for k in ("P1", "P3"):
+                assert rmap[k]["status"] == "INCONCLUSIVE", rmap[k]
+                assert rmap[k]["outcome"] == "n/a", rmap[k]
+                assert "prediction was fires" in rmap[k]["detail"], rmap[k]
+        return True, "SELLER by sign and by ranking, P2 HOLDS/FAILS, INCONCLUSIVE carries outcome n/a"
 
     # 7. Byte-identical build on two runs
     def g_byte_identical():
@@ -964,6 +1111,9 @@ def run_selftest():
         ("vx_settlement", g_vx),
         ("p6_10yeq", g_p6),
         ("pending_and_p5a", g_pending_and_p5a),
+        ("p5a_yardstick_exact", g_p5a_yardstick_exact),
+        ("signs_and_mapping", g_signs_and_mapping),
+        ("bad_input_aborts", g_bad_input_aborts),
         ("seller_and_inconclusive", g_seller_and_inconclusive),
         ("byte_identical", g_byte_identical),
         ("mutant_gap_12_16", g_mutant_gap),
