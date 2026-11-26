@@ -20,16 +20,18 @@ authority for all windows, contracts, yardsticks, and scoring rules.
   E-mini Nasdaq-100 (`209742`), E-mini Russell 2000 (`239742`), VIX (`1170E1`), Japanese yen (`097741`) and six
   US Treasury contracts. The consolidated codes `13874+` and `20974+` are not used (their unit changed in May 2023).
 - Federal Reserve H.10 daily noon buying rate, yen per dollar, read from the H.10 historical table for Japan
-  (`releases/h10/hist/dat00_ja.htm`). It is the same series as DDP `H10/H10/RXI_N.B.JA`.
+  (`releases/h10/hist/dat00_ja.htm`), in place of the DDP download `H10/H10/RXI_N.B.JA`.
 - Japan Ministry of Finance weekly securities transactions (`week.csv`, descriptive).
 
 ## Reading the outputs
 
 - `registration_score.csv`: one row per registered line. `status` is PENDING until the end-date rows are in the file.
-  A primary-window miss on a position line (P1, P3, P5b, P6) has status INCONCLUSIVE and outcome `n/a`; the prediction
-  stays in `detail`. P5a (the yen rate) is scored FIRED or NOT_FIRED.
+  A primary-window miss on P1, P3, P5a, P5b or P6 has status INCONCLUSIVE and outcome `n/a`; the prediction stays in
+  `detail`.
 - `results.csv`: every contract, class and field, with its change, percentile, sample size and Low/High flag. The window
   `secondary_no_vx` is the registered P4 line. `secondary_no_vx_actual` is the same line against actual VIX settlement
-  dates (four were moved to a Tuesday by a holiday); it carries no verdict.
-- `checks.csv`: input checks. The build stops before writing anything if `raw_tff.csv` holds a duplicate row or a
-  negative position.
+  dates (four were moved to a Tuesday by a holiday); it carries no verdict. The `UST_ALL6` rows for the `secondary`
+  window give the six-contract Treasury gross short and net short in 10-year equivalents and the net short in face
+  value ($bn, with start and end levels); they are descriptive.
+- `checks.csv`: input checks. The build stops, and removes the three output files, if `raw_tff.csv` holds a duplicate
+  row or a negative position.

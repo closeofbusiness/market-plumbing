@@ -12,17 +12,19 @@ MODES
 AMBIGUITIES
 1. Fed H.10 source: fetch reads the Federal Reserve's H.10 historical table for Japan
    (releases/h10/hist/dat00_ja.htm) and h10_html_to_csv() turns it into the DDP-style CSV
-   that parse_h10() reads. It is the same noon buying rate as the DDP series
-   H10/H10/RXI_N.B.JA named in the pre-registration; the DDP download needs a package
-   hash that cannot be derived from the mnemonic.
+   that parse_h10() reads. It stands in for the DDP series H10/H10/RXI_N.B.JA named in the
+   pre-registration (the DDP download needs a package hash that cannot be derived from
+   the mnemonic); the two sources were not compared date by date.
 2. CFTC Socrata query: `$order=report_date_as_yyyy_mm_dd`; rows are also sorted locally
    by (cftc_contract_market_code, report_date_as_yyyy_mm_dd) before raw_tff.csv is written.
 3. VX settlement dates: the registered P4 line uses the rule as written in version 2,
    the Wednesday 30 calendar days before the third Friday of month M+1, with no holiday
    table. Four settlements since 2018 were in fact moved to a Tuesday by a holiday
-   (2019-03-19, 2022-03-15, 2025-03-18: the third Friday was Good Friday; 2024-06-18:
-   Juneteenth). A second line, window `secondary_no_vx_actual`, uses the actual dates. It
-   is reported beside the registered line and carries no verdict.
+   (2019-03-19, 2022-03-15, 2025-03-18: the third Friday was Good Friday; 2024-06-18: the
+   rule's Wednesday, 19 June, was Juneteenth). The four dates are derived from Cboe's
+   holiday rule and were not checked against Cboe's expiration calendar. A second line,
+   window `secondary_no_vx_actual`, uses them. It is reported beside the registered line
+   and carries no verdict.
 4. Standard deviation (reported for information only, never used to score): computed
    as sample standard deviation (ddof=1) when n >= 2, and 0.0 when n < 2.
 5. Seller rule tie-breaking: Leveraged Funds are named seller only if their primary
@@ -35,13 +37,17 @@ AMBIGUITIES
 7. MoF week.csv parsing: MoF weekly CSVs may be Shift-JIS (cp932) or UTF-8 with
    Japanese/English multi-row headers; build tries utf-8-sig then cp932 and prints
    the last 6 non-empty rows with header labels if parseable, else notes "unparsed".
-8. INCONCLUSIVE: version 2 records a primary-window miss as INCONCLUSIVE. For P1, P3,
-   P5b and P6 (position lines, where a sale rebuilt by the end date cancels out) a miss
-   gets status INCONCLUSIVE and outcome n/a; the prediction stays in the row. P5a is a
-   price with a daily series, so its path inside the window can be read; it keeps a
-   plain fired / not-fired score.
-9. Bad input: build stops before writing any output if raw_tff.csv holds a duplicate
-   (code, date) row or a negative position.
+8. INCONCLUSIVE: version 2 records a primary-window miss as INCONCLUSIVE, with no
+   exception. Every primary fire line (P1, P3, P5a, P5b, P6) that does not fire gets
+   status INCONCLUSIVE and outcome n/a; the prediction stays in the row. For P5a, P5b and
+   P6 the prediction was "does not fire", so those predictions can be scored WRONG (the
+   line fires) but never RIGHT. P5a is the log change between the two endpoint rates.
+9. Bad input: build stops if raw_tff.csv holds a duplicate (code, date) row or a negative
+   position. It first removes results.csv, registration_score.csv and checks.csv, so no
+   stale output survives a stopped build.
+10. Treasury aggregates for the secondary window (UST_ALL6: gross short and net short in
+   10-year equivalents, net short in face value, $bn) are reported in results.csv with
+   percentiles against one-week windows. They are descriptive and carry no verdict.
 """
 import argparse
 import contextlib
@@ -104,6 +110,8 @@ CODES = [
     ("020604", "Ultra Bond"),
 ]
 CODE_SET = {c for c, _ in CODES}
+
+TREASURY_FACE = {"042601": 200000, "044601": 100000, "043602": 100000, "043607": 100000, "020601": 100000, "020604": 100000}
 
 TREASURY_DV01 = {
     "042601": 34.0,
@@ -527,6 +535,9 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
 
     by_code, dup_count, neg_count = parse_tff(raw_tff)
     if dup_count or neg_count:
+        for fn in ("results.csv", "registration_score.csv", "checks.csv"):
+            if os.path.exists(os.path.join(data_dir, fn)):
+                os.remove(os.path.join(data_dir, fn))
         raise SystemExit(f"STOP: raw_tff.csv has {dup_count} duplicate (code, date) rows and {neg_count} negative positions; nothing written")
     h10_map = parse_h10(raw_h10) if os.path.exists(raw_h10) else {}
     mof_ok, mof_lines = parse_mof_last6(raw_mof)
@@ -607,7 +618,7 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         "sd": fmt_num(p4_sd, nd=4),
         "flag": p4_flag,
     })
-    # Beside the registered line, no verdict: the same test against actual settlement dates
+    # Beside the registered line, no verdict: the same test against holiday-adjusted settlement dates
     vx_excl_actual = set(vx_settlement_dates_actual(YARDSTICK_START_YEAR, 2027))
     win_one_novx_actual = qualifying_windows(vix_dates, "one_week", exclude_dates=vx_excl_actual)
     p4a_ys = [
@@ -686,6 +697,46 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         "flag": p6_flag,
     })
 
+    # Descriptive, no verdict: six-contract Treasury aggregates over the secondary window
+    ust_one = qualifying_windows(ust_common_dates, "one_week")
+
+    def _ust_agg(d, kind):
+        tot = 0.0
+        for code, dv01 in TREASURY_DV01.items():
+            if d not in by_code[code]:
+                return None
+            row = by_code[code][d]
+            sh, lg = row["lev_money_positions_short"], row["lev_money_positions_long"]
+            if kind == "gross_short_10yeq_bn":
+                tot += sh * dv01 / (REF_DUR * 1e-4) / 1e9
+            elif kind == "net_short_10yeq_bn":
+                tot += (sh - lg) * dv01 / (REF_DUR * 1e-4) / 1e9
+            else:  # net_short_face_bn
+                tot += (sh - lg) * TREASURY_FACE[code] / 1e9
+        return tot
+
+    for kind in ("gross_short_10yeq_bn", "net_short_10yeq_bn", "net_short_face_bn"):
+        ys = [_ust_agg(d2, kind) - _ust_agg(d1, kind) for d1, d2 in ust_one]
+        v1, v2 = _ust_agg(SECONDARY_START, kind), _ust_agg(SECONDARY_END, kind)
+        obs = (v2 - v1) if (v1 is not None and v2 is not None) else None
+        pct, n, sd, flag = compute_score(ys, obs)
+        results_rows.append({
+            "code": "UST_ALL6", "class": "lev_money", "field": kind, "window": "secondary",
+            "start": SECONDARY_START, "end": SECONDARY_END,
+            "change": fmt_num(obs, nd=4), "percentile": fmt_num(pct, nd=4),
+            "n": str(n), "sd": fmt_num(sd, nd=4), "flag": flag,
+        })
+        results_rows.append({
+            "code": "UST_ALL6", "class": "lev_money", "field": kind + "_level_start", "window": "secondary",
+            "start": SECONDARY_START, "end": SECONDARY_START,
+            "change": fmt_num(v1, nd=4), "percentile": "", "n": "", "sd": "", "flag": "",
+        })
+        results_rows.append({
+            "code": "UST_ALL6", "class": "lev_money", "field": kind + "_level_end", "window": "secondary",
+            "start": SECONDARY_END, "end": SECONDARY_END,
+            "change": fmt_num(v2, nd=4), "percentile": "", "n": "", "sd": "", "flag": "",
+        })
+
     # Lookup helper for registration_score.csv
     res_map = {(r["code"], r["class"], r["field"], r["window"]): r for r in results_rows}
 
@@ -749,10 +800,11 @@ def build_all(data_dir=DATA_DIR_DEFAULT, spec_path=SPEC_PATH_DEFAULT, quiet=Fals
         score_fire("P3s", "209742 lev_money net secondary Low", "fires", "50%", ("209742", "lev_money", "net", "secondary"), "Low"),
         score_fire("P4", "1170E1 lev_money gross_short secondary_no_vx Low", "fires", "45%", ("1170E1", "lev_money", "gross_short", "secondary_no_vx"), "Low"),
         {
-            **score_fire("P5a", "H10_JPY log_change primary Low", "does_not_fire", "60%", ("H10_JPY", "fx", "log_change", "primary"), "Low"),
+            **score_fire("P5a", "H10_JPY log_change primary Low", "does_not_fire", "60%", ("H10_JPY", "fx", "log_change", "primary"), "Low", primary_inconclusive=True),
             "detail": (
                 "missing H.10 rate on a primary date (start_used=%s end_used=%s)" % (s_used, e_used) if res_map[("H10_JPY", "fx", "log_change", "primary")]["change"] == ""
                 else f"start_used={s_used} end_used={e_used} chg={res_map[('H10_JPY', 'fx', 'log_change', 'primary')]['change']} pct={res_map[('H10_JPY', 'fx', 'log_change', 'primary')]['percentile']}"
+                + ("" if res_map[("H10_JPY", "fx", "log_change", "primary")]["flag"] == "Low" else " (primary miss: not scored; prediction was does_not_fire)")
             ),
         },
         score_fire("P5b", "097741 lev_money net primary High", "does_not_fire", "55%", ("097741", "lev_money", "net", "primary"), "High", primary_inconclusive=True),
@@ -1015,8 +1067,7 @@ def run_selftest():
             _make_synthetic_dataset(td)  # no yen strength, no short cut
             _, reg, _ = build_all(td, quiet=True)
             rmap = {r["id"]: r for r in reg}
-            assert rmap["P5a"]["status"] == "NOT_FIRED" and rmap["P5a"]["outcome"] == "RIGHT", rmap["P5a"]
-            for k in ("P5b", "P6"):
+            for k in ("P5a", "P5b", "P6"):
                 assert rmap[k]["status"] == "INCONCLUSIVE" and rmap[k]["outcome"] == "n/a", rmap[k]
                 assert "prediction was does_not_fire" in rmap[k]["detail"], rmap[k]
         return True, "P5a/P5b/P6 signs, FIRED->WRONG for does_not_fire, primary miss -> INCONCLUSIVE n/a"
@@ -1032,6 +1083,43 @@ def run_selftest():
                 assert not os.path.exists(os.path.join(td, "registration_score.csv"))
                 return True, "duplicate row -> STOP, no score file"
         return False, "build ran on a duplicate row"
+
+    # 5e. A negative position also stops the build and clears stale outputs
+    def g_negative_aborts():
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td)
+            build_all(td, quiet=True)
+            assert os.path.exists(os.path.join(td, "registration_score.csv"))
+            path = os.path.join(td, "raw_tff.csv")
+            lines = open(path, encoding="utf-8").read().split("\n")
+            cells = lines[1].split(",")
+            cells[3] = "-1"
+            lines[1] = ",".join(cells)
+            open(path, "w", encoding="utf-8").write("\n".join(lines))
+            try:
+                build_all(td, quiet=True)
+            except SystemExit as e:
+                assert "1 negative" in str(e), str(e)
+                left = [fn for fn in ("results.csv", "registration_score.csv", "checks.csv") if os.path.exists(os.path.join(td, fn))]
+                assert not left, left
+                return True, "negative cell -> STOP, stale outputs removed"
+        return False, "build ran on a negative position"
+
+    # 5f. Descriptive Treasury aggregates: arithmetic of the three secondary-window rows
+    def g_ust_aggregates():
+        with tempfile.TemporaryDirectory() as td:
+            _make_synthetic_dataset(td)
+            res, _, _ = build_all(td, quiet=True)
+            m = {r["field"]: r for r in res if r["code"] == "UST_ALL6" and r["window"] == "secondary"}
+            # synthetic: every contract short 10000; long 10000 + (i % 10) * 100
+            gs = sum(10000 * dv for dv in TREASURY_DV01.values()) / (REF_DUR * 1e-4) / 1e9
+            assert abs(float(m["gross_short_10yeq_bn_level_start"]["change"]) - gs) < 1e-3, m["gross_short_10yeq_bn_level_start"]
+            assert float(m["gross_short_10yeq_bn"]["change"]) == 0.0
+            ne, ns = float(m["net_short_face_bn_level_end"]["change"]), float(m["net_short_face_bn_level_start"]["change"])
+            assert abs((ne - ns) - float(m["net_short_face_bn"]["change"])) < 2e-4
+            # a longer long book means a smaller net short: the face-value net short must be <= 0 here
+            assert ns <= 0 and ne <= 0, (ns, ne)
+        return True, "gross short level, zero change, and net-short sign verified"
 
     # 6. Seller rule (sign and cross-class ranking), P2 both ways, INCONCLUSIVE with outcome n/a
     def g_seller_and_inconclusive():
@@ -1114,6 +1202,8 @@ def run_selftest():
         ("p5a_yardstick_exact", g_p5a_yardstick_exact),
         ("signs_and_mapping", g_signs_and_mapping),
         ("bad_input_aborts", g_bad_input_aborts),
+        ("negative_aborts", g_negative_aborts),
+        ("ust_aggregates", g_ust_aggregates),
         ("seller_and_inconclusive", g_seller_and_inconclusive),
         ("byte_identical", g_byte_identical),
         ("mutant_gap_12_16", g_mutant_gap),

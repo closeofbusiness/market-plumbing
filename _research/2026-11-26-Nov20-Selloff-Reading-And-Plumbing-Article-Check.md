@@ -34,9 +34,10 @@ Three things argue against other explanations:
 - **Not a general cut in risk by leveraged funds in futures, in the first week.** They sold the Nasdaq-100 and bought the
   S&P 500 ([first-week note](2026-11-24-Selloff-Positioning-First-Week.md)).
 
-**One amplifier is a candidate, untested:** leveraged funds added a record short in VIX futures in the week to 17 November.
-If it had to be bought back on the 19th and 20th, that would add to the move. The pre-registered test is scored on
-30 November.
+**One amplifier is a candidate, untested:** in the week to 17 November leveraged funds added 30,886 contracts to their
+short in VIX futures, the largest one-week rise since 2018 among weeks with no VIX settlement. If it had to be bought back
+on the 19th and 20th, that would add to the move. The 30 November scoring will show the position at 24 November, but the
+pre-registration gives no verdict on it, because the VIX expiry falls inside that window.
 
 **What this does not show.** Who sold in cash shares, ETFs and options. The futures data sees one corner.
 

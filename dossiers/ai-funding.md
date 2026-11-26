@@ -34,7 +34,7 @@ tally Grok cited puts SEC-registered bonds at $284bn to 4 November, not rebuilt 
 
 The report also describes a "circular financing" dynamic: hyperscalers and GPU designers lend to smaller firms and take equity
 in them. The self-funded finding holds for three of the five spenders (Alphabet, Meta, Microsoft); Amazon and Oracle borrow.
-Most of the Fed's total sits around the five, which is the open SPV and private-credit leg below. Source: [`_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md`](../_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md).
+The five's own bonds ($229bn) are about a third of the Fed's issuance figure on a rough comparison (periods and definitions differ); the rest sits around them, which is the open SPV and private-credit leg below. Source: [`_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md`](../_research/2026-11-24-NVIDIA-New-Fed-Webcast-Check.md).
 
 ## What would change the conclusion
 

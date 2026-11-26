@@ -32,8 +32,9 @@ Read the return below with these in mind. None changes the one-line verdict.
 
 - **"$3 trillion of leases and guarantees" (closing paragraph) is not a project figure.** The project's own totals are
   $1,122.9bn of leases signed but not yet commenced and $228.3bn of guarantees contracted (dossiers/ai-funding.md).
-- **"43 cents per capex dollar" (V2 and closing paragraph) has no stated numerator.** On capex of $615.4bn, the project's
-  $229bn of bonds is 37 cents and the $284.4bn tally is 46 cents.
+- **"43 cents per capex dollar" (V2 and closing paragraph) has no stated numerator.** The $615.4bn of capex is four firms
+  to 30 September; the project's checked bond total is $229bn for five names to 13 October. The two do not give a
+  like-for-like ratio, so none is quoted here.
 - **The $284.4bn (V1) is a third-party tally** (yieldtheory.app, 18 deals, 1 January to 4 November 2026). The project has not
   rebuilt it from the filings; the checked figure is $229bn to 13 October.
 - **V6 bond prices and V7 note prices come from a third-party compilation of the TRACE tape,** not from FINRA. Treat them as

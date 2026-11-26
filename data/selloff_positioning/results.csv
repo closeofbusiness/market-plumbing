@@ -333,3 +333,12 @@ code,class,field,window,start,end,change,percentile,n,sd,flag
 1170E1,lev_money,gross_short,secondary_no_vx_actual,2026-11-10,2026-11-17,30886,1.0000,356,10327.8550,High
 H10_JPY,fx,log_change,primary,2026-11-10,2026-11-24,,,459,0.016428,-
 UST_ALL6,lev_money,gross_short_10yeq_bn,primary,2026-11-10,2026-11-24,,,461,17.9700,-
+UST_ALL6,lev_money,gross_short_10yeq_bn,secondary,2026-11-10,2026-11-17,7.2374,0.7424,462,11.9927,-
+UST_ALL6,lev_money,gross_short_10yeq_bn_level_start,secondary,2026-11-10,2026-11-10,810.9629,,,,
+UST_ALL6,lev_money,gross_short_10yeq_bn_level_end,secondary,2026-11-17,2026-11-17,818.2003,,,,
+UST_ALL6,lev_money,net_short_10yeq_bn,secondary,2026-11-10,2026-11-17,17.2206,0.9156,462,12.5712,High
+UST_ALL6,lev_money,net_short_10yeq_bn_level_start,secondary,2026-11-10,2026-11-10,632.9879,,,,
+UST_ALL6,lev_money,net_short_10yeq_bn_level_end,secondary,2026-11-17,2026-11-17,650.2085,,,,
+UST_ALL6,lev_money,net_short_face_bn,secondary,2026-11-10,2026-11-17,-26.7328,0.0974,462,21.1119,Low
+UST_ALL6,lev_money,net_short_face_bn_level_start,secondary,2026-11-10,2026-11-10,890.9962,,,,
+UST_ALL6,lev_money,net_short_face_bn_level_end,secondary,2026-11-17,2026-11-17,864.2634,,,,
