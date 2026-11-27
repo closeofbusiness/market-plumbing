@@ -89,6 +89,8 @@ CANNOT|why; anything about the election or the refunding, which share the window
 
 Described, not scored: S was 6 bp on 4 Nov and on 6 Nov. LE1's withdrawn median and band need its control days, which run to 23 Nov, so they are described on a later read; that read never changes the label.
 
+**Described, 27 November (LE1's withdrawn median and band).** Vintage 20261127, fetched at about 05:45 UTC on 27 Nov, holds prints to 23 Nov. All ten of LE1's control days have both legs, so none is dropped. S on those days was 4, 6, 5, 5, 5, 4, 7, 5, 4 and 5 bp (2, 9, 10, 12, 13, 17, 18, 19, 20 and 23 Nov). Their median is 5 bp. The leave-one-out band is −1 to +2 bp. So E was 0 bp on 5 Nov and +1 bp on 6 Nov, both inside that band. The 4, 5 and 6 Nov prints are unchanged from vintage 20261111. This is a description: it does not change the LE1-A label. LE1's own gate (20:00 UTC on 27 Nov) binds nothing, because LE1's label was withdrawn and prints after 4 Nov were read for LE1-A on 11 Nov. S was 4 bp on 20 Nov, the day of the equity sell-off, which is ordinary for this spread.
+
 Independent check, 11 Nov: Gemini 3.8 Flash, given only the block, the two raw JSON files and the 20261103 daily file, returned the same values (S 6, 5 and 6 bp on 4, 5 and 6 Nov; baseline n 25, 3 to 9 bp, median 5; INSIDE). Before the 11 Nov fetch the vintage folder held only 20261103, so 20261111 is the first fetched vintage holding 5 Nov.
 
 As registered, this says nothing about the election or the refunding, which share the window, and nothing about other repo segments. It is one day.

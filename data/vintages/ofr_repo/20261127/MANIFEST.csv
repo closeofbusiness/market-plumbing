@@ -1,0 +1,10 @@
+url,sha256,bytes,fetched_at
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_AR_B27-P&start_date=2025-08-01&end_date=2026-11-27,6d112c3fc107e9b2c0609171e218c79c97ced45e27a36b757881bedc988a84a3,6994,2026-11-27T05:36:54Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_AR_OO-P&start_date=2025-08-01&end_date=2026-11-27,f4eef0ccc964f75c351e016e1ad3d10cd3cf215687a5ddbb8fcea7aac199d461,7173,2026-11-27T05:36:57Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_B27-P&start_date=2025-08-01&end_date=2026-11-27,70c9adffa3757486c2a6404487a2e4e4d083a4904e71874ef0872a24d1a4687c,10436,2026-11-27T05:37:00Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_OO-P&start_date=2025-08-01&end_date=2026-11-27,a19f89a48d4bdc6e85a58537ee71bb5c019cf52953ed06efd6071caf0ca9e8b3,11094,2026-11-27T05:37:03Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_AR_B830-P&start_date=2025-08-01&end_date=2026-11-27,353b425ecaf5fbab0d42494cdc8c8c4b5fee8dde50687fc9b5df5484a45ddebc,6985,2026-11-27T05:37:06Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_AR_B27-F&start_date=2025-08-01&end_date=2026-11-27,dceda445b0f26e746cbb1109b2f951909629972afcca15264a57908e569f1f8e,4798,2026-11-27T05:37:09Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_AR_OO-F&start_date=2025-08-01&end_date=2026-11-27,27f77bc231b6b085bb3efae8705faac6ec3d408316f8f0dd28d71a7cbbaf9522,4977,2026-11-27T05:37:12Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_B27-F&start_date=2025-08-01&end_date=2026-11-27,6c34453350e698013b92a7da60d07f5b7fb937d6f54c736ec1153937d22e4665,7164,2026-11-27T05:37:15Z
+https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_OO-F&start_date=2025-08-01&end_date=2026-11-27,f6b52167aafaa876f856cfdc02c2ee9ed3fa1dcac2521c4a4a5eb653345994ee,7699,2026-11-27T05:37:19Z
